@@ -1,0 +1,60 @@
+{
+  "carros": [
+    {
+      "placa": "RJG9G87",
+      "marca": "Nissan",
+      "modelo": "Kicks 1.6 Exclusive",
+      "ano": 2023,
+      "km": 64135,
+      "km_fmt": "64.135 km",
+      "preco": 107890.0,
+      "preco_fmt": "R$ 107.890",
+      "capa": "https://s3.agsistema.net/7207/vehicles/2663294/photos/hrcQWvBORZCzBmwoO78i5pErmg0V2cTe.jpg",
+      "arte": "artes/RJG9G87.png",
+      "qr": "qr/RJG9G87.png",
+      "titulo": "Nissan Kicks 1.6 Exclusive"
+    },
+    {
+      "placa": "RIW6E44",
+      "marca": "Honda",
+      "modelo": "City 1.5 EXL CVT",
+      "ano": 2024,
+      "km": 62000,
+      "km_fmt": "62.000 km",
+      "preco": 105890.0,
+      "preco_fmt": "R$ 105.890",
+      "capa": "https://s3.agsistema.net/7207/vehicles/2663296/photos/KkUPuupVb5j0iI2JHS2NLrsY0dxsxIk9.jpg",
+      "arte": "artes/RIW6E44.png",
+      "qr": "qr/RIW6E44.png",
+      "titulo": "Honda City 1.5 EXL CVT"
+    },
+    {
+      "placa": "FSZ7I87",
+      "marca": "Chery",
+      "modelo": "Tiggo 2 1.5 Act",
+      "ano": 2021,
+      "km": 60000,
+      "km_fmt": "60.000 km",
+      "preco": 67890.0,
+      "preco_fmt": "R$ 67.890",
+      "capa": "https://s3.agsistema.net/7207/vehicles/2679872/photos/ejKcgrHMvF8nnjSKA0AwWR2a1O97mhgh.jpg",
+      "arte": "artes/FSZ7I87.png",
+      "qr": "qr/FSZ7I87.png",
+      "titulo": "Chery Tiggo 2 1.5 Act"
+    },
+    {
+      "placa": "LUA2J29",
+      "marca": "Jeep",
+      "modelo": "Renegade 1.8 Flex",
+      "ano": 2020,
+      "km": 69547,
+      "km_fmt": "69.547 km",
+      "preco": 71890.0,
+      "preco_fmt": "R$ 71.890",
+      "capa": "https://s3.agsistema.net/7207/vehicles/2723810/photos/B7ROlwRepNUszx88DTcsmQorHjRXgAqk.jpg",
+      "arte": "artes/LUA2J29.png",
+      "qr": "qr/LUA2J29.png",
+      "titulo": "Jeep Renegade 1.8 Flex"
+    }
+  ]
+}

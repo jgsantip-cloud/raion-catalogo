@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estoque Seminovos Diamante</title>
+<style>
+  :root{ --azul:#1f3a8a; --bg:#eef1f7; --card:#fff; --linha:#e2e8f0; --cinza:#64748b; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:var(--bg); color:#1f2937; }
+  header{ background:linear-gradient(135deg,#1f3a8a,#2f4fb0); color:#fff; padding:20px 18px; }
+  header h1{ margin:0; font-size:20px; letter-spacing:.3px; }
+  header p{ margin:4px 0 0; font-size:13px; opacity:.9; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:16px 14px 40px; }
+  .busca{ width:100%; padding:12px 14px; border:1px solid var(--linha); border-radius:12px; font-size:15px; margin:14px 0 6px; }
+  .cont{ font-size:12.5px; color:var(--cinza); margin-bottom:12px; }
+  .grade{ display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px; }
+  .card{ background:var(--card); border:1px solid var(--linha); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; }
+  .card .foto{ width:100%; aspect-ratio:4/3; object-fit:cover; background:#dbe2f0; }
+  .card .body{ padding:11px 13px 13px; display:flex; flex-direction:column; gap:6px; }
+  .card .modelo{ font-weight:700; font-size:15px; line-height:1.25; }
+  .card .specs{ font-size:12.5px; color:var(--cinza); }
+  .card .preco{ font-weight:800; font-size:18px; color:var(--azul); }
+  .card .rodape{ display:flex; align-items:center; gap:10px; margin-top:4px; }
+  .card .qr{ width:66px; height:66px; border:1px solid var(--linha); border-radius:8px; }
+  .card .btn{ flex:1; text-align:center; text-decoration:none; background:var(--azul); color:#fff; font-weight:700; font-size:13.5px; padding:10px; border-radius:10px; }
+  .card .qrlab{ font-size:10.5px; color:var(--cinza); text-align:center; }
+  .vazio{ color:var(--cinza); padding:30px; text-align:center; }
+  @media (max-width:520px){ .grade{ grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:10px; } .card .qr{ width:54px; height:54px; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>&#128663; Estoque Seminovos Diamante</h1>
+  <p>Busque o carro, escaneie o QR e poste no seu Story &middot; Status</p>
+</header>
+<div class="wrap">
+  <input class="busca" id="busca" placeholder="&#128269; Buscar por marca, modelo ou placa...">
+  <div class="cont" id="cont"></div>
+  <div class="grade" id="grade"></div>
+  <div class="vazio" id="vazio" style="display:none">Nenhum carro encontrado.</div>
+</div>
+<script>
+let CARROS = [];
+const grade = document.getElementById('grade');
+const cont = document.getElementById('cont');
+const vazio = document.getElementById('vazio');
+
+function card(c){
+  return `<div class="card">
+    <img class="foto" src="${c.capa}" loading="lazy" alt="${c.titulo}">
+    <div class="body">
+      <div class="modelo">${c.titulo}</div>
+      <div class="specs">${c.ano} &middot; ${c.km_fmt}</div>
+      <div class="preco">${c.preco_fmt}</div>
+      <div class="rodape">
+        <div style="text-align:center">
+          <img class="qr" src="${c.qr}" alt="QR ${c.placa}">
+          <div class="qrlab">${c.placa}</div>
+        </div>
+        <a class="btn" href="share.html?placa=${c.placa}">Compartilhar &rarr;</a>
+      </div>
+    </div>
+  </div>`;
+}
+
+function render(lista){
+  grade.innerHTML = lista.map(card).join('');
+  vazio.style.display = lista.length ? 'none' : 'block';
+  cont.textContent = `${lista.length} de ${CARROS.length} carros`;
+}
+
+function filtrar(){
+  const t = document.getElementById('busca').value.trim().toLowerCase();
+  if(!t){ render(CARROS); return; }
+  render(CARROS.filter(c =>
+    c.titulo.toLowerCase().includes(t) ||
+    c.marca.toLowerCase().includes(t) ||
+    c.placa.toLowerCase().includes(t)
+  ));
+}
+
+document.getElementById('busca').addEventListener('input', filtrar);
+fetch('estoque.json').then(r=>r.json()).then(d=>{ CARROS = d.carros; render(CARROS); });
+</script>
+</body>
+</html>

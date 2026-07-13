@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compartilhar carro - Seminovos Diamante</title>
+<style>
+  :root{ --azul:#1f3a8a; --bg:#eef1f7; --cinza:#64748b; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:var(--bg); color:#1f2937; }
+  .wrap{ max-width:460px; margin:0 auto; padding:16px 14px 30px; text-align:center; }
+  .arte{ width:100%; max-width:340px; border-radius:14px; box-shadow:0 6px 24px rgba(31,58,138,.18); }
+  h2{ font-size:18px; margin:14px 0 2px; }
+  .specs{ color:var(--cinza); font-size:14px; margin:0 0 2px; }
+  .preco{ color:var(--azul); font-weight:800; font-size:22px; margin:6px 0 16px; }
+  .btn{ display:block; width:100%; padding:15px; border:0; border-radius:12px; font-size:16px; font-weight:800; cursor:pointer; margin:9px 0; text-decoration:none; }
+  .primario{ background:var(--azul); color:#fff; }
+  .secund{ background:#fff; color:var(--azul); border:1px solid #cdd8ef; }
+  .dica{ font-size:12.5px; color:var(--cinza); margin-top:14px; line-height:1.5; }
+  .erro{ color:#b91c1c; margin-top:20px; }
+</style>
+</head>
+<body>
+<div class="wrap" id="app"><p style="margin-top:40px;color:#64748b">Carregando...</p></div>
+<script>
+const placa = new URLSearchParams(location.search).get('placa');
+const app = document.getElementById('app');
+
+function baixar(url, nome){
+  const a = document.createElement('a');
+  a.href = url; a.download = nome; document.body.appendChild(a); a.click(); a.remove();
+}
+
+async function compartilhar(c){
+  const url = c.arte, nome = `${c.marca}-${c.modelo}-${c.placa}.png`.replace(/\s+/g,'-');
+  try{
+    const blob = await (await fetch(url)).blob();
+    const file = new File([blob], nome, {type: blob.type || 'image/png'});
+    if(navigator.canShare && navigator.canShare({files:[file]})){
+      await navigator.share({files:[file], title: c.titulo, text: `${c.titulo} - ${c.preco_fmt}`});
+    } else {
+      baixar(url, nome);
+      alert('Seu navegador nao compartilha a imagem direto. Baixei a arte - e so postar do rolo da camera no Story/Status.');
+    }
+  }catch(e){ if(e.name !== 'AbortError'){ baixar(url, nome); } }
+}
+
+function render(c){
+  app.innerHTML = `
+    <img class="arte" src="${c.arte}" alt="${c.titulo}">
+    <h2>${c.titulo}</h2>
+    <p class="specs">${c.ano} &middot; ${c.km_fmt} &middot; placa ${c.placa}</p>
+    <p class="preco">${c.preco_fmt}</p>
+    <button class="btn primario" id="share">&#128228; Compartilhar no Story / Status</button>
+    <a class="btn secund" id="dl">&#11015;&#65039; Baixar a arte</a>
+    <p class="dica">Toque em <b>Compartilhar</b> e escolha <b>Instagram</b> ou <b>WhatsApp</b> &rarr; depois <b>Story/Status</b>.
+    Se nao aparecer, use <b>Baixar</b> e poste do rolo da camera.</p>`;
+  document.getElementById('share').onclick = ()=>compartilhar(c);
+  const nome = `${c.marca}-${c.modelo}-${c.placa}.png`.replace(/\s+/g,'-');
+  document.getElementById('dl').onclick = (e)=>{ e.preventDefault(); baixar(c.arte, nome); };
+}
+
+fetch('estoque.json').then(r=>r.json()).then(d=>{
+  const c = (d.carros||[]).find(x=>x.placa===placa);
+  if(c) render(c);
+  else app.innerHTML = '<p class="erro" style="margin-top:40px">Carro nao encontrado. <a href="index.html">Ver estoque</a></p>';
+});
+</script>
+</body>
+</html>
