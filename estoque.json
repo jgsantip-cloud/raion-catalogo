@@ -12,7 +12,8 @@
       "capa": "https://s3.agsistema.net/7207/vehicles/2663294/photos/hrcQWvBORZCzBmwoO78i5pErmg0V2cTe.jpg",
       "arte": "artes/RJG9G87.png",
       "qr": "qr/RJG9G87.png",
-      "titulo": "Nissan Kicks 1.6 Exclusive"
+      "titulo": "Nissan Kicks 1.6 Exclusive",
+      "blindado": false
     },
     {
       "placa": "RIW6E44",
@@ -26,7 +27,8 @@
       "capa": "https://s3.agsistema.net/7207/vehicles/2663296/photos/KkUPuupVb5j0iI2JHS2NLrsY0dxsxIk9.jpg",
       "arte": "artes/RIW6E44.png",
       "qr": "qr/RIW6E44.png",
-      "titulo": "Honda City 1.5 EXL CVT"
+      "titulo": "Honda City 1.5 EXL CVT",
+      "blindado": false
     },
     {
       "placa": "FSZ7I87",
@@ -40,7 +42,8 @@
       "capa": "https://s3.agsistema.net/7207/vehicles/2679872/photos/ejKcgrHMvF8nnjSKA0AwWR2a1O97mhgh.jpg",
       "arte": "artes/FSZ7I87.png",
       "qr": "qr/FSZ7I87.png",
-      "titulo": "Chery Tiggo 2 1.5 Act"
+      "titulo": "Chery Tiggo 2 1.5 Act",
+      "blindado": false
     },
     {
       "placa": "LUA2J29",
@@ -54,7 +57,38 @@
       "capa": "https://s3.agsistema.net/7207/vehicles/2723810/photos/B7ROlwRepNUszx88DTcsmQorHjRXgAqk.jpg",
       "arte": "artes/LUA2J29.png",
       "qr": "qr/LUA2J29.png",
-      "titulo": "Jeep Renegade 1.8 Flex"
+      "titulo": "Jeep Renegade 1.8 Flex",
+      "blindado": false
+    },
+    {
+      "placa": "LTO9D94",
+      "marca": "Mitsubishi",
+      "modelo": "Eclipse Cross",
+      "ano": 2019,
+      "km": 74108,
+      "km_fmt": "74.108 km",
+      "preco": 134890.0,
+      "preco_fmt": "R$ 134.890",
+      "capa": "https://s3.agsistema.net/6699/vehicles/2662028/photos/xzrkYBVjHshZIskcAptJQKdl5Y18Ubx8.jpg",
+      "arte": "artes/LTO9D94.png",
+      "qr": "qr/LTO9D94.png",
+      "titulo": "Mitsubishi Eclipse Cross",
+      "blindado": true
+    },
+    {
+      "placa": "SRC1G53",
+      "marca": "BYD",
+      "modelo": "Dolphin",
+      "ano": 2024,
+      "km": 26000,
+      "km_fmt": "26.000 km",
+      "preco": 174890.0,
+      "preco_fmt": "R$ 174.890",
+      "capa": "https://s3.agsistema.net/6701/vehicles/2622900/photos/app-photos-v79TOFFvWdRxA8Xt7QFmdYpDbrbCmkoa.jpg",
+      "arte": "artes/SRC1G53.png",
+      "qr": "qr/SRC1G53.png",
+      "titulo": "BYD Dolphin",
+      "blindado": true
     }
   ]
 }

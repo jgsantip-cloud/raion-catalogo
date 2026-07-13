@@ -13,6 +13,7 @@
   h2{ font-size:18px; margin:14px 0 2px; }
   .specs{ color:var(--cinza); font-size:14px; margin:0 0 2px; }
   .preco{ color:var(--azul); font-weight:800; font-size:22px; margin:6px 0 16px; }
+  .tag-blind-s{ display:inline-block; background:#0f172a; color:#fff; font-size:12px; font-weight:800; letter-spacing:.6px; padding:5px 13px; border-radius:20px; margin:6px 0 2px; }
   .btn{ display:block; width:100%; padding:15px; border:0; border-radius:12px; font-size:16px; font-weight:800; cursor:pointer; margin:9px 0; text-decoration:none; }
   .primario{ background:var(--azul); color:#fff; }
   .secund{ background:#fff; color:var(--azul); border:1px solid #cdd8ef; }
@@ -52,6 +53,7 @@ function render(c){
   app.innerHTML = `
     <img class="arte" src="${c.arte}" alt="${c.titulo}">
     <h2>${c.titulo}</h2>
+    ${c.blindado ? '<div class="tag-blind-s">&#128737; BLINDADO</div>' : ''}
     <p class="specs">${c.ano} &middot; ${c.km_fmt} &middot; placa ${c.placa}</p>
     <p class="preco">${c.preco_fmt}</p>
     <button class="btn primario" id="share">&#128228; Compartilhar no Story / Status</button>
