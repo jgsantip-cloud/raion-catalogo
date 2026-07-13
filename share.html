@@ -36,7 +36,7 @@ function baixar(url, nome){
 }
 
 async function compartilhar(c){
-  const url = c.arte, nome = `${c.marca}-${c.modelo}-${c.placa}.png`.replace(/\s+/g,'-');
+  const url = c.arte, nome = `${c.titulo}-${c.placa}.png`.replace(/\s+/g,'-');
   try{
     const blob = await (await fetch(url)).blob();
     const file = new File([blob], nome, {type: blob.type || 'image/png'});
@@ -54,6 +54,7 @@ function render(c){
     <img class="arte" src="${c.arte}" alt="${c.titulo}">
     <h2>${c.titulo}</h2>
     ${c.blindado ? '<div class="tag-blind-s">&#128737; BLINDADO</div>' : ''}
+    ${c.versao ? `<p class="specs" style="margin-top:6px">${c.versao}</p>` : ''}
     <p class="specs">${c.ano} &middot; ${c.km_fmt} &middot; placa ${c.placa}</p>
     <p class="preco">${c.preco_fmt}</p>
     <button class="btn primario" id="share">&#128228; Compartilhar no Story / Status</button>
@@ -62,7 +63,7 @@ function render(c){
     Se nao aparecer, use <b>Baixar</b> e poste do rolo da camera.</p>
     <a class="btn secund" href="index.html">&#8592; Ver todo o estoque</a>`;
   document.getElementById('share').onclick = ()=>compartilhar(c);
-  const nome = `${c.marca}-${c.modelo}-${c.placa}.png`.replace(/\s+/g,'-');
+  const nome = `${c.titulo}-${c.placa}.png`.replace(/\s+/g,'-');
   document.getElementById('dl').onclick = (e)=>{ e.preventDefault(); baixar(c.arte, nome); };
 }
 
