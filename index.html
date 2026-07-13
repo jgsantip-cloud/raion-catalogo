@@ -24,8 +24,16 @@
   .card .rodape{ display:flex; align-items:center; gap:10px; margin-top:4px; }
   .card .qr{ width:66px; height:66px; border:1px solid var(--linha); border-radius:8px; }
   .card .btn{ flex:1; text-align:center; text-decoration:none; background:var(--azul); color:#fff; font-weight:700; font-size:13.5px; padding:10px; border-radius:10px; }
-  .card .qrlab{ font-size:10.5px; color:var(--cinza); text-align:center; }
+  .card .qrbox{ text-align:center; cursor:pointer; }
+  .card .qrlab{ font-size:10.5px; color:var(--azul); text-align:center; font-weight:700; }
   .vazio{ color:var(--cinza); padding:30px; text-align:center; }
+  .modal{ display:none; position:fixed; inset:0; background:rgba(15,23,42,.72); z-index:50; align-items:center; justify-content:center; padding:20px; }
+  .modal.on{ display:flex; }
+  .modal .box{ background:#fff; border-radius:18px; padding:22px 22px 18px; text-align:center; max-width:92vw; }
+  .modal .box img{ width:min(78vw,360px); height:auto; display:block; }
+  .modal .box .p{ font-weight:800; color:var(--azul); font-size:20px; letter-spacing:1px; margin-top:10px; }
+  .modal .box .h{ font-size:12.5px; color:var(--cinza); margin-top:2px; }
+  .modal .fechar{ margin-top:14px; background:var(--azul); color:#fff; border:0; border-radius:10px; padding:11px 22px; font-weight:800; font-size:14px; cursor:pointer; }
   @media (max-width:520px){ .grade{ grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:10px; } .card .qr{ width:54px; height:54px; } }
 </style>
 </head>
@@ -40,8 +48,24 @@
   <div class="grade" id="grade"></div>
   <div class="vazio" id="vazio" style="display:none">Nenhum carro encontrado.</div>
 </div>
+<div class="modal" id="modal" onclick="fecharQR(event)">
+  <div class="box">
+    <img id="modalimg" src="" alt="QR ampliado">
+    <div class="p" id="modalplaca"></div>
+    <div class="h" id="modaltit"></div>
+    <button class="fechar" onclick="fecharModal()">Fechar</button>
+  </div>
+</div>
 <script>
 let CARROS = [];
+function abrirQR(src, placa, titulo){
+  document.getElementById('modalimg').src = src;
+  document.getElementById('modalplaca').textContent = placa;
+  document.getElementById('modaltit').textContent = titulo;
+  document.getElementById('modal').classList.add('on');
+}
+function fecharModal(){ document.getElementById('modal').classList.remove('on'); }
+function fecharQR(e){ if(e.target.id === 'modal') fecharModal(); }
 const grade = document.getElementById('grade');
 const cont = document.getElementById('cont');
 const vazio = document.getElementById('vazio');
@@ -54,9 +78,9 @@ function card(c){
       <div class="specs">${c.ano} &middot; ${c.km_fmt}</div>
       <div class="preco">${c.preco_fmt}</div>
       <div class="rodape">
-        <div style="text-align:center">
+        <div class="qrbox" onclick="abrirQR('${c.qr}','${c.placa}','${c.titulo}')">
           <img class="qr" src="${c.qr}" alt="QR ${c.placa}">
-          <div class="qrlab">${c.placa}</div>
+          <div class="qrlab">&#128269; ampliar</div>
         </div>
         <a class="btn" href="share.html?placa=${c.placa}">Compartilhar &rarr;</a>
       </div>
