@@ -46,7 +46,7 @@
   <p>Busque o carro, escaneie o QR e poste no seu Story &middot; Status</p>
 </header>
 <div class="wrap">
-  <input class="busca" id="busca" placeholder="&#128269; Buscar por marca, modelo ou placa...">
+  <input class="busca" id="busca" placeholder="&#128269; Buscar por marca ou modelo...">
   <div class="cont" id="cont"></div>
   <div class="grade" id="grade"></div>
   <div class="vazio" id="vazio" style="display:none">Nenhum carro encontrado.</div>
@@ -61,10 +61,10 @@
 </div>
 <script>
 let CARROS = [];
-function abrirQR(src, placa, titulo){
+function abrirQR(src, titulo){
   document.getElementById('modalimg').src = src;
-  document.getElementById('modalplaca').textContent = placa;
-  document.getElementById('modaltit').textContent = titulo;
+  document.getElementById('modalplaca').textContent = titulo;
+  document.getElementById('modaltit').textContent = 'Escaneie para compartilhar';
   document.getElementById('modal').classList.add('on');
 }
 function fecharModal(){ document.getElementById('modal').classList.remove('on'); }
@@ -85,11 +85,11 @@ function card(c){
       <div class="specs">${c.ano} &middot; ${c.km_fmt}</div>
       <div class="preco">${c.preco_fmt}</div>
       <div class="rodape">
-        <div class="qrbox" onclick="abrirQR('${c.qr}','${c.placa}','${c.titulo}')">
-          <img class="qr" src="${c.qr}" alt="QR ${c.placa}">
+        <div class="qrbox" onclick="abrirQR('${c.qr}','${c.titulo}')">
+          <img class="qr" src="${c.qr}" alt="QR">
           <div class="qrlab">&#128269; ampliar</div>
         </div>
-        <a class="btn" href="share.html?placa=${c.placa}">Compartilhar &rarr;</a>
+        <a class="btn" href="share.html?id=${c.id}">Compartilhar &rarr;</a>
       </div>
     </div>
   </div>`;
@@ -107,8 +107,7 @@ function filtrar(){
   render(CARROS.filter(c =>
     c.titulo.toLowerCase().includes(t) ||
     c.marca.toLowerCase().includes(t) ||
-    (c.versao||'').toLowerCase().includes(t) ||
-    c.placa.toLowerCase().includes(t)
+    (c.versao||'').toLowerCase().includes(t)
   ));
 }
 

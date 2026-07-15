@@ -27,7 +27,7 @@
 <div class="topbar"><a href="index.html">&#8592; Ver todo o estoque</a></div>
 <div class="wrap" id="app"><p style="margin-top:40px;color:#64748b">Carregando...</p></div>
 <script>
-const placa = new URLSearchParams(location.search).get('placa');
+const id = new URLSearchParams(location.search).get('id');
 const app = document.getElementById('app');
 
 function baixar(url, nome){
@@ -36,7 +36,7 @@ function baixar(url, nome){
 }
 
 async function compartilhar(c){
-  const url = c.arte, nome = `${c.titulo}-${c.placa}.png`.replace(/\s+/g,'-');
+  const url = c.arte, nome = `${c.titulo}-${c.id}.png`.replace(/\s+/g,'-');
   try{
     const blob = await (await fetch(url)).blob();
     const file = new File([blob], nome, {type: blob.type || 'image/png'});
@@ -55,7 +55,7 @@ function render(c){
     <h2>${c.titulo}</h2>
     ${c.blindado ? '<div class="tag-blind-s">&#128737; BLINDADO</div>' : ''}
     ${c.versao ? `<p class="specs" style="margin-top:6px">${c.versao}</p>` : ''}
-    <p class="specs">${c.ano} &middot; ${c.km_fmt} &middot; placa ${c.placa}</p>
+    <p class="specs">${c.ano} &middot; ${c.km_fmt}</p>
     <p class="preco">${c.preco_fmt}</p>
     <button class="btn primario" id="share">&#128228; Compartilhar no Story / Status</button>
     <a class="btn secund" id="dl">&#11015;&#65039; Baixar a arte</a>
@@ -63,12 +63,12 @@ function render(c){
     Se nao aparecer, use <b>Baixar</b> e poste do rolo da camera.</p>
     <a class="btn secund" href="index.html">&#8592; Ver todo o estoque</a>`;
   document.getElementById('share').onclick = ()=>compartilhar(c);
-  const nome = `${c.titulo}-${c.placa}.png`.replace(/\s+/g,'-');
+  const nome = `${c.titulo}-${c.id}.png`.replace(/\s+/g,'-');
   document.getElementById('dl').onclick = (e)=>{ e.preventDefault(); baixar(c.arte, nome); };
 }
 
 fetch('estoque.json').then(r=>r.json()).then(d=>{
-  const c = (d.carros||[]).find(x=>x.placa===placa);
+  const c = (d.carros||[]).find(x=>x.id===id);
   if(c) render(c);
   else app.innerHTML = '<p class="erro" style="margin-top:40px">Carro nao encontrado. <a href="index.html">Ver estoque</a></p>';
 });
