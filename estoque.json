@@ -273,23 +273,6 @@
       "entrada": "2026-06-09"
     },
     {
-      "id": "88cea225dbbb",
-      "marca": "Mitsubishi",
-      "titulo": "Mitsubishi Pajero Full",
-      "versao": "3.2 HPE 4X4 16V TURBO INTERCOOLER DIESEL 4P AUTOMÁTICO",
-      "ano": 2019,
-      "km": 121773,
-      "km_fmt": "121.773 km",
-      "preco": 187890.0,
-      "preco_fmt": "R$ 187.890",
-      "capa": "https://s3.agsistema.net/6699/vehicles/2524452/photos/app-photos-0FfB04y619eXDzEa2HDkRIYvYPIRR9x4.jpg",
-      "arte": "artes/88cea225dbbb.png",
-      "qr": "qr/88cea225dbbb.png",
-      "blindado": false,
-      "arte_pronta": true,
-      "entrada": "2026-03-18"
-    },
-    {
       "id": "7f5b59966913",
       "marca": "Toyota",
       "titulo": "Toyota Corolla Cross",
@@ -392,40 +375,6 @@
       "entrada": "2026-04-04"
     },
     {
-      "id": "828c7e4c3dbf",
-      "marca": "Honda",
-      "titulo": "Honda Zr-V",
-      "versao": "2.0 i-VTEC GASOLINA TOURING CVT",
-      "ano": 2024,
-      "km": 21300,
-      "km_fmt": "21.300 km",
-      "preco": 145890.0,
-      "preco_fmt": "R$ 145.890",
-      "capa": "https://s3.agsistema.net/6703/vehicles/2498430/photos/10WvPGiPxYghYItNanIEXfc8bfvjFQ4B.jpg",
-      "arte": "artes/828c7e4c3dbf.png",
-      "qr": "qr/828c7e4c3dbf.png",
-      "blindado": false,
-      "arte_pronta": true,
-      "entrada": "2026-02-27"
-    },
-    {
-      "id": "3ed7de6ac553",
-      "marca": "Honda",
-      "titulo": "Honda Zr-V",
-      "versao": "2.0 i-VTEC GASOLINA TOURING CVT",
-      "ano": 2024,
-      "km": 14768,
-      "km_fmt": "14.768 km",
-      "preco": 144890.0,
-      "preco_fmt": "R$ 144.890",
-      "capa": "https://s3.agsistema.net/6699/vehicles/2632595/photos/app-photos-y1vcZjpBJN3PD2O0fFzNYcX5KrHZye62.jpg",
-      "arte": "artes/3ed7de6ac553.png",
-      "qr": "qr/3ed7de6ac553.png",
-      "blindado": false,
-      "arte_pronta": true,
-      "entrada": "2026-05-20"
-    },
-    {
       "id": "1d2c98134135",
       "marca": "Toyota",
       "titulo": "Toyota Corolla Cross",
@@ -486,12 +435,12 @@
       "km_fmt": "87.000 km",
       "preco": 124890.0,
       "preco_fmt": "R$ 124.890",
-      "capa": "https://s3.agsistema.net/6701/vehicles/2646228/photos/app-photos-N8qp1lqk7FvzKirIYK7MblRpNnd1LFZd.jpg",
+      "capa": "https://s3.agsistema.net/6699/vehicles/2753756/photos/FMO4q1R48gE9bIwuGTc80YCkExnB2sg4.jpg",
       "arte": "artes/7e3c596a0f1c.png",
       "qr": "qr/7e3c596a0f1c.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-05-27"
+      "entrada": "2026-07-25"
     },
     {
       "id": "b9204bcad7a2",
