@@ -15,7 +15,8 @@
       "qr": "qr/7b83fa5ba161.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-07-16"
+      "entrada": "2026-07-16",
+      "fipe_abaixo": null
     },
     {
       "id": "63a6fd5127a0",
@@ -32,7 +33,8 @@
       "qr": "qr/63a6fd5127a0.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-05-18"
+      "entrada": "2026-05-18",
+      "fipe_abaixo": null
     },
     {
       "id": "5673b0886c94",
@@ -49,7 +51,8 @@
       "qr": "qr/5673b0886c94.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-07-18"
+      "entrada": "2026-07-18",
+      "fipe_abaixo": "R$ 35 mil abaixo da FIPE"
     },
     {
       "id": "948439902c84",
@@ -66,7 +69,8 @@
       "qr": "qr/948439902c84.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-06-01"
+      "entrada": "2026-06-01",
+      "fipe_abaixo": null
     },
     {
       "id": "823b7548b681",
@@ -83,7 +87,8 @@
       "qr": "qr/823b7548b681.png",
       "blindado": true,
       "arte_pronta": true,
-      "entrada": "2026-07-20"
+      "entrada": "2026-07-20",
+      "fipe_abaixo": null
     },
     {
       "id": "e0a2519aec5c",
@@ -100,7 +105,8 @@
       "qr": "qr/e0a2519aec5c.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-06-19"
+      "entrada": "2026-06-19",
+      "fipe_abaixo": "R$ 16 mil abaixo da FIPE"
     },
     {
       "id": "c85e2f98aad1",
@@ -117,7 +123,8 @@
       "qr": "qr/c85e2f98aad1.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-06-06"
+      "entrada": "2026-06-06",
+      "fipe_abaixo": "R$ 4 mil abaixo da FIPE"
     },
     {
       "id": "6e8fc1feb3f7",
@@ -134,7 +141,8 @@
       "qr": "qr/6e8fc1feb3f7.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-05-26"
+      "entrada": "2026-05-26",
+      "fipe_abaixo": "R$ 30 mil abaixo da FIPE"
     },
     {
       "id": "15c2da80ba7a",
@@ -151,7 +159,8 @@
       "qr": "qr/15c2da80ba7a.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-04-27"
+      "entrada": "2026-04-27",
+      "fipe_abaixo": "R$ 18 mil abaixo da FIPE"
     },
     {
       "id": "b193acf98bc3",
@@ -168,7 +177,8 @@
       "qr": "qr/b193acf98bc3.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-06-15"
+      "entrada": "2026-06-15",
+      "fipe_abaixo": null
     },
     {
       "id": "d8189f6040e3",
@@ -185,7 +195,8 @@
       "qr": "qr/d8189f6040e3.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-03-30"
+      "entrada": "2026-03-30",
+      "fipe_abaixo": null
     },
     {
       "id": "302db0ca82e8",
@@ -202,7 +213,8 @@
       "qr": "qr/302db0ca82e8.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-04-30"
+      "entrada": "2026-04-30",
+      "fipe_abaixo": "R$ 24 mil abaixo da FIPE"
     },
     {
       "id": "1213af093d62",
@@ -219,7 +231,8 @@
       "qr": "qr/1213af093d62.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-07-09"
+      "entrada": "2026-07-09",
+      "fipe_abaixo": "R$ 12 mil abaixo da FIPE"
     },
     {
       "id": "15df19c38529",
@@ -236,7 +249,8 @@
       "qr": "qr/15df19c38529.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-03-26"
+      "entrada": "2026-03-26",
+      "fipe_abaixo": "R$ 18 mil abaixo da FIPE"
     },
     {
       "id": "67a3e7a58eb9",
@@ -253,7 +267,8 @@
       "qr": "qr/67a3e7a58eb9.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-07-24"
+      "entrada": "2026-07-24",
+      "fipe_abaixo": null
     },
     {
       "id": "98470b546ca4",
@@ -270,7 +285,8 @@
       "qr": "qr/98470b546ca4.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-06-05"
+      "entrada": "2026-06-05",
+      "fipe_abaixo": null
     },
     {
       "id": "4d84d1e60348",
@@ -287,7 +303,8 @@
       "qr": "qr/4d84d1e60348.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-06-09"
+      "entrada": "2026-06-09",
+      "fipe_abaixo": "R$ 12 mil abaixo da FIPE"
     },
     {
       "id": "7f5b59966913",
@@ -304,7 +321,8 @@
       "qr": "qr/7f5b59966913.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-06-10"
+      "entrada": "2026-06-10",
+      "fipe_abaixo": "R$ 10 mil abaixo da FIPE"
     },
     {
       "id": "0328dff13567",
@@ -321,7 +339,8 @@
       "qr": "qr/0328dff13567.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-05-26"
+      "entrada": "2026-05-26",
+      "fipe_abaixo": "R$ 9 mil abaixo da FIPE"
     },
     {
       "id": "ca87c3989b57",
@@ -338,7 +357,8 @@
       "qr": "qr/ca87c3989b57.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-07-14"
+      "entrada": "2026-07-14",
+      "fipe_abaixo": "R$ 14 mil abaixo da FIPE"
     },
     {
       "id": "5193f415bab1",
@@ -355,7 +375,8 @@
       "qr": "qr/5193f415bab1.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-07-10"
+      "entrada": "2026-07-10",
+      "fipe_abaixo": null
     },
     {
       "id": "91675d79ec57",
@@ -372,7 +393,8 @@
       "qr": "qr/91675d79ec57.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-04-04"
+      "entrada": "2026-04-04",
+      "fipe_abaixo": "R$ 7 mil abaixo da FIPE"
     },
     {
       "id": "828c7e4c3dbf",
@@ -389,7 +411,8 @@
       "qr": "qr/828c7e4c3dbf.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-07-25"
+      "entrada": "2026-07-25",
+      "fipe_abaixo": "R$ 8 mil abaixo da FIPE"
     },
     {
       "id": "1d2c98134135",
@@ -406,7 +429,8 @@
       "qr": "qr/1d2c98134135.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-06-05"
+      "entrada": "2026-06-05",
+      "fipe_abaixo": "R$ 4 mil abaixo da FIPE"
     },
     {
       "id": "59cb81e8dd54",
@@ -423,7 +447,8 @@
       "qr": "qr/59cb81e8dd54.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-06-23"
+      "entrada": "2026-06-23",
+      "fipe_abaixo": "R$ 9 mil abaixo da FIPE"
     },
     {
       "id": "abe13a5b037c",
@@ -440,7 +465,8 @@
       "qr": "qr/abe13a5b037c.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-05-08"
+      "entrada": "2026-05-08",
+      "fipe_abaixo": "R$ 10 mil abaixo da FIPE"
     },
     {
       "id": "7e3c596a0f1c",
@@ -457,7 +483,8 @@
       "qr": "qr/7e3c596a0f1c.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-07-25"
+      "entrada": "2026-07-25",
+      "fipe_abaixo": "R$ 3 mil abaixo da FIPE"
     },
     {
       "id": "b9204bcad7a2",
@@ -474,7 +501,8 @@
       "qr": "qr/b9204bcad7a2.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-06-10"
+      "entrada": "2026-06-10",
+      "fipe_abaixo": "R$ 6 mil abaixo da FIPE"
     },
     {
       "id": "38b7d5f48247",
@@ -491,7 +519,8 @@
       "qr": "qr/38b7d5f48247.png",
       "blindado": true,
       "arte_pronta": true,
-      "entrada": "2026-05-11"
+      "entrada": "2026-05-11",
+      "fipe_abaixo": null
     },
     {
       "id": "818228822c6f",
@@ -508,7 +537,8 @@
       "qr": "qr/818228822c6f.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-06-15"
+      "entrada": "2026-06-15",
+      "fipe_abaixo": null
     },
     {
       "id": "674359496d73",
@@ -525,7 +555,8 @@
       "qr": "qr/674359496d73.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-07-17"
+      "entrada": "2026-07-17",
+      "fipe_abaixo": null
     },
     {
       "id": "8cffd2c1ab2c",
@@ -542,7 +573,8 @@
       "qr": "qr/8cffd2c1ab2c.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-07-08"
+      "entrada": "2026-07-08",
+      "fipe_abaixo": "R$ 3 mil abaixo da FIPE"
     },
     {
       "id": "b872d17ac8ce",
@@ -559,7 +591,8 @@
       "qr": "qr/b872d17ac8ce.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-05-30"
+      "entrada": "2026-05-30",
+      "fipe_abaixo": "R$ 4 mil abaixo da FIPE"
     },
     {
       "id": "47db522c503f",
@@ -576,7 +609,8 @@
       "qr": "qr/47db522c503f.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-07-20"
+      "entrada": "2026-07-20",
+      "fipe_abaixo": null
     },
     {
       "id": "6038a6ad9b01",
@@ -593,7 +627,8 @@
       "qr": "qr/6038a6ad9b01.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-04-30"
+      "entrada": "2026-04-30",
+      "fipe_abaixo": "R$ 7 mil abaixo da FIPE"
     },
     {
       "id": "e7528bcfc3c6",
@@ -610,7 +645,8 @@
       "qr": "qr/e7528bcfc3c6.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-07-09"
+      "entrada": "2026-07-09",
+      "fipe_abaixo": null
     },
     {
       "id": "2f775ca352a3",
@@ -627,7 +663,8 @@
       "qr": "qr/2f775ca352a3.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-06-02"
+      "entrada": "2026-06-02",
+      "fipe_abaixo": null
     },
     {
       "id": "d061810d72a0",
@@ -644,7 +681,8 @@
       "qr": "qr/d061810d72a0.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-06-02"
+      "entrada": "2026-06-02",
+      "fipe_abaixo": "R$ 7 mil abaixo da FIPE"
     },
     {
       "id": "94f6ed8e3950",
@@ -661,7 +699,8 @@
       "qr": "qr/94f6ed8e3950.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-07-22"
+      "entrada": "2026-07-22",
+      "fipe_abaixo": null
     },
     {
       "id": "06877b6b8170",
@@ -678,7 +717,8 @@
       "qr": "qr/06877b6b8170.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-06-15"
+      "entrada": "2026-06-15",
+      "fipe_abaixo": "R$ 5 mil abaixo da FIPE"
     },
     {
       "id": "f6dc7900b301",
@@ -695,7 +735,8 @@
       "qr": "qr/f6dc7900b301.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-06-06"
+      "entrada": "2026-06-06",
+      "fipe_abaixo": "R$ 5 mil abaixo da FIPE"
     },
     {
       "id": "10e616c6f345",
@@ -712,7 +753,8 @@
       "qr": "qr/10e616c6f345.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-06-01"
+      "entrada": "2026-06-01",
+      "fipe_abaixo": null
     },
     {
       "id": "37fe089e5a1b",
@@ -729,7 +771,8 @@
       "qr": "qr/37fe089e5a1b.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-07-06"
+      "entrada": "2026-07-06",
+      "fipe_abaixo": null
     },
     {
       "id": "5d7d8ec57240",
@@ -746,7 +789,8 @@
       "qr": "qr/5d7d8ec57240.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-07-22"
+      "entrada": "2026-07-22",
+      "fipe_abaixo": null
     },
     {
       "id": "04029730b4c9",
@@ -763,7 +807,8 @@
       "qr": "qr/04029730b4c9.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-07-11"
+      "entrada": "2026-07-11",
+      "fipe_abaixo": "R$ 3 mil abaixo da FIPE"
     },
     {
       "id": "361c7ff5d7cb",
@@ -780,7 +825,8 @@
       "qr": "qr/361c7ff5d7cb.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-05-12"
+      "entrada": "2026-05-12",
+      "fipe_abaixo": "R$ 7 mil abaixo da FIPE"
     },
     {
       "id": "fb4acb08f5db",
@@ -797,7 +843,8 @@
       "qr": "qr/fb4acb08f5db.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-06-16"
+      "entrada": "2026-06-16",
+      "fipe_abaixo": null
     },
     {
       "id": "10e820777c9e",
@@ -814,7 +861,8 @@
       "qr": "qr/10e820777c9e.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-07-11"
+      "entrada": "2026-07-11",
+      "fipe_abaixo": null
     },
     {
       "id": "1cfb95055efb",
@@ -831,7 +879,8 @@
       "qr": "qr/1cfb95055efb.png",
       "blindado": false,
       "arte_pronta": true,
-      "entrada": "2026-07-20"
+      "entrada": "2026-07-20",
+      "fipe_abaixo": null
     }
   ]
 }

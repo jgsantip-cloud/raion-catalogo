@@ -28,6 +28,7 @@
   .card .versao{ font-size:11px; color:var(--cinza); line-height:1.2; }
   .card .specs{ font-size:12.5px; color:var(--cinza); }
   .card .preco{ font-weight:800; font-size:18px; color:var(--azul); }
+  .card .fipe{ display:inline-flex; align-items:center; gap:5px; align-self:flex-start; background:#e7f7ee; color:#15803d; border:1px solid #b7e4c7; font-weight:800; font-size:11.5px; letter-spacing:.2px; padding:4px 9px; border-radius:20px; }
   .card .rodape{ display:flex; align-items:center; gap:10px; margin-top:4px; }
   .card .qr{ width:66px; height:66px; border:1px solid var(--linha); border-radius:8px; }
   .card .btn{ flex:1; text-align:center; text-decoration:none; background:var(--azul); color:#fff; font-weight:700; font-size:13.5px; padding:10px; border-radius:10px; }
@@ -93,6 +94,7 @@ function card(c){
       ${c.versao ? `<div class="versao">${c.versao}</div>` : ''}
       <div class="specs">${c.ano} &middot; ${c.km_fmt}</div>
       <div class="preco">${c.preco_fmt}</div>
+      ${c.fipe_abaixo ? `<div class="fipe">&#128315; ${c.fipe_abaixo}</div>` : ''}
       <div class="rodape">
         <div class="qrbox" onclick="abrirQR('${c.qr}','${c.titulo}')">
           <img class="qr" src="${c.qr}" alt="QR">
