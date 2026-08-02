@@ -148,61 +148,6 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
-    <vehicle_id>2739128</vehicle_id>
-    <title>Chevrolet ONIX 1.0 FLEX LT MANUAL</title>
-    <description>Somos um grupo de 13 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos possuem Certificado de Km Real, Laudo Cautelar e possibilidade de até 3 anos de Garantia (Consulte Condições). 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Chevrolet%20ONIX%201.0%20FLEX%20LT%20MANUAL%202024%20%28c%C3%B3d.%202739128%29.</url>
-    <make>Chevrolet</make>
-    <model>ONIX</model>
-    <year>2024</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>72663</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>59890.00 BRL</price>
-    <exterior_color>Azul</exterior_color>
-    <fuel_type>FLEX</fuel_type>
-    <transmission>MANUAL</transmission>
-    <body_style>HATCHBACK</body_style>
-    <trim>1.0 FLEX LT MANUAL</trim>
-    <availability>available</availability>
-    <dealer_name>Nissan Keiko - Nova Iguaçu</dealer_name>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2739128/photos/is1AJFDrAncGGkMAcQXLgHC4oDbJcUAJ.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2739128/photos/n1BVEUwK5nzXJJ10txHdowCJdE32PORY.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2739128/photos/K9oUxSn6F38h5urpHna2Ly3IOwDMmP4N.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2739128/photos/xOVmw1Qp9rhQxPrDsc9EJQfVItgS4Obz.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2739128/photos/ltgwpMABT3k4cjOep4yTeUCcJmj2X0me.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">GOVERNADOR ROBERTO SILVEIRA, 217</component>
-      <component name="city">Nova Iguaçu</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">26210-210</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>GOVERNADOR ROBERTO SILVEIRA, 217</street_address>
-    <city>Nova Iguaçu</city>
-    <region>RJ</region>
-    <postal_code>26210-210</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
     <vehicle_id>2749713</vehicle_id>
     <title>Nissan SENTRA 2.0 16V GASOLINA ADVANCE XTRONIC</title>
     <description>Somos um grupo de 13 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -443,61 +388,6 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <city>Duque de Caxias</city>
     <region>RJ</region>
     <postal_code>25085-008</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
-    <vehicle_id>2668347</vehicle_id>
-    <title>Toyota COROLLA CROSS 2.0 VVT-IE FLEX XRE DIRECT SHIFT</title>
-    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos possuem Vistoria Cautelar. 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Toyota%20COROLLA%20CROSS%202.0%20VVT-IE%20FLEX%20XRE%20DIRECT%20SHIFT%202024%20%28c%C3%B3d.%202668347%29.</url>
-    <make>Toyota</make>
-    <model>COROLLA CROSS</model>
-    <year>2024</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>29273</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>143890.00 BRL</price>
-    <exterior_color>Branco</exterior_color>
-    <fuel_type>FLEX</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SUV</body_style>
-    <trim>2.0 VVT-IE FLEX XRE DIRECT SHIFT</trim>
-    <availability>available</availability>
-    <dealer_name>Nissan Keiko - Campo Grande</dealer_name>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2668347/photos/xFFhmMTwaN5lWUKyUga0xvtf0hXNEar1.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2668347/photos/X7WNkWSvfViVH1XRrADSokY2QxvDI9vM.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2668347/photos/tV1GN5r7B265AXSvU7HoZAIAUNmErZjw.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2668347/photos/1tmN6yMny73bZNMyJ7cSYYBbvEsTee4O.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2668347/photos/w7rQBmOKB9vkoX5WM3uCoPBAR2ennjsB.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">ESTRADA DO MONTEIRO, 540</component>
-      <component name="city">Rio de Janeiro</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">23045-830</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>ESTRADA DO MONTEIRO, 540</street_address>
-    <city>Rio de Janeiro</city>
-    <region>RJ</region>
-    <postal_code>23045-830</postal_code>
     <country>Brazil</country>
   </listing>
   <listing>
@@ -1438,6 +1328,88 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
+    <vehicle_id>2765088</vehicle_id>
+    <title>Mitsubishi TRITON 2.4 BITURBO DIESEL CD HPE 4X4 AUTOMÁTICO</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20TRITON%202.4%20BITURBO%20DIESEL%20CD%20HPE%204X4%20AUTOM%C3%81TICO%202026%20%28c%C3%B3d.%202765088%29.</url>
+    <make>Mitsubishi</make>
+    <model>TRITON</model>
+    <year>2026</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>19500</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>239890.00 BRL</price>
+    <exterior_color>Preto</exterior_color>
+    <fuel_type>DIESEL</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>2.4 BITURBO DIESEL CD HPE 4X4 AUTOMÁTICO</trim>
+    <availability>available</availability>
+    <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2765088/photos/u2EOjtWW3pmsSzhjwj95VyGvOrVTxDsy6BuY.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2765088/photos/9OOk42x4rzSA6MWhu99ns6diM3HGixZsFBCo.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2765088/photos/OoJTbHLREL2nZymnCuc4ix1t8smSbTERqpvh.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2765088/photos/ASVLh8y6Qfc975KLEHOre6t6zN7w10xL0RmT.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2765088/photos/vkAgHuoPMD2UtHby5q7hP1MpbSg1Pl7cXWxD.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2765088/photos/YKGl8H9YMELMaCFYNB1dsqb057TYVqerUoIJ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2765088/photos/tS2YZb71CHFA3UXveYd0xMfO6cd95ZfLZbZe.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2765088/photos/3x8dryAXIiFFfjE6qd7T0TU25rBzq4V8CAm9.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2765088/photos/RXn7wcRhJEXlUgfk3EZQFPaxSRzZ9Uo7jQA8.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2765088/photos/QkNuEV0o3YEmubaCCk7XqOzxvhT09s9RaBT7.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2765088/photos/yGorQ5zpkAAkT6gDD89OCHC4DKgvAfjReH2B.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2765088/photos/oU01mp8AHLHg1hEmOyUGYWMJSc13e56Z1qRH.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2765088/photos/LlTR796NX4R7fVeOdsAbA2q8yW593c776Zjc.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2765088/photos/X7BeqbxqcnuNxS9DyRyvuGFvIH2HgV0spU79.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">FRANCISCO DA CRUZ NUNES, 4830</component>
+      <component name="city">Niterói</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">24350-310</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>FRANCISCO DA CRUZ NUNES, 4830</street_address>
+    <city>Niterói</city>
+    <region>RJ</region>
+    <postal_code>24350-310</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
     <vehicle_id>2552693</vehicle_id>
     <title>Honda HR-V 1.5 DI I-VTEC TURBO FLEX TOURING CVT</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -2214,6 +2186,76 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <city>Rio de Janeiro</city>
     <region>RJ</region>
     <postal_code>22640-101</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2583435</vehicle_id>
+    <title>Mitsubishi ECLIPSE CROSS 1.5 MIVEC TURBO GASOLINA HPE CVT</title>
+    <description>Somos um grupo de 14 concessionárias , Raion , que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos de altíssima procedência , possuem Vistoria Cautelar , revisados e com garantia. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20ECLIPSE%20CROSS%201.5%20MIVEC%20TURBO%20GASOLINA%20HPE%20CVT%202025%20%28c%C3%B3d.%202583435%29.</url>
+    <make>Mitsubishi</make>
+    <model>ECLIPSE CROSS</model>
+    <year>2025</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>20607</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>143890.00 BRL</price>
+    <exterior_color>Cinza</exterior_color>
+    <fuel_type>GASOLINE</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>1.5 MIVEC TURBO GASOLINA HPE CVT</trim>
+    <availability>available</availability>
+    <dealer_name>Taika Mitsubishi - Recreio</dealer_name>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2583435/photos/app-photos-2sUafPwxMyaqxjLMx2HTUQCYuR9P0Wz9.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2583435/photos/app-photos-vs1FlaY9uHAJij5xyDKjNbzOUEriplFP.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2583435/photos/app-photos-HeMUh3jI1LflX1w4rDL5Lu85KmxE82k7.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2583435/photos/app-photos-yJtM6GI5RBXplLMyA0c5VKvvM6VFjR2P.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2583435/photos/app-photos-6z4jwPmUnYQl2ArDXBmRCdj7pH53wHqM.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2583435/photos/app-photos-g2HS96MoHjRwtHrOLvj9iASrA2Uh6zTQ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2583435/photos/app-photos-GxsAs4b8bAKh1dV8AB8sE2Lh1s55CXRx.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2583435/photos/app-photos-ByHVgFZEm3WCzgO3qmfYLAjQbm79FzKc.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2583435/photos/app-photos-y8AY28vAEWIEidir697gpw6Ft1Fw6kqu.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2583435/photos/app-photos-4NvdACjk6BsvYJW4vOTJGSA5DDJVPHiA.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">Av. das Américas, 17400</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">22790-704</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>Av. das Américas, 17400</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>22790-704</postal_code>
     <country>Brazil</country>
   </listing>
   <listing>
@@ -3156,7 +3198,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>10500</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>254890.00 BRL</price>
+    <price>258890.00 BRL</price>
     <exterior_color>Cinza</exterior_color>
     <fuel_type>ELECTRIC</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -3247,7 +3289,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>19500</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>242890.00 BRL</price>
+    <price>249890.00 BRL</price>
     <exterior_color>Cinza</exterior_color>
     <fuel_type>ELECTRIC</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -3575,7 +3617,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <year>2024</year>
     <mileage>
       <unit>KM</unit>
-      <value>44403</value>
+      <value>10</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
     <price>112890.00 BRL</price>
