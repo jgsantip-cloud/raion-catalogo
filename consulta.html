@@ -45,8 +45,9 @@
   .specs b{ font-size:15px; }
   .loja{ padding:0 18px 18px; color:var(--cinza); font-size:13.5px; line-height:1.5; }
   .loja b{ color:#111827; }
-  .zap{ display:inline-block; margin:0 18px 18px; background:#25d366; color:#fff; text-decoration:none;
-        padding:11px 18px; border-radius:10px; font-weight:800; }
+  .baixar{ display:inline-block; margin:0 18px 18px; background:var(--azul); color:#fff; border:0;
+           padding:11px 18px; border-radius:10px; font-weight:800; font-size:14px; cursor:pointer; }
+  .baixar:disabled{ opacity:.6; cursor:wait; }
 </style>
 </head>
 <body>
@@ -105,9 +106,38 @@ function abrir(cod){
     </div>
     <div class="loja"><b>Onde está:</b> ${c.loja}<br>${c.endereco||''}
       ${c.acessorios && c.acessorios.length ? '<br><b>Opcionais:</b> ' + c.acessorios.join(', ') : ''}</div>
-    ${c.whatsapp ? `<a class="zap" target="_blank" href="https://wa.me/${c.whatsapp}">Abrir WhatsApp da loja</a>` : ''}
+    <button class="baixar" id="bBaixar" onclick="baixarFotos('${c.codigo}')">&#11015;&#65039; Baixar todas as fotos (${c.fotos.length})</button>
     <div class="fotos">${c.fotos.map(u => `<img src="${u}" loading="lazy">`).join('')}</div>`;
   $('ficha').classList.add('on');
+}
+
+// Baixa TODAS as fotos do carro, uma a uma, com nome sequencial (cód_01.jpg...).
+// O S3 do agsistema não manda CORS, então o fetch passa pelo proxy de imagem
+// wsrv.nl (Cloudflare) — as fotos já são públicas (estão em anúncio), sem exposição.
+// Sai como arquivos soltos (não ZIP) de propósito: a atendente seleciona e arrasta
+// direto pro WhatsApp Web, sem precisar descompactar nada.
+// Na 1ª vez o Chrome pede permissão de "múltiplos downloads" — permitir uma vez só.
+async function baixarFotos(cod){
+  const c = CARROS.find(x => x.codigo === cod); if(!c || !c.fotos.length) return;
+  const b = $('bBaixar'); b.disabled = true;
+  let ok = 0, falha = 0;
+  for (let i = 0; i < c.fotos.length; i++){
+    b.textContent = `Baixando ${i+1}/${c.fotos.length}…`;
+    try {
+      const r = await fetch('https://wsrv.nl/?url=' + encodeURIComponent(c.fotos[i]));
+      if (!r.ok) throw 0;
+      const blob = await r.blob();
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `${c.codigo}_${String(i+1).padStart(2,'0')}.jpg`;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(u => URL.revokeObjectURL(u), 30000, a.href);
+      ok++;
+    } catch(e){ falha++; }
+  }
+  b.textContent = falha ? `${ok} baixadas, ${falha} falharam — clique p/ tentar de novo`
+                        : `✅ ${ok} fotos baixadas — veja a pasta Downloads`;
+  b.disabled = false;
 }
 
 function aplicar(){
