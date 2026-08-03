@@ -4215,4 +4215,100 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <postal_code>27332-360</postal_code>
     <country>Brazil</country>
   </listing>
+  <listing>
+    <vehicle_id>2765088</vehicle_id>
+    <title>Mitsubishi TRITON 2.4 BITURBO DIESEL CD HPE 4X4 AUTOMATICO</title>
+    <description>Mitsubishi TRITON 2.4 BITURBO DIESEL CD HPE 4X4 AUTOMATICO</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20TRITON%202.4%20BITURBO%20DIESEL%20CD%20HPE%204X4%20AUTOMATICO%202026%20%28c%C3%B3d.%202765088%29.</url>
+    <make>Mitsubishi</make>
+    <model>TRITON</model>
+    <year>2026</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>0</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>239890.00 BRL</price>
+    <trim>2.4 BITURBO DIESEL CD HPE 4X4 AUTOMATICO</trim>
+    <availability>out of stock</availability>
+    <condition>used</condition>
+    <dealer_name>Mitsubishi Natsu - Niteroi</dealer_name>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2765088/photos/u2EOjtWW3pmsSzhjwj95VyGvOrVTxDsy6BuY.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">-</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>-</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2668347</vehicle_id>
+    <title>Toyota COROLLA CROSS 2.0 VVT-IE FLEX XRE DIRECT SHIFT</title>
+    <description>Toyota COROLLA CROSS 2.0 VVT-IE FLEX XRE DIRECT SHIFT</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Toyota%20COROLLA%20CROSS%202.0%20VVT-IE%20FLEX%20XRE%20DIRECT%20SHIFT%202024%20%28c%C3%B3d.%202668347%29.</url>
+    <make>Toyota</make>
+    <model>COROLLA CROSS</model>
+    <year>2024</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>0</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>143890.00 BRL</price>
+    <trim>2.0 VVT-IE FLEX XRE DIRECT SHIFT</trim>
+    <availability>out of stock</availability>
+    <condition>used</condition>
+    <dealer_name>Nissan Keiko - Campo Grande</dealer_name>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2668347/photos/xFFhmMTwaN5lWUKyUga0xvtf0hXNEar1.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">-</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>-</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2739128</vehicle_id>
+    <title>Chevrolet ONIX 1.0 FLEX LT MANUAL</title>
+    <description>Chevrolet ONIX 1.0 FLEX LT MANUAL</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Chevrolet%20ONIX%201.0%20FLEX%20LT%20MANUAL%202024%20%28c%C3%B3d.%202739128%29.</url>
+    <make>Chevrolet</make>
+    <model>ONIX</model>
+    <year>2024</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>0</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>59890.00 BRL</price>
+    <trim>1.0 FLEX LT MANUAL</trim>
+    <availability>out of stock</availability>
+    <condition>used</condition>
+    <dealer_name>Nissan Keiko - Nova Iguacu</dealer_name>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2739128/photos/is1AJFDrAncGGkMAcQXLgHC4oDbJcUAJ.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">-</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>-</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <country>Brazil</country>
+  </listing>
 </listings>
