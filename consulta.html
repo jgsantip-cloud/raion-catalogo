@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consulta de veículo - Seminovos Diamante</title>
+<style>
+  :root{ --azul:#1f3a8a; --bg:#eef1f7; --cinza:#64748b; --linha:#dbe3f0; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:var(--bg); color:#111827; }
+  header{ background:#fff; border-bottom:1px solid var(--linha); padding:14px 16px; position:sticky; top:0; z-index:5; }
+  .wrap{ max-width:1100px; margin:0 auto; }
+  h1{ font-size:17px; margin:0 0 10px; color:var(--azul); }
+  .busca{ display:flex; gap:8px; flex-wrap:wrap; }
+  .busca input{ flex:1; min-width:200px; padding:12px 14px; font-size:16px; border:1px solid var(--linha);
+                border-radius:10px; outline:none; }
+  .busca input:focus{ border-color:var(--azul); }
+  .btn{ padding:12px 16px; border:1px solid var(--linha); background:#fff; border-radius:10px; cursor:pointer;
+        font-size:14px; font-weight:700; color:var(--azul); }
+  .btn.on{ background:var(--azul); color:#fff; border-color:var(--azul); }
+  main{ padding:16px; }
+  .aviso{ color:var(--cinza); font-size:13px; margin:0 0 14px; }
+  .grade{ display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:14px; }
+  .card{ background:#fff; border:1px solid var(--linha); border-radius:14px; overflow:hidden; cursor:pointer; }
+  .card img{ width:100%; aspect-ratio:4/3; object-fit:cover; display:block; background:#e5e9f2; }
+  .card .txt{ padding:10px 12px 12px; }
+  .card b{ font-size:14.5px; display:block; }
+  .card .v{ color:var(--cinza); font-size:12.5px; margin:2px 0 6px; height:32px; overflow:hidden; }
+  .card .p{ color:var(--azul); font-weight:800; font-size:16px; }
+  .card .cod{ font-size:11px; color:var(--cinza); }
+  .vazio{ color:var(--cinza); padding:30px 0; text-align:center; }
+  /* ficha */
+  .ficha{ position:fixed; inset:0; background:rgba(9,14,30,.75); display:none; z-index:20; overflow:auto; }
+  .ficha.on{ display:block; }
+  .ficha .box{ max-width:900px; margin:24px auto; background:#fff; border-radius:16px; overflow:hidden; }
+  .ficha .top{ display:flex; justify-content:space-between; align-items:flex-start; gap:12px;
+               padding:16px 18px; border-bottom:1px solid var(--linha); }
+  .ficha h2{ margin:0; font-size:19px; }
+  .ficha .fechar{ border:0; background:#eef1f7; border-radius:9px; padding:8px 12px; cursor:pointer; font-size:15px; }
+  .fotos{ display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:6px; padding:12px; }
+  .fotos img{ width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:8px; }
+  .specs{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; padding:0 18px 12px; }
+  .specs div{ background:#f6f8fc; border-radius:10px; padding:9px 12px; }
+  .specs span{ display:block; font-size:11.5px; color:var(--cinza); text-transform:uppercase; letter-spacing:.4px; }
+  .specs b{ font-size:15px; }
+  .loja{ padding:0 18px 18px; color:var(--cinza); font-size:13.5px; line-height:1.5; }
+  .loja b{ color:#111827; }
+  .zap{ display:inline-block; margin:0 18px 18px; background:#25d366; color:#fff; text-decoration:none;
+        padding:11px 18px; border-radius:10px; font-weight:800; }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Consulta de veículo &middot; Seminovos Diamante</h1>
+  <div class="busca">
+    <input id="q" placeholder="Cole o código do carro (ex.: 2599779) ou busque por modelo" autocomplete="off">
+    <button class="btn on" id="bFaixa">Foto com ano/km/preço</button>
+  </div>
+</div></header>
+<main class="wrap">
+  <p class="aviso" id="aviso"></p>
+  <div class="grade" id="grade"></div>
+</main>
+
+<div class="ficha" id="ficha"><div class="box" id="fbox"></div></div>
+
+<script>
+let CARROS = [], FAIXA = true;
+const $ = id => document.getElementById(id);
+const brl = v => 'R$ ' + (v||0).toLocaleString('pt-BR', {maximumFractionDigits:0});
+const km = v => (v||0).toLocaleString('pt-BR') + ' km';
+
+function foto(c){ return (FAIXA && c.faixa) ? c.faixa : (c.fotos[0]||''); }
+
+function render(lista){
+  $('aviso').textContent = lista.length + ' carro(s)' + (FAIXA ? ' — mostrando a foto COM a faixa' : ' — foto original');
+  $('grade').innerHTML = lista.length ? lista.map(c => `
+    <div class="card" onclick="abrir('${c.codigo}')">
+      <img src="${foto(c)}" alt="${c.titulo}" loading="lazy">
+      <div class="txt">
+        <b>${c.titulo}</b>
+        <div class="v">${c.versao||''}</div>
+        <div class="p">${brl(c.preco)}</div>
+        <div class="cod">${c.ano} &middot; ${km(c.km)} &middot; cód. ${c.codigo}</div>
+      </div>
+    </div>`).join('') : '<p class="vazio">Nenhum carro encontrado com esse código ou modelo.</p>';
+}
+
+function abrir(cod){
+  const c = CARROS.find(x => x.codigo === cod); if(!c) return;
+  $('fbox').innerHTML = `
+    <div class="top">
+      <div><h2>${c.titulo}</h2><div style="color:#64748b;font-size:14px">${c.versao||''}</div></div>
+      <button class="fechar" onclick="document.getElementById('ficha').classList.remove('on')">✕ fechar</button>
+    </div>
+    <div class="specs">
+      <div><span>Preço</span><b>${brl(c.preco)}</b></div>
+      <div><span>Ano</span><b>${c.ano||'-'}</b></div>
+      <div><span>KM</span><b>${km(c.km)}</b></div>
+      <div><span>Cor</span><b>${c.cor||'-'}</b></div>
+      <div><span>Câmbio</span><b>${c.cambio||'-'}</b></div>
+      <div><span>Combustível</span><b>${c.combustivel||'-'}</b></div>
+      <div><span>Carroceria</span><b>${c.carroceria||'-'}</b></div>
+      <div><span>Código</span><b>${c.codigo}</b></div>
+    </div>
+    <div class="loja"><b>Onde está:</b> ${c.loja}<br>${c.endereco||''}
+      ${c.acessorios && c.acessorios.length ? '<br><b>Opcionais:</b> ' + c.acessorios.join(', ') : ''}</div>
+    ${c.whatsapp ? `<a class="zap" target="_blank" href="https://wa.me/${c.whatsapp}">Abrir WhatsApp da loja</a>` : ''}
+    <div class="fotos">${c.fotos.map(u => `<img src="${u}" loading="lazy">`).join('')}</div>`;
+  $('ficha').classList.add('on');
+}
+
+function aplicar(){
+  const t = $('q').value.trim().toLowerCase();
+  if(!t) return render(CARROS);
+  const lista = CARROS.filter(c =>
+    c.codigo.includes(t) || (c.titulo+' '+c.versao).toLowerCase().includes(t));
+  render(lista);
+  if(lista.length === 1) abrir(lista[0].codigo);   // código exato abre a ficha direto
+}
+
+$('q').addEventListener('input', aplicar);
+$('bFaixa').onclick = () => { FAIXA = !FAIXA; $('bFaixa').classList.toggle('on', FAIXA);
+  $('bFaixa').textContent = FAIXA ? 'Foto com ano/km/preço' : 'Foto original'; aplicar(); };
+$('ficha').onclick = e => { if(e.target.id === 'ficha') $('ficha').classList.remove('on'); };
+
+fetch('estoque-operadora.json').then(r => r.json()).then(d => {
+  CARROS = d.carros || []; render(CARROS);
+  const p = new URLSearchParams(location.search).get('cod');
+  if(p){ $('q').value = p; aplicar(); }
+});
+</script>
+</body>
+</html>
