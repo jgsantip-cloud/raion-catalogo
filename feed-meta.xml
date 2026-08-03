@@ -4229,6 +4229,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
     <price>239890.00 BRL</price>
+    <exterior_color>Nao informado</exterior_color>
     <trim>2.4 BITURBO DIESEL CD HPE 4X4 AUTOMATICO</trim>
     <availability>out of stock</availability>
     <condition>used</condition>
@@ -4237,14 +4238,16 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <url>https://s3.agsistema.net/6625/vehicles/2765088/photos/u2EOjtWW3pmsSzhjwj95VyGvOrVTxDsy6BuY.jpg</url>
     </image>
     <address format="simple">
-      <component name="addr1">-</component>
-      <component name="city">Rio de Janeiro</component>
+      <component name="addr1">FRANCISCO DA CRUZ NUNES, 4830</component>
+      <component name="city">Niterói</component>
       <component name="region">RJ</component>
+      <component name="postal_code">24350-310</component>
       <component name="country">Brazil</component>
     </address>
-    <street_address>-</street_address>
-    <city>Rio de Janeiro</city>
+    <street_address>FRANCISCO DA CRUZ NUNES, 4830</street_address>
+    <city>Niterói</city>
     <region>RJ</region>
+    <postal_code>24350-310</postal_code>
     <country>Brazil</country>
   </listing>
   <listing>
@@ -4261,6 +4264,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
     <price>143890.00 BRL</price>
+    <exterior_color>Nao informado</exterior_color>
     <trim>2.0 VVT-IE FLEX XRE DIRECT SHIFT</trim>
     <availability>out of stock</availability>
     <condition>used</condition>
@@ -4269,14 +4273,16 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <url>https://s3.agsistema.net/6596/vehicles/2668347/photos/xFFhmMTwaN5lWUKyUga0xvtf0hXNEar1.jpg</url>
     </image>
     <address format="simple">
-      <component name="addr1">-</component>
+      <component name="addr1">ESTRADA DO MONTEIRO, 540</component>
       <component name="city">Rio de Janeiro</component>
       <component name="region">RJ</component>
+      <component name="postal_code">23045-830</component>
       <component name="country">Brazil</component>
     </address>
-    <street_address>-</street_address>
+    <street_address>ESTRADA DO MONTEIRO, 540</street_address>
     <city>Rio de Janeiro</city>
     <region>RJ</region>
+    <postal_code>23045-830</postal_code>
     <country>Brazil</country>
   </listing>
   <listing>
@@ -4293,6 +4299,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
     <price>59890.00 BRL</price>
+    <exterior_color>Nao informado</exterior_color>
     <trim>1.0 FLEX LT MANUAL</trim>
     <availability>out of stock</availability>
     <condition>used</condition>
@@ -4301,14 +4308,16 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <url>https://s3.agsistema.net/6594/vehicles/2739128/photos/is1AJFDrAncGGkMAcQXLgHC4oDbJcUAJ.jpg</url>
     </image>
     <address format="simple">
-      <component name="addr1">-</component>
-      <component name="city">Rio de Janeiro</component>
+      <component name="addr1">GOVERNADOR ROBERTO SILVEIRA, 217</component>
+      <component name="city">Nova Iguaçu</component>
       <component name="region">RJ</component>
+      <component name="postal_code">26210-210</component>
       <component name="country">Brazil</component>
     </address>
-    <street_address>-</street_address>
-    <city>Rio de Janeiro</city>
+    <street_address>GOVERNADOR ROBERTO SILVEIRA, 217</street_address>
+    <city>Nova Iguaçu</city>
     <region>RJ</region>
+    <postal_code>26210-210</postal_code>
     <country>Brazil</country>
   </listing>
 </listings>
