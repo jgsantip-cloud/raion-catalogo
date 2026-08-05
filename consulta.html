@@ -120,6 +120,10 @@ function abrir(cod){
 async function baixarFotos(cod){
   const c = CARROS.find(x => x.codigo === cod); if(!c || !c.fotos.length) return;
   const b = $('bBaixar'); b.disabled = true;
+  // Nome do arquivo = nome do carro + ano (pedido do João 04/08: "o nome do carro ao
+  // invés do código") — sem caracteres proibidos no Windows; ano desambigua gêmeos.
+  const nome = `${c.titulo} ${c.ano || ''}`.trim()
+      .replace(/[\\\/:*?"<>|]+/g, '').replace(/\s+/g, ' ');
   let ok = 0, falha = 0;
   for (let i = 0; i < c.fotos.length; i++){
     b.textContent = `Baixando ${i+1}/${c.fotos.length}…`;
@@ -129,7 +133,7 @@ async function baixarFotos(cod){
       const blob = await r.blob();
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
-      a.download = `${c.codigo}_${String(i+1).padStart(2,'0')}.jpg`;
+      a.download = `${nome}_${String(i+1).padStart(2,'0')}.jpg`;
       document.body.appendChild(a); a.click(); a.remove();
       setTimeout(u => URL.revokeObjectURL(u), 30000, a.href);
       ok++;
