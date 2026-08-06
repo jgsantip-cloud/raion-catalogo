@@ -286,7 +286,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-07-28",
-   "fipe_abaixo": null
+   "fipe_abaixo": "R$ 9 mil abaixo da FIPE"
   },
   {
    "id": "375ba215aed7",
@@ -844,7 +844,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-04-27",
-   "fipe_abaixo": null
+   "fipe_abaixo": "R$ 7 mil abaixo da FIPE"
   },
   {
    "id": "7cde53fea384",
@@ -862,7 +862,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-07-25",
-   "fipe_abaixo": "R$ 4 mil abaixo da FIPE"
+   "fipe_abaixo": null
   },
   {
    "id": "cc8b718fc18d",
@@ -880,7 +880,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-07-17",
-   "fipe_abaixo": null
+   "fipe_abaixo": "R$ 7 mil abaixo da FIPE"
   },
   {
    "id": "fb4acb08f5db",
