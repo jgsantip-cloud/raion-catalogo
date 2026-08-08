@@ -1361,7 +1361,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2761100.jpg?v=81504266</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2761100.jpg?v=c0bdb951</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6625/vehicles/2761100/photos/I57q4iWoKFMYI9hxh7ihywDUkGChTKdk.jpg</url>
@@ -1640,7 +1640,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>47001</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>259890.00 BRL</price>
+    <price>256890.00 BRL</price>
     <exterior_color>Preto</exterior_color>
     <fuel_type>DIESEL</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -1649,7 +1649,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Raion - Barra</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2591395.jpg?v=d6218103</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2591395.jpg?v=c890180c</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6698/vehicles/2591395/photos/8PAtTtiRCuiGSsuXURKf2En3irqHpa2X.jpg</url>
@@ -1849,7 +1849,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>48656</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>101890.00 BRL</price>
+    <price>97890.00 BRL</price>
     <exterior_color>Prata</exterior_color>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -1858,7 +1858,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Raion - Barra</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2670280.jpg?v=cfdf3c48</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2670280.jpg?v=8bdccb0d</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6698/vehicles/2670280/photos/RoG5SLA0xfUpapTW12yHcHMkr4XCfpDg.jpg</url>
@@ -2204,103 +2204,6 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
-    <vehicle_id>2743263</vehicle_id>
-    <title>Bmw 320i 2.0 16V TURBO GASOLINA SPORT AUTOMÁTICO</title>
-    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos possuem Vistoria Cautelar. 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Bmw%20320i%202.0%2016V%20TURBO%20GASOLINA%20SPORT%20AUTOM%C3%81TICO%202020%20%28c%C3%B3d.%202743263%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
-    <make>Bmw</make>
-    <model>320i</model>
-    <year>2020</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>42700</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>169890.00 BRL</price>
-    <exterior_color>Prata</exterior_color>
-    <fuel_type>GASOLINE</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SEDAN</body_style>
-    <trim>2.0 16V TURBO GASOLINA SPORT AUTOMÁTICO</trim>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Mitsubishi Raion - Barra</dealer_name>
-    <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2743263.jpg?v=e0bc8a4c</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/RiMPlsTR42L3etUuFtdtMNWfJ0AjAq1E.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/LBZqKNkLFgHDMKvR8yCpOyH3xh8ZBNMx.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/FAfWN1ce9eS0zostVzNNSz36KpGWq8CR.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/S3Pk1O4agr9Co2WLpCR0svZXbHVMw69a.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/jrQ4VknEJA0LjkW5zk8zjZnUOjQb4x4M.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/ioJavAgZXuHVaiqvQxSoYpHCMQT8p4CS.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/SkR9bLArjO3lAx3YDfVIGZBqgTbflRBV.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/Z7Us3nNhFweUvxyb9TZzxd5T0UoqAM3x.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/flPl2likbaM3voFolLyPKNLyaZAmSR6M.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/hWbiX3hcFaRURStj9k3aSL3yhWE3sjWt.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/rqKahm9JEiPA0bedhV3YaNM9RInJCLyN.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/y82yCqLF1MXBPUwWmh3wJs78pArHkE78.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/cLgkOsvHGASXny93iq6bzCF5LpzPAAyB.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/YqZSEa8y9bFWln6w9S9wYQxmmvUrWYlm.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/z7xP10PANbdNipaQYaSMa9Wz8MwSfhAc.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/mOSykqBA3tBVBEWLcj6br41TTypN4XZJ.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/9duJzDMSZZNjxnQN9QIGMtcVNh4jAJ0Z.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/547bU3l8rLdcDBtPd2BEMrl2t5aWrG3r.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">Av das Américas, 1730</component>
-      <component name="city">Rio de Janeiro</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">22640-101</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>Av das Américas, 1730</street_address>
-    <city>Rio de Janeiro</city>
-    <region>RJ</region>
-    <postal_code>22640-101</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
     <vehicle_id>2757060</vehicle_id>
     <title>Ram RAMPAGE 2.0 HURRICANE 4 TURBO GASOLINA R/T 4X4 AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -2419,7 +2322,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>20607</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>143890.00 BRL</price>
+    <price>142890.00 BRL</price>
     <exterior_color>Cinza</exterior_color>
     <fuel_type>GASOLINE</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -2428,7 +2331,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Taika Mitsubishi - Recreio</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2583435.jpg?v=ab34a313</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2583435.jpg?v=31669cae</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6699/vehicles/2583435/photos/app-photos-vs1FlaY9uHAJij5xyDKjNbzOUEriplFP.jpg</url>
@@ -2693,7 +2596,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>36750</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>262890.00 BRL</price>
+    <price>259890.00 BRL</price>
     <exterior_color>Preto</exterior_color>
     <fuel_type>DIESEL</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -2702,7 +2605,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Taika Mitsubishi - Recreio</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2643706.jpg?v=e863679d</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2643706.jpg?v=704cff26</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6699/vehicles/2643706/photos/app-photos-jRIAWWfGGnNOpqbeJBRYZStDHSqblfWQ.jpg</url>
@@ -2879,6 +2782,109 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     </image>
     <image>
       <url>https://s3.agsistema.net/6699/vehicles/2735640/photos/uLDK7SsuogGqOh42DvfAx7sSGQ1r5T0v.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">Av. das Américas, 17400</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">22790-704</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>Av. das Américas, 17400</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>22790-704</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2741429</vehicle_id>
+    <title>Mitsubishi L200 TRITON 2.4 16V TURBO DIESEL SPORT HPE-S CD 4P 4X4 AUTOMÁTICO</title>
+    <description>Somos um grupo de 14 concessionárias , Raion , que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos de altíssima procedência , possuem Vistoria Cautelar , revisados e com garantia. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20L200%20TRITON%202.4%2016V%20TURBO%20DIESEL%20SPORT%20HPE-S%20CD%204P%204X4%20AUTOM%C3%81TICO%202024%20%28c%C3%B3d.%202741429%29.%20%5BCATALOGO-META-RAION-RECREIO%5D</url>
+    <make>Mitsubishi</make>
+    <model>L200 TRITON</model>
+    <year>2024</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>70365</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>199890.00 BRL</price>
+    <exterior_color>Preto</exterior_color>
+    <fuel_type>DIESEL</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>TRUCK</body_style>
+    <trim>2.4 16V TURBO DIESEL SPORT HPE-S CD 4P 4X4 AUTOMÁT</trim>
+    <custom_label_0>DISPONIVEL</custom_label_0>
+    <dealer_name>Taika Mitsubishi - Recreio</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2741429.jpg?v=a72c03b3</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2741429/photos/app-photos-4GK2MAmSlwdUBgljgAQOjNelqm5DZGkE.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2741429/photos/app-photos-zdsnLR6aDvP5eaFKY8z1nNdkHOg1Xkho.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2741429/photos/app-photos-3bsBUDPLC0yj47xnztzKHaGpMA4Zqb7H.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2741429/photos/app-photos-vlvyDojjc3XrDsj08sbVrYrN90iBfoll.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2741429/photos/app-photos-StP5gRz4UvLoA8g1uKULYCSgjOS5oFfI.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2741429/photos/app-photos-pcEk7pCouRYLbMLN75Bx3htK5SVXSCqt.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2741429/photos/app-photos-JFa13hdf1GoDl3tO0XLxJxOum8js4q4K.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2741429/photos/app-photos-kj9G3cC7uyap1hHAMGsSO05HTkAUUt3E.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2741429/photos/app-photos-i0dQxJ4koAB6bBP2nDjlQttMo9aniO4G.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2741429/photos/app-photos-LfxM2q4eL1DiWvTVIRdsCyk2LQXLOqlI.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2741429/photos/app-photos-VOJHF1vMSqKbErJ48NqTVY9zeb8l3tYm.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2741429/photos/app-photos-bVpFvfk5Nv8gcf4R4YT21XyMHbGSGRgt.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2741429/photos/app-photos-OxXMz83dSQvikOIRWKoInxFepPE7LUqu.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2741429/photos/app-photos-inapwq4e63FBJpADRUiQZBBgQyD7css9.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2741429/photos/app-photos-GofXsrRTsNYPYAazx7UOoEcaH38GRK7v.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2741429/photos/app-photos-YkJJkqGw2tVoLLQjUoEpVnwEELjNpY6k.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2741429/photos/app-photos-h4X5zuXEN5kTgnoETP7vzR0Li5TO3dDR.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2741429/photos/app-photos-59D9aoMsPqddX8FNwsLzl64fVDHQn5lE.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2741429/photos/app-photos-RHJuQn0yzTbS8CxjtyXTUoFR1gK5Bt7O.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2741429/photos/app-photos-oCxacOUyWJWaK5aBZgevtYBlaZAEWvfo.jpg</url>
     </image>
     <address format="simple">
       <component name="addr1">Av. das Américas, 17400</component>
@@ -3207,6 +3213,79 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     </image>
     <image>
       <url>https://s3.agsistema.net/6699/vehicles/2753756/photos/2KC4FWbKWOJUJ1oEe5BhEc1MfJuN9poH.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">Av. das Américas, 17400</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">22790-704</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>Av. das Américas, 17400</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>22790-704</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2766653</vehicle_id>
+    <title>Volkswagen TERA 1.0 170 TSI COMFORT AUTOMÁTICO</title>
+    <description>Somos um grupo de 14 concessionárias , Raion , que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos de altíssima procedência , possuem Vistoria Cautelar , revisados e com garantia. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Volkswagen%20TERA%201.0%20170%20TSI%20COMFORT%20AUTOM%C3%81TICO%202026%20%28c%C3%B3d.%202766653%29.%20%5BCATALOGO-META-RAION-RECREIO%5D</url>
+    <make>Volkswagen</make>
+    <model>TERA</model>
+    <year>2026</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>22000</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>116890.00 BRL</price>
+    <exterior_color>Preto</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>1.0 170 TSI COMFORT AUTOMÁTICO</trim>
+    <custom_label_0>DISPONIVEL</custom_label_0>
+    <dealer_name>Taika Mitsubishi - Recreio</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2766653.jpg?v=0e525053</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2766653/photos/app-photos-kQGNS9hGeMFWGoTfy7qH3qTYTiOOS7nj.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2766653/photos/app-photos-X0IPFhbbrDEPnlJHRQ5ZrtiotBiZn12Y.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2766653/photos/app-photos-zpMna3BxTmiOnc2B2D6D2PRTKTC2QsMj.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2766653/photos/app-photos-0Iao1UZrqXjJsprOgDEJGsnTJ2Mg1Mk8.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2766653/photos/app-photos-YS31oxKIsDCTkhfzQWRbt0lZs3NhK6zo.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2766653/photos/app-photos-V9vMEApcUaqTSmk5lLlQtXvo2DPrjlzT.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2766653/photos/app-photos-IWjMn404gn0G67qwBE5VnaTQYrVwKtpO.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2766653/photos/app-photos-aNBv4NCKPrAMSedIfF7LMLSyHsf4Pgur.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2766653/photos/app-photos-K1Euf1rnOQHzpeD20Yd1CYiR4kmCcWFj.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2766653/photos/app-photos-4Gvj9dT6A0iYIFJizlOkc2WyRIycMLmi.jpg</url>
     </image>
     <address format="simple">
       <component name="addr1">Av. das Américas, 17400</component>
@@ -3841,7 +3920,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Raion ZEEKR - Barra</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2750737.jpg?v=39730608</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2750737.jpg?v=3f326bca</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6701/vehicles/2750737/photos/app-photos-QqYInzR25xHXIJduHRW0ByHBWcJjOeP2.jpg</url>
@@ -3987,7 +4066,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Raion ZEEKR - Barra</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2761102.jpg?v=31f9486c</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2761102.jpg?v=96d7b32d</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6701/vehicles/2761102/photos/app-photos-Mq4VKx8KTFv19RuaKJfwqL8VUpWDAAzB.jpg</url>
@@ -4695,6 +4774,103 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <city>Duque de Caxias</city>
     <region>RJ</region>
     <postal_code>25085-008</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2743263</vehicle_id>
+    <title>Bmw 320i 2.0 16V TURBO GASOLINA SPORT AUTOMÁTICO</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Bmw%20320i%202.0%2016V%20TURBO%20GASOLINA%20SPORT%20AUTOM%C3%81TICO%202020%20%28c%C3%B3d.%202743263%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
+    <make>Bmw</make>
+    <model>320i</model>
+    <year>2020</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>42700</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>169890.00 BRL</price>
+    <exterior_color>Prata</exterior_color>
+    <fuel_type>GASOLINE</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SEDAN</body_style>
+    <trim>2.0 16V TURBO GASOLINA SPORT AUTOMÁTICO</trim>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Mitsubishi Raion - Barra</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2743263.jpg?v=e0bc8a4c</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/RiMPlsTR42L3etUuFtdtMNWfJ0AjAq1E.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/LBZqKNkLFgHDMKvR8yCpOyH3xh8ZBNMx.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/FAfWN1ce9eS0zostVzNNSz36KpGWq8CR.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/S3Pk1O4agr9Co2WLpCR0svZXbHVMw69a.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/jrQ4VknEJA0LjkW5zk8zjZnUOjQb4x4M.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/ioJavAgZXuHVaiqvQxSoYpHCMQT8p4CS.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/SkR9bLArjO3lAx3YDfVIGZBqgTbflRBV.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/Z7Us3nNhFweUvxyb9TZzxd5T0UoqAM3x.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/flPl2likbaM3voFolLyPKNLyaZAmSR6M.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/hWbiX3hcFaRURStj9k3aSL3yhWE3sjWt.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/rqKahm9JEiPA0bedhV3YaNM9RInJCLyN.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/y82yCqLF1MXBPUwWmh3wJs78pArHkE78.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/cLgkOsvHGASXny93iq6bzCF5LpzPAAyB.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/YqZSEa8y9bFWln6w9S9wYQxmmvUrWYlm.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/z7xP10PANbdNipaQYaSMa9Wz8MwSfhAc.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/mOSykqBA3tBVBEWLcj6br41TTypN4XZJ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/9duJzDMSZZNjxnQN9QIGMtcVNh4jAJ0Z.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2743263/photos/547bU3l8rLdcDBtPd2BEMrl2t5aWrG3r.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">Av das Américas, 1730</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">22640-101</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>Av das Américas, 1730</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>22640-101</postal_code>
     <country>Brazil</country>
   </listing>
   <listing>
