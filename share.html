@@ -67,7 +67,7 @@ function render(c){
   document.getElementById('dl').onclick = (e)=>{ e.preventDefault(); baixar(c.arte, nome); };
 }
 
-fetch('estoque.json').then(r=>r.json()).then(d=>{
+fetch('estoque.json?v='+Date.now()).then(r=>r.json()).then(d=>{
   const c = (d.carros||[]).find(x=>x.id===id);
   if(c) render(c);
   else app.innerHTML = '<p class="erro" style="margin-top:40px">Carro nao encontrado. <a href="index.html">Ver estoque</a></p>';

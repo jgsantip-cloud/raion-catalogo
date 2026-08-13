@@ -153,7 +153,7 @@ function setModo(m){
 }
 
 document.getElementById('busca').addEventListener('input', aplicar);
-fetch('estoque.json').then(r=>r.json()).then(d=>{
+fetch('estoque.json?v='+Date.now()).then(r=>r.json()).then(d=>{
   CARROS = d.carros;
   EMBARALHADO = embaralhar(CARROS);   // padrão ao abrir = embaralhado
   aplicar();
