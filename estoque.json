@@ -46,7 +46,7 @@
    "km_fmt": "550 km",
    "preco": 369890.0,
    "preco_fmt": "R$ 369.890",
-   "capa": "https://s3.agsistema.net/6625/vehicles/2581846/photos/xt762ILJ1hWZHbOjzDeTXaxOXjxbltyb.jpg",
+   "capa": "https://s3.agsistema.net/6625/vehicles/2581846/photos/mIoYW6PHRyl64CH71mwoNNI2dW76c4W8.jpg",
    "arte": "artes/6bc46a25b513.png",
    "qr": "qr/6bc46a25b513.png",
    "blindado": false,
@@ -395,6 +395,24 @@
    "arte_pronta": true,
    "entrada": "2026-07-14",
    "fipe_abaixo": "R$ 10 mil abaixo da FIPE"
+  },
+  {
+   "id": "b1ee47479529",
+   "marca": "Nissan",
+   "titulo": "Nissan Kicks",
+   "versao": "1.0 TURBO FLEX PLATINUM DCT",
+   "ano": 2026,
+   "km": 2235,
+   "km_fmt": "2.235 km",
+   "preco": 169890.0,
+   "preco_fmt": "R$ 169.890",
+   "capa": "https://s3.agsistema.net/6595/vehicles/2782048/photos/9HSuaPqN15847bNiA0TT38tpwEIz7Jkf.jpg",
+   "arte": "artes/b1ee47479529.png",
+   "qr": "qr/b1ee47479529.png",
+   "blindado": false,
+   "arte_pronta": true,
+   "entrada": "2026-08-11",
+   "fipe_abaixo": null
   },
   {
    "id": "7f5b59966913",
@@ -862,6 +880,24 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-07-29",
+   "fipe_abaixo": null
+  },
+  {
+   "id": "447957c69862",
+   "marca": "Hyundai",
+   "titulo": "Hyundai Hb20S",
+   "versao": "1.0 12V FLEX EVOLUTION MANUAL",
+   "ano": 2022,
+   "km": 71740,
+   "km_fmt": "71.740 km",
+   "preco": 66890.0,
+   "preco_fmt": "R$ 66.890",
+   "capa": "https://s3.agsistema.net/6703/vehicles/2755198/photos/9Rd03uxscFhfQ7HLenXMGfQdxApGNqPs.jpg",
+   "arte": "artes/447957c69862.png",
+   "qr": "qr/447957c69862.png",
+   "blindado": false,
+   "arte_pronta": true,
+   "entrada": "2026-07-27",
    "fipe_abaixo": null
   },
   {
