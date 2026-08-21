@@ -251,7 +251,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>32717</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>97890.00 BRL</price>
+    <price>95890.00 BRL</price>
     <exterior_color>Branco</exterior_color>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -260,7 +260,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Duque de Caxias</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2748663.jpg?v=889061ac</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2748663.jpg?v=e44b3793</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6595/vehicles/2748663/photos/8ewHpWgWuDQedm6eJUIrjn8Ez8U7ALdX.jpg</url>
@@ -339,7 +339,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>21300</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>139890.00 BRL</price>
+    <price>134890.00 BRL</price>
     <exterior_color>Prata</exterior_color>
     <fuel_type>GASOLINE</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -348,7 +348,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Duque de Caxias</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2754189.jpg?v=df9ec46e</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2754189.jpg?v=38d11c21</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6595/vehicles/2754189/photos/OclrVDwVMOseTcTwxVaGs6fLJ33TzydR.jpg</url>
@@ -509,7 +509,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>108928</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>87890.00 BRL</price>
+    <price>81890.00 BRL</price>
     <exterior_color>Cinza</exterior_color>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -518,7 +518,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Duque de Caxias</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2766929.jpg?v=e8853f0e</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2766929.jpg?v=db72f878</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/1z3Wwghi3zNCDhOM1Sqhoz5rYCkC6gH4.jpg</url>
@@ -597,7 +597,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>20658</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>98890.00 BRL</price>
+    <price>96890.00 BRL</price>
     <exterior_color>Prata</exterior_color>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -606,7 +606,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Duque de Caxias</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2780606.jpg?v=494ec76e</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2780606.jpg?v=2aaf5199</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6595/vehicles/2780606/photos/5qMx2NGyIKUCADP537jizsqRpbiqJLW5.jpg</url>
@@ -749,6 +749,76 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     </image>
     <image>
       <url>https://s3.agsistema.net/6595/vehicles/2782048/photos/6qutQwjhgEAAS4N0qqLECvxe8dwtxkAS.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">WASHINGTON LUIZ, 1375</component>
+      <component name="city">Duque de Caxias</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">25085-008</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>WASHINGTON LUIZ, 1375</street_address>
+    <city>Duque de Caxias</city>
+    <region>RJ</region>
+    <postal_code>25085-008</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2794925</vehicle_id>
+    <title>Honda CITY 1.5 i-VTEC FLEX EXL CVT</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Honda%20CITY%201.5%20i-VTEC%20FLEX%20EXL%20CVT%202024%20%28c%C3%B3d.%202794925%29.%20%5BCATALOGO-META-KEIKO-DUQUE-DE-CAXIAS%5D</url>
+    <make>Honda</make>
+    <model>CITY</model>
+    <year>2024</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>62000</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>105890.00 BRL</price>
+    <exterior_color>Prata</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>HATCHBACK</body_style>
+    <trim>1.5 i-VTEC FLEX EXL CVT</trim>
+    <custom_label_0>DISPONIVEL</custom_label_0>
+    <dealer_name>Nissan Keiko - Duque de Caxias</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2794925.jpg?v=2db6005a</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2794925/photos/qukVuXSscsuY3jvY6PDHy3x9xncoUH1FzCrg.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2794925/photos/sEeKdLFHEHGClzvbfWgQNd1xtl9vKjCSlBMv.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2794925/photos/ii0GC36XmwWOPpkwlHWkPsEx8XVrS06ks3tR.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2794925/photos/qanaDW4DJ1JSMS3Xqvt7FHSDOyY1ZRqOR7bu.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2794925/photos/uCwy2Uupeirs8RprO9U2TlkggaNixyq2vFph.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2794925/photos/EMZm8pDosYRrOBs55gF9MuzKtwuLyvMz95jO.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2794925/photos/JlXBHNfJs4KIfZ32S20Lt3j3wGX35qgXWmHo.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2794925/photos/BMDS13g0udNkb9Ze5JTRNx4d5Wyku24CtSqK.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2794925/photos/870Rm6Qiv8r9ki57cv4uoi0HqFju4Ysgv9go.jpg</url>
     </image>
     <address format="simple">
       <component name="addr1">WASHINGTON LUIZ, 1375</component>
@@ -1821,7 +1891,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <year>2025</year>
     <mileage>
       <unit>KM</unit>
-      <value>51778</value>
+      <value>51749</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
     <price>219890.00 BRL</price>
@@ -1833,7 +1903,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2777527.jpg?v=aa7127f5</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2777527.jpg?v=da072189</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6625/vehicles/2777527/photos/tj0d9TuZL3JahJLi1AHrOCRlu3p8MIRn.jpg</url>
@@ -2142,6 +2212,85 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
+    <vehicle_id>2794924</vehicle_id>
+    <title>Mitsubishi ECLIPSE CROSS 1.5 MIVEC TURBO GASOLINA HPE-S S-AWC CVT</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20ECLIPSE%20CROSS%201.5%20MIVEC%20TURBO%20GASOLINA%20HPE-S%20S-AWC%20CVT%202025%20%28c%C3%B3d.%202794924%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <make>Mitsubishi</make>
+    <model>ECLIPSE CROSS</model>
+    <year>2025</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>44435</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>154890.00 BRL</price>
+    <exterior_color>Branco</exterior_color>
+    <fuel_type>GASOLINE</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>TRUCK</body_style>
+    <trim>1.5 MIVEC TURBO GASOLINA HPE-S S-AWC CVT</trim>
+    <custom_label_0>DISPONIVEL</custom_label_0>
+    <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2794924.jpg?v=43edf7e6</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/jcL6EezPZNjiozr7KsRReNE5kdPMZsZzvE65.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/QTnUnjHev59ysnYfAkxhvGr3lqhuQCTsZkDz.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/RzA1QmsYsyUQm2BzXShWVBZj0fHFZgYVPdub.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/nqsPkPCvtMCAGm8R5GTpbaTwgp7BN9sjrEqU.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/iUwzavI4IKAdUW2z8XzGXZ5LFT6Rl3fQnWyM.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/fO0x2wraww8fipTKtkuarfdAQVvI33AgxCQW.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/subTv5TjZMEshDa1AfgVX4lx4H7DrxfZzu6w.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/4nGDegEa71us6apsNOLxAC0g66o6h1TQSkai.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/EzG1WkbKjhO4HhzflQnUJCew7CgGofdOEqo5.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/JvGCjwESSPFzwaVHtYdJcQLfGWPix0FImysY.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/qpd8epMaWbFmqW6krxHLaOlhIvuz1ABChd89.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/rBrbLcnlkYPLQ92I2J8WbmMnz8op4rloSQWd.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">FRANCISCO DA CRUZ NUNES, 4830</component>
+      <component name="city">Niterói</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">24350-310</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>FRANCISCO DA CRUZ NUNES, 4830</street_address>
+    <city>Niterói</city>
+    <region>RJ</region>
+    <postal_code>24350-310</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
     <vehicle_id>2591395</vehicle_id>
     <title>Mitsubishi PAJERO SPORT 2.4 16V MIVEC TURBO DIESEL HPE AWD AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -2160,7 +2309,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>47001</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>256890.00 BRL</price>
+    <price>248890.00 BRL</price>
     <exterior_color>Preto</exterior_color>
     <fuel_type>DIESEL</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -2169,7 +2318,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Raion - Barra</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2591395.jpg?v=c890180c</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2591395.jpg?v=0abf617b</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6698/vehicles/2591395/photos/8PAtTtiRCuiGSsuXURKf2En3irqHpa2X.jpg</url>
@@ -2257,7 +2406,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <year>2024</year>
     <mileage>
       <unit>KM</unit>
-      <value>5</value>
+      <value>29954</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
     <price>113890.00 BRL</price>
@@ -2269,7 +2418,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Raion - Barra</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2603431.jpg?v=f5e5feab</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2603431.jpg?v=44f91c7e</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6698/vehicles/2603431/photos/Qy5ismW1oSldZn5AMODV9lJL8LgCvQvC.jpg</url>
@@ -2460,7 +2609,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>14585</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>143890.00 BRL</price>
+    <price>139890.00 BRL</price>
     <exterior_color>Cinza</exterior_color>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -2469,7 +2618,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Raion - Barra</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2699668.jpg?v=60206ac4</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2699668.jpg?v=85504db0</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6698/vehicles/2699668/photos/qKP2SSyE54n6SLn7qXpjnIX3DyKMnK0t.jpg</url>
@@ -2551,7 +2700,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>34000</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>173890.00 BRL</price>
+    <price>169890.00 BRL</price>
     <exterior_color>Vermelho</exterior_color>
     <fuel_type>GASOLINE</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -2560,7 +2709,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Raion - Barra</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2735314.jpg?v=4686c12c</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2735314.jpg?v=0be68570</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6698/vehicles/2735314/photos/9IKBt2eQFpcY7S4RN1xnIBKXunFFeyBf.jpg</url>
@@ -2909,6 +3058,191 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     </image>
     <image>
       <url>https://s3.agsistema.net/6698/vehicles/2774604/photos/1jtp4ffX46GMOGWVjFQeTO5LqCPm8Xz9.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">Av das Américas, 1730</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">22640-101</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>Av das Américas, 1730</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>22640-101</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2778372</vehicle_id>
+    <title>Honda HR-V 1.8 16V FLEX EXL 4P AUTOMÁTICO</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Honda%20HR-V%201.8%2016V%20FLEX%20EXL%204P%20AUTOM%C3%81TICO%202021%20%28c%C3%B3d.%202778372%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
+    <make>Honda</make>
+    <model>HR-V</model>
+    <year>2021</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>58000</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>112890.00 BRL</price>
+    <exterior_color>Azul</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>1.8 16V FLEX EXL 4P AUTOMÁTICO</trim>
+    <custom_label_0>DISPONIVEL</custom_label_0>
+    <dealer_name>Mitsubishi Raion - Barra</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2778372.jpg?v=c0171869</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2778372/photos/7EeZBk6pfZlBzXZnEOeAG4kPnvGUwhze.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2778372/photos/cG7HVnl3s3lsRCYr3TypwNtzxHMwROXw.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2778372/photos/g6wr5smv7A9NjmsRINzxjSCu9Sk6vTRA.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2778372/photos/9VNxe50ulRvkhp304mrc3q6JTtwifPdj.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2778372/photos/zMdKRSsbsbxGBrVmgro45EtDid5pUv0i.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2778372/photos/NF4k8h0uZfUf82Nl9Y3iLcDN8bI0tYHN.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2778372/photos/BSAVsKvfwU0Is2sVWj3WW8XtmI1kSt7t.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2778372/photos/4d8sMdmKyjsujcwA6IB8ppEB0dFyuhh5.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2778372/photos/g56CHZmwJEQLLRPuzmeGmnXem0FaBR1J.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2778372/photos/2URQhV69Hz61bcG7k0k4YI0mwqHf1ABY.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2778372/photos/NSNfKg00NKchQt5YB4N3BNpg8XXxCC27.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2778372/photos/222dxvWaRnbsfMHmv5vrR3NitSSGY2wS.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2778372/photos/N6s1XAeYKbYAGQXQmUHEQDI0B46QwZZp.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2778372/photos/N6omlTX255MBl1Hj0Ql56IxBWpde9EoL.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2778372/photos/07do1y1Uis0OSpNQSGBAKGGervRSzUz8.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2778372/photos/Nk9pXF48dHqYA7gWJPA0DOs6O2bZE5dN.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2778372/photos/2YM4TwtOWEVdqZlmwYAXDtbCikDVT5oY.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">Av das Américas, 1730</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">22640-101</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>Av das Américas, 1730</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>22640-101</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2789001</vehicle_id>
+    <title>Toyota COROLLA CROSS 1.8 VVT-I HYBRID FLEX XRX CVT</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Toyota%20COROLLA%20CROSS%201.8%20VVT-I%20HYBRID%20FLEX%20XRX%20CVT%202026%20%28c%C3%B3d.%202789001%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
+    <make>Toyota</make>
+    <model>COROLLA CROSS</model>
+    <year>2026</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>7390</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>249890.00 BRL</price>
+    <exterior_color>Preto</exterior_color>
+    <fuel_type>HYBRID</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>1.8 VVT-I HYBRID FLEX XRX CVT</trim>
+    <custom_label_0>DISPONIVEL</custom_label_0>
+    <dealer_name>Mitsubishi Raion - Barra</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2789001.jpg?v=28423f20</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2789001/photos/Zl0Rc1CulXi9o8Rud6XgEGPrwHDo6vQK.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2789001/photos/8PR25YMFlMlc0jn6UgZwgSV764L7fAfg.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2789001/photos/t2uto1ufu2Y7BMAclhDQ1dNJ1bLYJYs6.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2789001/photos/f22ugloiJkMAqiTenEuRrK8q0wuJ4xba.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2789001/photos/VziOqXCIELX9NauVVr3aqrfz8iT8KqNi.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2789001/photos/fC89fjRGt5OQvLxsJwMdMVSZ0y5XwkV4.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2789001/photos/2N6Palxh95mnDEjCUHLtFY9mWUDFJUN2.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2789001/photos/waIYlDV6MOrUcZPSxTwkPOfuUCFm34IY.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2789001/photos/PZuyoYXRzZa5Euac4fGw1QyxcODtZb1g.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2789001/photos/9p7DPtWV0PcufQXsD6ZMKFDznKU7Q49C.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2789001/photos/Ms3A8eZX07BOpDPT7b7qVZfiPGyRNXXQ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2789001/photos/MD2ciwDttMUBp0cjq958vj24nwheqRXD.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2789001/photos/08W9LuS9p3BkO11SjDvVcHjT4gtJxLDH.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2789001/photos/AV745Sd6yvMufeAHNWK9sctf5F4xuCDd.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2789001/photos/Rlklk62WPRiWHpQroSPsLMkbG856N3vO.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2789001/photos/Rmp1ptifnASNWPdNAztgbAnZXA6UC4kf.jpg</url>
     </image>
     <address format="simple">
       <component name="addr1">Av das Américas, 1730</component>
@@ -4707,70 +5041,6 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
-    <vehicle_id>2663296</vehicle_id>
-    <title>Honda CITY 1.5 i-VTEC FLEX EXL CVT</title>
-    <description>Honda CITY 1.5 i-VTEC FLEX EXL CVT</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Honda%20CITY%201.5%20i-VTEC%20FLEX%20EXL%20CVT%202024%20%28c%C3%B3d.%202663296%29.%20%5BCATALOGO-META-SEMINOVOS-BARRA-MANSA%5D</url>
-    <make>Honda</make>
-    <model>CITY</model>
-    <year>2024</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>62000</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>105890.00 BRL</price>
-    <exterior_color>Prata</exterior_color>
-    <fuel_type>FLEX</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>HATCHBACK</body_style>
-    <trim>1.5 i-VTEC FLEX EXL CVT</trim>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Raion Seminovos - Barra Mansa</dealer_name>
-    <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2663296.jpg?v=23024396</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/KkUPuupVb5j0iI2JHS2NLrsY0dxsxIk9.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/DhQwKDGlC1bosoFYX4eDQXzViH496P2b.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/yrZ64JveL0TXvOHivAsMPZbGbec9tCqV.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/W5vEyr2BS2Wt3GwCbrelXFjS1guHSZNK.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/HJGlfpmJ2Eej0M1Q2fQMIeVWjIPu5xiF.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/ELUGnTiBQOrpv5wvIEsv1RLfSpNqX3Pt.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/iE4cFl9s151V24v2LVwfgZY570TCehgh.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/xbj9Gv3A89dRYaf5CsKDYG2g0TqEjwax.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/aDELRMSvOEPtjgWCqrZf4TQo2W1nnynM.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">RUA ANTONIO LUIZ PIRES, 20</component>
-      <component name="city">Barra Mansa</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">27332-360</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>RUA ANTONIO LUIZ PIRES, 20</street_address>
-    <city>Barra Mansa</city>
-    <region>RJ</region>
-    <postal_code>27332-360</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
     <vehicle_id>2766654</vehicle_id>
     <title>Ford KA 1.0 TI-VCT FLEX SE PLUS SEDAN MANUAL</title>
     <description>Ford KA 1.0 TI-VCT FLEX SE PLUS SEDAN MANUAL</description>
@@ -4814,6 +5084,70 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     </image>
     <image>
       <url>https://s3.agsistema.net/7207/vehicles/2766654/photos/Oaan87OH9KNRXOWkFkPn0C1W8DFJxrT7.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">RUA ANTONIO LUIZ PIRES, 20</component>
+      <component name="city">Barra Mansa</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">27332-360</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>RUA ANTONIO LUIZ PIRES, 20</street_address>
+    <city>Barra Mansa</city>
+    <region>RJ</region>
+    <postal_code>27332-360</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2789877</vehicle_id>
+    <title>Volkswagen FOX 1.6 MSI TOTAL FLEX CONNECT 4P MANUAL</title>
+    <description>Volkswagen FOX 1.6 MSI TOTAL FLEX CONNECT 4P MANUAL</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Volkswagen%20FOX%201.6%20MSI%20TOTAL%20FLEX%20CONNECT%204P%20MANUAL%202019%20%28c%C3%B3d.%202789877%29.%20%5BCATALOGO-META-SEMINOVOS-BARRA-MANSA%5D</url>
+    <make>Volkswagen</make>
+    <model>FOX</model>
+    <year>2019</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>118837</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>56890.00 BRL</price>
+    <exterior_color>Preto</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>MANUAL</transmission>
+    <body_style>HATCHBACK</body_style>
+    <trim>1.6 MSI TOTAL FLEX CONNECT 4P MANUAL</trim>
+    <custom_label_0>DISPONIVEL</custom_label_0>
+    <dealer_name>Raion Seminovos - Barra Mansa</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2789877.jpg?v=cb34f6df</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2789877/photos/kRHow0R3FgUMenmbWolFjd5FJT3AqVl3.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2789877/photos/6gk0QPsaVKK8RE5RWFhE3EgIpwnAFfns.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2789877/photos/52W0cx6ksim4yiiM12GP7nv33Vyuuw2j.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2789877/photos/Ayt2OtBOIGNGRK04BBpEsnYxoDXaBjFh.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2789877/photos/5xDVkX7AaVb30439Fa5mvnUJfg4poQxE.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2789877/photos/xQbBU9d4Ka9tTB3xamEkKAdauAuEY6Y8.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2789877/photos/h377tRkRQ7J7VKvxqCHTo9ysV7jpDz2w.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2789877/photos/JzE2yOdB2rEJEaMPvXZkoCFajsFRRFsy.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2789877/photos/U2CrSlLKmtoGnbSuLVrNYFLpqRRns7PZ.jpg</url>
     </image>
     <address format="simple">
       <component name="addr1">RUA ANTONIO LUIZ PIRES, 20</component>
@@ -6172,6 +6506,70 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     </image>
     <image>
       <url>https://s3.agsistema.net/7207/vehicles/2663294/photos/C1ryFmLk4QajYJ8hYIB16ItJ3qgr66n7.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">RUA ANTONIO LUIZ PIRES, 20</component>
+      <component name="city">Barra Mansa</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">27332-360</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>RUA ANTONIO LUIZ PIRES, 20</street_address>
+    <city>Barra Mansa</city>
+    <region>RJ</region>
+    <postal_code>27332-360</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2663296</vehicle_id>
+    <title>Honda CITY 1.5 i-VTEC FLEX EXL CVT</title>
+    <description>Honda CITY 1.5 i-VTEC FLEX EXL CVT</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Honda%20CITY%201.5%20i-VTEC%20FLEX%20EXL%20CVT%202024%20%28c%C3%B3d.%202663296%29.%20%5BCATALOGO-META-SEMINOVOS-BARRA-MANSA%5D</url>
+    <make>Honda</make>
+    <model>CITY</model>
+    <year>2024</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>62000</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>105890.00 BRL</price>
+    <exterior_color>Prata</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>HATCHBACK</body_style>
+    <trim>1.5 i-VTEC FLEX EXL CVT</trim>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Raion Seminovos - Barra Mansa</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2663296.jpg?v=23024396</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/KkUPuupVb5j0iI2JHS2NLrsY0dxsxIk9.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/DhQwKDGlC1bosoFYX4eDQXzViH496P2b.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/yrZ64JveL0TXvOHivAsMPZbGbec9tCqV.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/W5vEyr2BS2Wt3GwCbrelXFjS1guHSZNK.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/HJGlfpmJ2Eej0M1Q2fQMIeVWjIPu5xiF.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/ELUGnTiBQOrpv5wvIEsv1RLfSpNqX3Pt.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/iE4cFl9s151V24v2LVwfgZY570TCehgh.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/xbj9Gv3A89dRYaf5CsKDYG2g0TqEjwax.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/aDELRMSvOEPtjgWCqrZf4TQo2W1nnynM.jpg</url>
     </image>
     <address format="simple">
       <component name="addr1">RUA ANTONIO LUIZ PIRES, 20</component>
