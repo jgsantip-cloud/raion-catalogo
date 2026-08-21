@@ -163,24 +163,6 @@
    "fipe_abaixo": null
   },
   {
-   "id": "15c2da80ba7a",
-   "marca": "Mitsubishi",
-   "titulo": "Mitsubishi Pajero Sport",
-   "versao": "2.4 16V MIVEC TURBO DIESEL HPE AWD AUTOMÁTICO",
-   "ano": 2024,
-   "km": 47001,
-   "km_fmt": "47.001 km",
-   "preco": 256890.0,
-   "preco_fmt": "R$ 256.890",
-   "capa": "https://s3.agsistema.net/6698/vehicles/2591395/photos/bh0xEVq1CHSzUyet5iz3UEIe9Aehhk2J.jpg",
-   "arte": "artes/15c2da80ba7a.png",
-   "qr": "qr/15c2da80ba7a.png",
-   "blindado": false,
-   "arte_pronta": true,
-   "entrada": "2026-04-27",
-   "fipe_abaixo": "R$ 23 mil abaixo da FIPE"
-  },
-  {
    "id": "e100a898e606",
    "marca": "Toyota",
    "titulo": "Toyota Corolla Cross",
@@ -233,6 +215,24 @@
    "arte_pronta": true,
    "entrada": "2026-07-09",
    "fipe_abaixo": "R$ 10 mil abaixo da FIPE"
+  },
+  {
+   "id": "15c2da80ba7a",
+   "marca": "Mitsubishi",
+   "titulo": "Mitsubishi Pajero Sport",
+   "versao": "2.4 16V MIVEC TURBO DIESEL HPE AWD AUTOMÁTICO",
+   "ano": 2024,
+   "km": 47001,
+   "km_fmt": "47.001 km",
+   "preco": 248890.0,
+   "preco_fmt": "R$ 248.890",
+   "capa": "https://s3.agsistema.net/6698/vehicles/2591395/photos/bh0xEVq1CHSzUyet5iz3UEIe9Aehhk2J.jpg",
+   "arte": "artes/15c2da80ba7a.png",
+   "qr": "qr/15c2da80ba7a.png",
+   "blindado": false,
+   "arte_pronta": true,
+   "entrada": "2026-04-27",
+   "fipe_abaixo": "R$ 31 mil abaixo da FIPE"
   },
   {
    "id": "77d7971246f8",
@@ -379,24 +379,6 @@
    "fipe_abaixo": "R$ 9 mil abaixo da FIPE"
   },
   {
-   "id": "375ba215aed7",
-   "marca": "Mitsubishi",
-   "titulo": "Mitsubishi Eclipse Cross",
-   "versao": "1.5 MIVEC TURBO GASOLINA HPE-S S-AWC CVT",
-   "ano": 2026,
-   "km": 34000,
-   "km_fmt": "34.000 km",
-   "preco": 173890.0,
-   "preco_fmt": "R$ 173.890",
-   "capa": "https://s3.agsistema.net/6698/vehicles/2735314/photos/emOIOPDJDPsQvWTWvedBzTCh0ns8dBzF.jpg",
-   "arte": "artes/375ba215aed7.png",
-   "qr": "qr/375ba215aed7.png",
-   "blindado": false,
-   "arte_pronta": true,
-   "entrada": "2026-07-14",
-   "fipe_abaixo": "R$ 10 mil abaixo da FIPE"
-  },
-  {
    "id": "b1ee47479529",
    "marca": "Nissan",
    "titulo": "Nissan Kicks",
@@ -431,6 +413,24 @@
    "arte_pronta": true,
    "entrada": "2026-06-10",
    "fipe_abaixo": "R$ 8 mil abaixo da FIPE"
+  },
+  {
+   "id": "375ba215aed7",
+   "marca": "Mitsubishi",
+   "titulo": "Mitsubishi Eclipse Cross",
+   "versao": "1.5 MIVEC TURBO GASOLINA HPE-S S-AWC CVT",
+   "ano": 2026,
+   "km": 34000,
+   "km_fmt": "34.000 km",
+   "preco": 169890.0,
+   "preco_fmt": "R$ 169.890",
+   "capa": "https://s3.agsistema.net/6698/vehicles/2735314/photos/emOIOPDJDPsQvWTWvedBzTCh0ns8dBzF.jpg",
+   "arte": "artes/375ba215aed7.png",
+   "qr": "qr/375ba215aed7.png",
+   "blindado": false,
+   "arte_pronta": true,
+   "entrada": "2026-07-14",
+   "fipe_abaixo": "R$ 14 mil abaixo da FIPE"
   },
   {
    "id": "2b23990e6052",
@@ -505,6 +505,24 @@
    "fipe_abaixo": "R$ 7 mil abaixo da FIPE"
   },
   {
+   "id": "ca87c3989b57",
+   "marca": "Mitsubishi",
+   "titulo": "Mitsubishi Eclipse Cross",
+   "versao": "1.5 MIVEC TURBO GASOLINA HPE-S S-AWC CVT",
+   "ano": 2025,
+   "km": 44435,
+   "km_fmt": "44.435 km",
+   "preco": 154890.0,
+   "preco_fmt": "R$ 154.890",
+   "capa": "https://s3.agsistema.net/6625/vehicles/2794924/photos/NqOS6FzC0CsgehaZazNsXw6cBpw1Q295excu.jpg",
+   "arte": "artes/ca87c3989b57.png",
+   "qr": "qr/ca87c3989b57.png",
+   "blindado": false,
+   "arte_pronta": true,
+   "entrada": "2026-08-20",
+   "fipe_abaixo": "R$ 12 mil abaixo da FIPE"
+  },
+  {
    "id": "5193f415bab1",
    "marca": "Nissan",
    "titulo": "Nissan Sentra",
@@ -548,15 +566,15 @@
    "ano": 2026,
    "km": 14585,
    "km_fmt": "14.585 km",
-   "preco": 143890.0,
-   "preco_fmt": "R$ 143.890",
+   "preco": 139890.0,
+   "preco_fmt": "R$ 139.890",
    "capa": "https://s3.agsistema.net/6698/vehicles/2699668/photos/4PuaaDuckljxE2CbasTX2q5RRQuEd8Lb.jpg",
    "arte": "artes/59cb81e8dd54.png",
    "qr": "qr/59cb81e8dd54.png",
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-06-23",
-   "fipe_abaixo": "R$ 6 mil abaixo da FIPE"
+   "fipe_abaixo": "R$ 10 mil abaixo da FIPE"
   },
   {
    "id": "1576a757eaeb",
@@ -737,6 +755,24 @@
    "arte_pronta": true,
    "entrada": "2026-05-30",
    "fipe_abaixo": "R$ 7 mil abaixo da FIPE"
+  },
+  {
+   "id": "d061810d72a0",
+   "marca": "Honda",
+   "titulo": "Honda City",
+   "versao": "1.5 i-VTEC FLEX EXL CVT",
+   "ano": 2024,
+   "km": 62000,
+   "km_fmt": "62.000 km",
+   "preco": 105890.0,
+   "preco_fmt": "R$ 105.890",
+   "capa": "https://s3.agsistema.net/6595/vehicles/2794925/photos/79D4sGTl0qs1l9xtCEUilYfdPHaC0tQqkoOI.jpg",
+   "arte": "artes/d061810d72a0.png",
+   "qr": "qr/d061810d72a0.png",
+   "blindado": false,
+   "arte_pronta": true,
+   "entrada": "2026-08-20",
+   "fipe_abaixo": "R$ 8 mil abaixo da FIPE"
   },
   {
    "id": "6038a6ad9b01",
