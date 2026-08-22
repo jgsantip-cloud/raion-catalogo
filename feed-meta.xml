@@ -491,6 +491,88 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
+    <vehicle_id>2763857</vehicle_id>
+    <title>Nissan KICKS 1.6 16V FLEXSTART SV 4P XTRONIC</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20KICKS%201.6%2016V%20FLEXSTART%20SV%204P%20XTRONIC%202020%20%28c%C3%B3d.%202763857%29.%20%5BCATALOGO-META-KEIKO-DUQUE-DE-CAXIAS%5D</url>
+    <make>Nissan</make>
+    <model>KICKS</model>
+    <year>2020</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>68503</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>85890.00 BRL</price>
+    <exterior_color>Prata</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>1.6 16V FLEXSTART SV 4P XTRONIC</trim>
+    <custom_label_0>DISPONIVEL</custom_label_0>
+    <dealer_name>Nissan Keiko - Duque de Caxias</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2763857.jpg?v=17fc23fe</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2763857/photos/vRx8kHXHzbVYsuN1AEVBNRDgTwgHIgps.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2763857/photos/HSTRA04K2pJvn8EjHJ7tTGTfJggf619A.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2763857/photos/8M9hahkhm6cZwzvohCFW9XWJebZWopeS.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2763857/photos/nrIesxq0PNJpHAiaPlNjydpr7B3xhFcz.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2763857/photos/sFa6kthqj3UwNZDR7l46z8X9WhltHQfu.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2763857/photos/gIYD6894PDswiCMIiqbjtq2awYSH4d6l.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2763857/photos/GYwlRKnfAagIhsVyQeXx6WnIhyEDvbU8.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2763857/photos/zeUOZlGZcIzQp61gE7owMcCCnBx2gsg5.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2763857/photos/PnF74Fv6XaBJY9dDZW61Cd2XfMIbG7EJ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2763857/photos/6eyf783WjykgeYpesGp2Ut9ixCJu7gOG.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2763857/photos/2UjXyVX2FagoCBkBs4lUqrkcfIsTHAFw.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2763857/photos/xUR0eRhjGv2K7y49ogaPJCveOaNrD3mh.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2763857/photos/wNIu9rh5FstG1YMoQW7CjPjaze6SubEX.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">WASHINGTON LUIZ, 1375</component>
+      <component name="city">Duque de Caxias</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">25085-008</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>WASHINGTON LUIZ, 1375</street_address>
+    <city>Duque de Caxias</city>
+    <region>RJ</region>
+    <postal_code>25085-008</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
     <vehicle_id>2766929</vehicle_id>
     <title>Nissan VERSA 1.6 16V FLEX ADVANCE XTRONIC</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -676,7 +758,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <year>2026</year>
     <mileage>
       <unit>KM</unit>
-      <value>2235</value>
+      <value>2258</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
     <price>169890.00 BRL</price>
@@ -688,7 +770,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Duque de Caxias</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2782048.jpg?v=c684bf1b</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2782048.jpg?v=c2740c5b</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6595/vehicles/2782048/photos/FteJq6Zy7Coo4v6e2WLg735a38pCok54.jpg</url>
@@ -791,7 +873,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Duque de Caxias</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2794925.jpg?v=2db6005a</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2794925.jpg?v=23024396</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6595/vehicles/2794925/photos/qukVuXSscsuY3jvY6PDHy3x9xncoUH1FzCrg.jpg</url>
@@ -1479,7 +1561,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <year>2022</year>
     <mileage>
       <unit>KM</unit>
-      <value>66872</value>
+      <value>89489</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
     <price>116890.00 BRL</price>
@@ -1491,7 +1573,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2726834.jpg?v=8ef7f904</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2726834.jpg?v=c472cdd4</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6625/vehicles/2726834/photos/uQx9PEfP8eKj4qwu1ht2FZVixmywnI7G.jpg</url>
@@ -1685,7 +1767,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <year>2023</year>
     <mileage>
       <unit>KM</unit>
-      <value>345</value>
+      <value>347</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
     <price>138890.00 BRL</price>
@@ -1697,7 +1779,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2761101.jpg?v=05cf2b04</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2761101.jpg?v=47dc40b7</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6625/vehicles/2761101/photos/Y3KRloAtbJqGk4IDEQoLAe4NBQUkquWG.jpg</url>
@@ -1970,6 +2052,106 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
+    <vehicle_id>2779827</vehicle_id>
+    <title>Mitsubishi OUTLANDER SPORT 2.0 MIVEC FLEX HPE AUTOMÁTICO</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20OUTLANDER%20SPORT%202.0%20MIVEC%20FLEX%20HPE%20AUTOM%C3%81TICO%202022%20%28c%C3%B3d.%202779827%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <make>Mitsubishi</make>
+    <model>OUTLANDER SPORT</model>
+    <year>2022</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>77600</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>112890.00 BRL</price>
+    <exterior_color>Preto</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>2.0 MIVEC FLEX HPE AUTOMÁTICO</trim>
+    <custom_label_0>DISPONIVEL</custom_label_0>
+    <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2779827.jpg?v=72196eab</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2779827/photos/nKWHvPlWSQ53oUsRleG5PrKoIdAZTN90.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2779827/photos/AGym5cNesgQ9UAf291F8b6YvNutupF15.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2779827/photos/4nPbS56XwFaPdBRHw65nRvVu5CTFStHO.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2779827/photos/Me17ZhMRLGM6YQDBHDKO1suJB7IxvMrx.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2779827/photos/Tt005GLOU8TcWDMbb1xm0NUgGp3wdoL6.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2779827/photos/wEBqovwwiF0rmimn789ihyQ3NAfbTlFD.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2779827/photos/YPQZWFgvxuGxvXS6xXQ6lAorjNi0Vroi.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2779827/photos/eObrdMAqIu62rbYMpbhZ67LHyMDKpjHp.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2779827/photos/iTg5ytvFlKgwbKMe4G1gBmhwEHFHpRnY.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2779827/photos/nsbFeO5wOauDI5EYSqhy8m9KHNLzLoVO.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2779827/photos/xgLNcvE35oz2ZzGw5NGLntQ5RCZZtwmt.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2779827/photos/LCMF2NasefeVQeEMhwpJKVuYljydQNIt.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2779827/photos/esFd11SmbETucO9EdPMf7EG1YckGkfF5.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2779827/photos/NlF168mCtlG0tbfiAKyCqhSNJoguDWzc.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2779827/photos/2tTEsMaXJSmPuYcOW0bPhDl8p5LiSylY.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2779827/photos/hBDOvhR2EPM8QmL1fn7rqQJJqLUvGvKD.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2779827/photos/Wdf2xqg55T0B7b81jsaykT4kDyVTDVYw.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2779827/photos/sCZfWjpBPsOpl3keFL3NRTgCcu6cz33P.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2779827/photos/xB60ErDvMZC3lqLDs2LS3oZmDemh1N5h.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">FRANCISCO DA CRUZ NUNES, 4830</component>
+      <component name="city">Niterói</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">24350-310</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>FRANCISCO DA CRUZ NUNES, 4830</street_address>
+    <city>Niterói</city>
+    <region>RJ</region>
+    <postal_code>24350-310</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
     <vehicle_id>2782762</vehicle_id>
     <title>Mitsubishi ECLIPSE CROSS 1.5 MIVEC TURBO GASOLINA HPE-S CVT</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -2197,85 +2379,6 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     </image>
     <image>
       <url>https://s3.agsistema.net/6625/vehicles/2782763/photos/FFMfz8I0eJ3acEVZU70p32VJcz9qSpZc.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">FRANCISCO DA CRUZ NUNES, 4830</component>
-      <component name="city">Niterói</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">24350-310</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>FRANCISCO DA CRUZ NUNES, 4830</street_address>
-    <city>Niterói</city>
-    <region>RJ</region>
-    <postal_code>24350-310</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
-    <vehicle_id>2794924</vehicle_id>
-    <title>Mitsubishi ECLIPSE CROSS 1.5 MIVEC TURBO GASOLINA HPE-S S-AWC CVT</title>
-    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos possuem Vistoria Cautelar. 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20ECLIPSE%20CROSS%201.5%20MIVEC%20TURBO%20GASOLINA%20HPE-S%20S-AWC%20CVT%202025%20%28c%C3%B3d.%202794924%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
-    <make>Mitsubishi</make>
-    <model>ECLIPSE CROSS</model>
-    <year>2025</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>44435</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>154890.00 BRL</price>
-    <exterior_color>Branco</exterior_color>
-    <fuel_type>GASOLINE</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>TRUCK</body_style>
-    <trim>1.5 MIVEC TURBO GASOLINA HPE-S S-AWC CVT</trim>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
-    <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2794924.jpg?v=43edf7e6</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/jcL6EezPZNjiozr7KsRReNE5kdPMZsZzvE65.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/QTnUnjHev59ysnYfAkxhvGr3lqhuQCTsZkDz.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/RzA1QmsYsyUQm2BzXShWVBZj0fHFZgYVPdub.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/nqsPkPCvtMCAGm8R5GTpbaTwgp7BN9sjrEqU.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/iUwzavI4IKAdUW2z8XzGXZ5LFT6Rl3fQnWyM.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/fO0x2wraww8fipTKtkuarfdAQVvI33AgxCQW.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/subTv5TjZMEshDa1AfgVX4lx4H7DrxfZzu6w.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/4nGDegEa71us6apsNOLxAC0g66o6h1TQSkai.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/EzG1WkbKjhO4HhzflQnUJCew7CgGofdOEqo5.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/JvGCjwESSPFzwaVHtYdJcQLfGWPix0FImysY.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/qpd8epMaWbFmqW6krxHLaOlhIvuz1ABChd89.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/rBrbLcnlkYPLQ92I2J8WbmMnz8op4rloSQWd.jpg</url>
     </image>
     <address format="simple">
       <component name="addr1">FRANCISCO DA CRUZ NUNES, 4830</component>
@@ -3088,7 +3191,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <year>2021</year>
     <mileage>
       <unit>KM</unit>
-      <value>58000</value>
+      <value>1</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
     <price>112890.00 BRL</price>
@@ -3100,7 +3203,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Raion - Barra</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2778372.jpg?v=c0171869</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2778372.jpg?v=5eb015c3</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6698/vehicles/2778372/photos/7EeZBk6pfZlBzXZnEOeAG4kPnvGUwhze.jpg</url>
@@ -3927,6 +4030,100 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
+    <vehicle_id>2622900</vehicle_id>
+    <title>Byd DOLPHIN 44,9 KW ELÉTRICO GS</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/5521966300557?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Byd%20DOLPHIN%2044%2C9%20KW%20EL%C3%89TRICO%20GS%202024%20%28c%C3%B3d.%202622900%29.%20%5BCATALOGO-META-ZEEKR-BARRA%5D</url>
+    <make>Byd</make>
+    <model>DOLPHIN</model>
+    <year>2024</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>26000</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>174890.00 BRL</price>
+    <exterior_color>Preto</exterior_color>
+    <fuel_type>ELECTRIC</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>HATCHBACK</body_style>
+    <trim>44,9 KW ELÉTRICO GS</trim>
+    <custom_label_0>DISPONIVEL</custom_label_0>
+    <dealer_name>Raion ZEEKR - Barra</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2622900.jpg?v=5fa735ec</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2622900/photos/app-photos-S4Pu1OS8NOzHtmuI5x0OL8sBOi4pYIHx.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2622900/photos/app-photos-q7UAqR5D8XYrLvIcn510Wmt6aqUlUtDz.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2622900/photos/app-photos-OXmDX0JOUU9fSn0DUDnKx9ZyFmQxTgyK.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2622900/photos/app-photos-13UAfuWLe4LPSusVhyFclyhvH3pOpWmg.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2622900/photos/app-photos-05aXUGBR5EoMi2xdpopKDlXsHtxZXb90.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2622900/photos/app-photos-FqteIiHfwBYa1xLWVv9ej0P5eMycJsHt.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2622900/photos/app-photos-rlE219o7u9rHYdXVFQHRNaMIMGA8QnUe.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2622900/photos/app-photos-1iUeS6IXGCMQGoc23k7sZs5p3GtWVt4X.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2622900/photos/app-photos-FH5W2PwephaU3Rr0cN1xnF7N47zBDwC7.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2622900/photos/app-photos-ByqT9KdFXf7bpNip5M7srxykqPlOJuGx.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2622900/photos/app-photos-EtZD5DUtQCgZvAfk23a3gwZfhmny75CQ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2622900/photos/app-photos-ykp2Qo1zSLrYrP6wtkWVeoAQ2QfGskSV.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2622900/photos/app-photos-PjWAx09sZ8fn16Znseq5ZjMmyBYsyB8W.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2622900/photos/app-photos-Za1s1618GgPD6SUvN2jOyBn5HtiuN3Ig.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2622900/photos/app-photos-gdaFXWjg5Ryr2DY2SxnheSgJY3qd0JxZ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2622900/photos/app-photos-cGSbRkTt5II0QPCLCIyV2xJD6fkhRAp9.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2622900/photos/app-photos-BguukPffFi9U9PkFx6utnjFK4zDV14SL.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">Avenida das Américas, 1650</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">22640-101</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>Avenida das Américas, 1650</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>22640-101</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
     <vehicle_id>2728334</vehicle_id>
     <title>Byd TAN ELÉTRICO AWD</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -4443,94 +4640,6 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
-    <vehicle_id>2784229</vehicle_id>
-    <title>Volkswagen JETTA 1.4 250 TSI TOTAL FLEX COMFORTLINE TIPTRONIC</title>
-    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos possuem Vistoria Cautelar. 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/5521966300557?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Volkswagen%20JETTA%201.4%20250%20TSI%20TOTAL%20FLEX%20COMFORTLINE%20TIPTRONIC%202018%20%28c%C3%B3d.%202784229%29.%20%5BCATALOGO-META-ZEEKR-BARRA%5D</url>
-    <make>Volkswagen</make>
-    <model>JETTA</model>
-    <year>2018</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>58000</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>84890.00 BRL</price>
-    <exterior_color>Cinza</exterior_color>
-    <fuel_type>FLEX</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SEDAN</body_style>
-    <trim>1.4 250 TSI TOTAL FLEX COMFORTLINE TIPTRONIC</trim>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Raion ZEEKR - Barra</dealer_name>
-    <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2784229.jpg?v=18a39c40</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-yVxeWfPh6AcG2imoFyOmnhR4bzmUnaeE.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-MCaboU4k7WwonkPBLRjB28O4ob8YHRRY.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-xpTyWaWAvDmM2ZHW37HOnab3BaATuyWS.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-1xC0xqYsz3K1REjQisdRNbzRdzQzNe68.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-yY0JlvNIwmS9rgqvDTQk4iuUg95Amv9i.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-Bi4gaJEOFeyMn5fCAP40HxpLtLUPvFiW.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-9JBvl16huyxWilLkI2nP190upqsEe9b7.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-1GvL6MuuSDVPtBY3ql0ofk7qCyrw3C2D.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-GgOrTF1VzmdrT22JGyVWCqf5FB0vSQgy.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-fcKJBlZhjW3JuDtwwfuaEptlcmTP6m3U.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-TjBzaqODbUlWgBOw8CbCwDGbZI9wF2Ke.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-pmmJQxw2BD1JBQXGOSFXNQqloMEQy1LL.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-uaYNBxzcQOlfygoJhfCwcXEeFd5ZmVQL.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-NduzkDK4otLufSKACRA3dCYqNZvyBTGh.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-vQMGoM4ZxxgY0Lg4uwoZlFVYMU9P4yPO.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">Avenida das Américas, 1650</component>
-      <component name="city">Rio de Janeiro</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">22640-101</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>Avenida das Américas, 1650</street_address>
-    <city>Rio de Janeiro</city>
-    <region>RJ</region>
-    <postal_code>22640-101</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
     <vehicle_id>2658886</vehicle_id>
     <title>Chevrolet TRACKER 1.2 TURBO FLEX PREMIER AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -4865,79 +4974,6 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     </image>
     <image>
       <url>https://s3.agsistema.net/6703/vehicles/2731227/photos/WXSg110tJtwPrEu0qfrhUNVwjUfVxbg9.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">DOUTOR PAULO HERVE, 1111</component>
-      <component name="city">Rio de Janeiro</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">25665-135</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>DOUTOR PAULO HERVE, 1111</street_address>
-    <city>Rio de Janeiro</city>
-    <region>RJ</region>
-    <postal_code>25665-135</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
-    <vehicle_id>2755198</vehicle_id>
-    <title>Hyundai HB20S 1.0 12V FLEX EVOLUTION MANUAL</title>
-    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos possuem Vistoria Cautelar. 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Hyundai%20HB20S%201.0%2012V%20FLEX%20EVOLUTION%20MANUAL%202022%20%28c%C3%B3d.%202755198%29.%20%5BCATALOGO-META-KEIKO-PETROPOLIS%5D</url>
-    <make>Hyundai</make>
-    <model>HB20S</model>
-    <year>2022</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>71740</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>66890.00 BRL</price>
-    <exterior_color>Prata</exterior_color>
-    <fuel_type>FLEX</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SEDAN</body_style>
-    <trim>1.0 12V FLEX EVOLUTION MANUAL</trim>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Nissan Keiko - Petrópolis</dealer_name>
-    <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2755198.jpg?v=715fed22</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2755198/photos/tYWL82A7Q26p1vbMKBho33SJvJgxIl0X.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2755198/photos/wxpoCCnuIhGVMzFme7IbaEVXG8Y4E4dk.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2755198/photos/wzJiQnkyfLJVIdGR6h8u0miBX8o8X74v.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2755198/photos/t6p3adUvM4TRQ1jNnpGckgXNw2Cyy7Er.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2755198/photos/FHh2rYBb7zVMHhS1hmCrdYicJa6HDrPZ.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2755198/photos/sigVB8dnI00aSnRhKi12cZ6Svt9EZqkZ.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2755198/photos/uuZgxW7Kl7hsgLObULeIcO9lAVRoFKXW.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2755198/photos/zvvoyURUOfgWhfgU9M6W81pt25503Ai0.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2755198/photos/4bSip4Ds7dtfe5Szscw7xuFs7yhaILFF.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2755198/photos/519qiPTt7QaBvyNaFaNftkyIqydd3DKZ.jpg</url>
     </image>
     <address format="simple">
       <component name="addr1">DOUTOR PAULO HERVE, 1111</component>
@@ -7474,6 +7510,79 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
+    <vehicle_id>2755198</vehicle_id>
+    <title>Hyundai HB20S 1.0 12V FLEX EVOLUTION MANUAL</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Hyundai%20HB20S%201.0%2012V%20FLEX%20EVOLUTION%20MANUAL%202022%20%28c%C3%B3d.%202755198%29.%20%5BCATALOGO-META-KEIKO-PETROPOLIS%5D</url>
+    <make>Hyundai</make>
+    <model>HB20S</model>
+    <year>2022</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>71740</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>66890.00 BRL</price>
+    <exterior_color>Prata</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SEDAN</body_style>
+    <trim>1.0 12V FLEX EVOLUTION MANUAL</trim>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Nissan Keiko - Petrópolis</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2755198.jpg?v=715fed22</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2755198/photos/tYWL82A7Q26p1vbMKBho33SJvJgxIl0X.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2755198/photos/wxpoCCnuIhGVMzFme7IbaEVXG8Y4E4dk.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2755198/photos/wzJiQnkyfLJVIdGR6h8u0miBX8o8X74v.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2755198/photos/t6p3adUvM4TRQ1jNnpGckgXNw2Cyy7Er.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2755198/photos/FHh2rYBb7zVMHhS1hmCrdYicJa6HDrPZ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2755198/photos/sigVB8dnI00aSnRhKi12cZ6Svt9EZqkZ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2755198/photos/uuZgxW7Kl7hsgLObULeIcO9lAVRoFKXW.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2755198/photos/zvvoyURUOfgWhfgU9M6W81pt25503Ai0.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2755198/photos/4bSip4Ds7dtfe5Szscw7xuFs7yhaILFF.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2755198/photos/519qiPTt7QaBvyNaFaNftkyIqydd3DKZ.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">DOUTOR PAULO HERVE, 1111</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">25665-135</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>DOUTOR PAULO HERVE, 1111</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>25665-135</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
     <vehicle_id>2766931</vehicle_id>
     <title>Nissan KICKS 1.6 16V FLEXSTART SENSE XTRONIC</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -8955,6 +9064,173 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <city>Rio de Janeiro</city>
     <region>RJ</region>
     <postal_code>23045-830</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2784229</vehicle_id>
+    <title>Volkswagen JETTA 1.4 250 TSI TOTAL FLEX COMFORTLINE TIPTRONIC</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/5521966300557?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Volkswagen%20JETTA%201.4%20250%20TSI%20TOTAL%20FLEX%20COMFORTLINE%20TIPTRONIC%202018%20%28c%C3%B3d.%202784229%29.%20%5BCATALOGO-META-ZEEKR-BARRA%5D</url>
+    <make>Volkswagen</make>
+    <model>JETTA</model>
+    <year>2018</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>58000</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>84890.00 BRL</price>
+    <exterior_color>Cinza</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SEDAN</body_style>
+    <trim>1.4 250 TSI TOTAL FLEX COMFORTLINE TIPTRONIC</trim>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Raion ZEEKR - Barra</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2784229.jpg?v=18a39c40</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-yVxeWfPh6AcG2imoFyOmnhR4bzmUnaeE.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-MCaboU4k7WwonkPBLRjB28O4ob8YHRRY.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-xpTyWaWAvDmM2ZHW37HOnab3BaATuyWS.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-1xC0xqYsz3K1REjQisdRNbzRdzQzNe68.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-yY0JlvNIwmS9rgqvDTQk4iuUg95Amv9i.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-Bi4gaJEOFeyMn5fCAP40HxpLtLUPvFiW.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-9JBvl16huyxWilLkI2nP190upqsEe9b7.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-1GvL6MuuSDVPtBY3ql0ofk7qCyrw3C2D.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-GgOrTF1VzmdrT22JGyVWCqf5FB0vSQgy.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-fcKJBlZhjW3JuDtwwfuaEptlcmTP6m3U.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-TjBzaqODbUlWgBOw8CbCwDGbZI9wF2Ke.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-pmmJQxw2BD1JBQXGOSFXNQqloMEQy1LL.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-uaYNBxzcQOlfygoJhfCwcXEeFd5ZmVQL.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-NduzkDK4otLufSKACRA3dCYqNZvyBTGh.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6701/vehicles/2784229/photos/app-photos-vQMGoM4ZxxgY0Lg4uwoZlFVYMU9P4yPO.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">Avenida das Américas, 1650</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">22640-101</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>Avenida das Américas, 1650</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>22640-101</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2794924</vehicle_id>
+    <title>Mitsubishi ECLIPSE CROSS 1.5 MIVEC TURBO GASOLINA HPE-S S-AWC CVT</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20ECLIPSE%20CROSS%201.5%20MIVEC%20TURBO%20GASOLINA%20HPE-S%20S-AWC%20CVT%202025%20%28c%C3%B3d.%202794924%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <make>Mitsubishi</make>
+    <model>ECLIPSE CROSS</model>
+    <year>2025</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>44435</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>154890.00 BRL</price>
+    <exterior_color>Branco</exterior_color>
+    <fuel_type>GASOLINE</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>TRUCK</body_style>
+    <trim>1.5 MIVEC TURBO GASOLINA HPE-S S-AWC CVT</trim>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2794924.jpg?v=43edf7e6</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/jcL6EezPZNjiozr7KsRReNE5kdPMZsZzvE65.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/QTnUnjHev59ysnYfAkxhvGr3lqhuQCTsZkDz.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/RzA1QmsYsyUQm2BzXShWVBZj0fHFZgYVPdub.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/nqsPkPCvtMCAGm8R5GTpbaTwgp7BN9sjrEqU.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/iUwzavI4IKAdUW2z8XzGXZ5LFT6Rl3fQnWyM.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/fO0x2wraww8fipTKtkuarfdAQVvI33AgxCQW.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/subTv5TjZMEshDa1AfgVX4lx4H7DrxfZzu6w.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/4nGDegEa71us6apsNOLxAC0g66o6h1TQSkai.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/EzG1WkbKjhO4HhzflQnUJCew7CgGofdOEqo5.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/JvGCjwESSPFzwaVHtYdJcQLfGWPix0FImysY.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/qpd8epMaWbFmqW6krxHLaOlhIvuz1ABChd89.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/rBrbLcnlkYPLQ92I2J8WbmMnz8op4rloSQWd.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">FRANCISCO DA CRUZ NUNES, 4830</component>
+      <component name="city">Niterói</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">24350-310</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>FRANCISCO DA CRUZ NUNES, 4830</street_address>
+    <city>Niterói</city>
+    <region>RJ</region>
+    <postal_code>24350-310</postal_code>
     <country>Brazil</country>
   </listing>
 </listings>
