@@ -30,6 +30,7 @@
     background:var(--card);color:var(--txt);font-size:17px;appearance:none;
   }
   input:focus,select:focus{outline:2px solid var(--ac);outline-offset:1px}
+  select:disabled{opacity:.5}
   select{background-image:linear-gradient(45deg,transparent 50%,var(--dim) 50%),
     linear-gradient(135deg,var(--dim) 50%,transparent 50%);
     background-position:calc(100% - 20px) 22px,calc(100% - 14px) 22px;
@@ -72,15 +73,16 @@
       <label for="email">E-mail</label>
       <input id="email" type="email" inputmode="email" autocomplete="email">
 
-      <label for="veiculo">Veículo de interesse</label>
-      <input id="veiculo" placeholder="ex. Kicks, Meteor 350">
-
       <div id="box-loja" class="hide">
         <label class="req" for="loja">Loja</label>
         <select id="loja" required></select>
       </div>
 
-      <label for="vendedor">Quem está cadastrando</label>
+      <label for="veiculo">Veículo de interesse</label>
+      <select id="veiculo"></select>
+      <input id="veiculo-outro" class="hide" placeholder="Qual veículo?" style="margin-top:8px">
+
+      <label for="vendedor">Vendedor que receberá a oportunidade</label>
       <select id="vendedor"></select>
 
       <button id="btn" type="submit">Enviar cadastro</button>
@@ -125,6 +127,33 @@ function falhaFatal(titulo, msg) {
   mostra("tela-erro");
 }
 
+function pintaVeiculos() {
+  var loja = $("loja").value;
+  var lista = (EV.modelos && EV.modelos[loja]) || [];
+  var sel = $("veiculo");
+  if (!loja) {
+    sel.innerHTML = '<option value="">Escolha a loja primeiro</option>';
+    sel.disabled = true;
+  } else {
+    var html = '<option value="">Selecione...</option>';
+    lista.forEach(function (m) {
+      html += '<option value="' + m.modelo.replace(/"/g, "&quot;") + '">' + m.rotulo + '</option>';
+    });
+    html += '<option value="__outro">Outro / não está na lista</option>';
+    sel.innerHTML = html;
+    sel.disabled = false;
+  }
+  $("veiculo-outro").classList.add("hide");
+  $("veiculo-outro").value = "";
+}
+
+// "Outro" abre o campo livre — o vendedor nunca fica travado por falta de modelo na lista
+$("veiculo").addEventListener("change", function () {
+  var outro = $("veiculo").value === "__outro";
+  $("veiculo-outro").classList.toggle("hide", !outro);
+  if (outro) $("veiculo-outro").focus();
+});
+
 function pintaVendedores() {
   var loja = $("loja").value;
   var lista = EV.vendedores.filter(function (v) { return !loja || !v.loja || v.loja === loja; });
@@ -149,7 +178,8 @@ function montaForm() {
     sel.innerHTML = '<option value="' + EV.lojas[0] + '" selected>' + EV.lojas[0] + '</option>';
     sel.required = false;
   }
-  sel.addEventListener("change", pintaVendedores);
+  sel.addEventListener("change", function () { pintaVeiculos(); pintaVendedores(); });
+  pintaVeiculos();
   pintaVendedores();
   mostra("tela-form");
 }
@@ -195,7 +225,7 @@ $("f").addEventListener("submit", function (e) {
       nome: $("nome").value,
       telefone: $("telefone").value,
       email: $("email").value,
-      veiculo: $("veiculo").value,
+      veiculo: $("veiculo").value === "__outro" ? $("veiculo-outro").value : $("veiculo").value,
       loja: $("loja").value,
       vendedor: $("vendedor").value
     })
@@ -221,6 +251,7 @@ $("f").addEventListener("submit", function (e) {
 $("novo").addEventListener("click", function () {
   $("f").reset();
   if (EV.lojas.length === 1) $("loja").value = EV.lojas[0];
+  pintaVeiculos();
   pintaVendedores();
   mostra("tela-form");
   $("nome").focus();
