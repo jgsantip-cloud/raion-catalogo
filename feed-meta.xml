@@ -2,92 +2,8 @@
 <listings>
   <title>Seminovos Grupo Raion</title>
   <listing>
-    <vehicle_id>2599779</vehicle_id>
-    <title>Nissan KICKS</title>
-    <description>Somos um grupo de 13 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos possuem Certificado de Km Real, Laudo Cautelar e possibilidade de até 3 anos de Garantia (Consulte Condições). 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20KICKS%202024%20%28c%C3%B3d.%202599779%29.%20%5BCATALOGO-META-KEIKO-NOVA-IGUACU%5D</url>
-    <make>Nissan</make>
-    <model>KICKS</model>
-    <year>2024</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>82042</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>104890.00 BRL</price>
-    <exterior_color>Azul</exterior_color>
-    <fuel_type>FLEX</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SUV</body_style>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Nissan Keiko - Nova Iguaçu</dealer_name>
-    <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2599779.jpg?v=893436a2</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/gYCEAd2LZ9uND4Tm6k4PqQsXBlmffGDkKYV3.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/wxf2y6QQIq618MzqAsUXKpCUWaX5VYyZ7ZOV.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/E1cwG4GNSyWu0YkWt9Ue6u5Xes1nWJRFy7PJ.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/FYJgW7LqiweJcqZNqeqyUgrCVvRxYKddrlwF.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/cgUAG6st7CegUiKunTODyBTQw95D665gWQxA.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/Z0hf8X2bqlsMzjXln69psXyFDoSCS2T4Mcwa.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/mc9P1jM80Bw92VhQcFmwbz5nLadEuMwNt6G4.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/XRq6sRbCaKFhS89r52A1QDos5S8TU8YhT8DG.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/EcvyZiRidZwWGtsgkBJEGiyFAq3aGNgCxlDz.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/1FLrJRQgoLjkWtYHArRUZshy2nVP1OYZfTi5.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/H1rhS98LHvBYqOcKx6bjRZAc30bat6svXgI6.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/soM5HrGcG1YdRRXFgJFhfJKUV9tFqb3BcIYJ.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/zPBWX7e9Xg0MDx6ZBtv6aSUphF9N2Xb9qDmD.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/cGEiSK6cxWv1hIW9eL4Hl3iA5rbt3WOcA9Ml.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">GOVERNADOR ROBERTO SILVEIRA, 217</component>
-      <component name="city">Nova Iguaçu</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">26210-210</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>GOVERNADOR ROBERTO SILVEIRA, 217</street_address>
-    <city>Nova Iguaçu</city>
-    <region>RJ</region>
-    <postal_code>26210-210</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
     <vehicle_id>2731812</vehicle_id>
-    <title>Fiat ARGO</title>
+    <title>Fiat ARGO 1.0 FIREFLY FLEX MANUAL</title>
     <description>Somos um grupo de 13 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -95,7 +11,7 @@ Todos os nossos veículos possuem Certificado de Km Real, Laudo Cautelar e possi
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Fiat%20ARGO%202023%20%28c%C3%B3d.%202731812%29.%20%5BCATALOGO-META-KEIKO-NOVA-IGUACU%5D</url>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Fiat%20ARGO%201.0%20FIREFLY%20FLEX%20MANUAL%202023%20%28c%C3%B3d.%202731812%29.%20%5BCATALOGO-META-KEIKO-NOVA-IGUACU%5D</url>
     <make>Fiat</make>
     <model>ARGO</model>
     <year>2023</year>
@@ -109,6 +25,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>MANUAL</transmission>
     <body_style>HATCHBACK</body_style>
+    <trim>1.0 FIREFLY FLEX MANUAL</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Nova Iguaçu</dealer_name>
     <image>
@@ -147,7 +64,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2780605</vehicle_id>
-    <title>Toyota YARIS</title>
+    <title>Toyota YARIS 1.5 16V FLEX XS CONNECT MULTIDRIVE</title>
     <description>Somos um grupo de 13 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -155,7 +72,7 @@ Todos os nossos veículos possuem Certificado de Km Real, Laudo Cautelar e possi
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Toyota%20YARIS%202023%20%28c%C3%B3d.%202780605%29.%20%5BCATALOGO-META-KEIKO-NOVA-IGUACU%5D</url>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Toyota%20YARIS%201.5%2016V%20FLEX%20XS%20CONNECT%20MULTIDRIVE%202023%20%28c%C3%B3d.%202780605%29.%20%5BCATALOGO-META-KEIKO-NOVA-IGUACU%5D</url>
     <make>Toyota</make>
     <model>YARIS</model>
     <year>2023</year>
@@ -169,6 +86,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>HATCHBACK</body_style>
+    <trim>1.5 16V FLEX XS CONNECT MULTIDRIVE</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Nova Iguaçu</dealer_name>
     <image>
@@ -231,7 +149,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2754189</vehicle_id>
-    <title>Honda ZR-V</title>
+    <title>Honda ZR-V 2.0 i-VTEC GASOLINA TOURING CVT</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -239,7 +157,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Honda%20ZR-V%202024%20%28c%C3%B3d.%202754189%29.%20%5BCATALOGO-META-KEIKO-DUQUE-DE-CAXIAS%5D</url>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Honda%20ZR-V%202.0%20i-VTEC%20GASOLINA%20TOURING%20CVT%202024%20%28c%C3%B3d.%202754189%29.%20%5BCATALOGO-META-KEIKO-DUQUE-DE-CAXIAS%5D</url>
     <make>Honda</make>
     <model>ZR-V</model>
     <year>2024</year>
@@ -253,6 +171,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>GASOLINE</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>2.0 i-VTEC GASOLINA TOURING CVT</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Duque de Caxias</dealer_name>
     <image>
@@ -324,7 +243,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2759016</vehicle_id>
-    <title>Chevrolet ONIX</title>
+    <title>Chevrolet ONIX 1.0 TURBO FLEX LTZ MANUAL</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -332,7 +251,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Chevrolet%20ONIX%202023%20%28c%C3%B3d.%202759016%29.%20%5BCATALOGO-META-KEIKO-DUQUE-DE-CAXIAS%5D</url>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Chevrolet%20ONIX%201.0%20TURBO%20FLEX%20LTZ%20MANUAL%202023%20%28c%C3%B3d.%202759016%29.%20%5BCATALOGO-META-KEIKO-DUQUE-DE-CAXIAS%5D</url>
     <make>Chevrolet</make>
     <model>ONIX</model>
     <year>2023</year>
@@ -346,6 +265,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>MANUAL</transmission>
     <body_style>HATCHBACK</body_style>
+    <trim>1.0 TURBO FLEX LTZ MANUAL</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Duque de Caxias</dealer_name>
     <image>
@@ -399,7 +319,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2763857</vehicle_id>
-    <title>Nissan KICKS</title>
+    <title>Nissan KICKS 1.6 16V FLEXSTART SV 4P XTRONIC</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -407,7 +327,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20KICKS%202020%20%28c%C3%B3d.%202763857%29.%20%5BCATALOGO-META-KEIKO-DUQUE-DE-CAXIAS%5D</url>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20KICKS%201.6%2016V%20FLEXSTART%20SV%204P%20XTRONIC%202020%20%28c%C3%B3d.%202763857%29.%20%5BCATALOGO-META-KEIKO-DUQUE-DE-CAXIAS%5D</url>
     <make>Nissan</make>
     <model>KICKS</model>
     <year>2020</year>
@@ -421,6 +341,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>1.6 16V FLEXSTART SV 4P XTRONIC</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Duque de Caxias</dealer_name>
     <image>
@@ -479,95 +400,8 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
-    <vehicle_id>2766929</vehicle_id>
-    <title>Nissan VERSA</title>
-    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos possuem Vistoria Cautelar. 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20VERSA%202022%20%28c%C3%B3d.%202766929%29.%20%5BCATALOGO-META-KEIKO-DUQUE-DE-CAXIAS%5D</url>
-    <make>Nissan</make>
-    <model>VERSA</model>
-    <year>2022</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>108928</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>81890.00 BRL</price>
-    <exterior_color>Cinza</exterior_color>
-    <fuel_type>FLEX</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SEDAN</body_style>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Nissan Keiko - Duque de Caxias</dealer_name>
-    <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2766929.jpg?v=db72f878</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/1z3Wwghi3zNCDhOM1Sqhoz5rYCkC6gH4.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/6xRR2rB675bJTHKnj2IqYaUKDbuWa2LP.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/IhhrALPSFLcQXeHl4tcnLnMjzyKvppv7.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/25JVRZ1SFaMa6FTBHUEyHLP2Bkav60vB.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/x68Cx5viuKIGwKc6kCIiAauvamMc4jV0.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/EOwoaLi5l9Q9J7t1YfGnnLeCKhc4cDwS.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/i3Enn5EViqC37zHVhXKwIUAagS9zE8H8.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/EA5Y2OipL3kYeWIrhMFddgEVypWVql3m.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/ht1St57qeMHewqr5AfJYHFbvsKEIsInQ.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/G0MGY0nCAVViPhDrdiRZ3Q96H4NhPxHR.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/yEZKyW8H5L5kHBtTqe2TLwJKK6DAzIM3.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/Xu0wJZHIK3O5dQOJu0ZcFEfe7YWDweos.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/0acl2EV39IPko7K38DbshMtt33plJZcy.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/aWS7r3S6JfSARdW4YG3NCbS2KjPXGma9.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/kF0wJH7ARtl8MDwe8tVOB7Zvix3ZwPd6.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">WASHINGTON LUIZ, 1375</component>
-      <component name="city">Duque de Caxias</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">25085-008</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>WASHINGTON LUIZ, 1375</street_address>
-    <city>Duque de Caxias</city>
-    <region>RJ</region>
-    <postal_code>25085-008</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
     <vehicle_id>2782048</vehicle_id>
-    <title>Nissan KICKS</title>
+    <title>Nissan KICKS 1.0 TURBO FLEX PLATINUM DCT</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -575,7 +409,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20KICKS%202026%20%28c%C3%B3d.%202782048%29.%20%5BCATALOGO-META-KEIKO-DUQUE-DE-CAXIAS%5D</url>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20KICKS%201.0%20TURBO%20FLEX%20PLATINUM%20DCT%202026%20%28c%C3%B3d.%202782048%29.%20%5BCATALOGO-META-KEIKO-DUQUE-DE-CAXIAS%5D</url>
     <make>Nissan</make>
     <model>KICKS</model>
     <year>2026</year>
@@ -589,6 +423,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>1.0 TURBO FLEX PLATINUM DCT</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Duque de Caxias</dealer_name>
     <image>
@@ -668,8 +503,8 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
-    <vehicle_id>2438254</vehicle_id>
-    <title>Mitsubishi ECLIPSE CROSS</title>
+    <vehicle_id>2768308</vehicle_id>
+    <title>Hyundai HB20 1.0 TGDI FLEX PLATINUM AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -677,7 +512,289 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20ECLIPSE%20CROSS%202024%20%28c%C3%B3d.%202438254%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Hyundai%20HB20%201.0%20TGDI%20FLEX%20PLATINUM%20AUTOM%C3%81TICO%202022%20%28c%C3%B3d.%202768308%29.%20%5BCATALOGO-META-KEIKO-CAMPO-GRANDE%5D</url>
+    <make>Hyundai</make>
+    <model>HB20</model>
+    <year>2022</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>21945</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>79890.00 BRL</price>
+    <exterior_color>Prata</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>HATCHBACK</body_style>
+    <trim>1.0 TGDI FLEX PLATINUM AUTOMÁTICO</trim>
+    <custom_label_0>DISPONIVEL</custom_label_0>
+    <dealer_name>Nissan Keiko - Campo Grande</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2768308.jpg?v=ea20d4d0</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2768308/photos/cWA2Z3Zg41fyCeiqeNd2N5f45lrquJoo.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2768308/photos/NAP6FVl04ideQelhQGcVSP1VYsCEEDYo.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2768308/photos/Lpfb58U3MCbOWMp4dM71elrT86eDonj6.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2768308/photos/i1QKyeODpgGYMkUjUKrcbHZ1bB5a8dIY.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2768308/photos/orKQ994my0Y0bHgB2Hgsd3wmjIWa3oWb.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2768308/photos/dJwwkYjbdPsRoJtvdbf0tlGsD9VpkEd8.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2768308/photos/WhJYoY23RmYA4SMMX97woq31vNBnn1Pm.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2768308/photos/ucs0ND7L6UfqntaKmIBNNiBA1KOlxZjL.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2768308/photos/SP322bCpvjrwde7D3GeHd0nHSWlhB0by.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2768308/photos/v1rBJX2Rg8wJmdvHlAK4HhH6l0hPwCnc.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2768308/photos/ZgETu9H6XZEMCWzvIE0eUT7FUVdE0wod.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2768308/photos/2uXILGgFamr4lQpMKRW8dHlhy0mUKjyp.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2768308/photos/FyFVz2MjTWi0xhEsDQy8ifZgL5HtlvJZ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2768308/photos/d9psNyAjlF12sFJmHpzb7StKLESq8ZcN.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2768308/photos/71EvtL3bXg7uBvpGO0eL3etYf4AOFNMx.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2768308/photos/T3BknvOnQYiqhqW1nOHQsKZDlLLWwHX1.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2768308/photos/I4YewPl0k35bqeoMJIBjoM4LPuTjBl4g.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2768308/photos/2JYMnkedAEAraLhYloIacb5EaCLMSo90.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">ESTRADA DO MONTEIRO, 540</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">23045-830</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>ESTRADA DO MONTEIRO, 540</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>23045-830</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2779828</vehicle_id>
+    <title>Honda FIT 1.5 LX 16V FLEX 4P AUTOMÁTICO</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Honda%20FIT%201.5%20LX%2016V%20FLEX%204P%20AUTOM%C3%81TICO%202018%20%28c%C3%B3d.%202779828%29.%20%5BCATALOGO-META-KEIKO-CAMPO-GRANDE%5D</url>
+    <make>Honda</make>
+    <model>FIT</model>
+    <year>2018</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>25368</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>80890.00 BRL</price>
+    <exterior_color>Prata</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>HATCHBACK</body_style>
+    <trim>1.5 LX 16V FLEX 4P AUTOMÁTICO</trim>
+    <custom_label_0>DISPONIVEL</custom_label_0>
+    <dealer_name>Nissan Keiko - Campo Grande</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2779828.jpg?v=1557ba67</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2779828/photos/t9CNigWsJdaRDhh0iBfE4Rf7YdIMImYn.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2779828/photos/jLvOKy0PXuH1ymYw89PYeuZjL1B8hrHO.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2779828/photos/wjwkfTSeNDrxhAe9Chz25WIU4aBwin6X.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2779828/photos/LivDj7vANq5EMyNC7tulFwkc8EBRmWBp.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2779828/photos/m3Pe87BajZWoxGrbvPqy59xIE6mOfnfF.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2779828/photos/nA7XLQjrUbO1rLaMfm9bDCJOoUwqctqS.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2779828/photos/JEkdw0lnbOkwaD4131qeVLHz3nIBfGxE.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2779828/photos/gzMVfDPinfNonBOfwM2gbQSxiTb0pqqC.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2779828/photos/35WSxjJGVeenp9t7Acf71IjyW50ZieVJ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2779828/photos/JYsE7WiM5enoHWLyhjioZgTr2O4IkWIL.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2779828/photos/La5a5szPx1HhyVt2mtwTllfhxLyYbkCT.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2779828/photos/X79e4YmMTjtDvclH0DY4Zl8YoXMaivCA.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2779828/photos/dwHts0pdcJJem98lf0iyEcSu2DOW9rLX.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2779828/photos/9xyLrE9UEZbPXM1ZpcRuQwmrE1LfVQQr.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2779828/photos/JMwXj0a5u2tK6fWIlubYDoewDUNRjbvS.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2779828/photos/aXyOTGQYPl5ckwdnd1Eufyv7P4oxkmqE.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2779828/photos/1PPKmXSZP2TPCCIliUtRiwrZO3maeEgk.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2779828/photos/nlZW0DBGADmxMHU2KZy8p3Ok3AMygpse.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">ESTRADA DO MONTEIRO, 540</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">23045-830</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>ESTRADA DO MONTEIRO, 540</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>23045-830</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2782049</vehicle_id>
+    <title>Nissan KICKS 1.0 TURBO FLEX PLATINUM DCT</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20KICKS%201.0%20TURBO%20FLEX%20PLATINUM%20DCT%202026%20%28c%C3%B3d.%202782049%29.%20%5BCATALOGO-META-KEIKO-CAMPO-GRANDE%5D</url>
+    <make>Nissan</make>
+    <model>KICKS</model>
+    <year>2026</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>1567</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>169890.00 BRL</price>
+    <exterior_color>Vermelho</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>1.0 TURBO FLEX PLATINUM DCT</trim>
+    <custom_label_0>DISPONIVEL</custom_label_0>
+    <dealer_name>Nissan Keiko - Campo Grande</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2782049.jpg?v=f595861b</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2782049/photos/yEFnv4HBicshayrMchukKqP2EMj5k08D.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2782049/photos/1Iu35OUIVMentBGvl4wNJu600xwJKhvr.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2782049/photos/DUr0CB4RhberYcMd89FWXwcDIntGOSgt.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2782049/photos/mxlw3UPU9hkHhqqAVrqfVnqajLNsdcE6.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2782049/photos/xTY6hMXL3Vtd7vc967mHVFM3Kyw2PJzT.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2782049/photos/h2o3WqpUddWAAwnfFQyklEtUFib7Omza.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2782049/photos/S5IFTW0oeFl0MyPItcCC5AdjDb81AvYX.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2782049/photos/6s3P1uLWM0qxigEsrRqw4Z3WCVFqvv6Q.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2782049/photos/i64ZLQ6yZLNKAXAFvFzpl5cmFEjjpgbo.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2782049/photos/m0jAqtC16znnmaVOLToLSrbAd2qMUw5j.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2782049/photos/r7ynoCXyrdOwyPWUcb8qj8efdEGL6S51.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2782049/photos/Hi0PF5rFxRKjYOKdslIJZxRJZHW9mktN.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2782049/photos/2Morv563H75QiiJoJueyiNJmEurhWdwV.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2782049/photos/iLqEtj6zaIfuNNlzNhfzlsnXj8Kdi9Fl.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2782049/photos/WC1x77puJTUrovT1GXJZP6gWyPIoSHqj.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">ESTRADA DO MONTEIRO, 540</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">23045-830</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>ESTRADA DO MONTEIRO, 540</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>23045-830</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2438254</vehicle_id>
+    <title>Mitsubishi ECLIPSE CROSS 1.5 MIVEC TURBO GASOLINA HPE-S CVT</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20ECLIPSE%20CROSS%201.5%20MIVEC%20TURBO%20GASOLINA%20HPE-S%20CVT%202024%20%28c%C3%B3d.%202438254%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
     <make>Mitsubishi</make>
     <model>ECLIPSE CROSS</model>
     <year>2024</year>
@@ -691,6 +808,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>GASOLINE</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>1.5 MIVEC TURBO GASOLINA HPE-S CVT</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
@@ -771,7 +889,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2581846</vehicle_id>
-    <title>Mitsubishi PAJERO SPORT</title>
+    <title>Mitsubishi PAJERO SPORT 2.4 16V MIVEC TURBO DIESEL LEGEND AWD AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -779,7 +897,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20PAJERO%20SPORT%202025%20%28c%C3%B3d.%202581846%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20PAJERO%20SPORT%202.4%2016V%20MIVEC%20TURBO%20DIESEL%20LEGEND%20AWD%20AUTOM%C3%81TICO%202025%20%28c%C3%B3d.%202581846%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
     <make>Mitsubishi</make>
     <model>PAJERO SPORT</model>
     <year>2025</year>
@@ -793,6 +911,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>DIESEL</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>2.4 16V MIVEC TURBO DIESEL LEGEND AWD AUTOMÁTICO</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
@@ -885,7 +1004,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2662027</vehicle_id>
-    <title>Mitsubishi PAJERO SPORT</title>
+    <title>Mitsubishi PAJERO SPORT 2.4 16V MIVEC TURBO DIESEL LEGEND AWD AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -893,7 +1012,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20PAJERO%20SPORT%202025%20%28c%C3%B3d.%202662027%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20PAJERO%20SPORT%202.4%2016V%20MIVEC%20TURBO%20DIESEL%20LEGEND%20AWD%20AUTOM%C3%81TICO%202025%20%28c%C3%B3d.%202662027%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
     <make>Mitsubishi</make>
     <model>PAJERO SPORT</model>
     <year>2025</year>
@@ -907,6 +1026,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>DIESEL</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>2.4 16V MIVEC TURBO DIESEL LEGEND AWD AUTOMÁTICO</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
@@ -1002,7 +1122,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2670056</vehicle_id>
-    <title>Mitsubishi PAJERO SPORT</title>
+    <title>Mitsubishi PAJERO SPORT 2.4 16V MIVEC TURBO DIESEL HPE-S AWD AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -1010,7 +1130,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20PAJERO%20SPORT%202024%20%28c%C3%B3d.%202670056%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20PAJERO%20SPORT%202.4%2016V%20MIVEC%20TURBO%20DIESEL%20HPE-S%20AWD%20AUTOM%C3%81TICO%202024%20%28c%C3%B3d.%202670056%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
     <make>Mitsubishi</make>
     <model>PAJERO SPORT</model>
     <year>2024</year>
@@ -1024,6 +1144,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>DIESEL</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>2.4 16V MIVEC TURBO DIESEL HPE-S AWD AUTOMÁTICO</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
@@ -1101,7 +1222,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2677475</vehicle_id>
-    <title>Toyota COROLLA CROSS</title>
+    <title>Toyota COROLLA CROSS 2.0 VVT-IE FLEX GR-SPORT DIRECT SHIFT</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -1109,7 +1230,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Toyota%20COROLLA%20CROSS%202025%20%28c%C3%B3d.%202677475%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Toyota%20COROLLA%20CROSS%202.0%20VVT-IE%20FLEX%20GR-SPORT%20DIRECT%20SHIFT%202025%20%28c%C3%B3d.%202677475%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
     <make>Toyota</make>
     <model>COROLLA CROSS</model>
     <year>2025</year>
@@ -1123,6 +1244,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>2.0 VVT-IE FLEX GR-SPORT DIRECT SHIFT</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
@@ -1188,7 +1310,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2693472</vehicle_id>
-    <title>Mitsubishi PAJERO SPORT</title>
+    <title>Mitsubishi PAJERO SPORT 2.4 16V MIVEC TURBO DIESEL LEGEND AWD AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -1196,7 +1318,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20PAJERO%20SPORT%202024%20%28c%C3%B3d.%202693472%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20PAJERO%20SPORT%202.4%2016V%20MIVEC%20TURBO%20DIESEL%20LEGEND%20AWD%20AUTOM%C3%81TICO%202024%20%28c%C3%B3d.%202693472%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
     <make>Mitsubishi</make>
     <model>PAJERO SPORT</model>
     <year>2024</year>
@@ -1210,6 +1332,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>DIESEL</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>2.4 16V MIVEC TURBO DIESEL LEGEND AWD AUTOMÁTICO</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
@@ -1293,7 +1416,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2726834</vehicle_id>
-    <title>Mitsubishi OUTLANDER SPORT</title>
+    <title>Mitsubishi OUTLANDER SPORT 2.0 MIVEC FLEX HPE AWD AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -1301,7 +1424,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20OUTLANDER%20SPORT%202022%20%28c%C3%B3d.%202726834%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20OUTLANDER%20SPORT%202.0%20MIVEC%20FLEX%20HPE%20AWD%20AUTOM%C3%81TICO%202022%20%28c%C3%B3d.%202726834%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
     <make>Mitsubishi</make>
     <model>OUTLANDER SPORT</model>
     <year>2022</year>
@@ -1315,6 +1438,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>2.0 MIVEC FLEX HPE AWD AUTOMÁTICO</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
@@ -1401,7 +1525,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2759015</vehicle_id>
-    <title>Volkswagen TAOS</title>
+    <title>Volkswagen TAOS 1.4 250 TSI TOTAL FLEX COMFORTLINE AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -1409,7 +1533,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Volkswagen%20TAOS%202023%20%28c%C3%B3d.%202759015%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Volkswagen%20TAOS%201.4%20250%20TSI%20TOTAL%20FLEX%20COMFORTLINE%20AUTOM%C3%81TICO%202023%20%28c%C3%B3d.%202759015%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
     <make>Volkswagen</make>
     <model>TAOS</model>
     <year>2023</year>
@@ -1423,6 +1547,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>1.4 250 TSI TOTAL FLEX COMFORTLINE AUTOMÁTICO</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
@@ -1497,7 +1622,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2761101</vehicle_id>
-    <title>Jeep COMMANDER</title>
+    <title>Jeep COMMANDER 1.3 T270 TURBO FLEX LIMITED AT6</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -1505,7 +1630,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Jeep%20COMMANDER%202023%20%28c%C3%B3d.%202761101%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Jeep%20COMMANDER%201.3%20T270%20TURBO%20FLEX%20LIMITED%20AT6%202023%20%28c%C3%B3d.%202761101%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
     <make>Jeep</make>
     <model>COMMANDER</model>
     <year>2023</year>
@@ -1519,6 +1644,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>1.3 T270 TURBO FLEX LIMITED AT6</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
@@ -1602,7 +1728,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2765088</vehicle_id>
-    <title>Mitsubishi TRITON</title>
+    <title>Mitsubishi TRITON 2.4 BITURBO DIESEL CD HPE 4X4 AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -1610,7 +1736,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20TRITON%202026%20%28c%C3%B3d.%202765088%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20TRITON%202.4%20BITURBO%20DIESEL%20CD%20HPE%204X4%20AUTOM%C3%81TICO%202026%20%28c%C3%B3d.%202765088%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
     <make>Mitsubishi</make>
     <model>TRITON</model>
     <year>2026</year>
@@ -1624,6 +1750,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>DIESEL</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>TRUCK</body_style>
+    <trim>2.4 BITURBO DIESEL CD HPE 4X4 AUTOMÁTICO</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
@@ -1701,7 +1828,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2777527</vehicle_id>
-    <title>Mitsubishi L200 TRITON</title>
+    <title>Mitsubishi L200 TRITON 2.4 16V TURBO DIESEL SPORT HPE-S CD 4P 4X4 AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -1709,7 +1836,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20L200%20TRITON%202025%20%28c%C3%B3d.%202777527%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20L200%20TRITON%202.4%2016V%20TURBO%20DIESEL%20SPORT%20HPE-S%20CD%204P%204X4%20AUTOM%C3%81TICO%202025%20%28c%C3%B3d.%202777527%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
     <make>Mitsubishi</make>
     <model>L200 TRITON</model>
     <year>2025</year>
@@ -1723,6 +1850,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>DIESEL</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>TRUCK</body_style>
+    <trim>2.4 16V TURBO DIESEL SPORT HPE-S CD 4P 4X4 AUTOMÁT</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
@@ -1794,7 +1922,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2779827</vehicle_id>
-    <title>Mitsubishi OUTLANDER SPORT</title>
+    <title>Mitsubishi OUTLANDER SPORT 2.0 MIVEC FLEX HPE AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -1802,13 +1930,13 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20OUTLANDER%20SPORT%202022%20%28c%C3%B3d.%202779827%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20OUTLANDER%20SPORT%202.0%20MIVEC%20FLEX%20HPE%20AUTOM%C3%81TICO%202022%20%28c%C3%B3d.%202779827%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
     <make>Mitsubishi</make>
     <model>OUTLANDER SPORT</model>
     <year>2022</year>
     <mileage>
       <unit>KM</unit>
-      <value>77600</value>
+      <value>10108</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
     <price>112890.00 BRL</price>
@@ -1816,10 +1944,11 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>2.0 MIVEC FLEX HPE AUTOMÁTICO</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2779827.jpg?v=5a4e8bc6</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2779827.jpg?v=389cede7</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6625/vehicles/2779827/photos/nKWHvPlWSQ53oUsRleG5PrKoIdAZTN90.jpg</url>
@@ -1893,7 +2022,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2782762</vehicle_id>
-    <title>Mitsubishi ECLIPSE CROSS</title>
+    <title>Mitsubishi ECLIPSE CROSS 1.5 MIVEC TURBO GASOLINA HPE-S CVT</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -1901,7 +2030,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20ECLIPSE%20CROSS%202025%20%28c%C3%B3d.%202782762%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20ECLIPSE%20CROSS%201.5%20MIVEC%20TURBO%20GASOLINA%20HPE-S%20CVT%202025%20%28c%C3%B3d.%202782762%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
     <make>Mitsubishi</make>
     <model>ECLIPSE CROSS</model>
     <year>2025</year>
@@ -1915,6 +2044,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>GASOLINE</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>1.5 MIVEC TURBO GASOLINA HPE-S CVT</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
@@ -2010,7 +2140,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2782763</vehicle_id>
-    <title>Byd KING</title>
+    <title>Byd KING 1.5 DM-I PHEV GS AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -2018,7 +2148,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Byd%20KING%202026%20%28c%C3%B3d.%202782763%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Byd%20KING%201.5%20DM-I%20PHEV%20GS%20AUTOM%C3%81TICO%202026%20%28c%C3%B3d.%202782763%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
     <make>Byd</make>
     <model>KING</model>
     <year>2026</year>
@@ -2032,6 +2162,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>HYBRID</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>1.5 DM-I PHEV GS AUTOMÁTICO</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
@@ -2133,7 +2264,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2591395</vehicle_id>
-    <title>Mitsubishi PAJERO SPORT</title>
+    <title>Mitsubishi PAJERO SPORT 2.4 16V MIVEC TURBO DIESEL HPE AWD AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -2141,7 +2272,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20PAJERO%20SPORT%202024%20%28c%C3%B3d.%202591395%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20PAJERO%20SPORT%202.4%2016V%20MIVEC%20TURBO%20DIESEL%20HPE%20AWD%20AUTOM%C3%81TICO%202024%20%28c%C3%B3d.%202591395%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
     <make>Mitsubishi</make>
     <model>PAJERO SPORT</model>
     <year>2024</year>
@@ -2155,6 +2286,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>DIESEL</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>2.4 16V MIVEC TURBO DIESEL HPE AWD AUTOMÁTICO</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Raion - Barra</dealer_name>
     <image>
@@ -2232,7 +2364,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2603431</vehicle_id>
-    <title>Fiat FASTBACK</title>
+    <title>Fiat FASTBACK 1.3 TURBO 270 FLEX LIMITED EDITION AT6</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -2240,7 +2372,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Fiat%20FASTBACK%202024%20%28c%C3%B3d.%202603431%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Fiat%20FASTBACK%201.3%20TURBO%20270%20FLEX%20LIMITED%20EDITION%20AT6%202024%20%28c%C3%B3d.%202603431%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
     <make>Fiat</make>
     <model>FASTBACK</model>
     <year>2024</year>
@@ -2254,6 +2386,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>1.3 TURBO 270 FLEX LIMITED EDITION AT6</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Raion - Barra</dealer_name>
     <image>
@@ -2322,7 +2455,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2643705</vehicle_id>
-    <title>Mitsubishi ECLIPSE CROSS</title>
+    <title>Mitsubishi ECLIPSE CROSS 1.5 MIVEC TURBO GASOLINA HPE-S S-AWC CVT</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -2330,7 +2463,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20ECLIPSE%20CROSS%202025%20%28c%C3%B3d.%202643705%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20ECLIPSE%20CROSS%201.5%20MIVEC%20TURBO%20GASOLINA%20HPE-S%20S-AWC%20CVT%202025%20%28c%C3%B3d.%202643705%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
     <make>Mitsubishi</make>
     <model>ECLIPSE CROSS</model>
     <year>2025</year>
@@ -2344,6 +2477,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>GASOLINE</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>1.5 MIVEC TURBO GASOLINA HPE-S S-AWC CVT</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Raion - Barra</dealer_name>
     <image>
@@ -2430,7 +2564,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2735314</vehicle_id>
-    <title>Mitsubishi ECLIPSE CROSS</title>
+    <title>Mitsubishi ECLIPSE CROSS 1.5 MIVEC TURBO GASOLINA HPE-S S-AWC CVT</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -2438,7 +2572,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20ECLIPSE%20CROSS%202026%20%28c%C3%B3d.%202735314%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20ECLIPSE%20CROSS%201.5%20MIVEC%20TURBO%20GASOLINA%20HPE-S%20S-AWC%20CVT%202026%20%28c%C3%B3d.%202735314%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
     <make>Mitsubishi</make>
     <model>ECLIPSE CROSS</model>
     <year>2026</year>
@@ -2452,6 +2586,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>GASOLINE</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>1.5 MIVEC TURBO GASOLINA HPE-S S-AWC CVT</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Raion - Barra</dealer_name>
     <image>
@@ -2529,7 +2664,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2741782</vehicle_id>
-    <title>Fiat STRADA</title>
+    <title>Fiat STRADA 1.0 TURBO 200 FLEX ULTRA CD CVT</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -2537,7 +2672,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Fiat%20STRADA%202024%20%28c%C3%B3d.%202741782%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Fiat%20STRADA%201.0%20TURBO%20200%20FLEX%20ULTRA%20CD%20CVT%202024%20%28c%C3%B3d.%202741782%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
     <make>Fiat</make>
     <model>STRADA</model>
     <year>2024</year>
@@ -2551,6 +2686,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>TRUCK</body_style>
+    <trim>1.0 TURBO 200 FLEX ULTRA CD CVT</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Raion - Barra</dealer_name>
     <image>
@@ -2625,7 +2761,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2757060</vehicle_id>
-    <title>Ram RAMPAGE</title>
+    <title>Ram RAMPAGE 2.0 HURRICANE 4 TURBO GASOLINA R/T 4X4 AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -2633,7 +2769,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Ram%20RAMPAGE%202024%20%28c%C3%B3d.%202757060%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Ram%20RAMPAGE%202.0%20HURRICANE%204%20TURBO%20GASOLINA%20R/T%204X4%20AUTOM%C3%81TICO%202024%20%28c%C3%B3d.%202757060%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
     <make>Ram</make>
     <model>RAMPAGE</model>
     <year>2024</year>
@@ -2647,6 +2783,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>GASOLINE</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>TRUCK</body_style>
+    <trim>2.0 HURRICANE 4 TURBO GASOLINA R/T 4X4 AUTOMÁTICO</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Raion - Barra</dealer_name>
     <image>
@@ -2724,7 +2861,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2774604</vehicle_id>
-    <title>Toyota COROLLA CROSS</title>
+    <title>Toyota COROLLA CROSS 1.8 VVT-I HYBRID FLEX XRX CVT</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -2732,7 +2869,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Toyota%20COROLLA%20CROSS%202026%20%28c%C3%B3d.%202774604%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Toyota%20COROLLA%20CROSS%201.8%20VVT-I%20HYBRID%20FLEX%20XRX%20CVT%202026%20%28c%C3%B3d.%202774604%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
     <make>Toyota</make>
     <model>COROLLA CROSS</model>
     <year>2026</year>
@@ -2746,6 +2883,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>HYBRID</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>1.8 VVT-I HYBRID FLEX XRX CVT</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Raion - Barra</dealer_name>
     <image>
@@ -2817,7 +2955,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2778372</vehicle_id>
-    <title>Honda HR-V</title>
+    <title>Honda HR-V 1.8 16V FLEX EXL 4P AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -2825,7 +2963,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Honda%20HR-V%202021%20%28c%C3%B3d.%202778372%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Honda%20HR-V%201.8%2016V%20FLEX%20EXL%204P%20AUTOM%C3%81TICO%202021%20%28c%C3%B3d.%202778372%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
     <make>Honda</make>
     <model>HR-V</model>
     <year>2021</year>
@@ -2839,6 +2977,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>1.8 16V FLEX EXL 4P AUTOMÁTICO</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Raion - Barra</dealer_name>
     <image>
@@ -2909,8 +3048,8 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
-    <vehicle_id>2789001</vehicle_id>
-    <title>Toyota COROLLA CROSS</title>
+    <vehicle_id>2779831</vehicle_id>
+    <title>Nissan KICKS 1.6 16V FLEXSTART ACTIVE XTRONIC</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -2918,7 +3057,107 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Toyota%20COROLLA%20CROSS%202026%20%28c%C3%B3d.%202789001%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20KICKS%201.6%2016V%20FLEXSTART%20ACTIVE%20XTRONIC%202022%20%28c%C3%B3d.%202779831%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
+    <make>Nissan</make>
+    <model>KICKS</model>
+    <year>2022</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>46400</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>89890.00 BRL</price>
+    <exterior_color>Preto</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>1.6 16V FLEXSTART ACTIVE XTRONIC</trim>
+    <custom_label_0>DISPONIVEL</custom_label_0>
+    <dealer_name>Mitsubishi Raion - Barra</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2779831.jpg?v=1e822883</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2779831/photos/GK2atUDiAsQIMGRydnKZMN9zWboYpDJ4.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2779831/photos/5abArIbHnQXC8QdeuLqukmc2KjWi3DA6.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2779831/photos/CdTpFfU26Soro1twqcBmM3PaMTGZpybY.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2779831/photos/L8OijhJEyA5S02b9YGRwAnnOKsxEEcuT.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2779831/photos/HaxDAicjs6g5DIowQBFL2JleuDqEQjmF.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2779831/photos/cqPuxLn62oQvxbykqY2dDkKqyUk6uvPO.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2779831/photos/Zw99JSA6c07OV7WSPoVPGwrRGN6Nx7ZE.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2779831/photos/NvIDA8r9eOj6h9FVWrxzzJKaYyIRHqts.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2779831/photos/sRkDPkgKodkDNhyt6f85abLot31fQoNt.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2779831/photos/iDUm1TPNzHMheAJCVbvuxEBkwkaQL3MU.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2779831/photos/wjx4nr4BnuRnXUcDzouLe0a1QWoP9JMz.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2779831/photos/EAJRGqa1q52EZS1EYD1zOoOzt42pQ5wT.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2779831/photos/0gMUOn3FNfjFbZYwUKoJ18IZ0GJdr1M4.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2779831/photos/HCv1DYOl7rBy1agcpi05DkKAQXtZb718.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2779831/photos/FrAS1lHXZnllsCn3QXfkJbmcnnTxFnCm.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2779831/photos/XMH579eHrvgFlN886R7Ge3f0WcmgpA1x.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2779831/photos/We9KmUa3vTNV3Y8iiUpbk9APWGePJwhc.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2779831/photos/5FyNvaq537PfTgtFu28MaV7zrFQ48VUm.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2779831/photos/p4oBzwsGczuk2M51Z80rqwobm7zct5Uk.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">Av das Américas, 1730</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">22640-101</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>Av das Américas, 1730</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>22640-101</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2789001</vehicle_id>
+    <title>Toyota COROLLA CROSS 1.8 VVT-I HYBRID FLEX XRX CVT</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Toyota%20COROLLA%20CROSS%201.8%20VVT-I%20HYBRID%20FLEX%20XRX%20CVT%202026%20%28c%C3%B3d.%202789001%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
     <make>Toyota</make>
     <model>COROLLA CROSS</model>
     <year>2026</year>
@@ -2932,6 +3171,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>HYBRID</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>1.8 VVT-I HYBRID FLEX XRX CVT</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Raion - Barra</dealer_name>
     <image>
@@ -3000,7 +3240,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2598361</vehicle_id>
-    <title>Mitsubishi TRITON</title>
+    <title>Mitsubishi TRITON 2.4 BITURBO DIESEL CD HPE-S 4X4 AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias , Raion , que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -3008,7 +3248,7 @@ Todos os nossos veículos de altíssima procedência , possuem Vistoria Cautelar
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20TRITON%202026%20%28c%C3%B3d.%202598361%29.%20%5BCATALOGO-META-RAION-RECREIO%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20TRITON%202.4%20BITURBO%20DIESEL%20CD%20HPE-S%204X4%20AUTOM%C3%81TICO%202026%20%28c%C3%B3d.%202598361%29.%20%5BCATALOGO-META-RAION-RECREIO%5D</url>
     <make>Mitsubishi</make>
     <model>TRITON</model>
     <year>2026</year>
@@ -3022,6 +3262,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>DIESEL</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>TRUCK</body_style>
+    <trim>2.4 BITURBO DIESEL CD HPE-S 4X4 AUTOMÁTICO</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Taika Mitsubishi - Recreio</dealer_name>
     <image>
@@ -3068,71 +3309,8 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
-    <vehicle_id>2616526</vehicle_id>
-    <title>Mitsubishi OUTLANDER</title>
-    <description>Somos um grupo de 14 concessionárias , Raion , que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos de altíssima procedência , possuem Vistoria Cautelar , revisados e com garantia. 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20OUTLANDER%202018%20%28c%C3%B3d.%202616526%29.%20%5BCATALOGO-META-RAION-RECREIO%5D</url>
-    <make>Mitsubishi</make>
-    <model>OUTLANDER</model>
-    <year>2018</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>65675</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>122890.00 BRL</price>
-    <exterior_color>Branco</exterior_color>
-    <fuel_type>GASOLINE</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SUV</body_style>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Taika Mitsubishi - Recreio</dealer_name>
-    <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2616526.jpg?v=1b049698</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2616526/photos/PjLm2HpDfpD7qOZEf3XFQwsDscsSYFX2.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2616526/photos/r9W8ZRieue7BNlopAo4TmUVnsdCkWPBr.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2616526/photos/keKv3A9PwXEZKPS7WMjMTBi7sjT72IML.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2616526/photos/fOvt0LC6n0jHAzTzCh0kwvPJbotwtr2N.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2616526/photos/zRgZxYGNLo9lwXfmCYVi88O1SbUdmRbG.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2616526/photos/MbaESXDgRPav8OpJhgN4dZwmgeKKkEjY.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2616526/photos/xb6wbi0EufYeU3CVzyQ57sr1aMpsGySN.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">Av. das Américas, 17400</component>
-      <component name="city">Rio de Janeiro</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">22790-704</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>Av. das Américas, 17400</street_address>
-    <city>Rio de Janeiro</city>
-    <region>RJ</region>
-    <postal_code>22790-704</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
     <vehicle_id>2643706</vehicle_id>
-    <title>Mitsubishi TRITON</title>
+    <title>Mitsubishi TRITON 2.4 BITURBO DIESEL CD KATANA 4X4 AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias , Raion , que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -3140,7 +3318,7 @@ Todos os nossos veículos de altíssima procedência , possuem Vistoria Cautelar
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20TRITON%202026%20%28c%C3%B3d.%202643706%29.%20%5BCATALOGO-META-RAION-RECREIO%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20TRITON%202.4%20BITURBO%20DIESEL%20CD%20KATANA%204X4%20AUTOM%C3%81TICO%202026%20%28c%C3%B3d.%202643706%29.%20%5BCATALOGO-META-RAION-RECREIO%5D</url>
     <make>Mitsubishi</make>
     <model>TRITON</model>
     <year>2026</year>
@@ -3154,6 +3332,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>DIESEL</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>TRUCK</body_style>
+    <trim>2.4 BITURBO DIESEL CD KATANA 4X4 AUTOMÁTICO</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Taika Mitsubishi - Recreio</dealer_name>
     <image>
@@ -3207,7 +3386,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2675203</vehicle_id>
-    <title>Mitsubishi PAJERO SPORT</title>
+    <title>Mitsubishi PAJERO SPORT 2.4 16V MIVEC TURBO DIESEL HPE AWD AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias , Raion , que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -3215,7 +3394,7 @@ Todos os nossos veículos de altíssima procedência , possuem Vistoria Cautelar
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20PAJERO%20SPORT%202022%20%28c%C3%B3d.%202675203%29.%20%5BCATALOGO-META-RAION-RECREIO%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20PAJERO%20SPORT%202.4%2016V%20MIVEC%20TURBO%20DIESEL%20HPE%20AWD%20AUTOM%C3%81TICO%202022%20%28c%C3%B3d.%202675203%29.%20%5BCATALOGO-META-RAION-RECREIO%5D</url>
     <make>Mitsubishi</make>
     <model>PAJERO SPORT</model>
     <year>2022</year>
@@ -3229,6 +3408,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>DIESEL</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>2.4 16V MIVEC TURBO DIESEL HPE AWD AUTOMÁTICO</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Taika Mitsubishi - Recreio</dealer_name>
     <image>
@@ -3267,7 +3447,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2744909</vehicle_id>
-    <title>Toyota HILUX SW4</title>
+    <title>Toyota HILUX SW4 2.8 D-4D TURBO DIESEL SRX 7L 4X4 AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias , Raion , que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -3275,7 +3455,7 @@ Todos os nossos veículos de altíssima procedência , possuem Vistoria Cautelar
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Toyota%20HILUX%20SW4%202023%20%28c%C3%B3d.%202744909%29.%20%5BCATALOGO-META-RAION-RECREIO%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Toyota%20HILUX%20SW4%202.8%20D-4D%20TURBO%20DIESEL%20SRX%207L%204X4%20AUTOM%C3%81TICO%202023%20%28c%C3%B3d.%202744909%29.%20%5BCATALOGO-META-RAION-RECREIO%5D</url>
     <make>Toyota</make>
     <model>HILUX SW4</model>
     <year>2023</year>
@@ -3289,6 +3469,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>DIESEL</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>TRUCK</body_style>
+    <trim>2.8 D-4D TURBO DIESEL SRX 7L 4X4 AUTOMÁTICO</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Taika Mitsubishi - Recreio</dealer_name>
     <image>
@@ -3351,7 +3532,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2747870</vehicle_id>
-    <title>Chevrolet ONIX</title>
+    <title>Chevrolet ONIX 1.0 TURBO FLEX LTZ AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias , Raion , que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -3359,7 +3540,7 @@ Todos os nossos veículos de altíssima procedência , possuem Vistoria Cautelar
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Chevrolet%20ONIX%202025%20%28c%C3%B3d.%202747870%29.%20%5BCATALOGO-META-RAION-RECREIO%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Chevrolet%20ONIX%201.0%20TURBO%20FLEX%20LTZ%20AUTOM%C3%81TICO%202025%20%28c%C3%B3d.%202747870%29.%20%5BCATALOGO-META-RAION-RECREIO%5D</url>
     <make>Chevrolet</make>
     <model>ONIX</model>
     <year>2025</year>
@@ -3373,6 +3554,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>HATCHBACK</body_style>
+    <trim>1.0 TURBO FLEX LTZ AUTOMÁTICO</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Taika Mitsubishi - Recreio</dealer_name>
     <image>
@@ -3432,7 +3614,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2766930</vehicle_id>
-    <title>Toyota YARIS</title>
+    <title>Toyota YARIS 1.5 16V FLEX XLS MULTIDRIVE</title>
     <description>Somos um grupo de 14 concessionárias , Raion , que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -3440,7 +3622,7 @@ Todos os nossos veículos de altíssima procedência , possuem Vistoria Cautelar
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Toyota%20YARIS%202024%20%28c%C3%B3d.%202766930%29.%20%5BCATALOGO-META-RAION-RECREIO%5D</url>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Toyota%20YARIS%201.5%2016V%20FLEX%20XLS%20MULTIDRIVE%202024%20%28c%C3%B3d.%202766930%29.%20%5BCATALOGO-META-RAION-RECREIO%5D</url>
     <make>Toyota</make>
     <model>YARIS</model>
     <year>2024</year>
@@ -3454,6 +3636,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>HATCHBACK</body_style>
+    <trim>1.5 16V FLEX XLS MULTIDRIVE</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Taika Mitsubishi - Recreio</dealer_name>
     <image>
@@ -3495,7 +3678,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2537987</vehicle_id>
-    <title>Volvo XC60</title>
+    <title>Volvo XC60 2.0 T8 RECHARGE ULTIMATE AWD GEARTRONIC</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -3503,7 +3686,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/5521966300557?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Volvo%20XC60%202023%20%28c%C3%B3d.%202537987%29.%20%5BCATALOGO-META-ZEEKR-BARRA%5D</url>
+    <url>https://wa.me/5521966300557?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Volvo%20XC60%202.0%20T8%20RECHARGE%20ULTIMATE%20AWD%20GEARTRONIC%202023%20%28c%C3%B3d.%202537987%29.%20%5BCATALOGO-META-ZEEKR-BARRA%5D</url>
     <make>Volvo</make>
     <model>XC60</model>
     <year>2023</year>
@@ -3517,6 +3700,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>HYBRID</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>2.0 T8 RECHARGE ULTIMATE AWD GEARTRONIC</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Raion ZEEKR - Barra</dealer_name>
     <image>
@@ -3579,7 +3763,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2622900</vehicle_id>
-    <title>Byd DOLPHIN</title>
+    <title>Byd DOLPHIN 44,9 KW ELÉTRICO GS</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -3587,7 +3771,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/5521966300557?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Byd%20DOLPHIN%202024%20%28c%C3%B3d.%202622900%29.%20%5BCATALOGO-META-ZEEKR-BARRA%5D</url>
+    <url>https://wa.me/5521966300557?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Byd%20DOLPHIN%2044%2C9%20KW%20EL%C3%89TRICO%20GS%202024%20%28c%C3%B3d.%202622900%29.%20%5BCATALOGO-META-ZEEKR-BARRA%5D</url>
     <make>Byd</make>
     <model>DOLPHIN</model>
     <year>2024</year>
@@ -3601,6 +3785,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>ELECTRIC</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>HATCHBACK</body_style>
+    <trim>44,9 KW ELÉTRICO GS</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Raion ZEEKR - Barra</dealer_name>
     <image>
@@ -3672,7 +3857,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2728334</vehicle_id>
-    <title>Byd TAN</title>
+    <title>Byd TAN ELÉTRICO AWD</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -3680,7 +3865,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/5521966300557?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Byd%20TAN%202023%20%28c%C3%B3d.%202728334%29.%20%5BCATALOGO-META-ZEEKR-BARRA%5D</url>
+    <url>https://wa.me/5521966300557?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Byd%20TAN%20EL%C3%89TRICO%20AWD%202023%20%28c%C3%B3d.%202728334%29.%20%5BCATALOGO-META-ZEEKR-BARRA%5D</url>
     <make>Byd</make>
     <model>TAN</model>
     <year>2023</year>
@@ -3694,6 +3879,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>ELECTRIC</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>ELÉTRICO AWD</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Raion ZEEKR - Barra</dealer_name>
     <image>
@@ -3759,7 +3945,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2739704</vehicle_id>
-    <title>Zeekr 7X</title>
+    <title>Zeekr 7X 100 KW ELÉTRICO FLAGSHIP AWD</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -3767,7 +3953,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/5521966300557?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Zeekr%207X%202026%20%28c%C3%B3d.%202739704%29.%20%5BCATALOGO-META-ZEEKR-BARRA%5D</url>
+    <url>https://wa.me/5521966300557?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Zeekr%207X%20100%20KW%20EL%C3%89TRICO%20FLAGSHIP%20AWD%202026%20%28c%C3%B3d.%202739704%29.%20%5BCATALOGO-META-ZEEKR-BARRA%5D</url>
     <make>Zeekr</make>
     <model>7X</model>
     <year>2026</year>
@@ -3781,6 +3967,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>ELECTRIC</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>100 KW ELÉTRICO FLAGSHIP AWD</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Raion ZEEKR - Barra</dealer_name>
     <image>
@@ -3828,7 +4015,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2742530</vehicle_id>
-    <title>Zeekr 001</title>
+    <title>Zeekr 001 100 KW ELÉTRICO FLAGSHIP AWD</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -3836,7 +4023,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/5521966300557?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Zeekr%20001%202025%20%28c%C3%B3d.%202742530%29.%20%5BCATALOGO-META-ZEEKR-BARRA%5D</url>
+    <url>https://wa.me/5521966300557?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Zeekr%20001%20100%20KW%20EL%C3%89TRICO%20FLAGSHIP%20AWD%202025%20%28c%C3%B3d.%202742530%29.%20%5BCATALOGO-META-ZEEKR-BARRA%5D</url>
     <make>Zeekr</make>
     <model>001</model>
     <year>2025</year>
@@ -3850,6 +4037,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>ELECTRIC</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>100 KW ELÉTRICO FLAGSHIP AWD</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Raion ZEEKR - Barra</dealer_name>
     <image>
@@ -3936,7 +4124,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2750737</vehicle_id>
-    <title>Mini COUNTRYMAN</title>
+    <title>Mini COUNTRYMAN 1.5 12V TWINPOWER TURBO HYBRID COOPER S E TOP ALL4 STEPTRONIC</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -3944,7 +4132,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/5521966300557?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mini%20COUNTRYMAN%202024%20%28c%C3%B3d.%202750737%29.%20%5BCATALOGO-META-ZEEKR-BARRA%5D</url>
+    <url>https://wa.me/5521966300557?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mini%20COUNTRYMAN%201.5%2012V%20TWINPOWER%20TURBO%20HYBRID%20COOPER%20S%20E%20TOP%20ALL4%20STEPTRONIC%202024%20%28c%C3%B3d.%202750737%29.%20%5BCATALOGO-META-ZEEKR-BARRA%5D</url>
     <make>Mini</make>
     <model>COUNTRYMAN</model>
     <year>2024</year>
@@ -3958,6 +4146,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>HYBRID</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>1.5 12V TWINPOWER TURBO HYBRID COOPER S E TOP ALL4</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Raion ZEEKR - Barra</dealer_name>
     <image>
@@ -4017,7 +4206,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2752607</vehicle_id>
-    <title>Zeekr X</title>
+    <title>Zeekr X 66 Kw Elétrico Premium</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -4025,7 +4214,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/5521966300557?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Zeekr%20X%202025%20%28c%C3%B3d.%202752607%29.%20%5BCATALOGO-META-ZEEKR-BARRA%5D</url>
+    <url>https://wa.me/5521966300557?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Zeekr%20X%2066%20Kw%20El%C3%A9trico%20Premium%202025%20%28c%C3%B3d.%202752607%29.%20%5BCATALOGO-META-ZEEKR-BARRA%5D</url>
     <make>Zeekr</make>
     <model>X</model>
     <year>2025</year>
@@ -4039,6 +4228,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>ELECTRIC</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>66 Kw Elétrico Premium</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Raion ZEEKR - Barra</dealer_name>
     <image>
@@ -4080,7 +4270,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2658886</vehicle_id>
-    <title>Chevrolet TRACKER</title>
+    <title>Chevrolet TRACKER 1.2 TURBO FLEX PREMIER AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -4088,7 +4278,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Chevrolet%20TRACKER%202024%20%28c%C3%B3d.%202658886%29.%20%5BCATALOGO-META-KEIKO-PETROPOLIS%5D</url>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Chevrolet%20TRACKER%201.2%20TURBO%20FLEX%20PREMIER%20AUTOM%C3%81TICO%202024%20%28c%C3%B3d.%202658886%29.%20%5BCATALOGO-META-KEIKO-PETROPOLIS%5D</url>
     <make>Chevrolet</make>
     <model>TRACKER</model>
     <year>2024</year>
@@ -4102,6 +4292,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>1.2 TURBO FLEX PREMIER AUTOMÁTICO</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Petrópolis</dealer_name>
     <image>
@@ -4161,7 +4352,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2685853</vehicle_id>
-    <title>Jeep RENEGADE</title>
+    <title>Jeep RENEGADE 1.3 T270 TURBO FLEX LONGITUDE AT6</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -4169,7 +4360,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Jeep%20RENEGADE%202024%20%28c%C3%B3d.%202685853%29.%20%5BCATALOGO-META-KEIKO-PETROPOLIS%5D</url>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Jeep%20RENEGADE%201.3%20T270%20TURBO%20FLEX%20LONGITUDE%20AT6%202024%20%28c%C3%B3d.%202685853%29.%20%5BCATALOGO-META-KEIKO-PETROPOLIS%5D</url>
     <make>Jeep</make>
     <model>RENEGADE</model>
     <year>2024</year>
@@ -4183,6 +4374,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>1.3 T270 TURBO FLEX LONGITUDE AT6</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Petrópolis</dealer_name>
     <image>
@@ -4257,7 +4449,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2687064</vehicle_id>
-    <title>Renault CAPTUR</title>
+    <title>Renault CAPTUR 1.6 16V SCE FLEX LIFE X-TRONIC</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -4265,7 +4457,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Renault%20CAPTUR%202021%20%28c%C3%B3d.%202687064%29.%20%5BCATALOGO-META-KEIKO-PETROPOLIS%5D</url>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Renault%20CAPTUR%201.6%2016V%20SCE%20FLEX%20LIFE%20X-TRONIC%202021%20%28c%C3%B3d.%202687064%29.%20%5BCATALOGO-META-KEIKO-PETROPOLIS%5D</url>
     <make>Renault</make>
     <model>CAPTUR</model>
     <year>2021</year>
@@ -4279,6 +4471,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>1.6 16V SCE FLEX LIFE X-TRONIC</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Petrópolis</dealer_name>
     <image>
@@ -4344,7 +4537,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2731227</vehicle_id>
-    <title>Nissan SENTRA</title>
+    <title>Nissan SENTRA 2.0 16V GASOLINA EXCLUSIVE XTRONIC</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -4352,7 +4545,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20SENTRA%202025%20%28c%C3%B3d.%202731227%29.%20%5BCATALOGO-META-KEIKO-PETROPOLIS%5D</url>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20SENTRA%202.0%2016V%20GASOLINA%20EXCLUSIVE%20XTRONIC%202025%20%28c%C3%B3d.%202731227%29.%20%5BCATALOGO-META-KEIKO-PETROPOLIS%5D</url>
     <make>Nissan</make>
     <model>SENTRA</model>
     <year>2025</year>
@@ -4366,6 +4559,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>GASOLINE</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SEDAN</body_style>
+    <trim>2.0 16V GASOLINA EXCLUSIVE XTRONIC</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Petrópolis</dealer_name>
     <image>
@@ -4425,7 +4619,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2782051</vehicle_id>
-    <title>Nissan KICKS</title>
+    <title>Nissan KICKS 1.0 TURBO FLEX PLATINUM DCT</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -4433,7 +4627,7 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20KICKS%202026%20%28c%C3%B3d.%202782051%29.%20%5BCATALOGO-META-KEIKO-PETROPOLIS%5D</url>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20KICKS%201.0%20TURBO%20FLEX%20PLATINUM%20DCT%202026%20%28c%C3%B3d.%202782051%29.%20%5BCATALOGO-META-KEIKO-PETROPOLIS%5D</url>
     <make>Nissan</make>
     <model>KICKS</model>
     <year>2026</year>
@@ -4447,6 +4641,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
+    <trim>1.0 TURBO FLEX PLATINUM DCT</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Petrópolis</dealer_name>
     <image>
@@ -4512,9 +4707,9 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2766654</vehicle_id>
-    <title>Ford KA</title>
-    <description>Ford KA</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Ford%20KA%202019%20%28c%C3%B3d.%202766654%29.%20%5BCATALOGO-META-SEMINOVOS-BARRA-MANSA%5D</url>
+    <title>Ford KA 1.0 TI-VCT FLEX SE PLUS SEDAN MANUAL</title>
+    <description>Ford KA 1.0 TI-VCT FLEX SE PLUS SEDAN MANUAL</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Ford%20KA%201.0%20TI-VCT%20FLEX%20SE%20PLUS%20SEDAN%20MANUAL%202019%20%28c%C3%B3d.%202766654%29.%20%5BCATALOGO-META-SEMINOVOS-BARRA-MANSA%5D</url>
     <make>Ford</make>
     <model>KA</model>
     <year>2019</year>
@@ -4528,6 +4723,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>MANUAL</transmission>
     <body_style>SEDAN</body_style>
+    <trim>1.0 TI-VCT FLEX SE PLUS SEDAN MANUAL</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Raion Seminovos - Barra Mansa</dealer_name>
     <image>
@@ -4569,9 +4765,9 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
   </listing>
   <listing>
     <vehicle_id>2789877</vehicle_id>
-    <title>Volkswagen FOX</title>
-    <description>Volkswagen FOX</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Volkswagen%20FOX%202019%20%28c%C3%B3d.%202789877%29.%20%5BCATALOGO-META-SEMINOVOS-BARRA-MANSA%5D</url>
+    <title>Volkswagen FOX 1.6 MSI TOTAL FLEX CONNECT 4P MANUAL</title>
+    <description>Volkswagen FOX 1.6 MSI TOTAL FLEX CONNECT 4P MANUAL</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Volkswagen%20FOX%201.6%20MSI%20TOTAL%20FLEX%20CONNECT%204P%20MANUAL%202019%20%28c%C3%B3d.%202789877%29.%20%5BCATALOGO-META-SEMINOVOS-BARRA-MANSA%5D</url>
     <make>Volkswagen</make>
     <model>FOX</model>
     <year>2019</year>
@@ -4585,6 +4781,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <fuel_type>FLEX</fuel_type>
     <transmission>MANUAL</transmission>
     <body_style>HATCHBACK</body_style>
+    <trim>1.6 MSI TOTAL FLEX CONNECT 4P MANUAL</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Raion Seminovos - Barra Mansa</dealer_name>
     <image>
@@ -4628,6 +4825,90 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <city>Barra Mansa</city>
     <region>RJ</region>
     <postal_code>27332-360</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2599779</vehicle_id>
+    <title>Nissan KICKS</title>
+    <description>Somos um grupo de 13 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Certificado de Km Real, Laudo Cautelar e possibilidade de até 3 anos de Garantia (Consulte Condições). 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20KICKS%202024%20%28c%C3%B3d.%202599779%29.%20%5BCATALOGO-META-KEIKO-NOVA-IGUACU%5D</url>
+    <make>Nissan</make>
+    <model>KICKS</model>
+    <year>2024</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>82042</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>104890.00 BRL</price>
+    <exterior_color>Azul</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Nissan Keiko - Nova Iguaçu</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2599779.jpg?v=893436a2</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/gYCEAd2LZ9uND4Tm6k4PqQsXBlmffGDkKYV3.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/wxf2y6QQIq618MzqAsUXKpCUWaX5VYyZ7ZOV.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/E1cwG4GNSyWu0YkWt9Ue6u5Xes1nWJRFy7PJ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/FYJgW7LqiweJcqZNqeqyUgrCVvRxYKddrlwF.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/cgUAG6st7CegUiKunTODyBTQw95D665gWQxA.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/Z0hf8X2bqlsMzjXln69psXyFDoSCS2T4Mcwa.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/mc9P1jM80Bw92VhQcFmwbz5nLadEuMwNt6G4.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/XRq6sRbCaKFhS89r52A1QDos5S8TU8YhT8DG.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/EcvyZiRidZwWGtsgkBJEGiyFAq3aGNgCxlDz.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/1FLrJRQgoLjkWtYHArRUZshy2nVP1OYZfTi5.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/H1rhS98LHvBYqOcKx6bjRZAc30bat6svXgI6.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/soM5HrGcG1YdRRXFgJFhfJKUV9tFqb3BcIYJ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/zPBWX7e9Xg0MDx6ZBtv6aSUphF9N2Xb9qDmD.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2599779/photos/cGEiSK6cxWv1hIW9eL4Hl3iA5rbt3WOcA9Ml.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">GOVERNADOR ROBERTO SILVEIRA, 217</component>
+      <component name="city">Nova Iguaçu</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">26210-210</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>GOVERNADOR ROBERTO SILVEIRA, 217</street_address>
+    <city>Nova Iguaçu</city>
+    <region>RJ</region>
+    <postal_code>26210-210</postal_code>
     <country>Brazil</country>
   </listing>
   <listing>
@@ -5576,6 +5857,69 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     </image>
     <image>
       <url>https://s3.agsistema.net/6699/vehicles/2612164/photos/app-photos-lZHG3607xqOHAW3u3ncJU5VZhq3rGgp9.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">Av. das Américas, 17400</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">22790-704</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>Av. das Américas, 17400</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>22790-704</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2616526</vehicle_id>
+    <title>Mitsubishi OUTLANDER</title>
+    <description>Somos um grupo de 14 concessionárias , Raion , que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos de altíssima procedência , possuem Vistoria Cautelar , revisados e com garantia. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20OUTLANDER%202018%20%28c%C3%B3d.%202616526%29.%20%5BCATALOGO-META-RAION-RECREIO%5D</url>
+    <make>Mitsubishi</make>
+    <model>OUTLANDER</model>
+    <year>2018</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>65675</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>122890.00 BRL</price>
+    <exterior_color>Branco</exterior_color>
+    <fuel_type>GASOLINE</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Taika Mitsubishi - Recreio</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2616526.jpg?v=1b049698</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2616526/photos/PjLm2HpDfpD7qOZEf3XFQwsDscsSYFX2.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2616526/photos/r9W8ZRieue7BNlopAo4TmUVnsdCkWPBr.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2616526/photos/keKv3A9PwXEZKPS7WMjMTBi7sjT72IML.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2616526/photos/fOvt0LC6n0jHAzTzCh0kwvPJbotwtr2N.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2616526/photos/zRgZxYGNLo9lwXfmCYVi88O1SbUdmRbG.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2616526/photos/MbaESXDgRPav8OpJhgN4dZwmgeKKkEjY.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2616526/photos/xb6wbi0EufYeU3CVzyQ57sr1aMpsGySN.jpg</url>
     </image>
     <address format="simple">
       <component name="addr1">Av. das Américas, 17400</component>
@@ -8942,6 +9286,93 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <city>Rio de Janeiro</city>
     <region>RJ</region>
     <postal_code>23045-830</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2766929</vehicle_id>
+    <title>Nissan VERSA</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20VERSA%202022%20%28c%C3%B3d.%202766929%29.%20%5BCATALOGO-META-KEIKO-DUQUE-DE-CAXIAS%5D</url>
+    <make>Nissan</make>
+    <model>VERSA</model>
+    <year>2022</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>108928</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>81890.00 BRL</price>
+    <exterior_color>Cinza</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SEDAN</body_style>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Nissan Keiko - Duque de Caxias</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2766929.jpg?v=db72f878</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/1z3Wwghi3zNCDhOM1Sqhoz5rYCkC6gH4.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/6xRR2rB675bJTHKnj2IqYaUKDbuWa2LP.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/IhhrALPSFLcQXeHl4tcnLnMjzyKvppv7.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/25JVRZ1SFaMa6FTBHUEyHLP2Bkav60vB.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/x68Cx5viuKIGwKc6kCIiAauvamMc4jV0.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/EOwoaLi5l9Q9J7t1YfGnnLeCKhc4cDwS.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/i3Enn5EViqC37zHVhXKwIUAagS9zE8H8.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/EA5Y2OipL3kYeWIrhMFddgEVypWVql3m.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/ht1St57qeMHewqr5AfJYHFbvsKEIsInQ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/G0MGY0nCAVViPhDrdiRZ3Q96H4NhPxHR.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/yEZKyW8H5L5kHBtTqe2TLwJKK6DAzIM3.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/Xu0wJZHIK3O5dQOJu0ZcFEfe7YWDweos.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/0acl2EV39IPko7K38DbshMtt33plJZcy.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/aWS7r3S6JfSARdW4YG3NCbS2KjPXGma9.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2766929/photos/kF0wJH7ARtl8MDwe8tVOB7Zvix3ZwPd6.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">WASHINGTON LUIZ, 1375</component>
+      <component name="city">Duque de Caxias</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">25085-008</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>WASHINGTON LUIZ, 1375</street_address>
+    <city>Duque de Caxias</city>
+    <region>RJ</region>
+    <postal_code>25085-008</postal_code>
     <country>Brazil</country>
   </listing>
   <listing>
