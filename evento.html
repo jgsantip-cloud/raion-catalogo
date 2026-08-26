@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Captação de lead — Grupo Raion</title>
+<style>
+  :root{
+    --bg:#0f1115; --card:#171a21; --line:#272c37;
+    --txt:#e6e8ee; --dim:#98a0b3; --ac:#e11d2e; --ok:#22c55e;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--txt);
+    font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    padding:20px 16px calc(48px + env(safe-area-inset-bottom));
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:26rem;margin:0 auto}
+  header{margin:8px 0 20px}
+  .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);font-weight:700}
+  h1{font-size:24px;margin:4px 0 2px;line-height:1.2}
+  .sub{color:var(--dim);font-size:14px}
+  label{display:block;margin:14px 0 6px;font-size:14px;color:var(--dim)}
+  .req::after{content:" *";color:var(--ac)}
+  input,select{
+    width:100%;padding:14px;border-radius:12px;border:1px solid var(--line);
+    background:var(--card);color:var(--txt);font-size:17px;appearance:none;
+  }
+  input:focus,select:focus{outline:2px solid var(--ac);outline-offset:1px}
+  select{background-image:linear-gradient(45deg,transparent 50%,var(--dim) 50%),
+    linear-gradient(135deg,var(--dim) 50%,transparent 50%);
+    background-position:calc(100% - 20px) 22px,calc(100% - 14px) 22px;
+    background-size:6px 6px;background-repeat:no-repeat;padding-right:40px}
+  button{
+    width:100%;margin-top:24px;padding:16px;border:0;border-radius:12px;
+    background:var(--ac);color:#fff;font-size:17px;font-weight:700;cursor:pointer;
+  }
+  button[disabled]{opacity:.55}
+  .aviso{margin-top:14px;padding:12px;border-radius:10px;font-size:14px;display:none}
+  .aviso.erro{background:#2a1216;border:1px solid #5b1d25;color:#ffc9d0;display:block}
+  .centro{text-align:center;padding:40px 8px}
+  .mark{font-size:56px;line-height:1;color:var(--ok)}
+  .centro h2{margin:12px 0 4px;font-size:22px}
+  .centro p{color:var(--dim);margin:0 0 24px}
+  .id{font-size:13px;color:var(--dim);margin-top:20px}
+  .hide{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div id="carregando" class="centro"><p>Carregando o evento...</p></div>
+
+  <div id="tela-form" class="hide">
+    <header>
+      <div class="kicker">Grupo Raion</div>
+      <h1 id="titulo"></h1>
+      <div class="sub">Cadastro de cliente</div>
+    </header>
+
+    <form id="f" autocomplete="on">
+      <label class="req" for="nome">Nome do cliente</label>
+      <input id="nome" required autocomplete="name" enterkeyhint="next">
+
+      <label class="req" for="telefone">Telefone (WhatsApp)</label>
+      <input id="telefone" required type="tel" inputmode="tel" autocomplete="tel"
+             placeholder="(21) 99999-9999">
+
+      <label for="email">E-mail</label>
+      <input id="email" type="email" inputmode="email" autocomplete="email">
+
+      <label for="veiculo">Veículo de interesse</label>
+      <input id="veiculo" placeholder="ex. Kicks, Meteor 350">
+
+      <div id="box-loja" class="hide">
+        <label class="req" for="loja">Loja</label>
+        <select id="loja" required></select>
+      </div>
+
+      <label for="vendedor">Quem está cadastrando</label>
+      <select id="vendedor"></select>
+
+      <button id="btn" type="submit">Enviar cadastro</button>
+      <div class="aviso" id="erro"></div>
+    </form>
+  </div>
+
+  <div id="tela-ok" class="centro hide">
+    <div class="mark">&#10004;</div>
+    <h2>Cadastro enviado</h2>
+    <p id="ok-nome"></p>
+    <button id="novo" type="button">Cadastrar outro cliente</button>
+    <div class="id" id="ok-id"></div>
+  </div>
+
+  <div id="tela-erro" class="centro hide">
+    <h2 id="erro-titulo">Link inválido</h2>
+    <p id="erro-msg"></p>
+  </div>
+
+</div>
+
+<script>
+// Formulario de captacao em evento de rua (substitui o app do AppSheet).
+// A configuracao do evento vem da Edge Function lead-evento; esta pagina e generica:
+// evento novo = linha nova na tabela eventos_captacao, sem republicar o site.
+var API = "https://winlvztcxczdgjqklxrv.supabase.co/functions/v1/lead-evento";
+
+var $ = function (id) { return document.getElementById(id); };
+var CHAVE = new URLSearchParams(location.search).get("e") || "";
+var EV = null;
+
+function mostra(id) {
+  ["carregando", "tela-form", "tela-ok", "tela-erro"].forEach(function (t) {
+    $(t).classList.toggle("hide", t !== id);
+  });
+}
+
+function falhaFatal(titulo, msg) {
+  $("erro-titulo").textContent = titulo;
+  $("erro-msg").textContent = msg;
+  mostra("tela-erro");
+}
+
+function pintaVendedores() {
+  var loja = $("loja").value;
+  var lista = EV.vendedores.filter(function (v) { return !loja || !v.loja || v.loja === loja; });
+  var html = '<option value="">Não informar</option>';
+  lista.forEach(function (v) {
+    html += '<option value="' + v.login + '">' + v.nome + '</option>';
+  });
+  $("vendedor").innerHTML = html;
+}
+
+function montaForm() {
+  document.title = EV.nome + " — captação";
+  $("titulo").textContent = EV.nome;
+
+  var sel = $("loja");
+  if (EV.lojas.length > 1) {
+    $("box-loja").classList.remove("hide");
+    var html = '<option value="">Selecione...</option>';
+    EV.lojas.forEach(function (l) { html += '<option value="' + l + '">' + l + '</option>'; });
+    sel.innerHTML = html;
+  } else {
+    sel.innerHTML = '<option value="' + EV.lojas[0] + '" selected>' + EV.lojas[0] + '</option>';
+    sel.required = false;
+  }
+  sel.addEventListener("change", pintaVendedores);
+  pintaVendedores();
+  mostra("tela-form");
+}
+
+// ------------------------------------------------------------- carregar evento
+
+if (!CHAVE) {
+  falhaFatal("Link incompleto", "Esse link não diz de qual evento é. Peça o link certo pro marketing.");
+} else {
+  fetch(API + "?e=" + encodeURIComponent(CHAVE))
+    .then(function (r) { return r.json(); })
+    .then(function (j) {
+      if (!j.ok) {
+        if (j.erro === "evento-encerrado") {
+          falhaFatal("Evento encerrado", "Esse evento já foi fechado. Fale com o marketing.");
+        } else {
+          falhaFatal("Link inválido", "Esse evento não existe. Confira o link com o marketing.");
+        }
+        return;
+      }
+      EV = j.evento;
+      montaForm();
+    })
+    .catch(function () {
+      falhaFatal("Sem conexão", "Não deu pra carregar o evento. Confira o sinal e recarregue a página.");
+    });
+}
+
+// -------------------------------------------------------------------- envio
+
+$("f").addEventListener("submit", function (e) {
+  e.preventDefault();
+  var btn = $("btn"), erro = $("erro");
+  erro.className = "aviso";
+  btn.disabled = true;
+  btn.textContent = "Enviando...";
+
+  fetch(API, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({
+      chave: EV.chave,
+      nome: $("nome").value,
+      telefone: $("telefone").value,
+      email: $("email").value,
+      veiculo: $("veiculo").value,
+      loja: $("loja").value,
+      vendedor: $("vendedor").value
+    })
+  })
+    .then(function (r) { return r.json(); })
+    .then(function (j) {
+      if (!j.ok) throw new Error(j.erro || "não foi possível enviar");
+      $("ok-nome").textContent = $("nome").value;
+      $("ok-id").textContent = j.id_evento ? ("Syonet #" + j.id_evento) : "";
+      mostra("tela-ok");
+      window.scrollTo(0, 0);
+    })
+    .catch(function (err) {
+      erro.textContent = "Não enviou: " + err.message + ". Confira o sinal e tente de novo.";
+      erro.className = "aviso erro";
+    })
+    .then(function () {
+      btn.disabled = false;
+      btn.textContent = "Enviar cadastro";
+    });
+});
+
+$("novo").addEventListener("click", function () {
+  $("f").reset();
+  if (EV.lojas.length === 1) $("loja").value = EV.lojas[0];
+  pintaVendedores();
+  mostra("tela-form");
+  $("nome").focus();
+});
+</script>
+</body>
+</html>
