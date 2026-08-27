@@ -162,6 +162,15 @@ function rotulo(p) {
     ? "entrega em " + ddmm(p.data_gatilho)
     : "OS encerrada em " + ddmm(p.data_gatilho);
 }
+// segunda linha do card: o que foi feito/comprado e com quem
+function linha2(p) {
+  var d = p.detalhe || {};
+  if (p.tipo === "compra") return d.vendedor ? "vendedor: " + d.vendedor : "";
+  var partes = [];
+  if (d.servicos) partes.push(d.servicos.split(" | ").join(" · "));
+  if (d.consultor) partes.push("consultor: " + d.consultor);
+  return partes.join("  —  ");
+}
 
 function desenhaLista() {
   var lista = $("lista");
@@ -178,10 +187,14 @@ function desenhaLista() {
       '<span class="badge ' + p.tipo + '">' + p.tipo + "</span>" +
       '<span class="venc">' + (d > 0 ? "venceu há " + d + "d" : "vence hoje") + "</span>" +
       "<h3></h3>" +
-      '<div class="det"></div>';
+      '<div class="det"></div>' +
+      '<div class="det l2" style="margin-top:2px"></div>';
     card.querySelector("h3").textContent = p.cliente_nome;
     card.querySelector(".det").textContent =
       rotulo(p) + (p.veiculo ? " · " + p.veiculo : "");
+    var l2 = linha2(p);
+    if (l2) { card.querySelector(".l2").textContent = l2; }
+    else { card.querySelector(".l2").remove(); }
     card.onclick = function () { abre(p); };
     lista.appendChild(card);
   });
@@ -217,7 +230,9 @@ function abre(p) {
   RESP = {};
   $("p-badge").innerHTML = '<span class="badge ' + p.tipo + '">' + p.tipo + "</span>";
   $("p-nome").textContent = p.cliente_nome;
-  $("p-det").textContent = rotulo(p) + (p.veiculo ? " · " + p.veiculo : "");
+  var det = rotulo(p) + (p.veiculo ? " · " + p.veiculo : "");
+  var l2 = linha2(p);
+  $("p-det").textContent = det + (l2 ? "  ·  " + l2 : "");
   var contato = $("p-contato");
   contato.innerHTML = "";
   if (p.telefone) {
