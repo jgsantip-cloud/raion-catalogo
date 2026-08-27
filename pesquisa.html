@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Pesquisa de Satisfação — Zeekr</title>
 <style>
@@ -14,26 +14,26 @@
   html,body{margin:0}
   body{
     background:var(--bg); color:var(--txt);
-    font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-    padding:20px 16px calc(48px + env(safe-area-inset-bottom));
-    -webkit-text-size-adjust:100%;
+    font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    padding:28px 24px 60px;
   }
-  .wrap{max-width:28rem;margin:0 auto}
-  header{margin:8px 0 20px}
+  .wrap{max-width:74rem;margin:0 auto}
+  .estreito{max-width:26rem;margin:0 auto}
+  header{margin:0 0 22px}
   .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);font-weight:700}
-  h1{font-size:24px;margin:4px 0 2px;line-height:1.2}
+  h1{font-size:26px;margin:4px 0 2px;line-height:1.2}
   .sub{color:var(--dim);font-size:14px}
   label{display:block;margin:14px 0 6px;font-size:14px;color:var(--dim)}
   input,textarea{
-    width:100%;padding:14px;border-radius:12px;border:1px solid var(--line);
-    background:var(--card);color:var(--txt);font-size:17px;appearance:none;
+    width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);
+    background:var(--card);color:var(--txt);font-size:16px;appearance:none;
   }
   textarea{min-height:88px;resize:vertical;font-family:inherit}
   input:focus,textarea:focus{outline:2px solid var(--ac);outline-offset:1px}
   button{border:0;border-radius:12px;cursor:pointer;font-weight:700}
-  .btn-cheio{width:100%;margin-top:16px;padding:16px;background:var(--ac);color:#fff;font-size:17px}
-  .btn-fantasma{width:100%;margin-top:10px;padding:13px;background:var(--card);
-    border:1px solid var(--line);color:var(--dim);font-size:15px}
+  .btn-cheio{width:100%;margin-top:16px;padding:14px;background:var(--ac);color:#fff;font-size:16px}
+  .btn-fantasma{width:100%;margin-top:10px;padding:12px;background:var(--card);
+    border:1px solid var(--line);color:var(--dim);font-size:14px}
   button[disabled]{opacity:.55}
   .aviso{margin-top:14px;padding:12px;border-radius:10px;font-size:14px;display:none}
   .aviso.erro{background:#2a1216;border:1px solid #5b1d25;color:#ffc9d0;display:block}
@@ -41,29 +41,50 @@
   .centro p{color:var(--dim)}
   .hide{display:none}
 
-  .card{
-    background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:14px;margin:10px 0;cursor:pointer;
-  }
-  .card:active{outline:2px solid var(--ac)}
   .badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;
-    padding:3px 8px;border-radius:99px;text-transform:uppercase}
+    padding:3px 9px;border-radius:99px;text-transform:uppercase}
   .badge.compra{background:#12291a;color:var(--ok);border:1px solid #1d4a2c}
   .badge.servico{background:#241a06;color:var(--warn);border:1px solid #4a3812}
-  .venc{float:right;font-size:12px;color:var(--dim);margin-top:3px}
-  .card h3{margin:8px 0 2px;font-size:17px}
-  .card .det{color:var(--dim);font-size:13px}
+  .venc{font-size:12px;color:var(--dim)}
+  .venc.atrasada{color:var(--warn)}
   .tel{color:var(--ok);text-decoration:none;font-weight:700}
 
-  .q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0}
+  /* lista em linhas largas (desktop) */
+  .cab, .linha{
+    display:grid;gap:16px;align-items:center;
+    grid-template-columns:110px 1.1fr 1fr 1.6fr 150px;
+  }
+  .cab{padding:0 16px;margin:18px 0 6px;color:var(--dim);font-size:12px;
+    text-transform:uppercase;letter-spacing:.08em}
+  .linha{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:14px 16px;margin:8px 0;cursor:pointer;
+  }
+  .linha:hover{outline:2px solid var(--ac)}
+  .linha h3{margin:0 0 2px;font-size:16px}
+  .linha .mini{color:var(--dim);font-size:13px}
+  .quem{color:var(--txt);font-size:14px}
+
+  /* pesquisa aberta: dossie + formulario */
+  .duas{display:grid;grid-template-columns:340px 1fr;gap:24px;align-items:start}
+  @media (max-width:900px){ .duas{grid-template-columns:1fr} .cab{display:none}
+    .linha{grid-template-columns:1fr;gap:6px} }
+  .painel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .painel h2{margin:10px 0 2px;font-size:20px}
+  .painel dl{margin:14px 0 0}
+  .painel dt{color:var(--dim);font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-top:12px}
+  .painel dd{margin:2px 0 0;font-size:15px}
+  .painel .tel{font-size:20px}
+
+  .q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:0 0 12px}
   .q .p{font-size:15px;margin:0 0 10px}
   .opcoes{display:flex;gap:6px;flex-wrap:wrap}
   .opcoes button{
-    flex:1;min-width:38px;padding:12px 0;background:var(--bg);
+    min-width:44px;padding:10px 14px;background:var(--bg);
     border:1px solid var(--line);color:var(--txt);font-size:15px;border-radius:10px;
   }
   .opcoes button.sel{background:var(--ac);border-color:var(--ac);color:#fff}
-  .voltar{background:none;color:var(--dim);font-size:14px;padding:6px 0;margin-bottom:6px}
+  .voltar{background:none;color:var(--dim);font-size:14px;padding:6px 0;margin-bottom:10px}
 </style>
 </head>
 <body>
@@ -71,17 +92,19 @@
 
   <!-- senha -->
   <div id="tela-senha" class="hide">
-    <header>
-      <div class="kicker">Grupo Raion · Zeekr</div>
-      <h1>Pesquisa de Satisfação</h1>
-      <div class="sub">Página de trabalho da equipe</div>
-    </header>
-    <form id="f-senha">
-      <label for="senha">Senha de acesso</label>
-      <input id="senha" type="password" autocomplete="current-password" required>
-      <button class="btn-cheio" type="submit">Entrar</button>
-      <div class="aviso" id="erro-senha"></div>
-    </form>
+    <div class="estreito">
+      <header>
+        <div class="kicker">Grupo Raion · Zeekr</div>
+        <h1>Pesquisa de Satisfação</h1>
+        <div class="sub">Página de trabalho da equipe</div>
+      </header>
+      <form id="f-senha">
+        <label for="senha">Senha de acesso</label>
+        <input id="senha" type="password" autocomplete="current-password" required>
+        <button class="btn-cheio" type="submit">Entrar</button>
+        <div class="aviso" id="erro-senha"></div>
+      </form>
+    </div>
   </div>
 
   <div id="carregando" class="centro"><p>Carregando...</p></div>
@@ -93,33 +116,43 @@
       <h1>Pesquisas pendentes</h1>
       <div class="sub" id="resumo"></div>
     </header>
+    <div class="cab">
+      <div>Tipo</div><div>Cliente</div><div>Veículo</div>
+      <div>O que foi feito / quem atendeu</div><div>Quando</div>
+    </div>
     <div id="lista"></div>
     <div id="vazio" class="centro hide"><p>Nenhuma pesquisa pendente. 🎉</p></div>
-    <button class="btn-fantasma" id="recarregar" type="button">Atualizar lista</button>
+    <button class="btn-fantasma" id="recarregar" type="button" style="max-width:16rem">Atualizar lista</button>
   </div>
 
   <!-- pesquisa aberta -->
   <div id="tela-pesquisa" class="hide">
     <button class="voltar" id="voltar" type="button">&#8592; voltar pra lista</button>
-    <header style="margin-top:0">
-      <div id="p-badge"></div>
-      <h1 id="p-nome" style="font-size:21px"></h1>
-      <div class="sub" id="p-det"></div>
-      <div class="sub" id="p-contato" style="margin-top:6px"></div>
-    </header>
-    <div id="perguntas"></div>
-    <label for="atendente">Quem está ligando (seu nome)</label>
-    <input id="atendente" autocomplete="off">
-    <button class="btn-cheio" id="concluir" type="button">Concluir pesquisa</button>
-    <button class="btn-fantasma" id="sem-contato" type="button">Não consegui contato (desisto)</button>
-    <button class="btn-fantasma" id="descartar" type="button">Descartar (não pesquisar)</button>
-    <div class="aviso" id="erro-resp"></div>
+    <div class="duas">
+      <div class="painel">
+        <div id="p-badge"></div>
+        <h2 id="p-nome"></h2>
+        <dl id="p-dossie"></dl>
+      </div>
+      <div>
+        <div id="perguntas"></div>
+        <label for="atendente">Quem está ligando (seu nome)</label>
+        <input id="atendente" autocomplete="off" style="max-width:22rem">
+        <div style="max-width:22rem">
+          <button class="btn-cheio" id="concluir" type="button">Concluir pesquisa</button>
+          <button class="btn-fantasma" id="sem-contato" type="button">Não consegui contato (desisto)</button>
+          <button class="btn-fantasma" id="descartar" type="button">Descartar (não pesquisar)</button>
+        </div>
+        <div class="aviso" id="erro-resp"></div>
+      </div>
+    </div>
   </div>
 
 </div>
 
 <script>
 // Pagina de trabalho da Pesquisa de Satisfacao Zeekr (fase 1: equipe liga e preenche).
+// Desktop-first por decisao do Joao (26/08/2026): a pesquisa e feita no computador.
 // Dados e perguntas vem da Edge Function pesquisa-zeekr, atras de senha; nada mora aqui.
 // Quem alimenta as pendencias e o robo local pesquisa_zeekr.py (repo python_leads).
 var API = "https://winlvztcxczdgjqklxrv.supabase.co/functions/v1/pesquisa-zeekr";
@@ -157,19 +190,21 @@ function diasVencida(dataGatilho) {
   return Math.floor((Date.now() - venc.getTime()) / 864e5);
 }
 function ddmm(iso) { return iso.slice(8, 10) + "/" + iso.slice(5, 7); }
-function rotulo(p) {
-  return p.tipo === "compra"
-    ? "entrega em " + ddmm(p.data_gatilho)
-    : "OS encerrada em " + ddmm(p.data_gatilho);
+function rotuloData(p) {
+  return (p.tipo === "compra" ? "entrega " : "OS encerrada ") + ddmm(p.data_gatilho);
 }
-// segunda linha do card: o que foi feito/comprado e com quem
-function linha2(p) {
+function servicosBonitos(d) {
+  return (d.servicos || "").split(" | ").join(" · ");
+}
+// coluna "o que foi feito / quem atendeu"
+function feitoPorQuem(p) {
   var d = p.detalhe || {};
-  if (p.tipo === "compra") return d.vendedor ? "vendedor: " + d.vendedor : "";
-  var partes = [];
-  if (d.servicos) partes.push(d.servicos.split(" | ").join(" · "));
-  if (d.consultor) partes.push("consultor: " + d.consultor);
-  return partes.join("  —  ");
+  if (p.tipo === "compra") {
+    return { feito: "Compra de veículo" + (d.proposta ? " · proposta " + d.proposta : ""),
+             quem: d.vendedor ? "vendedor: " + d.vendedor : "" };
+  }
+  return { feito: servicosBonitos(d) + (d.os ? "  (OS " + d.os + ")" : ""),
+           quem: d.consultor ? "consultor: " + d.consultor : "" };
 }
 
 function desenhaLista() {
@@ -181,22 +216,25 @@ function desenhaLista() {
 
   pend.forEach(function (p) {
     var d = diasVencida(p.data_gatilho);
-    var card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML =
-      '<span class="badge ' + p.tipo + '">' + p.tipo + "</span>" +
-      '<span class="venc">' + (d > 0 ? "venceu há " + d + "d" : "vence hoje") + "</span>" +
-      "<h3></h3>" +
-      '<div class="det"></div>' +
-      '<div class="det l2" style="margin-top:2px"></div>';
-    card.querySelector("h3").textContent = p.cliente_nome;
-    card.querySelector(".det").textContent =
-      rotulo(p) + (p.veiculo ? " · " + p.veiculo : "");
-    var l2 = linha2(p);
-    if (l2) { card.querySelector(".l2").textContent = l2; }
-    else { card.querySelector(".l2").remove(); }
-    card.onclick = function () { abre(p); };
-    lista.appendChild(card);
+    var fq = feitoPorQuem(p);
+    var linha = document.createElement("div");
+    linha.className = "linha";
+    linha.innerHTML =
+      '<div><span class="badge ' + p.tipo + '">' + p.tipo + "</span></div>" +
+      "<div><h3></h3><div class='mini tel-slot'></div></div>" +
+      "<div class='quem veic'></div>" +
+      "<div><div class='quem feito'></div><div class='mini quem-linha'></div></div>" +
+      "<div><div class='quem data'></div>" +
+      '<div class="venc' + (d > 2 ? " atrasada" : "") + '">' +
+        (d > 0 ? "venceu há " + d + "d" : "vence hoje") + "</div></div>";
+    linha.querySelector("h3").textContent = p.cliente_nome;
+    if (p.telefone) linha.querySelector(".tel-slot").textContent = "📞 " + p.telefone;
+    linha.querySelector(".veic").textContent = p.veiculo || "—";
+    linha.querySelector(".feito").textContent = fq.feito;
+    linha.querySelector(".quem-linha").textContent = fq.quem;
+    linha.querySelector(".data").textContent = rotuloData(p);
+    linha.onclick = function () { abre(p); };
+    lista.appendChild(linha);
   });
   mostra("tela-lista");
 }
@@ -225,24 +263,39 @@ function carrega() {
 
 // ---------------------------------------------------------------- pesquisa aberta
 
+function dd(dl, titulo, valor, html) {
+  if (!valor) return;
+  var dt = document.createElement("dt");
+  dt.textContent = titulo;
+  var el = document.createElement("dd");
+  if (html) el.innerHTML = valor; else el.textContent = valor;
+  dl.appendChild(dt); dl.appendChild(el);
+}
+
 function abre(p) {
   ABERTA = p;
   RESP = {};
+  var d = p.detalhe || {};
   $("p-badge").innerHTML = '<span class="badge ' + p.tipo + '">' + p.tipo + "</span>";
   $("p-nome").textContent = p.cliente_nome;
-  var det = rotulo(p) + (p.veiculo ? " · " + p.veiculo : "");
-  var l2 = linha2(p);
-  $("p-det").textContent = det + (l2 ? "  ·  " + l2 : "");
-  var contato = $("p-contato");
-  contato.innerHTML = "";
+
+  var dl = $("p-dossie");
+  dl.innerHTML = "";
   if (p.telefone) {
-    var a = document.createElement("a");
-    a.className = "tel";
-    a.href = "tel:+55" + p.telefone;
-    a.textContent = "📞 " + p.telefone;
-    contato.appendChild(a);
+    dd(dl, "Telefone", '<a class="tel" href="tel:+55' + p.telefone + '">📞 ' + p.telefone + "</a>", true);
   } else {
-    contato.textContent = "sem telefone no cadastro";
+    dd(dl, "Telefone", "sem telefone no cadastro");
+  }
+  dd(dl, "E-mail", p.email);
+  dd(dl, "Veículo", p.veiculo);
+  if (p.tipo === "compra") {
+    dd(dl, "Entrega", ddmm(p.data_gatilho) + (d.entregou ? " · por " + d.entregou : ""));
+    dd(dl, "Vendedor", d.vendedor);
+    dd(dl, "Proposta", d.proposta ? String(d.proposta) : "");
+  } else {
+    dd(dl, "OS encerrada em", ddmm(p.data_gatilho) + (d.os ? " · OS " + d.os : ""));
+    dd(dl, "Serviços realizados", servicosBonitos(d));
+    dd(dl, "Consultor", d.consultor);
   }
 
   var box = $("perguntas");
