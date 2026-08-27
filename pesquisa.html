@@ -73,7 +73,7 @@
   .painel h2{margin:10px 0 2px;font-size:20px}
   .painel dl{margin:14px 0 0}
   .painel dt{color:var(--dim);font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-top:12px}
-  .painel dd{margin:2px 0 0;font-size:15px}
+  .painel dd{margin:2px 0 0;font-size:15px;white-space:pre-line}
   .painel .tel{font-size:20px}
 
   .q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:0 0 12px}
@@ -140,7 +140,8 @@
         <input id="atendente" autocomplete="off" style="max-width:22rem">
         <div style="max-width:22rem">
           <button class="btn-cheio" id="concluir" type="button">Concluir pesquisa</button>
-          <button class="btn-fantasma" id="sem-contato" type="button">Não consegui contato (desisto)</button>
+          <button class="btn-fantasma" id="tentar" type="button">📵 Não atendeu — registrar tentativa</button>
+          <button class="btn-fantasma" id="sem-contato" type="button">Não consegui mais contato (desisto)</button>
           <button class="btn-fantasma" id="descartar" type="button">Descartar (não pesquisar)</button>
         </div>
         <div class="aviso" id="erro-resp"></div>
@@ -226,13 +227,19 @@ function desenhaLista() {
       "<div><div class='quem feito'></div><div class='mini quem-linha'></div></div>" +
       "<div><div class='quem data'></div>" +
       '<div class="venc' + (d > 2 ? " atrasada" : "") + '">' +
-        (d > 0 ? "venceu há " + d + "d" : "vence hoje") + "</div></div>";
+        (d > 0 ? "venceu há " + d + "d" : "vence hoje") + "</div>" +
+      "<div class='mini tent'></div></div>";
     linha.querySelector("h3").textContent = p.cliente_nome;
     if (p.telefone) linha.querySelector(".tel-slot").textContent = "📞 " + p.telefone;
     linha.querySelector(".veic").textContent = p.veiculo || "—";
     linha.querySelector(".feito").textContent = fq.feito;
     linha.querySelector(".quem-linha").textContent = fq.quem;
     linha.querySelector(".data").textContent = rotuloData(p);
+    var nt = (p.tentativas || []).length;
+    if (nt) {
+      linha.querySelector(".tent").textContent =
+        "📵 " + nt + (nt === 1 ? " tentativa" : " tentativas");
+    }
     linha.onclick = function () { abre(p); };
     lista.appendChild(linha);
   });
@@ -293,9 +300,21 @@ function abre(p) {
     dd(dl, "Vendedor", d.vendedor);
     dd(dl, "Proposta", d.proposta ? String(d.proposta) : "");
   } else {
-    dd(dl, "OS encerrada em", ddmm(p.data_gatilho) + (d.os ? " · OS " + d.os : ""));
+    dd(dl, "OS", d.os ? String(d.os) : "");
+    dd(dl, "Aberta em", d.abertura ? ddmm(d.abertura) : "");
+    dd(dl, "Encerrada em", ddmm(p.data_gatilho));
     dd(dl, "Serviços realizados", servicosBonitos(d));
     dd(dl, "Consultor", d.consultor);
+  }
+  var ts = p.tentativas || [];
+  if (ts.length) {
+    dd(dl, "Tentativas de contato", ts.map(function (t) {
+      var q = new Date(t.em);
+      var quando = ("0" + q.getDate()).slice(-2) + "/" + ("0" + (q.getMonth() + 1)).slice(-2) +
+        " " + ("0" + q.getHours()).slice(-2) + ":" + ("0" + q.getMinutes()).slice(-2);
+      return "📵 " + quando + (t.atendente ? " — " + t.atendente : "") +
+        (t.obs ? " — " + t.obs : "");
+    }).join("\n"));
   }
 
   var box = $("perguntas");
@@ -402,6 +421,22 @@ $("f-senha").onsubmit = function (e) {
 $("recarregar").onclick = carrega;
 $("voltar").onclick = function () { mostra("tela-lista"); };
 $("concluir").onclick = function () { envia("concluida", true); };
+$("tentar").onclick = function () {
+  var obs = prompt("Observação da tentativa (opcional):") || "";
+  var atendente = $("atendente").value.trim();
+  if (atendente) localStorage.setItem("pz_atendente", atendente);
+  $("tentar").disabled = true;
+  api({ acao: "tentativa", senha: SENHA, id: ABERTA.id, atendente: atendente, obs: obs },
+    function (st, b) {
+      $("tentar").disabled = false;
+      if (st !== 200 || !b.ok) {
+        $("erro-resp").textContent = "Não gravou a tentativa (" + (b.erro || st) + ").";
+        $("erro-resp").className = "aviso erro";
+        return;
+      }
+      carrega();
+    });
+};
 $("sem-contato").onclick = function () {
   if (confirm("Marcar como SEM CONTATO? A pesquisa sai da lista e o telefone é apagado.")) {
     envia("sem_contato", false);
