@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Pesquisa de Satisfação — Zeekr</title>
+<style>
+  :root{
+    --bg:#0f1115; --card:#171a21; --line:#272c37;
+    --txt:#e6e8ee; --dim:#98a0b3; --ac:#e11d2e; --ok:#22c55e; --warn:#f59e0b;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--txt);
+    font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    padding:20px 16px calc(48px + env(safe-area-inset-bottom));
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:28rem;margin:0 auto}
+  header{margin:8px 0 20px}
+  .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);font-weight:700}
+  h1{font-size:24px;margin:4px 0 2px;line-height:1.2}
+  .sub{color:var(--dim);font-size:14px}
+  label{display:block;margin:14px 0 6px;font-size:14px;color:var(--dim)}
+  input,textarea{
+    width:100%;padding:14px;border-radius:12px;border:1px solid var(--line);
+    background:var(--card);color:var(--txt);font-size:17px;appearance:none;
+  }
+  textarea{min-height:88px;resize:vertical;font-family:inherit}
+  input:focus,textarea:focus{outline:2px solid var(--ac);outline-offset:1px}
+  button{border:0;border-radius:12px;cursor:pointer;font-weight:700}
+  .btn-cheio{width:100%;margin-top:16px;padding:16px;background:var(--ac);color:#fff;font-size:17px}
+  .btn-fantasma{width:100%;margin-top:10px;padding:13px;background:var(--card);
+    border:1px solid var(--line);color:var(--dim);font-size:15px}
+  button[disabled]{opacity:.55}
+  .aviso{margin-top:14px;padding:12px;border-radius:10px;font-size:14px;display:none}
+  .aviso.erro{background:#2a1216;border:1px solid #5b1d25;color:#ffc9d0;display:block}
+  .centro{text-align:center;padding:40px 8px}
+  .centro p{color:var(--dim)}
+  .hide{display:none}
+
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:14px;margin:10px 0;cursor:pointer;
+  }
+  .card:active{outline:2px solid var(--ac)}
+  .badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 8px;border-radius:99px;text-transform:uppercase}
+  .badge.compra{background:#12291a;color:var(--ok);border:1px solid #1d4a2c}
+  .badge.servico{background:#241a06;color:var(--warn);border:1px solid #4a3812}
+  .venc{float:right;font-size:12px;color:var(--dim);margin-top:3px}
+  .card h3{margin:8px 0 2px;font-size:17px}
+  .card .det{color:var(--dim);font-size:13px}
+  .tel{color:var(--ok);text-decoration:none;font-weight:700}
+
+  .q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0}
+  .q .p{font-size:15px;margin:0 0 10px}
+  .opcoes{display:flex;gap:6px;flex-wrap:wrap}
+  .opcoes button{
+    flex:1;min-width:38px;padding:12px 0;background:var(--bg);
+    border:1px solid var(--line);color:var(--txt);font-size:15px;border-radius:10px;
+  }
+  .opcoes button.sel{background:var(--ac);border-color:var(--ac);color:#fff}
+  .voltar{background:none;color:var(--dim);font-size:14px;padding:6px 0;margin-bottom:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- senha -->
+  <div id="tela-senha" class="hide">
+    <header>
+      <div class="kicker">Grupo Raion · Zeekr</div>
+      <h1>Pesquisa de Satisfação</h1>
+      <div class="sub">Página de trabalho da equipe</div>
+    </header>
+    <form id="f-senha">
+      <label for="senha">Senha de acesso</label>
+      <input id="senha" type="password" autocomplete="current-password" required>
+      <button class="btn-cheio" type="submit">Entrar</button>
+      <div class="aviso" id="erro-senha"></div>
+    </form>
+  </div>
+
+  <div id="carregando" class="centro"><p>Carregando...</p></div>
+
+  <!-- lista -->
+  <div id="tela-lista" class="hide">
+    <header>
+      <div class="kicker">Grupo Raion · Zeekr</div>
+      <h1>Pesquisas pendentes</h1>
+      <div class="sub" id="resumo"></div>
+    </header>
+    <div id="lista"></div>
+    <div id="vazio" class="centro hide"><p>Nenhuma pesquisa pendente. 🎉</p></div>
+    <button class="btn-fantasma" id="recarregar" type="button">Atualizar lista</button>
+  </div>
+
+  <!-- pesquisa aberta -->
+  <div id="tela-pesquisa" class="hide">
+    <button class="voltar" id="voltar" type="button">&#8592; voltar pra lista</button>
+    <header style="margin-top:0">
+      <div id="p-badge"></div>
+      <h1 id="p-nome" style="font-size:21px"></h1>
+      <div class="sub" id="p-det"></div>
+      <div class="sub" id="p-contato" style="margin-top:6px"></div>
+    </header>
+    <div id="perguntas"></div>
+    <label for="atendente">Quem está ligando (seu nome)</label>
+    <input id="atendente" autocomplete="off">
+    <button class="btn-cheio" id="concluir" type="button">Concluir pesquisa</button>
+    <button class="btn-fantasma" id="sem-contato" type="button">Não consegui contato (desisto)</button>
+    <button class="btn-fantasma" id="descartar" type="button">Descartar (não pesquisar)</button>
+    <div class="aviso" id="erro-resp"></div>
+  </div>
+
+</div>
+
+<script>
+// Pagina de trabalho da Pesquisa de Satisfacao Zeekr (fase 1: equipe liga e preenche).
+// Dados e perguntas vem da Edge Function pesquisa-zeekr, atras de senha; nada mora aqui.
+// Quem alimenta as pendencias e o robo local pesquisa_zeekr.py (repo python_leads).
+var API = "https://winlvztcxczdgjqklxrv.supabase.co/functions/v1/pesquisa-zeekr";
+
+var $ = function (id) { return document.getElementById(id); };
+var SENHA = localStorage.getItem("pz_senha") || "";
+var DADOS = null;      // {pendentes, perguntas}
+var ABERTA = null;     // pendencia aberta
+var RESP = {};         // respostas da pesquisa aberta
+
+function mostra(id) {
+  ["tela-senha", "carregando", "tela-lista", "tela-pesquisa"].forEach(function (t) {
+    $(t).classList.toggle("hide", t !== id);
+  });
+}
+
+function api(payload, cb) {
+  var x = new XMLHttpRequest();
+  x.open("POST", API);
+  x.setRequestHeader("Content-Type", "application/json");
+  x.onload = function () {
+    var b = {};
+    try { b = JSON.parse(x.responseText); } catch (e) {}
+    cb(x.status, b);
+  };
+  x.onerror = function () { cb(0, {}); };
+  x.send(JSON.stringify(payload));
+}
+
+// ---------------------------------------------------------------- lista
+
+function diasVencida(dataGatilho) {
+  var venc = new Date(dataGatilho + "T00:00:00");
+  venc.setDate(venc.getDate() + 3);
+  return Math.floor((Date.now() - venc.getTime()) / 864e5);
+}
+function ddmm(iso) { return iso.slice(8, 10) + "/" + iso.slice(5, 7); }
+function rotulo(p) {
+  return p.tipo === "compra"
+    ? "entrega em " + ddmm(p.data_gatilho)
+    : "OS encerrada em " + ddmm(p.data_gatilho);
+}
+
+function desenhaLista() {
+  var lista = $("lista");
+  lista.innerHTML = "";
+  var pend = DADOS.pendentes;
+  $("resumo").textContent = pend.length + " pendente" + (pend.length === 1 ? "" : "s");
+  $("vazio").classList.toggle("hide", pend.length > 0);
+
+  pend.forEach(function (p) {
+    var d = diasVencida(p.data_gatilho);
+    var card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML =
+      '<span class="badge ' + p.tipo + '">' + p.tipo + "</span>" +
+      '<span class="venc">' + (d > 0 ? "venceu há " + d + "d" : "vence hoje") + "</span>" +
+      "<h3></h3>" +
+      '<div class="det"></div>';
+    card.querySelector("h3").textContent = p.cliente_nome;
+    card.querySelector(".det").textContent =
+      rotulo(p) + (p.veiculo ? " · " + p.veiculo : "");
+    card.onclick = function () { abre(p); };
+    lista.appendChild(card);
+  });
+  mostra("tela-lista");
+}
+
+function carrega() {
+  mostra("carregando");
+  api({ acao: "listar", senha: SENHA }, function (st, b) {
+    if (st === 401) {
+      localStorage.removeItem("pz_senha");
+      $("erro-senha").textContent = SENHA ? "Senha incorreta." : "";
+      $("erro-senha").className = "aviso" + (SENHA ? " erro" : "");
+      SENHA = "";
+      mostra("tela-senha");
+      return;
+    }
+    if (st !== 200 || !b.ok) {
+      $("erro-senha").textContent = "Erro ao carregar (" + (b.erro || st) + "). Tente de novo.";
+      $("erro-senha").className = "aviso erro";
+      mostra("tela-senha");
+      return;
+    }
+    DADOS = b;
+    desenhaLista();
+  });
+}
+
+// ---------------------------------------------------------------- pesquisa aberta
+
+function abre(p) {
+  ABERTA = p;
+  RESP = {};
+  $("p-badge").innerHTML = '<span class="badge ' + p.tipo + '">' + p.tipo + "</span>";
+  $("p-nome").textContent = p.cliente_nome;
+  $("p-det").textContent = rotulo(p) + (p.veiculo ? " · " + p.veiculo : "");
+  var contato = $("p-contato");
+  contato.innerHTML = "";
+  if (p.telefone) {
+    var a = document.createElement("a");
+    a.className = "tel";
+    a.href = "tel:+55" + p.telefone;
+    a.textContent = "📞 " + p.telefone;
+    contato.appendChild(a);
+  } else {
+    contato.textContent = "sem telefone no cadastro";
+  }
+
+  var box = $("perguntas");
+  box.innerHTML = "";
+  (DADOS.perguntas[p.tipo] || []).forEach(function (q) {
+    var div = document.createElement("div");
+    div.className = "q";
+    var pp = document.createElement("p");
+    pp.className = "p";
+    pp.textContent = q.p;
+    div.appendChild(pp);
+
+    if (q.t === "nota") {
+      var ops = document.createElement("div");
+      ops.className = "opcoes";
+      for (var n = 0; n <= 10; n++) {
+        (function (n) {
+          var btn = document.createElement("button");
+          btn.type = "button";
+          btn.textContent = n;
+          btn.onclick = function () {
+            RESP[q.id] = n;
+            [].forEach.call(ops.children, function (c) { c.classList.remove("sel"); });
+            btn.classList.add("sel");
+          };
+          ops.appendChild(btn);
+        })(n);
+      }
+      div.appendChild(ops);
+    } else if (q.t === "simnao") {
+      var ops2 = document.createElement("div");
+      ops2.className = "opcoes";
+      ["SIM", "NÃO"].forEach(function (v) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = v;
+        btn.onclick = function () {
+          RESP[q.id] = v;
+          [].forEach.call(ops2.children, function (c) { c.classList.remove("sel"); });
+          btn.classList.add("sel");
+        };
+        ops2.appendChild(btn);
+      });
+      div.appendChild(ops2);
+    } else {
+      var ta = document.createElement("textarea");
+      ta.oninput = function () { RESP[q.id] = ta.value.trim(); };
+      div.appendChild(ta);
+    }
+    box.appendChild(div);
+  });
+
+  $("erro-resp").className = "aviso";
+  $("atendente").value = localStorage.getItem("pz_atendente") || "";
+  mostra("tela-pesquisa");
+  window.scrollTo(0, 0);
+}
+
+function respostasMontadas() {
+  return (DADOS.perguntas[ABERTA.tipo] || []).map(function (q) {
+    return { id: q.id, p: q.p, r: RESP[q.id] !== undefined ? RESP[q.id] : null };
+  });
+}
+
+function envia(status, exigeCompleto) {
+  var perguntas = DADOS.perguntas[ABERTA.tipo] || [];
+  if (exigeCompleto) {
+    var faltando = perguntas.filter(function (q) {
+      return q.t !== "texto" && RESP[q.id] === undefined;
+    });
+    if (faltando.length) {
+      $("erro-resp").textContent = "Falta responder: " + faltando.map(function (q) { return q.p; }).join(" · ");
+      $("erro-resp").className = "aviso erro";
+      return;
+    }
+  }
+  var atendente = $("atendente").value.trim();
+  if (atendente) localStorage.setItem("pz_atendente", atendente);
+
+  ["concluir", "sem-contato", "descartar"].forEach(function (b) { $(b).disabled = true; });
+  api({
+    acao: "responder", senha: SENHA, id: ABERTA.id, status: status,
+    respostas: status === "concluida" ? respostasMontadas() : null,
+    atendente: atendente,
+  }, function (st, b) {
+    ["concluir", "sem-contato", "descartar"].forEach(function (x) { $(x).disabled = false; });
+    if (st !== 200 || !b.ok) {
+      $("erro-resp").textContent = "Não gravou (" + (b.erro || st) + "). Tente de novo.";
+      $("erro-resp").className = "aviso erro";
+      return;
+    }
+    carrega();
+  });
+}
+
+// ---------------------------------------------------------------- eventos
+
+$("f-senha").onsubmit = function (e) {
+  e.preventDefault();
+  SENHA = $("senha").value.trim();
+  localStorage.setItem("pz_senha", SENHA);
+  carrega();
+};
+$("recarregar").onclick = carrega;
+$("voltar").onclick = function () { mostra("tela-lista"); };
+$("concluir").onclick = function () { envia("concluida", true); };
+$("sem-contato").onclick = function () {
+  if (confirm("Marcar como SEM CONTATO? A pesquisa sai da lista e o telefone é apagado.")) {
+    envia("sem_contato", false);
+  }
+};
+$("descartar").onclick = function () {
+  if (confirm("Descartar esta pesquisa? Ela sai da lista definitivamente.")) {
+    envia("descartada", false);
+  }
+};
+
+if (SENHA) { carrega(); } else { mostra("tela-senha"); }
+</script>
+</body>
+</html>
