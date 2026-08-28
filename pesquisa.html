@@ -252,6 +252,10 @@ function fmtTel(t) {
 function rotuloData(p) {
   return (p.tipo === "compra" ? "entrega " : "OS encerrada ") + ddmm(p.data_gatilho);
 }
+// tipo da OS no NBS (Clientes / Garantia / Seguradoras / Revisões...)
+function tipoOs(p) {
+  return (p.tipo === "servico" && (p.detalhe || {}).tipo_os) ? p.detalhe.tipo_os : "";
+}
 function servicosBonitos(d) {
   return (d.servicos || "").split(" | ").join(" · ");
 }
@@ -290,7 +294,8 @@ function desenhaLista() {
     linha.querySelector("h3").textContent = p.cliente_nome;
     if (p.telefone) linha.querySelector(".tel-slot").textContent = "📞 " + fmtTel(p.telefone);
     linha.querySelector(".veic").textContent = p.veiculo || "—";
-    linha.querySelector(".feito").textContent = fq.feito;
+    var t = tipoOs(p);
+    linha.querySelector(".feito").textContent = (t ? t + " — " : "") + fq.feito;
     linha.querySelector(".quem-linha").textContent = fq.quem;
     linha.querySelector(".data").textContent = rotuloData(p);
     var nt = (p.tentativas || []).length;
@@ -361,6 +366,7 @@ function abre(p) {
     dd(dl, "Proposta", d.proposta ? String(d.proposta) : "");
   } else {
     dd(dl, "OS", d.os ? String(d.os) : "");
+    dd(dl, "Tipo de OS", d.tipo_os);
     dd(dl, "Aberta em", d.abertura ? ddmm(d.abertura) : "");
     dd(dl, "Encerrada em", ddmm(p.data_gatilho));
     dd(dl, "Serviços realizados", servicosBonitos(d));
