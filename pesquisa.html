@@ -234,6 +234,15 @@ function diasVencida(dataGatilho) {
   return Math.floor((Date.now() - venc.getTime()) / 864e5);
 }
 function ddmm(iso) { return iso.slice(8, 10) + "/" + iso.slice(5, 7); }
+// "(21) 99337-3430"; numero sem DDD fica cru com aviso (o NBS as vezes nao tem)
+function fmtTel(t) {
+  if (!t) return "";
+  if (t.length >= 10) {
+    var resto = t.slice(2);
+    return "(" + t.slice(0, 2) + ") " + resto.slice(0, resto.length - 4) + "-" + resto.slice(-4);
+  }
+  return t + " · sem DDD";
+}
 function rotuloData(p) {
   return (p.tipo === "compra" ? "entrega " : "OS encerrada ") + ddmm(p.data_gatilho);
 }
@@ -273,7 +282,7 @@ function desenhaLista() {
         (d > 0 ? "venceu há " + d + "d" : "vence hoje") + "</div>" +
       "<div class='mini tent'></div></div>";
     linha.querySelector("h3").textContent = p.cliente_nome;
-    if (p.telefone) linha.querySelector(".tel-slot").textContent = "📞 " + p.telefone;
+    if (p.telefone) linha.querySelector(".tel-slot").textContent = "📞 " + fmtTel(p.telefone);
     linha.querySelector(".veic").textContent = p.veiculo || "—";
     linha.querySelector(".feito").textContent = fq.feito;
     linha.querySelector(".quem-linha").textContent = fq.quem;
@@ -331,8 +340,10 @@ function abre(p) {
 
   var dl = $("p-dossie");
   dl.innerHTML = "";
-  if (p.telefone) {
-    dd(dl, "Telefone", '<a class="tel" href="tel:+55' + p.telefone + '">📞 ' + p.telefone + "</a>", true);
+  if (p.telefone && p.telefone.length >= 10) {
+    dd(dl, "Telefone", '<a class="tel" href="tel:+55' + p.telefone + '">📞 ' + fmtTel(p.telefone) + "</a>", true);
+  } else if (p.telefone) {
+    dd(dl, "Telefone", "📞 " + fmtTel(p.telefone));
   } else {
     dd(dl, "Telefone", "sem telefone no cadastro");
   }
