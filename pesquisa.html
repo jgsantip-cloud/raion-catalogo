@@ -6,11 +6,16 @@
 <meta name="robots" content="noindex">
 <title>Pesquisa de Satisfação — Zeekr</title>
 <style>
-  /* tipografia oficial: familia ZeekrText (kit de marca no Drive do Joao) */
-  @font-face{font-family:'ZeekrText';src:url('fonts/ZeekrText-Regular.ttf') format('truetype');
+  /* tipografia oficial, mesmo par do site zeekrlife.com:
+     ZeekrHeadline nos titulos, ZeekrText no corpo (woff2 do proprio site) */
+  @font-face{font-family:'ZeekrHeadline';src:url('fonts/ZeekrHeadline-Regular.woff2') format('woff2');
+    font-display:swap}
+  @font-face{font-family:'ZeekrText';src:url('fonts/ZeekrText-Regular.woff2') format('woff2'),
+    url('fonts/ZeekrText-Regular.ttf') format('truetype');
     font-weight:400;font-style:normal;font-display:swap}
-  @font-face{font-family:'ZeekrText';src:url('fonts/ZeekrText-Medium.ttf') format('truetype');
-    font-weight:500;font-style:normal;font-display:swap}
+  @font-face{font-family:'ZeekrText';src:url('fonts/ZeekrText-Medium.woff2') format('woff2'),
+    url('fonts/ZeekrText-Medium.ttf') format('truetype');
+    font-weight:500 600;font-style:normal;font-display:swap}
   @font-face{font-family:'ZeekrText';src:url('fonts/ZeekrText-Bold.ttf') format('truetype');
     font-weight:700 900;font-style:normal;font-display:swap}
   /* paleta na pegada Zeekr: preto profundo, branco quente, laranja de acento */
@@ -29,7 +34,8 @@
   .estreito{max-width:26rem;margin:0 auto}
   header{margin:0 0 22px}
   .kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ac);font-weight:700}
-  h1{font-size:24px;margin:6px 0 2px;line-height:1.2;text-transform:uppercase;letter-spacing:.1em;font-weight:800}
+  h1,h2{font-family:'ZeekrHeadline','ZeekrText',sans-serif;font-weight:400}
+  h1{font-size:26px;margin:6px 0 2px;line-height:1.2}
   .logo{height:22px;filter:invert(1);display:block;margin-bottom:10px}
   .sub{color:var(--dim);font-size:14px}
   label{display:block;margin:14px 0 6px;font-size:14px;color:var(--dim)}
@@ -40,8 +46,7 @@
   textarea{min-height:88px;resize:vertical;font-family:inherit}
   input:focus,textarea:focus{outline:2px solid var(--ac);outline-offset:1px}
   button{border:0;border-radius:12px;cursor:pointer;font-weight:700}
-  .btn-cheio{width:100%;margin-top:16px;padding:14px;background:var(--ac);color:#0a0a0a;
-    font-size:15px;text-transform:uppercase;letter-spacing:.08em}
+  .btn-cheio{width:100%;margin-top:16px;padding:14px;background:var(--ac);color:#0a0a0a;font-size:16px}
   .btn-fantasma{width:100%;margin-top:10px;padding:12px;background:var(--card);
     border:1px solid var(--line);color:var(--dim);font-size:14px}
   button[disabled]{opacity:.55}
