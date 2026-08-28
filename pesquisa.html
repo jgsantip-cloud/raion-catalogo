@@ -65,10 +65,21 @@
   .linha .mini{color:var(--dim);font-size:13px}
   .quem{color:var(--txt);font-size:14px}
 
-  /* pesquisa aberta: dossie + formulario */
-  .duas{display:grid;grid-template-columns:340px 1fr;gap:24px;align-items:start}
+  /* pesquisa aberta: dossie + formulario + CRM (historico de contato, estilo Syonet) */
+  .duas{display:grid;grid-template-columns:320px 1fr 340px;gap:22px;align-items:start}
+  @media (max-width:1150px){ .duas{grid-template-columns:320px 1fr} }
   @media (max-width:900px){ .duas{grid-template-columns:1fr} .cab{display:none}
     .linha{grid-template-columns:1fr;gap:6px} }
+  .crm h3{margin:0 0 4px;font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)}
+  .evt{border-left:3px solid var(--warn);background:var(--bg);border-radius:8px;
+    padding:9px 12px;margin:10px 0}
+  .evt .quando{font-size:12px;color:var(--dim)}
+  .evt .texto{font-size:14px;margin-top:2px}
+  .crm .nada{color:var(--dim);font-size:14px;margin:12px 0}
+  .crm textarea{min-height:56px;margin-top:14px}
+  .crm .btn-tentativa{width:100%;margin-top:10px;padding:12px;background:#241a06;
+    border:1px solid #4a3812;color:var(--warn);font-size:14px;border-radius:12px}
+  .crm .separa{border-top:1px solid var(--line);margin:18px 0 4px}
   .painel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
   .painel h2{margin:10px 0 2px;font-size:20px}
   .painel dl{margin:14px 0 0}
@@ -140,11 +151,17 @@
         <input id="atendente" autocomplete="off" style="max-width:22rem">
         <div style="max-width:22rem">
           <button class="btn-cheio" id="concluir" type="button">Concluir pesquisa</button>
-          <button class="btn-fantasma" id="tentar" type="button">📵 Não atendeu — registrar tentativa</button>
-          <button class="btn-fantasma" id="sem-contato" type="button">Não consegui mais contato (desisto)</button>
-          <button class="btn-fantasma" id="descartar" type="button">Descartar (não pesquisar)</button>
         </div>
         <div class="aviso" id="erro-resp"></div>
+      </div>
+      <div class="painel crm">
+        <h3>Histórico de contato</h3>
+        <div id="crm-timeline"></div>
+        <textarea id="crm-obs" placeholder="Observação da ligação (opcional)"></textarea>
+        <button class="btn-tentativa" id="tentar" type="button">📵 Não atendeu — registrar tentativa</button>
+        <div class="separa"></div>
+        <button class="btn-fantasma" id="sem-contato" type="button">Não consegui mais contato (desisto)</button>
+        <button class="btn-fantasma" id="descartar" type="button">Descartar (não pesquisar)</button>
       </div>
     </div>
   </div>
@@ -306,16 +323,7 @@ function abre(p) {
     dd(dl, "Serviços realizados", servicosBonitos(d));
     dd(dl, "Consultor", d.consultor);
   }
-  var ts = p.tentativas || [];
-  if (ts.length) {
-    dd(dl, "Tentativas de contato", ts.map(function (t) {
-      var q = new Date(t.em);
-      var quando = ("0" + q.getDate()).slice(-2) + "/" + ("0" + (q.getMonth() + 1)).slice(-2) +
-        " " + ("0" + q.getHours()).slice(-2) + ":" + ("0" + q.getMinutes()).slice(-2);
-      return "📵 " + quando + (t.atendente ? " — " + t.atendente : "") +
-        (t.obs ? " — " + t.obs : "");
-    }).join("\n"));
-  }
+  desenhaCrm();
 
   var box = $("perguntas");
   box.innerHTML = "";
@@ -373,6 +381,31 @@ function abre(p) {
   window.scrollTo(0, 0);
 }
 
+// coluna CRM: linha do tempo das tentativas (mais recente primeiro), estilo Syonet
+function fmtQuando(iso) {
+  var q = new Date(iso);
+  return ("0" + q.getDate()).slice(-2) + "/" + ("0" + (q.getMonth() + 1)).slice(-2) +
+    " " + ("0" + q.getHours()).slice(-2) + ":" + ("0" + q.getMinutes()).slice(-2);
+}
+function desenhaCrm() {
+  var box = $("crm-timeline");
+  box.innerHTML = "";
+  var ts = (ABERTA.tentativas || []).slice().reverse();
+  if (!ts.length) {
+    box.innerHTML = '<div class="nada">Nenhuma tentativa registrada ainda.</div>';
+    return;
+  }
+  ts.forEach(function (t) {
+    var e = document.createElement("div");
+    e.className = "evt";
+    e.innerHTML = '<div class="quando"></div><div class="texto"></div>';
+    e.querySelector(".quando").textContent = "📵 " + fmtQuando(t.em) +
+      (t.atendente ? " — " + t.atendente : "");
+    e.querySelector(".texto").textContent = t.obs || "não atendeu";
+    box.appendChild(e);
+  });
+}
+
 function respostasMontadas() {
   return (DADOS.perguntas[ABERTA.tipo] || []).map(function (q) {
     return { id: q.id, p: q.p, r: RESP[q.id] !== undefined ? RESP[q.id] : null };
@@ -419,10 +452,10 @@ $("f-senha").onsubmit = function (e) {
   carrega();
 };
 $("recarregar").onclick = carrega;
-$("voltar").onclick = function () { mostra("tela-lista"); };
+$("voltar").onclick = carrega;   // recarrega a lista (contador de tentativas fresco)
 $("concluir").onclick = function () { envia("concluida", true); };
 $("tentar").onclick = function () {
-  var obs = prompt("Observação da tentativa (opcional):") || "";
+  var obs = $("crm-obs").value.trim();
   var atendente = $("atendente").value.trim();
   if (atendente) localStorage.setItem("pz_atendente", atendente);
   $("tentar").disabled = true;
@@ -434,7 +467,15 @@ $("tentar").onclick = function () {
         $("erro-resp").className = "aviso erro";
         return;
       }
-      carrega();
+      // fica no card: a linha do tempo anda na hora, sem voltar pra lista
+      ABERTA.tentativas = ABERTA.tentativas || [];
+      ABERTA.tentativas.push({
+        em: new Date().toISOString(),
+        atendente: atendente || null,
+        obs: obs || null,
+      });
+      $("crm-obs").value = "";
+      desenhaCrm();
     });
 };
 $("sem-contato").onclick = function () {
