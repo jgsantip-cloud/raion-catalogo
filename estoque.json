@@ -1,6 +1,24 @@
 {
  "carros": [
   {
+   "id": "40b3387dd2cc",
+   "marca": "Denza",
+   "titulo": "Denza B5",
+   "versao": "1.5 TURBO PHEV GS AWD AUTOMÁTICO",
+   "ano": 2026,
+   "km": 4700,
+   "km_fmt": "4.700 km",
+   "preco": 519890.0,
+   "preco_fmt": "R$ 519.890",
+   "capa": "https://s3.agsistema.net/6701/vehicles/2808184/photos/app-photos-qoizmgtm0AknsHfVM5GnmxWCrNM4XnaI.jpg",
+   "arte": "artes/40b3387dd2cc.png",
+   "qr": "qr/40b3387dd2cc.png",
+   "blindado": true,
+   "arte_pronta": true,
+   "entrada": "2026-08-29",
+   "fipe_abaixo": null
+  },
+  {
    "id": "7b83fa5ba161",
    "marca": "Zeekr",
    "titulo": "Zeekr 7X",
@@ -34,7 +52,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-07-18",
-   "fipe_abaixo": "R$ 39 mil abaixo da FIPE"
+   "fipe_abaixo": "R$ 24 mil abaixo da FIPE"
   },
   {
    "id": "6bc46a25b513",
@@ -52,7 +70,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-04-22",
-   "fipe_abaixo": "R$ 3 mil abaixo da FIPE"
+   "fipe_abaixo": null
   },
   {
    "id": "948439902c84",
@@ -70,24 +88,6 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-06-01",
-   "fipe_abaixo": null
-  },
-  {
-   "id": "e253da687cdc",
-   "marca": "Mitsubishi",
-   "titulo": "Mitsubishi Triton",
-   "versao": "2.4 BITURBO DIESEL CD KATANA 4X4 AUTOMÁTICO",
-   "ano": 2026,
-   "km": 23527,
-   "km_fmt": "23.527 km",
-   "preco": 349890.0,
-   "preco_fmt": "R$ 349.890",
-   "capa": "https://s3.agsistema.net/6596/vehicles/2807534/photos/UbmwPJcr41GkUye24WZ5wcq1JXxDUMVE.jpg",
-   "arte": "artes/e253da687cdc.png",
-   "qr": "qr/e253da687cdc.png",
-   "blindado": true,
-   "arte_pronta": true,
-   "entrada": "2026-08-28",
    "fipe_abaixo": null
   },
   {
@@ -124,24 +124,24 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-06-06",
-   "fipe_abaixo": "R$ 11 mil abaixo da FIPE"
+   "fipe_abaixo": null
   },
   {
-   "id": "1213af093d62",
-   "marca": "Byd",
-   "titulo": "Byd Tan",
-   "versao": "ELÉTRICO AWD",
-   "ano": 2023,
-   "km": 19500,
-   "km_fmt": "19.500 km",
+   "id": "d4f045b8b5fb",
+   "marca": "Mitsubishi",
+   "titulo": "Mitsubishi Triton",
+   "versao": "2.4 BITURBO DIESEL CD HPE 4X4 AUTOMÁTICO",
+   "ano": 2027,
+   "km": 1890,
+   "km_fmt": "1.890 km",
    "preco": 249890.0,
    "preco_fmt": "R$ 249.890",
-   "capa": "https://s3.agsistema.net/6701/vehicles/2728334/photos/app-photos-vVuqU0p1pDREe3nBa1xqAM6lLmvjeTyx.jpg",
-   "arte": "artes/1213af093d62.png",
-   "qr": "qr/1213af093d62.png",
+   "capa": "https://s3.agsistema.net/6699/vehicles/2808219/photos/MTTrfmiE3FQc5QJAGxHVsO5qOUOTZnvk.jpg",
+   "arte": "artes/d4f045b8b5fb.png",
+   "qr": "qr/d4f045b8b5fb.png",
    "blindado": false,
    "arte_pronta": true,
-   "entrada": "2026-07-09",
+   "entrada": "2026-08-29",
    "fipe_abaixo": "R$ 10 mil abaixo da FIPE"
   },
   {
@@ -160,7 +160,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-04-27",
-   "fipe_abaixo": "R$ 31 mil abaixo da FIPE"
+   "fipe_abaixo": "R$ 24 mil abaixo da FIPE"
   },
   {
    "id": "302db0ca82e8",
@@ -178,7 +178,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-04-30",
-   "fipe_abaixo": "R$ 29 mil abaixo da FIPE"
+   "fipe_abaixo": "R$ 21 mil abaixo da FIPE"
   },
   {
    "id": "77d7971246f8",
@@ -196,7 +196,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-07-31",
-   "fipe_abaixo": "R$ 18 mil abaixo da FIPE"
+   "fipe_abaixo": "R$ 11 mil abaixo da FIPE"
   },
   {
    "id": "15df19c38529",
@@ -214,7 +214,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-03-26",
-   "fipe_abaixo": "R$ 37 mil abaixo da FIPE"
+   "fipe_abaixo": "R$ 28 mil abaixo da FIPE"
   },
   {
    "id": "67a3e7a58eb9",
@@ -232,25 +232,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-07-24",
-   "fipe_abaixo": "R$ 6 mil abaixo da FIPE"
-  },
-  {
-   "id": "f5595896c653",
-   "marca": "Mitsubishi",
-   "titulo": "Mitsubishi L200 Triton",
-   "versao": "2.4 16V TURBO DIESEL SPORT HPE-S CD 4P 4X4 AUTOMÁTICO",
-   "ano": 2025,
-   "km": 51749,
-   "km_fmt": "51.749 km",
-   "preco": 219890.0,
-   "preco_fmt": "R$ 219.890",
-   "capa": "https://s3.agsistema.net/6625/vehicles/2777527/photos/29NkJTXiBING1U4JIA0o2nnp2rlnU0wy.jpg",
-   "arte": "artes/f5595896c653.png",
-   "qr": "qr/f5595896c653.png",
-   "blindado": false,
-   "arte_pronta": true,
-   "entrada": "2026-08-07",
-   "fipe_abaixo": "R$ 12 mil abaixo da FIPE"
+   "fipe_abaixo": "R$ 4 mil abaixo da FIPE"
   },
   {
    "id": "4d84d1e60348",
@@ -268,7 +250,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-06-09",
-   "fipe_abaixo": "R$ 16 mil abaixo da FIPE"
+   "fipe_abaixo": "R$ 10 mil abaixo da FIPE"
   },
   {
    "id": "070d518f9996",
@@ -286,7 +268,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-07-23",
-   "fipe_abaixo": "R$ 11 mil abaixo da FIPE"
+   "fipe_abaixo": "R$ 4 mil abaixo da FIPE"
   },
   {
    "id": "811e4da093cc",
@@ -304,7 +286,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-08-06",
-   "fipe_abaixo": "R$ 3 mil abaixo da FIPE"
+   "fipe_abaixo": null
   },
   {
    "id": "64fef70e8bef",
@@ -322,25 +304,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-07-28",
-   "fipe_abaixo": "R$ 9 mil abaixo da FIPE"
-  },
-  {
-   "id": "90d39237d812",
-   "marca": "Byd",
-   "titulo": "Byd Dolphin",
-   "versao": "44,9 KW ELÉTRICO GS",
-   "ano": 2024,
-   "km": 26000,
-   "km_fmt": "26.000 km",
-   "preco": 174890.0,
-   "preco_fmt": "R$ 174.890",
-   "capa": "https://s3.agsistema.net/6701/vehicles/2622900/photos/app-photos-v79TOFFvWdRxA8Xt7QFmdYpDbrbCmkoa.jpg",
-   "arte": "artes/90d39237d812.png",
-   "qr": "qr/90d39237d812.png",
-   "blindado": true,
-   "arte_pronta": true,
-   "entrada": "2026-05-14",
-   "fipe_abaixo": null
+   "fipe_abaixo": "R$ 3 mil abaixo da FIPE"
   },
   {
    "id": "b1ee47479529",
@@ -394,7 +358,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-06-10",
-   "fipe_abaixo": "R$ 8 mil abaixo da FIPE"
+   "fipe_abaixo": "R$ 3 mil abaixo da FIPE"
   },
   {
    "id": "375ba215aed7",
@@ -412,7 +376,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-07-14",
-   "fipe_abaixo": "R$ 14 mil abaixo da FIPE"
+   "fipe_abaixo": "R$ 11 mil abaixo da FIPE"
   },
   {
    "id": "2b23990e6052",
@@ -424,7 +388,7 @@
    "km_fmt": "1.807 km",
    "preco": 169890.0,
    "preco_fmt": "R$ 169.890",
-   "capa": "https://s3.agsistema.net/6703/vehicles/2782051/photos/PbpFwkTb4u2Mp2XHC4Ja96oE9UQ5IcED.jpg",
+   "capa": "https://s3.agsistema.net/6703/vehicles/2782051/photos/cFNEmhEs0A8p4DtcfMSRuUkcFYUGgvdO.jpg",
    "arte": "artes/2b23990e6052.png",
    "qr": "qr/2b23990e6052.png",
    "blindado": false,
@@ -448,7 +412,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-08-11",
-   "fipe_abaixo": "R$ 7 mil abaixo da FIPE"
+   "fipe_abaixo": null
   },
   {
    "id": "0328dff13567",
@@ -466,7 +430,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-05-26",
-   "fipe_abaixo": "R$ 7 mil abaixo da FIPE"
+   "fipe_abaixo": null
   },
   {
    "id": "ca87c3989b57",
@@ -484,7 +448,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-08-20",
-   "fipe_abaixo": "R$ 12 mil abaixo da FIPE"
+   "fipe_abaixo": "R$ 7 mil abaixo da FIPE"
   },
   {
    "id": "5193f415bab1",
@@ -502,7 +466,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-07-10",
-   "fipe_abaixo": "R$ 6 mil abaixo da FIPE"
+   "fipe_abaixo": null
   },
   {
    "id": "66719b036062",
@@ -510,8 +474,8 @@
    "titulo": "Mitsubishi Eclipse Cross",
    "versao": "1.5 MIVEC TURBO GASOLINA HPE-S CVT",
    "ano": 2024,
-   "km": 37936,
-   "km_fmt": "37.936 km",
+   "km": 37938,
+   "km_fmt": "37.938 km",
    "preco": 145890.0,
    "preco_fmt": "R$ 145.890",
    "capa": "https://s3.agsistema.net/6625/vehicles/2438254/photos/dbopNERpX6zJiQSBumchK7Bzvw98OvVm.jpg",
@@ -521,24 +485,6 @@
    "arte_pronta": true,
    "entrada": "2026-01-26",
    "fipe_abaixo": null
-  },
-  {
-   "id": "c3a00e4ebbb0",
-   "marca": "Mitsubishi",
-   "titulo": "Mitsubishi Eclipse Cross",
-   "versao": "1.5 MIVEC TURBO GASOLINA HPE CVT",
-   "ano": 2026,
-   "km": 26113,
-   "km_fmt": "26.113 km",
-   "preco": 144890.0,
-   "preco_fmt": "R$ 144.890",
-   "capa": "https://s3.agsistema.net/6625/vehicles/2806190/photos/mR17Se4up7FBZpkfmxzesnJqzh1NaEz9hI6N.jpg",
-   "arte": "artes/c3a00e4ebbb0.png",
-   "qr": "qr/c3a00e4ebbb0.png",
-   "blindado": false,
-   "arte_pronta": true,
-   "entrada": "2026-08-28",
-   "fipe_abaixo": "R$ 11 mil abaixo da FIPE"
   },
   {
    "id": "1576a757eaeb",
@@ -556,7 +502,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-07-30",
-   "fipe_abaixo": "R$ 17 mil abaixo da FIPE"
+   "fipe_abaixo": "R$ 13 mil abaixo da FIPE"
   },
   {
    "id": "828c7e4c3dbf",
@@ -574,7 +520,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-07-25",
-   "fipe_abaixo": "R$ 18 mil abaixo da FIPE"
+   "fipe_abaixo": "R$ 13 mil abaixo da FIPE"
   },
   {
    "id": "c68158272331",
@@ -584,15 +530,15 @@
    "ano": 2023,
    "km": 53600,
    "km_fmt": "53.600 km",
-   "preco": 124890.0,
-   "preco_fmt": "R$ 124.890",
+   "preco": 120890.0,
+   "preco_fmt": "R$ 120.890",
    "capa": "https://s3.agsistema.net/6625/vehicles/2759015/photos/ylSdtS0UvDRjhOYbIQfjU6FQIQkAZ59n.jpg",
    "arte": "artes/c68158272331.png",
    "qr": "qr/c68158272331.png",
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-07-29",
-   "fipe_abaixo": "R$ 3 mil abaixo da FIPE"
+   "fipe_abaixo": "R$ 5 mil abaixo da FIPE"
   },
   {
    "id": "674359496d73",
@@ -646,7 +592,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-07-08",
-   "fipe_abaixo": "R$ 6 mil abaixo da FIPE"
+   "fipe_abaixo": "R$ 3 mil abaixo da FIPE"
   },
   {
    "id": "726d97ad2d19",
@@ -664,7 +610,25 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-05-04",
-   "fipe_abaixo": "R$ 5 mil abaixo da FIPE"
+   "fipe_abaixo": null
+  },
+  {
+   "id": "c1eced61078c",
+   "marca": "Nissan",
+   "titulo": "Nissan Sentra",
+   "versao": "2.0 16V GASOLINA ADVANCE XTRONIC",
+   "ano": 2023,
+   "km": 29546,
+   "km_fmt": "29.546 km",
+   "preco": 113890.0,
+   "preco_fmt": "R$ 113.890",
+   "capa": "https://s3.agsistema.net/6699/vehicles/2778373/photos/xJcuTAqF2vlAWazGZhnsno0891ryW842.jpg",
+   "arte": "artes/c1eced61078c.png",
+   "qr": "qr/c1eced61078c.png",
+   "blindado": false,
+   "arte_pronta": true,
+   "entrada": "2026-08-08",
+   "fipe_abaixo": null
   },
   {
    "id": "ed9a5f231d85",
@@ -682,7 +646,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-08-10",
-   "fipe_abaixo": "R$ 7 mil abaixo da FIPE"
+   "fipe_abaixo": "R$ 3 mil abaixo da FIPE"
   },
   {
    "id": "8944525a82b8",
@@ -718,7 +682,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-06-15",
-   "fipe_abaixo": "R$ 5 mil abaixo da FIPE"
+   "fipe_abaixo": "R$ 3 mil abaixo da FIPE"
   },
   {
    "id": "419090cb0394",
@@ -754,43 +718,25 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-08-24",
-   "fipe_abaixo": "R$ 5 mil abaixo da FIPE"
+   "fipe_abaixo": "R$ 3 mil abaixo da FIPE"
   },
   {
-   "id": "07e93b487f10",
-   "marca": "Nissan",
-   "titulo": "Nissan Kicks",
-   "versao": "1.6 16V FLEXSTART SENSE XTRONIC",
-   "ano": 2024,
-   "km": 26532,
-   "km_fmt": "26.532 km",
+   "id": "10e616c6f345",
+   "marca": "Suzuki",
+   "titulo": "Suzuki S-Cross",
+   "versao": "1.4 16V VVT TURBO GASOLINA 4STYLE ALLGRIP AUTOMÁTICO",
+   "ano": 2021,
+   "km": 82961,
+   "km_fmt": "82.961 km",
    "preco": 99890.0,
    "preco_fmt": "R$ 99.890",
-   "capa": "https://s3.agsistema.net/6703/vehicles/2768309/photos/ZFFFIMY9uI04KCT7wygkJZoKbsAeuGGE.jpg",
-   "arte": "artes/07e93b487f10.png",
-   "qr": "qr/07e93b487f10.png",
+   "capa": "https://s3.agsistema.net/6699/vehicles/2790797/photos/lTtJ9N3VPHEYCQIcs9lplKkIJZYLDG5q.jpg",
+   "arte": "artes/10e616c6f345.png",
+   "qr": "qr/10e616c6f345.png",
    "blindado": false,
    "arte_pronta": true,
-   "entrada": "2026-08-03",
-   "fipe_abaixo": "R$ 5 mil abaixo da FIPE"
-  },
-  {
-   "id": "132dffa33eb0",
-   "marca": "Renault",
-   "titulo": "Renault Kardian",
-   "versao": "1.0 TCE FLEX PREMIÉRE EDITION EDC",
-   "ano": 2025,
-   "km": 22000,
-   "km_fmt": "22.000 km",
-   "preco": 97890.0,
-   "preco_fmt": "R$ 97.890",
-   "capa": "https://s3.agsistema.net/6596/vehicles/2806351/photos/dVJFtZfENbCEJc4OOUSYyMiI7YkMPhIy.jpg",
-   "arte": "artes/132dffa33eb0.png",
-   "qr": "qr/132dffa33eb0.png",
-   "blindado": false,
-   "arte_pronta": true,
-   "entrada": "2026-08-28",
-   "fipe_abaixo": "R$ 6 mil abaixo da FIPE"
+   "entrada": "2026-08-17",
+   "fipe_abaixo": null
   },
   {
    "id": "cd862868dfe6",
@@ -802,13 +748,31 @@
    "km_fmt": "53.300 km",
    "preco": 97890.0,
    "preco_fmt": "R$ 97.890",
-   "capa": "https://s3.agsistema.net/6703/vehicles/2776610/photos/cQ0eQlerGhGD73XDlwG179KOFs1mvYc7.jpg",
+   "capa": "https://s3.agsistema.net/6703/vehicles/2776610/photos/SUihC2XGCvesAs30t1IUksrYyo080za2.jpg",
    "arte": "artes/cd862868dfe6.png",
    "qr": "qr/cd862868dfe6.png",
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-08-07",
    "fipe_abaixo": null
+  },
+  {
+   "id": "10effcb17d8f",
+   "marca": "Volkswagen",
+   "titulo": "Volkswagen Gol",
+   "versao": "1.0 12V MPI TOTALFLEX LAST EDITION 4P MANUAL",
+   "ano": 2023,
+   "km": 3504,
+   "km_fmt": "3.504 km",
+   "preco": 94890.0,
+   "preco_fmt": "R$ 94.890",
+   "capa": "https://s3.agsistema.net/6699/vehicles/2801700/photos/m7XWlrglfB68HPdvp6dvySfJfA66KXRG.jpg",
+   "arte": "artes/10effcb17d8f.png",
+   "qr": "qr/10effcb17d8f.png",
+   "blindado": false,
+   "arte_pronta": true,
+   "entrada": "2026-08-25",
+   "fipe_abaixo": "R$ 6 mil abaixo da FIPE"
   },
   {
    "id": "5d7d8ec57240",
@@ -844,7 +808,7 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-08-28",
-   "fipe_abaixo": "R$ 5 mil abaixo da FIPE"
+   "fipe_abaixo": "R$ 4 mil abaixo da FIPE"
   },
   {
    "id": "44afdc6691ff",
@@ -937,6 +901,24 @@
    "fipe_abaixo": null
   },
   {
+   "id": "84f62b368a0d",
+   "marca": "Renault",
+   "titulo": "Renault Kwid",
+   "versao": "1.0 12V SCE FLEX ZEN MANUAL",
+   "ano": 2023,
+   "km": 67429,
+   "km_fmt": "67.429 km",
+   "preco": 49890.0,
+   "preco_fmt": "R$ 49.890",
+   "capa": "https://s3.agsistema.net/6625/vehicles/2789873/photos/PWSIqoeacLF6mU2F8nGJTBybubppB1Ck.jpg",
+   "arte": "artes/84f62b368a0d.png",
+   "qr": "qr/84f62b368a0d.png",
+   "blindado": false,
+   "arte_pronta": true,
+   "entrada": "2026-08-17",
+   "fipe_abaixo": null
+  },
+  {
    "id": "1455e4257157",
    "marca": "Ford",
    "titulo": "Ford Ka",
@@ -955,22 +937,58 @@
    "fipe_abaixo": null
   },
   {
-   "id": "df9a9f9859fb",
-   "marca": "Ford",
-   "titulo": "Ford Ka",
-   "versao": "1.0 TI-VCT FLEX SE PLUS SEDAN MANUAL",
-   "ano": 2019,
-   "km": 68001,
-   "km_fmt": "68.001 km",
-   "preco": 43890.0,
-   "preco_fmt": "R$ 43.890",
-   "capa": "https://s3.agsistema.net/7207/vehicles/2766654/photos/GxghofZ8fnGdUvOBJ6orssvtCPXk6Pkz.jpg",
-   "arte": "artes/df9a9f9859fb.png",
-   "qr": "qr/df9a9f9859fb.png",
+   "id": "132dffa33eb0",
+   "marca": "Renault",
+   "titulo": "Renault Kardian",
+   "versao": "1.0 TCE FLEX PREMIÉRE EDITION EDC",
+   "ano": 2025,
+   "km": 22000,
+   "km_fmt": "22.000 km",
+   "preco": 97890.0,
+   "preco_fmt": "R$ 97.890",
+   "capa": "https://s3.agsistema.net/6596/vehicles/2806351/photos/dVJFtZfENbCEJc4OOUSYyMiI7YkMPhIy.jpg",
+   "arte": "artes/132dffa33eb0.png",
+   "qr": "qr/132dffa33eb0.png",
    "blindado": false,
    "arte_pronta": true,
-   "entrada": "2026-08-01",
+   "entrada": "2026-08-28",
+   "fipe_abaixo": "R$ 6 mil abaixo da FIPE"
+  },
+  {
+   "id": "e253da687cdc",
+   "marca": "Mitsubishi",
+   "titulo": "Mitsubishi Triton",
+   "versao": "2.4 BITURBO DIESEL CD KATANA 4X4 AUTOMÁTICO",
+   "ano": 2026,
+   "km": 23527,
+   "km_fmt": "23.527 km",
+   "preco": 349890.0,
+   "preco_fmt": "R$ 349.890",
+   "capa": "https://s3.agsistema.net/6596/vehicles/2807534/photos/UbmwPJcr41GkUye24WZ5wcq1JXxDUMVE.jpg",
+   "arte": "artes/e253da687cdc.png",
+   "qr": "qr/e253da687cdc.png",
+   "blindado": true,
+   "arte_pronta": true,
+   "entrada": "2026-08-28",
    "fipe_abaixo": null
+  },
+  {
+   "id": "c3a00e4ebbb0",
+   "marca": "Mitsubishi",
+   "titulo": "Mitsubishi Eclipse Cross",
+   "versao": "1.5 MIVEC TURBO GASOLINA HPE CVT",
+   "ano": 2026,
+   "km": 26113,
+   "km_fmt": "26.113 km",
+   "preco": 144890.0,
+   "preco_fmt": "R$ 144.890",
+   "capa": "https://s3.agsistema.net/6625/vehicles/2806190/photos/mR17Se4up7FBZpkfmxzesnJqzh1NaEz9hI6N.jpg",
+   "arte": "artes/c3a00e4ebbb0.png",
+   "qr": "qr/c3a00e4ebbb0.png",
+   "blindado": false,
+   "arte_pronta": true,
+   "entrada": "2026-08-28",
+   "fipe_abaixo": "R$ 11 mil abaixo da FIPE"
   }
  ]
 }
