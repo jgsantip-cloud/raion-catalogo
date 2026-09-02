@@ -289,24 +289,6 @@
    "fipe_abaixo": null
   },
   {
-   "id": "64fef70e8bef",
-   "marca": "Ram",
-   "titulo": "Ram Rampage",
-   "versao": "2.0 HURRICANE 4 TURBO GASOLINA R/T 4X4 AUTOMÁTICO",
-   "ano": 2024,
-   "km": 24415,
-   "km_fmt": "24.415 km",
-   "preco": 185890.0,
-   "preco_fmt": "R$ 185.890",
-   "capa": "https://s3.agsistema.net/6698/vehicles/2757060/photos/IJVa9oxiM9ifJtBua8eyYafjECgyc9TJ.jpg",
-   "arte": "artes/64fef70e8bef.png",
-   "qr": "qr/64fef70e8bef.png",
-   "blindado": false,
-   "arte_pronta": true,
-   "entrada": "2026-07-28",
-   "fipe_abaixo": "R$ 3 mil abaixo da FIPE"
-  },
-  {
    "id": "b1ee47479529",
    "marca": "Nissan",
    "titulo": "Nissan Kicks",
@@ -415,24 +397,6 @@
    "fipe_abaixo": null
   },
   {
-   "id": "0328dff13567",
-   "marca": "Mitsubishi",
-   "titulo": "Mitsubishi Eclipse Cross",
-   "versao": "1.5 MIVEC TURBO GASOLINA HPE-S S-AWC CVT",
-   "ano": 2025,
-   "km": 31049,
-   "km_fmt": "31.049 km",
-   "preco": 159890.0,
-   "preco_fmt": "R$ 159.890",
-   "capa": "https://s3.agsistema.net/6698/vehicles/2643705/photos/Tn6SQRJEHyQngGapPUj4trHOq9rVeRAn.jpg",
-   "arte": "artes/0328dff13567.png",
-   "qr": "qr/0328dff13567.png",
-   "blindado": false,
-   "arte_pronta": true,
-   "entrada": "2026-05-26",
-   "fipe_abaixo": null
-  },
-  {
    "id": "ca87c3989b57",
    "marca": "Mitsubishi",
    "titulo": "Mitsubishi Eclipse Cross",
@@ -449,6 +413,24 @@
    "arte_pronta": true,
    "entrada": "2026-08-20",
    "fipe_abaixo": "R$ 7 mil abaixo da FIPE"
+  },
+  {
+   "id": "34b24ece65e8",
+   "marca": "Honda",
+   "titulo": "Honda Hr-V",
+   "versao": "1.5 DI I-VTEC TURBO FLEX TOURING CVT",
+   "ano": 2025,
+   "km": 23800,
+   "km_fmt": "23.800 km",
+   "preco": 154890.0,
+   "preco_fmt": "R$ 154.890",
+   "capa": "https://s3.agsistema.net/6699/vehicles/2799863/photos/yy9wEASGsFcJrNjDlgwQGl3vR82hLGKW.jpg",
+   "arte": "artes/34b24ece65e8.png",
+   "qr": "qr/34b24ece65e8.png",
+   "blindado": false,
+   "arte_pronta": true,
+   "entrada": "2026-08-24",
+   "fipe_abaixo": "R$ 9 mil abaixo da FIPE"
   },
   {
    "id": "5193f415bab1",
@@ -485,24 +467,6 @@
    "arte_pronta": true,
    "entrada": "2026-01-26",
    "fipe_abaixo": null
-  },
-  {
-   "id": "1576a757eaeb",
-   "marca": "Jeep",
-   "titulo": "Jeep Commander",
-   "versao": "1.3 T270 TURBO FLEX LIMITED AT6",
-   "ano": 2023,
-   "km": 56900,
-   "km_fmt": "56.900 km",
-   "preco": 138890.0,
-   "preco_fmt": "R$ 138.890",
-   "capa": "https://s3.agsistema.net/6625/vehicles/2761101/photos/qB7QjtqhgEmucozNycZAGnanMAaTN6kO.jpg",
-   "arte": "artes/1576a757eaeb.png",
-   "qr": "qr/1576a757eaeb.png",
-   "blindado": false,
-   "arte_pronta": true,
-   "entrada": "2026-07-30",
-   "fipe_abaixo": "R$ 13 mil abaixo da FIPE"
   },
   {
    "id": "828c7e4c3dbf",
@@ -667,6 +631,24 @@
    "fipe_abaixo": null
   },
   {
+   "id": "b872d17ac8ce",
+   "marca": "Chevrolet",
+   "titulo": "Chevrolet Tracker",
+   "versao": "1.2 TURBO FLEX PREMIER AUTOMÁTICO",
+   "ano": 2024,
+   "km": 44403,
+   "km_fmt": "44.403 km",
+   "preco": 109890.0,
+   "preco_fmt": "R$ 109.890",
+   "capa": "https://s3.agsistema.net/6595/vehicles/2810901/photos/W3cQD8owLXgQYBXaMkPXLszIggcErmsvtgWt.jpg",
+   "arte": "artes/b872d17ac8ce.png",
+   "qr": "qr/b872d17ac8ce.png",
+   "blindado": false,
+   "arte_pronta": true,
+   "entrada": "2026-09-01",
+   "fipe_abaixo": "R$ 5 mil abaixo da FIPE"
+  },
+  {
    "id": "06877b6b8170",
    "marca": "Jeep",
    "titulo": "Jeep Renegade",
@@ -773,24 +755,6 @@
    "arte_pronta": true,
    "entrada": "2026-08-25",
    "fipe_abaixo": "R$ 6 mil abaixo da FIPE"
-  },
-  {
-   "id": "5d7d8ec57240",
-   "marca": "Chevrolet",
-   "titulo": "Chevrolet Onix",
-   "versao": "1.0 TURBO FLEX LTZ AUTOMÁTICO",
-   "ano": 2025,
-   "km": 6950,
-   "km_fmt": "6.950 km",
-   "preco": 93890.0,
-   "preco_fmt": "R$ 93.890",
-   "capa": "https://s3.agsistema.net/6699/vehicles/2747870/photos/lEganoRnRaGbskbYY8fz6LqNsDkZfbh8.jpg",
-   "arte": "artes/5d7d8ec57240.png",
-   "qr": "qr/5d7d8ec57240.png",
-   "blindado": false,
-   "arte_pronta": true,
-   "entrada": "2026-07-22",
-   "fipe_abaixo": null
   },
   {
    "id": "4f2fdeaa53e3",
