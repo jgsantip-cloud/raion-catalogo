@@ -971,24 +971,6 @@
    "arte_pronta": true,
    "entrada": "2026-08-28",
    "fipe_abaixo": null
-  },
-  {
-   "id": "c3a00e4ebbb0",
-   "marca": "Mitsubishi",
-   "titulo": "Mitsubishi Eclipse Cross",
-   "versao": "1.5 MIVEC TURBO GASOLINA HPE CVT",
-   "ano": 2026,
-   "km": 26113,
-   "km_fmt": "26.113 km",
-   "preco": 144890.0,
-   "preco_fmt": "R$ 144.890",
-   "capa": "https://s3.agsistema.net/6625/vehicles/2806190/photos/mR17Se4up7FBZpkfmxzesnJqzh1NaEz9hI6N.jpg",
-   "arte": "artes/c3a00e4ebbb0.png",
-   "qr": "qr/c3a00e4ebbb0.png",
-   "blindado": false,
-   "arte_pronta": true,
-   "entrada": "2026-08-28",
-   "fipe_abaixo": "R$ 11 mil abaixo da FIPE"
   }
  ]
 }
