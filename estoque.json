@@ -235,24 +235,6 @@
    "fipe_abaixo": "R$ 4 mil abaixo da FIPE"
   },
   {
-   "id": "15df19c38529",
-   "marca": "Volvo",
-   "titulo": "Volvo Xc60",
-   "versao": "2.0 T8 RECHARGE ULTIMATE AWD GEARTRONIC",
-   "ano": 2023,
-   "km": 48500,
-   "km_fmt": "48.500 km",
-   "preco": 228890.0,
-   "preco_fmt": "R$ 228.890",
-   "capa": "https://s3.agsistema.net/6701/vehicles/2537987/photos/app-photos-cswsIqrMxRUseILVHgDGCrIWqCI4Z2XD.jpg",
-   "arte": "artes/15df19c38529.png",
-   "qr": "qr/15df19c38529.png",
-   "blindado": false,
-   "arte_pronta": true,
-   "entrada": "2026-03-26",
-   "fipe_abaixo": "R$ 29 mil abaixo da FIPE"
-  },
-  {
    "id": "4d84d1e60348",
    "marca": "Mitsubishi",
    "titulo": "Mitsubishi Pajero Sport",
