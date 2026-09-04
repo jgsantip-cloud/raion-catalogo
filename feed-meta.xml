@@ -363,91 +363,6 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
-    <vehicle_id>2799401</vehicle_id>
-    <title>Nissan KICKS 1.6 16V FLEXSTART ADVANCE XTRONIC</title>
-    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos possuem Vistoria Cautelar. 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20KICKS%201.6%2016V%20FLEXSTART%20ADVANCE%20XTRONIC%202024%20%28c%C3%B3d.%202799401%29.%20%5BCATALOGO-META-KEIKO-DUQUE-DE-CAXIAS%5D</url>
-    <make>Nissan</make>
-    <model>KICKS</model>
-    <year>2024</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>67623</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>101890.00 BRL</price>
-    <exterior_color>Cinza</exterior_color>
-    <fuel_type>FLEX</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SUV</body_style>
-    <trim>1.6 16V FLEXSTART ADVANCE XTRONIC</trim>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Nissan Keiko - Duque de Caxias</dealer_name>
-    <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2799401.jpg?v=2c3b03f0</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/bSZCVkCwE4AJCdAToCRAoSWnd3TgjaW6.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/XYNWLYcZNp95RzFlufvOY1ZcLtEXcwi2.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/wUvDNLf98aYLjsgLm9m6qivI5TmGMSa6.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/ggP9xONcGwIFejPFJ8IDepddJf9Qa8h1.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/ANEcYHgUGRZskka0TV3xY4jysREisQE7.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/NtQRUhlUMt9VSTauvNlQb4qvCxaBWKk2.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/8nOchzQcDNYXzuXAxgwEkKNwA8YJFnnk.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/JDMFfhEs20cCjNuPJnoqYIM0J26VMuTb.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/afBJqUUdRNblpRoJCg2ncZisOVdzUaA4.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/LTqgBCN3T3w783jnOXhmCZivWRHLBV9B.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/RRinsDouYF8HzfZ6rHDYEMJRRjxAAqG7.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/lX4NbrGvZlAgUeqxPrKuZkIUnPtPsPqQ.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/uiMRZUvjdfeIlPJKIQLFJsB0RYkDG2US.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/RjzWjKv6VL1aaya3Z4tmQih4RYRzHQ6t.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">WASHINGTON LUIZ, 1375</component>
-      <component name="city">Duque de Caxias</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">25085-008</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>WASHINGTON LUIZ, 1375</street_address>
-    <city>Duque de Caxias</city>
-    <region>RJ</region>
-    <postal_code>25085-008</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
     <vehicle_id>2803031</vehicle_id>
     <title>Nissan KICKS 1.6 16V FLEXSTART EXCLUSIVE XTRONIC</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -806,7 +721,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <year>2022</year>
     <mileage>
       <unit>KM</unit>
-      <value>71616</value>
+      <value>71716</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
     <price>85890.00 BRL</price>
@@ -818,7 +733,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Campo Grande</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2798552.jpg?v=7204299a</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2798552.jpg?v=d1431014</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6596/vehicles/2798552/photos/VfG127wr8uGpnObUUfsXeETO0wsmGf3B.jpg</url>
@@ -2606,7 +2521,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>59591</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>119890.00 BRL</price>
+    <price>117890.00 BRL</price>
     <exterior_color>Branco</exterior_color>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -2615,7 +2530,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Raion - Barra</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2741782.jpg?v=ec7ef088</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2741782.jpg?v=1fb33866</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6698/vehicles/2741782/photos/QRWU8PmbrQt0B9HWH9uXD0goHTKe4GzZ.jpg</url>
@@ -2797,7 +2712,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>58625</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>112890.00 BRL</price>
+    <price>110890.00 BRL</price>
     <exterior_color>Azul</exterior_color>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -2806,7 +2721,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Raion - Barra</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2778372.jpg?v=47dbc68e</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2778372.jpg?v=b32ebd83</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6698/vehicles/2778372/photos/7EeZBk6pfZlBzXZnEOeAG4kPnvGUwhze.jpg</url>
@@ -2858,6 +2773,103 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     </image>
     <image>
       <url>https://s3.agsistema.net/6698/vehicles/2778372/photos/2YM4TwtOWEVdqZlmwYAXDtbCikDVT5oY.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">Av das Américas, 1730</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">22640-101</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>Av das Américas, 1730</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>22640-101</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2807107</vehicle_id>
+    <title>Mitsubishi TRITON 2.4 BITURBO DIESEL CD KATANA 4X4 AUTOMÁTICO</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20TRITON%202.4%20BITURBO%20DIESEL%20CD%20KATANA%204X4%20AUTOM%C3%81TICO%202026%20%28c%C3%B3d.%202807107%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
+    <make>Mitsubishi</make>
+    <model>TRITON</model>
+    <year>2026</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>23527</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>349890.00 BRL</price>
+    <exterior_color>Prata</exterior_color>
+    <fuel_type>DIESEL</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>TRUCK</body_style>
+    <trim>2.4 BITURBO DIESEL CD KATANA 4X4 AUTOMÁTICO</trim>
+    <custom_label_0>DISPONIVEL</custom_label_0>
+    <dealer_name>Mitsubishi Raion - Barra</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2807107.jpg?v=c1fc9669</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2807107/photos/Eub6SwTSJUvY47erQxHuwtbZ5lpHSqWS.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2807107/photos/ZvKe7Mx2u5wVtnSYrD1C4DzumRSHhlNm.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2807107/photos/7vCuFxgWU0B8Nd7AeMMrlFgsZyhkaPLV.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2807107/photos/BVd5Ah6mEm2lpJrQ5jnyxW49fWGUXvuQ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2807107/photos/9mfublHCyFcUkyD5IIyb0AKwCWBNIMwC.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2807107/photos/BVT3xInLqEF7Ix1xOFI1RyjAzTrhKopY.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2807107/photos/1SXwLBnJtn3iKi682Ex8RnGsLeI3kyTd.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2807107/photos/tIVKEMCgL2jhrDRlsP2TtapHIZ3ARr3I.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2807107/photos/JgIJiMg0RNJ72lsI7AnfO52lFqcutHj6.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2807107/photos/crsBT7QMM7xVl0tvBhjA1i7w3pq6bWHO.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2807107/photos/mwpBUI1qywpK5m3zX1PRgBvehYsvgiNk.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2807107/photos/swK7urlaKKYcenohfSRyZpP4Zv6Dt14r.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2807107/photos/VFfnX7C6imoGEUFupRmwzhd3BekKlUZc.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2807107/photos/UqZjLvtHN4XHCvqZR3Sdmg1KOo3Su3CL.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2807107/photos/l0smx6SCGbr1Xdw8MMXruhZP5hePWZJj.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2807107/photos/RC2eIRXVfieRFYGitN6RT97Ufd4GhZnZ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2807107/photos/5M8CIB0tq2zXBXWSUOzg5RqZLipPABXo.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2807107/photos/58w8EzDjho0k1y9j8nSS1736czhP5GrB.jpg</url>
     </image>
     <address format="simple">
       <component name="addr1">Av das Américas, 1730</component>
@@ -4174,7 +4186,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Raion ZEEKR - Barra</dealer_name>
     <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2799865.jpg?v=16a9a852</url>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2799865.jpg?v=4664ab87</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6701/vehicles/2799865/photos/app-photos-LjL4q1wrgIs7vTXWAIRHInect3IgQ5mw.jpg</url>
@@ -4891,64 +4903,6 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     </image>
     <image>
       <url>https://s3.agsistema.net/7207/vehicles/2789877/photos/U2CrSlLKmtoGnbSuLVrNYFLpqRRns7PZ.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">RUA ANTONIO LUIZ PIRES, 20</component>
-      <component name="city">Barra Mansa</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">27332-360</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>RUA ANTONIO LUIZ PIRES, 20</street_address>
-    <city>Barra Mansa</city>
-    <region>RJ</region>
-    <postal_code>27332-360</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
-    <vehicle_id>2799404</vehicle_id>
-    <title>Nissan KICKS 1.6 16V FLEXSTART S DIRECT 4P XTRONIC</title>
-    <description>Nissan KICKS 1.6 16V FLEXSTART S DIRECT 4P XTRONIC</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20KICKS%201.6%2016V%20FLEXSTART%20S%20DIRECT%204P%20XTRONIC%202020%20%28c%C3%B3d.%202799404%29.%20%5BCATALOGO-META-SEMINOVOS-BARRA-MANSA%5D</url>
-    <make>Nissan</make>
-    <model>KICKS</model>
-    <year>2020</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>59523</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>76890.00 BRL</price>
-    <exterior_color>Cinza</exterior_color>
-    <fuel_type>FLEX</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SUV</body_style>
-    <trim>1.6 16V FLEXSTART S DIRECT 4P XTRONIC</trim>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Raion Seminovos - Barra Mansa</dealer_name>
-    <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2799404.jpg?v=abbbe006</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2799404/photos/vj1upY8c0nE7PF4mavtbOJF62AOPbBRG.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2799404/photos/bewwwimELYZNJqkQCDWugrl26MJTOXdO.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2799404/photos/xWw4yzqON5EEWgWXXzzVgyTL1JQU1GEl.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2799404/photos/lDS2KZpBSkURUNcQI0zKxidizxlpMCYi.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2799404/photos/UPVzmnqA37KZM1qTyxQwA4NhlSQrGDlm.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2799404/photos/Tqx7D5vCl43ePj9nbucD4lu7aMuk25c1.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2799404/photos/ZkJXX79SaIevgiCAhbrewtKwYOZAUIak.jpg</url>
     </image>
     <address format="simple">
       <component name="addr1">RUA ANTONIO LUIZ PIRES, 20</component>
@@ -11333,6 +11287,149 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <city>Rio de Janeiro</city>
     <region>RJ</region>
     <postal_code>25665-135</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2799404</vehicle_id>
+    <title>Nissan KICKS 1.6 16V FLEXSTART S DIRECT 4P XTRONIC</title>
+    <description>Nissan KICKS 1.6 16V FLEXSTART S DIRECT 4P XTRONIC</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20KICKS%201.6%2016V%20FLEXSTART%20S%20DIRECT%204P%20XTRONIC%202020%20%28c%C3%B3d.%202799404%29.%20%5BCATALOGO-META-SEMINOVOS-BARRA-MANSA%5D</url>
+    <make>Nissan</make>
+    <model>KICKS</model>
+    <year>2020</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>59523</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>76890.00 BRL</price>
+    <exterior_color>Cinza</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>1.6 16V FLEXSTART S DIRECT 4P XTRONIC</trim>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Raion Seminovos - Barra Mansa</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2799404.jpg?v=abbbe006</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2799404/photos/vj1upY8c0nE7PF4mavtbOJF62AOPbBRG.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2799404/photos/bewwwimELYZNJqkQCDWugrl26MJTOXdO.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2799404/photos/xWw4yzqON5EEWgWXXzzVgyTL1JQU1GEl.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2799404/photos/lDS2KZpBSkURUNcQI0zKxidizxlpMCYi.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2799404/photos/UPVzmnqA37KZM1qTyxQwA4NhlSQrGDlm.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2799404/photos/Tqx7D5vCl43ePj9nbucD4lu7aMuk25c1.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/7207/vehicles/2799404/photos/ZkJXX79SaIevgiCAhbrewtKwYOZAUIak.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">RUA ANTONIO LUIZ PIRES, 20</component>
+      <component name="city">Barra Mansa</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">27332-360</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>RUA ANTONIO LUIZ PIRES, 20</street_address>
+    <city>Barra Mansa</city>
+    <region>RJ</region>
+    <postal_code>27332-360</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2799401</vehicle_id>
+    <title>Nissan KICKS 1.6 16V FLEXSTART ADVANCE XTRONIC</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20KICKS%201.6%2016V%20FLEXSTART%20ADVANCE%20XTRONIC%202024%20%28c%C3%B3d.%202799401%29.%20%5BCATALOGO-META-KEIKO-DUQUE-DE-CAXIAS%5D</url>
+    <make>Nissan</make>
+    <model>KICKS</model>
+    <year>2024</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>67623</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>101890.00 BRL</price>
+    <exterior_color>Cinza</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>1.6 16V FLEXSTART ADVANCE XTRONIC</trim>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Nissan Keiko - Duque de Caxias</dealer_name>
+    <image>
+      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2799401.jpg?v=2c3b03f0</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/bSZCVkCwE4AJCdAToCRAoSWnd3TgjaW6.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/XYNWLYcZNp95RzFlufvOY1ZcLtEXcwi2.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/wUvDNLf98aYLjsgLm9m6qivI5TmGMSa6.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/ggP9xONcGwIFejPFJ8IDepddJf9Qa8h1.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/ANEcYHgUGRZskka0TV3xY4jysREisQE7.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/NtQRUhlUMt9VSTauvNlQb4qvCxaBWKk2.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/8nOchzQcDNYXzuXAxgwEkKNwA8YJFnnk.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/JDMFfhEs20cCjNuPJnoqYIM0J26VMuTb.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/afBJqUUdRNblpRoJCg2ncZisOVdzUaA4.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/LTqgBCN3T3w783jnOXhmCZivWRHLBV9B.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/RRinsDouYF8HzfZ6rHDYEMJRRjxAAqG7.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/lX4NbrGvZlAgUeqxPrKuZkIUnPtPsPqQ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/uiMRZUvjdfeIlPJKIQLFJsB0RYkDG2US.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2799401/photos/RjzWjKv6VL1aaya3Z4tmQih4RYRzHQ6t.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">WASHINGTON LUIZ, 1375</component>
+      <component name="city">Duque de Caxias</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">25085-008</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>WASHINGTON LUIZ, 1375</street_address>
+    <city>Duque de Caxias</city>
+    <region>RJ</region>
+    <postal_code>25085-008</postal_code>
     <country>Brazil</country>
   </listing>
   <listing>
