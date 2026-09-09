@@ -595,6 +595,24 @@
    "fipe_abaixo": "R$ 3 mil abaixo da FIPE"
   },
   {
+   "id": "a06496a12041",
+   "marca": "Jeep",
+   "titulo": "Jeep Renegade",
+   "versao": "1.3 T270 TURBO FLEX LONGITUDE AT6",
+   "ano": 2026,
+   "km": 16500,
+   "km_fmt": "16.500 km",
+   "preco": 124890.0,
+   "preco_fmt": "R$ 124.890",
+   "capa": "https://s3.agsistema.net/6698/vehicles/2806615/photos/bc5J3F9ZUolkFh4gas9dB931U5tijnOr.jpg",
+   "arte": "artes/a06496a12041.png",
+   "qr": "qr/a06496a12041.png",
+   "blindado": false,
+   "arte_pronta": true,
+   "entrada": "2026-08-28",
+   "fipe_abaixo": "R$ 11 mil abaixo da FIPE"
+  },
+  {
    "id": "38b7d5f48247",
    "marca": "Mitsubishi",
    "titulo": "Mitsubishi Outlander",
@@ -755,24 +773,6 @@
    "arte_pronta": true,
    "entrada": "2026-09-01",
    "fipe_abaixo": "R$ 6 mil abaixo da FIPE"
-  },
-  {
-   "id": "06877b6b8170",
-   "marca": "Jeep",
-   "titulo": "Jeep Renegade",
-   "versao": "1.3 T270 TURBO FLEX LONGITUDE AT6",
-   "ano": 2024,
-   "km": 56500,
-   "km_fmt": "56.500 km",
-   "preco": 100890.0,
-   "preco_fmt": "R$ 100.890",
-   "capa": "https://s3.agsistema.net/6703/vehicles/2685853/photos/PKcTERIJDcNpNmqXGlE3YdKFRQugEyKR.jpg",
-   "arte": "artes/06877b6b8170.png",
-   "qr": "qr/06877b6b8170.png",
-   "blindado": false,
-   "arte_pronta": true,
-   "entrada": "2026-06-15",
-   "fipe_abaixo": "R$ 7 mil abaixo da FIPE"
   },
   {
    "id": "cd862868dfe6",
