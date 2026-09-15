@@ -255,7 +255,7 @@ function render(){
   if (!S.clientes.length){ box.innerHTML = '<div class="vazio">A fila da sua loja acabou. Fale com seu gestor.</div>'; }
   if (pend.length){ const h = document.createElement("div"); h.className = "secao"; h.textContent = "Pra ligar"; box.appendChild(h); pend.forEach(c => box.appendChild(cardPendente(c))); }
   if (feitos.length){ const h = document.createElement("div"); h.className = "secao"; h.textContent = "Feitos"; box.appendChild(h); feitos.forEach(c => box.appendChild(cardFeito(c))); }
-  const podeMais = S.clientes.length && pend.length === 0 && S.ev.reposicao;
+  const podeMais = S.clientes.length && pend.length === 0 && S.ev.reposicao && !S.esgotado;
   $("fimLista").classList.toggle("oculto", !podeMais);
   $("rodapeTexto").textContent = podeMais ? "Você fechou todos. Quer mais uns clientes?" : (S.clientes.length ? "Quando fechar todos, aparece o botão Pedir mais." : "");
 }
@@ -345,7 +345,11 @@ async function drenarFila(){
   ls.set("prospecta_fila", resto);
 }
 $("btnMais").onclick = async () => { const b = $("btnMais"); b.disabled = true; const j = await api({acao:"pedir_mais"}).catch(()=>null); b.disabled = false;
-  if (j && j.ok){ S.clientes = j.clientes; S.toque = {}; render(); window.scrollTo(0,0); } else toast("Não deu: " + (j ? j.erro : "sem conexão")); };
+  if (j && j.ok){
+    const antes = S.clientes.length; S.clientes = j.clientes; S.toque = {}; render();
+    if (S.clientes.length > antes) window.scrollTo(0,0);
+    else { S.esgotado = true; $("fimLista").classList.add("oculto"); $("rodapeTexto").textContent = "A base da sua loja acabou. Você fechou tudo que tinha."; toast("A base da sua loja acabou."); }
+  } else toast("Não deu: " + (j ? j.erro : "sem conexão")); };
 
 // ---------- placar ----------
 const STATUS = { vendeu:["Comprou","ok"], visitou:["Visitou","ok"], agendou:["Agendou visita","ok"], na_loja:["Na loja",""], vai_hoje:["Vai hoje à noite","hoje"] };
