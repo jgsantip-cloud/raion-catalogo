@@ -240,7 +240,10 @@ function renderRoteiro(){
   const lojas = [...new Set(S.clientes.map(c => c.loja).filter(Boolean))];
   const chip = (t) => `<span class="chip">${t}</span>`;
   const eu = (S.col.nome || "").split(" ").slice(0, 2).join(" ");
+  const periodo = S.ev.periodo || fmtData(S.ev.data_evento) || "";
   const html = esc(r)
+    .replace(/\{evento\}/g, esc(S.ev.nome || ""))
+    .replace(/\{periodo\}/g, esc(periodo))
     .replace(/\{colaborador\}/g, eu)
     .replace(/\{cliente\}/g, chip("nome do cliente"))
     .replace(/\{loja\}/g, lojas.length === 1 ? lojas[0] : lojas.length === 0 ? (S.col.loja || chip("sua loja")) : chip("loja do card"));
