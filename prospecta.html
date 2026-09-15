@@ -143,6 +143,8 @@
     <h3>Ranking da loja <small>por interesses</small></h3>
     <div id="listaRanking"></div>
   </div>
+  <div style="flex-grow:1"></div>
+  <button id="btnSair" style="margin-top:24px;background:none;border:0;color:var(--dim);font-size:14px;font-family:inherit;cursor:pointer;text-decoration:underline;padding:12px">Sair deste aparelho</button>
 </section>
 
 <div class="rodape oculto" id="rodape">
@@ -314,6 +316,7 @@ async function abrirPlacar(){
       + (j.ranking.minha_posicao > 3 ? `<div class="linha" style="font-size:16px;font-weight:700;color:var(--red)"><div style="display:flex;gap:10px"><span style="width:22px">${j.ranking.minha_posicao}º</span><span>Você</span></div><span>${j.ranking.meus} interesses</span></div>` : "");
   } else rk.classList.add("oculto");
 }
+$("btnSair").onclick = () => { if (confirm("Sair do Prospecta neste aparelho? Seus dados ficam salvos; é só entrar de novo com CPF e nascimento.")) { sair(); window.scrollTo(0,0); } };
 function voltarLista(){ $("tela-placar").classList.add("oculto"); $("tela-lista").classList.remove("oculto"); $("abaLista").classList.add("ativa"); $("abaPlacar").classList.remove("ativa"); window.scrollTo(0,0); }
 $("abaPlacar").onclick = abrirPlacar; $("abaLista").onclick = voltarLista;
 
