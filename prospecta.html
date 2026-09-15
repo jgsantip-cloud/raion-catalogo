@@ -227,7 +227,13 @@ function cabecalho(){
   const onde = [S.col.loja, S.ev.nome, fmtData(S.ev.data_evento)].filter(Boolean).join(" · ");
   $("quem").textContent = S.col.nome; $("ondeQuando").textContent = onde;
   $("quem2").textContent = S.col.nome; $("ondeQuando2").textContent = [S.ev.nome, S.col.loja].filter(Boolean).join(" · ");
-  $("roteiro").textContent = S.ev.roteiro || "O roteiro deste evento ainda não foi cadastrado.";
+  renderRoteiro();
+}
+function renderRoteiro(){
+  let r = S.ev.roteiro || "O roteiro deste evento ainda não foi cadastrado.";
+  const lojas = [...new Set(S.clientes.map(c => c.loja).filter(Boolean))];
+  r = r.replace(/\{loja\}/g, lojas.length === 1 ? lojas[0] : "[loja do cliente, está no card]");
+  $("roteiro").textContent = r;
 }
 async function abrirLista(){
   $("tela-login").classList.add("oculto"); $("tela-lista").classList.remove("oculto"); $("rodape").classList.remove("oculto");
@@ -235,7 +241,7 @@ async function abrirLista(){
   await drenarFila();
   const j = await api({acao:"fatia"}).catch(()=>null);
   if (!j || !j.ok){ toast("Não consegui buscar sua lista" + (j ? ": " + j.erro : "")); return; }
-  S.clientes = j.clientes; render();
+  S.clientes = j.clientes; render(); renderRoteiro();
 }
 $("btnAbordar").onclick = () => { const b = $("roteiroBox"); b.classList.toggle("oculto"); $("setaAbordar").style.transform = b.classList.contains("oculto") ? "" : "rotate(180deg)"; };
 
@@ -259,7 +265,9 @@ function cardPendente(c){
   const n = c.tentativas_nao_atendeu || 0;
   const hist = fmtTentativas(c.tentativas);
   const tarja = n ? `<div><span class="tarja">${ICO.relogio} Não atendeu · ${n}ª tentativa</span>${hist ? `<div style="font-size:12px;color:var(--dim);margin-top:4px">${esc(hist)}</div>` : ""}</div>` : "";
-  el.innerHTML = `<div style="display:flex;flex-direction:column;gap:4px"><div class="nome">${esc(c.nome)}</div><div class="ctx">${esc(c.contexto || "")}</div>${tarja}</div>
+  const lojaCli = c.loja && c.loja !== S.col.loja ? `<span style="color:var(--red);font-weight:600">${esc(c.loja)}</span>` : "";
+  const ctx = [lojaCli, esc(c.contexto || "")].filter(Boolean).join(" · ");
+  el.innerHTML = `<div style="display:flex;flex-direction:column;gap:4px"><div class="nome">${esc(c.nome)}</div><div class="ctx">${ctx}</div>${tarja}</div>
     <div class="grid2"><button class="btn btn-red" data-canal="ligar">${ICO.tel} Ligar</button><button class="btn btn-green" data-canal="whatsapp">${ICO.zap} WhatsApp</button></div>
     <div class="desf oculto"><div style="font-size:14px;color:var(--dim);font-weight:600">Como foi?</div><div class="grid2"></div>
       <div class="extra oculto"><input class="modelo" placeholder="Modelo de interesse (opcional)">
