@@ -155,7 +155,7 @@
 
 <script>
 const API = "https://winlvztcxczdgjqklxrv.supabase.co/functions/v1/prospecta";
-const EVENTO = new URLSearchParams(location.search).get("e") || "";
+let EVENTO = new URLSearchParams(location.search).get("e") || "";
 const DESF = [["nao_atendeu","Não atendeu"],["sem_interesse","Sem interesse"],["numero_errado","Número errado"],["interesse","Tem interesse"]];
 const ROTULO = Object.fromEntries(DESF);
 const ICO = {
@@ -319,8 +319,10 @@ $("abaPlacar").onclick = abrirPlacar; $("abaLista").onclick = voltarLista;
 
 // ---------- boot ----------
 (async () => {
-  if (!EVENTO){ $("eventoNome").textContent = "Link sem evento"; return; }
-  api({acao:"evento"}).then(j => { $("eventoNome").textContent = j.ok ? j.evento.nome : (j.erro === "evento-nao-encontrado" ? "Link inválido" : "…"); if (j.ok && !j.evento.ativo) $("eventoNome").textContent += " (encerrado)"; }).catch(()=>{ $("eventoNome").textContent = "…"; });
+  // sem ?e= no link: a função devolve o único evento ativo, se houver só um
+  const j = await api({acao:"evento"}).catch(()=>({ok:false, erro:"rede"}));
+  if (j.ok){ EVENTO = j.evento.chave; $("eventoNome").textContent = j.evento.nome + (j.evento.ativo ? "" : " (encerrado)"); }
+  else { $("eventoNome").textContent = j.erro === "varios-eventos-ativos" ? "Peça o link do seu evento ao gestor" : j.erro === "rede" ? "Sem conexão" : "Link inválido"; $("btnEntrar").disabled = !EVENTO; }
   const s = ls.get("prospecta_sessao");
   if (s && s.evento === EVENTO && s.token){ S.token = s.token; S.col = s.col; S.ev = s.ev; await abrirLista(); }
 })();
