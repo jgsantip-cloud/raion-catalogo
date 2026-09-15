@@ -42,6 +42,7 @@
                display:flex;align-items:center;justify-content:center;gap:6px}
   .desf button.sim{border:1.5px solid var(--green);color:var(--green);font-weight:700}
   .desf button.salvar{background:var(--red);color:#fff;border:0;box-shadow:0 2px 6px rgba(225,29,46,.25);font-weight:700}
+  .tarja{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#9A3412;background:#FFF7ED;border:1px solid #FED7AA;border-radius:999px;padding:4px 10px;margin-top:2px}
   .sugestao{display:flex;flex-direction:column;gap:8px;padding:12px;border-radius:12px;background:#FFF7ED;border:1px solid #FED7AA;font-size:14px;color:#9A3412}
   .sugestao button{height:44px;border-radius:10px;border:1px solid #F59E0B;background:#fff;color:#9A3412;font-weight:700;font-size:15px;font-family:inherit;cursor:pointer}
   .extra{display:flex;flex-direction:column;gap:8px}
@@ -171,6 +172,7 @@ const ICO = {
   zap: '<svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>',
   ok: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E8E3E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg>',
   x: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>',
+  relogio: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9A3412" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>',
   check16: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E8E3E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg>'
 };
 let S = { token:null, col:null, ev:null, clientes:[], toque:{} };
@@ -234,7 +236,7 @@ $("btnAbordar").onclick = () => { const b = $("roteiroBox"); b.classList.toggle(
 const pendente = (c) => !c.desfecho || c.desfecho.desfecho === "nao_atendeu";
 
 function render(){
-  const pend = S.clientes.filter(pendente), feitos = S.clientes.filter(c => !pendente(c));
+  const pend = S.clientes.filter(pendente).sort((a, b) => (a.tentativas_nao_atendeu || 0) - (b.tentativas_nao_atendeu || 0)), feitos = S.clientes.filter(c => !pendente(c));
   $("feitosN").textContent = feitos.length; $("totalN").textContent = S.clientes.length;
   $("barra").style.width = S.clientes.length ? Math.round(feitos.length / S.clientes.length * 100) + "%" : "0%";
   const box = $("cards"); box.innerHTML = "";
@@ -248,8 +250,9 @@ function render(){
 
 function cardPendente(c){
   const el = document.createElement("div"); el.className = "card";
-  const tent = c.tentativas_nao_atendeu ? `<span style="font-size:13px;color:var(--dim);font-weight:400"> ${c.tentativas_nao_atendeu}× não atendeu</span>` : "";
-  el.innerHTML = `<div style="display:flex;flex-direction:column;gap:2px"><div class="nome">${esc(c.nome)}${tent}</div><div class="ctx">${esc(c.contexto || "")}</div></div>
+  const n = c.tentativas_nao_atendeu || 0;
+  const tarja = n ? `<div><span class="tarja">${ICO.relogio} Não atendeu · ${n}ª tentativa</span></div>` : "";
+  el.innerHTML = `<div style="display:flex;flex-direction:column;gap:4px"><div class="nome">${esc(c.nome)}</div><div class="ctx">${esc(c.contexto || "")}</div>${tarja}</div>
     <div class="grid2"><button class="btn btn-red" data-canal="ligar">${ICO.tel} Ligar</button><button class="btn btn-green" data-canal="whatsapp">${ICO.zap} WhatsApp</button></div>
     <div class="desf oculto"><div style="font-size:14px;color:var(--dim);font-weight:600">Como foi?</div><div class="grid2"></div>
       <div class="extra oculto"><input class="modelo" placeholder="Modelo de interesse (opcional)">
@@ -311,7 +314,11 @@ async function salvar(c, d, el){
   if (!j){ const f = ls.get("prospecta_fila") || []; f.push(corpo); ls.set("prospecta_fila", f); toast("Sem sinal. Guardei e envio quando voltar."); }
   else if (!j.ok){ toast("Não salvou: " + j.erro); return; }
   c.desfecho = {desfecho:d, modelo:corpo.modelo, data_visita:corpo.data_visita};
-  if (d === "nao_atendeu") c.tentativas_nao_atendeu = (j && j.tentativas) || (c.tentativas_nao_atendeu||0)+1;
+  if (d === "nao_atendeu"){
+    c.tentativas_nao_atendeu = (j && j.tentativas) || (c.tentativas_nao_atendeu||0)+1;
+    delete S.toque[c.id_cliente];   // próximo desfecho só depois de um novo contato
+    toast(`Anotado: ${c.nome.split(" ")[0]} não atendeu (${c.tentativas_nao_atendeu}ª tentativa). Ele foi pro fim da lista.`);
+  }
   if (d === "interesse") toast("Enviado pra loja hoje à noite. Valeu!");
   render();
 }
