@@ -324,7 +324,7 @@ function cardFeito(c){
   const el = document.createElement("div"); el.className = "card feito";
   const d = c.desfecho || {}; const ok = d.desfecho === "interesse";
   const dv = d.data_visita ? "vai dia " + d.data_visita.split("-").reverse().slice(0,2).join("/") : "";
-  const linha = ok ? ["Tem interesse", d.modelo, dv, "enviado pra loja à noite"].filter(Boolean).join(" · ") : (ROTULO[d.desfecho] || "");
+  const linha = ok ? ["Tem interesse", d.modelo, dv].filter(Boolean).join(" · ") : (ROTULO[d.desfecho] || "");
   el.innerHTML = `${ok ? ICO.ok : ICO.x}<div style="display:flex;flex-direction:column;min-width:0;flex-grow:1"><div style="font-size:16px;font-weight:700">${esc(c.nome)}</div><div style="font-size:13px;color:var(--dim)">${esc(linha)}</div></div>
     <button class="corrigir" style="background:none;border:0;color:var(--dim);font-size:13px;text-decoration:underline;font-family:inherit;cursor:pointer;padding:6px">corrigir</button>`;
   el.querySelector(".corrigir").onclick = () => {
@@ -349,7 +349,7 @@ async function salvar(c, d, el){
     delete S.toque[c.id_cliente];   // próximo desfecho só depois de um novo contato
     toast(`Anotado: ${c.nome.split(" ")[0]} não atendeu (${c.tentativas_nao_atendeu}ª tentativa). Ele foi pro fim da lista.`);
   }
-  if (d === "interesse") toast("Enviado pra loja hoje à noite. Valeu!");
+  if (d === "interesse") toast("Interesse anotado. Valeu!");
   render();
 }
 async function drenarFila(){
@@ -366,7 +366,7 @@ $("btnMais").onclick = async () => { const b = $("btnMais"); b.disabled = true; 
   } else toast("Não deu: " + (j ? j.erro : "sem conexão")); };
 
 // ---------- placar ----------
-const STATUS = { vendeu:["Comprou","ok"], visitou:["Visitou","ok"], agendou:["Agendou visita","ok"], na_loja:["Na loja",""], vai_hoje:["Vai hoje à noite","hoje"] };
+const STATUS = { vendeu:["Comprou","ok"], visitou:["Visitou","ok"], agendou:["Agendou visita","ok"], na_loja:["Na loja",""], vai_hoje:["Anotado",""] };
 async function abrirPlacar(){
   $("tela-lista").classList.add("oculto"); $("tela-placar").classList.remove("oculto"); window.scrollTo(0,0);
   $("abaPlacar").classList.add("ativa"); $("abaLista").classList.remove("ativa");
@@ -376,9 +376,10 @@ async function abrirPlacar(){
   $("tiles").innerHTML = [["clientes",p.clientes||0,""],["tentativas",p.toques,""],["sem sucesso",p.sem_sucesso||0,""],["interesses",p.interesses,"color:var(--green)"],["sem interesse",p.sem_interesse||0,""],["comparecidos",p.visitas,"color:var(--red)"]]
     .map(([l,v,st]) => `<div class="tile"><b style="${st}">${v}</b><span>${l}</span></div>`).join("");
   const li = $("listaInteresses");
-  li.innerHTML = (j.interesses || []).length ? j.interesses.map(i => { const [tx,cl] = STATUS[i.status] || [i.status,""]; const dt = i.horario ? new Date(i.horario) : null;
+  li.innerHTML = (j.interesses || []).length ? j.interesses.map(i => { let [tx,cl] = STATUS[i.status] || [i.status,""]; const dt = i.horario ? new Date(i.horario) : null;
+      if (i.status === "vai_hoje" && i.data_visita){ tx = "vai " + i.data_visita.split("-").reverse().slice(0,2).join("/"); cl = "hoje"; }
       const quando = dt ? (dt.toDateString() === new Date().toDateString() ? "hoje" : `${String(dt.getDate()).padStart(2,"0")}/${String(dt.getMonth()+1).padStart(2,"0")}`) : "";
-      const dv = i.data_visita ? "vai " + i.data_visita.split("-").reverse().slice(0,2).join("/") : "";
+      const dv = i.data_visita && i.status !== "vai_hoje" ? "vai " + i.data_visita.split("-").reverse().slice(0,2).join("/") : "";
       return `<div class="linha"><div style="display:flex;flex-direction:column"><div style="font-size:16px;font-weight:600">${esc(i.nome)}</div><div style="font-size:13px;color:var(--dim)">${esc([i.modelo, dv, quando].filter(Boolean).join(" · "))}</div></div><div class="pill ${cl}">${tx}</div></div>`; }).join("")
     : '<div class="vazio">Seus interesses aparecem aqui.</div>';
   const linhaRk = (r, comLoja) => `<div class="linha" style="font-size:16px;${r.eu ? "font-weight:700;color:var(--red)" : ""}"><div style="display:flex;gap:10px;align-items:baseline"><span style="${r.eu ? "" : "color:var(--dim)"};width:26px;flex:none">${r.pos}º</span><span>${esc(r.nome)}${comLoja && r.loja ? `<span style="font-size:12px;color:var(--dim);font-weight:400"> · ${esc(r.loja)}</span>` : ""}</span></div><span style="${r.eu ? "" : "color:var(--dim)"};flex:none">${r.interesses} interesses</span></div>`;
