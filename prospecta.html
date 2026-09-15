@@ -253,7 +253,12 @@ function cardPendente(c){
   function mostrarDesfechos(){
     desf.classList.remove("oculto"); grid.innerHTML = "";
     for (const [k,l] of DESF){ const b = document.createElement("button"); b.textContent = l; if (k === "interesse"){ b.className = "sim"; b.innerHTML = ICO.check16 + " " + l; }
-      b.onclick = () => { if (k === "interesse"){ el.querySelector(".extra").classList.remove("oculto"); el.querySelector(".salvar").onclick = () => salvar(c, "interesse", el); el.querySelector(".modelo").focus(); } else salvar(c, k, el); };
+      b.onclick = () => {
+        if (k === "interesse"){ el.querySelector(".extra").classList.remove("oculto"); el.querySelector(".salvar").onclick = () => salvar(c, "interesse", el); el.querySelector(".modelo").focus(); return; }
+        if (k !== "nao_atendeu" && !confirm(`Marcar ${c.nome} como "${l}"?
+Ele sai da sua lista. Dá pra corrigir depois em Feitos.`)) return;
+        salvar(c, k, el);
+      };
       grid.appendChild(b); }
   }
   el.querySelectorAll("[data-canal]").forEach(b => b.onclick = async () => {
@@ -271,7 +276,13 @@ function cardFeito(c){
   const el = document.createElement("div"); el.className = "card feito";
   const d = c.desfecho || {}; const ok = d.desfecho === "interesse";
   const linha = ok ? ["Tem interesse", d.modelo, "enviado pra loja à noite"].filter(Boolean).join(" · ") : (ROTULO[d.desfecho] || "");
-  el.innerHTML = `${ok ? ICO.ok : ICO.x}<div style="display:flex;flex-direction:column;min-width:0"><div style="font-size:16px;font-weight:700">${esc(c.nome)}</div><div style="font-size:13px;color:var(--dim)">${esc(linha)}</div></div>`;
+  el.innerHTML = `${ok ? ICO.ok : ICO.x}<div style="display:flex;flex-direction:column;min-width:0;flex-grow:1"><div style="font-size:16px;font-weight:700">${esc(c.nome)}</div><div style="font-size:13px;color:var(--dim)">${esc(linha)}</div></div>
+    <button class="corrigir" style="background:none;border:0;color:var(--dim);font-size:13px;text-decoration:underline;font-family:inherit;cursor:pointer;padding:6px">corrigir</button>`;
+  el.querySelector(".corrigir").onclick = () => {
+    if (!confirm(`Corrigir o desfecho de ${c.nome}? A marcação anterior fica no histórico.`)) return;
+    c.desfecho = null; S.toque[c.id_cliente] = S.toque[c.id_cliente] || true;   // já teve toque; reabre os desfechos sem novo contato
+    render();
+  };
   return el;
 }
 
