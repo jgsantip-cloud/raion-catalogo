@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seu convite · Grupo Raion</title>
+<style>
+  :root{--bg:#FAFAF8;--txt:#1A1A1A;--dim:#6B7280;--line:#E0E0DC;--red:#E11D2E;--green:#1E8E3E;--ok-bg:#E8F5EC}
+  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--txt);font-family:"Segoe UI",system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.4}
+  .wrap{max-width:430px;margin:0 auto;padding:24px 16px 40px;display:flex;flex-direction:column;gap:16px;align-items:center}
+  .logo{width:min(220px,70%);display:block;margin:0 auto 4px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.05);padding:20px;width:100%;display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center}
+  h1{font-size:22px;margin:0;line-height:1.2} .dim{color:var(--dim);font-size:15px}
+  .qr{padding:12px;background:#fff;border:1px solid var(--line);border-radius:12px} .qr img,.qr canvas{display:block}
+  .codigo{font-size:28px;font-weight:800;letter-spacing:6px;font-family:ui-monospace,Consolas,monospace}
+  .beneficio{background:#FFF7ED;border:1px solid #FED7AA;color:#9A3412;border-radius:12px;padding:12px 14px;font-weight:600;width:100%}
+  label{font-size:14px;color:var(--dim);align-self:flex-start} input[type=date]{width:100%;height:48px;border:1px solid var(--line);border-radius:12px;padding:0 12px;font-size:17px;font-family:inherit;background:#fff}
+  .btn{width:100%;height:52px;border:0;border-radius:14px;background:var(--red);color:#fff;font-size:17px;font-weight:700;font-family:inherit;cursor:pointer;box-shadow:0 2px 6px rgba(225,29,46,.25)}
+  .btn:disabled{opacity:.6} .ok{background:var(--ok-bg);color:var(--green);border-radius:12px;padding:12px 14px;font-weight:700;width:100%}
+  a{color:var(--red)} .oculto{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <img class="logo" src="logo-prospecta.png" alt="Prospecta · Grupo Raion">
+  <div class="card" id="erro" style="display:none"><h1>Convite não encontrado</h1><div class="dim">Peça um novo convite pra quem te chamou.</div></div>
+  <div class="card" id="conv" style="display:none">
+    <div class="dim" id="saudacao"></div>
+    <h1 id="evento"></h1>
+    <div id="onde"></div>
+    <div class="dim" id="quando"></div>
+    <a id="maps" target="_blank" rel="noopener" style="display:none">Ver no mapa</a>
+    <div class="beneficio" id="beneficio" style="display:none"></div>
+    <div class="qr" id="qr"></div>
+    <div class="dim">Mostre este QR na recepção, ou diga o código</div>
+    <div class="codigo" id="codigo"></div>
+    <div id="confirmar" style="width:100%;display:flex;flex-direction:column;gap:10px">
+      <label>Que dia você pretende ir?</label>
+      <input type="date" id="data">
+      <button class="btn" id="btnConfirmar">Confirmar presença</button>
+    </div>
+    <div class="ok" id="confirmado" style="display:none"></div>
+    <div class="dim" id="quem" style="font-size:13px"></div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const API = "https://winlvztcxczdgjqklxrv.supabase.co/functions/v1/prospecta";
+const T = new URLSearchParams(location.search).get("t") || "";
+const $ = (id) => document.getElementById(id);
+const ddmm = (iso) => iso ? iso.split("-").reverse().slice(0,2).join("/") : "";
+async function api(body){ const r = await fetch(API, {method:"POST", headers:{"content-type":"application/json"}, body:JSON.stringify(body)}); return r.json(); }
+(async () => {
+  const j = await api({acao:"convite_ver", t:T}).catch(()=>({ok:false}));
+  if (!j.ok){ $("erro").style.display = ""; return; }
+  const c = j.convite;
+  $("saudacao").textContent = c.cliente ? `Oi, ${c.cliente}! Seu convite pro` : "Seu convite pro";
+  $("evento").textContent = c.evento;
+  $("onde").textContent = c.loja + (c.endereco ? " · " + c.endereco : "");
+  $("quando").textContent = c.periodo ? c.periodo : "";
+  if (c.maps_url){ $("maps").href = c.maps_url; $("maps").style.display = ""; }
+  if (c.beneficio){ $("beneficio").textContent = c.beneficio; $("beneficio").style.display = ""; }
+  new QRCode($("qr"), { text: c.checkin_url, width: 200, height: 200, correctLevel: QRCode.CorrectLevel.M });
+  $("codigo").textContent = c.codigo;
+  $("quem").textContent = c.colaborador ? `Convite enviado por ${c.colaborador}, Grupo Raion.` : "";
+  const mostrarConfirmado = (d) => { $("confirmar").style.display = "none"; $("confirmado").textContent = `Presença confirmada pra ${ddmm(d)}. Te esperamos!`; $("confirmado").style.display = ""; };
+  if (c.checkin_em){ $("confirmar").style.display = "none"; $("confirmado").textContent = "Você já fez check-in na loja. Obrigado pela visita!"; $("confirmado").style.display = ""; }
+  else if (c.confirmado_em) mostrarConfirmado(c.data_confirmada);
+  else { $("data").value = c.data_visita || ""; $("data").min = new Date().toISOString().slice(0,10); }
+  $("conv").style.display = "";
+  $("btnConfirmar").onclick = async () => {
+    const d = $("data").value; if (!d){ $("data").focus(); return; }
+    const b = $("btnConfirmar"); b.disabled = true;
+    const r = await api({acao:"convite_confirmar", t:T, data:d}).catch(()=>({ok:false}));
+    b.disabled = false;
+    if (r.ok) mostrarConfirmado(r.data_confirmada); else alert("Não deu pra confirmar agora. Tenta de novo.");
+  };
+})();
+</script>
+</body>
+</html>
