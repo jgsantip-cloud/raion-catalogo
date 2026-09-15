@@ -43,6 +43,10 @@
   .desf button.sim{border:1.5px solid var(--green);color:var(--green);font-weight:700}
   .desf button.salvar{background:var(--red);color:#fff;border:0;box-shadow:0 2px 6px rgba(225,29,46,.25);font-weight:700}
   .chip{display:inline-block;background:#F3F4F6;border:1px dashed #C7C9CC;border-radius:6px;padding:0 6px;color:var(--dim);font-size:.92em}
+  .convite{display:flex;flex-direction:column;gap:10px;padding:14px;border-radius:12px;background:var(--ok-bg);border:1px solid #BBE5C8}
+  .convite .cod{font-family:ui-monospace,Consolas,monospace;font-weight:800;letter-spacing:4px;font-size:18px}
+  .convite button{height:48px;border-radius:12px;border:0;background:#25D366;color:#fff;font-size:16px;font-weight:700;font-family:inherit;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+  .checkin input{width:100%;height:56px;border:1px solid var(--line);border-radius:12px;padding:0 14px;font-size:24px;letter-spacing:6px;text-transform:uppercase;font-family:ui-monospace,Consolas,monospace;text-align:center}
   .tarja{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#9A3412;background:#FFF7ED;border:1px solid #FED7AA;border-radius:999px;padding:4px 10px;margin-top:2px}
   .sugestao{display:flex;flex-direction:column;gap:8px;padding:12px;border-radius:12px;background:#FFF7ED;border:1px solid #FED7AA;font-size:14px;color:#9A3412}
   .sugestao button{height:44px;border-radius:10px;border:1px solid #F59E0B;background:#fff;color:#9A3412;font-weight:700;font-size:15px;font-family:inherit;cursor:pointer}
@@ -54,7 +58,7 @@
            box-shadow:0 1px 2px rgba(0,0,0,.04);cursor:pointer;margin-top:4px}
   .abordar-texto{white-space:pre-line;font-size:15px;color:var(--txt);padding:0 4px}
   .rodape{position:fixed;left:0;right:0;bottom:0;padding:12px 16px 24px;background:linear-gradient(to bottom,rgba(250,250,248,0),#FAFAF8 30%)}
-  .pilulas{max-width:398px;margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding:5px;border-radius:999px;background:#fff;
+  .pilulas{max-width:398px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:5px;border-radius:999px;background:#fff;
            border:1px solid var(--line);box-shadow:0 2px 8px rgba(0,0,0,.06)}
   .pilulas button{height:44px;border-radius:999px;border:0;background:transparent;color:var(--txt);font-size:15px;font-weight:600;font-family:inherit;cursor:pointer}
   .pilulas button.ativa{background:var(--red);color:#fff;font-weight:700}
@@ -157,10 +161,28 @@
   <button id="btnSair" style="margin-top:24px;background:none;border:0;color:var(--dim);font-size:14px;font-family:inherit;cursor:pointer;text-decoration:underline;padding:12px">Sair deste aparelho</button>
 </section>
 
+<!-- CHECK-IN (recepção) -->
+<section class="tela com-rodape oculto" id="tela-checkin">
+  <img src="logo-prospecta.png" alt="Prospecta Raion" style="width:190px;height:auto;display:block;margin:0 auto 18px">
+  <div class="card checkin">
+    <div style="font-size:18px;font-weight:700">Check-in do convite</div>
+    <div class="ctx">Leia o QR do cliente com a câmera do celular, ou digite o código de 6 letras.</div>
+    <input id="ckCodigo" maxlength="6" autocomplete="off" placeholder="ABC123">
+    <button class="btn btn-red" id="btnCkBuscar">Buscar</button>
+    <div id="ckResultado" class="oculto" style="display:flex;flex-direction:column;gap:10px">
+      <div style="font-size:20px;font-weight:700" id="ckCliente"></div>
+      <div class="ctx" id="ckInfo"></div>
+      <div id="ckAviso" class="oculto" style="color:#9A3412;background:#FFF7ED;border:1px solid #FED7AA;border-radius:10px;padding:10px;font-size:14px"></div>
+      <button class="btn btn-red" id="btnCkConfirmar">Confirmar chegada</button>
+    </div>
+    <div id="ckErro" class="oculto" style="color:var(--erro-tx);background:var(--erro-bg);border-radius:10px;padding:10px;font-size:15px"></div>
+  </div>
+</section>
 <div class="rodape oculto" id="rodape">
   <div class="pilulas">
     <button id="abaLista" class="ativa">Minha lista</button>
     <button id="abaPlacar">Meu placar</button>
+    <button id="abaCheckin">Check-in</button>
   </div>
 </div>
 <div class="toast" id="toast"></div>
@@ -221,7 +243,7 @@ $("btnEntrar").onclick = async () => {
   }
   S.token = j.token; S.col = j.colaborador; S.ev = j.evento;
   ls.set("prospecta_sessao", {token:S.token, col:S.col, ev:S.ev, evento:EVENTO});
-  await abrirLista();
+  await abrirLista(); atenderCheckinDaUrl();
 };
 
 function sair(){ S = {token:null,col:null,ev:null,clientes:[],toque:{}}; ls.del("prospecta_sessao");
@@ -325,8 +347,25 @@ function cardFeito(c){
   const d = c.desfecho || {}; const ok = d.desfecho === "interesse";
   const dv = d.data_visita ? "vai dia " + d.data_visita.split("-").reverse().slice(0,2).join("/") : "";
   const linha = ok ? ["Tem interesse", d.modelo, dv].filter(Boolean).join(" · ") : (ROTULO[d.desfecho] || "");
+  if (ok && !c.convite && !c._buscandoConvite){
+    c._buscandoConvite = true;
+    api({acao:"convite", id_cliente:c.id_cliente}).then(r => { if (r && r.ok){ c.convite = r.convite; render(); } }).catch(()=>{});
+  }
   el.innerHTML = `${ok ? ICO.ok : ICO.x}<div style="display:flex;flex-direction:column;min-width:0;flex-grow:1"><div style="font-size:16px;font-weight:700">${esc(c.nome)}</div><div style="font-size:13px;color:var(--dim)">${esc(linha)}</div></div>
     <button class="corrigir" style="background:none;border:0;color:var(--dim);font-size:13px;text-decoration:underline;font-family:inherit;cursor:pointer;padding:6px">corrigir</button>`;
+  if (ok){
+    const box = document.createElement("div"); box.className = "convite"; box.style.width = "100%";
+    const cv = c.convite;
+    const st = cv && cv.checkin_em ? "Compareceu ✓" : cv && cv.confirmado_em ? "Confirmou presença" : cv && cv.aberto_em ? "Abriu o convite" : "";
+    box.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center"><span>Convite ${cv ? `<span class="cod">${esc(cv.codigo)}</span>` : ""}</span><span style="font-size:13px;color:var(--green);font-weight:700">${st}</span></div>
+      <button class="zapConvite">${ICO.zap} ${cv ? "Enviar convite pelo WhatsApp" : "Gerar convite"}</button>`;
+    box.querySelector(".zapConvite").onclick = async () => {
+      let v = cv;
+      if (!v || !v.wa_url){ const r = await api({acao:"convite", id_cliente:c.id_cliente}).catch(()=>null); if (!r || !r.ok){ toast("Não consegui gerar o convite"); return; } v = c.convite = r.convite; }
+      window.open(v.wa_url, "_blank");
+    };
+    el.style.flexWrap = "wrap"; el.appendChild(box);
+  }
   el.querySelector(".corrigir").onclick = () => {
     if (!confirm(`Corrigir o desfecho de ${c.nome}? A marcação anterior fica no histórico.`)) return;
     c.desfecho = null; S.toque[c.id_cliente] = S.toque[c.id_cliente] || true;   // já teve toque; reabre os desfechos sem novo contato
@@ -344,6 +383,7 @@ async function salvar(c, d, el){
   if (!j){ const f = ls.get("prospecta_fila") || []; f.push(corpo); ls.set("prospecta_fila", f); toast("Sem sinal. Guardei e envio quando voltar."); }
   else if (!j.ok){ toast("Não salvou: " + j.erro); return; }
   c.desfecho = {desfecho:d, modelo:corpo.modelo, data_visita:corpo.data_visita};
+  if (d === "interesse" && j && j.convite) c.convite = j.convite;
   if (d === "nao_atendeu"){
     c.tentativas_nao_atendeu = (j && j.tentativas) || (c.tentativas_nao_atendeu||0)+1;
     delete S.toque[c.id_cliente];   // próximo desfecho só depois de um novo contato
@@ -366,14 +406,14 @@ $("btnMais").onclick = async () => { const b = $("btnMais"); b.disabled = true; 
   } else toast("Não deu: " + (j ? j.erro : "sem conexão")); };
 
 // ---------- placar ----------
-const STATUS = { vendeu:["Comprou","ok"], visitou:["Visitou","ok"], agendou:["Agendou visita","ok"], na_loja:["Na loja",""], vai_hoje:["Anotado",""] };
+const STATUS = { vendeu:["Comprou","ok"], visitou:["Visitou","ok"], agendou:["Agendou visita","ok"], na_loja:["Na loja",""], vai_hoje:["Anotado",""], abriu:["Abriu o convite",""], confirmou:["Confirmou","ok"], compareceu:["Compareceu","ok"] };
 async function abrirPlacar(){
   $("tela-lista").classList.add("oculto"); $("tela-placar").classList.remove("oculto"); window.scrollTo(0,0);
   $("abaPlacar").classList.add("ativa"); $("abaLista").classList.remove("ativa");
   const j = await api({acao:"placar"}).catch(()=>null);
   if (!j || !j.ok){ toast("Não consegui carregar o placar"); return; }
   const p = j.placar;
-  $("tiles").innerHTML = [["clientes",p.clientes||0,""],["tentativas",p.toques,""],["sem sucesso",p.sem_sucesso||0,""],["interesses",p.interesses,"color:var(--green)"],["sem interesse",p.sem_interesse||0,""],["comparecidos",p.visitas,"color:var(--red)"]]
+  $("tiles").innerHTML = [["clientes",p.clientes||0,""],["tentativas",p.toques,""],["sem sucesso",p.sem_sucesso||0,""],["interesses",p.interesses,"color:var(--green)"],["sem interesse",p.sem_interesse||0,""],["comparecidos",p.comparecidos||0,"color:var(--red)"]]
     .map(([l,v,st]) => `<div class="tile"><b style="${st}">${v}</b><span>${l}</span></div>`).join("");
   const li = $("listaInteresses");
   li.innerHTML = (j.interesses || []).length ? j.interesses.map(i => { let [tx,cl] = STATUS[i.status] || [i.status,""]; const dt = i.horario ? new Date(i.horario) : null;
@@ -393,9 +433,40 @@ async function abrirPlacar(){
   renderRk("cardRankingGrupo", "listaRankingGrupo", j.ranking && j.ranking.grupo, true);
 }
 $("btnSair").onclick = () => { if (confirm("Sair do Prospecta neste aparelho? Seus dados ficam salvos; é só entrar de novo com CPF e nascimento.")) { sair(); window.scrollTo(0,0); } };
-function voltarLista(){ $("tela-placar").classList.add("oculto"); $("tela-lista").classList.remove("oculto"); $("abaLista").classList.add("ativa"); $("abaPlacar").classList.remove("ativa"); window.scrollTo(0,0); }
+function mostrarTela(id){
+  for (const t of ["tela-lista","tela-placar","tela-checkin"]) $(t).classList.toggle("oculto", t !== id);
+  $("abaLista").classList.toggle("ativa", id === "tela-lista"); $("abaPlacar").classList.toggle("ativa", id === "tela-placar"); $("abaCheckin").classList.toggle("ativa", id === "tela-checkin");
+  window.scrollTo(0,0);
+}
+function voltarLista(){ mostrarTela("tela-lista"); }
 $("abaPlacar").onclick = abrirPlacar; $("abaLista").onclick = voltarLista;
+$("abaCheckin").onclick = () => { mostrarTela("tela-checkin"); $("ckResultado").classList.add("oculto"); $("ckErro").classList.add("oculto"); $("ckCodigo").focus(); };
+$("ckCodigo").addEventListener("input", e => { e.target.value = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,6); });
+$("ckCodigo").addEventListener("keydown", e => { if (e.key === "Enter") $("btnCkBuscar").click(); });
+const CK_ERRO = { "codigo-invalido":"Código tem 6 letras/números.", "codigo-nao-encontrado":"Código não encontrado neste evento.", "proprio-colaborador":"Você mesmo prospectou este cliente. O check-in tem que ser feito por outra pessoa.", "evento-encerrado":"Este evento já encerrou." };
+async function ckBuscar(confirmar){
+  const cod = $("ckCodigo").value; $("ckErro").classList.add("oculto");
+  const j = await api({acao:"checkin", codigo:cod, confirmar: confirmar ? "1" : "0"}).catch(()=>null);
+  if (!j){ $("ckErro").textContent = "Sem conexão."; $("ckErro").classList.remove("oculto"); return; }
+  if (!j.ok){
+    if (j.erro === "ja-fez-checkin"){ const d = new Date(j.checkin_em); $("ckErro").textContent = `${j.cliente} já fez check-in ${String(d.getDate()).padStart(2,"0")}/${String(d.getMonth()+1).padStart(2,"0")} ${String(d.getHours()).padStart(2,"0")}:${String(d.getMinutes()).padStart(2,"0")}.`; }
+    else $("ckErro").textContent = CK_ERRO[j.erro] || ("Não deu: " + j.erro);
+    $("ckErro").classList.remove("oculto"); $("ckResultado").classList.add("oculto"); return;
+  }
+  $("ckCliente").textContent = j.cliente; $("ckInfo").textContent = `Cliente da ${j.loja_cliente} · convidado por ${j.colaborador}`;
+  $("ckAviso").classList.toggle("oculto", !j.loja_diferente); if (j.loja_diferente) $("ckAviso").textContent = "Atenção: este cliente é de outra loja. Pode confirmar mesmo assim.";
+  if (j.previa){ $("ckResultado").classList.remove("oculto"); $("btnCkConfirmar").disabled = false; }
+  else { $("ckResultado").classList.add("oculto"); $("ckCodigo").value = ""; toast(`Check-in feito: ${j.cliente}. Bem-vindo!`); }
+}
+$("btnCkBuscar").onclick = () => ckBuscar(false);
+$("btnCkConfirmar").onclick = () => { $("btnCkConfirmar").disabled = true; ckBuscar(true); };
 
+const CHECKIN_URL = (new URLSearchParams(location.search).get("checkin") || "").toUpperCase();
+function atenderCheckinDaUrl(){
+  if (!CHECKIN_URL || !S.token) return;
+  $("abaCheckin").click(); $("ckCodigo").value = CHECKIN_URL.slice(0,6); ckBuscar(false);
+  history.replaceState(null, "", location.pathname + (EVENTO ? "?e=" + EVENTO : ""));
+}
 // ---------- boot ----------
 (async () => {
   // sem ?e= no link: a função devolve o único evento ativo, se houver só um
@@ -403,7 +474,7 @@ $("abaPlacar").onclick = abrirPlacar; $("abaLista").onclick = voltarLista;
   if (j.ok){ EVENTO = j.evento.chave; $("eventoNome").textContent = j.evento.nome + (j.evento.ativo ? "" : " (encerrado)"); }
   else { $("eventoNome").textContent = j.erro === "varios-eventos-ativos" ? "Peça o link do seu evento ao gestor" : j.erro === "rede" ? "Sem conexão" : "Link inválido"; $("btnEntrar").disabled = !EVENTO; }
   const s = ls.get("prospecta_sessao");
-  if (s && s.evento === EVENTO && s.token){ S.token = s.token; S.col = s.col; S.ev = s.ev; await abrirLista(); }
+  if (s && s.evento === EVENTO && s.token){ S.token = s.token; S.col = s.col; S.ev = s.ev; await abrirLista(); atenderCheckinDaUrl(); }
 })();
 </script>
 </body>
