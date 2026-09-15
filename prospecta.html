@@ -42,6 +42,7 @@
                display:flex;align-items:center;justify-content:center;gap:6px}
   .desf button.sim{border:1.5px solid var(--green);color:var(--green);font-weight:700}
   .desf button.salvar{background:var(--red);color:#fff;border:0;box-shadow:0 2px 6px rgba(225,29,46,.25);font-weight:700}
+  .chip{display:inline-block;background:#F3F4F6;border:1px dashed #C7C9CC;border-radius:6px;padding:0 6px;color:var(--dim);font-size:.92em}
   .tarja{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#9A3412;background:#FFF7ED;border:1px solid #FED7AA;border-radius:999px;padding:4px 10px;margin-top:2px}
   .sugestao{display:flex;flex-direction:column;gap:8px;padding:12px;border-radius:12px;background:#FFF7ED;border:1px solid #FED7AA;font-size:14px;color:#9A3412}
   .sugestao button{height:44px;border-radius:10px;border:1px solid #F59E0B;background:#fff;color:#9A3412;font-weight:700;font-size:15px;font-family:inherit;cursor:pointer}
@@ -234,10 +235,16 @@ function cabecalho(){
   renderRoteiro();
 }
 function renderRoteiro(){
-  let r = S.ev.roteiro || "O roteiro deste evento ainda não foi cadastrado.";
+  // {colaborador} = seu nome (2 primeiros), {loja} = a loja dos clientes da lista (ou a sua), {cliente} = marcador "nome do cliente"
+  const r = S.ev.roteiro || "O roteiro deste evento ainda não foi cadastrado.";
   const lojas = [...new Set(S.clientes.map(c => c.loja).filter(Boolean))];
-  r = r.replace(/\{loja\}/g, lojas.length === 1 ? lojas[0] : "[loja do cliente, está no card]");
-  $("roteiro").textContent = r;
+  const chip = (t) => `<span class="chip">${t}</span>`;
+  const eu = (S.col.nome || "").split(" ").slice(0, 2).join(" ");
+  const html = esc(r)
+    .replace(/\{colaborador\}/g, eu)
+    .replace(/\{cliente\}/g, chip("nome do cliente"))
+    .replace(/\{loja\}/g, lojas.length === 1 ? lojas[0] : lojas.length === 0 ? (S.col.loja || chip("sua loja")) : chip("loja do card"));
+  $("roteiro").innerHTML = html + '<div style="font-size:12px;color:var(--dim);margin-top:10px">É só um guia. Fale do seu jeito.</div>';
 }
 async function abrirLista(){
   $("tela-login").classList.add("oculto"); $("tela-lista").classList.remove("oculto"); $("rodape").classList.remove("oculto");
