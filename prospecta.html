@@ -41,6 +41,9 @@
   .desf button{height:48px;border-radius:12px;border:1px solid var(--line2);background:#fff;color:var(--txt);font-size:15px;font-weight:600;font-family:inherit;cursor:pointer;
                display:flex;align-items:center;justify-content:center;gap:6px}
   .desf button.sim{border:1.5px solid var(--green);color:var(--green);font-weight:700}
+  .desf button.salvar{background:var(--red);color:#fff;border:0;box-shadow:0 2px 6px rgba(225,29,46,.25);font-weight:700}
+  .sugestao{display:flex;flex-direction:column;gap:8px;padding:12px;border-radius:12px;background:#FFF7ED;border:1px solid #FED7AA;font-size:14px;color:#9A3412}
+  .sugestao button{height:44px;border-radius:10px;border:1px solid #F59E0B;background:#fff;color:#9A3412;font-weight:700;font-size:15px;font-family:inherit;cursor:pointer}
   .extra{display:flex;flex-direction:column;gap:8px}
   .extra input{height:48px}
   .barra{height:6px;border-radius:3px;background:#E5E5E0;overflow:hidden}
@@ -160,7 +163,9 @@
 const API = "https://winlvztcxczdgjqklxrv.supabase.co/functions/v1/prospecta";
 let EVENTO = new URLSearchParams(location.search).get("e") || "";
 const DESF = [["nao_atendeu","Não atendeu"],["sem_interesse","Sem interesse"],["numero_errado","Número errado"],["interesse","Tem interesse"]];
-const ROTULO = Object.fromEntries(DESF);
+const ROTULO_EXTRA = { sem_sucesso: "Sem sucesso no contato" };
+const SUGERIR_SEM_SUCESSO = 3;
+const ROTULO = Object.assign(Object.fromEntries(DESF), ROTULO_EXTRA);
 const ICO = {
   tel: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>',
   zap: '<svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>',
@@ -247,11 +252,21 @@ function cardPendente(c){
   el.innerHTML = `<div style="display:flex;flex-direction:column;gap:2px"><div class="nome">${esc(c.nome)}${tent}</div><div class="ctx">${esc(c.contexto || "")}</div></div>
     <div class="grid2"><button class="btn btn-red" data-canal="ligar">${ICO.tel} Ligar</button><button class="btn btn-green" data-canal="whatsapp">${ICO.zap} WhatsApp</button></div>
     <div class="desf oculto"><div style="font-size:14px;color:var(--dim);font-weight:600">Como foi?</div><div class="grid2"></div>
-      <div class="extra oculto"><input class="modelo" placeholder="Modelo de interesse (opcional)"><input class="obs" placeholder="Observação (opcional)"><button class="btn btn-red salvar" style="height:48px">Salvar</button></div></div>`;
-  const desf = el.querySelector(".desf"), grid = desf.querySelector(".grid2");
+      <div class="extra oculto"><input class="modelo" placeholder="Modelo de interesse (opcional)">
+        <label style="margin:0;font-size:13px">Quando pretende ir? (opcional)</label><input class="data" type="date" style="margin:0">
+        <input class="obs" placeholder="Observação (opcional)"><button class="salvar" style="height:48px">Salvar</button></div>
+      <div class="sugestao oculto"><span></span><button class="semsucesso">Finalizar como sem sucesso no contato</button></div></div>`;
+  const desf = el.querySelector(".desf"), grid = desf.querySelector(".grid2"), rotulo = desf.querySelector("div");
+  const sug = el.querySelector(".sugestao");
+  if ((c.tentativas_nao_atendeu || 0) >= SUGERIR_SEM_SUCESSO){
+    sug.classList.remove("oculto"); desf.classList.remove("oculto");
+    if (!S.toque[c.id_cliente]) { grid.classList.add("oculto"); rotulo.classList.add("oculto"); }
+    sug.querySelector("span").textContent = `Já foram ${c.tentativas_nao_atendeu} tentativas sem atender. Pode continuar tentando, ou finalizar:`;
+    sug.querySelector(".semsucesso").onclick = () => { if (confirm(`Finalizar ${c.nome} como "Sem sucesso no contato"? Ele sai da sua lista.`)) salvar(c, "sem_sucesso", el); };
+  }
   if (S.toque[c.id_cliente]) mostrarDesfechos();
   function mostrarDesfechos(){
-    desf.classList.remove("oculto"); grid.innerHTML = "";
+    desf.classList.remove("oculto"); grid.innerHTML = ""; grid.classList.remove("oculto"); rotulo.classList.remove("oculto");
     for (const [k,l] of DESF){ const b = document.createElement("button"); b.textContent = l; if (k === "interesse"){ b.className = "sim"; b.innerHTML = ICO.check16 + " " + l; }
       b.onclick = () => {
         if (k === "interesse"){ el.querySelector(".extra").classList.remove("oculto"); el.querySelector(".salvar").onclick = () => salvar(c, "interesse", el); el.querySelector(".modelo").focus(); return; }
@@ -275,7 +290,8 @@ Ele sai da sua lista. Dá pra corrigir depois em Feitos.`)) return;
 function cardFeito(c){
   const el = document.createElement("div"); el.className = "card feito";
   const d = c.desfecho || {}; const ok = d.desfecho === "interesse";
-  const linha = ok ? ["Tem interesse", d.modelo, "enviado pra loja à noite"].filter(Boolean).join(" · ") : (ROTULO[d.desfecho] || "");
+  const dv = d.data_visita ? "vai dia " + d.data_visita.split("-").reverse().slice(0,2).join("/") : "";
+  const linha = ok ? ["Tem interesse", d.modelo, dv, "enviado pra loja à noite"].filter(Boolean).join(" · ") : (ROTULO[d.desfecho] || "");
   el.innerHTML = `${ok ? ICO.ok : ICO.x}<div style="display:flex;flex-direction:column;min-width:0;flex-grow:1"><div style="font-size:16px;font-weight:700">${esc(c.nome)}</div><div style="font-size:13px;color:var(--dim)">${esc(linha)}</div></div>
     <button class="corrigir" style="background:none;border:0;color:var(--dim);font-size:13px;text-decoration:underline;font-family:inherit;cursor:pointer;padding:6px">corrigir</button>`;
   el.querySelector(".corrigir").onclick = () => {
@@ -288,13 +304,14 @@ function cardFeito(c){
 
 async function salvar(c, d, el){
   const corpo = {acao:"desfecho", id_cliente:c.id_cliente, desfecho:d, toque_id:S.toque[c.id_cliente] || null,
-                 modelo: el.querySelector(".modelo")?.value?.trim() || null, observacao: el.querySelector(".obs")?.value?.trim() || null};
+                 modelo: el.querySelector(".modelo")?.value?.trim() || null, observacao: el.querySelector(".obs")?.value?.trim() || null,
+                 data_visita: el.querySelector(".data")?.value || null};
   let j = null;
   try { j = await api(corpo); } catch { j = null; }
   if (!j){ const f = ls.get("prospecta_fila") || []; f.push(corpo); ls.set("prospecta_fila", f); toast("Sem sinal. Guardei e envio quando voltar."); }
   else if (!j.ok){ toast("Não salvou: " + j.erro); return; }
-  if (j && j.devolvido){ S.clientes = S.clientes.filter(x => x.id_cliente !== c.id_cliente); toast("3 tentativas. Esse cliente volta pra fila."); }
-  else { c.desfecho = {desfecho:d, modelo:corpo.modelo}; if (d === "nao_atendeu") c.tentativas_nao_atendeu = (j && j.tentativas) || (c.tentativas_nao_atendeu||0)+1; }
+  c.desfecho = {desfecho:d, modelo:corpo.modelo, data_visita:corpo.data_visita};
+  if (d === "nao_atendeu") c.tentativas_nao_atendeu = (j && j.tentativas) || (c.tentativas_nao_atendeu||0)+1;
   if (d === "interesse") toast("Enviado pra loja hoje à noite. Valeu!");
   render();
 }
@@ -315,12 +332,13 @@ async function abrirPlacar(){
   const j = await api({acao:"placar"}).catch(()=>null);
   if (!j || !j.ok){ toast("Não consegui carregar o placar"); return; }
   const p = j.placar;
-  $("tiles").innerHTML = [["contatos",p.toques,""],["interesses",p.interesses,"color:var(--green)"],["na loja",p.enviados,""],["visitas",p.visitas,""],["vendas",p.vendas,"color:var(--red)"],["sem interesse",p.sem_interesse,""]]
+  $("tiles").innerHTML = [["contatos",p.toques,""],["interesses",p.interesses,"color:var(--green)"],["na loja",p.enviados,""],["visitas",p.visitas,""],["vendas",p.vendas,"color:var(--red)"],["sem interesse",(p.sem_interesse||0)+(p.sem_sucesso||0),""]]
     .map(([l,v,st]) => `<div class="tile"><b style="${st}">${v}</b><span>${l}</span></div>`).join("");
   const li = $("listaInteresses");
   li.innerHTML = (j.interesses || []).length ? j.interesses.map(i => { const [tx,cl] = STATUS[i.status] || [i.status,""]; const dt = i.horario ? new Date(i.horario) : null;
       const quando = dt ? (dt.toDateString() === new Date().toDateString() ? "hoje" : `${String(dt.getDate()).padStart(2,"0")}/${String(dt.getMonth()+1).padStart(2,"0")}`) : "";
-      return `<div class="linha"><div style="display:flex;flex-direction:column"><div style="font-size:16px;font-weight:600">${esc(i.nome)}</div><div style="font-size:13px;color:var(--dim)">${esc([i.modelo, quando].filter(Boolean).join(" · "))}</div></div><div class="pill ${cl}">${tx}</div></div>`; }).join("")
+      const dv = i.data_visita ? "vai " + i.data_visita.split("-").reverse().slice(0,2).join("/") : "";
+      return `<div class="linha"><div style="display:flex;flex-direction:column"><div style="font-size:16px;font-weight:600">${esc(i.nome)}</div><div style="font-size:13px;color:var(--dim)">${esc([i.modelo, dv, quando].filter(Boolean).join(" · "))}</div></div><div class="pill ${cl}">${tx}</div></div>`; }).join("")
     : '<div class="vazio">Seus interesses aparecem aqui.</div>';
   const rk = $("cardRanking");
   if (j.ranking){ rk.classList.remove("oculto");
