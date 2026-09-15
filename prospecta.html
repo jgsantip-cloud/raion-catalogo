@@ -148,6 +148,10 @@
     <h3>Ranking da loja <small>por interesses</small></h3>
     <div id="listaRanking"></div>
   </div>
+  <div class="lista-card oculto" id="cardRankingGrupo" style="margin-top:16px">
+    <h3>Ranking do grupo <small>por interesses</small></h3>
+    <div id="listaRankingGrupo"></div>
+  </div>
   <div style="flex-grow:1"></div>
   <button id="btnSair" style="margin-top:24px;background:none;border:0;color:var(--dim);font-size:14px;font-family:inherit;cursor:pointer;text-decoration:underline;padding:12px">Sair deste aparelho</button>
 </section>
@@ -359,7 +363,7 @@ async function abrirPlacar(){
   const j = await api({acao:"placar"}).catch(()=>null);
   if (!j || !j.ok){ toast("Não consegui carregar o placar"); return; }
   const p = j.placar;
-  $("tiles").innerHTML = [["contatos",p.toques,""],["interesses",p.interesses,"color:var(--green)"],["na loja",p.enviados,""],["visitas",p.visitas,""],["vendas",p.vendas,"color:var(--red)"],["sem interesse",(p.sem_interesse||0)+(p.sem_sucesso||0),""]]
+  $("tiles").innerHTML = [["clientes",p.clientes||0,""],["tentativas",p.toques,""],["sem sucesso",p.sem_sucesso||0,""],["interesses",p.interesses,"color:var(--green)"],["sem interesse",p.sem_interesse||0,""],["comparecidos",p.visitas,"color:var(--red)"]]
     .map(([l,v,st]) => `<div class="tile"><b style="${st}">${v}</b><span>${l}</span></div>`).join("");
   const li = $("listaInteresses");
   li.innerHTML = (j.interesses || []).length ? j.interesses.map(i => { const [tx,cl] = STATUS[i.status] || [i.status,""]; const dt = i.horario ? new Date(i.horario) : null;
@@ -367,11 +371,15 @@ async function abrirPlacar(){
       const dv = i.data_visita ? "vai " + i.data_visita.split("-").reverse().slice(0,2).join("/") : "";
       return `<div class="linha"><div style="display:flex;flex-direction:column"><div style="font-size:16px;font-weight:600">${esc(i.nome)}</div><div style="font-size:13px;color:var(--dim)">${esc([i.modelo, dv, quando].filter(Boolean).join(" · "))}</div></div><div class="pill ${cl}">${tx}</div></div>`; }).join("")
     : '<div class="vazio">Seus interesses aparecem aqui.</div>';
-  const rk = $("cardRanking");
-  if (j.ranking){ rk.classList.remove("oculto");
-    $("listaRanking").innerHTML = j.ranking.top.map(r => `<div class="linha" style="font-size:16px;${r.eu ? "font-weight:700;color:var(--red)" : ""}"><div style="display:flex;gap:10px"><span style="${r.eu ? "" : "color:var(--dim)"};width:22px">${r.pos}º</span><span>${esc(r.nome)}</span></div><span style="${r.eu ? "" : "color:var(--dim)"}">${r.interesses} interesses</span></div>`).join("")
-      + (j.ranking.minha_posicao > 3 ? `<div class="linha" style="font-size:16px;font-weight:700;color:var(--red)"><div style="display:flex;gap:10px"><span style="width:22px">${j.ranking.minha_posicao}º</span><span>Você</span></div><span>${j.ranking.meus} interesses</span></div>` : "");
-  } else rk.classList.add("oculto");
+  const linhaRk = (r, comLoja) => `<div class="linha" style="font-size:16px;${r.eu ? "font-weight:700;color:var(--red)" : ""}"><div style="display:flex;gap:10px;align-items:baseline"><span style="${r.eu ? "" : "color:var(--dim)"};width:26px;flex:none">${r.pos}º</span><span>${esc(r.nome)}${comLoja && r.loja ? `<span style="font-size:12px;color:var(--dim);font-weight:400"> · ${esc(r.loja)}</span>` : ""}</span></div><span style="${r.eu ? "" : "color:var(--dim)"};flex:none">${r.interesses} interesses</span></div>`;
+  const renderRk = (cardId, listaId, rk, comLoja) => {
+    const card = $(cardId); if (!rk){ card.classList.add("oculto"); return; } card.classList.remove("oculto");
+    $(listaId).innerHTML = rk.top.map(r => linhaRk(r, comLoja)).join("")
+      + (rk.minha_posicao > 3 ? linhaRk({pos: rk.minha_posicao, nome: "Você", interesses: rk.meus, eu: true}, false) : "")
+      + (rk.total > 3 ? `<div style="font-size:12px;color:var(--dim);padding-top:8px">${rk.total} participantes</div>` : "");
+  };
+  renderRk("cardRanking", "listaRanking", j.ranking && j.ranking.loja, false);
+  renderRk("cardRankingGrupo", "listaRankingGrupo", j.ranking && j.ranking.grupo, true);
 }
 $("btnSair").onclick = () => { if (confirm("Sair do Prospecta neste aparelho? Seus dados ficam salvos; é só entrar de novo com CPF e nascimento.")) { sair(); window.scrollTo(0,0); } };
 function voltarLista(){ $("tela-placar").classList.add("oculto"); $("tela-lista").classList.remove("oculto"); $("abaLista").classList.add("ativa"); $("abaPlacar").classList.remove("ativa"); window.scrollTo(0,0); }
