@@ -336,7 +336,7 @@ function renderRoteiro(){
   const html = esc(r)
     .replace(/\{evento\}/g, esc(S.ev.nome || ""))
     .replace(/\{periodo\}/g, esc(periodo))
-    .replace(/\{colaborador\}/g, eu)
+    .replace(/\{colaborador\}/g, esc(eu))
     .replace(/\{cliente\}/g, chip("nome do cliente"))
     .replace(/\{loja\}/g, lojas.length === 1 ? lojas[0] : lojas.length === 0 ? (S.col.loja || chip("sua loja")) : chip("loja do card"));
   $("roteiro").innerHTML = html + '<div style="font-size:12px;color:var(--dim);margin-top:10px">É só um guia. Fale do seu jeito.</div>';
@@ -409,7 +409,7 @@ Ele sai da sua lista. Dá pra corrigir depois em Feitos.`)) return;
     S.toque[c.id_cliente] = j.toque_id;
     (c.tentativas ||= []).push({canal, horario: new Date().toISOString()});
     mostrarDesfechos();
-    if (canal === "ligar") location.href = "tel:+55" + j.telefone; else window.open(j.wa_url, "_blank");
+    if (canal === "ligar") location.href = "tel:+55" + j.telefone; else window.open(j.wa_url, "_blank", "noopener,noreferrer");
   });
   return el;
 }
@@ -434,7 +434,7 @@ function cardFeito(c){
     box.querySelector(".zapConvite").onclick = async () => {
       let v = cv;
       if (!v || !v.wa_url){ const r = await api({acao:"convite", id_cliente:c.id_cliente}).catch(()=>null); if (!r || !r.ok){ toast("Não consegui gerar o convite"); return; } v = c.convite = r.convite; }
-      window.open(v.wa_url, "_blank");
+      window.open(v.wa_url, "_blank", "noopener,noreferrer");
     };
     el.style.flexWrap = "wrap"; el.appendChild(box);
   }
@@ -480,13 +480,13 @@ $("btnMais").onclick = async () => { const b = $("btnMais"); b.disabled = true; 
 // ---------- cadastrar cliente fora da lista (Larissa/Picmo, João 16/09) ----------
 $("btnCadastrar").onclick = () => { $("cadastroBox").classList.toggle("oculto"); $("cadErro").classList.add("oculto"); };
 $("cadTel").addEventListener("input", e => { e.target.value = e.target.value.replace(/\D/g,"").slice(0,11); });
-const CAD_ERRO = { "nome-invalido":"Escreve o nome do cliente.", "telefone-invalido":"Celular com DDD, 11 números.", "evento-encerrado":"Este evento já encerrou." };
+const CAD_ERRO = { "nome-invalido":"Escreve o nome do cliente.", "telefone-invalido":"Celular com DDD, 11 números.", "evento-encerrado":"Este evento já encerrou.", "muitas-tentativas":"Muitas tentativas. Espera 15 minutos." };
 $("btnCadSalvar").onclick = async () => {
   const b = $("btnCadSalvar"); b.disabled = true; $("cadErro").classList.add("oculto");
   const j = await api({acao:"cadastrar", nome:$("cadNome").value, telefone:$("cadTel").value, modelo:$("cadModelo").value || null, data_visita:$("cadData").value || null}).catch(()=>null);
   b.disabled = false;
   if (!j || !j.ok){
-    $("cadErro").textContent = !j ? "Sem conexão." : j.erro === "ja-interessado-com" ? `${j.cliente} já está com ${j.dono}, que já marcou interesse. Combina com ${j.dono} pra mandar o convite.` : (CAD_ERRO[j.erro] || "Não deu: " + j.erro);
+    $("cadErro").textContent = !j ? "Sem conexão." : j.erro === "ja-interessado-com" ? `Esse cliente já está com ${j.dono}, que já marcou interesse. Combina com ${j.dono} pra mandar o convite.` : (CAD_ERRO[j.erro] || "Não deu: " + j.erro);
     $("cadErro").classList.remove("oculto"); return;
   }
   $("cadNome").value = ""; $("cadTel").value = ""; $("cadModelo").value = ""; $("cadData").value = ""; $("cadastroBox").classList.add("oculto");
@@ -534,7 +534,7 @@ $("abaPlacar").onclick = abrirPlacar; $("abaLista").onclick = voltarLista;
 $("abaCheckin").onclick = () => { mostrarTela("tela-checkin"); $("ckResultado").classList.add("oculto"); $("ckErro").classList.add("oculto"); };   // sem focus(): João não quer o teclado abrindo sozinho
 $("ckCodigo").addEventListener("input", e => { e.target.value = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,6); });
 $("ckCodigo").addEventListener("keydown", e => { if (e.key === "Enter") $("btnCkBuscar").click(); });
-const CK_ERRO = { "codigo-invalido":"Código tem 6 letras/números.", "codigo-nao-encontrado":"Código não encontrado neste evento.", "proprio-colaborador":"Você mesmo prospectou este cliente. O check-in tem que ser feito por outra pessoa.", "evento-encerrado":"Este evento já encerrou." };
+const CK_ERRO = { "codigo-invalido":"Código tem 6 letras/números.", "codigo-nao-encontrado":"Código não encontrado neste evento.", "proprio-colaborador":"Você mesmo prospectou este cliente. O check-in tem que ser feito por outra pessoa.", "evento-encerrado":"Este evento já encerrou.", "muitas-tentativas":"Muitas tentativas erradas. Espera 15 minutos." };
 async function ckBuscar(confirmar){
   const cod = $("ckCodigo").value; $("ckErro").classList.add("oculto");
   const j = await api({acao:"checkin", codigo:cod, confirmar: confirmar ? "1" : "0"}).catch(()=>null);

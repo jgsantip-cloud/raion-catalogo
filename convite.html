@@ -58,7 +58,7 @@ async function api(body){ const r = await fetch(API, {method:"POST", headers:{"c
   $("evento").textContent = c.evento;
   $("onde").textContent = c.loja + (c.endereco ? " · " + c.endereco : "");
   $("quando").textContent = c.periodo ? c.periodo : "";
-  if (c.maps_url){ $("maps").href = c.maps_url; $("maps").style.display = ""; }
+  if (c.maps_url && /^https:\/\//.test(c.maps_url)){ $("maps").href = c.maps_url; $("maps").style.display = ""; }
   if (c.beneficio){ $("beneficio").textContent = c.beneficio; $("beneficio").style.display = ""; }
   new QRCode($("qr"), { text: c.checkin_url, width: 200, height: 200, correctLevel: QRCode.CorrectLevel.M });
   $("codigo").textContent = c.codigo;
