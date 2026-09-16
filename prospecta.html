@@ -147,6 +147,17 @@
 
   <div id="cards" style="display:flex;flex-direction:column;gap:12px;margin-top:4px"></div>
 
+  <div class="card oculto" id="cadastroBox" style="margin-top:4px">
+    <div style="font-size:16px;font-weight:700">Convidar alguém fora da lista</div>
+    <div class="ctx">Cliente da oficina, amigo de quem você ligou… Ele nasce como "tem interesse" e ganha convite.</div>
+    <input id="cadNome" placeholder="Nome do cliente" autocomplete="off">
+    <input id="cadTel" placeholder="Celular com DDD" inputmode="numeric" autocomplete="off">
+    <input id="cadModelo" placeholder="Modelo de interesse (opcional)">
+    <label style="margin:0;font-size:13px">Quando pretende ir? (opcional)</label><input id="cadData" type="date" style="margin:0">
+    <button class="btn btn-red" id="btnCadSalvar">Salvar e gerar convite</button>
+    <div id="cadErro" class="oculto" style="color:var(--erro-tx);background:var(--erro-bg);border-radius:10px;padding:10px;font-size:15px"></div>
+  </div>
+  <button class="btn btn-sec" id="btnCadastrar" style="margin-top:4px">+ Convidar alguém fora da lista</button>
   <div id="fimLista" class="oculto" style="margin-top:8px">
     <button class="btn btn-sec" id="btnMais">Pedir mais</button>
   </div>
@@ -406,7 +417,8 @@ function cardFeito(c){
   const el = document.createElement("div"); el.className = "card feito";
   const d = c.desfecho || {}; const ok = d.desfecho === "interesse";
   const dv = d.data_visita ? "vai dia " + d.data_visita.split("-").reverse().slice(0,2).join("/") : "";
-  const linha = ok ? ["Tem interesse", d.modelo, dv].filter(Boolean).join(" · ") : (ROTULO[d.desfecho] || "");
+  const cadastrado = c.origem === "cadastrado" || (c.contexto || "").startsWith("cadastrado por");
+  const linha = (cadastrado ? "Cadastrado · " : "") + (ok ? ["Tem interesse", d.modelo, dv].filter(Boolean).join(" · ") : (ROTULO[d.desfecho] || ""));
   if (ok && !c.convite && !c._buscandoConvite){
     c._buscandoConvite = true;
     api({acao:"convite", id_cliente:c.id_cliente}).then(r => { if (r && r.ok){ c.convite = r.convite; render(); } }).catch(()=>{});
@@ -464,6 +476,25 @@ $("btnMais").onclick = async () => { const b = $("btnMais"); b.disabled = true; 
     if (S.clientes.length > antes) window.scrollTo(0,0);
     else { S.esgotado = true; $("fimLista").classList.add("oculto"); $("rodapeTexto").textContent = "A base da sua loja acabou. Você fechou tudo que tinha."; toast("A base da sua loja acabou."); }
   } else toast("Não deu: " + (j ? j.erro : "sem conexão")); };
+
+// ---------- cadastrar cliente fora da lista (Larissa/Picmo, João 16/09) ----------
+$("btnCadastrar").onclick = () => { $("cadastroBox").classList.toggle("oculto"); $("cadErro").classList.add("oculto"); };
+$("cadTel").addEventListener("input", e => { e.target.value = e.target.value.replace(/\D/g,"").slice(0,11); });
+const CAD_ERRO = { "nome-invalido":"Escreve o nome do cliente.", "telefone-invalido":"Celular com DDD, 11 números.", "evento-encerrado":"Este evento já encerrou." };
+$("btnCadSalvar").onclick = async () => {
+  const b = $("btnCadSalvar"); b.disabled = true; $("cadErro").classList.add("oculto");
+  const j = await api({acao:"cadastrar", nome:$("cadNome").value, telefone:$("cadTel").value, modelo:$("cadModelo").value || null, data_visita:$("cadData").value || null}).catch(()=>null);
+  b.disabled = false;
+  if (!j || !j.ok){
+    $("cadErro").textContent = !j ? "Sem conexão." : j.erro === "ja-interessado-com" ? `${j.cliente} já está com ${j.dono}, que já marcou interesse. Combina com ${j.dono} pra mandar o convite.` : (CAD_ERRO[j.erro] || "Não deu: " + j.erro);
+    $("cadErro").classList.remove("oculto"); return;
+  }
+  $("cadNome").value = ""; $("cadTel").value = ""; $("cadModelo").value = ""; $("cadData").value = ""; $("cadastroBox").classList.add("oculto");
+  const f = await api({acao:"fatia"}).catch(()=>null); if (f && f.ok) S.clientes = f.clientes;
+  const c = S.clientes.find(x => x.id_cliente === j.id_cliente); if (c) c.convite = j.convite;
+  render();
+  toast(j.situacao === "transferido" ? `${j.nome} veio pra sua lista. Convite pronto.` : `${j.nome} cadastrado. Convite pronto.`);
+};
 
 // ---------- placar ----------
 const STATUS = { vendeu:["Comprou","ok"], visitou:["Visitou","ok"], agendou:["Agendou visita","ok"], na_loja:["Na loja",""], vai_hoje:["Anotado",""], abriu:["Abriu o convite",""], confirmou:["Confirmou","ok"], compareceu:["Compareceu","ok"] };
