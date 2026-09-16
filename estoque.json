@@ -1027,6 +1027,24 @@
    "fipe_abaixo": null
   },
   {
+   "id": "03ac0c67c5b3",
+   "marca": "Chevrolet",
+   "titulo": "Chevrolet Onix",
+   "versao": "1.0 TURBO FLEX PLUS PREMIER AUTOMÁTICO",
+   "ano": 2024,
+   "km": 45760,
+   "km_fmt": "45.760 km",
+   "preco": 84890.0,
+   "preco_fmt": "R$ 84.890",
+   "capa": "https://s3.agsistema.net/6698/vehicles/2818446/photos/8OJ1mVtDJWYqMnOP33WBIhh6ZY1w464X.jpg",
+   "arte": "artes/03ac0c67c5b3.png",
+   "qr": "qr/03ac0c67c5b3.png",
+   "blindado": false,
+   "arte_pronta": true,
+   "entrada": "2026-09-08",
+   "fipe_abaixo": null
+  },
+  {
    "id": "1f9db501e2d4",
    "marca": "Hyundai",
    "titulo": "Hyundai Hb20",
@@ -1042,24 +1060,6 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-09-01",
-   "fipe_abaixo": null
-  },
-  {
-   "id": "03ac0c67c5b3",
-   "marca": "Chevrolet",
-   "titulo": "Chevrolet Onix",
-   "versao": "1.0 TURBO FLEX PLUS PREMIER AUTOMÁTICO",
-   "ano": 2024,
-   "km": 45760,
-   "km_fmt": "45.760 km",
-   "preco": 82890.0,
-   "preco_fmt": "R$ 82.890",
-   "capa": "https://s3.agsistema.net/6698/vehicles/2818446/photos/8OJ1mVtDJWYqMnOP33WBIhh6ZY1w464X.jpg",
-   "arte": "artes/03ac0c67c5b3.png",
-   "qr": "qr/03ac0c67c5b3.png",
-   "blindado": false,
-   "arte_pronta": true,
-   "entrada": "2026-09-08",
    "fipe_abaixo": null
   },
   {
@@ -1114,24 +1114,6 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-07-29",
-   "fipe_abaixo": null
-  },
-  {
-   "id": "bf50e990743a",
-   "marca": "Renault",
-   "titulo": "Renault Logan",
-   "versao": "1.0 12V SCE FLEX ZEN MANUAL",
-   "ano": 2023,
-   "km": 63866,
-   "km_fmt": "63.866 km",
-   "preco": 57890.0,
-   "preco_fmt": "R$ 57.890",
-   "capa": "https://s3.agsistema.net/6595/vehicles/2791300/photos/jYO3K217wvCq65RjjNU5drTv5o3sjX8f.jpg",
-   "arte": "artes/bf50e990743a.png",
-   "qr": "qr/bf50e990743a.png",
-   "blindado": false,
-   "arte_pronta": true,
-   "entrada": "2026-08-18",
    "fipe_abaixo": null
   },
   {
