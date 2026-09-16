@@ -570,19 +570,26 @@ function renderConteudos(){
   }
 }
 async function compartilhar(c, b){
+  // navigator.share so existe em HTTPS (ou localhost). Num link http:// o celular nao abre a folha nativa:
+  // avisar em vez de cair calado no plano B.
+  if (!window.isSecureContext){
+    toast("Abra o link oficial (raion.app.br) pra compartilhar direto do celular.");
+    return;
+  }
   b.disabled = true;
   apiDiv({acao:"compartilhei", conteudo_id:c.id}).catch(()=>{});
-  try { if (c.legenda) await navigator.clipboard.writeText(c.legenda); } catch {}
+  let copiou = false;
+  try { if (c.legenda && navigator.clipboard){ await navigator.clipboard.writeText(c.legenda); copiou = true; } } catch {}
   try {
     const blob = await (await fetch(c.url)).blob();
     const ext = c.tipo === "video" ? "mp4" : ((blob.type.split("/")[1] || "jpg").replace("jpeg","jpg"));
     const file = new File([blob], `divulga-${c.id}.${ext}`, {type: blob.type});
     if (navigator.canShare && navigator.canShare({files:[file]})){
       await navigator.share({files:[file]});
-      toast(c.legenda ? "Legenda copiada: é só colar no status/story." : "Pronto! Depois manda o print.");
+      toast(copiou ? "Legenda copiada: é só colar no status/story." : "Pronto! Depois manda o print.");
     } else {
       baixarArte(blob, file.name);
-      toast(c.legenda ? "Baixei a arte e copiei a legenda: poste do rolo da câmera." : "Baixei a arte: poste do rolo da câmera.");
+      toast("Seu navegador não compartilha direto. Baixei a arte: poste do rolo da câmera.");
     }
   } catch (e) { if (!e || e.name !== "AbortError") toast("Não consegui abrir o compartilhamento"); }
   b.disabled = false;
