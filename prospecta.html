@@ -58,7 +58,7 @@
            box-shadow:0 1px 2px rgba(0,0,0,.04);cursor:pointer;margin-top:4px}
   .abordar-texto{white-space:pre-line;font-size:15px;color:var(--txt);padding:0 4px}
   .rodape{position:fixed;left:0;right:0;bottom:0;padding:12px 16px 24px;background:linear-gradient(to bottom,rgba(250,250,248,0),#FAFAF8 30%)}
-  .pilulas{max-width:398px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:5px;border-radius:999px;background:#fff;
+  .pilulas{max-width:398px;margin:0 auto;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:6px;padding:5px;border-radius:999px;background:#fff;
            border:1px solid var(--line);box-shadow:0 2px 8px rgba(0,0,0,.06)}
   .pilulas button{height:44px;border-radius:999px;border:0;background:transparent;color:var(--txt);font-size:15px;font-weight:600;font-family:inherit;cursor:pointer}
   .pilulas button.ativa{background:var(--red);color:#fff;font-weight:700}
@@ -77,6 +77,14 @@
   .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:96px;background:#1A1A1A;color:#fff;padding:12px 18px;border-radius:12px;font-size:15px;
          box-shadow:0 4px 16px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .2s;max-width:90vw;text-align:center}
   .toast.on{opacity:1}
+  .midia{display:block;margin:0 auto;max-width:100%;max-height:420px;border-radius:10px;background:#F3F3F0}
+  .legenda{font-size:14px;color:var(--txt);white-space:pre-line}
+  .dias{display:flex;flex-wrap:wrap;gap:6px}
+  .dia{width:34px;height:34px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;background:var(--cinza-bg);color:#4B5563}
+  .dia.ok{background:var(--ok-bg);color:var(--green)} .dia.pendente{background:#FFF7ED;color:#9A3412}
+  .dia.faltou{background:var(--erro-bg);color:var(--erro-tx)}
+  .dia.futuro{background:#fff;border:1px dashed var(--line2);color:var(--dim)}
+  .pct{height:6px;border-radius:3px;background:#E5E5E0;overflow:hidden;margin-top:4px} .pct > div{height:6px;background:var(--red)}
   svg{flex-shrink:0}
 </style>
 </head>
@@ -178,11 +186,52 @@
     <div id="ckErro" class="oculto" style="color:var(--erro-tx);background:var(--erro-bg);border-radius:10px;padding:10px;font-size:15px"></div>
   </div>
 </section>
+<!-- DIVULGAR -->
+<section class="tela com-rodape oculto" id="tela-divulga">
+  <img src="logo-divulga.png" alt="Divulga Grupo Raion" style="width:190px;height:auto;display:block;margin:0 auto 18px">
+  <div style="display:flex;flex-direction:column;gap:2px">
+    <div style="font-size:22px;font-weight:700;line-height:1.2" id="quem3"></div>
+    <div class="ctx" id="ondeQuando3"></div>
+  </div>
+  <div class="secao" style="margin-top:16px">Hoje pra postar</div>
+  <div id="divConteudos" style="display:flex;flex-direction:column;gap:12px"></div>
+
+  <div class="card" style="margin-top:16px">
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <div style="font-size:18px;font-weight:700">Postou? Manda o print</div>
+      <div class="ctx">Tire o print logo depois de postar, na tela do seu status ou story.</div>
+    </div>
+    <div class="grid2">
+      <button class="btn btn-green" id="btnPrintStatus">Postei no status</button>
+      <button class="btn btn-red" id="btnPrintStory">Postei no story</button>
+    </div>
+    <input type="file" accept="image/*" id="filePrint" class="oculto">
+    <div class="ctx" id="printStatus"></div>
+    <div id="divPostsHoje"></div>
+  </div>
+
+  <div class="lista-card" style="margin-top:16px">
+    <h3>Minha meta <small id="metaResumo"></small></h3>
+    <div class="dias" id="divDias" style="padding:4px 0 12px"></div>
+    <div class="ctx" id="metaFrase" style="padding-bottom:12px"></div>
+  </div>
+
+  <div class="lista-card" style="margin-top:16px">
+    <h3>Ranking das lojas <small>% da equipe na meta</small></h3>
+    <div id="divLojas"></div>
+  </div>
+
+  <div class="lista-card oculto" id="cardDuvidas" style="margin-top:16px">
+    <h3>Dúvidas pra decidir <small id="duvidasN"></small></h3>
+    <div id="divDuvidas"></div>
+  </div>
+</section>
 <div class="rodape oculto" id="rodape">
   <div class="pilulas">
-    <button id="abaLista" class="ativa">Minha lista</button>
-    <button id="abaPlacar">Meu placar</button>
+    <button id="abaLista" class="ativa">Lista</button>
+    <button id="abaPlacar">Placar</button>
     <button id="abaCheckin">Check-in</button>
+    <button id="abaDivulgar" class="oculto">Divulgar</button>
   </div>
 </div>
 <div class="toast" id="toast"></div>
@@ -247,7 +296,7 @@ $("btnEntrar").onclick = async () => {
 };
 
 function sair(){ S = {token:null,col:null,ev:null,clientes:[],toque:{}}; ls.del("prospecta_sessao");
-  ["tela-lista","tela-placar","rodape"].forEach(id => $(id).classList.add("oculto")); $("tela-login").classList.remove("oculto"); }
+  ["tela-lista","tela-placar","tela-checkin","tela-divulga","rodape"].forEach(id => $(id).classList.add("oculto")); $("tela-login").classList.remove("oculto"); }
 
 // ---------- lista ----------
 function cabecalho(){
@@ -278,6 +327,7 @@ async function abrirLista(){
   const j = await api({acao:"fatia"}).catch(()=>null);
   if (!j || !j.ok){ toast("Não consegui buscar sua lista" + (j ? ": " + j.erro : "")); return; }
   S.clientes = j.clientes; render(); renderRoteiro();
+  checarDivulga();
 }
 $("btnAbordar").onclick = () => { const b = $("roteiroBox"); b.classList.toggle("oculto"); $("setaAbordar").style.transform = b.classList.contains("oculto") ? "" : "rotate(180deg)"; };
 
@@ -408,8 +458,7 @@ $("btnMais").onclick = async () => { const b = $("btnMais"); b.disabled = true; 
 // ---------- placar ----------
 const STATUS = { vendeu:["Comprou","ok"], visitou:["Visitou","ok"], agendou:["Agendou visita","ok"], na_loja:["Na loja",""], vai_hoje:["Anotado",""], abriu:["Abriu o convite",""], confirmou:["Confirmou","ok"], compareceu:["Compareceu","ok"] };
 async function abrirPlacar(){
-  $("tela-lista").classList.add("oculto"); $("tela-placar").classList.remove("oculto"); window.scrollTo(0,0);
-  $("abaPlacar").classList.add("ativa"); $("abaLista").classList.remove("ativa");
+  mostrarTela("tela-placar");
   const j = await api({acao:"placar"}).catch(()=>null);
   if (!j || !j.ok){ toast("Não consegui carregar o placar"); return; }
   const p = j.placar;
@@ -434,8 +483,9 @@ async function abrirPlacar(){
 }
 $("btnSair").onclick = () => { if (confirm("Sair do Prospecta neste aparelho? Seus dados ficam salvos; é só entrar de novo com CPF e nascimento.")) { sair(); window.scrollTo(0,0); } };
 function mostrarTela(id){
-  for (const t of ["tela-lista","tela-placar","tela-checkin"]) $(t).classList.toggle("oculto", t !== id);
-  $("abaLista").classList.toggle("ativa", id === "tela-lista"); $("abaPlacar").classList.toggle("ativa", id === "tela-placar"); $("abaCheckin").classList.toggle("ativa", id === "tela-checkin");
+  for (const t of ["tela-lista","tela-placar","tela-checkin","tela-divulga"]) $(t).classList.toggle("oculto", t !== id);
+  $("abaLista").classList.toggle("ativa", id === "tela-lista"); $("abaPlacar").classList.toggle("ativa", id === "tela-placar");
+  $("abaCheckin").classList.toggle("ativa", id === "tela-checkin"); $("abaDivulgar").classList.toggle("ativa", id === "tela-divulga");
   window.scrollTo(0,0);
 }
 function voltarLista(){ mostrarTela("tela-lista"); }
@@ -467,6 +517,145 @@ function atenderCheckinDaUrl(){
   $("abaCheckin").click(); $("ckCodigo").value = CHECKIN_URL.slice(0,6); ckBuscar(false);
   history.replaceState(null, "", location.pathname + (EVENTO ? "?e=" + EVENTO : ""));
 }
+// ---------- divulgar ----------
+const API_DIV = "https://winlvztcxczdgjqklxrv.supabase.co/functions/v1/divulga";
+const DIV_ERRO = { "fora-da-janela":"A divulgação deste evento não está aberta hoje.", "limite-do-dia":"Você já mandou 6 prints hoje.",
+  "print-repetido":"Esse print já foi enviado antes.", "sem-campanha":"A divulgação deste evento ainda não começou.",
+  "print-nao-chegou":"O print não chegou. Tente de novo." };
+const VEREDITO = { valido:["Valeu","ok"], recebido:["Conferindo",""], duvida:["Em análise","hoje"], recusado:["Recusado","hoje"] };
+async function apiDiv(body){
+  const r = await fetch(API_DIV, {method:"POST", headers:{"content-type":"application/json"},
+    body:JSON.stringify({...body, evento: EVENTO || (S.ev && S.ev.chave), token:S.token})});
+  const j = await r.json().catch(()=>({ok:false, erro:"resposta-invalida"}));
+  if (r.status === 401) sair();
+  return j;
+}
+async function checarDivulga(){
+  const j = await apiDiv({acao:"conteudos"}).catch(()=>null);
+  S.div = j && j.ok ? j : null;
+  $("abaDivulgar").classList.toggle("oculto", !S.div);
+}
+async function abrirDivulga(){
+  mostrarTela("tela-divulga");
+  $("quem3").textContent = S.col.nome; $("ondeQuando3").textContent = [S.ev.nome, S.col.loja].filter(Boolean).join(" · ");
+  await checarDivulga();
+  if (!S.div){ toast(DIV_ERRO["sem-campanha"]); return; }
+  renderConteudos(); await renderMeta();
+}
+function renderConteudos(){
+  const box = $("divConteudos"); box.innerHTML = "";
+  const lista = (S.div && S.div.conteudos) || [];
+  if (!lista.length){ box.innerHTML = '<div class="vazio">As artes de hoje aparecem aqui.</div>'; return; }
+  for (const c of lista){
+    const el = document.createElement("div"); el.className = "card";
+    const midia = !c.url ? "" : c.tipo === "video"
+      ? `<video class="midia" src="${esc(c.url)}" controls muted playsinline preload="metadata"></video>`
+      : `<img class="midia" src="${esc(c.url)}" alt="">`;
+    el.innerHTML = `${midia}${c.legenda ? `<div class="legenda">${esc(c.legenda)}</div>` : ""}<button class="btn btn-red">Compartilhar</button>`;
+    el.querySelector("button").onclick = (e) => compartilhar(c, e.currentTarget);
+    box.appendChild(el);
+  }
+}
+async function compartilhar(c, b){
+  b.disabled = true;
+  apiDiv({acao:"compartilhei", conteudo_id:c.id}).catch(()=>{});
+  try { if (c.legenda) await navigator.clipboard.writeText(c.legenda); } catch {}
+  try {
+    const blob = await (await fetch(c.url)).blob();
+    const ext = c.tipo === "video" ? "mp4" : ((blob.type.split("/")[1] || "jpg").replace("jpeg","jpg"));
+    const file = new File([blob], `divulga-${c.id}.${ext}`, {type: blob.type});
+    if (navigator.canShare && navigator.canShare({files:[file]})){
+      await navigator.share({files:[file]});
+      toast(c.legenda ? "Legenda copiada: é só colar no status/story." : "Pronto! Depois manda o print.");
+    } else {
+      window.open(c.url, "_blank");
+      toast(c.legenda ? "Legenda copiada. Salve a arte e poste." : "Salve a arte e poste.");
+    }
+  } catch (e) { if (!e || e.name !== "AbortError") toast("Não consegui abrir o compartilhamento"); }
+  b.disabled = false;
+}
+function reduzir(file){
+  return new Promise((res, rej) => {
+    const img = new Image(); const url = URL.createObjectURL(file);
+    img.onload = () => {
+      const k = Math.min(1, 1280 / Math.max(img.width, img.height));
+      const cv = document.createElement("canvas"); cv.width = Math.round(img.width * k); cv.height = Math.round(img.height * k);
+      cv.getContext("2d").drawImage(img, 0, 0, cv.width, cv.height); URL.revokeObjectURL(url);
+      cv.toBlob(bl => bl ? res(bl) : rej(new Error("toBlob")), "image/jpeg", 0.82);
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); rej(new Error("imagem")); };
+    img.src = url;
+  });
+}
+let canalPrint = "status";
+$("btnPrintStatus").onclick = () => { canalPrint = "status"; $("filePrint").value = ""; $("filePrint").click(); };
+$("btnPrintStory").onclick = () => { canalPrint = "story"; $("filePrint").value = ""; $("filePrint").click(); };
+$("filePrint").addEventListener("change", e => { const f = e.target.files && e.target.files[0]; if (f) enviarPrint(canalPrint, f); });
+async function enviarPrint(canal, file){
+  const st = $("printStatus");
+  const fim = () => { st.textContent = ""; $("btnPrintStatus").disabled = $("btnPrintStory").disabled = false; };
+  $("btnPrintStatus").disabled = $("btnPrintStory").disabled = true; st.textContent = "Enviando o print…";
+  let blob; try { blob = await reduzir(file); } catch { toast("Não consegui abrir essa imagem"); fim(); return; }
+  const u = await apiDiv({acao:"url_print", canal}).catch(()=>null);
+  if (!u || !u.ok){ toast(DIV_ERRO[u && u.erro] || "Não deu: " + (u ? u.erro : "sem conexão")); fim(); return; }
+  const up = await fetch(u.upload_url, {method:"PUT", headers:{"content-type":"image/jpeg"}, body: blob}).catch(()=>null);
+  if (!up || !up.ok){ toast("O print não subiu. Tente de novo."); fim(); return; }
+  st.textContent = "Conferindo o print…";
+  const j = await apiDiv({acao:"print_enviado", caminho:u.caminho, canal}).catch(()=>null);
+  fim();
+  if (!j || !j.ok){ toast(DIV_ERRO[j && j.erro] || "Não deu: " + (j ? j.erro : "sem conexão")); return; }
+  const v = j.postagem.veredito;
+  toast(v === "valido" ? "Valeu! Postagem confirmada."
+      : v === "recusado" ? "Print recusado: " + (j.postagem.motivo || "confira e mande outro")
+      : "Recebido. Vamos conferir.");
+  await renderMeta();
+}
+async function renderMeta(){
+  const j = await apiDiv({acao:"placar"}).catch(()=>null);
+  if (!j || !j.ok){ toast("Não consegui carregar sua meta"); return; }
+  $("divPostsHoje").innerHTML = (j.postagens_hoje || []).map(p => {
+    const [tx, cl] = VEREDITO[p.veredito] || [p.veredito, ""];
+    const h = new Date(p.horario); const hora = `${String(h.getHours()).padStart(2,"0")}:${String(h.getMinutes()).padStart(2,"0")}`;
+    const motivo = p.motivo && p.veredito !== "valido" ? `<div style="font-size:13px;color:var(--dim)">${esc(p.motivo)}</div>` : "";
+    return `<div class="linha"><div style="display:flex;flex-direction:column;min-width:0"><div style="font-size:15px;font-weight:600">${p.canal === "status" ? "Status" : "Story"} · ${hora}</div>${motivo}</div><div class="pill ${cl}">${tx}</div></div>`;
+  }).join("");
+  $("divDias").innerHTML = j.dias.map(d => {
+    const faltou = d.estado === "vazio" && d.dia < j.hoje;
+    return `<div class="dia ${faltou ? "faltou" : d.estado === "vazio" ? "" : d.estado}" title="${d.dia}">${d.dia.slice(8,10)}</div>`;
+  }).join("");
+  $("metaResumo").textContent = `${j.cumpridos} de ${j.total_dias} dias`;
+  const faltou = j.dias.find(d => d.estado === "vazio" && d.dia < j.hoje);
+  $("metaFrase").textContent = j.bate_meta ? "Você está batendo a meta. Segue postando todo dia!"
+    : faltou ? `Faltou o dia ${faltou.dia.slice(8,10)}/${faltou.dia.slice(5,7)}.`
+    : "Poste hoje pra começar a meta.";
+  $("divLojas").innerHTML = (j.lojas || []).map((l, i) =>
+    `<div class="linha" style="flex-direction:column;align-items:stretch;gap:0;${l.eu ? "color:var(--red);font-weight:700" : ""}"><div style="display:flex;justify-content:space-between"><span>${i + 1}º ${esc(l.loja)}</span><span>${l.pct}%</span></div><div class="pct"><div style="width:${Math.min(100, l.pct)}%"></div></div></div>`
+  ).join("") || '<div class="vazio">O ranking aparece quando o pessoal começar a postar.</div>';
+  $("cardDuvidas").classList.toggle("oculto", !j.admin);
+  if (j.admin) renderDuvidas();
+}
+async function renderDuvidas(){
+  const j = await apiDiv({acao:"admin_duvidas"}).catch(()=>null);
+  if (!j || !j.ok) return;
+  $("duvidasN").textContent = `${j.duvidas.length}`;
+  const box = $("divDuvidas");
+  box.innerHTML = j.duvidas.length ? "" : '<div class="vazio">Nenhuma dúvida pendente.</div>';
+  for (const d of j.duvidas){
+    const el = document.createElement("div"); el.className = "linha";
+    el.style.flexDirection = "column"; el.style.alignItems = "stretch";
+    el.innerHTML = `${d.url_print ? `<img class="midia" src="${esc(d.url_print)}" alt="">` : ""}
+      <div style="font-size:15px;font-weight:600">${esc(d.nome)} · ${esc(d.loja)}</div>
+      <div style="font-size:13px;color:var(--dim)">${d.canal === "status" ? "Status" : "Story"} · ${d.dia.slice(8,10)}/${d.dia.slice(5,7)} · ${esc([d.motivo, d.motivo_noite].filter(Boolean).join(" · "))}</div>
+      <div class="grid2" style="margin-top:6px"><button class="btn btn-green" data-vale="1">Vale</button><button class="btn btn-sec" data-vale="0">Não vale</button></div>`;
+    el.querySelectorAll("[data-vale]").forEach(b => b.onclick = async () => {
+      const r = await apiDiv({acao:"admin_decidir", postagem_id:d.id, vale: b.dataset.vale === "1"}).catch(()=>null);
+      if (r && r.ok){ el.remove(); toast("Decidido."); } else toast("Não salvou");
+    });
+    box.appendChild(el);
+  }
+}
+$("abaDivulgar").onclick = abrirDivulga;
+
 // ---------- boot ----------
 (async () => {
   // sem ?e= no link: a função devolve o único evento ativo, se houver só um
