@@ -79,6 +79,11 @@
   .toast.on{opacity:1}
   .card-arte{padding:0;overflow:hidden;gap:0}
   .midia{display:block;width:100%;aspect-ratio:9/16;max-height:44vh;object-fit:cover;background:#F3F3F0}
+  .lb{display:none;position:fixed;inset:0;background:rgba(15,23,42,.82);z-index:60;align-items:center;justify-content:center;padding:16px}
+  .lb.on{display:flex}
+  .lb .cx{display:flex;flex-direction:column;align-items:center;gap:12px;max-width:100%}
+  .lb img{max-width:100%;max-height:78vh;border-radius:12px;display:block}
+  .lb button{height:48px;padding:0 26px;border:0;border-radius:12px;background:#fff;color:var(--txt);font:inherit;font-size:16px;font-weight:700;cursor:pointer}
   .verarte{position:absolute;right:10px;top:10px;background:rgba(0,0,0,.55);color:#fff;font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px}
   .card-arte{position:relative}
   .arte-pe{display:flex;flex-direction:column;gap:12px;padding:14px 16px 16px}
@@ -238,6 +243,7 @@
     <button id="abaDivulgar" class="oculto">Divulgar</button>
   </div>
 </div>
+<div class="lb" id="lightbox"><div class="cx"><img id="lbImg" src="" alt=""><button id="lbFechar">Fechar</button></div></div>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -558,7 +564,7 @@ function renderConteudos(){
     el.innerHTML = `${midia}${c.url ? '<div class="verarte">ver inteira</div>' : ""}<div class="arte-pe">${c.legenda ? `<div class="legenda">${esc(c.legenda)}</div>` : ""}<button class="btn btn-red">Compartilhar</button></div>`;
     el.querySelector("button").onclick = (e) => compartilhar(c, e.currentTarget);
     const alvo = el.querySelector(".midia"), pilula = el.querySelector(".verarte");
-    if (alvo && c.url && c.tipo !== "video"){ const abrir = () => window.open(c.url, "_blank");
+    if (alvo && c.url && c.tipo !== "video"){ const abrir = () => abrirArte(c.url);
       alvo.style.cursor = "zoom-in"; alvo.onclick = abrir; if (pilula) pilula.onclick = abrir; }
     box.appendChild(el);
   }
@@ -575,12 +581,22 @@ async function compartilhar(c, b){
       await navigator.share({files:[file]});
       toast(c.legenda ? "Legenda copiada: é só colar no status/story." : "Pronto! Depois manda o print.");
     } else {
-      window.open(c.url, "_blank");
-      toast(c.legenda ? "Legenda copiada. Salve a arte e poste." : "Salve a arte e poste.");
+      baixarArte(blob, file.name);
+      toast(c.legenda ? "Baixei a arte e copiei a legenda: poste do rolo da câmera." : "Baixei a arte: poste do rolo da câmera.");
     }
   } catch (e) { if (!e || e.name !== "AbortError") toast("Não consegui abrir o compartilhamento"); }
   b.disabled = false;
 }
+function baixarArte(blob, nome){
+  const u = URL.createObjectURL(blob); const a = document.createElement("a");
+  a.href = u; a.download = nome; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(u), 4000);
+}
+function abrirArte(url){ $("lbImg").src = url; $("lightbox").classList.add("on"); }
+function fecharArte(){ $("lightbox").classList.remove("on"); $("lbImg").src = ""; }
+$("lbFechar").onclick = fecharArte;
+$("lightbox").onclick = (e) => { if (e.target.id === "lightbox") fecharArte(); };
+document.addEventListener("keydown", (e) => { if (e.key === "Escape" && $("lightbox").classList.contains("on")) fecharArte(); });
 function reduzir(file){
   return new Promise((res, rej) => {
     const img = new Image(); const url = URL.createObjectURL(file);
