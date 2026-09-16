@@ -500,7 +500,7 @@ function mostrarTela(id){
 }
 function voltarLista(){ mostrarTela("tela-lista"); }
 $("abaPlacar").onclick = abrirPlacar; $("abaLista").onclick = voltarLista;
-$("abaCheckin").onclick = () => { mostrarTela("tela-checkin"); $("ckResultado").classList.add("oculto"); $("ckErro").classList.add("oculto"); $("ckCodigo").focus(); };
+$("abaCheckin").onclick = () => { mostrarTela("tela-checkin"); $("ckResultado").classList.add("oculto"); $("ckErro").classList.add("oculto"); };   // sem focus(): João não quer o teclado abrindo sozinho
 $("ckCodigo").addEventListener("input", e => { e.target.value = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,6); });
 $("ckCodigo").addEventListener("keydown", e => { if (e.key === "Enter") $("btnCkBuscar").click(); });
 const CK_ERRO = { "codigo-invalido":"Código tem 6 letras/números.", "codigo-nao-encontrado":"Código não encontrado neste evento.", "proprio-colaborador":"Você mesmo prospectou este cliente. O check-in tem que ser feito por outra pessoa.", "evento-encerrado":"Este evento já encerrou." };
