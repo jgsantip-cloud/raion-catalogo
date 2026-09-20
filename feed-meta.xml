@@ -1845,7 +1845,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>21000</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>154890.00 BRL</price>
+    <price>148890.00 BRL</price>
     <exterior_color>Branco</exterior_color>
     <fuel_type>GASOLINE</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -1854,7 +1854,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
-      <url>https://raion.app.br/faixas/2823908.jpg?v=3523aded</url>
+      <url>https://raion.app.br/faixas/2823908.jpg?v=ed4cc309</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6625/vehicles/2823908/photos/AtGBycGVvhLKOHko9IRQ9djwhnUKtyKF.jpg</url>
@@ -6081,70 +6081,6 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <city>Rio de Janeiro</city>
     <region>RJ</region>
     <postal_code>25665-135</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
-    <vehicle_id>2663296</vehicle_id>
-    <title>Honda CITY 1.5 i-VTEC FLEX EXL CVT</title>
-    <description>Honda CITY 1.5 i-VTEC FLEX EXL CVT</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Honda%20CITY%201.5%20i-VTEC%20FLEX%20EXL%20CVT%202024%20%28c%C3%B3d.%202663296%29.%20%5BCATALOGO-META-SEMINOVOS-BARRA-MANSA%5D</url>
-    <make>Honda</make>
-    <model>CITY</model>
-    <year>2024</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>62000</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>105890.00 BRL</price>
-    <exterior_color>Prata</exterior_color>
-    <fuel_type>FLEX</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>HATCHBACK</body_style>
-    <trim>1.5 i-VTEC FLEX EXL CVT</trim>
-    <custom_label_0>VENDIDO</custom_label_0>
-    <dealer_name>Raion Seminovos - Barra Mansa</dealer_name>
-    <image>
-      <url>https://jgsantip-cloud.github.io/raion-catalogo/faixas/2663296.jpg?v=23024396</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/KkUPuupVb5j0iI2JHS2NLrsY0dxsxIk9.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/DhQwKDGlC1bosoFYX4eDQXzViH496P2b.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/yrZ64JveL0TXvOHivAsMPZbGbec9tCqV.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/W5vEyr2BS2Wt3GwCbrelXFjS1guHSZNK.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/HJGlfpmJ2Eej0M1Q2fQMIeVWjIPu5xiF.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/ELUGnTiBQOrpv5wvIEsv1RLfSpNqX3Pt.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/iE4cFl9s151V24v2LVwfgZY570TCehgh.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/xbj9Gv3A89dRYaf5CsKDYG2g0TqEjwax.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/7207/vehicles/2663296/photos/aDELRMSvOEPtjgWCqrZf4TQo2W1nnynM.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">RUA ANTONIO LUIZ PIRES, 20</component>
-      <component name="city">Barra Mansa</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">27332-360</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>RUA ANTONIO LUIZ PIRES, 20</street_address>
-    <city>Barra Mansa</city>
-    <region>RJ</region>
-    <postal_code>27332-360</postal_code>
     <country>Brazil</country>
   </listing>
   <listing>
