@@ -59,18 +59,18 @@
     <header>
       <div class="kicker">Grupo Raion</div>
       <h1 id="titulo"></h1>
-      <div class="sub">Cadastro de cliente</div>
+      <div class="sub" id="subtitulo">Cadastro de cliente</div>
     </header>
 
     <form id="f" autocomplete="on">
-      <label class="req" for="nome">Nome do cliente</label>
+      <label class="req" for="nome" id="lb-nome">Nome do cliente</label>
       <input id="nome" required autocomplete="name" enterkeyhint="next">
 
-      <label class="req" for="telefone">Telefone (WhatsApp)</label>
+      <label class="req" for="telefone" id="lb-telefone">Telefone (WhatsApp)</label>
       <input id="telefone" required type="tel" inputmode="tel" autocomplete="tel"
              placeholder="(21) 99999-9999">
 
-      <label for="email">E-mail</label>
+      <label for="email" id="lb-email">E-mail</label>
       <input id="email" type="email" inputmode="email" autocomplete="email">
 
       <div id="box-loja" class="hide">
@@ -78,12 +78,14 @@
         <select id="loja" required></select>
       </div>
 
-      <label for="veiculo">Veículo de interesse</label>
+      <label for="veiculo" id="lb-veiculo">Veículo de interesse</label>
       <select id="veiculo"></select>
       <input id="veiculo-outro" class="hide" placeholder="Qual veículo?" style="margin-top:8px">
 
-      <label for="vendedor">Vendedor que receberá a oportunidade</label>
-      <select id="vendedor"></select>
+      <div id="box-vendedor">
+        <label for="vendedor">Vendedor que receberá a oportunidade</label>
+        <select id="vendedor"></select>
+      </div>
 
       <button id="btn" type="submit">Enviar cadastro</button>
       <div class="aviso" id="erro"></div>
@@ -92,8 +94,9 @@
 
   <div id="tela-ok" class="centro hide">
     <div class="mark">&#10004;</div>
-    <h2>Cadastro enviado</h2>
+    <h2 id="ok-titulo">Cadastro enviado</h2>
     <p id="ok-nome"></p>
+    <p id="ok-msg" class="hide" style="color:var(--dim)"></p>
     <button id="novo" type="button">Cadastrar outro cliente</button>
     <div class="id" id="ok-id"></div>
   </div>
@@ -164,9 +167,32 @@ function pintaVendedores() {
   $("vendedor").innerHTML = html;
 }
 
+// Dois jeitos de usar o mesmo formulario, decididos pela propria linha do evento:
+//  - evento COM lista de vendedores  -> link da promotora: ela escolhe quem recebe o lead
+//  - evento SEM lista (vendedores[]) -> link do QR: o cliente preenche sozinho, sem escolher
+//    vendedor, e o lead cai na regua de distribuicao da loja.
+var AUTO = false;
+
+function textosDoCliente() {
+  $("subtitulo").textContent = "Preencha seus dados e um consultor fala com você";
+  $("lb-nome").textContent = "Seu nome";
+  $("lb-telefone").textContent = "Seu telefone (WhatsApp)";
+  $("lb-email").textContent = "Seu e-mail";
+  $("lb-veiculo").textContent = "Qual modelo te interessa?";
+  $("btn").textContent = "Quero falar com um consultor";
+  $("box-vendedor").classList.add("hide");
+  $("ok-titulo").textContent = "Cadastro enviado!";
+  $("ok-msg").textContent = "Um consultor da Nissan Keiko vai falar com você. Boa feira!";
+  $("ok-msg").classList.remove("hide");
+  $("novo").classList.add("hide");
+  $("ok-id").classList.add("hide");
+}
+
 function montaForm() {
   document.title = EV.nome + " — captação";
   $("titulo").textContent = EV.nome;
+  AUTO = !EV.vendedores || EV.vendedores.length === 0;
+  if (AUTO) textosDoCliente();
 
   var sel = $("loja");
   if (EV.lojas.length > 1) {
@@ -244,7 +270,7 @@ $("f").addEventListener("submit", function (e) {
     })
     .then(function () {
       btn.disabled = false;
-      btn.textContent = "Enviar cadastro";
+      btn.textContent = AUTO ? "Quero falar com um consultor" : "Enviar cadastro";
     });
 });
 
