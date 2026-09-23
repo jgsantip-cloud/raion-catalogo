@@ -268,7 +268,7 @@ function cabecaCard(c){
 function cardFechado(c){
   const el = document.createElement("div"); el.className = "card";
   el.innerHTML = cabecaCard(c) + `<div class="motivo"><b>${esc(c.motivo)}</b></div><button class="btn btn-sec">Abrir esse cliente</button>`;
-  if (S.ro){ el.querySelector("button").remove(); return el; }
+  if (S.ro){ const b = el.querySelector("button"); b.style.opacity = ".45"; b.onclick = () => toast("Só leitura."); return el; }
   el.querySelector("button").onclick = async () => {
     const j = await api({acao:"abrir", card:c.id}).catch(()=>null);
     if (!j || !j.ok){ toast(j && j.erro === "card-travado" ? "Alguém da loja já abriu esse." : "Não deu: " + (j ? j.erro : "sem conexão")); if (j && j.erro === "card-travado") abrirFila(); return; }
@@ -287,7 +287,10 @@ function cardPendente(c){
     + tent
     + `<div class="grid2"><button class="btn btn-red" data-canal="ligar">${ICO.tel} Ligar</button><button class="btn btn-green" data-canal="whatsapp">${ICO.zap} WhatsApp</button></div>`
     + `<div class="desf oculto"><div style="font-size:14px;color:var(--dim);font-weight:600">Como foi?</div><div class="grid2"></div><div class="extra oculto"></div></div>`;
-  if (S.ro){ el.querySelector(".grid2").remove(); el.querySelector(".desf").remove(); return el; }
+  // ver como: mostra a tela igual à do consultor, mas os botões não fazem nada (só leitura)
+  if (S.ro){ el.querySelector(".desf").remove();
+    el.querySelectorAll("[data-canal]").forEach(b => { b.style.opacity = ".45"; b.onclick = () => toast("Só leitura: aqui você vê a tela da pessoa, sem ligar nem registrar nada."); });
+    return el; }
   if (S.toque[c.id] || (c.toques && c.toques.length)) mostrarDesfechos(el, c);
   el.querySelectorAll("[data-canal]").forEach(b => b.onclick = async () => {
     const canal = b.dataset.canal; b.disabled = true;
