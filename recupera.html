@@ -75,6 +75,8 @@
   .toast.on{opacity:1}
   .ger-linha{display:flex;flex-direction:column;gap:6px;padding:12px 0;border-top:1px solid var(--sep)}
   .ger-linha select{height:42px;font-size:15px;padding:0 12px}
+  .verComoBanner{display:flex;flex-direction:column;gap:8px;padding:12px 14px;border-radius:12px;background:#EEF2FF;border:1px solid #C7D2FE;color:#3730A3;font-size:15px;margin-bottom:14px}
+  .verComoBanner button{height:40px;border-radius:10px;border:1px solid #A5B4FC;background:#fff;color:#3730A3;font:inherit;font-weight:700;cursor:pointer}
   svg{flex-shrink:0}
 </style>
 </head>
@@ -97,6 +99,7 @@
 <!-- FILA -->
 <section id="tela-fila" class="tela com-rodape oculto">
   <img src="logo-recupera.png" alt="Recupera" style="width:180px;height:auto;display:block;margin:0 auto 18px">
+  <div class="verComoBanner oculto"></div>
   <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px">
     <div style="display:flex;flex-direction:column;gap:2px;min-width:0">
       <div style="font-size:22px;font-weight:700;line-height:1.2" id="quem"></div>
@@ -118,6 +121,7 @@
 <!-- PLACAR -->
 <section id="tela-placar" class="tela com-rodape oculto">
   <img src="logo-recupera.png" alt="Recupera" style="width:180px;height:auto;display:block;margin:0 auto 18px">
+  <div class="verComoBanner oculto"></div>
   <div class="kicker">Meu mês</div>
   <div style="font-size:22px;font-weight:700;line-height:1.2" id="quem2"></div>
   <div class="tiles" id="tiles" style="margin-top:16px"></div>
@@ -134,6 +138,8 @@
   <div class="kicker" id="gKicker">Visão do gerente</div>
   <select id="gLoja" style="margin-top:8px"></select>
   <div class="tiles" id="gTiles" style="margin-top:14px"></div>
+  <div class="lista-card oculto" id="gVerComoBox" style="margin-top:16px;padding-bottom:14px"><h3>Ver como <small>só leitura, fica registrado</small></h3>
+    <div style="display:flex;flex-direction:column;gap:8px"><select id="gVerComo" style="height:48px;font-size:15px"></select><button class="btn btn-sec" id="btnVerComo" style="height:48px">Abrir a fila dessa pessoa</button></div></div>
   <div class="lista-card oculto" id="gPorLojaBox" style="margin-top:16px"><h3>Por loja <small>no mês · na fila hoje</small></h3><div id="gPorLoja"></div></div>
   <div class="lista-card" style="margin-top:16px"><h3>Na fila da loja <small id="gFilaN"></small></h3><div id="gFila"></div></div>
   <div class="lista-card" style="margin-top:16px"><h3>Sem chance no mês <small>volta pro motor</small></h3><div id="gSemChance"></div></div>
@@ -194,7 +200,7 @@ $("btnEntrar").onclick = async () => {
   S.token = j.token; S.col = j.colaborador; ls.set("recupera_sessao", {token:S.token, col:S.col});
   entrar();
 };
-function sair(){ S = { token:null, col:null, fila:{meus:[],loja:[],feitos:[]}, aba:"meus", toque:{}, abertos:{} }; ls.del("recupera_sessao");
+function sair(){ document.querySelectorAll(".verComoBanner").forEach(b => b.classList.add("oculto")); S = { token:null, col:null, fila:{meus:[],loja:[],feitos:[]}, aba:"meus", toque:{}, abertos:{} }; ls.del("recupera_sessao");
   ["tela-fila","tela-placar","tela-gerente","rodape"].forEach(id => $(id).classList.add("oculto")); $("tela-login").classList.remove("oculto"); }
 
 function entrar(){
@@ -215,7 +221,21 @@ function mostrarTela(id){
   $("pFila").classList.toggle("ativa", id === "tela-fila"); $("pPlacar").classList.toggle("ativa", id === "tela-placar"); $("pGerente").classList.toggle("ativa", id === "tela-gerente");
   window.scrollTo(0,0);
 }
+// ---------- ver como (diretor, só leitura) ----------
+function modoVerComo(r){
+  S.ro = r;
+  document.querySelectorAll(".verComoBanner").forEach(b => {
+    b.classList.toggle("oculto", !r);
+    if (r) { b.innerHTML = `<span>Vendo como <b>${esc(r.colaborador.nome)}</b> · só leitura</span><button>Voltar pra minha visão</button>`; b.querySelector("button").onclick = () => { modoVerComo(null); abrirGerente(); }; }
+  });
+  const consultor = S.col.lojas.some(l => l.papel === "consultor");
+  $("pFila").classList.toggle("oculto", !r && !consultor); $("pPlacar").classList.toggle("oculto", !r && !consultor);
+  const quem = r ? r.colaborador : S.col;
+  $("quem").textContent = quem.nome; $("quem2").textContent = quem.nome;
+  $("onde").textContent = quem.lojas.filter(l => l.papel === "consultor").map(l => l.nome).join(" · ");
+}
 async function abrirFila(){
+  if (S.ro){ mostrarTela("tela-fila"); S.fila = S.ro; S.aguardando = S.ro.aguardando_retorno; render(); return; }
   mostrarTela("tela-fila");
   const j = await api({acao:"fila"}).catch(()=>null);
   if (!j || !j.ok){ toast("Não consegui buscar a fila" + (j ? ": " + j.erro : "")); return; }
@@ -248,6 +268,7 @@ function cabecaCard(c){
 function cardFechado(c){
   const el = document.createElement("div"); el.className = "card";
   el.innerHTML = cabecaCard(c) + `<div class="motivo"><b>${esc(c.motivo)}</b></div><button class="btn btn-sec">Abrir esse cliente</button>`;
+  if (S.ro){ el.querySelector("button").remove(); return el; }
   el.querySelector("button").onclick = async () => {
     const j = await api({acao:"abrir", card:c.id}).catch(()=>null);
     if (!j || !j.ok){ toast(j && j.erro === "card-travado" ? "Alguém da loja já abriu esse." : "Não deu: " + (j ? j.erro : "sem conexão")); if (j && j.erro === "card-travado") abrirFila(); return; }
@@ -266,6 +287,7 @@ function cardPendente(c){
     + tent
     + `<div class="grid2"><button class="btn btn-red" data-canal="ligar">${ICO.tel} Ligar</button><button class="btn btn-green" data-canal="whatsapp">${ICO.zap} WhatsApp</button></div>`
     + `<div class="desf oculto"><div style="font-size:14px;color:var(--dim);font-weight:600">Como foi?</div><div class="grid2"></div><div class="extra oculto"></div></div>`;
+  if (S.ro){ el.querySelector(".grid2").remove(); el.querySelector(".desf").remove(); return el; }
   if (S.toque[c.id] || (c.toques && c.toques.length)) mostrarDesfechos(el, c);
   el.querySelectorAll("[data-canal]").forEach(b => b.onclick = async () => {
     const canal = b.dataset.canal; b.disabled = true;
@@ -329,7 +351,7 @@ function cardFeito(c){
   else st = c.desfecho || "";
   el.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><div style="min-width:0"><div style="font-size:16px;font-weight:700">${esc(c.nome)}</div>
     <div style="font-size:13px;color:var(--dim)">${esc([c.modelo, c.placa].filter(Boolean).join(" · "))}</div></div><span class="pill ${cl}">${esc(st)}</span></div>
-    ${c.eu_registrei && c.prova !== "confirmado" ? '<div style="text-align:right"><button class="link corrigir">corrigir</button></div>' : ""}`;
+    ${c.eu_registrei && c.prova !== "confirmado" && !S.ro ? '<div style="text-align:right"><button class="link corrigir">corrigir</button></div>' : ""}`;
   const b = el.querySelector(".corrigir");
   if (b) b.onclick = () => {
     if (!confirm(`Corrigir o desfecho de ${c.nome}? A marcação anterior fica no histórico.`)) return;
@@ -341,7 +363,7 @@ function cardFeito(c){
 // ---------- placar ----------
 async function abrirPlacar(){
   mostrarTela("tela-placar");
-  const j = await api({acao:"placar"}).catch(()=>null);
+  const j = S.ro ? {ok:true, placar:S.ro.placar, ranking:S.ro.ranking} : await api({acao:"placar"}).catch(()=>null);
   if (!j || !j.ok){ toast("Não consegui carregar"); return; }
   const p = j.placar;
   $("tiles").innerHTML = [["na fila",p.na_fila,""],["trabalhados",p.trabalhados,""],["agendou",p.agendou,""],["confirmados",p.confirmados,"color:var(--green)"],["passou na oficina",p.passou,"color:var(--red)"]]
@@ -360,6 +382,16 @@ async function abrirGerente(loja){
   if (!j || !j.ok){ toast("Não consegui carregar" + (j ? ": " + j.erro : "")); return; }
   $("gLoja").innerHTML = j.lojas.map(l => `<option value="${l.id}" ${String(l.id) === String(j.loja.id) ? "selected" : ""}>${esc(l.nome)}</option>`).join("");
   const todas = j.loja.id === "todas";
+  $("gVerComoBox").classList.toggle("oculto", !S.col.diretor || !j.pessoas.length);
+  const nomeLoja = Object.fromEntries(j.lojas.map(l => [String(l.id), l.nome]));
+  $("gVerComo").innerHTML = j.pessoas.map(p => `<option value="${esc(p.hash)}">${esc(p.nome)}${todas ? " · " + esc(nomeLoja[String(p.loja_id)] || "") : ""}</option>`).join("");
+  $("btnVerComo").onclick = async () => {
+    const b = $("btnVerComo"); b.disabled = true;
+    const r = await api({acao:"ver_como", alvo:$("gVerComo").value}).catch(()=>null);
+    b.disabled = false;
+    if (!r || !r.ok){ toast("Não deu: " + (r ? r.erro : "sem conexão")); return; }
+    modoVerComo(r); S.aba = "meus"; abrirFila();
+  };
   $("gPorLojaBox").classList.toggle("oculto", !j.por_loja);
   if (j.por_loja) $("gPorLoja").innerHTML = j.por_loja.filter(l => l.entraram || l.na_fila || l.agendou).map(l => `<div class="linha" style="cursor:pointer" data-loja="${l.id}">
       <div style="display:flex;flex-direction:column"><span style="font-weight:600">${esc(l.nome)}</span><span style="font-size:13px;color:var(--dim)">${l.entraram} entraram · ${l.agendou} agendou · ${l.passou} passou</span></div>
@@ -394,7 +426,7 @@ async function abrirGerente(loja){
 }
 $("gLoja").onchange = () => { const v = $("gLoja").value; abrirGerente(v === "todas" ? "todas" : +v); };
 
-$("pFila").onclick = abrirFila; $("pPlacar").onclick = abrirPlacar; $("pGerente").onclick = () => abrirGerente();
+$("pFila").onclick = abrirFila; $("pPlacar").onclick = abrirPlacar; $("pGerente").onclick = () => { if (S.ro) modoVerComo(null); abrirGerente(); };
 
 // sessão salva neste aparelho
 (async () => {
