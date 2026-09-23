@@ -77,6 +77,9 @@
   .ger-linha select{height:42px;font-size:15px;padding:0 12px}
   .verComoBanner{display:flex;flex-direction:column;gap:8px;padding:12px 14px;border-radius:12px;background:#EEF2FF;border:1px solid #C7D2FE;color:#3730A3;font-size:15px;margin-bottom:14px}
   .verComoBanner button{height:40px;border-radius:10px;border:1px solid #A5B4FC;background:#fff;color:#3730A3;font:inherit;font-weight:700;cursor:pointer}
+  .meses{display:flex;gap:6px;overflow-x:auto;margin-top:12px;padding-bottom:2px}
+  .meses button{flex:none;height:38px;padding:0 14px;border-radius:999px;border:1px solid var(--line2);background:#fff;color:var(--txt);font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+  .meses button.ativa{background:var(--txt);color:#fff;border-color:var(--txt)}
   svg{flex-shrink:0}
 </style>
 </head>
@@ -111,11 +114,23 @@
     </div>
   </div>
   <div class="abas"><button id="abaMeus" class="ativa">Meus <span id="meusN"></span></button><button id="abaLoja">Da loja <span id="lojaN"></span></button></div>
+  <div class="meses" id="meses"></div>
   <div class="ctx" id="explica" style="margin-top:10px;padding:0 2px"></div>
   <div id="cards" style="display:flex;flex-direction:column;gap:12px;margin-top:8px"></div>
   <div id="feitosBox" class="oculto" style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
     <div class="secao">Feitos no mês</div><div id="feitos" style="display:flex;flex-direction:column;gap:10px"></div>
   </div>
+</section>
+
+<!-- AGENDA (ideia da Larissa 23/09): quem agendou sai da fila e fica aqui até comparecer -->
+<section id="tela-agenda" class="tela com-rodape oculto">
+  <img src="logo-recupera.png" alt="Recupera" style="width:180px;height:auto;display:block;margin:0 auto 18px">
+  <div class="verComoBanner oculto"></div>
+  <div class="kicker">Agenda</div>
+  <div style="font-size:22px;font-weight:700;line-height:1.2" id="quem3"></div>
+  <div class="ctx" style="margin-top:6px">Quem você agendou. O robô confere toda madrugada: achou o agendamento, fica "No Syonet"; achou a OS do carro, "Compareceu".</div>
+  <div class="tiles" id="agTiles" style="margin-top:14px"></div>
+  <div id="agenda" style="display:flex;flex-direction:column;gap:10px;margin-top:14px"></div>
 </section>
 
 <!-- PLACAR -->
@@ -125,9 +140,9 @@
   <div class="kicker">Meu mês</div>
   <div style="font-size:22px;font-weight:700;line-height:1.2" id="quem2"></div>
   <div class="tiles" id="tiles" style="margin-top:16px"></div>
-  <div class="ctx" style="margin-top:10px">Confirmado = o Syonet mostrou o agendamento ou a OS do carro (o robô confere toda madrugada).</div>
-  <div class="lista-card" id="cardRkLoja" style="margin-top:16px"><h3>Ranking da loja <small>por confirmados</small></h3><div id="rkLoja"></div></div>
-  <div class="lista-card" id="cardRkGrupo" style="margin-top:16px"><h3>Ranking do grupo <small>por confirmados</small></h3><div id="rkGrupo"></div></div>
+  <div class="ctx" style="margin-top:10px">Compareceu = apareceu a OS do carro no Syonet (o robô confere toda madrugada). É isso que conta no ranking.</div>
+  <div class="lista-card" id="cardRkLoja" style="margin-top:16px"><h3>Ranking da loja <small>por comparecidos</small></h3><div id="rkLoja"></div></div>
+  <div class="lista-card" id="cardRkGrupo" style="margin-top:16px"><h3>Ranking do grupo <small>por comparecidos</small></h3><div id="rkGrupo"></div></div>
   <div style="flex-grow:1"></div>
   <button id="btnSair" class="link" style="margin-top:24px;font-size:14px;padding:12px">Sair deste aparelho</button>
 </section>
@@ -146,7 +161,7 @@
 </section>
 
 <div class="rodape oculto" id="rodape"><div class="pilulas">
-  <button id="pFila" class="ativa">Fila</button><button id="pPlacar">Meu mês</button><button id="pGerente" class="oculto">Gerente</button>
+  <button id="pFila" class="ativa">Fila</button><button id="pAgenda">Agenda</button><button id="pPlacar">Meu mês</button><button id="pGerente" class="oculto">Gerente</button>
 </div></div>
 <div class="toast" id="toast"></div>
 
@@ -201,7 +216,7 @@ $("btnEntrar").onclick = async () => {
   entrar();
 };
 function sair(){ document.querySelectorAll(".verComoBanner").forEach(b => b.classList.add("oculto")); S = { token:null, col:null, fila:{meus:[],loja:[],feitos:[]}, aba:"meus", toque:{}, abertos:{} }; ls.del("recupera_sessao");
-  ["tela-fila","tela-placar","tela-gerente","rodape"].forEach(id => $(id).classList.add("oculto")); $("tela-login").classList.remove("oculto"); }
+  ["tela-fila","tela-agenda","tela-placar","tela-gerente","rodape"].forEach(id => $(id).classList.add("oculto")); $("tela-login").classList.remove("oculto"); }
 
 function entrar(){
   $("tela-login").classList.add("oculto"); $("rodape").classList.remove("oculto");
@@ -209,16 +224,16 @@ function entrar(){
   $("pGerente").classList.toggle("oculto", !S.col.gerente);
   $("pGerente").textContent = S.col.diretor ? "Macro" : "Gerente"; $("gKicker").textContent = S.col.diretor ? "Visão macro" : "Visão do gerente";
   $("pFila").classList.toggle("oculto", consultorEm.length === 0);
-  $("pPlacar").classList.toggle("oculto", consultorEm.length === 0);
-  $("quem").textContent = S.col.nome; $("quem2").textContent = S.col.nome;
+  $("pPlacar").classList.toggle("oculto", consultorEm.length === 0); $("pAgenda").classList.toggle("oculto", consultorEm.length === 0);
+  $("quem").textContent = S.col.nome; $("quem2").textContent = S.col.nome; $("quem3").textContent = S.col.nome;
   $("onde").textContent = consultorEm.map(l => l.nome).join(" · ");
   if (consultorEm.length) abrirFila(); else abrirGerente();
 }
 
 // ---------- fila ----------
 function mostrarTela(id){
-  for (const t of ["tela-fila","tela-placar","tela-gerente"]) $(t).classList.toggle("oculto", t !== id);
-  $("pFila").classList.toggle("ativa", id === "tela-fila"); $("pPlacar").classList.toggle("ativa", id === "tela-placar"); $("pGerente").classList.toggle("ativa", id === "tela-gerente");
+  for (const t of ["tela-fila","tela-agenda","tela-placar","tela-gerente"]) $(t).classList.toggle("oculto", t !== id);
+  $("pAgenda").classList.toggle("ativa", id === "tela-agenda"); $("pFila").classList.toggle("ativa", id === "tela-fila"); $("pPlacar").classList.toggle("ativa", id === "tela-placar"); $("pGerente").classList.toggle("ativa", id === "tela-gerente");
   window.scrollTo(0,0);
 }
 // ---------- ver como (diretor, só leitura) ----------
@@ -229,9 +244,9 @@ function modoVerComo(r){
     if (r) { b.innerHTML = `<span>Vendo como <b>${esc(r.colaborador.nome)}</b> · só leitura</span><button>Voltar pra minha visão</button>`; b.querySelector("button").onclick = () => { modoVerComo(null); abrirGerente(); }; }
   });
   const consultor = S.col.lojas.some(l => l.papel === "consultor");
-  $("pFila").classList.toggle("oculto", !r && !consultor); $("pPlacar").classList.toggle("oculto", !r && !consultor);
+  $("pFila").classList.toggle("oculto", !r && !consultor); $("pPlacar").classList.toggle("oculto", !r && !consultor); $("pAgenda").classList.toggle("oculto", !r && !consultor);
   const quem = r ? r.colaborador : S.col;
-  $("quem").textContent = quem.nome; $("quem2").textContent = quem.nome;
+  $("quem").textContent = quem.nome; $("quem2").textContent = quem.nome; $("quem3").textContent = quem.nome;
   $("onde").textContent = quem.lojas.filter(l => l.papel === "consultor").map(l => l.nome).join(" · ");
 }
 async function abrirFila(){
@@ -252,7 +267,16 @@ function render(){
   $("explica").textContent = S.aba === "meus"
     ? "Clientes que você atendeu na última revisão, e os que você pegou da loja." + (S.aguardando ? ` ${S.aguardando} com retorno marcado pra frente.` : "")
     : "Sem dono: o consultor saiu ou não mexeu em 2 dias úteis. Abriu, é seu por 2 dias úteis; ligou, é seu.";
-  const lista = S.aba === "meus" ? f.meus : f.loja;
+  // filtro por MÊS DO DESCARTE (João 23/09): um mês por vez, pra ninguém ver 50 clientes acumulados de uma vez
+  const todos = S.aba === "meus" ? f.meus : f.loja;
+  const mesDe = (c) => String(c.descartado_em).slice(0, 7);
+  const cont = {}; todos.forEach(c => { cont[mesDe(c)] = (cont[mesDe(c)] || 0) + 1; });
+  const meses = Object.keys(cont).sort().reverse();
+  S.mes = S.mes || {};
+  if (!meses.includes(S.mes[S.aba])) S.mes[S.aba] = meses[0];
+  $("meses").innerHTML = meses.length > 1 ? meses.map(m => `<button data-mes="${m}" class="${m === S.mes[S.aba] ? "ativa" : ""}">${mesAno(m)} · ${cont[m]}</button>`).join("") : "";
+  $("meses").querySelectorAll("button").forEach(b => b.onclick = () => { S.mes[S.aba] = b.dataset.mes; render(); });
+  const lista = todos.filter(c => mesDe(c) === S.mes[S.aba]);
   const box = $("cards"); box.innerHTML = "";
   if (!lista.length) box.innerHTML = `<div class="vazio">${S.aba === "meus" ? "Nada pendente com você agora. Dá uma olhada em Da loja." : "A fila da loja está vazia."}</div>`;
   lista.forEach(c => box.appendChild(S.aba === "loja" && !S.abertos[c.id] && !c.travado_por_mim ? cardFechado(c) : cardPendente(c)));
@@ -335,7 +359,7 @@ async function salvar(c, d, extra){
   const j = await api({acao:"desfecho", card:c.id, desfecho:d, ...extra}).catch(()=>null);
   if (!j || !j.ok){ toast("Não salvou: " + (j ? ({"retorno-tem-que-ser-futuro":"o retorno tem que ser depois de hoje", "sem-toque":"ligue ou mande WhatsApp antes"}[j.erro] || j.erro) : "sem conexão")); return; }
   const primeiro = c.nome.split(" ")[0];
-  toast({ agendou:`Boa! ${primeiro} agendou. O robô confere no Syonet.`, retorno:`Anotado. ${primeiro} volta pra sua fila em ${ddmm(extra.data)}.`,
+  toast({ agendou:`Boa! ${primeiro} agendou e foi pra sua Agenda.`, retorno:`Anotado. ${primeiro} volta pra sua fila em ${ddmm(extra.data)}.`,
           nao_atendeu: j.status === "encerrado" ? `3 tentativas. ${primeiro} saiu da fila como sem contato.` : `Anotado: ${j.tentativas}ª tentativa sem atender.`,
           recusou:"Anotado.", sem_chance:"Anotado. Vai pro relatório do motor." }[d]);
   delete S.toque[c.id];
@@ -363,13 +387,46 @@ function cardFeito(c){
   return el;
 }
 
+// ---------- agenda ----------
+const EST = { compareceu:["Compareceu ✓","ok"], no_syonet:["No Syonet",""], aguardando:["Agendado","lar"], nao_veio:["Não veio","alerta"] };
+function estadoAg(c){
+  if (c.passou_oficina) return "compareceu";
+  if (c.prova === "sem_prova") return "nao_veio";
+  return c.agendado_syonet ? "no_syonet" : "aguardando";
+}
+async function abrirAgenda(){
+  mostrarTela("tela-agenda");
+  if (!S.ro){ const j = await api({acao:"fila"}).catch(()=>null); if (j && j.ok){ S.fila = j; S.aguardando = j.aguardando_retorno; } }
+  else S.fila = S.ro;
+  const ag = S.fila.agenda || [];
+  const n = (e) => ag.filter(c => estadoAg(c) === e).length;
+  $("agTiles").innerHTML = [["agendados", ag.length, ""], ["compareceram", n("compareceu"), "color:var(--green)"], ["não vieram", n("nao_veio"), "color:var(--red)"]]
+    .map(([l,v,st]) => `<div class="tile"><b style="${st}">${v}</b><span>${l}</span></div>`).join("");
+  const box = $("agenda"); box.innerHTML = ag.length ? "" : '<div class="vazio">Quando você marcar "Agendou" num cliente, ele aparece aqui.</div>';
+  let mesAtual = null;
+  for (const c of ag){
+    const m = String(c.data_agendada || "").slice(0, 7);
+    if (m !== mesAtual){ mesAtual = m; const h = document.createElement("div"); h.className = "secao"; h.textContent = m ? "Agendados pra " + mesAno(m) : "Sem data"; box.appendChild(h); }
+    const [tx, cl] = EST[estadoAg(c)];
+    const el = document.createElement("div"); el.className = "card feito";
+    el.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><div style="min-width:0">
+      <div style="font-size:16px;font-weight:700"><a href="${esc(c.link_syonet)}" target="_blank" rel="noopener" style="color:var(--txt)">${esc(c.nome)}</a></div>
+      <div style="font-size:13px;color:var(--dim)">${esc([ddmm(c.data_agendada), String(c.modelo || "").split(" ")[0], c.placa].filter(Boolean).join(" · "))}</div></div>
+      <span class="pill ${cl}">${esc(tx)}</span></div>
+      ${!S.ro && c.eu_registrei && !c.passou_oficina ? '<div style="text-align:right"><button class="link corrigir">corrigir</button></div>' : ""}`;
+    const b = el.querySelector(".corrigir");
+    if (b) b.onclick = () => { if (!confirm(`Corrigir o desfecho de ${c.nome}?`)) return; const card = cardPendente(c); S.toque[c.id] = true; mostrarDesfechos(card, c); el.replaceWith(card); };
+    box.appendChild(el);
+  }
+}
+
 // ---------- placar ----------
 async function abrirPlacar(){
   mostrarTela("tela-placar");
   const j = S.ro ? {ok:true, placar:S.ro.placar, ranking:S.ro.ranking} : await api({acao:"placar"}).catch(()=>null);
   if (!j || !j.ok){ toast("Não consegui carregar"); return; }
   const p = j.placar;
-  $("tiles").innerHTML = [["na fila",p.na_fila,""],["trabalhados",p.trabalhados,""],["agendou",p.agendou,""],["confirmados",p.confirmados,"color:var(--green)"],["passou na oficina",p.passou,"color:var(--red)"]]
+  $("tiles").innerHTML = [["na fila",p.na_fila,""],["trabalhados",p.trabalhados,""],["agendou",p.agendou,""],["compareceram",p.confirmados,"color:var(--green)"],["não vieram",p.nao_veio || 0,"color:var(--red)"]]
     .map(([l,v,st]) => `<div class="tile"><b style="${st}">${v}</b><span>${l}</span></div>`).join("");
   const linha = (r, comLoja) => `<div class="linha" style="font-size:16px;${r.eu ? "font-weight:700;color:var(--red)" : ""}"><div style="display:flex;gap:10px;align-items:baseline"><span style="width:26px;flex:none">${r.pos}º</span><span>${esc(r.nome)}${comLoja && r.loja ? `<span style="font-size:12px;color:var(--dim);font-weight:400"> · ${esc(r.loja)}</span>` : ""}</span></div><span style="flex:none">${r.n}</span></div>`;
   const rk = (id, x, comLoja) => { $(id).innerHTML = x.top.map(r => linha(r, comLoja)).join("") + (x.minha_posicao > 3 ? linha({pos:x.minha_posicao, nome:"Você", n:x.meus, eu:true}, false) : "")
@@ -402,7 +459,7 @@ async function abrirGerente(loja){
   $("gPorLoja").querySelectorAll("[data-loja]").forEach(x => x.onclick = () => abrirGerente(+x.dataset.loja));
   $("gLoja").classList.toggle("oculto", j.lojas.length < 2);
   const r = j.resumo;
-  $("gTiles").innerHTML = [["entraram",r.entraram,""],["agendou",r.agendou,""],["confirmados",r.confirmados,"color:var(--green)"],["passou na oficina",r.passou,"color:var(--red)"],
+  $("gTiles").innerHTML = [["entraram",r.entraram,""],["agendou",r.agendou,""],["compareceram",r.confirmados,"color:var(--green)"],["não vieram",r.nao_veio || 0,"color:var(--red)"],
     ["recusou",r.recusou,""],["sem contato",r.sem_contato,""],["voltou sozinho",r.voltou_sozinho,""],["expirou",r.expirou,""],["na fila",j.cards.length,""]]
     .map(([l,v,st]) => `<div class="tile"><b style="${st}">${v}</b><span>${l}</span></div>`).join("");
   const agora = Date.now();
@@ -429,7 +486,7 @@ async function abrirGerente(loja){
 }
 $("gLoja").onchange = () => { const v = $("gLoja").value; abrirGerente(v === "todas" ? "todas" : +v); };
 
-$("pFila").onclick = abrirFila; $("pPlacar").onclick = abrirPlacar; $("pGerente").onclick = () => { if (S.ro) modoVerComo(null); abrirGerente(); };
+$("pFila").onclick = abrirFila; $("pAgenda").onclick = abrirAgenda; $("pPlacar").onclick = abrirPlacar; $("pGerente").onclick = () => { if (S.ro) modoVerComo(null); abrirGerente(); };
 
 // sessão salva neste aparelho
 (async () => {
