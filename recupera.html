@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FAFAF8">
+<title>Recupera Raion</title>
+<style>
+  :root{ --bg:#FAFAF8; --txt:#1A1A1A; --dim:#6B7280; --line:#E0E0DC; --line2:#D6D6D1; --sep:#F0F0EC; --red:#E11D2E; --green:#1E8E3E;
+         --erro-bg:#FDECEE; --erro-tx:#9F1239; --ok-bg:#E6F4EA; --cinza-bg:#EDEDEA; --lar-bg:#FFF7ED; --lar-tx:#9A3412; --lar-ln:#FED7AA; }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg)}
+  body{color:var(--txt);font:17px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+  .tela{max-width:430px;margin:0 auto;min-height:100dvh;display:flex;flex-direction:column;padding:40px 16px 24px}
+  .tela.com-rodape{padding-bottom:110px}
+  .oculto{display:none!important}
+  .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);font-weight:700}
+  .sub{font-size:15px;color:var(--dim)}
+  label{display:block;font-size:14px;color:var(--dim);font-weight:600;margin:16px 0 6px}
+  input,select{width:100%;height:54px;padding:0 16px;border-radius:12px;border:1px solid var(--line);background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04);
+        color:var(--txt);font-size:17px;appearance:none;font-family:inherit}
+  input::placeholder{color:#9CA3AF}
+  input:focus,select:focus{outline:2px solid var(--red);outline-offset:1px}
+  .btn{width:100%;height:54px;border:0;border-radius:12px;font-size:17px;font-weight:700;cursor:pointer;font-family:inherit;
+       display:flex;align-items:center;justify-content:center;gap:8px}
+  .btn-red{background:var(--red);color:#fff;box-shadow:0 2px 6px rgba(225,29,46,.25)}
+  .btn-green{background:var(--green);color:#fff}
+  .btn-sec{background:#fff;color:var(--txt);border:1px solid var(--line2)}
+  .btn[disabled]{opacity:.55}
+  .aviso{margin-top:14px;padding:12px 14px;border-radius:12px;font-size:15px;background:var(--erro-bg);color:var(--erro-tx)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,.05);padding:16px;display:flex;flex-direction:column;gap:12px}
+  .card.feito{gap:8px;padding:14px 16px}
+  .secao{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);font-weight:600;margin-top:10px;padding:0 2px}
+  .nome{font-size:18px;font-weight:700}
+  .ctx{font-size:14px;color:var(--dim)}
+  .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .motivo{display:flex;flex-direction:column;gap:6px;padding:10px 12px;border-radius:10px;background:var(--lar-bg);border:1px solid var(--lar-ln);color:var(--lar-tx);font-size:15px}
+  .motivo b{font-weight:700}
+  .motivo q{font-size:14px;color:#7C2D12;font-style:italic}
+  .hist{font-size:14px;color:var(--dim);display:flex;flex-direction:column;gap:2px}
+  .hist a{color:var(--txt);font-weight:600}
+  .desf{display:flex;flex-direction:column;gap:8px;padding-top:12px;border-top:1px solid var(--sep)}
+  .desf .grid2{gap:8px}
+  .desf button{height:48px;border-radius:12px;border:1px solid var(--line2);background:#fff;color:var(--txt);font-size:15px;font-weight:600;font-family:inherit;cursor:pointer;
+               display:flex;align-items:center;justify-content:center;gap:6px}
+  .desf button.sim{border:1.5px solid var(--green);color:var(--green);font-weight:700}
+  .desf button.salvar{background:var(--red);color:#fff;border:0;box-shadow:0 2px 6px rgba(225,29,46,.25);font-weight:700}
+  .extra{display:flex;flex-direction:column;gap:8px}
+  .extra input,.extra select{height:48px}
+  .tarja{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--lar-tx);background:var(--lar-bg);border:1px solid var(--lar-ln);border-radius:999px;padding:4px 10px}
+  .abas{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:5px;border-radius:999px;background:#fff;border:1px solid var(--line);margin-top:16px}
+  .abas button{height:42px;border-radius:999px;border:0;background:transparent;color:var(--txt);font-size:15px;font-weight:600;font-family:inherit;cursor:pointer}
+  .abas button.ativa{background:var(--txt);color:#fff}
+  .rodape{position:fixed;left:0;right:0;bottom:0;padding:12px 16px 24px;background:linear-gradient(to bottom,rgba(250,250,248,0),#FAFAF8 30%)}
+  .pilulas{max-width:398px;margin:0 auto;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:6px;padding:5px;border-radius:999px;background:#fff;
+           border:1px solid var(--line);box-shadow:0 2px 8px rgba(0,0,0,.06)}
+  .pilulas button{height:44px;border-radius:999px;border:0;background:transparent;color:var(--txt);font-size:15px;font-weight:600;font-family:inherit;cursor:pointer}
+  .pilulas button.ativa{background:var(--red);color:#fff;font-weight:700}
+  .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+  .tile{display:flex;flex-direction:column;gap:4px;padding:16px 8px;border-radius:12px;background:#fff;border:1px solid var(--line);box-shadow:0 1px 2px rgba(0,0,0,.04);align-items:center;text-align:center}
+  .tile b{font-size:30px;font-weight:700;line-height:1}
+  .tile span{font-size:12px;color:var(--dim)}
+  .lista-card{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,.05);padding:4px 16px;display:flex;flex-direction:column}
+  .lista-card h3{font-size:16px;font-weight:700;margin:0;padding:12px 0 8px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+  .lista-card h3 small{font-size:12px;color:var(--dim);font-weight:400}
+  .linha{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-top:1px solid var(--sep)}
+  .pill{font-size:13px;font-weight:700;padding:5px 11px;border-radius:999px;white-space:nowrap;background:var(--cinza-bg);color:#4B5563}
+  .pill.ok{background:var(--ok-bg);color:var(--green)} .pill.alerta{background:var(--erro-bg);color:var(--erro-tx)} .pill.lar{background:var(--lar-bg);color:var(--lar-tx)}
+  .centro{text-align:center;color:var(--dim);font-size:13px}
+  .vazio{text-align:center;color:var(--dim);font-size:14px;padding:24px 8px}
+  .link{background:none;border:0;color:var(--dim);font-size:13px;text-decoration:underline;font-family:inherit;cursor:pointer;padding:6px}
+  .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:96px;background:#1A1A1A;color:#fff;padding:12px 18px;border-radius:12px;font-size:15px;
+         box-shadow:0 4px 16px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .2s;max-width:90vw;text-align:center}
+  .toast.on{opacity:1}
+  .ger-linha{display:flex;flex-direction:column;gap:6px;padding:12px 0;border-top:1px solid var(--sep)}
+  .ger-linha select{height:42px;font-size:15px;padding:0 12px}
+  svg{flex-shrink:0}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<section id="tela-login" class="tela">
+  <img src="logo-recupera.png" alt="Recupera" style="width:min(300px,84%);height:auto;display:block;margin:36px auto 0">
+  <div class="sub" style="margin:14px 0 20px;text-align:center">Revisões que dá pra trazer de volta.<br>Entre com seus dados do RH.</div>
+  <label for="cpf">CPF</label>
+  <input id="cpf" inputmode="numeric" autocomplete="off" placeholder="000.000.000-00" enterkeyhint="next" style="margin:0">
+  <label for="nasc">Data de nascimento</label>
+  <input id="nasc" inputmode="numeric" autocomplete="off" placeholder="dd/mm/aaaa" enterkeyhint="go" style="margin:0">
+  <button class="btn btn-red" id="btnEntrar" style="margin-top:24px">Entrar</button>
+  <div class="aviso oculto" id="erroLogin"></div>
+  <div style="flex-grow:1"></div>
+  <div class="centro">Acesso para consultores técnicos e gerentes de pós-venda das lojas de carro.</div>
+</section>
+
+<!-- FILA -->
+<section id="tela-fila" class="tela com-rodape oculto">
+  <img src="logo-recupera.png" alt="Recupera" style="width:180px;height:auto;display:block;margin:0 auto 18px">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px">
+    <div style="display:flex;flex-direction:column;gap:2px;min-width:0">
+      <div style="font-size:22px;font-weight:700;line-height:1.2" id="quem"></div>
+      <div class="ctx" id="onde"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;flex-shrink:0">
+      <div style="font-size:30px;font-weight:700;line-height:1" id="pendN">0</div>
+      <div style="font-size:12px;color:var(--dim)">pra fazer</div>
+    </div>
+  </div>
+  <div class="abas"><button id="abaMeus" class="ativa">Meus <span id="meusN"></span></button><button id="abaLoja">Da loja <span id="lojaN"></span></button></div>
+  <div class="ctx" id="explica" style="margin-top:10px;padding:0 2px"></div>
+  <div id="cards" style="display:flex;flex-direction:column;gap:12px;margin-top:8px"></div>
+  <div id="feitosBox" class="oculto" style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
+    <div class="secao">Feitos no mês</div><div id="feitos" style="display:flex;flex-direction:column;gap:10px"></div>
+  </div>
+</section>
+
+<!-- PLACAR -->
+<section id="tela-placar" class="tela com-rodape oculto">
+  <img src="logo-recupera.png" alt="Recupera" style="width:180px;height:auto;display:block;margin:0 auto 18px">
+  <div class="kicker">Meu mês</div>
+  <div style="font-size:22px;font-weight:700;line-height:1.2" id="quem2"></div>
+  <div class="tiles" id="tiles" style="margin-top:16px"></div>
+  <div class="ctx" style="margin-top:10px">Confirmado = o Syonet mostrou o agendamento ou a OS do carro (o robô confere toda madrugada).</div>
+  <div class="lista-card" id="cardRkLoja" style="margin-top:16px"><h3>Ranking da loja <small>por confirmados</small></h3><div id="rkLoja"></div></div>
+  <div class="lista-card" id="cardRkGrupo" style="margin-top:16px"><h3>Ranking do grupo <small>por confirmados</small></h3><div id="rkGrupo"></div></div>
+  <div style="flex-grow:1"></div>
+  <button id="btnSair" class="link" style="margin-top:24px;font-size:14px;padding:12px">Sair deste aparelho</button>
+</section>
+
+<!-- GERENTE -->
+<section id="tela-gerente" class="tela com-rodape oculto">
+  <img src="logo-recupera.png" alt="Recupera" style="width:180px;height:auto;display:block;margin:0 auto 18px">
+  <div class="kicker" id="gKicker">Visão do gerente</div>
+  <select id="gLoja" style="margin-top:8px"></select>
+  <div class="tiles" id="gTiles" style="margin-top:14px"></div>
+  <div class="lista-card oculto" id="gPorLojaBox" style="margin-top:16px"><h3>Por loja <small>no mês · na fila hoje</small></h3><div id="gPorLoja"></div></div>
+  <div class="lista-card" style="margin-top:16px"><h3>Na fila da loja <small id="gFilaN"></small></h3><div id="gFila"></div></div>
+  <div class="lista-card" style="margin-top:16px"><h3>Sem chance no mês <small>volta pro motor</small></h3><div id="gSemChance"></div></div>
+</section>
+
+<div class="rodape oculto" id="rodape"><div class="pilulas">
+  <button id="pFila" class="ativa">Fila</button><button id="pPlacar">Meu mês</button><button id="pGerente" class="oculto">Gerente</button>
+</div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const API = "https://winlvztcxczdgjqklxrv.supabase.co/functions/v1/recupera";
+const ICO = {
+  tel: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>',
+  zap: '<svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>',
+  relogio: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9A3412" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>',
+};
+const SEM_CHANCE = ["Vendeu o carro", "Telefone errado", "Já fez em outro lugar", "Não é o dono / frota", "Outro"];
+let S = { token:null, col:null, fila:{meus:[],loja:[],feitos:[]}, aba:"meus", toque:{}, abertos:{} };
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const ls = { get:(k)=>{ try{return JSON.parse(localStorage.getItem(k));}catch{return null;} }, set:(k,v)=>{ try{localStorage.setItem(k,JSON.stringify(v));}catch{} }, del:(k)=>{ try{localStorage.removeItem(k);}catch{} } };
+const ddmm = (iso) => iso ? String(iso).slice(0,10).split("-").reverse().slice(0,2).join("/") : "";
+const MESES = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+const mesAno = (iso) => { if (!iso) return ""; const [y,m] = String(iso).split("-"); return `${MESES[+m-1]}/${y.slice(2)}`; };
+const km = (k) => { const n = parseInt(String(k).replace(/\D/g,""),10); return n ? n.toLocaleString("pt-BR") + " km" : ""; };
+const hojeISO = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`; };
+let toastT; function toast(msg){ const t=$("toast"); t.textContent=msg; t.classList.add("on"); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove("on"),2800); }
+function fmtToques(lista){
+  if (!lista || !lista.length) return "";
+  return lista.map(t => { const d = new Date(t.horario); return `${String(d.getDate()).padStart(2,"0")}/${String(d.getMonth()+1).padStart(2,"0")} ${String(d.getHours()).padStart(2,"0")}:${String(d.getMinutes()).padStart(2,"0")} ${t.canal === "ligar" ? "ligação" : "WhatsApp"}`; }).join(" · ");
+}
+async function api(body){
+  const r = await fetch(API, {method:"POST", headers:{"content-type":"application/json"}, body:JSON.stringify({...body, token:S.token})});
+  const j = await r.json().catch(()=>({ok:false, erro:"resposta-invalida"}));
+  if (r.status === 401 && body.acao !== "login") sair();
+  return j;
+}
+
+// ---------- login ----------
+const fmtCpf = (v) => { v = v.replace(/\D/g,"").slice(0,11); return v.replace(/(\d{3})(\d)/,"$1.$2").replace(/(\d{3})(\d)/,"$1.$2").replace(/(\d{3})(\d{1,2})$/,"$1-$2"); };
+const fmtNasc = (v) => { v = v.replace(/\D/g,"").slice(0,8); return v.replace(/(\d{2})(\d)/,"$1/$2").replace(/(\d{2})(\d)/,"$1/$2"); };
+$("cpf").addEventListener("input", e => e.target.value = fmtCpf(e.target.value));
+$("nasc").addEventListener("input", e => e.target.value = fmtNasc(e.target.value));
+$("nasc").addEventListener("keydown", e => { if (e.key === "Enter") $("btnEntrar").click(); });
+$("btnEntrar").onclick = async () => {
+  $("erroLogin").classList.add("oculto");
+  const n = $("nasc").value.replace(/\D/g,"");
+  const nascISO = n.length === 8 ? `${n.slice(4,8)}-${n.slice(2,4)}-${n.slice(0,2)}` : "";
+  const b = $("btnEntrar"); b.disabled = true; b.textContent = "Entrando…";
+  const j = await api({acao:"login", cpf:$("cpf").value, nascimento:nascISO}).catch(()=>({ok:false, erro:"rede"}));
+  b.disabled = false; b.textContent = "Entrar";
+  if (!j.ok){
+    $("erroLogin").textContent = { "travado-15-min":"Muitas tentativas. Tente de novo em 15 minutos.", "rede":"Sem conexão. Tente de novo." }[j.erro]
+      || "Não achei seu acesso. Confira CPF e nascimento. O Recupera libera quem abriu OS na loja nos últimos 30 dias e os gerentes de pós-venda.";
+    $("erroLogin").classList.remove("oculto"); return;
+  }
+  S.token = j.token; S.col = j.colaborador; ls.set("recupera_sessao", {token:S.token, col:S.col});
+  entrar();
+};
+function sair(){ S = { token:null, col:null, fila:{meus:[],loja:[],feitos:[]}, aba:"meus", toque:{}, abertos:{} }; ls.del("recupera_sessao");
+  ["tela-fila","tela-placar","tela-gerente","rodape"].forEach(id => $(id).classList.add("oculto")); $("tela-login").classList.remove("oculto"); }
+
+function entrar(){
+  $("tela-login").classList.add("oculto"); $("rodape").classList.remove("oculto");
+  const consultorEm = S.col.lojas.filter(l => l.papel === "consultor");
+  $("pGerente").classList.toggle("oculto", !S.col.gerente);
+  $("pGerente").textContent = S.col.diretor ? "Macro" : "Gerente"; $("gKicker").textContent = S.col.diretor ? "Visão macro" : "Visão do gerente";
+  $("pFila").classList.toggle("oculto", consultorEm.length === 0);
+  $("pPlacar").classList.toggle("oculto", consultorEm.length === 0);
+  $("quem").textContent = S.col.nome; $("quem2").textContent = S.col.nome;
+  $("onde").textContent = consultorEm.map(l => l.nome).join(" · ");
+  if (consultorEm.length) abrirFila(); else abrirGerente();
+}
+
+// ---------- fila ----------
+function mostrarTela(id){
+  for (const t of ["tela-fila","tela-placar","tela-gerente"]) $(t).classList.toggle("oculto", t !== id);
+  $("pFila").classList.toggle("ativa", id === "tela-fila"); $("pPlacar").classList.toggle("ativa", id === "tela-placar"); $("pGerente").classList.toggle("ativa", id === "tela-gerente");
+  window.scrollTo(0,0);
+}
+async function abrirFila(){
+  mostrarTela("tela-fila");
+  const j = await api({acao:"fila"}).catch(()=>null);
+  if (!j || !j.ok){ toast("Não consegui buscar a fila" + (j ? ": " + j.erro : "")); return; }
+  S.fila = j; S.aguardando = j.aguardando_retorno; render();
+}
+$("abaMeus").onclick = () => { S.aba = "meus"; render(); };
+$("abaLoja").onclick = () => { S.aba = "loja"; render(); };
+
+function render(){
+  const f = S.fila;
+  $("meusN").textContent = f.meus.length ? `(${f.meus.length})` : ""; $("lojaN").textContent = f.loja.length ? `(${f.loja.length})` : "";
+  $("pendN").textContent = f.meus.length;
+  $("abaMeus").classList.toggle("ativa", S.aba === "meus"); $("abaLoja").classList.toggle("ativa", S.aba === "loja");
+  $("explica").textContent = S.aba === "meus"
+    ? "Clientes que você atendeu na última revisão, e os que você pegou da loja." + (S.aguardando ? ` ${S.aguardando} com retorno marcado pra frente.` : "")
+    : "Sem dono: o consultor saiu ou não mexeu em 2 dias úteis. Abriu, é seu por 2 dias úteis; ligou, é seu.";
+  const lista = S.aba === "meus" ? f.meus : f.loja;
+  const box = $("cards"); box.innerHTML = "";
+  if (!lista.length) box.innerHTML = `<div class="vazio">${S.aba === "meus" ? "Nada pendente com você agora. Dá uma olhada em Da loja." : "A fila da loja está vazia."}</div>`;
+  lista.forEach(c => box.appendChild(S.aba === "loja" && !S.abertos[c.id] && !c.travado_por_mim ? cardFechado(c) : cardPendente(c)));
+  $("feitosBox").classList.toggle("oculto", !f.feitos.length);
+  const fb = $("feitos"); fb.innerHTML = ""; f.feitos.forEach(c => fb.appendChild(cardFeito(c)));
+}
+
+function cabecaCard(c){
+  const carro = [c.modelo, c.ano, c.placa].filter(Boolean).join(" · ");
+  return `<div style="display:flex;flex-direction:column;gap:2px"><div class="nome">${esc(c.nome)}</div><div class="ctx">${esc(carro)}</div>
+    <div class="ctx">${esc([c.revisao, c.loja].filter(Boolean).join(" · "))}</div></div>`;
+}
+function cardFechado(c){
+  const el = document.createElement("div"); el.className = "card";
+  el.innerHTML = cabecaCard(c) + `<div class="motivo"><b>${esc(c.motivo)}</b></div><button class="btn btn-sec">Abrir esse cliente</button>`;
+  el.querySelector("button").onclick = async () => {
+    const j = await api({acao:"abrir", card:c.id}).catch(()=>null);
+    if (!j || !j.ok){ toast(j && j.erro === "card-travado" ? "Alguém da loja já abriu esse." : "Não deu: " + (j ? j.erro : "sem conexão")); if (j && j.erro === "card-travado") abrirFila(); return; }
+    S.abertos[c.id] = true; render();
+  };
+  return el;
+}
+function cardPendente(c){
+  const el = document.createElement("div"); el.className = "card";
+  const ultima = c.ultima_os_em ? `Última vez aqui: ${mesAno(c.ultima_os_em)}${c.ultima_os_consultor ? " com " + esc(c.ultima_os_consultor) : ""}${c.ultima_os_km ? ", " + km(c.ultima_os_km) : ""}` : "";
+  const tent = c.tentativas ? `<div><span class="tarja">${ICO.relogio} Não atendeu · ${c.tentativas} de 3</span></div>` : "";
+  const hist = fmtToques(c.toques);
+  el.innerHTML = cabecaCard(c)
+    + `<div class="motivo"><b>${esc(c.motivo)}</b>${c.anotacao ? `<q>${esc(c.anotacao)}</q>` : ""}</div>`
+    + `<div class="hist">${ultima ? `<span>${ultima}</span>` : ""}<span>Descartado em ${ddmm(c.descartado_em)} · <a href="${esc(c.link_syonet)}" target="_blank" rel="noopener">ver no Syonet</a></span>${hist ? `<span>Seus contatos: ${esc(hist)}</span>` : ""}</div>`
+    + tent
+    + `<div class="grid2"><button class="btn btn-red" data-canal="ligar">${ICO.tel} Ligar</button><button class="btn btn-green" data-canal="whatsapp">${ICO.zap} WhatsApp</button></div>`
+    + `<div class="desf oculto"><div style="font-size:14px;color:var(--dim);font-weight:600">Como foi?</div><div class="grid2"></div><div class="extra oculto"></div></div>`;
+  if (S.toque[c.id] || (c.toques && c.toques.length)) mostrarDesfechos(el, c);
+  el.querySelectorAll("[data-canal]").forEach(b => b.onclick = async () => {
+    const canal = b.dataset.canal; b.disabled = true;
+    const j = await api({acao:"toque", card:c.id, canal}).catch(()=>null);
+    b.disabled = false;
+    if (!j || !j.ok){ toast(j && j.erro === "sem-telefone" ? "Esse cliente está sem celular no Syonet. Marque como Sem chance > Telefone errado depois de conferir." : "Não consegui registrar o contato" + (j ? ": " + j.erro : "")); return; }
+    S.toque[c.id] = true; (c.toques ||= []).push({canal, horario:new Date().toISOString()});
+    mostrarDesfechos(el, c);
+    if (canal === "ligar") location.href = "tel:+55" + j.telefone; else window.open(j.wa_url, "_blank", "noopener,noreferrer");
+  });
+  return el;
+}
+function mostrarDesfechos(el, c){
+  const desf = el.querySelector(".desf"), grid = desf.querySelector(".grid2"), extra = desf.querySelector(".extra");
+  desf.classList.remove("oculto"); grid.innerHTML = "";
+  const opcoes = [["agendou","Agendou","sim"],["retorno","Pediu retorno",""],["nao_atendeu","Não atendeu",""],["recusou","Recusou de novo",""],["sem_chance","Sem chance",""]];
+  for (const [k, l, cls] of opcoes){
+    const b = document.createElement("button"); b.textContent = l; if (cls) b.className = cls;
+    if (k === "sem_chance") b.style.gridColumn = "span 2";
+    b.onclick = () => pedirDetalhe(k, l, c, extra);
+    grid.appendChild(b);
+  }
+}
+function pedirDetalhe(k, l, c, extra){
+  extra.classList.remove("oculto");
+  if (k === "nao_atendeu"){ extra.classList.add("oculto"); salvar(c, k, {}); return; }
+  if (k === "agendou" || k === "retorno"){
+    extra.innerHTML = `<label style="margin:0;font-size:13px">${k === "agendou" ? "Agendou pra que dia? (agende no Syonet também)" : "Ligar de novo em que dia?"}</label>
+      <input type="date" class="data" min="${k === "retorno" ? hojeISO() : ""}"><button class="salvar" style="height:48px">Salvar</button>`;
+    extra.querySelector(".salvar").onclick = () => { const d = extra.querySelector(".data").value; if (!d){ toast("Escolha a data."); return; } salvar(c, k, {data:d}); };
+    return;
+  }
+  if (k === "recusou"){
+    extra.innerHTML = `<input class="mot" placeholder="Por quê? (curto)"><button class="salvar" style="height:48px">Salvar</button>`;
+    extra.querySelector(".salvar").onclick = () => { if (confirm(`Marcar ${c.nome} como "Recusou de novo"? Sai da sua fila. Dá pra corrigir depois.`)) salvar(c, k, {motivo: extra.querySelector(".mot").value}); };
+    return;
+  }
+  extra.innerHTML = `<select class="mot">${SEM_CHANCE.map(m => `<option>${m}</option>`).join("")}</select><button class="salvar" style="height:48px">Salvar</button>`;
+  extra.querySelector(".salvar").onclick = () => { const m = extra.querySelector(".mot").value; if (confirm(`Marcar ${c.nome} como "Sem chance: ${m}"? Sai da fila e avisa o motor.`)) salvar(c, k, {motivo:m}); };
+}
+async function salvar(c, d, extra){
+  const j = await api({acao:"desfecho", card:c.id, desfecho:d, ...extra}).catch(()=>null);
+  if (!j || !j.ok){ toast("Não salvou: " + (j ? ({"retorno-tem-que-ser-futuro":"o retorno tem que ser depois de hoje", "sem-toque":"ligue ou mande WhatsApp antes"}[j.erro] || j.erro) : "sem conexão")); return; }
+  const primeiro = c.nome.split(" ")[0];
+  toast({ agendou:`Boa! ${primeiro} agendou. O robô confere no Syonet.`, retorno:`Anotado. ${primeiro} volta pra sua fila em ${ddmm(extra.data)}.`,
+          nao_atendeu: j.status === "encerrado" ? `3 tentativas. ${primeiro} saiu da fila como sem contato.` : `Anotado: ${j.tentativas}ª tentativa sem atender.`,
+          recusou:"Anotado.", sem_chance:"Anotado. Vai pro relatório do motor." }[d]);
+  delete S.toque[c.id];
+  await abrirFila();
+}
+function cardFeito(c){
+  const el = document.createElement("div"); el.className = "card feito";
+  let st = "", cl = "";
+  if (c.desfecho === "agendou"){
+    st = c.passou_oficina ? "Passou na oficina" : c.prova === "confirmado" ? "Confirmado no Syonet" : c.prova === "sem_prova" ? "Sem prova no Syonet" : `Agendou ${ddmm(c.data_agendada)} · aguardando o Syonet`;
+    cl = c.prova === "confirmado" ? "ok" : c.prova === "sem_prova" ? "alerta" : "lar";
+  } else if (c.desfecho === "retorno"){ st = `Retorno em ${ddmm(c.retorno_em)}`; cl = "lar"; }
+  else if (c.saida === "sem_contato"){ st = "Sem contato (3 tentativas)"; }
+  else if (c.desfecho === "recusou"){ st = "Recusou de novo"; }
+  else if (c.desfecho === "sem_chance"){ st = "Sem chance" + (c.ultimo_desfecho && c.ultimo_desfecho.motivo ? ": " + c.ultimo_desfecho.motivo : ""); }
+  else st = c.desfecho || "";
+  el.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><div style="min-width:0"><div style="font-size:16px;font-weight:700">${esc(c.nome)}</div>
+    <div style="font-size:13px;color:var(--dim)">${esc([c.modelo, c.placa].filter(Boolean).join(" · "))}</div></div><span class="pill ${cl}">${esc(st)}</span></div>
+    ${c.eu_registrei && c.prova !== "confirmado" ? '<div style="text-align:right"><button class="link corrigir">corrigir</button></div>' : ""}`;
+  const b = el.querySelector(".corrigir");
+  if (b) b.onclick = () => {
+    if (!confirm(`Corrigir o desfecho de ${c.nome}? A marcação anterior fica no histórico.`)) return;
+    const card = cardPendente(c); S.toque[c.id] = true; mostrarDesfechos(card, c); el.replaceWith(card);
+  };
+  return el;
+}
+
+// ---------- placar ----------
+async function abrirPlacar(){
+  mostrarTela("tela-placar");
+  const j = await api({acao:"placar"}).catch(()=>null);
+  if (!j || !j.ok){ toast("Não consegui carregar"); return; }
+  const p = j.placar;
+  $("tiles").innerHTML = [["na fila",p.na_fila,""],["trabalhados",p.trabalhados,""],["agendou",p.agendou,""],["confirmados",p.confirmados,"color:var(--green)"],["passou na oficina",p.passou,"color:var(--red)"]]
+    .map(([l,v,st]) => `<div class="tile"><b style="${st}">${v}</b><span>${l}</span></div>`).join("");
+  const linha = (r, comLoja) => `<div class="linha" style="font-size:16px;${r.eu ? "font-weight:700;color:var(--red)" : ""}"><div style="display:flex;gap:10px;align-items:baseline"><span style="width:26px;flex:none">${r.pos}º</span><span>${esc(r.nome)}${comLoja && r.loja ? `<span style="font-size:12px;color:var(--dim);font-weight:400"> · ${esc(r.loja)}</span>` : ""}</span></div><span style="flex:none">${r.n}</span></div>`;
+  const rk = (id, x, comLoja) => { $(id).innerHTML = x.top.map(r => linha(r, comLoja)).join("") + (x.minha_posicao > 3 ? linha({pos:x.minha_posicao, nome:"Você", n:x.meus, eu:true}, false) : "")
+    + (x.total > 3 ? `<div style="font-size:12px;color:var(--dim);padding:8px 0">${x.total} participantes</div>` : ""); };
+  rk("rkLoja", j.ranking.loja, false); rk("rkGrupo", j.ranking.grupo, true);
+}
+$("btnSair").onclick = () => { if (confirm("Sair do Recupera neste aparelho?")) { sair(); window.scrollTo(0,0); } };
+
+// ---------- gerente ----------
+async function abrirGerente(loja){
+  mostrarTela("tela-gerente");
+  const j = await api({acao:"gerente", loja: loja || undefined}).catch(()=>null);
+  if (!j || !j.ok){ toast("Não consegui carregar" + (j ? ": " + j.erro : "")); return; }
+  $("gLoja").innerHTML = j.lojas.map(l => `<option value="${l.id}" ${String(l.id) === String(j.loja.id) ? "selected" : ""}>${esc(l.nome)}</option>`).join("");
+  const todas = j.loja.id === "todas";
+  $("gPorLojaBox").classList.toggle("oculto", !j.por_loja);
+  if (j.por_loja) $("gPorLoja").innerHTML = j.por_loja.filter(l => l.entraram || l.na_fila || l.agendou).map(l => `<div class="linha" style="cursor:pointer" data-loja="${l.id}">
+      <div style="display:flex;flex-direction:column"><span style="font-weight:600">${esc(l.nome)}</span><span style="font-size:13px;color:var(--dim)">${l.entraram} entraram · ${l.agendou} agendou · ${l.passou} passou</span></div>
+      <div style="display:flex;gap:6px"><span class="pill ok">${l.confirmados} conf.</span><span class="pill">${l.na_fila} na fila</span></div></div>`).join("") || '<div class="vazio">Nada no mês ainda.</div>';
+  $("gPorLoja").querySelectorAll("[data-loja]").forEach(x => x.onclick = () => abrirGerente(+x.dataset.loja));
+  $("gLoja").classList.toggle("oculto", j.lojas.length < 2);
+  const r = j.resumo;
+  $("gTiles").innerHTML = [["entraram",r.entraram,""],["agendou",r.agendou,""],["confirmados",r.confirmados,"color:var(--green)"],["passou na oficina",r.passou,"color:var(--red)"],
+    ["recusou",r.recusou,""],["sem contato",r.sem_contato,""],["voltou sozinho",r.voltou_sozinho,""],["expirou",r.expirou,""],["na fila",j.cards.length,""]]
+    .map(([l,v,st]) => `<div class="tile"><b style="${st}">${v}</b><span>${l}</span></div>`).join("");
+  const agora = Date.now();
+  const diasUteis = (iso) => { if (!iso) return 99; let d = new Date(iso), n = 0; while (d.getTime() < agora - 864e5){ d = new Date(d.getTime() + 864e5); if (d.getDay() % 6) n++; } return n; };
+  const cards = j.cards.map(c => ({...c, parado: c.dono && diasUteis(c.ultima_atividade) >= 2}))
+    .sort((a, b) => (b.parado - a.parado) || String(a.dono || "~").localeCompare(String(b.dono || "~")) || String(b.descartado_em).localeCompare(String(a.descartado_em)));
+  $("gFilaN").textContent = `${cards.length} · ${cards.filter(c => !c.dono).length} sem dono`;
+  // dono que não é mais consultor da loja (saiu da lista de acesso) aparece como opção, pra não mentir no select
+  const opts = (sel, nomeSel, loja) => { const ps = j.pessoas.filter(p => p.loja_id === loja);
+    return `<option value="">Fila da loja (sem dono)</option>`
+    + (sel && !ps.some(p => p.hash === sel) ? `<option value="${esc(sel)}" selected>${esc(nomeSel)}</option>` : "")
+    + ps.map(p => `<option value="${esc(p.hash)}" ${p.hash === sel ? "selected" : ""}>${esc(p.nome)}</option>`).join(""); };
+  $("gFila").innerHTML = cards.length ? cards.map(c => `<div class="ger-linha"><div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline">
+      <a href="${esc(c.link_syonet)}" target="_blank" rel="noopener" style="color:var(--txt);font-weight:700">${esc(c.nome)}</a>
+      ${c.parado ? '<span class="pill alerta">parado</span>' : c.retorno_em ? `<span class="pill lar">retorno ${ddmm(c.retorno_em)}</span>` : c.travado ? `<span class="pill">aberto por ${esc(c.travado.split(" ")[0])}</span>` : ""}</div>
+      <div style="font-size:13px;color:var(--dim)">${esc([todas ? c.loja : "", c.modelo, c.motivo, c.tentativas ? c.tentativas + " tentativa(s)" : ""].filter(Boolean).join(" · "))}</div>
+      <select data-card="${c.id}">${opts(c.dono_hash, c.dono, c.loja_id)}</select></div>`).join("") : '<div class="vazio">Nada na fila.</div>';
+  $("gFila").querySelectorAll("select").forEach(s => s.onchange = async () => {
+    const r2 = await api({acao:"reatribuir", card:+s.dataset.card, para:s.value || null}).catch(()=>null);
+    toast(r2 && r2.ok ? "Reatribuído." : "Não deu: " + (r2 ? r2.erro : "sem conexão")); abrirGerente(j.loja.id);
+  });
+  $("gSemChance").innerHTML = j.sem_chance.length ? j.sem_chance.map(x => `<div class="linha"><div><a href="${esc(x.link_syonet)}" target="_blank" rel="noopener" style="color:var(--txt);font-weight:600">${esc(x.nome)}</a>
+      <div style="font-size:13px;color:var(--dim)">${esc([todas ? x.loja : "", x.modelo, x.por].filter(Boolean).join(" · "))}</div></div><span class="pill">${esc(x.motivo)}</span></div>`).join("") : '<div class="vazio">Nenhum no mês.</div>';
+}
+$("gLoja").onchange = () => { const v = $("gLoja").value; abrirGerente(v === "todas" ? "todas" : +v); };
+
+$("pFila").onclick = abrirFila; $("pPlacar").onclick = abrirPlacar; $("pGerente").onclick = () => abrirGerente();
+
+// sessão salva neste aparelho
+(async () => {
+  const s = ls.get("recupera_sessao");
+  if (!s || !s.token) return;
+  S.token = s.token; S.col = s.col;
+  $("tela-login").classList.add("oculto");   // sem piscar o login enquanto confere a sessão
+  const j = await api({acao:"eu"}).catch(()=>null);
+  if (j && j.ok){ S.col = j.colaborador; ls.set("recupera_sessao", {token:S.token, col:S.col}); entrar(); }
+  else $("tela-login").classList.remove("oculto");
+})();
+</script>
+</body>
+</html>
