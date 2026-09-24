@@ -76,6 +76,8 @@
   .ger-linha{display:flex;flex-direction:column;gap:6px;padding:12px 0;border-top:1px solid var(--sep)}
   .ger-linha select{height:42px;font-size:15px;padding:0 12px}
   .verComoBanner{display:flex;flex-direction:column;gap:8px;padding:12px 14px;border-radius:12px;background:#EEF2FF;border:1px solid #C7D2FE;color:#3730A3;font-size:15px;margin-bottom:14px}
+  .verComoBanner.agindo{background:var(--erro-bg);border-color:#FDA4AF;color:var(--erro-tx)}
+  .verComoBanner.agindo button{border-color:#FDA4AF;color:var(--erro-tx)}
   .verComoBanner button{height:40px;border-radius:10px;border:1px solid #A5B4FC;background:#fff;color:#3730A3;font:inherit;font-weight:700;cursor:pointer}
   .meses{display:flex;gap:6px;overflow-x:auto;margin-top:12px;padding-bottom:2px}
   .meses button{flex:none;height:38px;padding:0 14px;border-radius:999px;border:1px solid var(--line2);background:#fff;color:var(--txt);font:inherit;font-size:14px;font-weight:600;cursor:pointer}
@@ -154,7 +156,8 @@
   <select id="gLoja" style="margin-top:8px"></select>
   <div class="tiles" id="gTiles" style="margin-top:14px"></div>
   <div class="lista-card oculto" id="gVerComoBox" style="margin-top:16px;padding-bottom:14px"><h3>Ver como <small>só leitura, fica registrado</small></h3>
-    <div style="display:flex;flex-direction:column;gap:8px"><select id="gVerComo" style="height:48px;font-size:15px"></select><button class="btn btn-sec" id="btnVerComo" style="height:48px">Abrir a fila dessa pessoa</button></div></div>
+    <div style="display:flex;flex-direction:column;gap:8px"><select id="gVerComo" style="height:48px;font-size:15px"></select><button class="btn btn-sec" id="btnVerComo" style="height:48px">Abrir a fila dessa pessoa</button>
+    <button class="btn" id="btnAgirComo" style="height:48px;background:var(--erro-bg);color:var(--erro-tx);border:1px solid #FDA4AF">Agir como essa pessoa (temporário)</button></div></div>
   <div class="lista-card oculto" id="gPorLojaBox" style="margin-top:16px"><h3>Por loja <small>no mês · na fila hoje</small></h3><div id="gPorLoja"></div></div>
   <div class="lista-card" style="margin-top:16px"><h3>Na fila da loja <small id="gFilaN"></small></h3><div id="gFila"></div></div>
   <div class="lista-card" style="margin-top:16px"><h3>Sem chance no mês <small>volta pro motor</small></h3><div id="gSemChance"></div></div>
@@ -190,7 +193,7 @@ function fmtToques(lista){
 async function api(body){
   const r = await fetch(API, {method:"POST", headers:{"content-type":"application/json"}, body:JSON.stringify({...body, token:S.token})});
   const j = await r.json().catch(()=>({ok:false, erro:"resposta-invalida"}));
-  if (r.status === 401 && body.acao !== "login") sair();
+  if (r.status === 401 && body.acao !== "login"){ if (S.agindo) { voltarDoAgir(); toast("A sessão de agir como terminou."); } else sair(); }
   return j;
 }
 
@@ -249,6 +252,28 @@ function modoVerComo(r){
   $("quem").textContent = quem.nome; $("quem2").textContent = quem.nome; $("quem3").textContent = quem.nome;
   $("onde").textContent = quem.lojas.filter(l => l.papel === "consultor").map(l => l.nome).join(" · ");
 }
+// ---------- agir como (TEMPORÁRIO, João 24/09): diretor opera a fila da pessoa; tudo grava quem fez de verdade ----------
+function bannerAgir(){
+  document.querySelectorAll(".verComoBanner").forEach(b => {
+    b.classList.toggle("oculto", !S.agindo); b.classList.toggle("agindo", !!S.agindo);
+    if (S.agindo){ b.innerHTML = `<span><b>Agindo como ${esc(S.col.nome)}</b>. O que você fizer conta pra ela e fica registrado como feito por você. Ligar e WhatsApp saem do SEU celular.</span><button>Voltar pra minha visão</button>`;
+      b.querySelector("button").onclick = () => voltarDoAgir(); }
+  });
+}
+function voltarDoAgir(){
+  if (!S.agindo) return;
+  S.token = S.agindo.token; S.col = S.agindo.col; S.agindo = null; S.toque = {}; S.abertos = {};
+  bannerAgir(); entrar();
+}
+async function agirComo(alvo){
+  if (!confirm("Agir como essa pessoa?\n\nTudo o que você fizer (contatos, agendou, recusou...) conta no nome dela e fica registrado como feito por você. Ligar e WhatsApp abrem do SEU celular, pra clientes reais. Vale por 2 horas.")) return;
+  const r = await api({acao:"agir_como", alvo}).catch(()=>null);
+  if (!r || !r.ok){ toast(r && r.erro === "agir-como-desligado" ? "O agir como já foi desligado." : "Não deu: " + (r ? r.erro : "sem conexão")); return; }
+  S.agindo = { token: S.token, col: S.col };   // guarda a sessão do diretor (não vai pro localStorage: recarregou, volta pra ela)
+  S.token = r.token; S.col = r.colaborador; S.toque = {}; S.abertos = {}; S.aba = "meus";
+  entrar(); bannerAgir();
+}
+
 async function abrirFila(){
   if (S.ro){ mostrarTela("tela-fila"); S.fila = S.ro; S.aguardando = S.ro.aguardando_retorno; render(); return; }
   mostrarTela("tela-fila");
@@ -445,6 +470,7 @@ async function abrirGerente(loja){
   $("gVerComoBox").classList.toggle("oculto", !S.col.diretor || !j.pessoas.length);
   const nomeLoja = Object.fromEntries(j.lojas.map(l => [String(l.id), l.nome]));
   $("gVerComo").innerHTML = j.pessoas.map(p => `<option value="${esc(p.hash)}">${esc(p.nome)}${todas ? " · " + esc(nomeLoja[String(p.loja_id)] || "") : ""}</option>`).join("");
+  $("btnAgirComo").onclick = () => agirComo($("gVerComo").value);
   $("btnVerComo").onclick = async () => {
     const b = $("btnVerComo"); b.disabled = true;
     const r = await api({acao:"ver_como", alvo:$("gVerComo").value}).catch(()=>null);
