@@ -127,24 +127,6 @@
    "fipe_abaixo": null
   },
   {
-   "id": "d4f045b8b5fb",
-   "marca": "Mitsubishi",
-   "titulo": "Mitsubishi Triton",
-   "versao": "2.4 BITURBO DIESEL CD HPE 4X4 AUTOMÁTICO",
-   "ano": 2027,
-   "km": 1890,
-   "km_fmt": "1.890 km",
-   "preco": 243890.0,
-   "preco_fmt": "R$ 243.890",
-   "capa": "https://s3.agsistema.net/6699/vehicles/2808219/photos/MTTrfmiE3FQc5QJAGxHVsO5qOUOTZnvk.jpg",
-   "arte": "artes/d4f045b8b5fb.png",
-   "qr": "qr/d4f045b8b5fb.png",
-   "blindado": false,
-   "arte_pronta": true,
-   "entrada": "2026-08-29",
-   "fipe_abaixo": "R$ 16 mil abaixo da FIPE"
-  },
-  {
    "id": "15c2da80ba7a",
    "marca": "Mitsubishi",
    "titulo": "Mitsubishi Pajero Sport",
@@ -215,24 +197,6 @@
    "arte_pronta": true,
    "entrada": "2026-09-23",
    "fipe_abaixo": null
-  },
-  {
-   "id": "070d518f9996",
-   "marca": "Mini",
-   "titulo": "Mini Countryman",
-   "versao": "1.5 12V TWINPOWER TURBO HYBRID COOPER S E TOP ALL4 STEPTRONIC",
-   "ano": 2024,
-   "km": 32916,
-   "km_fmt": "32.916 km",
-   "preco": 178890.0,
-   "preco_fmt": "R$ 178.890",
-   "capa": "https://s3.agsistema.net/6701/vehicles/2750737/photos/app-photos-kShOiEbz7zBqpCjen7U5mHumwoDrNC3O.jpg",
-   "arte": "artes/070d518f9996.png",
-   "qr": "qr/070d518f9996.png",
-   "blindado": false,
-   "arte_pronta": true,
-   "entrada": "2026-07-23",
-   "fipe_abaixo": "R$ 25 mil abaixo da FIPE"
   },
   {
    "id": "375ba215aed7",
@@ -808,24 +772,6 @@
    "blindado": false,
    "arte_pronta": true,
    "entrada": "2026-09-01",
-   "fipe_abaixo": null
-  },
-  {
-   "id": "fb4acb08f5db",
-   "marca": "Renault",
-   "titulo": "Renault Captur",
-   "versao": "1.6 16V SCE FLEX LIFE X-TRONIC",
-   "ano": 2021,
-   "km": 57200,
-   "km_fmt": "57.200 km",
-   "preco": 76890.0,
-   "preco_fmt": "R$ 76.890",
-   "capa": "https://s3.agsistema.net/6703/vehicles/2687064/photos/Pcbevkw1U7e4HcjLEvqqXOcWA0bsrYP4.jpg",
-   "arte": "artes/fb4acb08f5db.png",
-   "qr": "qr/fb4acb08f5db.png",
-   "blindado": false,
-   "arte_pronta": true,
-   "entrada": "2026-06-16",
    "fipe_abaixo": null
   },
   {
