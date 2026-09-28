@@ -3,92 +3,84 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="robots" content="noindex">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FAFAF8">
 <title>Pesquisa BDC — Grupo Raion</title>
 <style>
-  :root{
-    --bg:#0f1115; --card:#171a21; --line:#272c37;
-    --txt:#e6e8ee; --dim:#98a0b3; --ac:#e11d2e; --ok:#22c55e;
-  }
+  /* visual da familia Prospecta/Divulga/Recupera: claro, cards brancos, vermelho Raion */
+  :root{ --bg:#FAFAF8; --txt:#1A1A1A; --dim:#6B7280; --line:#E0E0DC; --line2:#D6D6D1; --sep:#F0F0EC;
+         --red:#E11D2E; --green:#1E8E3E; --erro-bg:#FDECEE; --erro-tx:#9F1239; --ok-bg:#E6F4EA; }
   *{box-sizing:border-box}
-  html,body{margin:0}
-  body{
-    background:var(--bg); color:var(--txt);
-    font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-    padding:20px 16px calc(48px + env(safe-area-inset-bottom));
-    -webkit-text-size-adjust:100%;
-  }
-  .wrap{max-width:32rem;margin:0 auto}
-  header{margin:8px 0 18px}
-  .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);font-weight:700}
-  h1{font-size:24px;margin:4px 0 6px;line-height:1.2}
-  .sub{color:var(--dim);font-size:14px}
+  html,body{margin:0;background:var(--bg)}
+  body{color:var(--txt);font:17px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+  .wrap{max-width:460px;margin:0 auto;padding:32px 16px calc(40px + env(safe-area-inset-bottom))}
+  .logo{width:min(250px,70%);height:auto;display:block;margin:0 auto 22px}
+  header{text-align:center;margin:0 0 22px}
+  .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);font-weight:700}
+  .titulo{font-size:26px;font-weight:700;line-height:1.15;margin:6px 0 8px}
+  .sub{font-size:15px;color:var(--dim)}
   .sub b{color:var(--txt)}
-  label.campo{display:block;margin:0 0 8px;font-size:15px;font-weight:600}
-  select,textarea{
-    width:100%;padding:14px;border-radius:12px;border:1px solid var(--line);
-    background:var(--bg);color:var(--txt);font-size:17px;appearance:none;font-family:inherit;
-  }
-  textarea{min-height:110px;resize:vertical}
-  select:focus,textarea:focus{outline:2px solid var(--ac);outline-offset:1px}
-  select{background-image:linear-gradient(45deg,transparent 50%,var(--dim) 50%),
-    linear-gradient(135deg,var(--dim) 50%,transparent 50%);
-    background-position:calc(100% - 20px) 22px,calc(100% - 14px) 22px;
-    background-size:6px 6px;background-repeat:no-repeat;padding-right:40px}
+  .secao{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);font-weight:600;margin:22px 2px 10px}
 
-  .q{background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:16px;margin:0 0 14px;scroll-margin-top:16px}
-  .q.falta{border-color:var(--ac)}
-  .q .n{color:var(--ac);font-weight:800;margin-right:4px}
-  .q p{margin:0 0 12px;font-size:15px;font-weight:600}
+  .q{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,.05);
+     padding:16px;margin:0 0 12px;scroll-margin-top:16px}
+  .q.falta{border:1.5px solid var(--red);box-shadow:0 0 0 3px rgba(225,29,46,.10)}
+  .q .n{color:var(--red);font-weight:700;margin-right:4px}
+  .q p, label.campo{display:block;margin:0 0 12px;font-size:16px;font-weight:600;line-height:1.35}
   .opc{font-weight:400;color:var(--dim)}
 
+  select,textarea{width:100%;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--txt);
+    font-size:17px;font-family:inherit;appearance:none;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+  select{height:54px;padding:0 44px 0 16px;
+    background-image:linear-gradient(45deg,transparent 50%,var(--dim) 50%),linear-gradient(135deg,var(--dim) 50%,transparent 50%);
+    background-position:calc(100% - 22px) 24px,calc(100% - 16px) 24px;background-size:6px 6px;background-repeat:no-repeat}
+  textarea{min-height:110px;padding:14px 16px;resize:vertical}
+  textarea::placeholder{color:#9CA3AF}
+  select:focus,textarea:focus{outline:2px solid var(--red);outline-offset:1px}
+
   /* escala 1-10: uma linha no PC, 5+5 no celular */
-  .escala{display:grid;grid-template-columns:repeat(10,1fr);gap:6px}
-  @media (max-width:520px){ .escala{grid-template-columns:repeat(5,1fr)} }
-  .escala button, .lista button{
-    border:1px solid var(--line);background:var(--bg);color:var(--txt);
-    border-radius:10px;font-size:17px;font-weight:700;cursor:pointer;font-family:inherit;
-  }
-  .escala button{height:48px}
-  .escala button.sel{background:var(--ac);border-color:var(--ac);color:#fff}
+  .escala{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px}
+  @media (max-width:520px){ .escala{grid-template-columns:repeat(5,minmax(0,1fr))} }
+  .escala button,.lista button{border:1px solid var(--line2);background:#fff;color:var(--txt);border-radius:12px;
+    font-family:inherit;cursor:pointer}
+  .escala button{height:48px;font-size:17px;font-weight:700}
+  .escala button.sel,.lista button.sel{background:var(--red);border-color:var(--red);color:#fff;box-shadow:0 2px 6px rgba(225,29,46,.25)}
   .pontas{display:flex;justify-content:space-between;font-size:12px;color:var(--dim);margin-top:8px}
 
-  .lista{display:grid;gap:8px}
-  .lista button{text-align:left;padding:13px 14px;font-weight:600;font-size:16px}
-  .lista button.sel{background:var(--ac);border-color:var(--ac);color:#fff}
-  .lista button.nsi{color:var(--dim);font-weight:400}
+  .lista{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .lista button{height:50px;font-size:16px;font-weight:600}
+  .lista button.nsi{grid-column:1/-1;color:var(--dim);font-weight:500}
   .lista button.nsi.sel{color:#fff}
 
-  .enviar{
-    width:100%;margin-top:6px;padding:16px;border:0;border-radius:12px;
-    background:var(--ac);color:#fff;font-size:17px;font-weight:700;cursor:pointer;font-family:inherit;
-  }
+  .enviar{width:100%;height:54px;margin-top:10px;border:0;border-radius:12px;background:var(--red);color:#fff;
+    font-size:17px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 2px 6px rgba(225,29,46,.25)}
   .enviar[disabled]{opacity:.55}
-  .aviso{margin-top:14px;padding:12px;border-radius:10px;font-size:14px;display:none}
-  .aviso.erro{background:#2a1216;border:1px solid #5b1d25;color:#ffc9d0;display:block}
-  .teste{background:#2a2206;border:1px solid #5b4a12;color:#ffd98a;border-radius:10px;
-    padding:8px 12px;font-size:13px;margin-bottom:14px}
-  .centro{text-align:center;padding:48px 8px}
-  .mark{font-size:56px;line-height:1;color:var(--ok)}
-  .centro h2{margin:12px 0 6px;font-size:22px}
+  .aviso{margin-top:14px;padding:12px 14px;border-radius:12px;font-size:15px;display:none}
+  .aviso.erro{background:var(--erro-bg);color:var(--erro-tx);display:block}
+  .teste{background:#FFF7ED;border:1px solid #FED7AA;color:#9A3412;border-radius:999px;
+    padding:6px 12px;font-size:13px;font-weight:600;text-align:center;margin-bottom:16px}
+  .centro{text-align:center;padding:24px 8px}
+  .mark{width:64px;height:64px;border-radius:999px;background:var(--ok-bg);color:var(--green);font-size:34px;
+    display:flex;align-items:center;justify-content:center;margin:8px auto 0}
+  .centro h2{margin:14px 0 6px;font-size:22px}
   .centro p{color:var(--dim);margin:0 0 20px}
-  .link{background:none;border:0;color:var(--dim);text-decoration:underline;font-size:13px;cursor:pointer}
+  .link{background:none;border:0;color:var(--dim);text-decoration:underline;font-size:13px;cursor:pointer;font-family:inherit}
+  .rodape{text-align:center;color:var(--dim);font-size:13px;margin-top:22px}
   .hide{display:none}
 </style>
 </head>
 <body>
 <div class="wrap">
+  <img class="logo" src="logo-grupo-raion.png" alt="Grupo Raion">
 
   <div id="carregando" class="centro"><p>Carregando...</p></div>
 
   <div id="tela-form" class="hide">
     <div id="faixa-teste" class="teste hide">MODO TESTE — esta resposta não entra no resultado.</div>
     <header>
-      <div class="kicker">Grupo Raion · Equipe de Vendas</div>
-      <h1>Pesquisa de satisfação — BDC</h1>
-      <div class="sub">Relacionamento do BDC com a equipe de vendas. <b>É anônima</b>: só pedimos a sua loja.
-        Leva 1 minuto.</div>
+      <div class="kicker">Equipe de Vendas</div>
+      <div class="titulo">Pesquisa de satisfação<br>Relacionamento com o BDC</div>
+      <div class="sub"><b>É anônima</b>: só pedimos a sua loja. Leva 1 minuto.</div>
     </header>
 
     <div class="q" id="q-loja">
@@ -96,8 +88,7 @@
       <select id="loja"><option value="">Selecione...</option></select>
     </div>
 
-    <p class="sub" style="margin:4px 2px 12px">Nas perguntas 1 a 3, use a escala de <b>1 a 10</b>:
-      1 = muito insatisfeito · 10 = totalmente satisfeito.</p>
+    <div class="secao">Notas de 1 a 10 · 1 = muito insatisfeito · 10 = totalmente satisfeito</div>
 
     <div id="notas"></div>
 
@@ -115,6 +106,7 @@
 
     <button class="enviar" id="enviar" type="button">Enviar resposta</button>
     <div class="aviso" id="erro"></div>
+    <div class="rodape">Suas respostas não identificam você.</div>
   </div>
 
   <div id="tela-ok" class="hide centro">
