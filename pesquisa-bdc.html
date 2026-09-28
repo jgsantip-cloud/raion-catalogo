@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Pesquisa BDC — Grupo Raion</title>
+<style>
+  :root{
+    --bg:#0f1115; --card:#171a21; --line:#272c37;
+    --txt:#e6e8ee; --dim:#98a0b3; --ac:#e11d2e; --ok:#22c55e;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--txt);
+    font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    padding:20px 16px calc(48px + env(safe-area-inset-bottom));
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:32rem;margin:0 auto}
+  header{margin:8px 0 18px}
+  .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);font-weight:700}
+  h1{font-size:24px;margin:4px 0 6px;line-height:1.2}
+  .sub{color:var(--dim);font-size:14px}
+  .sub b{color:var(--txt)}
+  label.campo{display:block;margin:0 0 8px;font-size:15px;font-weight:600}
+  select,textarea{
+    width:100%;padding:14px;border-radius:12px;border:1px solid var(--line);
+    background:var(--bg);color:var(--txt);font-size:17px;appearance:none;font-family:inherit;
+  }
+  textarea{min-height:110px;resize:vertical}
+  select:focus,textarea:focus{outline:2px solid var(--ac);outline-offset:1px}
+  select{background-image:linear-gradient(45deg,transparent 50%,var(--dim) 50%),
+    linear-gradient(135deg,var(--dim) 50%,transparent 50%);
+    background-position:calc(100% - 20px) 22px,calc(100% - 14px) 22px;
+    background-size:6px 6px;background-repeat:no-repeat;padding-right:40px}
+
+  .q{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:16px;margin:0 0 14px;scroll-margin-top:16px}
+  .q.falta{border-color:var(--ac)}
+  .q .n{color:var(--ac);font-weight:800;margin-right:4px}
+  .q p{margin:0 0 12px;font-size:15px;font-weight:600}
+  .opc{font-weight:400;color:var(--dim)}
+
+  /* escala 1-10: uma linha no PC, 5+5 no celular */
+  .escala{display:grid;grid-template-columns:repeat(10,1fr);gap:6px}
+  @media (max-width:520px){ .escala{grid-template-columns:repeat(5,1fr)} }
+  .escala button, .lista button{
+    border:1px solid var(--line);background:var(--bg);color:var(--txt);
+    border-radius:10px;font-size:17px;font-weight:700;cursor:pointer;font-family:inherit;
+  }
+  .escala button{height:48px}
+  .escala button.sel{background:var(--ac);border-color:var(--ac);color:#fff}
+  .pontas{display:flex;justify-content:space-between;font-size:12px;color:var(--dim);margin-top:8px}
+
+  .lista{display:grid;gap:8px}
+  .lista button{text-align:left;padding:13px 14px;font-weight:600;font-size:16px}
+  .lista button.sel{background:var(--ac);border-color:var(--ac);color:#fff}
+  .lista button.nsi{color:var(--dim);font-weight:400}
+  .lista button.nsi.sel{color:#fff}
+
+  .enviar{
+    width:100%;margin-top:6px;padding:16px;border:0;border-radius:12px;
+    background:var(--ac);color:#fff;font-size:17px;font-weight:700;cursor:pointer;font-family:inherit;
+  }
+  .enviar[disabled]{opacity:.55}
+  .aviso{margin-top:14px;padding:12px;border-radius:10px;font-size:14px;display:none}
+  .aviso.erro{background:#2a1216;border:1px solid #5b1d25;color:#ffc9d0;display:block}
+  .teste{background:#2a2206;border:1px solid #5b4a12;color:#ffd98a;border-radius:10px;
+    padding:8px 12px;font-size:13px;margin-bottom:14px}
+  .centro{text-align:center;padding:48px 8px}
+  .mark{font-size:56px;line-height:1;color:var(--ok)}
+  .centro h2{margin:12px 0 6px;font-size:22px}
+  .centro p{color:var(--dim);margin:0 0 20px}
+  .link{background:none;border:0;color:var(--dim);text-decoration:underline;font-size:13px;cursor:pointer}
+  .hide{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div id="carregando" class="centro"><p>Carregando...</p></div>
+
+  <div id="tela-form" class="hide">
+    <div id="faixa-teste" class="teste hide">MODO TESTE — esta resposta não entra no resultado.</div>
+    <header>
+      <div class="kicker">Grupo Raion · Equipe de Vendas</div>
+      <h1>Pesquisa de satisfação — BDC</h1>
+      <div class="sub">Relacionamento do BDC com a equipe de vendas. <b>É anônima</b>: só pedimos a sua loja.
+        Leva 1 minuto.</div>
+    </header>
+
+    <div class="q" id="q-loja">
+      <label class="campo" for="loja">Sua loja</label>
+      <select id="loja"><option value="">Selecione...</option></select>
+    </div>
+
+    <p class="sub" style="margin:4px 2px 12px">Nas perguntas 1 a 3, use a escala de <b>1 a 10</b>:
+      1 = muito insatisfeito · 10 = totalmente satisfeito.</p>
+
+    <div id="notas"></div>
+
+    <div class="q" id="q-operadora">
+      <p><span class="n">4.</span>Qual operadora do BDC melhor se relaciona com você e contribui para o
+        desenvolvimento do seu trabalho?</p>
+      <div class="lista" id="operadoras"></div>
+    </div>
+
+    <div class="q">
+      <label class="campo" for="sugestao"><span class="n">5.</span>Sugestões de melhoria
+        <span class="opc">(opcional)</span></label>
+      <textarea id="sugestao" maxlength="2000" placeholder="Escreva aqui..."></textarea>
+    </div>
+
+    <button class="enviar" id="enviar" type="button">Enviar resposta</button>
+    <div class="aviso" id="erro"></div>
+  </div>
+
+  <div id="tela-ok" class="hide centro">
+    <div class="mark">&#10004;</div>
+    <h2>Resposta enviada</h2>
+    <p>Obrigado por participar!</p>
+    <button class="link" id="outra" type="button">Responder de novo neste aparelho</button>
+  </div>
+
+  <div id="tela-fechada" class="hide centro">
+    <h2>Pesquisa encerrada</h2>
+    <p>Obrigado! Esta pesquisa não está mais recebendo respostas.</p>
+  </div>
+
+  <div id="tela-falha" class="hide centro">
+    <h2>Não carregou</h2>
+    <p>Confira a internet (na rede da loja pode não abrir — tente no 4G) e recarregue a página.</p>
+  </div>
+
+</div>
+
+<script>
+// Pesquisa de satisfacao Vendedores x BDC (carro). Anonima: so a loja.
+// Lojas e operadoras vem da Edge Function pesquisa-bdc (tabela pesquisa_bdc_config).
+// ?teste=1 grava com teste=true (o painel ignora) e nao marca o aparelho como respondido.
+var API = "https://winlvztcxczdgjqklxrv.supabase.co/functions/v1/pesquisa-bdc";
+var TESTE = /[?&]teste=1\b/.test(location.search);
+var CHAVE = "pesquisa_bdc_respondida";
+
+var PERGUNTAS = [
+  { id: "q_info", t: "Como você avalia a qualidade das informações registradas e repassadas pelo BDC sobre os clientes e leads?" },
+  { id: "q_comunicacao", t: "Como você avalia a comunicação e o relacionamento do BDC com a equipe de vendas?" },
+  { id: "q_suporte", t: "De modo geral, qual é o seu nível de satisfação com o suporte prestado pelo BDC durante o atendimento e o acompanhamento dos leads?" }
+];
+
+var $ = function (id) { return document.getElementById(id); };
+var R = {};
+
+function mostra(id) {
+  ["carregando", "tela-form", "tela-ok", "tela-fechada", "tela-falha"].forEach(function (t) {
+    $(t).classList.toggle("hide", t !== id);
+  });
+  window.scrollTo(0, 0);
+}
+function guarda(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+function le(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+
+function botaoUnico(caixa, btn, campo, valor, qId) {
+  [].forEach.call(caixa.children, function (c) { c.classList.remove("sel"); });
+  btn.classList.add("sel");
+  R[campo] = valor;
+  $(qId).classList.remove("falta");
+}
+
+function monta(cfg) {
+  cfg.lojas.forEach(function (l) {
+    var o = document.createElement("option");
+    o.value = l.id; o.textContent = l.nome;
+    $("loja").appendChild(o);
+  });
+  $("loja").onchange = function () { $("q-loja").classList.remove("falta"); };
+
+  PERGUNTAS.forEach(function (q, i) {
+    var div = document.createElement("div");
+    div.className = "q"; div.id = "q-" + q.id;
+    div.innerHTML = '<p><span class="n">' + (i + 1) + '.</span></p><div class="escala"></div>' +
+      '<div class="pontas"><span>1 · muito insatisfeito</span><span>totalmente satisfeito · 10</span></div>';
+    div.querySelector("p").appendChild(document.createTextNode(q.t));
+    var esc = div.querySelector(".escala");
+    for (var n = 1; n <= 10; n++) {
+      (function (n) {
+        var b = document.createElement("button");
+        b.type = "button"; b.textContent = n;
+        b.onclick = function () { botaoUnico(esc, b, q.id, n, div.id); };
+        esc.appendChild(b);
+      })(n);
+    }
+    $("notas").appendChild(div);
+  });
+
+  var lista = $("operadoras");
+  cfg.operadoras.forEach(function (nome) {
+    var b = document.createElement("button");
+    b.type = "button"; b.textContent = nome;
+    if (nome === "Não sei informar") b.className = "nsi";
+    b.onclick = function () { botaoUnico(lista, b, "operadora", nome, "q-operadora"); };
+    lista.appendChild(b);
+  });
+
+  $("faixa-teste").classList.toggle("hide", !TESTE);
+  mostra(!TESTE && le(CHAVE) ? "tela-ok" : "tela-form");
+}
+
+function envia() {
+  var falta = [];
+  if (!$("loja").value) falta.push("q-loja");
+  PERGUNTAS.forEach(function (q) { if (!R[q.id]) falta.push("q-" + q.id); });
+  if (!R.operadora) falta.push("q-operadora");
+  falta.forEach(function (id) { $(id).classList.add("falta"); });
+  if (falta.length) {
+    $("erro").textContent = "Faltou responder " + (falta.length === 1 ? "1 pergunta" : falta.length + " perguntas") +
+      " (marcadas em vermelho).";
+    $("erro").className = "aviso erro";
+    $(falta[0]).scrollIntoView({ behavior: "smooth" });
+    return;
+  }
+  $("erro").className = "aviso";
+  $("enviar").disabled = true;
+  $("enviar").textContent = "Enviando...";
+
+  var x = new XMLHttpRequest();
+  x.open("POST", API);
+  x.setRequestHeader("Content-Type", "application/json");
+  x.onload = function () {
+    var b = {};
+    try { b = JSON.parse(x.responseText); } catch (e) {}
+    if (x.status === 200 && b.ok) {
+      if (!TESTE) guarda(CHAVE, new Date().toISOString());
+      mostra("tela-ok");
+      return;
+    }
+    if (x.status === 409) { mostra("tela-fechada"); return; }
+    falhou(b.erro || x.status);
+  };
+  x.onerror = function () { falhou("sem conexão"); };
+  x.send(JSON.stringify({
+    loja_id: Number($("loja").value), q_info: R.q_info, q_comunicacao: R.q_comunicacao,
+    q_suporte: R.q_suporte, operadora: R.operadora, sugestao: $("sugestao").value, teste: TESTE
+  }));
+}
+function falhou(motivo) {
+  $("enviar").disabled = false;
+  $("enviar").textContent = "Enviar resposta";
+  $("erro").textContent = "Não enviou (" + motivo + "). Tente de novo — se estiver na rede da loja, use o 4G.";
+  $("erro").className = "aviso erro";
+}
+
+$("enviar").onclick = envia;
+$("outra").onclick = function () {   // celular compartilhado: libera outra resposta
+  try { localStorage.removeItem(CHAVE); } catch (e) {}
+  location.reload();
+};
+
+(function carrega() {
+  var x = new XMLHttpRequest();
+  x.open("GET", API);
+  x.onload = function () {
+    var b = {};
+    try { b = JSON.parse(x.responseText); } catch (e) {}
+    if (x.status !== 200 || !b.ok) { mostra("tela-falha"); return; }
+    if (!b.aberta) { mostra("tela-fechada"); return; }
+    monta(b);
+  };
+  x.onerror = function () { mostra("tela-falha"); };
+  x.send();
+})();
+</script>
+</body>
+</html>
