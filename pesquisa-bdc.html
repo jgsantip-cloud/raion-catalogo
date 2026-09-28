@@ -98,9 +98,8 @@
       <div class="lista" id="operadoras"></div>
     </div>
 
-    <div class="q">
-      <label class="campo" for="sugestao"><span class="n">5.</span>Sugestões de melhoria
-        <span class="opc">(opcional)</span></label>
+    <div class="q" id="q-sugestao">
+      <label class="campo" for="sugestao"><span class="n">5.</span>Sugestões de melhoria</label>
       <textarea id="sugestao" maxlength="2000" placeholder="Escreva aqui..."></textarea>
     </div>
 
@@ -168,6 +167,7 @@ function monta(cfg) {
     $("loja").appendChild(o);
   });
   $("loja").onchange = function () { $("q-loja").classList.remove("falta"); };
+  $("sugestao").oninput = function () { $("q-sugestao").classList.remove("falta"); };
 
   PERGUNTAS.forEach(function (q, i) {
     var div = document.createElement("div");
@@ -205,10 +205,11 @@ function envia() {
   if (!$("loja").value) falta.push("q-loja");
   PERGUNTAS.forEach(function (q) { if (!R[q.id]) falta.push("q-" + q.id); });
   if (!R.operadora) falta.push("q-operadora");
+  if (!$("sugestao").value.trim()) falta.push("q-sugestao");
   falta.forEach(function (id) { $(id).classList.add("falta"); });
   if (falta.length) {
-    $("erro").textContent = "Faltou responder " + (falta.length === 1 ? "1 pergunta" : falta.length + " perguntas") +
-      " (marcadas em vermelho).";
+    $("erro").textContent = falta.length === 1 ? "Faltou responder 1 pergunta (marcada em vermelho)."
+      : "Faltou responder " + falta.length + " perguntas (marcadas em vermelho).";
     $("erro").className = "aviso erro";
     $(falta[0]).scrollIntoView({ behavior: "smooth" });
     return;
