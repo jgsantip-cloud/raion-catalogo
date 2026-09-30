@@ -94,6 +94,21 @@
   .dia.faltou{background:var(--erro-bg);color:var(--erro-tx)}
   .dia.futuro{background:#fff;border:1px dashed var(--line2);color:var(--dim)}
   .pct{height:6px;border-radius:3px;background:#E5E5E0;overflow:hidden;margin-top:4px} .pct > div{height:6px;background:var(--red)}
+  .guia{display:none;position:fixed;inset:0;z-index:70;background:var(--bg);overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .guia.on{display:block}
+  .guia-topo{position:sticky;top:0;z-index:1;background:var(--bg);border-bottom:1px solid var(--line)}
+  .guia-topo > div{max-width:430px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .guia-x{width:44px;height:44px;border-radius:999px;border:1px solid var(--line2);background:#fff;font-size:22px;line-height:1;color:var(--txt);cursor:pointer;font-family:inherit;flex-shrink:0}
+  .guia-in{max-width:430px;margin:0 auto;padding:16px 16px 40px;display:flex;flex-direction:column;gap:10px}
+  .passo{display:flex;gap:12px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,.05);padding:14px}
+  .passo .n{width:30px;height:30px;border-radius:999px;background:var(--red);color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .passo h4{margin:3px 0 0;font-size:17px;font-weight:700;line-height:1.25}
+  .passo p{margin:6px 0 0;font-size:15px;color:#374151}
+  .passo ul{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15px;color:#374151}
+  .mini{display:inline-block;padding:1px 8px;border-radius:7px;font-size:13px;font-weight:700;white-space:nowrap;background:#fff;color:var(--txt);border:1px solid var(--line2)}
+  .mini.r{background:var(--red);color:#fff;border-color:var(--red)} .mini.g{background:var(--green);color:#fff;border-color:var(--green)}
+  .mini.z{background:#25D366;color:#fff;border-color:#25D366} .mini.s{color:var(--green);border-color:var(--green)}
+  .linkguia{background:none;border:0;color:var(--red);font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;text-decoration:underline;padding:12px;align-self:center}
   svg{flex-shrink:0}
 </style>
 </head>
@@ -118,6 +133,7 @@
     <div id="eventoNome" style="font-size:20px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;line-height:1.2">…</div>
   </div>
   <div style="flex-grow:1"></div>
+  <button class="linkguia" id="btnGuiaLogin">Primeira vez? Veja como usar</button>
   <div class="centro">Dúvida? Fale com o RH da sua loja.</div>
 </section>
 
@@ -144,6 +160,13 @@
     <svg id="setaAbordar" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
   </div>
   <div class="card oculto" id="roteiroBox" style="margin-top:8px"><div class="abordar-texto" id="roteiro"></div></div>
+  <div class="abordar" id="btnGuia" style="margin-top:8px;margin-bottom:8px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E11D2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17h.01"></path></svg>
+      <span style="font-size:16px;font-weight:600">Como usar</span>
+    </div>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+  </div>
 
   <div id="cards" style="display:flex;flex-direction:column;gap:12px;margin-top:4px"></div>
 
@@ -255,6 +278,80 @@
   </div>
 </div>
 <div class="lb" id="lightbox"><div class="cx"><img id="lbImg" src="" alt=""><button id="lbFechar">Fechar</button></div></div>
+<div class="guia" id="guia" role="dialog" aria-modal="true" aria-labelledby="guiaTitulo">
+  <div class="guia-topo"><div>
+    <div><div class="kicker">Prospecta Raion</div><div style="font-size:22px;font-weight:700;line-height:1.2" id="guiaTitulo">Como usar</div></div>
+    <button class="guia-x" id="guiaX" aria-label="Fechar">×</button>
+  </div></div>
+  <div class="guia-in">
+    <div class="sub">Leva 1 minuto. É só seguir os passos.</div>
+
+    <div class="passo"><div class="n">1</div><div>
+      <h4>Entre com CPF e nascimento</h4>
+      <p>Não tem senha. São os mesmos dados que o RH tem de você.</p>
+    </div></div>
+
+    <div class="passo"><div class="n">2</div><div>
+      <h4>Veja a sua lista</h4>
+      <p>Na aba <b>Lista</b> estão os clientes que são só seus. Ninguém mais vai falar com eles.</p>
+    </div></div>
+
+    <div class="passo"><div class="n">3</div><div>
+      <h4>Fale com o cliente</h4>
+      <p>Toque em <span class="mini r">Ligar</span> ou <span class="mini g">WhatsApp</span>. No WhatsApp a mensagem já vai escrita.</p>
+      <p>Não sabe o que dizer? Abra <b>Como abordar</b>, no alto da lista.</p>
+    </div></div>
+
+    <div class="passo"><div class="n">4</div><div>
+      <h4>Marque como foi</h4>
+      <p>Depois do contato aparecem quatro botões:</p>
+      <ul>
+        <li><span class="mini s">Tem interesse</span> Anote o modelo e o dia que ele pretende ir.</li>
+        <li><span class="mini">Não atendeu</span> Ele fica na lista pra você tentar de novo.</li>
+        <li><span class="mini">Sem interesse</span> Sai da sua lista.</li>
+        <li><span class="mini">Número errado</span> Sai da sua lista.</li>
+      </ul>
+      <p>Marcou errado? Dá pra corrigir depois, em <b>Feitos</b>.</p>
+    </div></div>
+
+    <div class="passo"><div class="n">5</div><div>
+      <h4>Mande o convite</h4>
+      <p>Marcou interesse? Toque em <span class="mini z">Enviar convite pelo WhatsApp</span>.</p>
+      <p>O cliente recebe um convite com QR Code pra mostrar quando chegar na loja.</p>
+    </div></div>
+
+    <div class="passo"><div class="n">6</div><div>
+      <h4>Acabou a lista? Peça mais</h4>
+      <p>Quando você fechar todos, aparece o botão <span class="mini">Pedir mais</span> com novos clientes da sua loja.</p>
+    </div></div>
+
+    <div class="secao" style="margin-top:10px">Também dá pra</div>
+
+    <div class="passo"><div class="n">+</div><div>
+      <h4>Convidar quem não está na lista</h4>
+      <p>Cliente da oficina, amigo, parente. Toque em <span class="mini">+ Convidar alguém fora da lista</span>, ponha nome e celular, e ele já ganha convite.</p>
+    </div></div>
+
+    <div class="passo"><div class="n">★</div><div>
+      <h4>Ver seu placar</h4>
+      <p>Na aba <b>Placar</b> ficam seus números, seus interessados e o ranking.</p>
+    </div></div>
+
+    <div class="passo"><div class="n">✓</div><div>
+      <h4>Fazer o check-in de quem chegou</h4>
+      <p>Cliente chegou com convite? Na aba <b>Check-in</b>, aponte a câmera do celular pro QR Code dele, ou digite o código de 6 letras. Depois toque em <b>Confirmar chegada</b>.</p>
+      <p>Quem convidou não faz o check-in do próprio cliente. Peça pra um colega.</p>
+    </div></div>
+
+    <div class="passo oculto" id="guiaDivulgar"><div class="n">↗</div><div>
+      <h4>Divulgar o evento</h4>
+      <p>Na aba <b>Divulgar</b> tem a arte do dia pra postar no status ou no story. Postou, manda o print ali mesmo.</p>
+    </div></div>
+
+    <button class="btn btn-red" id="guiaOk" style="margin-top:10px">Entendi</button>
+    <div class="centro" style="margin-top:4px">Dúvida? Fale com o RH da sua loja.</div>
+  </div>
+</div>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -529,6 +626,13 @@ function mostrarTela(id){
   $("abaCheckin").classList.toggle("ativa", id === "tela-checkin"); $("abaDivulgar").classList.toggle("ativa", id === "tela-divulga");
   window.scrollTo(0,0);
 }
+function abrirGuia(){
+  $("guiaDivulgar").classList.toggle("oculto", $("abaDivulgar").classList.contains("oculto") || $("rodape").classList.contains("oculto"));
+  $("guia").classList.add("on"); $("guia").scrollTop = 0; document.body.style.overflow = "hidden";
+}
+function fecharGuia(){ $("guia").classList.remove("on"); document.body.style.overflow = ""; }
+$("btnGuia").onclick = abrirGuia; $("btnGuiaLogin").onclick = abrirGuia; $("guiaX").onclick = fecharGuia; $("guiaOk").onclick = fecharGuia;
+document.addEventListener("keydown", (e) => { if (e.key === "Escape" && $("guia").classList.contains("on")) fecharGuia(); });
 function voltarLista(){ mostrarTela("tela-lista"); }
 $("abaPlacar").onclick = abrirPlacar; $("abaLista").onclick = voltarLista;
 $("abaCheckin").onclick = () => { mostrarTela("tela-checkin"); $("ckResultado").classList.add("oculto"); $("ckErro").classList.add("oculto"); };   // sem focus(): João não quer o teclado abrindo sozinho
