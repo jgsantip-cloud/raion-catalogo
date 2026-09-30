@@ -32,6 +32,8 @@
   .aviso{margin-top:14px;padding:12px 14px;border-radius:12px;font-size:15px;background:var(--erro-bg);color:var(--erro-tx);display:flex;align-items:center;gap:10px}
   .card{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,.05);padding:16px;display:flex;flex-direction:column;gap:14px}
   .card.feito{opacity:.55;flex-direction:row;align-items:center;gap:12px;padding:14px 16px}
+  .card.feito.ganho{opacity:1;border-color:#BBE5C8}
+  .convite button.enviado{background:#fff;color:var(--green);border:1.5px solid var(--green)}
   .secao{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);font-weight:600;margin-top:8px;padding:0 2px}
   .nome{font-size:18px;font-weight:700}
   .ctx{font-size:14px;color:var(--dim)}
@@ -523,15 +525,20 @@ function cardFeito(c){
   el.innerHTML = `${ok ? ICO.ok : ICO.x}<div style="display:flex;flex-direction:column;min-width:0;flex-grow:1"><div style="font-size:16px;font-weight:700">${esc(c.nome)}</div><div style="font-size:13px;color:var(--dim)">${esc(linha)}</div></div>
     <button class="corrigir" style="background:none;border:0;color:var(--dim);font-size:13px;text-decoration:underline;font-family:inherit;cursor:pointer;padding:6px">corrigir</button>`;
   if (ok){
+    el.classList.add("ganho");
     const box = document.createElement("div"); box.className = "convite"; box.style.width = "100%";
     const cv = c.convite;
-    const st = cv && cv.checkin_em ? "Compareceu ✓" : cv && cv.confirmado_em ? "Confirmou presença" : cv && cv.aberto_em ? "Abriu o convite" : "";
+    const kEnv = ((S.ev && S.ev.chave) || EVENTO || "") + ":" + c.id_cliente;
+    const jaEnviou = !!(ls.get("prospecta_conv_env") || {})[kEnv] || !!(cv && (cv.aberto_em || cv.confirmado_em || cv.checkin_em));
+    const st = cv && cv.checkin_em ? "Compareceu ✓" : cv && cv.confirmado_em ? "Confirmou presença" : cv && cv.aberto_em ? "Abriu o convite" : jaEnviou ? "Enviado" : "";
     box.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center"><span>Convite ${cv ? `<span class="cod">${esc(cv.codigo)}</span>` : ""}</span><span style="font-size:13px;color:var(--green);font-weight:700">${st}</span></div>
-      <button class="zapConvite">${ICO.zap} ${cv ? "Enviar convite pelo WhatsApp" : "Gerar convite"}</button>`;
+      ${jaEnviou ? "" : `<div style="font-size:14px;color:#14532D">Falta mandar o convite pro cliente.</div>`}
+      <button class="zapConvite${jaEnviou ? " enviado" : ""}">${jaEnviou ? ICO.zap.replace(/#fff/g, "#1E8E3E") : ICO.zap} ${!cv ? "Gerar convite" : jaEnviou ? "Enviar de novo" : "Enviar convite pelo WhatsApp"}</button>`;
     box.querySelector(".zapConvite").onclick = async () => {
       let v = cv;
       if (!v || !v.wa_url){ const r = await api({acao:"convite", id_cliente:c.id_cliente}).catch(()=>null); if (!r || !r.ok){ toast("Não consegui gerar o convite"); return; } v = c.convite = r.convite; }
       window.open(v.wa_url, "_blank", "noopener,noreferrer");
+      const m = ls.get("prospecta_conv_env") || {}; m[kEnv] = 1; ls.set("prospecta_conv_env", m); render();
     };
     el.style.flexWrap = "wrap"; el.appendChild(box);
   }
