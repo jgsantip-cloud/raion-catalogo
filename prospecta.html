@@ -275,7 +275,7 @@
   <div class="pilulas">
     <button id="abaLista" class="ativa">Lista</button>
     <button id="abaPlacar">Placar</button>
-    <button id="abaCheckin" class="oculto">Check-in</button><!-- sem aba (João 30/09): check-in só abre pelo QR do convite (?checkin=) -->
+    <button id="abaCheckin" class="oculto">Check-in</button><!-- João 30/09: aba só pra recepção (colaboradores.recepcao) e admin; o resto faz check-in pelo QR do convite (?checkin=) -->
     <button id="abaDivulgar" class="oculto">Divulgar</button>
   </div>
 </div>
@@ -343,6 +343,8 @@
       <h4>Fazer o check-in de quem chegou</h4>
       <p>Cliente chegou com convite? Aponte a câmera do seu celular pro QR Code dele. O Prospecta abre sozinho na tela certa. Aí é só tocar em <b>Confirmar chegada</b>.</p>
       <p>Quem convidou não faz o check-in do próprio cliente. Peça pra um colega.</p>
+      <p class="oculto" id="guiaRecep"><b>Você é da recepção:</b> tem também a aba <b>Check-in</b>. Se o QR não ler, digite ali o código de 6 letras que aparece no convite do cliente.</p>
+      <p id="guiaSemRecep">O QR não leu? Leve o cliente na recepção. Ela digita o código do convite.</p>
     </div></div>
 
     <div class="passo oculto" id="guiaDivulgar"><div class="n">↗</div><div>
@@ -447,6 +449,8 @@ async function abrirLista(){
   const j = await api({acao:"fatia"}).catch(()=>null);
   if (!j || !j.ok){ toast("Não consegui buscar sua lista" + (j ? ": " + j.erro : "")); return; }
   S.clientes = j.clientes; render(); renderRoteiro();
+  if (S.col && "recepcao" in j && !!S.col.recepcao !== !!j.recepcao){ S.col.recepcao = !!j.recepcao; ls.set("prospecta_sessao", {token:S.token, col:S.col, ev:S.ev, evento:EVENTO}); }
+  $("abaCheckin").classList.toggle("oculto", !(S.col && (S.col.recepcao || S.col.admin)));
   checarDivulga();
 }
 $("btnAbordar").onclick = () => { const b = $("roteiroBox"); b.classList.toggle("oculto"); $("setaAbordar").style.transform = b.classList.contains("oculto") ? "" : "rotate(180deg)"; };
@@ -635,6 +639,8 @@ function mostrarTela(id){
 }
 function abrirGuia(){
   $("guiaDivulgar").classList.toggle("oculto", $("abaDivulgar").classList.contains("oculto") || $("rodape").classList.contains("oculto"));
+  const recep = !$("abaCheckin").classList.contains("oculto") && !$("rodape").classList.contains("oculto");
+  $("guiaRecep").classList.toggle("oculto", !recep); $("guiaSemRecep").classList.toggle("oculto", recep);
   $("guia").classList.add("on"); $("guia").scrollTop = 0; document.body.style.overflow = "hidden";
 }
 function fecharGuia(){ $("guia").classList.remove("on"); document.body.style.overflow = ""; }
