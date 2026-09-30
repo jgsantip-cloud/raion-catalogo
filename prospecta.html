@@ -219,7 +219,7 @@
   <img src="logo-prospecta.png" alt="Prospecta Raion" style="width:190px;height:auto;display:block;margin:0 auto 18px">
   <div class="card checkin">
     <div style="font-size:18px;font-weight:700">Check-in do convite</div>
-    <div class="ctx">Leia o QR do cliente com a câmera do celular, ou digite o código de 6 letras.</div>
+    <div class="ctx">Confira o cliente e confirme a chegada. Se o QR não leu direito, digite o código de 6 letras do convite.</div>
     <input id="ckCodigo" maxlength="6" autocomplete="off" placeholder="ABC123">
     <button class="btn btn-red" id="btnCkBuscar">Buscar</button>
     <div id="ckResultado" class="oculto" style="display:flex;flex-direction:column;gap:10px">
@@ -275,7 +275,7 @@
   <div class="pilulas">
     <button id="abaLista" class="ativa">Lista</button>
     <button id="abaPlacar">Placar</button>
-    <button id="abaCheckin">Check-in</button>
+    <button id="abaCheckin" class="oculto">Check-in</button><!-- sem aba (João 30/09): check-in só abre pelo QR do convite (?checkin=) -->
     <button id="abaDivulgar" class="oculto">Divulgar</button>
   </div>
 </div>
@@ -341,7 +341,7 @@
 
     <div class="passo"><div class="n">✓</div><div>
       <h4>Fazer o check-in de quem chegou</h4>
-      <p>Cliente chegou com convite? Na aba <b>Check-in</b>, aponte a câmera do celular pro QR Code dele, ou digite o código de 6 letras. Depois toque em <b>Confirmar chegada</b>.</p>
+      <p>Cliente chegou com convite? Aponte a câmera do seu celular pro QR Code dele. O Prospecta abre sozinho na tela certa. Aí é só tocar em <b>Confirmar chegada</b>.</p>
       <p>Quem convidou não faz o check-in do próprio cliente. Peça pra um colega.</p>
     </div></div>
 
