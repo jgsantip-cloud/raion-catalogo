@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F3F1EC">
+<title>Pesquisa de satisfação · Grupo Raion</title>
+<!--
+  Pesquisa de satisfacao de MOTO por link pessoal: satisfacao.html?t=<token>
+  O token aponta pro evento de pesquisa do Syonet; o cliente nao digita nome, telefone nem e-mail.
+  API: Edge Function pesquisa-moto (Supabase app-raion). Fonte e regras: python_leads/integracao/pesquisa_moto/.
+  Desenho aprovado no Claude Design em 06/10/2026 (uma pergunta por tela, o toque ja avanca).
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F1EC;--card:#FFFFFF;--ink:#17181B;--txt2:#3E424A;--mut:#5B5F68;--line:#D5D0C7;--line2:#E2DED6;--accent:#B3261E}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-text-size-adjust:100%}
+button,textarea{font:inherit;color:inherit}
+.app{max-width:480px;margin:0 auto;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;padding:22px 24px calc(24px + env(safe-area-inset-bottom))}
+.topo{display:flex;align-items:center;justify-content:space-between;min-height:44px}
+.topo.centro{justify-content:center}
+.logo{display:block;object-fit:contain}
+.logo.g{width:64px;height:64px}.logo.g.largo{width:96px;object-position:left center}
+.logo.p{width:40px;height:40px}.logo.p.largo{width:64px;object-position:left center}
+.selo{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.contador{font-size:14px;font-weight:600;color:var(--mut)}
+.barra{margin-top:14px;height:4px;border-radius:4px;background:var(--line2)}
+.barra>div{height:4px;border-radius:4px;background:var(--accent);transition:width .25s ease}
+h1{margin:0;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:600;letter-spacing:-.005em}
+h1.grande{font-size:44px;line-height:1.02}
+h1.pergunta{margin-top:36px;font-size:32px;line-height:1.08}
+.ola{margin:40px 0 14px;font-size:18px;font-weight:600;color:var(--accent)}
+.dica{margin:10px 0 0;font-size:15px;color:var(--mut)}
+.cartao{margin-top:28px;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:6px 18px}
+.linha{display:flex;justify-content:space-between;gap:12px;padding:12px 0;font-size:15px}
+.linha+.linha{border-top:1px solid #EEEAE3}
+.linha span:first-child{color:var(--mut)}
+.linha span:last-child{font-weight:600;text-align:right}
+.texto{margin:22px 0 0;font-size:16px;line-height:1.5;color:var(--txt2)}
+.cresce{flex-grow:1;min-height:24px}
+.primario{width:100%;height:58px;border:none;border-radius:14px;background:var(--accent);color:#fff;font-size:18px;font-weight:700;cursor:pointer}
+.primario:disabled{opacity:.6;cursor:default}
+.voltar{align-self:flex-start;display:flex;align-items:center;gap:6px;height:44px;margin-top:10px;padding:0 4px;border:none;background:transparent;font-size:16px;font-weight:600;color:var(--mut);cursor:pointer}
+.rodape{margin-top:20px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;line-height:1.4;color:var(--mut)}
+.rodape img{width:92px;height:24px;object-fit:contain;flex-shrink:0}
+.raion{display:flex;justify-content:center;margin-top:16px}.raion img{width:108px;height:28px;object-fit:contain}
+.notas{margin-top:26px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.notas button{height:58px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);font-size:22px;font-weight:600;cursor:pointer}
+.escala{margin-top:12px;display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--mut)}
+.simnao{margin-top:30px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.simnao button{height:76px;border:1.5px solid var(--line);border-radius:14px;background:var(--card);font-size:20px;font-weight:700;cursor:pointer}
+.lista{margin-top:22px;display:flex;flex-direction:column;gap:8px}
+.lista button{display:flex;align-items:center;gap:14px;min-height:54px;padding:10px 16px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);font-size:16px;font-weight:500;text-align:left;cursor:pointer}
+.lista .bola{width:20px;height:20px;border-radius:50%;border:1.5px solid #A8A399;flex-shrink:0}
+.notas button.sel,.simnao button.sel{background:var(--accent);border-color:var(--accent);color:#fff}
+.lista button.sel{border-color:var(--accent);font-weight:600}
+.lista button.sel .bola{border:6px solid var(--accent)}
+label.rot{display:block;margin-top:24px;font-size:14px;font-weight:600;color:var(--txt2)}
+textarea{margin-top:8px;width:100%;height:168px;padding:14px 16px;border:1.5px solid var(--line);border-radius:14px;background:var(--card);font-size:16px;line-height:1.5;resize:none}
+textarea:focus,button:focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 35%,transparent);outline-offset:2px}
+.acoes{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+.acoes .voltar{margin-top:0}
+.link{height:44px;padding:0 4px;border:none;background:transparent;font-size:16px;font-weight:600;color:var(--txt2);text-decoration:underline;cursor:pointer}
+.circulo{align-self:center;width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.circulo.cheio{background:var(--accent)}.circulo.vazio{border:2px solid #CFC9BE}
+.centro{text-align:center}
+.final p{margin:14px 0 0;font-size:17px;line-height:1.5;color:var(--txt2)}
+.final p+p{margin-top:6px}
+.contatos{margin-top:12px;display:flex;flex-direction:column;gap:10px}
+.contatos button{display:flex;align-items:center;gap:12px;height:58px;padding:0 18px;border:1.5px solid var(--line);border-radius:14px;background:var(--card);font-size:17px;font-weight:600;text-align:left;cursor:pointer}
+.aviso{margin-top:28px;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:16px 18px;font-size:16px;line-height:1.5}
+.erro{margin-top:14px;color:#9B1C1C;font-size:15px}
+.carregando{margin:auto;color:var(--mut);font-size:16px}
+@media (max-width:360px){h1.grande{font-size:38px}h1.pergunta{font-size:28px}.notas{gap:8px}}
+</style>
+</head>
+<body>
+<main class="app" id="app" aria-live="polite"><p class="carregando">Carregando sua pesquisa…</p></main>
+<script>
+(function () {
+  var API = "https://winlvztcxczdgjqklxrv.supabase.co/functions/v1/pesquisa-moto";
+  var RAION = "logo-grupo-raion.png";
+  var MARCAS = {
+    royal: { nome: "Royal Enfield", logo: "marcas/royal.png", cor: "#B3261E", largo: false },
+    sym:   { nome: "SYM",           logo: "marcas/sym.png",   cor: "#C4002B", largo: true },
+    cf:    { nome: "CF Moto",       logo: "marcas/cfmoto.png", cor: "#1D2125", largo: false }
+  };
+  // perguntas de recomendacao usam outra legenda na escala de nota
+  var RECOMENDA = { 125: 1, 45: 1, 169: 1, 178: 1 };
+  var VOLTAR_SVG = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>';
+  var CHECK_SVG = '<svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>';
+
+  var app = document.getElementById("app");
+  var token = new URLSearchParams(location.search).get("t") || "";
+  var D = null, marca = MARCAS.royal, atual = "inicio", respostas = {}, ocupado = false, resultado = null, contato = null, erroEnvio = "";
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function logo(tam) {
+    return '<img class="logo ' + tam + (marca.largo ? " largo" : "") + '" src="' + marca.logo + '" alt="' + esc(marca.nome) + '">';
+  }
+  function visiveis() {
+    return D.perguntas.filter(function (p) { return !p.condicao || respostas[p.condicao.pergunta] === p.condicao.alternativa; });
+  }
+  function aplicarMarca(m) {
+    marca = MARCAS[m] || MARCAS.royal;
+    document.documentElement.style.setProperty("--accent", marca.cor);
+  }
+  function mostrar(html) { app.innerHTML = html; window.scrollTo(0, 0); }
+
+  // ------------------------------------------------------------ telas
+  function telaInicio() {
+    var c = D.contexto || {}, oficina = D.tipo === "oficina";
+    var ola = "Oi" + (c.nome ? ", " + esc(c.nome) : "") + "!" + (oficina ? "" : " Parabéns pela sua nova " + esc(marca.nome) + ".");
+    var titulo = oficina ? (c.moto ? "Como foi o serviço na sua " + esc(c.moto) + "?" : "Como foi o atendimento na nossa oficina?")
+                         : (c.moto ? "Como foi a compra da sua " + esc(c.moto) + "?" : "Como foi a sua compra com a gente?");
+    var linhas = [[oficina ? "Oficina" : "Loja", c.loja], [oficina ? "Serviço concluído em" : "Compra em", c.data], ["Moto", c.moto]]
+      .filter(function (l) { return l[1]; })
+      .map(function (l) { return '<div class="linha"><span>' + l[0] + "</span><span>" + esc(l[1]) + "</span></div>"; }).join("");
+    mostrar(
+      '<header class="topo">' + logo("g") + '<span class="selo">Pesquisa de satisfação</span></header>' +
+      '<p class="ola">' + ola + "</p>" +
+      '<h1 class="grande">' + titulo + "</h1>" +
+      (linhas ? '<section class="cartao">' + linhas + "</section>" : "") +
+      '<p class="texto">São perguntas rápidas, leva menos de 2 minutos. Você não precisa se identificar: já sabemos de qual ' +
+      (oficina ? "atendimento" : "compra") + " estamos falando.</p>" +
+      '<div class="cresce"></div>' +
+      '<button type="button" class="primario" data-acao="comecar">Começar a pesquisa</button>' +
+      '<footer class="rodape"><span>' + (c.atendente ? "Quem acompanha sua pesquisa: " + esc(c.atendente) + ", da Central de Qualidade" : "Central de Qualidade do Grupo Raion") +
+      '</span><img src="' + RAION + '" alt="Grupo Raion"></footer>'
+    );
+  }
+
+  function cabecalho(idx, total) {
+    return '<header class="topo">' + logo("p") + '<span class="contador">' + (idx + 1) + " de " + total + "</span></header>" +
+      '<div class="barra"><div style="width:' + Math.round(((idx + 1) / total) * 100) + '%"></div></div>';
+  }
+
+  function telaPergunta(p, idx, total) {
+    var marcado = respostas[p.id], corpo = "", dica = p.dica;
+    if (p.tipo === "nota") {
+      corpo = '<div class="notas">' + p.opcoes.map(function (o) {
+        return '<button type="button" data-op="' + o.id + '"' + (marcado === o.id ? ' class="sel" aria-pressed="true"' : ' aria-pressed="false"') + ">" + esc(o.rotulo) + "</button>";
+      }).join("") + "</div>" +
+      '<div class="escala"><span>' + (RECOMENDA[p.id] ? "1 · de jeito nenhum" : "1 · muito ruim") + "</span><span>" + (RECOMENDA[p.id] ? "10 · com certeza" : "10 · excelente") + "</span></div>";
+      dica = dica || "Toque numa nota.";
+    } else if (p.tipo === "simnao") {
+      corpo = '<div class="simnao">' + p.opcoes.map(function (o) {
+        return '<button type="button" data-op="' + o.id + '"' + (marcado === o.id ? ' class="sel" aria-pressed="true"' : ' aria-pressed="false"') + ">" + esc(o.rotulo) + "</button>";
+      }).join("") + "</div>";
+    } else if (p.tipo === "lista") {
+      corpo = '<div class="lista">' + p.opcoes.map(function (o) {
+        return '<button type="button" data-op="' + o.id + '"' + (marcado === o.id ? ' class="sel" aria-pressed="true"' : ' aria-pressed="false"') + '><span class="bola"></span>' + esc(o.rotulo) + "</button>";
+      }).join("") + "</div>";
+      dica = dica || "Escolha uma opção.";
+    } else {
+      corpo = '<label class="rot" for="obs">Sua mensagem</label><textarea id="obs" maxlength="2000" placeholder="Escreva aqui…">' + esc(marcado || "") + "</textarea>";
+    }
+    var fim = p.tipo === "texto"
+      ? '<button type="button" class="primario" data-acao="enviar">Enviar respostas</button>' + erroHtml() +
+        '<div class="acoes"><button type="button" class="voltar" data-acao="voltar">' + VOLTAR_SVG + 'Voltar</button>' +
+        '<button type="button" class="link" data-acao="enviar-vazio">Enviar sem mensagem</button></div>'
+      : '<button type="button" class="voltar" data-acao="voltar">' + VOLTAR_SVG + "Voltar</button>";
+    mostrar(cabecalho(idx, total) + '<h1 class="pergunta">' + esc(p.texto) + "</h1>" +
+      (dica ? '<p class="dica">' + esc(dica) + "</p>" : "") + corpo + '<div class="cresce"></div>' + fim);
+  }
+
+  function telaPronto(total) {
+    var c = D.contexto || {};
+    mostrar(cabecalho(total - 1, total) +
+      '<h1 class="pergunta">Tudo certo' + (c.nome ? ", " + esc(c.nome) : "") + "!</h1>" +
+      '<p class="dica">Toque no botão para enviar suas respostas.</p><div class="cresce"></div>' +
+      '<button type="button" class="primario" data-acao="enviar">Enviar respostas</button>' + erroHtml() +
+      '<button type="button" class="voltar" data-acao="voltar">' + VOLTAR_SVG + "Voltar</button>");
+  }
+
+  function erroHtml() { return erroEnvio ? '<p class="erro" role="alert">' + esc(erroEnvio) + "</p>" : ""; }
+
+  function telaObrigado() {
+    var c = D.contexto || {};
+    mostrar('<header class="topo centro">' + logo("g") + '</header><div class="cresce"></div>' +
+      '<div class="circulo cheio">' + CHECK_SVG + "</div>" +
+      '<section class="final centro"><h1 class="grande" style="margin-top:28px">Obrigado' + (c.nome ? ", " + esc(c.nome) : "") + "!</h1>" +
+      "<p>Suas respostas já chegaram para a nossa equipe.</p>" +
+      (c.moto ? "<p>Boas estradas com a sua " + esc(c.moto) + ".</p>" : "<p>Boas estradas!</p>") + "</section>" +
+      '<div class="cresce"></div><p class="dica centro">Pode fechar esta página.</p>' +
+      '<div class="raion"><img src="' + RAION + '" alt="Grupo Raion"></div>');
+  }
+
+  function telaNotaBaixa() {
+    var c = D.contexto || {}, quem = c.atendente || "nossa equipe";
+    var pergunta = contato
+      ? '<div class="aviso">' + (contato === "ligar" ? "Combinado! " + esc(quem) + " vai te ligar." : "Combinado! " + esc(quem) + " vai te mandar uma mensagem aqui no WhatsApp.") + "</div>"
+      : '<p class="texto" style="font-weight:600;color:var(--ink);margin-top:28px">Como prefere que a gente fale com você?</p>' +
+        '<div class="contatos"><button type="button" data-contato="ligar">Pode me ligar</button>' +
+        '<button type="button" data-contato="mensagem">Prefiro por mensagem</button></div>';
+    mostrar('<header class="topo centro">' + logo("g") + "</header>" +
+      '<h1 class="grande" style="margin-top:56px;font-size:40px;line-height:1.04">Obrigado pela sinceridade' + (c.nome ? ", " + esc(c.nome) : "") + ".</h1>" +
+      '<p class="texto" style="font-size:17px;margin-top:16px">Sentimos muito que o atendimento não tenha sido o que você esperava. ' +
+      (c.atendente ? esc(c.atendente) + ", da nossa Central de Qualidade," : "A nossa Central de Qualidade") + " vai falar com você pra entender o que aconteceu.</p>" +
+      pergunta + '<div class="cresce"></div><div class="raion"><img src="' + RAION + '" alt="Grupo Raion"></div>');
+  }
+
+  function telaSimples(titulo, texto, icone) {
+    mostrar('<header class="topo centro">' + logo("g") + '</header><div class="cresce"></div>' +
+      (icone ? '<div class="circulo vazio"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5B5F68" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 4.5V3h6v1.5"></path><path d="M8.5 12.5l2.5 2.5 4.5-5"></path></svg></div>' : "") +
+      '<section class="final centro"><h1 class="grande" style="margin-top:28px;font-size:38px;line-height:1.04">' + titulo + "</h1><p>" + texto + "</p></section>" +
+      '<div class="aviso">Se quiser falar com a gente sobre esse atendimento, é só responder a mensagem no WhatsApp.</div>' +
+      '<div class="cresce"></div><div class="raion"><img src="' + RAION + '" alt="Grupo Raion"></div>');
+  }
+
+  function quando(iso) {
+    if (!iso) return "";
+    var d = new Date(iso);
+    var p = function (n) { return (n < 10 ? "0" : "") + n; };
+    return " em " + p(d.getDate()) + "/" + p(d.getMonth() + 1) + " às " + p(d.getHours()) + ":" + p(d.getMinutes());
+  }
+
+  // ------------------------------------------------------------ fluxo
+  function render() {
+    if (atual === "inicio") return telaInicio();
+    if (atual === "fim") return telaObrigado();
+    if (atual === "baixa") return telaNotaBaixa();
+    var lista = visiveis();
+    if (atual === "pronto") return telaPronto(lista.length);
+    var idx = lista.findIndex(function (p) { return p.id === atual; });
+    if (idx < 0) { atual = "inicio"; return telaInicio(); }
+    telaPergunta(lista[idx], idx, lista.length);
+    var t = document.getElementById("obs");
+    if (t) t.addEventListener("input", function () { respostas[atual] = t.value; });
+  }
+
+  function avancar() {
+    var lista = visiveis(), idx = lista.findIndex(function (p) { return p.id === atual; });
+    atual = idx + 1 < lista.length ? lista[idx + 1].id : "pronto";
+    erroEnvio = "";
+    render();
+  }
+
+  function voltar() {
+    var lista = visiveis();
+    if (atual === "pronto") { atual = lista[lista.length - 1].id; }
+    else {
+      var idx = lista.findIndex(function (p) { return p.id === atual; });
+      atual = idx <= 0 ? "inicio" : lista[idx - 1].id;
+    }
+    erroEnvio = "";
+    render();
+  }
+
+  function postar(corpo) {
+    return fetch(API, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(corpo) })
+      .then(function (r) { return r.json().then(function (j) { return { status: r.status, j: j }; }); });
+  }
+
+  function enviar(vazio) {
+    if (ocupado) return;
+    var lista = visiveis(), ultima = lista[lista.length - 1];
+    if (ultima && ultima.tipo === "texto" && vazio) respostas[ultima.id] = "";
+    var enviadas = {};
+    lista.forEach(function (p) { if (respostas[p.id] !== undefined) enviadas[p.id] = respostas[p.id]; });
+    ocupado = true;
+    var botoes = app.querySelectorAll("button");
+    for (var i = 0; i < botoes.length; i++) botoes[i].disabled = true;
+    postar({ t: token, acao: "responder", respostas: enviadas }).then(function (r) {
+      ocupado = false;
+      if (r.j && r.j.ok) { resultado = r.j; atual = r.j.insatisfeito ? "baixa" : "fim"; return render(); }
+      if (r.status === 409) return telaSimples("Essa pesquisa já foi respondida", "Obrigado por responder!", true);
+      erroEnvio = "Não conseguimos enviar. Confira se respondeu tudo e tente de novo.";
+      render();
+    }).catch(function () {
+      ocupado = false;
+      erroEnvio = "Sem conexão agora. Confira a internet e toque em enviar de novo.";
+      render();
+    });
+  }
+
+  app.addEventListener("click", function (ev) {
+    var b = ev.target.closest("button");
+    if (!b || b.disabled) return;
+    var acao = b.getAttribute("data-acao");
+    if (acao === "comecar") { atual = visiveis()[0].id; return render(); }
+    if (acao === "voltar") return voltar();
+    if (acao === "enviar") return enviar(false);
+    if (acao === "enviar-vazio") return enviar(true);
+    var c = b.getAttribute("data-contato");
+    if (c) {
+      if (ocupado) return;
+      ocupado = true;
+      postar({ t: token, acao: "contato", contato: c }).then(function () { ocupado = false; contato = c; render(); })
+        .catch(function () { ocupado = false; contato = c; render(); });
+      return;
+    }
+    var op = b.getAttribute("data-op");
+    if (op && !ocupado) {
+      respostas[atual] = Number(op);
+      ocupado = true;
+      render();
+      setTimeout(function () { ocupado = false; avancar(); }, 220);
+    }
+  });
+
+  function iniciar() {
+    if (!/^[A-Za-z0-9_-]{4,64}$/.test(token)) {
+      return mostrar('<section class="final centro" style="margin:auto"><h1 class="grande" style="font-size:36px">Link incompleto</h1><p>Abra a pesquisa pelo botão da mensagem que você recebeu no WhatsApp.</p></section>');
+    }
+    fetch(API + "?t=" + encodeURIComponent(token)).then(function (r) { return r.json(); }).then(function (j) {
+      if (!j || !j.ok) {
+        return mostrar('<section class="final centro" style="margin:auto"><h1 class="grande" style="font-size:36px">Não encontramos essa pesquisa</h1><p>Confira se abriu o link certo, pela mensagem que você recebeu no WhatsApp.</p></section>');
+      }
+      D = j;
+      aplicarMarca(j.marca);
+      if (j.estado === "respondido") return telaSimples("Essa pesquisa já foi respondida", "Recebemos suas respostas" + quando(j.respondido_em) + ". Obrigado por responder!", true);
+      if (j.estado === "encerrado") return telaSimples("Essa pesquisa foi encerrada", "Obrigado pelo seu tempo!", true);
+      atual = "inicio";
+      render();
+    }).catch(function () {
+      mostrar('<section class="final centro" style="margin:auto"><h1 class="grande" style="font-size:36px">Sem conexão</h1><p>Não conseguimos carregar a pesquisa. Confira a internet e abra o link de novo.</p></section>');
+    });
+  }
+
+  iniciar();
+})();
+</script>
+</body>
+</html>
