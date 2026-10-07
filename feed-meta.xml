@@ -2,94 +2,6 @@
 <listings>
   <title>Seminovos Grupo Raion</title>
   <listing>
-    <vehicle_id>2833025</vehicle_id>
-    <title>Nissan SENTRA 2.0 16V GASOLINA ADVANCE XTRONIC</title>
-    <description>Somos um grupo de 13 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos possuem Certificado de Km Real, Laudo Cautelar e possibilidade de até 3 anos de Garantia (Consulte Condições). 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20SENTRA%202.0%2016V%20GASOLINA%20ADVANCE%20XTRONIC%202023%20%28c%C3%B3d.%202833025%29.%20%5BCATALOGO-META-KEIKO-NOVA-IGUACU%5D</url>
-    <make>Nissan</make>
-    <model>SENTRA</model>
-    <year>2023</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>36300</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>109890.00 BRL</price>
-    <exterior_color>Branco</exterior_color>
-    <fuel_type>GASOLINE</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SEDAN</body_style>
-    <trim>2.0 16V GASOLINA ADVANCE XTRONIC</trim>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Nissan Keiko - Nova Iguaçu</dealer_name>
-    <image>
-      <url>https://raion.app.br/faixas/2833025.jpg?v=bd358c9e</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/G3pxlWP8bA6timyVYtTL3N0Bg8UXRoJP.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/yE4wdKfA23H32ZTDwuZOLhH7s7kM6LaL.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/Ir1qgA1oH0t8KBjbf6JjdgqdwQkwkkXw.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/dZU98tkC49VtxneOahtjDYF4iv6LMIkq.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/GoWTTkT2R2cusjwy3asP8cChiLAsSgr0.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/hzXpg9iMblNqGUclNS3eGozegCsJpbxg.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/JgNNDOzN75fR3CJCpy52ZC6K4gze6Su4.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/sVlCV0xz1CaPRy01PilJRmsoEoP0DVG8.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/JRh7MTv7ExgnKqfmd3NrvIfq2UghMMXa.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/4VTDjJc8BBrOAycnkOibm78dW51tTNAE.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/qS0YBmrgNFNNJ0U1DHfBPZn9PoxVlf9q.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/O6aZqNTgwb5gQBBpCJasF4mO2nEuFmvj.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/6KEuNiTUufjCO7N03X3RwIRI2V3BsaKS.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/b8R3wOND0kCE3zcujwXsdLQUBUVrlq3s.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/lTB82ZkKdBcj6gRQyJsLBD90WRnKKsCK.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">GOVERNADOR ROBERTO SILVEIRA, 217</component>
-      <component name="city">Nova Iguaçu</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">26210-210</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>GOVERNADOR ROBERTO SILVEIRA, 217</street_address>
-    <city>Nova Iguaçu</city>
-    <region>RJ</region>
-    <postal_code>26210-210</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
     <vehicle_id>2842069</vehicle_id>
     <title>Nissan KICKS 1.6 16V FLEXSTART XPLAY XTRONIC</title>
     <description>Somos um grupo de 13 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -1550,7 +1462,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <year>2025</year>
     <mileage>
       <unit>KM</unit>
-      <value>44435</value>
+      <value>44017</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
     <price>144890.00 BRL</price>
@@ -1562,7 +1474,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
-      <url>https://raion.app.br/faixas/2794924.jpg?v=66eb65ac</url>
+      <url>https://raion.app.br/faixas/2794924.jpg?v=51f5011a</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/p48r2UebcqijWh607zKtYPL3hHUV6i5C.jpg</url>
@@ -3994,7 +3906,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <state_of_vehicle>USED</state_of_vehicle>
     <price>187890.00 BRL</price>
     <exterior_color>Cinza</exterior_color>
-    <fuel_type>GASOLINE</fuel_type>
+    <fuel_type>HYBRID</fuel_type>
     <transmission>AUTOMATIC</transmission>
     <body_style>SUV</body_style>
     <trim>1.5 MIVEC TURBO GASOLINA HPE-S S-AWC CVT</trim>
@@ -10080,6 +9992,94 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <city>Rio de Janeiro</city>
     <region>RJ</region>
     <postal_code>25665-135</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2833025</vehicle_id>
+    <title>Nissan SENTRA 2.0 16V GASOLINA ADVANCE XTRONIC</title>
+    <description>Somos um grupo de 13 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Certificado de Km Real, Laudo Cautelar e possibilidade de até 3 anos de Garantia (Consulte Condições). 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20SENTRA%202.0%2016V%20GASOLINA%20ADVANCE%20XTRONIC%202023%20%28c%C3%B3d.%202833025%29.%20%5BCATALOGO-META-KEIKO-NOVA-IGUACU%5D</url>
+    <make>Nissan</make>
+    <model>SENTRA</model>
+    <year>2023</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>36300</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>109890.00 BRL</price>
+    <exterior_color>Branco</exterior_color>
+    <fuel_type>GASOLINE</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SEDAN</body_style>
+    <trim>2.0 16V GASOLINA ADVANCE XTRONIC</trim>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Nissan Keiko - Nova Iguaçu</dealer_name>
+    <image>
+      <url>https://raion.app.br/faixas/2833025.jpg?v=bd358c9e</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/G3pxlWP8bA6timyVYtTL3N0Bg8UXRoJP.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/yE4wdKfA23H32ZTDwuZOLhH7s7kM6LaL.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/Ir1qgA1oH0t8KBjbf6JjdgqdwQkwkkXw.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/dZU98tkC49VtxneOahtjDYF4iv6LMIkq.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/GoWTTkT2R2cusjwy3asP8cChiLAsSgr0.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/hzXpg9iMblNqGUclNS3eGozegCsJpbxg.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/JgNNDOzN75fR3CJCpy52ZC6K4gze6Su4.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/sVlCV0xz1CaPRy01PilJRmsoEoP0DVG8.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/JRh7MTv7ExgnKqfmd3NrvIfq2UghMMXa.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/4VTDjJc8BBrOAycnkOibm78dW51tTNAE.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/qS0YBmrgNFNNJ0U1DHfBPZn9PoxVlf9q.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/O6aZqNTgwb5gQBBpCJasF4mO2nEuFmvj.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/6KEuNiTUufjCO7N03X3RwIRI2V3BsaKS.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/b8R3wOND0kCE3zcujwXsdLQUBUVrlq3s.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/lTB82ZkKdBcj6gRQyJsLBD90WRnKKsCK.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">GOVERNADOR ROBERTO SILVEIRA, 217</component>
+      <component name="city">Nova Iguaçu</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">26210-210</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>GOVERNADOR ROBERTO SILVEIRA, 217</street_address>
+    <city>Nova Iguaçu</city>
+    <region>RJ</region>
+    <postal_code>26210-210</postal_code>
     <country>Brazil</country>
   </listing>
   <listing>

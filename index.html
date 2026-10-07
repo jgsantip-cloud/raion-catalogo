@@ -28,6 +28,8 @@
   .card .versao{ font-size:11px; color:var(--cinza); line-height:1.2; }
   .card .specs{ font-size:12.5px; color:var(--cinza); }
   .card .preco{ font-weight:800; font-size:18px; color:var(--azul); }
+  .card .precoantes{ font-size:12.5px; color:var(--cinza); text-decoration:line-through; margin-bottom:-4px; }
+  .tag-queda{ position:absolute; bottom:8px; left:8px; display:inline-flex; align-items:center; gap:5px; background:linear-gradient(160deg,#f97316,#c2410c); color:#fff; font-size:11px; font-weight:800; letter-spacing:.3px; padding:5px 11px; border-radius:20px; box-shadow:0 2px 7px rgba(0,0,0,.3); }
   .tag-fipe{ position:absolute; top:8px; left:8px; display:inline-flex; align-items:center; gap:5px; background:linear-gradient(160deg,#22c55e,#15803d); color:#fff; font-size:11px; font-weight:800; letter-spacing:.3px; padding:5px 11px; border-radius:20px; box-shadow:0 2px 7px rgba(0,0,0,.3); }
   .card .rodape{ display:flex; align-items:center; gap:10px; margin-top:4px; }
   .card .qr{ width:66px; height:66px; border:1px solid var(--linha); border-radius:8px; }
@@ -56,6 +58,7 @@
     <button class="chip on" data-modo="todos" onclick="setModo('todos')">Ver todos</button>
     <button class="chip" data-modo="aleatorios" onclick="setModo('aleatorios')">&#127922; 5 aleat&oacute;rios</button>
     <button class="chip" data-modo="recentes" onclick="setModo('recentes')">&#127381; Rec&eacute;m-chegados</button>
+    <button class="chip" data-modo="baixou" id="chipBaixou" style="display:none" onclick="setModo('baixou')">&#128184; Baixou de pre&ccedil;o</button>
   </div>
   <div class="cont" id="cont"></div>
   <div class="grade" id="grade"></div>
@@ -89,11 +92,13 @@ function card(c){
       <img class="foto" src="${c.capa}" loading="lazy" alt="${c.titulo}">
       ${c.blindado ? '<span class="tag-blind">&#128737; BLINDADO</span>' : ''}
       ${c.fipe_abaixo ? `<span class="tag-fipe">&#8595; ${c.fipe_abaixo}</span>` : ''}
+      ${c.queda_fmt ? `<span class="tag-queda">&#8595; ${c.queda_fmt}</span>` : ''}
     </div>
     <div class="body">
       <div class="modelo">${c.titulo}</div>
       ${c.versao ? `<div class="versao">${c.versao}</div>` : ''}
       <div class="specs">${c.ano} &middot; ${c.km_fmt}</div>
+      ${c.preco_antes_fmt ? `<div class="precoantes">${c.preco_antes_fmt}</div>` : ''}
       <div class="preco">${c.preco_fmt}</div>
       <div class="rodape">
         <div class="qrbox" onclick="abrirQR('${c.qr}','${c.titulo}')">
@@ -106,7 +111,7 @@ function card(c){
   </div>`;
 }
 
-let MODO = 'todos';       // todos | aleatorios | recentes
+let MODO = 'todos';       // todos | aleatorios | recentes | baixou
 let EMBARALHADO = [];     // ordem aleatória fixa da sessão (modo "todos")
 
 function embaralhar(arr){  // Fisher-Yates, devolve cópia
@@ -118,6 +123,7 @@ function embaralhar(arr){  // Fisher-Yates, devolve cópia
 function baseLista(){
   if(MODO === 'aleatorios') return embaralhar(CARROS).slice(0,5);
   if(MODO === 'recentes')   return CARROS.slice().sort((a,b)=> (b.entrada||'').localeCompare(a.entrada||''));
+  if(MODO === 'baixou')     return CARROS.filter(c=>c.queda_fmt).sort((a,b)=> (b.baixou_em||'').localeCompare(a.baixou_em||''));
   return EMBARALHADO;       // todos
 }
 
@@ -140,6 +146,7 @@ function aplicar(){
   const lista = baseLista();
   const rot = MODO === 'aleatorios' ? `${lista.length} aleat&oacute;rios &middot; toque de novo pra trocar`
             : MODO === 'recentes'   ? `${lista.length} carros &middot; rec&eacute;m-chegados primeiro`
+            : MODO === 'baixou'     ? `${lista.length} carros com pre&ccedil;o menor &middot; mais recentes primeiro`
             : `${lista.length} carros`;
   render(lista, rot);
 }
@@ -155,6 +162,7 @@ function setModo(m){
 document.getElementById('busca').addEventListener('input', aplicar);
 fetch('estoque.json?v='+Date.now()).then(r=>r.json()).then(d=>{
   CARROS = d.carros;
+  if(CARROS.some(c=>c.queda_fmt)) document.getElementById('chipBaixou').style.display = '';
   EMBARALHADO = embaralhar(CARROS);   // padrão ao abrir = embaralhado
   aplicar();
 });
