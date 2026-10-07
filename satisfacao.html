@@ -106,9 +106,24 @@ textarea:focus,button:focus-visible{outline:3px solid color-mix(in srgb,var(--ac
   function logo(tam) {
     return '<img class="logo ' + tam + (marca.largo ? " largo" : "") + '" src="' + marca.logo + '" alt="' + esc(marca.nome) + '">';
   }
-  function visiveis() {
-    return D.perguntas.filter(function (p) { return !p.condicao || respostas[p.condicao.pergunta] === p.condicao.alternativa; });
+  // mesma regua da Edge Function: qualquer nota ate nota_baixa_ate (alternativa 11..20 = nota 1..10) ou "Insatisfeito? Sim"
+  function insatisfeitoAgora() {
+    var ins = D.insatisfacao || {};
+    return (ins.nota || []).some(function (id) { var a = respostas[id]; return a !== undefined && a - 10 <= D.nota_baixa_ate; }) ||
+      (ins.sim || []).some(function (id) { return respostas[id] === 8; });
   }
+  function visiveis() {
+    var insat = insatisfeitoAgora();
+    return D.perguntas.filter(function (p) {
+      var c = p.condicao;
+      if (!c) return true;
+      if (c.insatisfeito !== undefined && c.insatisfeito !== null) return c.insatisfeito === insat;
+      return respostas[c.pergunta] === c.alternativa;
+    });
+  }
+  // caixa de texto final: insatisfeito ve o pedido de relato (Larissa 07/10)
+  function textoDe(p) { return (p.texto_insatisfeito && insatisfeitoAgora()) ? p.texto_insatisfeito : p.texto; }
+  function dicaDe(p) { return (p.dica_insatisfeito && insatisfeitoAgora()) ? p.dica_insatisfeito : p.dica; }
   function aplicarMarca(m) {
     marca = MARCAS[m] || MARCAS.royal;
     document.documentElement.style.setProperty("--accent", marca.cor);
@@ -144,7 +159,7 @@ textarea:focus,button:focus-visible{outline:3px solid color-mix(in srgb,var(--ac
   }
 
   function telaPergunta(p, idx, total) {
-    var marcado = respostas[p.id], corpo = "", dica = p.dica;
+    var marcado = respostas[p.id], corpo = "", dica = dicaDe(p);
     if (p.tipo === "nota") {
       corpo = '<div class="notas">' + p.opcoes.map(function (o) {
         return '<button type="button" data-op="' + o.id + '"' + (marcado === o.id ? ' class="sel" aria-pressed="true"' : ' aria-pressed="false"') + ">" + esc(o.rotulo) + "</button>";
@@ -168,7 +183,7 @@ textarea:focus,button:focus-visible{outline:3px solid color-mix(in srgb,var(--ac
         '<div class="acoes"><button type="button" class="voltar" data-acao="voltar">' + VOLTAR_SVG + 'Voltar</button>' +
         '<button type="button" class="link" data-acao="enviar-vazio">Enviar sem mensagem</button></div>'
       : '<button type="button" class="voltar" data-acao="voltar">' + VOLTAR_SVG + "Voltar</button>";
-    mostrar(cabecalho(idx, total) + '<h1 class="pergunta">' + esc(p.texto) + "</h1>" +
+    mostrar(cabecalho(idx, total) + '<h1 class="pergunta">' + esc(textoDe(p)) + "</h1>" +
       (dica ? '<p class="dica">' + esc(dica) + "</p>" : "") + corpo + '<div class="cresce"></div>' + fim);
   }
 
