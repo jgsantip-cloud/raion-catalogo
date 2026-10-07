@@ -210,6 +210,8 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
   function dicaDe(p) { return (p.dica_insatisfeito && insatisfeitoAgora()) ? p.dica_insatisfeito : p.dica; }
   function aplicarMarca(m) {
     marca = MARCAS[m] || MARCAS.royal;
+    // os desenhos sao de Royal; SYM/CF ficam sem moto ate ganharem desenho proprio
+    palco.style.display = marca === MARCAS.royal ? "" : "none";
     document.documentElement.style.setProperty("--accent", marca.cor);
   }
   function mostrar(html) { app.innerHTML = html; window.scrollTo(0, 0); }
