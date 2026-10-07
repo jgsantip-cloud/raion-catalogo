@@ -87,11 +87,11 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
   animation:corre2 .7s linear infinite;opacity:.0;transition:opacity .3s}
 .palco.acelera .riscos{opacity:1}
 .palco .piloto{position:absolute;left:50%;bottom:calc(21px + env(safe-area-inset-bottom));width:220px;margin-left:-110px;transition:transform .45s cubic-bezier(.3,1.4,.5,1)}
-.palco .moto{position:relative;width:100%;aspect-ratio:1230/913}
+.palco .moto{position:relative;width:100%}
 .palco .moto img{position:absolute;display:block}
 .palco .moto .corpo{inset:0;width:100%;height:100%;animation:motor .09s steps(2) infinite}
-.palco .roda{width:29.1%;aspect-ratio:1;top:59.9%;will-change:transform}
-.palco .roda.tras{left:1.2%}.palco .roda.frente{left:70.2%;width:29.3%}
+.palco .roda{aspect-ratio:1;will-change:transform}
+
 
 
 
@@ -112,7 +112,7 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
 </style>
 </head>
 <body>
-<div class="palco" id="palco" aria-hidden="true"><div class="riscos"></div><div class="chao"></div><div class="piloto"><div class="quica"><div class="moto"><img class="roda tras" src="roda_classica.webp" alt=""><img class="roda frente" src="roda_classica.webp" alt=""><img class="corpo" src="moto_classica_corpo.webp" alt=""></div></div></div></div>
+<div class="palco" id="palco" aria-hidden="true"><div class="riscos"></div><div class="chao"></div><div class="piloto"><div class="quica"><div class="moto" id="moto"></div></div></div></div>
 <main class="app" id="app" aria-live="polite"><p class="carregando">Carregando sua pesquisa…</p></main>
 <script>
 (function () {
@@ -130,6 +130,26 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
 
   // moto a nanquim: sempre funcionando (tremidinha + quique + chao correndo); a cada resposta ACELERA e solta fumaca
   var palco = document.getElementById("palco");
+  // desenhos a nanquim por familia (camadas: corpo sem rodas + roda que gira). rodas = [left%, top%, largura%]
+  var ARTES = {
+    classica: { corpo: "moto_classica_corpo.webp", roda: "roda_classica.webp", ar: "1230/913", rodas: [[1.22, 59.91, 28.94], [70.24, 59.91, 29.27]] },
+    aventureira: { corpo: "moto_aventureira_corpo.webp", roda: "roda_aventureira.webp", ar: "1283/925", rodas: [[2.26, 58.7, 29.31], [68.04, 55.68, 31.49]] },
+    bicilindrica: { corpo: "moto_bicilindrica_corpo.webp", roda: "roda_classica.webp", ar: "1295/926", rodas: [[1.24, 56.37, 30.58], [68.65, 56.16, 30.89]] }
+  };
+  function familiaDe(moto) {
+    var m = String(moto || "").toLowerCase();
+    if (/himalayan|guerrilla|scram/.test(m) && ARTES.aventureira) return "aventureira";
+    if (/650|interceptor|continental|\bgt\b|super ?meteor|shotgun|bear/.test(m) && ARTES.bicilindrica) return "bicilindrica";
+    return "classica";
+  }
+  function montarMoto(fam) {
+    var a = ARTES[fam] || ARTES.classica, el = document.getElementById("moto");
+    el.style.aspectRatio = a.ar;
+    el.innerHTML = a.rodas.map(function (r) {
+      return '<img class="roda" src="' + a.roda + '" alt="" style="left:' + r[0] + '%;top:' + r[1] + '%;width:' + r[2] + '%">';
+    }).join("") + '<img class="corpo" src="' + a.corpo + '" alt="">';
+    rodas = palco.querySelectorAll(".roda");
+  }
   function fumaca(n) {
     var p = palco.querySelector(".piloto");
     for (var i = 0; i < n; i++) (function (i) {
@@ -146,7 +166,7 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
   }
   setInterval(function () { if (!document.hidden) fumaca(1); }, 1600);
   // rodas: giro continuo por JS com velocidade suave (CSS daria tranco ao trocar a duracao)
-  var rodas = palco.querySelectorAll(".roda"), ang = 0, vel = 400, velAlvo = 400, tAnt = 0;
+  var rodas = [], ang = 0, vel = 400, velAlvo = 400, tAnt = 0;
   var parado = matchMedia("(prefers-reduced-motion: reduce)").matches;
   function girar(t) {
     var dt = tAnt ? Math.min(.05, (t - tAnt) / 1000) : 0; tAnt = t;
@@ -400,7 +420,7 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
     ] };
 
   function iniciar() {
-    if (token === "demo") { D = DEMO; aplicarMarca("royal"); atual = "inicio"; return render(); }
+    if (token === "demo") { D = DEMO; aplicarMarca("royal"); montarMoto(new URLSearchParams(location.search).get("fam") || familiaDe(D.contexto.moto)); atual = "inicio"; return render(); }
     if (!/^[A-Za-z0-9_-]{4,64}$/.test(token)) {
       return mostrar('<section class="final centro" style="margin:auto"><h1 class="grande" style="font-size:36px">Link incompleto</h1><p>Abra a pesquisa pelo botão da mensagem que você recebeu no WhatsApp.</p></section>');
     }
@@ -410,6 +430,7 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
       }
       D = j;
       aplicarMarca(j.marca);
+      montarMoto(familiaDe((j.contexto || {}).moto));
       if (j.estado === "respondido") return telaSimples("Essa pesquisa já foi respondida", "Recebemos suas respostas" + quando(j.respondido_em) + ". Obrigado por responder!", true);
       if (j.estado === "encerrado") return telaSimples("Essa pesquisa foi encerrada", "Obrigado pelo seu tempo!", true);
       atual = "inicio";
