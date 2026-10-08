@@ -51,6 +51,11 @@ h1.pergunta{margin-top:24px;font-size:32px;line-height:1.08}
 .notas{margin-top:26px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
 .notas button{height:58px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);font-size:22px;font-weight:600;cursor:pointer}
 .escala{margin-top:12px;display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--mut)}
+.escala span{display:flex;align-items:center;gap:6px}
+.pt{display:inline-block;width:10px;height:10px;border-radius:50%}.pt.ruim{background:#C9C4BA}.pt.bom{background:#2E7D4F}
+.notas button.bom{border-color:#2E7D4F;background:#EEF7F0;color:#1F5C39}
+.notas button.bom.sel{background:#2E7D4F;border-color:#2E7D4F;color:#fff}
+.notas+.escala+.cresce+.primario,.primario[data-acao=proxima]{margin-bottom:2px}
 .simnao{margin-top:30px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .simnao button{height:76px;border:1.5px solid var(--line);border-radius:14px;background:var(--card);font-size:20px;font-weight:700;cursor:pointer}
 .lista{margin-top:16px;display:flex;flex-direction:column;gap:6px}
@@ -112,6 +117,12 @@ textarea:focus,button:focus-visible{outline:3px solid color-mix(in srgb,var(--ac
 .convite h2{margin:6px 0 0;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:600;font-size:28px;line-height:1.05}
 .conv-txt{margin:10px 0 0;font-size:16px;line-height:1.5;color:var(--txt2)}
 .zap{margin-top:16px;display:flex;align-items:center;justify-content:center;gap:10px;height:56px;border-radius:14px;background:#128C4B;color:#fff;font-size:17px;font-weight:700;text-decoration:none}
+.estilos{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.estilos button{min-height:40px;padding:6px 14px;border:1.5px solid var(--line);border-radius:999px;background:var(--card);font-size:14px;font-weight:600;cursor:pointer}
+.estilos button.sel{border-color:var(--ink);background:var(--ink);color:#fff}
+.balao-msg{position:relative;margin-top:14px;padding:12px 14px;border-radius:14px 14px 14px 4px;background:#DCF8C6;color:#111;font-size:15px;line-height:1.45;white-space:pre-line}
+.balao-msg .lnk{color:#0B6EB8;text-decoration:underline}
+button.zap{width:100%;border:none;cursor:pointer;font:inherit;font-size:17px;font-weight:700}
 .conv-cont{margin:10px 0 0;text-align:center;font-size:13px;color:var(--mut)}
 .regras{margin-top:12px;border-top:1px solid #EEEAE3;padding-top:10px;font-size:14px;color:var(--txt2)}
 .regras summary{cursor:pointer;font-weight:600;color:var(--ink);min-height:32px;display:flex;align-items:center}
@@ -313,9 +324,11 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     var marcado = respostas[p.id], corpo = "", dica = dicaDe(p);
     if (p.tipo === "nota") {
       corpo = '<div class="notas">' + p.opcoes.map(function (o) {
-        return '<button type="button" data-op="' + o.id + '"' + (marcado === o.id ? ' class="sel" aria-pressed="true"' : ' aria-pressed="false"') + ">" + esc(o.rotulo) + "</button>";
+        var cls = (o.id - 10 >= 9 ? "bom" : "") + (marcado === o.id ? " sel" : "");
+        return '<button type="button" data-op="' + o.id + '" class="' + cls + '" aria-pressed="' + (marcado === o.id) + '">' + esc(o.rotulo) + "</button>";
       }).join("") + "</div>" +
-      '<div class="escala"><span>' + (RECOMENDA[p.id] ? "1 · de jeito nenhum" : "1 · muito ruim") + "</span><span>" + (RECOMENDA[p.id] ? "10 · com certeza" : "10 · excelente") + "</span></div>";
+      '<div class="escala"><span><i class="pt ruim"></i>' + (RECOMENDA[p.id] ? "1 a 8 · não recomendaria" : "1 a 8 · não gostei") + "</span>" +
+      '<span><i class="pt bom"></i>' + (RECOMENDA[p.id] ? "9 e 10 · recomendaria" : "9 e 10 · gostei") + "</span></div>";
       dica = dica || "Toque numa nota.";
     } else if (p.tipo === "simnao") {
       corpo = '<div class="simnao">' + p.opcoes.map(function (o) {
@@ -333,8 +346,15 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       ? '<button type="button" class="primario" data-acao="enviar">Enviar respostas</button>' + erroHtml() +
         '<div class="acoes"><button type="button" class="voltar" data-acao="voltar">' + VOLTAR_SVG + 'Voltar</button>' +
         '<button type="button" class="link" data-acao="enviar-vazio">Enviar sem mensagem</button></div>'
-      : '<button type="button" class="voltar" data-acao="voltar">' + VOLTAR_SVG + "Voltar</button>";
-    mostrar(cabecalho(idx, total) + '<h1 class="pergunta">' + esc(textoDe(p)) + "</h1>" +
+      : '<button type="button" class="primario" data-acao="proxima"' + (marcado === undefined ? " disabled" : "") + ">Próxima</button>" +
+        '<button type="button" class="voltar" data-acao="voltar">' + VOLTAR_SVG + "Voltar</button>";
+    var titulo = textoDe(p);
+    if (p.tipo === "texto") {
+      var notas = visiveis().filter(function (q) { return q.tipo === "nota" && respostas[q.id] !== undefined; });
+      if (insatisfeitoAgora() || notas.some(function (q) { return respostas[q.id] - 10 <= 8; })) { titulo = "Puxa, que pena que o atendimento não te encantou."; dica = "Quer deixar um recado pra equipe? Conta o que aconteceu, a gente quer resolver."; }
+      else if (notas.length && notas.every(function (q) { return respostas[q.id] - 10 >= 9; })) { titulo = "Uhul! 🎉 Que bom que você curtiu."; dica = "Quer deixar um recado ou um elogio pra equipe?"; }
+    }
+    mostrar(cabecalho(idx, total) + '<h1 class="pergunta">' + esc(titulo) + "</h1>" +
       (dica ? '<p class="dica">' + esc(dica) + "</p>" : "") + corpo + '<div class="cresce"></div>' + fim);
   }
 
@@ -352,8 +372,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   // ---------- convite de indicacao (RASCUNHO: so na copia de teste ate Felipe/Joao aprovarem)
   // regra em python_leads/docs/indicacao_pesquisa_moto.md: so quem deu TUDO 9-10, so Royal, ate 3 amigos por rodada
   var INDICACAO = /teste/.test(location.pathname) || /[?&]indica=1/.test(location.search);
-  var BDC_MOTOS_WA = "5521900000000";          // PROVISORIO: numero do WhatsApp do BDC Motos (caixa 135)
-  var convites = 0;
+  var convites = 0, estilo = 0;
   function tudo9e10() {
     if (marca !== MARCAS.royal || insatisfeitoAgora()) return false;
     var notas = visiveis().filter(function (p) { return p.tipo === "nota"; });
@@ -362,34 +381,60 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   function codigoIndicacao() {
     if (D.indicacao && D.indicacao.codigo) return D.indicacao.codigo;   // vira da Edge Function
     var h = 0; for (var i = 0; i < token.length; i++) h = (h * 31 + token.charCodeAt(i)) >>> 0;
-    return "IND-" + h.toString(36).toUpperCase().slice(-4);
+    return h.toString(36).toUpperCase().slice(-5);
   }
-  function linkConvite() {
-    var c = D.contexto || {}, nome = c.nome || "um cliente";
-    var paraBdc = "Oi! Vim pela indicação de " + nome + " (" + codigoIndicacao() + "). Quero conhecer as motos da Royal Enfield.";
-    var msg = "Oi! " + (D.tipo === "oficina" ? "Levei" : "Comprei") + " minha " + (c.moto || "Royal Enfield") + " na Royal Enfield" +
-      (c.loja ? " " + c.loja.replace(/^Royal Enfield\s*/i, "") : "") + " e o atendimento foi excelente. " +
-      "Se você tá pensando numa Royal, chama eles por aqui, já com a minha indicação: https://wa.me/" + BDC_MOTOS_WA + "?text=" + encodeURIComponent(paraBdc);
-    return "https://wa.me/?text=" + encodeURIComponent(msg);
+  // link pro AMIGO: pagina i.html (quem indicou + botao pro BDC Motos com o codigo). Teste: nome/loja na URL;
+  // no programa de verdade vira raion.app.br/i/<codigo> e a Edge Function resolve o resto.
+  function lojaCurta() { return ((D.contexto || {}).loja || "").replace(/^Royal Enfield\s*/i, "").trim(); }
+  function linkAmigo() {
+    if (D.indicacao && D.indicacao.codigo) return "https://indica.raion.app.br/" + D.indicacao.codigo;   // codigo gravado
+    var c = D.contexto || {}, q = "c=" + encodeURIComponent(codigoIndicacao());                           // ?t=demo local
+    if (c.nome) q += "&n=" + encodeURIComponent(String(c.nome).split(/\s+/)[0]);
+    if (lojaCurta()) q += "&l=" + encodeURIComponent(lojaCurta());
+    return "https://raion.app.br/i.html?" + q;
+  }
+  // mensagens curtas, com cara de mensagem entre amigos; o cliente edita no proprio app antes de mandar
+  function estilos() {
+    var c = D.contexto || {}, loja = lojaCurta(), moto = (c.moto || "moto").replace(/\s+\d{3}$/, "");
+    return [
+      { rot: "Amigo que quer moto", txt: "Lembrei de você 😄 se tá pensando em moto, chama o pessoal da Royal" + (loja ? " da " + loja : "") + ", me atenderam muito bem:" },
+      { rot: "Amigo que já tem moto", txt: "Lembrei de você e te indiquei pra comprar com o pessoal da Royal" + (loja ? " da " + loja : "") + " 😄 quando pensar na próxima moto, chama eles:" },
+      { rot: "Só o link", txt: "" }
+    ];
+  }
+  function textoConvite() { var e = estilos()[estilo]; return (e.txt ? e.txt + "\n" : "") + linkAmigo(); }
+  function compartilhar() {
+    var t = textoConvite();
+    if (navigator.share) {                                  // menu do celular: ele escolhe a pessoa e o app
+      // com url separada o iPhone mostra a previa do link (desenho da moto) no topo do menu, em vez do "A" de texto
+      var e = estilos()[estilo];
+      navigator.share(e.txt ? { title: "Convite Royal Enfield", text: e.txt, url: linkAmigo() } : { title: "Convite Royal Enfield", url: linkAmigo() })
+        .then(function () { convites++; contarConvite(); render(); }).catch(function () {});
+    } else {
+      window.open("https://wa.me/?text=" + encodeURIComponent(t), "_blank", "noopener");
+      convites++; contarConvite(); setTimeout(render, 600);
+    }
   }
   var WA_SVG = '<svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>';
   function blocoConvite() {
-    var feitos = convites >= 3;
+    var feitos = convites >= 3, es = estilos(), ex = es[estilo];
     return '<section class="convite">' +
-      '<p class="conv-selo">Indique um amigo</p>' +
-      '<h2>Conhece alguém que sonha com uma Royal?</h2>' +
-      '<p class="conv-txt">Mande um convite pelo seu WhatsApp para até 3 amigos. Se um deles comprar uma moto com a gente, ' +
-      '<b>a sua próxima revisão sai por nossa conta</b>.</p>' +
+      '<p class="conv-selo">Convide um amigo</p>' +
+      '<h2>Tem alguém que vive falando de moto?</h2>' +
+      '<p class="conv-txt">Escolha como quer falar, e o seu celular abre pra você escolher a pessoa. Dá pra mudar o texto antes de mandar.</p>' +
+      '<div class="estilos" role="radiogroup">' + es.map(function (e, i) {
+        return '<button type="button" role="radio" aria-checked="' + (i === estilo) + '" class="' + (i === estilo ? "sel" : "") + '" data-estilo="' + i + '">' + esc(e.rot) + "</button>";
+      }).join("") + "</div>" +
+      '<div class="balao-msg">' + (ex.txt ? esc(ex.txt) + "<br>" : "") + '<span class="lnk">' + esc(linkAmigo().replace(/^https:\/\//, "")) + "</span></div>" +
       (feitos ? '<div class="aviso" style="margin-top:16px">Prontinho, 3 convites enviados. Obrigado pela confiança!</div>'
-              : '<a class="zap" href="' + esc(linkConvite()) + '" target="_blank" rel="noopener" data-convite="1">' + WA_SVG +
-                (convites ? "Convidar mais um amigo" : "Convidar pelo WhatsApp") + "</a>") +
-      '<p class="conv-cont">' + convites + " de 3 convites enviados · seu código " + esc(codigoIndicacao()) + "</p>" +
+              : '<button type="button" class="zap" data-acao="compartilhar">' + WA_SVG + (convites ? "Convidar mais alguém" : "Escolher amigo e enviar") + "</button>") +
+      '<p class="conv-cont">' + convites + " de 3 convites enviados</p>" +
       '<details class="regras"><summary>Como funciona</summary><ul>' +
       "<li>Vale para amigo que nunca comprou moto numa Royal Enfield do Grupo Raion.</li>" +
-      "<li>O amigo chama a gente pelo link do convite. Se ele comprar uma moto, você ganha a próxima revisão do plano (peças e mão de obra).</li>" +
+      "<li>O amigo chama a loja pelo seu link. Se ele comprar uma moto, você ganha a próxima revisão do plano (peças e mão de obra).</li>" +
       "<li>Uma revisão por rodada de convites, mesmo que mais de um amigo compre.</li>" +
       "<li>A revisão é agendada pelo WhatsApp e vale para a sua próxima revisão prevista.</li>" +
-      "<li>A gente te avisa por aqui quando o benefício for liberado.</li></ul></details></section>";
+      "<li>A gente te avisa por aqui quando o presente for liberado.</li></ul></details></section>";
   }
 
   // ---------- o presente (storytelling): clipes do Remotion (remotion/src/presente) + texto/quadrinhos aqui
@@ -397,12 +442,34 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   //   aberto: abre (tampa voa, confete) -> cartao "sua proxima revisao por nossa conta" -> 3 quadrinhos -> botao
   //   convite: botao do WhatsApp (fluxo do convite; processo ainda em conversa com o Joao)
   var presenteEtapa = "caixa";
+  function rolarDevagar(alvo, dur) {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    alvo = Math.max(0, Math.min(max, alvo));
+    var ini = window.scrollY, t0 = Date.now();
+    if (Math.abs(alvo - ini) < 4) return;
+    var id = setInterval(function () {      // setInterval (nao rAF): segue rodando mesmo com a aba em segundo plano
+      var k = Math.min(1, (Date.now() - t0) / dur), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+      window.scrollTo(0, ini + (alvo - ini) * e);
+      if (k >= 1) clearInterval(id);
+    }, 16);
+  }
+  function contarConvite() { if (D.indicacao && D.indicacao.codigo) postar({ t: token, acao: "compartilhou" }).catch(function () {}); }
+  // pede o codigo de indicacao (Edge Function confere se foi tudo 9-10 e grava); ?t=demo segue com codigo local
+  function pedirIndicacao() {
+    if (D.indicacao) return;
+    if (token === "demo") { D.indicacao = { codigo: "HV4QN" }; return; }   // demo local: codigo do link de exemplo
+    postar({ t: token, acao: "indicacao" }).then(function (r) {
+      if (r.j && r.j.ok) { D.indicacao = r.j; if (presenteEtapa === "convite") render(); }   // chegou depois: troca o link na tela
+    }).catch(function () {});
+  }
   function telaPresente(c) {
-    palco.style.display = "none";                         // a moto agora mora dentro do clipe
+    pedirIndicacao();
+    palco.style.display = "none"; document.body.classList.add("sem-palco");   // a moto agora mora dentro do clipe
     var nome = c.nome ? esc(c.nome) : "";
     var topo = '<header class="topo centro">' + logo("p") + "</header>";
     if (presenteEtapa === "convite") {
-      return mostrar(topo + '<section class="final centro"><h1 class="grande" style="margin-top:18px;font-size:36px">Bora chamar a galera' + (nome ? ", " + nome : "") + "!</h1></section>" +
+      pedirIndicacao();
+      return mostrar(topo + '<section class="final centro"><h1 class="grande" style="margin-top:18px;font-size:36px">Quem você lembrou' + (nome ? ", " + nome : "") + "?</h1></section>" +
         blocoConvite() + '<div class="cresce"></div><div class="raion"><img src="' + RAION + '" alt="Grupo Raion"></div>');
     }
     mostrar(topo +
@@ -449,8 +516,12 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       vA.currentTime = 0; mostra(vA); toca(vA); vB.pause();
       setTimeout(function () {
         presenteEtapa = "aberto"; ab.classList.add("on");
-        var alvo = palcoP.getBoundingClientRect().top + window.scrollY + palcoP.offsetHeight * 0.55;   // caixa aberta ainda aparece em cima
-        window.scrollTo({ top: alvo, behavior: "smooth" });
+        // desce devagar em 2 etapas: 1) cartao do presente no topo  2) quando o botao entra (2,4 s), ate o botao
+        var cartao = ab.querySelector(".cartao-pres"), bt = ab.querySelector(".primario");
+        rolarDevagar(cartao.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.42, 1100);   // 1a parada: caixa aberta + cartao
+        setTimeout(function () {
+          rolarDevagar(bt.getBoundingClientRect().bottom + window.scrollY - window.innerHeight + 130, 1300);
+        }, 2500);
       }, 1300);
     }
     palcoP.addEventListener("click", abrir);
@@ -560,16 +631,15 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   }
 
   app.addEventListener("click", function (ev) {
-    if (ev.target.closest("[data-convite]")) {          // abre o zap do cliente; conta o convite e a moto comemora
-      convites++; acelerar(true);
-      setTimeout(render, 800);
-      return;
-    }
+    var es = ev.target.closest("[data-estilo]");
+    if (es) { estilo = Number(es.getAttribute("data-estilo")); return render(); }
     var b = ev.target.closest("button");
     if (!b || b.disabled) return;
     var acao = b.getAttribute("data-acao");
     if (acao === "comecar") { atual = visiveis()[0].id; return render(); }
+    if (acao === "compartilhar") return compartilhar();
     if (acao === "resgatar") { presenteEtapa = "convite"; return render(); }
+    if (acao === "proxima") { if (respostas[atual] !== undefined) avancar(); return; }
     if (acao === "voltar") return voltar();
     if (acao === "enviar") return enviar(false);
     if (acao === "enviar-vazio") return enviar(true);
@@ -583,10 +653,11 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     }
     var op = b.getAttribute("data-op");
     if (op && !ocupado) {
-      respostas[atual] = Number(op);
-      ocupado = true;
-      render();
-      setTimeout(function () { ocupado = false; avancar(); }, 220);
+      respostas[atual] = Number(op);          // so marca; quem avanca e o botao Proxima (evita toque errado passar batido)
+      // marca sem redesenhar a tela: quem rolou ate a ultima opcao nao e jogado de volta pro topo
+      var irmaos = b.parentNode.querySelectorAll("[data-op]");
+      for (var k = 0; k < irmaos.length; k++) { irmaos[k].classList.toggle("sel", irmaos[k] === b); irmaos[k].setAttribute("aria-pressed", irmaos[k] === b); }
+      var px = app.querySelector('[data-acao="proxima"]'); if (px) px.disabled = false;
     }
   });
 
