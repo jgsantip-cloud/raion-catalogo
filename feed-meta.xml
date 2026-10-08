@@ -665,7 +665,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>1567</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>165890.00 BRL</price>
+    <price>161890.00 BRL</price>
     <exterior_color>Vermelho</exterior_color>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -674,7 +674,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Campo Grande</dealer_name>
     <image>
-      <url>https://raion.app.br/faixas/2782049.jpg?v=83747879</url>
+      <url>https://raion.app.br/faixas/2782049.jpg?v=638952b3</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6596/vehicles/2782049/photos/yEFnv4HBicshayrMchukKqP2EMj5k08D.jpg</url>
@@ -2059,7 +2059,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>2751</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>177890.00 BRL</price>
+    <price>187890.00 BRL</price>
     <exterior_color>Cinza</exterior_color>
     <fuel_type>GASOLINE</fuel_type>
     <transmission>MANUAL</transmission>
@@ -2068,7 +2068,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
-      <url>https://raion.app.br/faixas/2842068.jpg?v=d34207a1</url>
+      <url>https://raion.app.br/faixas/2842068.jpg?v=1f7f6be1</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6625/vehicles/2842068/photos/wX0T5XtXHdDxAth6B3nm8eiJtG0L0idu.jpg</url>
@@ -3160,6 +3160,94 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
+    <vehicle_id>2837071</vehicle_id>
+    <title>Mitsubishi ECLIPSE CROSS 1.5 MIVEC TURBO GASOLINA HPE-S CVT</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20ECLIPSE%20CROSS%201.5%20MIVEC%20TURBO%20GASOLINA%20HPE-S%20CVT%202026%20%28c%C3%B3d.%202837071%29.%20%5BCATALOGO-META-RAION-BARRA%5D</url>
+    <make>Mitsubishi</make>
+    <model>ECLIPSE CROSS</model>
+    <year>2026</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>2600</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>179890.00 BRL</price>
+    <exterior_color>Cinza</exterior_color>
+    <fuel_type>GASOLINE</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>1.5 MIVEC TURBO GASOLINA HPE-S CVT</trim>
+    <custom_label_0>DISPONIVEL</custom_label_0>
+    <dealer_name>Mitsubishi Raion - Barra</dealer_name>
+    <image>
+      <url>https://raion.app.br/faixas/2837071.jpg?v=7f288a1d</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2837071/photos/qQbjvwH0nbMZiuIdBO8LlD6xjjwbzdqo.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2837071/photos/4wwYopkDtjLGeiaHKvbymbiTmaTda8Jd.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2837071/photos/XlBXYQMZMzLEwDzvFvRqqwoJWzuyIWE6.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2837071/photos/uz54lXiYvGavChYDS8Va2XGqnjd08lfk.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2837071/photos/oLSc4TEQyfSSgAlAdHWG3Bz6IC6gqO22.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2837071/photos/lfchXFDxvBJRb08Mfl1PEyMzUpAw9h3z.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2837071/photos/7GxLgIL4HibOqGjg8ApE7vbe3BjzxDW4.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2837071/photos/ypn38FiDf8dTbzC8DJ9IiPsILhj6nbEe.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2837071/photos/FbIQQJelNqkGssX9B8LoRIkHkO091F4N.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2837071/photos/DR5SwJrdkaIdGIybGBIYQZA2ENXvJTl4.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2837071/photos/FN7uS2NCze6EpBepYbAcwdj64ITHXhLh.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2837071/photos/p4J1ddYBpd1vOVbSHhrrx8yyf3BT8IIM.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2837071/photos/Nc2eKQKGjAaru2g1YfnjnOH7fyEmFJ0S.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2837071/photos/aghzqFMoOpW5qlLm2okfIzpcm6zLuHWa.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6698/vehicles/2837071/photos/c32s1lcRF8jInU9Gp7dlZ9UK6VPDodUH.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">Av das Américas, 1730</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">22640-101</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>Av das Américas, 1730</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>22640-101</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
     <vehicle_id>2843054</vehicle_id>
     <title>Mitsubishi ECLIPSE CROSS 1.5 MIVEC TURBO GASOLINA HPE CVT</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -4053,7 +4141,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>17000</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>389890.00 BRL</price>
+    <price>399890.00 BRL</price>
     <exterior_color>Azul</exterior_color>
     <fuel_type>ELECTRIC</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -4062,7 +4150,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Raion ZEEKR - Barra</dealer_name>
     <image>
-      <url>https://raion.app.br/faixas/2825987.jpg?v=e0d8237c</url>
+      <url>https://raion.app.br/faixas/2825987.jpg?v=690dc22c</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6701/vehicles/2825987/photos/app-photos-cqyT4nqXSXymRa2fFyQlHf3FrFkI6Kc4.jpg</url>
@@ -4147,7 +4235,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>60200</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>88890.00 BRL</price>
+    <price>84890.00 BRL</price>
     <exterior_color>Prata</exterior_color>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -4156,7 +4244,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Petrópolis</dealer_name>
     <image>
-      <url>https://raion.app.br/faixas/2630005.jpg?v=3aeaba7f</url>
+      <url>https://raion.app.br/faixas/2630005.jpg?v=315a0f91</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6703/vehicles/2630005/photos/rSGRjTdzksZHlmxIJgBt1JUG3xgWYcvg.jpg</url>
@@ -4229,7 +4317,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>15868</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>139890.00 BRL</price>
+    <price>133890.00 BRL</price>
     <exterior_color>Cinza</exterior_color>
     <fuel_type>GASOLINE</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -4238,7 +4326,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Petrópolis</dealer_name>
     <image>
-      <url>https://raion.app.br/faixas/2731227.jpg?v=fe154d2c</url>
+      <url>https://raion.app.br/faixas/2731227.jpg?v=fe5760db</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6703/vehicles/2731227/photos/rQE5JgbqKi2iDHGwbk0JAXGMWf6hHwdi.jpg</url>
@@ -4384,7 +4472,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>1807</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>165890.00 BRL</price>
+    <price>161890.00 BRL</price>
     <exterior_color>Vermelho</exterior_color>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -4393,7 +4481,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Petrópolis</dealer_name>
     <image>
-      <url>https://raion.app.br/faixas/2782051.jpg?v=56c5b36a</url>
+      <url>https://raion.app.br/faixas/2782051.jpg?v=8aa88646</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/m6kQ2L0UNaWlSXXVZ8opsSnaDAZgDIle.jpg</url>
@@ -4481,7 +4569,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>21870</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>93890.00 BRL</price>
+    <price>89890.00 BRL</price>
     <exterior_color>Azul</exterior_color>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -4490,7 +4578,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Petrópolis</dealer_name>
     <image>
-      <url>https://raion.app.br/faixas/2824628.jpg?v=5829a1f5</url>
+      <url>https://raion.app.br/faixas/2824628.jpg?v=5b64fa8c</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6703/vehicles/2824628/photos/gPLEb5Hj9EFnvkDsMdUYxOdahcWjpMuG.jpg</url>
@@ -4527,82 +4615,6 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     </image>
     <image>
       <url>https://s3.agsistema.net/6703/vehicles/2824628/photos/paebNGunmJoi3OiOVfzeclbcaTeLZkB2.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">DOUTOR PAULO HERVE, 1111</component>
-      <component name="city">Rio de Janeiro</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">25665-135</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>DOUTOR PAULO HERVE, 1111</street_address>
-    <city>Rio de Janeiro</city>
-    <region>RJ</region>
-    <postal_code>25665-135</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
-    <vehicle_id>2848876</vehicle_id>
-    <title>Citroen C4 CACTUS 1.6 VTI 120 FLEX FEEL BUSINESS EAT6</title>
-    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos possuem Vistoria Cautelar. 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Citroen%20C4%20CACTUS%201.6%20VTI%20120%20FLEX%20FEEL%20BUSINESS%20EAT6%202021%20%28c%C3%B3d.%202848876%29.%20%5BCATALOGO-META-KEIKO-PETROPOLIS%5D</url>
-    <make>Citroen</make>
-    <model>C4 CACTUS</model>
-    <year>2021</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>55800</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>69890.00 BRL</price>
-    <exterior_color>Cinza</exterior_color>
-    <fuel_type>FLEX</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SUV</body_style>
-    <trim>1.6 VTI 120 FLEX FEEL BUSINESS EAT6</trim>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Nissan Keiko - Petrópolis</dealer_name>
-    <image>
-      <url>https://raion.app.br/faixas/2848876.jpg?v=ca6ad6a3</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/uUP4LmygT0JPwFHAaMvbhos2h36LgutM.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/EvHvePkrpONDNC1dQHPeYjxXM2wfK2Hs.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/28dsCrw3QQ6Wp8yQQT27PPDj4J774OGW.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/GC3F0cstCuCftqh2eghmMSXEtgn7yMSj.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/Ac7JGWtzqUb600R8TaZ5gN1FLPILYJ2e.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/w1iFIf9lJh0zpmgPmbjkWdQlfPQyxslt.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/sMB50Z6FIpwbNDFKjxWaTxKGRx4vfcym.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/9gOzDbHu5vwtpyLUT4jmM4QmCPHb7bLa.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/998v0sAWcjOPKYrlJFVC5ffvWzV5qgcY.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/CgplmzgXeclovOTq6D3bzLgjIaznSjo1.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/Tj0ALCjFpquSFeJFIseq0y8M2CJn9DBd.jpg</url>
     </image>
     <address format="simple">
       <component name="addr1">DOUTOR PAULO HERVE, 1111</component>
@@ -10241,6 +10253,82 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <city>Barra Mansa</city>
     <region>RJ</region>
     <postal_code>27332-360</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2848876</vehicle_id>
+    <title>Citroen C4 CACTUS 1.6 VTI 120 FLEX FEEL BUSINESS EAT6</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Citroen%20C4%20CACTUS%201.6%20VTI%20120%20FLEX%20FEEL%20BUSINESS%20EAT6%202021%20%28c%C3%B3d.%202848876%29.%20%5BCATALOGO-META-KEIKO-PETROPOLIS%5D</url>
+    <make>Citroen</make>
+    <model>C4 CACTUS</model>
+    <year>2021</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>55800</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>69890.00 BRL</price>
+    <exterior_color>Cinza</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>1.6 VTI 120 FLEX FEEL BUSINESS EAT6</trim>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Nissan Keiko - Petrópolis</dealer_name>
+    <image>
+      <url>https://raion.app.br/faixas/2848876.jpg?v=ca6ad6a3</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/uUP4LmygT0JPwFHAaMvbhos2h36LgutM.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/EvHvePkrpONDNC1dQHPeYjxXM2wfK2Hs.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/28dsCrw3QQ6Wp8yQQT27PPDj4J774OGW.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/GC3F0cstCuCftqh2eghmMSXEtgn7yMSj.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/Ac7JGWtzqUb600R8TaZ5gN1FLPILYJ2e.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/w1iFIf9lJh0zpmgPmbjkWdQlfPQyxslt.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/sMB50Z6FIpwbNDFKjxWaTxKGRx4vfcym.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/9gOzDbHu5vwtpyLUT4jmM4QmCPHb7bLa.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/998v0sAWcjOPKYrlJFVC5ffvWzV5qgcY.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/CgplmzgXeclovOTq6D3bzLgjIaznSjo1.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2848876/photos/Tj0ALCjFpquSFeJFIseq0y8M2CJn9DBd.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">DOUTOR PAULO HERVE, 1111</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">25665-135</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>DOUTOR PAULO HERVE, 1111</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>25665-135</postal_code>
     <country>Brazil</country>
   </listing>
 </listings>
