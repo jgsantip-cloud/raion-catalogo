@@ -274,7 +274,6 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   function dicaDe(p) { return (p.dica_insatisfeito && insatisfeitoAgora()) ? p.dica_insatisfeito : p.dica; }
   function aplicarMarca(m) {
     marca = MARCAS[m] || MARCAS.royal;
-    // os desenhos sao de Royal; SYM/CF ficam sem moto ate ganharem desenho proprio
     palco.style.display = "";                     // todas as marcas tem desenho (Royal, SYM scooter, CF aventureira)
     document.body.classList.remove("sem-palco");
     document.documentElement.style.setProperty("--accent", marca.cor);
@@ -377,6 +376,10 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   // ---------- convite de indicacao (no ar na oficial desde 08/10/2026; beneficio aprovado Joao/Felipe)
   // regra em python_leads/docs/indicacao_pesquisa_moto.md: so quem deu TUDO 9-10, so Royal, ate 3 amigos por rodada
   var INDICACAO = !/[?&]indica=0/.test(location.search);   // LIGADO na oficial (Joao 08/10); ?indica=0 desliga pra teste
+  // por marca (Joao 08/10): Royal no ar; SYM pronta, aguardando validacao do Joao; CF nao tem indicacao
+  var INDICA_MARCAS = { royal: true, sym: /[?&]indica_sym=1/.test(location.search), cf: false };
+  function marcaChave() { for (var k in MARCAS) if (MARCAS[k] === marca) return k; return "royal"; }
+  function curta() { return marca === MARCAS.royal ? "Royal" : marca.nome; }
   var convites = 0, estilo = 0;
   function tudo9e10() {
     if (marca !== MARCAS.royal || insatisfeitoAgora()) return false;
@@ -390,7 +393,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   }
   // link pro AMIGO: pagina i.html (quem indicou + botao pro BDC Motos com o codigo). Teste: nome/loja na URL;
   // no programa de verdade vira raion.app.br/i/<codigo> e a Edge Function resolve o resto.
-  function lojaCurta() { return ((D.contexto || {}).loja || "").replace(/^Royal Enfield\s*/i, "").trim(); }
+  function lojaCurta() { return ((D.contexto || {}).loja || "").replace(/^(Royal Enfield|SYM|CF ?Moto)\s*/i, "").trim(); }
   function linkAmigo() {
     if (D.indicacao && D.indicacao.codigo) return "https://indica.raion.app.br/" + D.indicacao.codigo;   // codigo gravado
     var c = D.contexto || {}, q = "c=" + encodeURIComponent(codigoIndicacao());                           // ?t=demo local
@@ -402,8 +405,8 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   function estilos() {
     var c = D.contexto || {}, loja = lojaCurta(), moto = (c.moto || "moto").replace(/\s+\d{3}$/, "");
     return [
-      { rot: "Amigo que quer moto", txt: "Lembrei de você 😄 se tá pensando em moto, chama o pessoal da Royal" + (loja ? " da " + loja : "") + ", me atenderam muito bem:" },
-      { rot: "Amigo que já tem moto", txt: "Lembrei de você e te indiquei pra comprar com o pessoal da Royal" + (loja ? " da " + loja : "") + " 😄 quando pensar na próxima moto, chama eles:" },
+      { rot: "Amigo que quer moto", txt: "Lembrei de você 😄 se tá pensando em moto, chama o pessoal da " + curta() + (loja ? " da " + loja : "") + ", me atenderam muito bem:" },
+      { rot: "Amigo que já tem moto", txt: "Lembrei de você e te indiquei pra comprar com o pessoal da " + curta() + (loja ? " da " + loja : "") + " 😄 quando pensar na próxima moto, chama eles:" },
       { rot: "Só o link", txt: "" }
     ];
   }
@@ -413,7 +416,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     if (navigator.share) {                                  // menu do celular: ele escolhe a pessoa e o app
       // com url separada o iPhone mostra a previa do link (desenho da moto) no topo do menu, em vez do "A" de texto
       var e = estilos()[estilo];
-      navigator.share(e.txt ? { title: "Convite Royal Enfield", text: e.txt, url: linkAmigo() } : { title: "Convite Royal Enfield", url: linkAmigo() })
+      navigator.share(e.txt ? { title: "Convite " + marca.nome, text: e.txt, url: linkAmigo() } : { title: "Convite " + marca.nome, url: linkAmigo() })
         .then(function () { convites++; contarConvite(); render(); }).catch(function () {});
     } else {
       window.open("https://wa.me/?text=" + encodeURIComponent(t), "_blank", "noopener");
@@ -435,7 +438,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
               : '<button type="button" class="zap" data-acao="compartilhar">' + WA_SVG + (convites ? "Convidar mais alguém" : "Escolher amigo e enviar") + "</button>") +
       '<p class="conv-cont">' + convites + " de 3 convites enviados</p>" +
       '<details class="regras"><summary>Como funciona</summary><ul>' +
-      "<li>Vale para amigo que nunca comprou moto numa Royal Enfield do Grupo Raion.</li>" +
+      "<li>Vale para amigo que nunca comprou moto numa " + marca.nome + " do Grupo Raion.</li>" +
       "<li>O amigo chama a loja pelo seu link. Se ele comprar uma moto, você ganha " + presente().regra + ".</li>" +
       "<li>Uma revisão por rodada de convites, mesmo que mais de um amigo compre.</li>" +
       "<li>A revisão é agendada pelo WhatsApp e vale para a sua próxima revisão prevista.</li>" +
@@ -508,11 +511,11 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
         '<p class="como">Pra liberar é assim:</p>' +
         '<ol class="quadros">' +
           '<li><img src="q1_convite.webp" alt=""><span><b>Você convida</b> até 3 amigos pelo WhatsApp.</span></li>' +
-          '<li><img src="q2_amigo.webp" alt=""><span><b>Um deles compra</b> uma Royal Enfield com a gente.</span></li>' +
+          '<li><img src="q2_amigo.webp" alt=""><span><b>Um deles compra</b> uma ' + marca.nome + ' com a gente.</span></li>' +
           '<li><img src="q3_revisao.webp" alt=""><span><b>Seu presente é liberado</b> e você agenda a revisão pelo WhatsApp.</span></li>' +
         "</ol>" +
         '<button type="button" class="primario" data-acao="resgatar">Resgatar meu presente</button>' +
-        '<p class="dica centro" style="margin-top:10px">Vale pra amigo que nunca comprou moto numa Royal do Grupo Raion.</p>' +
+        '<p class="dica centro" style="margin-top:10px">Vale pra amigo que nunca comprou moto numa ' + curta() + ' do Grupo Raion.</p>' +
       "</div>" +
       '<div class="cresce"></div><div class="raion"><img src="' + RAION + '" alt="Grupo Raion"></div>');
     var vE = document.getElementById("vEntrega"), vB = document.getElementById("vBalanca"), vA = document.getElementById("vAbre");
@@ -552,7 +555,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
 
   function telaObrigado() {
     var c = D.contexto || {};
-    if (INDICACAO && tudo9e10() && proximaRevisao()) return telaPresente(c);
+    if (INDICACAO && INDICA_MARCAS[marcaChave()] && tudo9e10() && proximaRevisao()) return telaPresente(c);
     mostrar('<header class="topo centro">' + logo("g") + '</header><div class="cresce"></div>' +
       '<div class="circulo cheio">' + CHECK_SVG + "</div>" +
       '<section class="final centro"><h1 class="grande" style="margin-top:28px">Obrigado' + (c.nome ? ", " + esc(c.nome) : "") + "!</h1>" +
