@@ -431,7 +431,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       '<p class="conv-cont">' + convites + " de 3 convites enviados</p>" +
       '<details class="regras"><summary>Como funciona</summary><ul>' +
       "<li>Vale para amigo que nunca comprou moto numa Royal Enfield do Grupo Raion.</li>" +
-      "<li>O amigo chama a loja pelo seu link. Se ele comprar uma moto, você ganha a próxima revisão do plano (peças e mão de obra).</li>" +
+      "<li>O amigo chama a loja pelo seu link. Se ele comprar uma moto, você ganha " + presente().regra + ".</li>" +
       "<li>Uma revisão por rodada de convites, mesmo que mais de um amigo compre.</li>" +
       "<li>A revisão é agendada pelo WhatsApp e vale para a sua próxima revisão prevista.</li>" +
       "<li>A gente te avisa por aqui quando o presente for liberado.</li></ul></details></section>";
@@ -442,6 +442,19 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   //   aberto: abre (tampa voa, confete) -> cartao "sua proxima revisao por nossa conta" -> 3 quadrinhos -> botao
   //   convite: botao do WhatsApp (fluxo do convite; processo ainda em conversa com o Joao)
   var presenteEtapa = "caixa";
+  // o presente depende da PROXIMA revisao do cliente (Joao/Felipe 08/10): 3a ou 5a = 50% de desconto; as demais = por nossa conta
+  // (a ponte grava contexto.proxima_revisao pelo REV da OS; ?rev=N simula no teste)
+  var KM_REV = { 3: "10.000 km", 5: "20.000 km" };
+  function presente() {
+    var q = new URLSearchParams(location.search).get("rev");
+    var px = Number(q || (D.contexto || {}).proxima_revisao) || 0;
+    if (px === 3 || px === 5) return {
+      titulo: "50% de desconto na sua próxima revisão.",
+      sub: "Na revisão de " + KM_REV[px] + ", em peças e mão de obra.",
+      regra: "50% de desconto na próxima revisão do plano (peças e mão de obra)" };
+    return { titulo: "Sua próxima revisão por nossa conta.", sub: "Peças e mão de obra, do jeito que o plano manda.",
+      regra: "a próxima revisão do plano (peças e mão de obra)" };
+  }
   function rolarDevagar(alvo, dur) {
     var max = document.documentElement.scrollHeight - window.innerHeight;
     alvo = Math.max(0, Math.min(max, alvo));
@@ -482,7 +495,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       '<div class="pres-txt" id="presTxt"><h1 class="pres-h">' + (nome ? nome + ", a" : "A") + " gente separou um presente pra você.</h1>" +
         '<p class="pres-toque">Toque na caixa pra abrir</p></div>' +
       '<div class="pres-aberto" id="presAberto">' +
-        '<div class="cartao-pres"><p class="conv-selo">Seu presente</p><h2>Sua próxima revisão por nossa conta.</h2><p>Peças e mão de obra, do jeito que o plano manda.</p></div>' +
+        '<div class="cartao-pres"><p class="conv-selo">Seu presente</p><h2>' + presente().titulo + '</h2><p>' + presente().sub + '</p></div>' +
         '<p class="como">Pra liberar é assim:</p>' +
         '<ol class="quadros">' +
           '<li><img src="q1_convite.webp" alt=""><span><b>Você convida</b> até 3 amigos pelo WhatsApp.</span></li>' +
