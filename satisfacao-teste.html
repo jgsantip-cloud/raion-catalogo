@@ -417,6 +417,17 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
   //   aberto: abre (tampa voa, confete) -> cartao "sua proxima revisao por nossa conta" -> 3 quadrinhos -> botao
   //   convite: botao do WhatsApp (fluxo do convite; processo ainda em conversa com o Joao)
   var presenteEtapa = "caixa";
+  function rolarDevagar(alvo, dur) {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    alvo = Math.max(0, Math.min(max, alvo));
+    var ini = window.scrollY, t0 = Date.now();
+    if (Math.abs(alvo - ini) < 4) return;
+    var id = setInterval(function () {      // setInterval (nao rAF): segue rodando mesmo com a aba em segundo plano
+      var k = Math.min(1, (Date.now() - t0) / dur), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+      window.scrollTo(0, ini + (alvo - ini) * e);
+      if (k >= 1) clearInterval(id);
+    }, 16);
+  }
   function contarConvite() { if (D.indicacao && D.indicacao.codigo) postar({ t: token, acao: "compartilhou" }).catch(function () {}); }
   // pede o codigo de indicacao (Edge Function confere se foi tudo 9-10 e grava); ?t=demo segue com codigo local
   function pedirIndicacao() {
@@ -480,12 +491,12 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
       vA.currentTime = 0; mostra(vA); toca(vA); vB.pause();
       setTimeout(function () {
         presenteEtapa = "aberto"; ab.classList.add("on");
-        // rola ate o botao "Resgatar" ficar visivel acima da barra do navegador (ele entra por ultimo, 2,4 s)
-        var bt = ab.querySelector(".primario");
-        var alvo = bt.getBoundingClientRect().bottom + window.scrollY - window.innerHeight + 110;
-        alvo = Math.max(0, alvo);
-        window.scrollTo({ top: alvo, behavior: "smooth" });
-        setTimeout(function () { if (Math.abs(window.scrollY - alvo) > 40) window.scrollTo(0, alvo); }, 900);   // navegador sem rolagem suave
+        // desce devagar em 2 etapas: 1) cartao do presente no topo  2) quando o botao entra (2,4 s), ate o botao
+        var cartao = ab.querySelector(".cartao-pres"), bt = ab.querySelector(".primario");
+        rolarDevagar(cartao.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.42, 1100);   // 1a parada: caixa aberta + cartao
+        setTimeout(function () {
+          rolarDevagar(bt.getBoundingClientRect().bottom + window.scrollY - window.innerHeight + 130, 1300);
+        }, 2500);
       }, 1300);
     }
     palcoP.addEventListener("click", abrir);
