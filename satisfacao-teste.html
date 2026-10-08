@@ -75,6 +75,36 @@ textarea:focus,button:focus-visible{outline:3px solid color-mix(in srgb,var(--ac
 .aviso{margin-top:28px;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:16px 18px;font-size:16px;line-height:1.5}
 .erro{margin-top:14px;color:#9B1C1C;font-size:15px}
 .carregando{margin:auto;color:var(--mut);font-size:16px}
+.pres-obg{margin:14px 0 0;text-align:center;font-size:15px;color:var(--mut)}
+.pres-palco{position:relative;width:min(100%,340px);aspect-ratio:1;margin:6px auto 0;cursor:pointer;-webkit-tap-highlight-color:transparent;overflow:hidden;isolation:auto}
+/* o H.264 clareia o creme do fundo; multiply some com o fundo do video e deixa so a tinta sobre o papel da pagina */
+.pres-palco video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;pointer-events:none;mix-blend-mode:multiply}
+.pres-palco video.on{opacity:1}
+.pres-txt{text-align:center;opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s}
+.pres-txt.on{opacity:1;transform:none}.pres-txt.sai{opacity:0;transform:translateY(-8px);height:0;overflow:hidden;transition:opacity .25s,transform .25s}
+.pres-h{margin:4px 0 0;font-size:32px;line-height:1.05}
+.pres-toque{margin:10px 0 0;font-weight:700;color:var(--accent);animation:pulsa 1.2s ease-in-out infinite}
+@keyframes pulsa{50%{opacity:.45}}
+.pres-aberto{display:none}
+.pres-aberto.on{display:block}
+.pres-aberto.on>*{opacity:0;transform:translateY(16px);animation:sobe .5s cubic-bezier(.2,.8,.3,1) forwards}
+.pres-aberto.on>.cartao-pres{animation-delay:0s}
+.pres-aberto.on>.como{animation-delay:.5s}.pres-aberto.on>.quadros{animation-delay:.6s}
+.pres-aberto.on>.primario{animation-delay:2.4s}.pres-aberto.on>.dica{animation-delay:2.5s}
+.pres-aberto.ja>*{animation-duration:.01s!important;animation-delay:0s!important}
+@keyframes sobe{to{opacity:1;transform:none}}
+.cartao-pres{margin-top:-6px;position:relative;background:var(--card);border:2px solid var(--ink);border-radius:18px;padding:16px 18px;text-align:center;box-shadow:0 6px 0 var(--ink)}
+.cartao-pres h2{margin:6px 0 0;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:600;font-size:30px;line-height:1.02}
+.cartao-pres p:last-child{margin:8px 0 0;font-size:15px;color:var(--txt2)}
+.como{margin:22px 0 0;font-weight:700;font-size:16px}
+.quadros{list-style:none;margin:10px 0 22px;padding:0;display:flex;flex-direction:column;gap:10px}
+.quadros li{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:8px 14px 8px 8px;font-size:15px;line-height:1.4;color:var(--txt2);opacity:0;transform:translateX(-14px);animation:entraQ .5s cubic-bezier(.2,.8,.3,1) forwards}
+.quadros li:nth-child(1){animation-delay:.8s}.quadros li:nth-child(2){animation-delay:1.3s}.quadros li:nth-child(3){animation-delay:1.8s}
+.pres-aberto.ja .quadros li{animation-duration:.01s;animation-delay:0s}
+.quadros img{width:84px;height:84px;object-fit:contain;flex-shrink:0}
+.quadros b{color:var(--ink)}
+@keyframes entraQ{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.pres-aberto.on>*,.quadros li{animation:none!important;opacity:1;transform:none}}
 .convite{margin-top:24px;background:var(--card);border:1px solid var(--line2);border-radius:18px;padding:20px 18px 14px}
 .conv-selo{margin:0;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
 .convite h2{margin:6px 0 0;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:600;font-size:28px;line-height:1.05}
@@ -337,14 +367,74 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
       "<li>A gente te avisa por aqui quando o benefício for liberado.</li></ul></details></section>";
   }
 
-  function telaObrigado() {
-    var c = D.contexto || {};
-    if (INDICACAO && tudo9e10()) {
-      return mostrar('<header class="topo centro">' + logo("g") + "</header>" +
-        '<section class="final centro"><h1 class="grande" style="margin-top:22px">Obrigado' + (c.nome ? ", " + esc(c.nome) : "") + "!</h1>" +
-        "<p>Que bom que você curtiu. Suas respostas já chegaram para a nossa equipe.</p></section>" +
+  // ---------- o presente (storytelling): clipes do Remotion (remotion/src/presente) + texto/quadrinhos aqui
+  //   caixa:  entrega (moto joga a caixa) -> balanca em loop ("toque pra abrir")
+  //   aberto: abre (tampa voa, confete) -> cartao "sua proxima revisao por nossa conta" -> 3 quadrinhos -> botao
+  //   convite: botao do WhatsApp (fluxo do convite; processo ainda em conversa com o Joao)
+  var presenteEtapa = "caixa";
+  function telaPresente(c) {
+    palco.style.display = "none";                         // a moto agora mora dentro do clipe
+    var nome = c.nome ? esc(c.nome) : "";
+    var topo = '<header class="topo centro">' + logo("p") + "</header>";
+    if (presenteEtapa === "convite") {
+      return mostrar(topo + '<section class="final centro"><h1 class="grande" style="margin-top:18px;font-size:36px">Bora chamar a galera' + (nome ? ", " + nome : "") + "!</h1></section>" +
         blocoConvite() + '<div class="cresce"></div><div class="raion"><img src="' + RAION + '" alt="Grupo Raion"></div>');
     }
+    mostrar(topo +
+      '<p class="pres-obg">Obrigado' + (nome ? ", " + nome : "") + '! Suas respostas já chegaram pra nossa equipe.</p>' +
+      '<div class="pres-palco" id="presPalco" role="button" tabindex="0" aria-label="Abrir o presente">' +
+        '<video id="vEntrega" src="presenteentrega.mp4" muted playsinline preload="auto"></video>' +
+        '<video id="vBalanca" src="presentebalanca.mp4" muted playsinline loop preload="auto"></video>' +
+        '<video id="vAbre" src="presenteabre.mp4" muted playsinline preload="auto"></video>' +
+      "</div>" +
+      '<div class="pres-txt" id="presTxt"><h1 class="pres-h">' + (nome ? nome + ", a" : "A") + " gente separou um presente pra você.</h1>" +
+        '<p class="pres-toque">Toque na caixa pra abrir</p></div>' +
+      '<div class="pres-aberto" id="presAberto">' +
+        '<div class="cartao-pres"><p class="conv-selo">Seu presente</p><h2>Sua próxima revisão por nossa conta.</h2><p>Peças e mão de obra, do jeito que o plano manda.</p></div>' +
+        '<p class="como">Pra liberar é assim:</p>' +
+        '<ol class="quadros">' +
+          '<li><img src="q1_convite.webp" alt=""><span><b>Você convida</b> até 3 amigos pelo WhatsApp.</span></li>' +
+          '<li><img src="q2_amigo.webp" alt=""><span><b>Um deles compra</b> uma Royal Enfield com a gente.</span></li>' +
+          '<li><img src="q3_revisao.webp" alt=""><span><b>Seu presente é liberado</b> e você agenda a revisão pelo WhatsApp.</span></li>' +
+        "</ol>" +
+        '<button type="button" class="primario" data-acao="resgatar">Resgatar meu presente</button>' +
+        '<p class="dica centro" style="margin-top:10px">Vale pra amigo que nunca comprou moto numa Royal do Grupo Raion.</p>' +
+      "</div>" +
+      '<div class="cresce"></div><div class="raion"><img src="' + RAION + '" alt="Grupo Raion"></div>');
+    var vE = document.getElementById("vEntrega"), vB = document.getElementById("vBalanca"), vA = document.getElementById("vAbre");
+    var palcoP = document.getElementById("presPalco"), txt = document.getElementById("presTxt"), ab = document.getElementById("presAberto");
+    function mostra(v) { [vE, vB, vA].forEach(function (x) { x.classList.toggle("on", x === v); }); }
+    function toca(v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    var pronto = false;
+    function balancar() { mostra(vB); toca(vB); txt.classList.add("on"); pronto = true; }
+    if (presenteEtapa === "aberto") {                    // voltou pra esta tela: ja aberto, sem repetir o show
+      vA.addEventListener("loadeddata", function () { vA.currentTime = vA.duration || 2.3; });
+      mostra(vA); ab.classList.add("on", "ja"); return;
+    }
+    mostra(vE);
+    vE.addEventListener("ended", balancar);
+    vE.addEventListener("error", balancar);
+    toca(vE);
+    vE.addEventListener("canplay", function () { if (vE.paused && !vE.ended && !pronto) toca(vE); });
+    [500, 1200].forEach(function (ms) { setTimeout(function () { if (vE.paused && !vE.ended && !pronto) toca(vE); }, ms); });
+    setTimeout(function () { if (!pronto && vE.paused && !vE.currentTime) balancar(); }, 3500);   // autoplay bloqueado: pula direto pra caixa
+    function abrir() {
+      if (!pronto) return;
+      pronto = false; txt.classList.remove("on"); txt.classList.add("sai");
+      vA.currentTime = 0; mostra(vA); toca(vA); vB.pause();
+      setTimeout(function () {
+        presenteEtapa = "aberto"; ab.classList.add("on");
+        var alvo = palcoP.getBoundingClientRect().top + window.scrollY + palcoP.offsetHeight * 0.55;   // caixa aberta ainda aparece em cima
+        window.scrollTo({ top: alvo, behavior: "smooth" });
+      }, 1300);
+    }
+    palcoP.addEventListener("click", abrir);
+    palcoP.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); abrir(); } });
+  }
+
+  function telaObrigado() {
+    var c = D.contexto || {};
+    if (INDICACAO && tudo9e10()) return telaPresente(c);
     mostrar('<header class="topo centro">' + logo("g") + '</header><div class="cresce"></div>' +
       '<div class="circulo cheio">' + CHECK_SVG + "</div>" +
       '<section class="final centro"><h1 class="grande" style="margin-top:28px">Obrigado' + (c.nome ? ", " + esc(c.nome) : "") + "!</h1>" +
@@ -454,6 +544,7 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
     if (!b || b.disabled) return;
     var acao = b.getAttribute("data-acao");
     if (acao === "comecar") { atual = visiveis()[0].id; return render(); }
+    if (acao === "resgatar") { presenteEtapa = "convite"; return render(); }
     if (acao === "voltar") return voltar();
     if (acao === "enviar") return enviar(false);
     if (acao === "enviar-vazio") return enviar(true);
