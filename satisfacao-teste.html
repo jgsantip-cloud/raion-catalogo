@@ -51,6 +51,11 @@ h1.pergunta{margin-top:36px;font-size:32px;line-height:1.08}
 .notas{margin-top:26px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
 .notas button{height:58px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);font-size:22px;font-weight:600;cursor:pointer}
 .escala{margin-top:12px;display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--mut)}
+.escala span{display:flex;align-items:center;gap:6px}
+.pt{display:inline-block;width:10px;height:10px;border-radius:50%}.pt.ruim{background:#C9C4BA}.pt.bom{background:#2E7D4F}
+.notas button.bom{border-color:#2E7D4F;background:#EEF7F0;color:#1F5C39}
+.notas button.bom.sel{background:#2E7D4F;border-color:#2E7D4F;color:#fff}
+.notas+.escala+.cresce+.primario,.primario[data-acao=proxima]{margin-bottom:2px}
 .simnao{margin-top:30px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .simnao button{height:76px;border:1.5px solid var(--line);border-radius:14px;background:var(--card);font-size:20px;font-weight:700;cursor:pointer}
 .lista{margin-top:22px;display:flex;flex-direction:column;gap:8px}
@@ -294,9 +299,11 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
     var marcado = respostas[p.id], corpo = "", dica = dicaDe(p);
     if (p.tipo === "nota") {
       corpo = '<div class="notas">' + p.opcoes.map(function (o) {
-        return '<button type="button" data-op="' + o.id + '"' + (marcado === o.id ? ' class="sel" aria-pressed="true"' : ' aria-pressed="false"') + ">" + esc(o.rotulo) + "</button>";
+        var cls = (o.id - 10 >= 9 ? "bom" : "") + (marcado === o.id ? " sel" : "");
+        return '<button type="button" data-op="' + o.id + '" class="' + cls + '" aria-pressed="' + (marcado === o.id) + '">' + esc(o.rotulo) + "</button>";
       }).join("") + "</div>" +
-      '<div class="escala"><span>' + (RECOMENDA[p.id] ? "1 · de jeito nenhum" : "1 · muito ruim") + "</span><span>" + (RECOMENDA[p.id] ? "10 · com certeza" : "10 · excelente") + "</span></div>";
+      '<div class="escala"><span><i class="pt ruim"></i>' + (RECOMENDA[p.id] ? "1 a 8 · não recomendaria" : "1 a 8 · não gostei") + "</span>" +
+      '<span><i class="pt bom"></i>' + (RECOMENDA[p.id] ? "9 e 10 · recomendaria" : "9 e 10 · gostei") + "</span></div>";
       dica = dica || "Toque numa nota.";
     } else if (p.tipo === "simnao") {
       corpo = '<div class="simnao">' + p.opcoes.map(function (o) {
@@ -314,8 +321,15 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
       ? '<button type="button" class="primario" data-acao="enviar">Enviar respostas</button>' + erroHtml() +
         '<div class="acoes"><button type="button" class="voltar" data-acao="voltar">' + VOLTAR_SVG + 'Voltar</button>' +
         '<button type="button" class="link" data-acao="enviar-vazio">Enviar sem mensagem</button></div>'
-      : '<button type="button" class="voltar" data-acao="voltar">' + VOLTAR_SVG + "Voltar</button>";
-    mostrar(cabecalho(idx, total) + '<h1 class="pergunta">' + esc(textoDe(p)) + "</h1>" +
+      : '<button type="button" class="primario" data-acao="proxima"' + (marcado === undefined ? " disabled" : "") + ">Próxima</button>" +
+        '<button type="button" class="voltar" data-acao="voltar">' + VOLTAR_SVG + "Voltar</button>";
+    var titulo = textoDe(p);
+    if (p.tipo === "texto") {
+      var notas = visiveis().filter(function (q) { return q.tipo === "nota" && respostas[q.id] !== undefined; });
+      if (insatisfeitoAgora() || notas.some(function (q) { return respostas[q.id] - 10 <= 8; })) { titulo = "Puxa, que pena que o atendimento não te encantou."; dica = "Quer deixar um recado pra equipe? Conta o que aconteceu, a gente quer resolver."; }
+      else if (notas.length && notas.every(function (q) { return respostas[q.id] - 10 >= 9; })) { titulo = "Uhul! 🎉 Que bom que você curtiu."; dica = "Quer deixar um recado ou um elogio pra equipe?"; }
+    }
+    mostrar(cabecalho(idx, total) + '<h1 class="pergunta">' + esc(titulo) + "</h1>" +
       (dica ? '<p class="dica">' + esc(dica) + "</p>" : "") + corpo + '<div class="cresce"></div>' + fim);
   }
 
@@ -358,7 +372,7 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
     var c = D.contexto || {}, loja = lojaCurta(), moto = (c.moto || "moto").replace(/\s+\d{3}$/, "");
     return [
       { rot: "Amigo que quer moto", txt: "Lembrei de você 😄 se tá pensando em moto, chama o pessoal da Royal" + (loja ? " da " + loja : "") + ", me atenderam muito bem:" },
-      { rot: "Amigo que já tem moto", txt: (D.tipo === "oficina" ? "Olha onde eu cuido da minha " : "Olha onde eu peguei minha ") + moto + ", atendimento top:" },
+      { rot: "Amigo que já tem moto", txt: "Lembrei de você e te indiquei pra comprar com o pessoal da Royal" + (loja ? " da " + loja : "") + " 😄 quando pensar na próxima moto, chama eles:" },
       { rot: "Só o link", txt: "" }
     ];
   }
@@ -570,6 +584,7 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
     if (acao === "comecar") { atual = visiveis()[0].id; return render(); }
     if (acao === "compartilhar") return compartilhar();
     if (acao === "resgatar") { presenteEtapa = "convite"; return render(); }
+    if (acao === "proxima") { if (respostas[atual] !== undefined) avancar(); return; }
     if (acao === "voltar") return voltar();
     if (acao === "enviar") return enviar(false);
     if (acao === "enviar-vazio") return enviar(true);
@@ -583,10 +598,8 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
     }
     var op = b.getAttribute("data-op");
     if (op && !ocupado) {
-      respostas[atual] = Number(op);
-      ocupado = true;
+      respostas[atual] = Number(op);          // so marca; quem avanca e o botao Proxima (evita toque errado passar batido)
       render();
-      setTimeout(function () { ocupado = false; avancar(); }, 220);
     }
   });
 
