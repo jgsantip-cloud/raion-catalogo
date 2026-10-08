@@ -32,7 +32,7 @@ button,textarea{font:inherit;color:inherit}
 .barra>div{height:4px;border-radius:4px;background:var(--accent);transition:width .25s ease}
 h1{margin:0;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:600;letter-spacing:-.005em}
 h1.grande{font-size:40px;line-height:1.02}
-h1.pergunta{margin-top:36px;font-size:32px;line-height:1.08}
+h1.pergunta{margin-top:24px;font-size:32px;line-height:1.08}
 .ola{margin:12px 0 8px;font-size:18px;font-weight:600;color:var(--accent)}
 .dica{margin:10px 0 0;font-size:15px;color:var(--mut)}
 .cartao{margin-top:16px;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:6px 18px}
@@ -58,8 +58,10 @@ h1.pergunta{margin-top:36px;font-size:32px;line-height:1.08}
 .notas+.escala+.cresce+.primario,.primario[data-acao=proxima]{margin-bottom:2px}
 .simnao{margin-top:30px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .simnao button{height:76px;border:1.5px solid var(--line);border-radius:14px;background:var(--card);font-size:20px;font-weight:700;cursor:pointer}
-.lista{margin-top:22px;display:flex;flex-direction:column;gap:8px}
-.lista button{display:flex;align-items:center;gap:14px;min-height:54px;padding:10px 16px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);font-size:16px;font-weight:500;text-align:left;cursor:pointer}
+.lista{margin-top:16px;display:flex;flex-direction:column;gap:6px}
+.lista button{display:flex;align-items:center;gap:12px;min-height:46px;padding:8px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);font-size:16px;font-weight:500;text-align:left;cursor:pointer}
+.ver-mais{position:sticky;bottom:calc(136px + var(--pe) + 66px);z-index:3;align-self:center;margin:6px 0 -34px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:14px;font-weight:600;color:var(--txt2);box-shadow:0 2px 8px rgba(0,0,0,.08);cursor:pointer}
+.ver-mais[hidden]{display:none}
 .lista .bola{width:20px;height:20px;border-radius:50%;border:1.5px solid #A8A399;flex-shrink:0}
 .notas button.sel,.simnao button.sel{background:var(--accent);border-color:var(--accent);color:#fff}
 .lista button.sel{border-color:var(--accent);font-weight:600}
@@ -128,12 +130,12 @@ button.zap{width:100%;border:none;cursor:pointer;font:inherit;font-size:17px;fon
 /* ---------- palco da moto: fixo embaixo, no meio; arte a nanquim (gerada por IA, fundo transparente) */
 body{min-height:100vh;min-height:100dvh}
 /* moto FIXA no rodape: mesma posicao em todas as telas; a pagina reserva o espaco dela embaixo */
-.app{width:100%;padding-bottom:calc(160px + var(--pe))!important}
+.app{width:100%;padding-bottom:calc(136px + var(--pe))!important}
 /* botao principal gruda logo acima da moto quando a pergunta e comprida: nunca fica escondido atras dela */
-.app>.primario{position:sticky;bottom:calc(160px + var(--pe) + 6px);z-index:3;box-shadow:0 0 0 8px var(--bg)}
+.app>.primario{position:sticky;bottom:calc(136px + var(--pe) + 6px);z-index:3;box-shadow:0 0 0 8px var(--bg)}
 body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!important}
-:root{--pe:calc(env(safe-area-inset-bottom) + 30px)}/* folga da barra flutuante do Safari */
-.palco{position:fixed;left:0;right:0;bottom:0;height:calc(160px + var(--pe));pointer-events:none;overflow:visible;overflow-x:clip;z-index:2;
+:root{--pe:calc(env(safe-area-inset-bottom) + 16px)}/* folga da barra flutuante do Safari */
+.palco{position:fixed;left:0;right:0;bottom:0;height:calc(136px + var(--pe));pointer-events:none;overflow:visible;overflow-x:clip;z-index:2;
   background:linear-gradient(to bottom,rgba(243,241,236,0) 0,var(--bg) 46px)}   /* conteudo que rola some suave atras da moto */
 .app{position:relative;z-index:1}
 .palco .chao{position:absolute;left:0;right:0;bottom:calc(20px + var(--pe));height:3px;
@@ -143,7 +145,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
              repeating-linear-gradient(90deg,transparent 0 110px,rgba(23,24,27,.16) 110px 150px,transparent 150px 260px) 0 52px/100% 2px no-repeat;
   animation:corre2 .7s linear infinite;opacity:.0;transition:opacity .3s}
 .palco.acelera .riscos{opacity:1}
-.palco .piloto{position:absolute;left:50%;bottom:calc(21px + var(--pe));width:190px;margin-left:-95px;transition:transform .45s cubic-bezier(.3,1.4,.5,1)}
+.palco .piloto{position:absolute;left:50%;bottom:calc(21px + var(--pe));width:150px;margin-left:-75px;transition:transform .45s cubic-bezier(.3,1.4,.5,1)}
 .palco .moto{position:relative;width:100%}
 .palco .moto img{position:absolute;display:block}
 .palco .moto .corpo{inset:0;width:100%;height:100%;animation:motor .09s steps(2) infinite}
@@ -272,7 +274,23 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     document.body.classList.toggle("sem-palco", marca !== MARCAS.royal);
     document.documentElement.style.setProperty("--accent", marca.cor);
   }
-  function mostrar(html) { app.innerHTML = html; window.scrollTo(0, 0); }
+  function mostrar(html) { app.innerHTML = html; window.scrollTo(0, 0); setTimeout(checarMais, 60); }
+  // pergunta comprida: se a ultima opcao ficou atras do botao/moto, mostra "ver mais opcoes" (a tela so anda se a pessoa tocar)
+  function checarMais() {
+    var lista = app.querySelector(".lista, .notas, .simnao"), bt = app.querySelector(".app>.primario, .primario"), vm = app.querySelector(".ver-mais");
+    if (!lista || !bt) { if (vm) vm.hidden = true; return; }
+    if (!vm) {
+      vm = document.createElement("button"); vm.type = "button"; vm.className = "ver-mais"; vm.textContent = "Ver mais opções ↓";
+      vm.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var ult = lista.lastElementChild.getBoundingClientRect(), topoBt = bt.getBoundingClientRect().top;
+        window.scrollBy({ top: ult.bottom - topoBt + 16, behavior: "smooth" });
+      });
+      bt.parentNode.insertBefore(vm, bt);
+    }
+    vm.hidden = lista.lastElementChild.getBoundingClientRect().bottom <= bt.getBoundingClientRect().top + 24;   // so avisa se sumiu um pedaco de verdade
+  }
+  window.addEventListener("scroll", function () { var vm = app.querySelector(".ver-mais"); if (vm && !vm.hidden) checarMais(); }, { passive: true });
   var telaAntes = "";
 
   // ------------------------------------------------------------ telas
@@ -636,7 +654,10 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     var op = b.getAttribute("data-op");
     if (op && !ocupado) {
       respostas[atual] = Number(op);          // so marca; quem avanca e o botao Proxima (evita toque errado passar batido)
-      render();
+      // marca sem redesenhar a tela: quem rolou ate a ultima opcao nao e jogado de volta pro topo
+      var irmaos = b.parentNode.querySelectorAll("[data-op]");
+      for (var k = 0; k < irmaos.length; k++) { irmaos[k].classList.toggle("sel", irmaos[k] === b); irmaos[k].setAttribute("aria-pressed", irmaos[k] === b); }
+      var px = app.querySelector('[data-acao="proxima"]'); if (px) px.disabled = false;
     }
   });
 
