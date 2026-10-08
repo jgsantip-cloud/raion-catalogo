@@ -445,9 +445,13 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   // o presente depende da PROXIMA revisao do cliente (Joao/Felipe 08/10): 3a ou 5a = 50% de desconto; as demais = por nossa conta
   // (a ponte grava contexto.proxima_revisao pelo REV da OS; ?rev=N simula no teste)
   var KM_REV = { 3: "10.000 km", 5: "20.000 km" };
-  function presente() {
+  // sem saber a proxima revisao (oficina sem REV na OS nem no historico da moto) = sem presente: nao arrisca o valor
+  function proximaRevisao() {
     var q = new URLSearchParams(location.search).get("rev");
-    var px = Number(q || (D.contexto || {}).proxima_revisao) || 0;
+    return Number(q || (D.contexto || {}).proxima_revisao) || (D.tipo === "vendas" ? 1 : 0);
+  }
+  function presente() {
+    var px = proximaRevisao();
     if (px === 3 || px === 5) return {
       titulo: "50% de desconto na sua próxima revisão.",
       sub: "Na revisão de " + KM_REV[px] + ", em peças e mão de obra.",
@@ -543,7 +547,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
 
   function telaObrigado() {
     var c = D.contexto || {};
-    if (INDICACAO && tudo9e10()) return telaPresente(c);
+    if (INDICACAO && tudo9e10() && proximaRevisao()) return telaPresente(c);
     mostrar('<header class="topo centro">' + logo("g") + '</header><div class="cresce"></div>' +
       '<div class="circulo cheio">' + CHECK_SVG + "</div>" +
       '<section class="final centro"><h1 class="grande" style="margin-top:28px">Obrigado' + (c.nome ? ", " + esc(c.nome) : "") + "!</h1>" +
@@ -676,7 +680,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
 
   // ?t=demo: dados de mentira pra ver o desenho sem bater na API (so na copia de teste)
   var DEMO = { ok: true, marca: "royal", tipo: "oficina", estado: "aberto", nota_baixa_ate: 8, insatisfacao: { nota: [], sim: [] },
-    contexto: { nome: "Marcos", moto: "Classic 350", loja: "Royal Enfield Barra", data: "06/10/2026", atendente: "Larissa" },
+    contexto: { nome: "Marcos", moto: "Classic 350", loja: "Royal Enfield Barra", data: "06/10/2026", atendente: "Larissa", proxima_revisao: 2 },
     perguntas: [
       { id: 1, tipo: "nota", texto: "De 1 a 10, qual nota você dá para o atendimento da oficina?", opcoes: [1,2,3,4,5,6,7,8,9,10].map(function (n) { return { id: 10 + n, rotulo: String(n) }; }) },
       { id: 2, tipo: "simnao", texto: "Sua moto ficou pronta no prazo combinado?", opcoes: [{ id: 7, rotulo: "Sim" }, { id: 8, rotulo: "Não" }] },
