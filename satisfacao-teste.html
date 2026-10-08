@@ -369,9 +369,9 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
 
   function erroHtml() { return erroEnvio ? '<p class="erro" role="alert">' + esc(erroEnvio) + "</p>" : ""; }
 
-  // ---------- convite de indicacao (RASCUNHO: so na copia de teste ate Felipe/Joao aprovarem)
+  // ---------- convite de indicacao (no ar na oficial desde 08/10/2026; beneficio aprovado Joao/Felipe)
   // regra em python_leads/docs/indicacao_pesquisa_moto.md: so quem deu TUDO 9-10, so Royal, ate 3 amigos por rodada
-  var INDICACAO = /teste/.test(location.pathname) || /[?&]indica=1/.test(location.search);
+  var INDICACAO = !/[?&]indica=0/.test(location.search);   // LIGADO na oficial (Joao 08/10); ?indica=0 desliga pra teste
   var convites = 0, estilo = 0;
   function tudo9e10() {
     if (marca !== MARCAS.royal || insatisfeitoAgora()) return false;
