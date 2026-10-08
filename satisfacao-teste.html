@@ -20,32 +20,32 @@
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-text-size-adjust:100%}
 button,textarea{font:inherit;color:inherit}
-.app{max-width:480px;margin:0 auto;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;padding:22px 24px calc(24px + env(safe-area-inset-bottom))}
+.app{max-width:480px;margin:0 auto;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;padding:14px 24px calc(24px + env(safe-area-inset-bottom))}
 .topo{display:flex;align-items:center;justify-content:space-between;min-height:44px}
 .topo.centro{justify-content:center}
 .logo{display:block;object-fit:contain}
-.logo.g{width:64px;height:64px}.logo.g.largo{width:96px;object-position:left center}
+.logo.g{width:54px;height:54px}.logo.g.largo{width:96px;object-position:left center}
 .logo.p{width:40px;height:40px}.logo.p.largo{width:64px;object-position:left center}
 .selo{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
 .contador{font-size:14px;font-weight:600;color:var(--mut)}
 .barra{margin-top:14px;height:4px;border-radius:4px;background:var(--line2)}
 .barra>div{height:4px;border-radius:4px;background:var(--accent);transition:width .25s ease}
 h1{margin:0;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:600;letter-spacing:-.005em}
-h1.grande{font-size:44px;line-height:1.02}
+h1.grande{font-size:40px;line-height:1.02}
 h1.pergunta{margin-top:36px;font-size:32px;line-height:1.08}
-.ola{margin:40px 0 14px;font-size:18px;font-weight:600;color:var(--accent)}
+.ola{margin:12px 0 8px;font-size:18px;font-weight:600;color:var(--accent)}
 .dica{margin:10px 0 0;font-size:15px;color:var(--mut)}
-.cartao{margin-top:28px;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:6px 18px}
-.linha{display:flex;justify-content:space-between;gap:12px;padding:12px 0;font-size:15px}
+.cartao{margin-top:16px;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:6px 18px}
+.linha{display:flex;justify-content:space-between;gap:12px;padding:9px 0;font-size:15px}
 .linha+.linha{border-top:1px solid #EEEAE3}
 .linha span:first-child{color:var(--mut)}
 .linha span:last-child{font-weight:600;text-align:right}
-.texto{margin:22px 0 0;font-size:16px;line-height:1.5;color:var(--txt2)}
-.cresce{flex-grow:1;min-height:24px}
-.primario{width:100%;height:58px;border:none;border-radius:14px;background:var(--accent);color:#fff;font-size:18px;font-weight:700;cursor:pointer}
+.texto{margin:16px 0 0;font-size:16px;line-height:1.5;color:var(--txt2)}
+.cresce{flex-grow:1;min-height:14px}
+.primario{width:100%;height:54px;border:none;border-radius:14px;background:var(--accent);color:#fff;font-size:18px;font-weight:700;cursor:pointer}
 .primario:disabled{opacity:.6;cursor:default}
 .voltar{align-self:flex-start;display:flex;align-items:center;gap:6px;height:44px;margin-top:10px;padding:0 4px;border:none;background:transparent;font-size:16px;font-weight:600;color:var(--mut);cursor:pointer}
-.rodape{margin-top:20px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;line-height:1.4;color:var(--mut)}
+.rodape{margin-top:12px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;line-height:1.4;color:var(--mut)}
 .rodape img{width:92px;height:24px;object-fit:contain;flex-shrink:0}
 .raion{display:flex;justify-content:center;margin-top:16px}.raion img{width:108px;height:28px;object-fit:contain}
 .notas{margin-top:26px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
@@ -116,16 +116,17 @@ textarea:focus,button:focus-visible{outline:3px solid color-mix(in srgb,var(--ac
 .regras ul{margin:6px 0 4px;padding-left:18px}.regras li{margin:4px 0;line-height:1.45}
 /* ---------- palco da moto: fixo embaixo, no meio; arte a nanquim (gerada por IA, fundo transparente) */
 body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{flex:1 0 auto;width:100%;min-height:0!important;padding-bottom:4px!important}
-.palco{order:2;position:relative;flex-shrink:0;width:100%;height:calc(200px + env(safe-area-inset-bottom));pointer-events:none;overflow:hidden;z-index:0}
+:root{--pe:calc(env(safe-area-inset-bottom) + 40px)}/* folga da barra flutuante do Safari */
+.palco{order:2;position:relative;flex-shrink:0;width:100%;height:calc(184px + var(--pe));pointer-events:none;overflow:hidden;z-index:0}
 .app{position:relative;z-index:1}
-.palco .chao{position:absolute;left:0;right:0;bottom:calc(20px + env(safe-area-inset-bottom));height:3px;
+.palco .chao{position:absolute;left:0;right:0;bottom:calc(20px + var(--pe));height:3px;
   background:repeating-linear-gradient(90deg,#17181B 0 22px,transparent 22px 40px);opacity:.28;animation:corre .5s linear infinite}
-.palco .riscos{position:absolute;left:0;right:0;bottom:calc(34px + env(safe-area-inset-bottom));height:90px;
+.palco .riscos{position:absolute;left:0;right:0;bottom:calc(34px + var(--pe));height:90px;
   background:repeating-linear-gradient(90deg,transparent 0 60px,rgba(23,24,27,.22) 60px 88px,transparent 88px 170px) 0 18px/100% 2px no-repeat,
              repeating-linear-gradient(90deg,transparent 0 110px,rgba(23,24,27,.16) 110px 150px,transparent 150px 260px) 0 52px/100% 2px no-repeat;
   animation:corre2 .7s linear infinite;opacity:.0;transition:opacity .3s}
 .palco.acelera .riscos{opacity:1}
-.palco .piloto{position:absolute;left:50%;bottom:calc(21px + env(safe-area-inset-bottom));width:220px;margin-left:-110px;transition:transform .45s cubic-bezier(.3,1.4,.5,1)}
+.palco .piloto{position:absolute;left:50%;bottom:calc(21px + var(--pe));width:220px;margin-left:-110px;transition:transform .45s cubic-bezier(.3,1.4,.5,1)}
 .palco .moto{position:relative;width:100%}
 .palco .moto img{position:absolute;display:block}
 .palco .moto .corpo{inset:0;width:100%;height:100%;animation:motor .09s steps(2) infinite}
@@ -270,8 +271,7 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
       '<p class="ola">' + ola + "</p>" +
       '<h1 class="grande">' + titulo + "</h1>" +
       (linhas ? '<section class="cartao">' + linhas + "</section>" : "") +
-      '<p class="texto">São perguntas rápidas, leva menos de 2 minutos. Você não precisa se identificar: já sabemos de qual ' +
-      (oficina ? "atendimento" : "compra") + " estamos falando.</p>" +
+      '<p class="texto">São perguntas rápidas, leva menos de 2 minutos.</p>' +
       '<div class="cresce"></div>' +
       '<button type="button" class="primario" data-acao="comecar">Começar a pesquisa</button>' +
       '<footer class="rodape"><span>' + (c.atendente ? "Quem acompanha sua pesquisa: " + esc(c.atendente) + ", da Central de Qualidade" : "Central de Qualidade do Grupo Raion") +

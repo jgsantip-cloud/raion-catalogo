@@ -20,32 +20,32 @@
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-text-size-adjust:100%}
 button,textarea{font:inherit;color:inherit}
-.app{max-width:480px;margin:0 auto;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;padding:22px 24px calc(24px + env(safe-area-inset-bottom))}
+.app{max-width:480px;margin:0 auto;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;padding:14px 24px calc(24px + env(safe-area-inset-bottom))}
 .topo{display:flex;align-items:center;justify-content:space-between;min-height:44px}
 .topo.centro{justify-content:center}
 .logo{display:block;object-fit:contain}
-.logo.g{width:64px;height:64px}.logo.g.largo{width:96px;object-position:left center}
+.logo.g{width:54px;height:54px}.logo.g.largo{width:96px;object-position:left center}
 .logo.p{width:40px;height:40px}.logo.p.largo{width:64px;object-position:left center}
 .selo{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
 .contador{font-size:14px;font-weight:600;color:var(--mut)}
 .barra{margin-top:14px;height:4px;border-radius:4px;background:var(--line2)}
 .barra>div{height:4px;border-radius:4px;background:var(--accent);transition:width .25s ease}
 h1{margin:0;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:600;letter-spacing:-.005em}
-h1.grande{font-size:44px;line-height:1.02}
+h1.grande{font-size:40px;line-height:1.02}
 h1.pergunta{margin-top:36px;font-size:32px;line-height:1.08}
-.ola{margin:40px 0 14px;font-size:18px;font-weight:600;color:var(--accent)}
+.ola{margin:12px 0 8px;font-size:18px;font-weight:600;color:var(--accent)}
 .dica{margin:10px 0 0;font-size:15px;color:var(--mut)}
-.cartao{margin-top:28px;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:6px 18px}
-.linha{display:flex;justify-content:space-between;gap:12px;padding:12px 0;font-size:15px}
+.cartao{margin-top:16px;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:6px 18px}
+.linha{display:flex;justify-content:space-between;gap:12px;padding:9px 0;font-size:15px}
 .linha+.linha{border-top:1px solid #EEEAE3}
 .linha span:first-child{color:var(--mut)}
 .linha span:last-child{font-weight:600;text-align:right}
-.texto{margin:22px 0 0;font-size:16px;line-height:1.5;color:var(--txt2)}
-.cresce{flex-grow:1;min-height:24px}
-.primario{width:100%;height:58px;border:none;border-radius:14px;background:var(--accent);color:#fff;font-size:18px;font-weight:700;cursor:pointer}
+.texto{margin:16px 0 0;font-size:16px;line-height:1.5;color:var(--txt2)}
+.cresce{flex-grow:1;min-height:14px}
+.primario{width:100%;height:54px;border:none;border-radius:14px;background:var(--accent);color:#fff;font-size:18px;font-weight:700;cursor:pointer}
 .primario:disabled{opacity:.6;cursor:default}
 .voltar{align-self:flex-start;display:flex;align-items:center;gap:6px;height:44px;margin-top:10px;padding:0 4px;border:none;background:transparent;font-size:16px;font-weight:600;color:var(--mut);cursor:pointer}
-.rodape{margin-top:20px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;line-height:1.4;color:var(--mut)}
+.rodape{margin-top:12px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;line-height:1.4;color:var(--mut)}
 .rodape img{width:92px;height:24px;object-fit:contain;flex-shrink:0}
 .raion{display:flex;justify-content:center;margin-top:16px}.raion img{width:108px;height:28px;object-fit:contain}
 .notas{margin-top:26px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
@@ -75,18 +75,58 @@ textarea:focus,button:focus-visible{outline:3px solid color-mix(in srgb,var(--ac
 .aviso{margin-top:28px;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:16px 18px;font-size:16px;line-height:1.5}
 .erro{margin-top:14px;color:#9B1C1C;font-size:15px}
 .carregando{margin:auto;color:var(--mut);font-size:16px}
+.pres-obg{margin:14px 0 0;text-align:center;font-size:15px;color:var(--mut)}
+.pres-palco{position:relative;width:min(100%,340px);aspect-ratio:1;margin:6px auto 0;cursor:pointer;-webkit-tap-highlight-color:transparent;overflow:hidden;isolation:auto}
+/* o H.264 clareia o creme do fundo; multiply some com o fundo do video e deixa so a tinta sobre o papel da pagina */
+.pres-palco video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;pointer-events:none;mix-blend-mode:multiply}
+.pres-palco video.on{opacity:1}
+.pres-txt{text-align:center;opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s}
+.pres-txt.on{opacity:1;transform:none}.pres-txt.sai{opacity:0;transform:translateY(-8px);height:0;overflow:hidden;transition:opacity .25s,transform .25s}
+.pres-h{margin:4px 0 0;font-size:32px;line-height:1.05}
+.pres-toque{margin:10px 0 0;font-weight:700;color:var(--accent);animation:pulsa 1.2s ease-in-out infinite}
+@keyframes pulsa{50%{opacity:.45}}
+.pres-aberto{display:none}
+.pres-aberto.on{display:block}
+.pres-aberto.on>*{opacity:0;transform:translateY(16px);animation:sobe .5s cubic-bezier(.2,.8,.3,1) forwards}
+.pres-aberto.on>.cartao-pres{animation-delay:0s}
+.pres-aberto.on>.como{animation-delay:.5s}.pres-aberto.on>.quadros{animation-delay:.6s}
+.pres-aberto.on>.primario{animation-delay:2.4s}.pres-aberto.on>.dica{animation-delay:2.5s}
+.pres-aberto.ja>*{animation-duration:.01s!important;animation-delay:0s!important}
+@keyframes sobe{to{opacity:1;transform:none}}
+.cartao-pres{margin-top:-6px;position:relative;background:var(--card);border:2px solid var(--ink);border-radius:18px;padding:16px 18px;text-align:center;box-shadow:0 6px 0 var(--ink)}
+.cartao-pres h2{margin:6px 0 0;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:600;font-size:30px;line-height:1.02}
+.cartao-pres p:last-child{margin:8px 0 0;font-size:15px;color:var(--txt2)}
+.como{margin:22px 0 0;font-weight:700;font-size:16px}
+.quadros{list-style:none;margin:10px 0 22px;padding:0;display:flex;flex-direction:column;gap:10px}
+.quadros li{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:8px 14px 8px 8px;font-size:15px;line-height:1.4;color:var(--txt2);opacity:0;transform:translateX(-14px);animation:entraQ .5s cubic-bezier(.2,.8,.3,1) forwards}
+.quadros li:nth-child(1){animation-delay:.8s}.quadros li:nth-child(2){animation-delay:1.3s}.quadros li:nth-child(3){animation-delay:1.8s}
+.pres-aberto.ja .quadros li{animation-duration:.01s;animation-delay:0s}
+.quadros img{width:84px;height:84px;object-fit:contain;flex-shrink:0}
+.quadros b{color:var(--ink)}
+@keyframes entraQ{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.pres-aberto.on>*,.quadros li{animation:none!important;opacity:1;transform:none}}
+.convite{margin-top:24px;background:var(--card);border:1px solid var(--line2);border-radius:18px;padding:20px 18px 14px}
+.conv-selo{margin:0;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.convite h2{margin:6px 0 0;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:600;font-size:28px;line-height:1.05}
+.conv-txt{margin:10px 0 0;font-size:16px;line-height:1.5;color:var(--txt2)}
+.zap{margin-top:16px;display:flex;align-items:center;justify-content:center;gap:10px;height:56px;border-radius:14px;background:#128C4B;color:#fff;font-size:17px;font-weight:700;text-decoration:none}
+.conv-cont{margin:10px 0 0;text-align:center;font-size:13px;color:var(--mut)}
+.regras{margin-top:12px;border-top:1px solid #EEEAE3;padding-top:10px;font-size:14px;color:var(--txt2)}
+.regras summary{cursor:pointer;font-weight:600;color:var(--ink);min-height:32px;display:flex;align-items:center}
+.regras ul{margin:6px 0 4px;padding-left:18px}.regras li{margin:4px 0;line-height:1.45}
 /* ---------- palco da moto: fixo embaixo, no meio; arte a nanquim (gerada por IA, fundo transparente) */
 body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{flex:1 0 auto;width:100%;min-height:0!important;padding-bottom:4px!important}
-.palco{order:2;position:relative;flex-shrink:0;width:100%;height:calc(200px + env(safe-area-inset-bottom));pointer-events:none;overflow:hidden;z-index:0}
+:root{--pe:calc(env(safe-area-inset-bottom) + 40px)}/* folga da barra flutuante do Safari */
+.palco{order:2;position:relative;flex-shrink:0;width:100%;height:calc(184px + var(--pe));pointer-events:none;overflow:hidden;z-index:0}
 .app{position:relative;z-index:1}
-.palco .chao{position:absolute;left:0;right:0;bottom:calc(20px + env(safe-area-inset-bottom));height:3px;
+.palco .chao{position:absolute;left:0;right:0;bottom:calc(20px + var(--pe));height:3px;
   background:repeating-linear-gradient(90deg,#17181B 0 22px,transparent 22px 40px);opacity:.28;animation:corre .5s linear infinite}
-.palco .riscos{position:absolute;left:0;right:0;bottom:calc(34px + env(safe-area-inset-bottom));height:90px;
+.palco .riscos{position:absolute;left:0;right:0;bottom:calc(34px + var(--pe));height:90px;
   background:repeating-linear-gradient(90deg,transparent 0 60px,rgba(23,24,27,.22) 60px 88px,transparent 88px 170px) 0 18px/100% 2px no-repeat,
              repeating-linear-gradient(90deg,transparent 0 110px,rgba(23,24,27,.16) 110px 150px,transparent 150px 260px) 0 52px/100% 2px no-repeat;
   animation:corre2 .7s linear infinite;opacity:.0;transition:opacity .3s}
 .palco.acelera .riscos{opacity:1}
-.palco .piloto{position:absolute;left:50%;bottom:calc(21px + env(safe-area-inset-bottom));width:220px;margin-left:-110px;transition:transform .45s cubic-bezier(.3,1.4,.5,1)}
+.palco .piloto{position:absolute;left:50%;bottom:calc(21px + var(--pe));width:220px;margin-left:-110px;transition:transform .45s cubic-bezier(.3,1.4,.5,1)}
 .palco .moto{position:relative;width:100%}
 .palco .moto img{position:absolute;display:block}
 .palco .moto .corpo{inset:0;width:100%;height:100%;animation:motor .09s steps(2) infinite}
@@ -231,8 +271,7 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
       '<p class="ola">' + ola + "</p>" +
       '<h1 class="grande">' + titulo + "</h1>" +
       (linhas ? '<section class="cartao">' + linhas + "</section>" : "") +
-      '<p class="texto">São perguntas rápidas, leva menos de 2 minutos. Você não precisa se identificar: já sabemos de qual ' +
-      (oficina ? "atendimento" : "compra") + " estamos falando.</p>" +
+      '<p class="texto">São perguntas rápidas, leva menos de 2 minutos.</p>' +
       '<div class="cresce"></div>' +
       '<button type="button" class="primario" data-acao="comecar">Começar a pesquisa</button>' +
       '<footer class="rodape"><span>' + (c.atendente ? "Quem acompanha sua pesquisa: " + esc(c.atendente) + ", da Central de Qualidade" : "Central de Qualidade do Grupo Raion") +
@@ -285,8 +324,117 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
 
   function erroHtml() { return erroEnvio ? '<p class="erro" role="alert">' + esc(erroEnvio) + "</p>" : ""; }
 
+  // ---------- convite de indicacao (RASCUNHO: so na copia de teste ate Felipe/Joao aprovarem)
+  // regra em python_leads/docs/indicacao_pesquisa_moto.md: so quem deu TUDO 9-10, so Royal, ate 3 amigos por rodada
+  var INDICACAO = /teste/.test(location.pathname) || /[?&]indica=1/.test(location.search);
+  var BDC_MOTOS_WA = "5521900000000";          // PROVISORIO: numero do WhatsApp do BDC Motos (caixa 135)
+  var convites = 0;
+  function tudo9e10() {
+    if (marca !== MARCAS.royal || insatisfeitoAgora()) return false;
+    var notas = visiveis().filter(function (p) { return p.tipo === "nota"; });
+    return notas.length > 0 && notas.every(function (p) { return respostas[p.id] - 10 >= 9; });
+  }
+  function codigoIndicacao() {
+    if (D.indicacao && D.indicacao.codigo) return D.indicacao.codigo;   // vira da Edge Function
+    var h = 0; for (var i = 0; i < token.length; i++) h = (h * 31 + token.charCodeAt(i)) >>> 0;
+    return "IND-" + h.toString(36).toUpperCase().slice(-4);
+  }
+  function linkConvite() {
+    var c = D.contexto || {}, nome = c.nome || "um cliente";
+    var paraBdc = "Oi! Vim pela indicação de " + nome + " (" + codigoIndicacao() + "). Quero conhecer as motos da Royal Enfield.";
+    var msg = "Oi! " + (D.tipo === "oficina" ? "Levei" : "Comprei") + " minha " + (c.moto || "Royal Enfield") + " na Royal Enfield" +
+      (c.loja ? " " + c.loja.replace(/^Royal Enfield\s*/i, "") : "") + " e o atendimento foi excelente. " +
+      "Se você tá pensando numa Royal, chama eles por aqui, já com a minha indicação: https://wa.me/" + BDC_MOTOS_WA + "?text=" + encodeURIComponent(paraBdc);
+    return "https://wa.me/?text=" + encodeURIComponent(msg);
+  }
+  var WA_SVG = '<svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>';
+  function blocoConvite() {
+    var feitos = convites >= 3;
+    return '<section class="convite">' +
+      '<p class="conv-selo">Indique um amigo</p>' +
+      '<h2>Conhece alguém que sonha com uma Royal?</h2>' +
+      '<p class="conv-txt">Mande um convite pelo seu WhatsApp para até 3 amigos. Se um deles comprar uma moto com a gente, ' +
+      '<b>a sua próxima revisão sai por nossa conta</b>.</p>' +
+      (feitos ? '<div class="aviso" style="margin-top:16px">Prontinho, 3 convites enviados. Obrigado pela confiança!</div>'
+              : '<a class="zap" href="' + esc(linkConvite()) + '" target="_blank" rel="noopener" data-convite="1">' + WA_SVG +
+                (convites ? "Convidar mais um amigo" : "Convidar pelo WhatsApp") + "</a>") +
+      '<p class="conv-cont">' + convites + " de 3 convites enviados · seu código " + esc(codigoIndicacao()) + "</p>" +
+      '<details class="regras"><summary>Como funciona</summary><ul>' +
+      "<li>Vale para amigo que nunca comprou moto numa Royal Enfield do Grupo Raion.</li>" +
+      "<li>O amigo chama a gente pelo link do convite. Se ele comprar uma moto, você ganha a próxima revisão do plano (peças e mão de obra).</li>" +
+      "<li>Uma revisão por rodada de convites, mesmo que mais de um amigo compre.</li>" +
+      "<li>A revisão é agendada pelo WhatsApp e vale para a sua próxima revisão prevista.</li>" +
+      "<li>A gente te avisa por aqui quando o benefício for liberado.</li></ul></details></section>";
+  }
+
+  // ---------- o presente (storytelling): clipes do Remotion (remotion/src/presente) + texto/quadrinhos aqui
+  //   caixa:  entrega (moto joga a caixa) -> balanca em loop ("toque pra abrir")
+  //   aberto: abre (tampa voa, confete) -> cartao "sua proxima revisao por nossa conta" -> 3 quadrinhos -> botao
+  //   convite: botao do WhatsApp (fluxo do convite; processo ainda em conversa com o Joao)
+  var presenteEtapa = "caixa";
+  function telaPresente(c) {
+    palco.style.display = "none";                         // a moto agora mora dentro do clipe
+    var nome = c.nome ? esc(c.nome) : "";
+    var topo = '<header class="topo centro">' + logo("p") + "</header>";
+    if (presenteEtapa === "convite") {
+      return mostrar(topo + '<section class="final centro"><h1 class="grande" style="margin-top:18px;font-size:36px">Bora chamar a galera' + (nome ? ", " + nome : "") + "!</h1></section>" +
+        blocoConvite() + '<div class="cresce"></div><div class="raion"><img src="' + RAION + '" alt="Grupo Raion"></div>');
+    }
+    mostrar(topo +
+      '<p class="pres-obg">Obrigado' + (nome ? ", " + nome : "") + '! Suas respostas já chegaram pra nossa equipe.</p>' +
+      '<div class="pres-palco" id="presPalco" role="button" tabindex="0" aria-label="Abrir o presente">' +
+        '<video id="vEntrega" src="presenteentrega.mp4" muted playsinline preload="auto"></video>' +
+        '<video id="vBalanca" src="presentebalanca.mp4" muted playsinline loop preload="auto"></video>' +
+        '<video id="vAbre" src="presenteabre.mp4" muted playsinline preload="auto"></video>' +
+      "</div>" +
+      '<div class="pres-txt" id="presTxt"><h1 class="pres-h">' + (nome ? nome + ", a" : "A") + " gente separou um presente pra você.</h1>" +
+        '<p class="pres-toque">Toque na caixa pra abrir</p></div>' +
+      '<div class="pres-aberto" id="presAberto">' +
+        '<div class="cartao-pres"><p class="conv-selo">Seu presente</p><h2>Sua próxima revisão por nossa conta.</h2><p>Peças e mão de obra, do jeito que o plano manda.</p></div>' +
+        '<p class="como">Pra liberar é assim:</p>' +
+        '<ol class="quadros">' +
+          '<li><img src="q1_convite.webp" alt=""><span><b>Você convida</b> até 3 amigos pelo WhatsApp.</span></li>' +
+          '<li><img src="q2_amigo.webp" alt=""><span><b>Um deles compra</b> uma Royal Enfield com a gente.</span></li>' +
+          '<li><img src="q3_revisao.webp" alt=""><span><b>Seu presente é liberado</b> e você agenda a revisão pelo WhatsApp.</span></li>' +
+        "</ol>" +
+        '<button type="button" class="primario" data-acao="resgatar">Resgatar meu presente</button>' +
+        '<p class="dica centro" style="margin-top:10px">Vale pra amigo que nunca comprou moto numa Royal do Grupo Raion.</p>' +
+      "</div>" +
+      '<div class="cresce"></div><div class="raion"><img src="' + RAION + '" alt="Grupo Raion"></div>');
+    var vE = document.getElementById("vEntrega"), vB = document.getElementById("vBalanca"), vA = document.getElementById("vAbre");
+    var palcoP = document.getElementById("presPalco"), txt = document.getElementById("presTxt"), ab = document.getElementById("presAberto");
+    function mostra(v) { [vE, vB, vA].forEach(function (x) { x.classList.toggle("on", x === v); }); }
+    function toca(v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    var pronto = false;
+    function balancar() { mostra(vB); toca(vB); txt.classList.add("on"); pronto = true; }
+    if (presenteEtapa === "aberto") {                    // voltou pra esta tela: ja aberto, sem repetir o show
+      vA.addEventListener("loadeddata", function () { vA.currentTime = vA.duration || 2.3; });
+      mostra(vA); ab.classList.add("on", "ja"); return;
+    }
+    mostra(vE);
+    vE.addEventListener("ended", balancar);
+    vE.addEventListener("error", balancar);
+    toca(vE);
+    vE.addEventListener("canplay", function () { if (vE.paused && !vE.ended && !pronto) toca(vE); });
+    [500, 1200].forEach(function (ms) { setTimeout(function () { if (vE.paused && !vE.ended && !pronto) toca(vE); }, ms); });
+    setTimeout(function () { if (!pronto && vE.paused && !vE.currentTime) balancar(); }, 3500);   // autoplay bloqueado: pula direto pra caixa
+    function abrir() {
+      if (!pronto) return;
+      pronto = false; txt.classList.remove("on"); txt.classList.add("sai");
+      vA.currentTime = 0; mostra(vA); toca(vA); vB.pause();
+      setTimeout(function () {
+        presenteEtapa = "aberto"; ab.classList.add("on");
+        var alvo = palcoP.getBoundingClientRect().top + window.scrollY + palcoP.offsetHeight * 0.55;   // caixa aberta ainda aparece em cima
+        window.scrollTo({ top: alvo, behavior: "smooth" });
+      }, 1300);
+    }
+    palcoP.addEventListener("click", abrir);
+    palcoP.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); abrir(); } });
+  }
+
   function telaObrigado() {
     var c = D.contexto || {};
+    if (INDICACAO && tudo9e10()) return telaPresente(c);
     mostrar('<header class="topo centro">' + logo("g") + '</header><div class="cresce"></div>' +
       '<div class="circulo cheio">' + CHECK_SVG + "</div>" +
       '<section class="final centro"><h1 class="grande" style="margin-top:28px">Obrigado' + (c.nome ? ", " + esc(c.nome) : "") + "!</h1>" +
@@ -387,10 +535,16 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
   }
 
   app.addEventListener("click", function (ev) {
+    if (ev.target.closest("[data-convite]")) {          // abre o zap do cliente; conta o convite e a moto comemora
+      convites++; acelerar(true);
+      setTimeout(render, 800);
+      return;
+    }
     var b = ev.target.closest("button");
     if (!b || b.disabled) return;
     var acao = b.getAttribute("data-acao");
     if (acao === "comecar") { atual = visiveis()[0].id; return render(); }
+    if (acao === "resgatar") { presenteEtapa = "convite"; return render(); }
     if (acao === "voltar") return voltar();
     if (acao === "enviar") return enviar(false);
     if (acao === "enviar-vazio") return enviar(true);
