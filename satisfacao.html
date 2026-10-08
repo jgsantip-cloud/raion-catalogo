@@ -43,7 +43,7 @@ h1.pergunta{margin-top:36px;font-size:32px;line-height:1.08}
 .texto{margin:16px 0 0;font-size:16px;line-height:1.5;color:var(--txt2)}
 .cresce{flex-grow:1;min-height:14px}
 .primario{width:100%;height:54px;border:none;border-radius:14px;background:var(--accent);color:#fff;font-size:18px;font-weight:700;cursor:pointer}
-.primario:disabled{opacity:.6;cursor:default}
+.primario:disabled{opacity:1;background:color-mix(in srgb,var(--accent) 45%,var(--bg));cursor:default}   /* solido: nada aparece atraves dele */
 .voltar{align-self:flex-start;display:flex;align-items:center;gap:6px;height:44px;margin-top:10px;padding:0 4px;border:none;background:transparent;font-size:16px;font-weight:600;color:var(--mut);cursor:pointer}
 .rodape{margin-top:12px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;line-height:1.4;color:var(--mut)}
 .rodape img{width:92px;height:24px;object-fit:contain;flex-shrink:0}
@@ -117,10 +117,12 @@ textarea:focus,button:focus-visible{outline:3px solid color-mix(in srgb,var(--ac
 /* ---------- palco da moto: fixo embaixo, no meio; arte a nanquim (gerada por IA, fundo transparente) */
 body{min-height:100vh;min-height:100dvh}
 /* moto FIXA no rodape: mesma posicao em todas as telas; a pagina reserva o espaco dela embaixo */
-.app{width:100%;padding-bottom:calc(184px + var(--pe))!important}
+.app{width:100%;padding-bottom:calc(160px + var(--pe))!important}
+/* botao principal gruda logo acima da moto quando a pergunta e comprida: nunca fica escondido atras dela */
+.app>.primario{position:sticky;bottom:calc(160px + var(--pe) + 6px);z-index:3;box-shadow:0 0 0 8px var(--bg)}
 body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!important}
 :root{--pe:calc(env(safe-area-inset-bottom) + 30px)}/* folga da barra flutuante do Safari */
-.palco{position:fixed;left:0;right:0;bottom:0;height:calc(184px + var(--pe));pointer-events:none;overflow:visible;overflow-x:clip;z-index:2;
+.palco{position:fixed;left:0;right:0;bottom:0;height:calc(160px + var(--pe));pointer-events:none;overflow:visible;overflow-x:clip;z-index:2;
   background:linear-gradient(to bottom,rgba(243,241,236,0) 0,var(--bg) 46px)}   /* conteudo que rola some suave atras da moto */
 .app{position:relative;z-index:1}
 .palco .chao{position:absolute;left:0;right:0;bottom:calc(20px + var(--pe));height:3px;
@@ -130,7 +132,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
              repeating-linear-gradient(90deg,transparent 0 110px,rgba(23,24,27,.16) 110px 150px,transparent 150px 260px) 0 52px/100% 2px no-repeat;
   animation:corre2 .7s linear infinite;opacity:.0;transition:opacity .3s}
 .palco.acelera .riscos{opacity:1}
-.palco .piloto{position:absolute;left:50%;bottom:calc(21px + var(--pe));width:220px;margin-left:-110px;transition:transform .45s cubic-bezier(.3,1.4,.5,1)}
+.palco .piloto{position:absolute;left:50%;bottom:calc(21px + var(--pe));width:190px;margin-left:-95px;transition:transform .45s cubic-bezier(.3,1.4,.5,1)}
 .palco .moto{position:relative;width:100%}
 .palco .moto img{position:absolute;display:block}
 .palco .moto .corpo{inset:0;width:100%;height:100%;animation:motor .09s steps(2) infinite}
