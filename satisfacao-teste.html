@@ -483,7 +483,9 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
         // rola ate o botao "Resgatar" ficar visivel acima da barra do navegador (ele entra por ultimo, 2,4 s)
         var bt = ab.querySelector(".primario");
         var alvo = bt.getBoundingClientRect().bottom + window.scrollY - window.innerHeight + 110;
-        window.scrollTo({ top: Math.max(0, alvo), behavior: "smooth" });
+        alvo = Math.max(0, alvo);
+        window.scrollTo({ top: alvo, behavior: "smooth" });
+        setTimeout(function () { if (Math.abs(window.scrollY - alvo) > 40) window.scrollTo(0, alvo); }, 900);   // navegador sem rolagem suave
       }, 1300);
     }
     palcoP.addEventListener("click", abrir);
