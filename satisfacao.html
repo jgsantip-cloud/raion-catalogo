@@ -116,8 +116,8 @@ textarea:focus,button:focus-visible{outline:3px solid color-mix(in srgb,var(--ac
 .regras ul{margin:6px 0 4px;padding-left:18px}.regras li{margin:4px 0;line-height:1.45}
 /* ---------- palco da moto: fixo embaixo, no meio; arte a nanquim (gerada por IA, fundo transparente) */
 body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{flex:1 0 auto;width:100%;min-height:0!important;padding-bottom:4px!important}
-:root{--pe:calc(env(safe-area-inset-bottom) + 40px)}/* folga da barra flutuante do Safari */
-.palco{order:2;position:relative;flex-shrink:0;width:100%;height:calc(184px + var(--pe));pointer-events:none;overflow:hidden;z-index:0}
+:root{--pe:calc(env(safe-area-inset-bottom) + 30px)}/* folga da barra flutuante do Safari */
+.palco{order:2;position:relative;flex-shrink:0;width:100%;height:calc(184px + var(--pe));pointer-events:none;overflow:hidden;clip-path:inset(-60px 0 0 0);overflow:visible;overflow-x:clip;z-index:0}
 .app{position:relative;z-index:1}
 .palco .chao{position:absolute;left:0;right:0;bottom:calc(20px + var(--pe));height:3px;
   background:repeating-linear-gradient(90deg,#17181B 0 22px,transparent 22px 40px);opacity:.28;animation:corre .5s linear infinite}

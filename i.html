@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F3F1EC;--card:#FFFFFF;--ink:#17181B;--txt2:#3E424A;--mut:#5B5F68;--line2:#E2DED6;--accent:#B3261E;--pe:calc(env(safe-area-inset-bottom) + 40px)}
+:root{--bg:#F3F1EC;--card:#FFFFFF;--ink:#17181B;--txt2:#3E424A;--mut:#5B5F68;--line2:#E2DED6;--accent:#B3261E;--pe:calc(env(safe-area-inset-bottom) + 30px)}
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-text-size-adjust:100%}
 body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
@@ -35,7 +35,7 @@ h1{margin:8px 0 0;text-align:center;font-family:'Barlow Condensed','Arial Narrow
 .miudo{margin:10px 0 0;text-align:center;font-size:13px;color:var(--mut);opacity:0;animation:sobe .5s .7s forwards}
 @keyframes sobe{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 /* moto a nanquim, mesma da pesquisa (rodas giram) */
-.palco{position:relative;flex-shrink:0;width:100%;height:calc(184px + var(--pe));overflow:hidden;pointer-events:none}
+.palco{position:relative;flex-shrink:0;width:100%;height:calc(184px + var(--pe));overflow:visible;overflow-x:clip;clip-path:inset(-60px 0 0 0);pointer-events:none}
 .chao{position:absolute;left:0;right:0;bottom:calc(20px + var(--pe));height:3px;background:repeating-linear-gradient(90deg,#17181B 0 22px,transparent 22px 40px);opacity:.28;animation:corre .5s linear infinite}
 .piloto{position:absolute;left:50%;bottom:calc(21px + var(--pe));width:220px;margin-left:-110px;animation:quica .42s ease-in-out infinite}
 .moto{position:relative;width:100%;aspect-ratio:1230/913}
