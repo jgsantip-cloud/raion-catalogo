@@ -193,10 +193,15 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   var ARTES = {
     classica: { corpo: "moto_classica_corpo.webp", roda: "roda_classica.webp", ar: "1230/913", rodas: [[1.22, 59.91, 28.94], [70.24, 59.91, 29.27]] },
     aventureira: { corpo: "moto_aventureira_corpo.webp", roda: "roda_aventureira.webp", ar: "1283/925", rodas: [[2.26, 58.7, 29.31], [68.04, 55.68, 31.49]] },
-    bicilindrica: { corpo: "moto_bicilindrica_corpo.webp", roda: "roda_classica.webp", ar: "1295/926", rodas: [[1.24, 56.37, 30.58], [68.65, 56.16, 30.89]] }
+    bicilindrica: { corpo: "moto_bicilindrica_corpo.webp", roda: "roda_classica.webp", ar: "1295/926", rodas: [[1.24, 56.37, 30.58], [68.65, 56.16, 30.89]] },
+    scooter: { corpo: "moto_scooter_corpo.webp", roda: "roda_scooter.webp", ar: "1302/923", rodas: [[4.07, 63.38, 25.5], [74.04, 63.38, 25.5]] },
+    cf_aventureira: { corpo: "moto_cf_aventureira_corpo.webp", roda: "roda_aventureira.webp", ar: "1330/935", rodas: [[1.95, 59.89, 27.22], [68.57, 55.29, 30.98]] }
   };
-  function familiaDe(moto) {
+  // marca: SYM -> scooter (NH/NHX sao motos de rua -> classica); CF -> cf_aventureira (Ibex/MT; CL-C cai na classica)
+  function familiaDe(moto, mk) {
     var m = String(moto || "").toLowerCase();
+    if (mk === "sym") return /nhx?|apache/.test(m) ? "classica" : "scooter";
+    if (mk === "cf") return /cl-?c|bobber/.test(m) ? "classica" : "cf_aventureira";
     if (/himalayan|guerrilla|scram/.test(m) && ARTES.aventureira) return "aventureira";
     if (/650|interceptor|continental|\bgt\b|super ?meteor|shotgun|bear/.test(m) && ARTES.bicilindrica) return "bicilindrica";
     return "classica";
@@ -270,8 +275,8 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   function aplicarMarca(m) {
     marca = MARCAS[m] || MARCAS.royal;
     // os desenhos sao de Royal; SYM/CF ficam sem moto ate ganharem desenho proprio
-    palco.style.display = marca === MARCAS.royal ? "" : "none";
-    document.body.classList.toggle("sem-palco", marca !== MARCAS.royal);
+    palco.style.display = "";                     // todas as marcas tem desenho (Royal, SYM scooter, CF aventureira)
+    document.body.classList.remove("sem-palco");
     document.documentElement.style.setProperty("--accent", marca.cor);
   }
   function mostrar(html) { app.innerHTML = html; window.scrollTo(0, 0); setTimeout(checarMais, 60); }
@@ -689,7 +694,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     ] };
 
   function iniciar() {
-    if (token === "demo") { D = DEMO; aplicarMarca("royal"); montarMoto(new URLSearchParams(location.search).get("fam") || familiaDe(D.contexto.moto)); atual = "inicio"; return render(); }
+    if (token === "demo") { var qs = new URLSearchParams(location.search), mk = qs.get("marca") || "royal"; D = DEMO; D.marca = mk; if (qs.get("moto")) D.contexto.moto = qs.get("moto"); aplicarMarca(mk); montarMoto(qs.get("fam") || familiaDe(qs.get("moto") || D.contexto.moto, mk)); atual = "inicio"; return render(); }
     if (!/^[A-Za-z0-9_-]{4,64}$/.test(token)) {
       return mostrar('<section class="final centro" style="margin:auto"><h1 class="grande" style="font-size:36px">Link incompleto</h1><p>Abra a pesquisa pelo botão da mensagem que você recebeu no WhatsApp.</p></section>');
     }
@@ -699,7 +704,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       }
       D = j;
       aplicarMarca(j.marca);
-      montarMoto(familiaDe((j.contexto || {}).moto));
+      montarMoto(familiaDe((j.contexto || {}).moto, j.marca));
       if (j.estado === "respondido") return telaSimples("Essa pesquisa já foi respondida", "Recebemos suas respostas" + quando(j.respondido_em) + ". Obrigado por responder!", true);
       if (j.estado === "encerrado") return telaSimples("Essa pesquisa foi encerrada", "Obrigado pelo seu tempo!", true);
       atual = "inicio";
