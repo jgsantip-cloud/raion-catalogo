@@ -382,7 +382,7 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
     if (navigator.share) {                                  // menu do celular: ele escolhe a pessoa e o app
       // com url separada o iPhone mostra a previa do link (desenho da moto) no topo do menu, em vez do "A" de texto
       var e = estilos()[estilo];
-      navigator.share(e.txt ? { text: e.txt, url: linkAmigo() } : { url: linkAmigo() }).then(function () { convites++; acelerar(true); render(); }).catch(function () {});
+      navigator.share(e.txt ? { title: "Convite Royal Enfield", text: e.txt, url: linkAmigo() } : { title: "Convite Royal Enfield", url: linkAmigo() }).then(function () { convites++; acelerar(true); render(); }).catch(function () {});
     } else {
       window.open("https://wa.me/?text=" + encodeURIComponent(t), "_blank", "noopener");
       convites++; setTimeout(render, 600);
