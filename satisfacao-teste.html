@@ -432,7 +432,7 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
   // pede o codigo de indicacao (Edge Function confere se foi tudo 9-10 e grava); ?t=demo segue com codigo local
   function pedirIndicacao() {
     if (D.indicacao) return;
-    if (token === "demo") { D.indicacao = { codigo: "CBPTV" }; return; }   // demo local: codigo do link de exemplo
+    if (token === "demo") { D.indicacao = { codigo: "HV4QN" }; return; }   // demo local: codigo do link de exemplo
     postar({ t: token, acao: "indicacao" }).then(function (r) {
       if (r.j && r.j.ok) { D.indicacao = r.j; if (presenteEtapa === "convite") render(); }   // chegou depois: troca o link na tela
     }).catch(function () {});
