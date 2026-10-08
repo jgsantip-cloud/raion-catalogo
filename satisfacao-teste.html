@@ -420,8 +420,11 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
   function contarConvite() { if (D.indicacao && D.indicacao.codigo) postar({ t: token, acao: "compartilhou" }).catch(function () {}); }
   // pede o codigo de indicacao (Edge Function confere se foi tudo 9-10 e grava); ?t=demo segue com codigo local
   function pedirIndicacao() {
-    if (token === "demo" || D.indicacao) return;
-    postar({ t: token, acao: "indicacao" }).then(function (r) { if (r.j && r.j.ok) D.indicacao = r.j; }).catch(function () {});
+    if (D.indicacao) return;
+    if (token === "demo") { D.indicacao = { codigo: "CBPTV" }; return; }   // demo local: codigo do link de exemplo
+    postar({ t: token, acao: "indicacao" }).then(function (r) {
+      if (r.j && r.j.ok) { D.indicacao = r.j; if (presenteEtapa === "convite") render(); }   // chegou depois: troca o link na tela
+    }).catch(function () {});
   }
   function telaPresente(c) {
     pedirIndicacao();
@@ -429,6 +432,7 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
     var nome = c.nome ? esc(c.nome) : "";
     var topo = '<header class="topo centro">' + logo("p") + "</header>";
     if (presenteEtapa === "convite") {
+      pedirIndicacao();
       return mostrar(topo + '<section class="final centro"><h1 class="grande" style="margin-top:18px;font-size:36px">Quem você lembrou' + (nome ? ", " + nome : "") + "?</h1></section>" +
         blocoConvite() + '<div class="cresce"></div><div class="raion"><img src="' + RAION + '" alt="Grupo Raion"></div>');
     }
@@ -476,8 +480,10 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
       vA.currentTime = 0; mostra(vA); toca(vA); vB.pause();
       setTimeout(function () {
         presenteEtapa = "aberto"; ab.classList.add("on");
-        var alvo = palcoP.getBoundingClientRect().top + window.scrollY + palcoP.offsetHeight * 0.55;   // caixa aberta ainda aparece em cima
-        window.scrollTo({ top: alvo, behavior: "smooth" });
+        // rola ate o botao "Resgatar" ficar visivel acima da barra do navegador (ele entra por ultimo, 2,4 s)
+        var bt = ab.querySelector(".primario");
+        var alvo = bt.getBoundingClientRect().bottom + window.scrollY - window.innerHeight + 110;
+        window.scrollTo({ top: Math.max(0, alvo), behavior: "smooth" });
       }, 1300);
     }
     palcoP.addEventListener("click", abrir);
