@@ -126,9 +126,13 @@ button.zap{width:100%;border:none;cursor:pointer;font:inherit;font-size:17px;fon
 .regras summary{cursor:pointer;font-weight:600;color:var(--ink);min-height:32px;display:flex;align-items:center}
 .regras ul{margin:6px 0 4px;padding-left:18px}.regras li{margin:4px 0;line-height:1.45}
 /* ---------- palco da moto: fixo embaixo, no meio; arte a nanquim (gerada por IA, fundo transparente) */
-body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{flex:1 0 auto;width:100%;min-height:0!important;padding-bottom:4px!important}
+body{min-height:100vh;min-height:100dvh}
+/* moto FIXA no rodape: mesma posicao em todas as telas; a pagina reserva o espaco dela embaixo */
+.app{width:100%;padding-bottom:calc(184px + var(--pe))!important}
+body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!important}
 :root{--pe:calc(env(safe-area-inset-bottom) + 30px)}/* folga da barra flutuante do Safari */
-.palco{order:2;position:relative;flex-shrink:0;width:100%;height:calc(184px + var(--pe));pointer-events:none;overflow:hidden;clip-path:inset(-60px 0 0 0);overflow:visible;overflow-x:clip;z-index:0}
+.palco{position:fixed;left:0;right:0;bottom:0;height:calc(184px + var(--pe));pointer-events:none;overflow:visible;overflow-x:clip;z-index:2;
+  background:linear-gradient(to bottom,rgba(243,241,236,0) 0,var(--bg) 46px)}   /* conteudo que rola some suave atras da moto */
 .app{position:relative;z-index:1}
 .palco .chao{position:absolute;left:0;right:0;bottom:calc(20px + var(--pe));height:3px;
   background:repeating-linear-gradient(90deg,#17181B 0 22px,transparent 22px 40px);opacity:.28;animation:corre .5s linear infinite}
@@ -263,6 +267,7 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
     marca = MARCAS[m] || MARCAS.royal;
     // os desenhos sao de Royal; SYM/CF ficam sem moto ate ganharem desenho proprio
     palco.style.display = marca === MARCAS.royal ? "" : "none";
+    document.body.classList.toggle("sem-palco", marca !== MARCAS.royal);
     document.documentElement.style.setProperty("--accent", marca.cor);
   }
   function mostrar(html) { app.innerHTML = html; window.scrollTo(0, 0); }
@@ -439,7 +444,7 @@ body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}.app{
   }
   function telaPresente(c) {
     pedirIndicacao();
-    palco.style.display = "none";                         // a moto agora mora dentro do clipe
+    palco.style.display = "none"; document.body.classList.add("sem-palco");   // a moto agora mora dentro do clipe
     var nome = c.nome ? esc(c.nome) : "";
     var topo = '<header class="topo centro">' + logo("p") + "</header>";
     if (presenteEtapa === "convite") {
