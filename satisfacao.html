@@ -49,6 +49,7 @@ h1.pergunta{margin-top:24px;font-size:32px;line-height:1.08}
 .rodape img{width:92px;height:24px;object-fit:contain;flex-shrink:0}
 .raion{display:flex;justify-content:center;margin-top:16px}.raion img{width:108px;height:28px;object-fit:contain}
 .notas{margin-top:26px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.notas.onze{grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
 .notas button{height:58px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);font-size:22px;font-weight:600;cursor:pointer}
 .escala{margin-top:12px;display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--mut)}
 .escala span{display:flex;align-items:center;gap:6px}
@@ -146,6 +147,8 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   animation:corre2 .7s linear infinite;opacity:.0;transition:opacity .3s}
 .palco.acelera .riscos{opacity:1}
 .palco .piloto{position:absolute;left:50%;bottom:calc(21px + var(--pe));width:150px;margin-left:-75px;transition:transform .45s cubic-bezier(.3,1.4,.5,1)}
+/* carro: um pouco maior que a moto pra nao ficar miudo; mesma base fixa no rodape */
+.palco.carro .piloto{width:228px;margin-left:-114px}
 .palco .moto{position:relative;width:100%}
 .palco .moto img{position:absolute;display:block}
 .palco .moto .corpo{inset:0;width:100%;height:100%;animation:motor .09s steps(2) infinite}
@@ -180,10 +183,13 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   var MARCAS = {
     royal: { nome: "Royal Enfield", logo: "marcas/royal.png", cor: "#B3261E", largo: false },
     sym:   { nome: "SYM",           logo: "marcas/sym.png",   cor: "#C4002B", largo: true },
-    cf:    { nome: "CF Moto",       logo: "marcas/cfmoto.png", cor: "#1D2125", largo: false }
+    cf:    { nome: "CF Moto",       logo: "marcas/cfmoto.png", cor: "#1D2125", largo: false },
+    mitsubishi: { nome: "Mitsubishi", logo: "marcas/mitsubishi.png", cor: "#E60012", largo: false }
   };
+  // marcas de CARRO: card diz "Carro", desenho de carro no rodape (proximas marcas de carro entram aqui)
+  var CARRO = { mitsubishi: 1 };
   // perguntas de recomendacao usam outra legenda na escala de nota
-  var RECOMENDA = { 125: 1, 45: 1, 169: 1, 178: 1 };
+  var RECOMENDA = { 125: 1, 45: 1, 169: 1, 178: 1, 112: 1, 100: 1 };
   var VOLTAR_SVG = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>';
   var CHECK_SVG = '<svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>';
 
@@ -195,11 +201,29 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     aventureira: { corpo: "moto_aventureira_corpo.webp", roda: "roda_aventureira.webp", ar: "1283/925", rodas: [[2.26, 58.7, 29.31], [68.04, 55.68, 31.49]] },
     bicilindrica: { corpo: "moto_bicilindrica_corpo.webp", roda: "roda_classica.webp", ar: "1295/926", rodas: [[1.24, 56.37, 30.58], [68.65, 56.16, 30.89]] },
     scooter: { corpo: "moto_scooter_corpo.webp", roda: "roda_scooter.webp", ar: "1302/923", rodas: [[4.07, 63.38, 25.5], [74.04, 63.38, 25.5]] },
-    cf_aventureira: { corpo: "moto_cf_aventureira_corpo.webp", roda: "roda_aventureira.webp", ar: "1330/935", rodas: [[1.95, 59.89, 27.22], [68.57, 55.29, 30.98]] }
+    cf_aventureira: { corpo: "moto_cf_aventureira_corpo.webp", roda: "roda_aventureira.webp", ar: "1330/935", rodas: [[1.95, 59.89, 27.22], [68.57, 55.29, 30.98]] },
+    // carro (Mitsubishi): motorista na janela, roda por tras do para-lama
+    eclipse_cross: { corpo: "moto_eclipse_cross_corpo.webp", roda: "roda_carro.webp", ar: "1509/674", rodas: [[8.81, 54.9, 19.62], [70.44, 57.57, 18.56]] },
+    triton: { corpo: "moto_triton_corpo.webp", roda: "roda_carro.webp", ar: "1527/635", rodas: [[11.79, 56.85, 17.55], [74.07, 57.01, 17.42]] },
+    l200_sport: { corpo: "moto_l200_sport_corpo.webp", roda: "roda_carro.webp", ar: "1527/634", rodas: [[12.9, 55.21, 18.07], [73.8, 56.15, 17.81]] },
+    outlander: { corpo: "moto_outlander_corpo.webp", roda: "roda_carro.webp", ar: "1526/681", rodas: [[10.22, 54.92, 19.66], [71.63, 56.83, 18.87]] },
+    pajero_sport: { corpo: "moto_pajero_sport_corpo.webp", roda: "roda_carro.webp", ar: "1512/680", rodas: [[10.65, 55.74, 19.44], [72.62, 58.53, 18.25]] },
+    asx: { corpo: "moto_asx_corpo.webp", roda: "roda_carro.webp", ar: "1517/693", rodas: [[8.37, 58.3, 18.59], [70.4, 58.73, 18.46]] },
+    pajero_full: { corpo: "moto_pajero_full_corpo.webp", roda: "roda_carro.webp", ar: "1522/694", rodas: [[15.57, 57.93, 18.79], [73.65, 57.93, 18.79]] }
   };
   // marca: SYM -> scooter (NH/NHX sao motos de rua -> classica); CF -> cf_aventureira (Ibex/MT; CL-C cai na classica)
   function familiaDe(moto, mk) {
     var m = String(moto || "").toLowerCase();
+    if (mk === "mitsubishi") {
+      if (/l200|triton sport/.test(m)) return "l200_sport";
+      if (/triton/.test(m)) return "triton";
+      if (/asx|outlander sport/.test(m)) return "asx";
+      if (/outlander/.test(m)) return "outlander";
+      if (/pajero sport/.test(m)) return "pajero_sport";
+      if (/pajero|tr4|dakar/.test(m)) return "pajero_full";
+      if (/eclipse/.test(m)) return "eclipse_cross";
+      return "eclipse_cross";
+    }
     if (mk === "sym") return /nhx?|apache/.test(m) ? "classica" : "scooter";
     if (mk === "cf") return /cl-?c|bobber/.test(m) ? "classica" : "cf_aventureira";
     if (/himalayan|guerrilla|scram/.test(m) && ARTES.aventureira) return "aventureira";
@@ -219,7 +243,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     for (var i = 0; i < n; i++) (function (i) {
       setTimeout(function () {
         var r = p.getBoundingClientRect(), b = palco.getBoundingClientRect(), s = document.createElement("span");
-        s.className = "fumaca"; s.style.left = (r.left - b.left + 4 + Math.random() * 6) + "px"; s.style.top = (r.top - b.top + r.height * 0.70 + Math.random() * 6) + "px";
+        s.className = "fumaca"; s.style.left = (r.left - b.left + (ehCarro ? -4 : 4) + Math.random() * 6) + "px"; s.style.top = (r.top - b.top + r.height * (ehCarro ? 0.80 : 0.70) + Math.random() * 6) + "px";   // carro: escapamento embaixo do para-choque
         palco.appendChild(s); setTimeout(function () { s.remove(); }, 900);
       }, i * 110);
     })(i);
@@ -244,7 +268,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
 
   var app = document.getElementById("app");
   var token = new URLSearchParams(location.search).get("t") || "";
-  var D = null, marca = MARCAS.royal, atual = "inicio", respostas = {}, ocupado = false, resultado = null, contato = null, erroEnvio = "";
+  var D = null, ehCarro = false, marca = MARCAS.royal, atual = "inicio", respostas = {}, ocupado = false, resultado = null, contato = null, erroEnvio = "";
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
@@ -274,6 +298,8 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   function dicaDe(p) { return (p.dica_insatisfeito && insatisfeitoAgora()) ? p.dica_insatisfeito : p.dica; }
   function aplicarMarca(m) {
     marca = MARCAS[m] || MARCAS.royal;
+    ehCarro = !!CARRO[m];
+    palco.classList.toggle("carro", ehCarro);
     palco.style.display = "";                     // todas as marcas tem desenho (Royal, SYM scooter, CF aventureira)
     document.body.classList.remove("sem-palco");
     document.documentElement.style.setProperty("--accent", marca.cor);
@@ -303,7 +329,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     var ola = "Oi" + (c.nome ? ", " + esc(c.nome) : "") + "!" + (oficina ? "" : " Parabéns pela sua nova " + esc(marca.nome) + ".");
     var titulo = oficina ? (c.moto ? "Como foi o serviço na sua " + esc(c.moto) + "?" : "Como foi o atendimento na nossa oficina?")
                          : (c.moto ? "Como foi a compra da sua " + esc(c.moto) + "?" : "Como foi a sua compra com a gente?");
-    var linhas = [[oficina ? "Oficina" : "Loja", c.loja], [oficina ? "Serviço concluído em" : "Compra em", c.data], ["Moto", c.moto]]
+    var linhas = [[oficina ? "Oficina" : "Loja", c.loja], [oficina ? "Serviço concluído em" : "Compra em", c.data], [ehCarro ? "Carro" : "Moto", c.moto]]
       .filter(function (l) { return l[1]; })
       .map(function (l) { return '<div class="linha"><span>' + l[0] + "</span><span>" + esc(l[1]) + "</span></div>"; }).join("");
     mostrar(
@@ -327,11 +353,12 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   function telaPergunta(p, idx, total) {
     var marcado = respostas[p.id], corpo = "", dica = dicaDe(p);
     if (p.tipo === "nota") {
-      corpo = '<div class="notas">' + p.opcoes.map(function (o) {
+      var ini = p.opcoes.length && p.opcoes[0].rotulo === "0" ? "0" : "1";   // carro (questionario 16): escala 0..10, 11 botoes
+      corpo = '<div class="notas' + (p.opcoes.length > 10 ? " onze" : "") + '">' + p.opcoes.map(function (o) {
         var cls = (o.id - 10 >= 9 ? "bom" : "") + (marcado === o.id ? " sel" : "");
         return '<button type="button" data-op="' + o.id + '" class="' + cls + '" aria-pressed="' + (marcado === o.id) + '">' + esc(o.rotulo) + "</button>";
       }).join("") + "</div>" +
-      '<div class="escala"><span><i class="pt ruim"></i>' + (RECOMENDA[p.id] ? "1 a 8 · não recomendaria" : "1 a 8 · não gostei") + "</span>" +
+      '<div class="escala"><span><i class="pt ruim"></i>' + ini + (RECOMENDA[p.id] ? " a 8 · não recomendaria" : " a 8 · não gostei") + "</span>" +
       '<span><i class="pt bom"></i>' + (RECOMENDA[p.id] ? "9 e 10 · recomendaria" : "9 e 10 · gostei") + "</span></div>";
       dica = dica || "Toque numa nota.";
     } else if (p.tipo === "simnao") {
@@ -697,7 +724,17 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     ] };
 
   function iniciar() {
-    if (token === "demo") { var qs = new URLSearchParams(location.search), mk = qs.get("marca") || "royal"; D = DEMO; D.marca = mk; if (qs.get("moto")) D.contexto.moto = qs.get("moto"); aplicarMarca(mk); montarMoto(qs.get("fam") || familiaDe(qs.get("moto") || D.contexto.moto, mk)); atual = "inicio"; return render(); }
+    if (token === "demo" && new URLSearchParams(location.search).get("q")) {   // ?t=demo&q=16: questionario real (copia local questionarios_demo.json)
+      var qn = Number(new URLSearchParams(location.search).get("q"));
+      return fetch("questionarios_demo.json").then(function (r) { return r.json(); }).then(function (lst) {
+        var q = lst.filter(function (x) { return x.id_pesquisa === qn; })[0];
+        if (q) { DEMO.perguntas = q.perguntas; DEMO.insatisfacao = q.insatisfacao; DEMO.nota_baixa_ate = q.nota_baixa_ate;
+          DEMO.tipo = /vendas|ve[ií]culos/i.test(q.nome) ? "vendas" : "oficina"; }
+        token = "demo"; iniciarDemo();
+      });
+    }
+    if (token === "demo") return iniciarDemo();
+    function iniciarDemo() { var qs = new URLSearchParams(location.search), mk = qs.get("marca") || "royal"; D = DEMO; D.marca = mk; if (qs.get("moto")) D.contexto.moto = qs.get("moto"); if (mk !== "royal" && MARCAS[mk]) D.contexto.loja = MARCAS[mk].nome + " Barra"; aplicarMarca(mk); montarMoto(qs.get("fam") || familiaDe(qs.get("moto") || D.contexto.moto, mk)); atual = "inicio"; return render(); }
     if (!/^[A-Za-z0-9_-]{4,64}$/.test(token)) {
       return mostrar('<section class="final centro" style="margin:auto"><h1 class="grande" style="font-size:36px">Link incompleto</h1><p>Abra a pesquisa pelo botão da mensagem que você recebeu no WhatsApp.</p></section>');
     }
