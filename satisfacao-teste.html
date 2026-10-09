@@ -203,13 +203,27 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     scooter: { corpo: "moto_scooter_corpo.webp", roda: "roda_scooter.webp", ar: "1302/923", rodas: [[4.07, 63.38, 25.5], [74.04, 63.38, 25.5]] },
     cf_aventureira: { corpo: "moto_cf_aventureira_corpo.webp", roda: "roda_aventureira.webp", ar: "1330/935", rodas: [[1.95, 59.89, 27.22], [68.57, 55.29, 30.98]] },
     // carro (Mitsubishi): motorista na janela, roda por tras do para-lama
-    suv: { corpo: "moto_suv_corpo.webp", roda: "roda_carro.webp", ar: "1506/680", rodas: [[9.89, 55.29, 19.39], [71.38, 56.18, 19.39]] },
-    picape: { corpo: "moto_picape_corpo.webp", roda: "roda_carro.webp", ar: "1529/693", rodas: [[12.62, 57.0, 19.1], [71.48, 58.15, 18.57]] }
+    eclipse_cross: { corpo: "moto_eclipse_cross_corpo.webp", roda: "roda_carro.webp", ar: "1509/674", rodas: [[8.81, 54.9, 19.62], [70.44, 57.57, 18.56]] },
+    triton: { corpo: "moto_triton_corpo.webp", roda: "roda_carro.webp", ar: "1527/635", rodas: [[11.79, 56.85, 17.55], [74.07, 57.01, 17.42]] },
+    l200_sport: { corpo: "moto_l200_sport_corpo.webp", roda: "roda_carro.webp", ar: "1527/634", rodas: [[12.9, 55.21, 18.07], [73.8, 56.15, 17.81]] },
+    outlander: { corpo: "moto_outlander_corpo.webp", roda: "roda_carro.webp", ar: "1526/681", rodas: [[10.22, 54.92, 19.66], [71.63, 56.83, 18.87]] },
+    pajero_sport: { corpo: "moto_pajero_sport_corpo.webp", roda: "roda_carro.webp", ar: "1512/680", rodas: [[10.65, 55.74, 19.44], [72.62, 58.53, 18.25]] },
+    asx: { corpo: "moto_asx_corpo.webp", roda: "roda_carro.webp", ar: "1517/693", rodas: [[8.37, 58.3, 18.59], [70.4, 58.73, 18.46]] },
+    pajero_full: { corpo: "moto_pajero_full_corpo.webp", roda: "roda_carro.webp", ar: "1522/694", rodas: [[15.57, 57.93, 18.79], [73.65, 57.93, 18.79]] }
   };
   // marca: SYM -> scooter (NH/NHX sao motos de rua -> classica); CF -> cf_aventureira (Ibex/MT; CL-C cai na classica)
   function familiaDe(moto, mk) {
     var m = String(moto || "").toLowerCase();
-    if (mk === "mitsubishi") return /triton|l200/.test(m) && ARTES.picape ? "picape" : "suv";
+    if (mk === "mitsubishi") {
+      if (/l200|triton sport/.test(m)) return "l200_sport";
+      if (/triton/.test(m)) return "triton";
+      if (/asx|outlander sport/.test(m)) return "asx";
+      if (/outlander/.test(m)) return "outlander";
+      if (/pajero sport/.test(m)) return "pajero_sport";
+      if (/pajero|tr4|dakar/.test(m)) return "pajero_full";
+      if (/eclipse/.test(m)) return "eclipse_cross";
+      return "eclipse_cross";
+    }
     if (mk === "sym") return /nhx?|apache/.test(m) ? "classica" : "scooter";
     if (mk === "cf") return /cl-?c|bobber/.test(m) ? "classica" : "cf_aventureira";
     if (/himalayan|guerrilla|scram/.test(m) && ARTES.aventureira) return "aventureira";
