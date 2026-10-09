@@ -184,12 +184,13 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     royal: { nome: "Royal Enfield", logo: "marcas/royal.png", cor: "#B3261E", largo: false },
     sym:   { nome: "SYM",           logo: "marcas/sym.png",   cor: "#C4002B", largo: true },
     cf:    { nome: "CF Moto",       logo: "marcas/cfmoto.png", cor: "#1D2125", largo: false },
-    mitsubishi: { nome: "Mitsubishi", logo: "marcas/mitsubishi.png", cor: "#E60012", largo: false }
+    mitsubishi: { nome: "Mitsubishi", logo: "marcas/mitsubishi.png", cor: "#E60012", largo: false },
+    nissan: { nome: "Nissan", logo: "marcas/nissan.png", cor: "#C3002F", largo: false }
   };
   // marcas de CARRO: card diz "Carro", desenho de carro no rodape (proximas marcas de carro entram aqui)
-  var CARRO = { mitsubishi: 1 };
+  var CARRO = { mitsubishi: 1, nissan: 1 };
   // perguntas de recomendacao usam outra legenda na escala de nota
-  var RECOMENDA = { 125: 1, 45: 1, 169: 1, 178: 1, 112: 1, 100: 1 };
+  var RECOMENDA = { 125: 1, 45: 1, 169: 1, 178: 1, 112: 1, 100: 1, 96: 1, 88: 1 };
   var VOLTAR_SVG = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>';
   var CHECK_SVG = '<svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>';
 
@@ -209,7 +210,14 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     outlander: { corpo: "moto_outlander_corpo.webp", roda: "roda_carro.webp", ar: "1526/681", rodas: [[10.22, 54.92, 19.66], [71.63, 56.83, 18.87]] },
     pajero_sport: { corpo: "moto_pajero_sport_corpo.webp", roda: "roda_carro.webp", ar: "1512/680", rodas: [[10.65, 55.74, 19.44], [72.62, 58.53, 18.25]] },
     asx: { corpo: "moto_asx_corpo.webp", roda: "roda_carro.webp", ar: "1517/693", rodas: [[8.37, 58.3, 18.59], [70.4, 58.73, 18.46]] },
-    pajero_full: { corpo: "moto_pajero_full_corpo.webp", roda: "roda_carro.webp", ar: "1522/694", rodas: [[15.57, 57.93, 18.79], [73.65, 57.93, 18.79]] }
+    pajero_full: { corpo: "moto_pajero_full_corpo.webp", roda: "roda_carro.webp", ar: "1522/694", rodas: [[15.57, 57.93, 18.79], [73.65, 57.93, 18.79]] },
+    // carro (Nissan Keiko): mesmo motorista e mesma roda
+    kicks_antigo: { corpo: "moto_kicks_antigo_corpo.webp", roda: "roda_carro.webp", ar: "1520/698", rodas: [[7.89, 57.59, 18.68], [70.0, 59.03, 18.42]] },
+    versa: { corpo: "moto_versa_corpo.webp", roda: "roda_carro.webp", ar: "1524/576", rodas: [[11.94, 54.86, 16.54], [71.65, 55.21, 16.54]] },
+    kicks_novo: { corpo: "moto_kicks_novo_corpo.webp", roda: "roda_carro.webp", ar: "1517/698", rodas: [[7.65, 55.59, 20.04], [71.19, 56.16, 19.78]] },
+    frontier: { corpo: "moto_frontier_corpo.webp", roda: "roda_carro.webp", ar: "1528/592", rodas: [[11.06, 51.01, 18.46], [73.89, 54.39, 17.28]] },
+    kait: { corpo: "moto_kait_corpo.webp", roda: "roda_carro.webp", ar: "1519/675", rodas: [[9.08, 56.44, 18.96], [70.84, 56.44, 18.96]] },
+    sentra: { corpo: "moto_sentra_corpo.webp", roda: "roda_carro.webp", ar: "1525/547", rodas: [[11.28, 52.29, 16.66], [72.0, 53.2, 16.39]] }
   };
   // marca: SYM -> scooter (NH/NHX sao motos de rua -> classica); CF -> cf_aventureira (Ibex/MT; CL-C cai na classica)
   function familiaDe(moto, mk) {
@@ -224,7 +232,15 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       if (/eclipse/.test(m)) return "eclipse_cross";
       return "eclipse_cross";
     }
-    if (mk === "sym") return /nhx?|apache/.test(m) ? "classica" : "scooter";
+    if (mk === "nissan") {
+      if (/kait/.test(m)) return "kait";
+      if (/kicks/.test(m)) return /\b1\.0/.test(m) ? "kicks_novo" : "kicks_antigo";
+      if (/versa/.test(m)) return "versa";
+      if (/frontier/.test(m)) return "frontier";
+      if (/sentra/.test(m)) return "sentra";
+      return "kicks_antigo";
+    }
+    if (mk === "sym") return /\bnhx?\b|apache/.test(m) ? "classica" : "scooter";
     if (mk === "cf") return /cl-?c|bobber/.test(m) ? "classica" : "cf_aventureira";
     if (/himalayan|guerrilla|scram/.test(m) && ARTES.aventureira) return "aventureira";
     if (/650|interceptor|continental|\bgt\b|super ?meteor|shotgun|bear/.test(m) && ARTES.bicilindrica) return "bicilindrica";
@@ -279,9 +295,12 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     return '<img class="logo ' + tam + (marca.largo ? " largo" : "") + '" src="' + marca.logo + '" alt="' + esc(marca.nome) + '">';
   }
   // mesma regua da Edge Function: qualquer nota ate nota_baixa_ate (alternativa 11..20 = nota 1..10) ou "Insatisfeito? Sim"
+  // limite por pergunta: p.baixa_ate (ex.: Nissan 88, escala 1..5, so o 5 e positivo) ou a regra global nota_baixa_ate
+  function limiteDe(p) { return p && p.baixa_ate != null ? p.baixa_ate : D.nota_baixa_ate; }
+  function limiteId(id) { return limiteDe(D.perguntas.filter(function (p) { return p.id === id; })[0]); }
   function insatisfeitoAgora() {
     var ins = D.insatisfacao || {};
-    return (ins.nota || []).some(function (id) { var a = respostas[id]; return a !== undefined && a - 10 <= D.nota_baixa_ate; }) ||
+    return (ins.nota || []).some(function (id) { var a = respostas[id]; return a !== undefined && a - 10 <= limiteId(id); }) ||
       (ins.sim || []).some(function (id) { return respostas[id] === 8; });
   }
   function visiveis() {
@@ -354,12 +373,14 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     var marcado = respostas[p.id], corpo = "", dica = dicaDe(p);
     if (p.tipo === "nota") {
       var ini = p.opcoes.length && p.opcoes[0].rotulo === "0" ? "0" : "1";   // carro (questionario 16): escala 0..10, 11 botoes
+      var lim = limiteDe(p), max = p.opcoes.length ? p.opcoes[p.opcoes.length - 1].id - 10 : 10;
+      var faixaBoa = max === lim + 1 ? String(max) : (max === lim + 2 ? (lim + 1) + " e " + max : (lim + 1) + " a " + max);
       corpo = '<div class="notas' + (p.opcoes.length > 10 ? " onze" : "") + '">' + p.opcoes.map(function (o) {
-        var cls = (o.id - 10 >= 9 ? "bom" : "") + (marcado === o.id ? " sel" : "");
+        var cls = (o.id - 10 > lim ? "bom" : "") + (marcado === o.id ? " sel" : "");
         return '<button type="button" data-op="' + o.id + '" class="' + cls + '" aria-pressed="' + (marcado === o.id) + '">' + esc(o.rotulo) + "</button>";
       }).join("") + "</div>" +
-      '<div class="escala"><span><i class="pt ruim"></i>' + ini + (RECOMENDA[p.id] ? " a 8 · não recomendaria" : " a 8 · não gostei") + "</span>" +
-      '<span><i class="pt bom"></i>' + (RECOMENDA[p.id] ? "9 e 10 · recomendaria" : "9 e 10 · gostei") + "</span></div>";
+      '<div class="escala"><span><i class="pt ruim"></i>' + ini + " a " + lim + (RECOMENDA[p.id] ? " · não recomendaria" : " · não gostei") + "</span>" +
+      '<span><i class="pt bom"></i>' + faixaBoa + (RECOMENDA[p.id] ? " · recomendaria" : " · gostei") + "</span></div>";
       dica = dica || "Toque numa nota.";
     } else if (p.tipo === "simnao") {
       corpo = '<div class="simnao">' + p.opcoes.map(function (o) {
@@ -382,8 +403,8 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     var titulo = textoDe(p);
     if (p.tipo === "texto") {
       var notas = visiveis().filter(function (q) { return q.tipo === "nota" && respostas[q.id] !== undefined; });
-      if (insatisfeitoAgora() || notas.some(function (q) { return respostas[q.id] - 10 <= 8; })) { titulo = "Puxa, que pena que o atendimento não te encantou."; dica = "Quer deixar um recado pra equipe? Conta o que aconteceu, a gente quer resolver."; }
-      else if (notas.length && notas.every(function (q) { return respostas[q.id] - 10 >= 9; })) { titulo = "Uhul! 🎉 Que bom que você curtiu."; dica = "Quer deixar um recado ou um elogio pra equipe?"; }
+      if (insatisfeitoAgora() || notas.some(function (q) { return respostas[q.id] - 10 <= limiteDe(q); })) { titulo = "Puxa, que pena que o atendimento não te encantou."; dica = "Quer deixar um recado pra equipe? Conta o que aconteceu, a gente quer resolver."; }
+      else if (notas.length && notas.every(function (q) { return respostas[q.id] - 10 > limiteDe(q); })) { titulo = "Uhul! 🎉 Que bom que você curtiu."; dica = "Quer deixar um recado ou um elogio pra equipe?"; }
     }
     mostrar(cabecalho(idx, total) + '<h1 class="pergunta">' + esc(titulo) + "</h1>" +
       (dica ? '<p class="dica">' + esc(dica) + "</p>" : "") + corpo + '<div class="cresce"></div>' + fim);
@@ -411,7 +432,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   function tudo9e10() {
     if (marca !== MARCAS.royal || insatisfeitoAgora()) return false;
     var notas = visiveis().filter(function (p) { return p.tipo === "nota"; });
-    return notas.length > 0 && notas.every(function (p) { return respostas[p.id] - 10 >= 9; });
+    return notas.length > 0 && notas.every(function (p) { return respostas[p.id] - 10 > limiteDe(p); });
   }
   function codigoIndicacao() {
     if (D.indicacao && D.indicacao.codigo) return D.indicacao.codigo;   // vira da Edge Function
