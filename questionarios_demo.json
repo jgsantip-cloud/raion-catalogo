@@ -2409,7 +2409,7 @@
     "id": 91,
     "ordem": 1,
     "tipo": "nota",
-    "texto": "De 1 a 10, que nota você dá para a sua experiência no pós-venda da Keiko?",
+    "texto": "De 1 a 5, que nota você dá para a sua experiência no pós-venda da Keiko?",
     "texto_syonet": "Que nota o(a) Sr.(a) atribui para a sua experiência geral com o Pós-Vendas da Concessionária Keiko?",
     "dica": "",
     "opcoes": [
@@ -2437,39 +2437,15 @@
       "id": 15,
       "resposta": "5",
       "rotulo": "5"
-     },
-     {
-      "id": 16,
-      "resposta": "6",
-      "rotulo": "6"
-     },
-     {
-      "id": 17,
-      "resposta": "7",
-      "rotulo": "7"
-     },
-     {
-      "id": 18,
-      "resposta": "8",
-      "rotulo": "8"
-     },
-     {
-      "id": 19,
-      "resposta": "9",
-      "rotulo": "9"
-     },
-     {
-      "id": 20,
-      "resposta": "10",
-      "rotulo": "10"
      }
-    ]
+    ],
+    "baixa_ate": 4
    },
    {
     "id": 92,
     "ordem": 2,
     "tipo": "nota",
-    "texto": "De 1 a 10, que nota você dá para o atendimento do consultor de serviços?",
+    "texto": "De 1 a 5, que nota você dá para o atendimento do consultor de serviços?",
     "texto_syonet": "Que nota o(a) Sr.(a) atribui para o atendimento do Supervisor de Serviços?",
     "dica": "",
     "opcoes": [
@@ -2497,39 +2473,15 @@
       "id": 15,
       "resposta": "5",
       "rotulo": "5"
-     },
-     {
-      "id": 16,
-      "resposta": "6",
-      "rotulo": "6"
-     },
-     {
-      "id": 17,
-      "resposta": "7",
-      "rotulo": "7"
-     },
-     {
-      "id": 18,
-      "resposta": "8",
-      "rotulo": "8"
-     },
-     {
-      "id": 19,
-      "resposta": "9",
-      "rotulo": "9"
-     },
-     {
-      "id": 20,
-      "resposta": "10",
-      "rotulo": "10"
      }
-    ]
+    ],
+    "baixa_ate": 4
    },
    {
     "id": 94,
     "ordem": 3,
     "tipo": "nota",
-    "texto": "De 1 a 10, que nota você dá para quem fez o seu agendamento?",
+    "texto": "De 1 a 5, que nota você dá para quem fez o seu agendamento?",
     "texto_syonet": "Que nota o(a) Sr.(a) atribui ao atendimento do Operador de Agendamento?",
     "dica": "",
     "opcoes": [
@@ -2557,33 +2509,9 @@
       "id": 15,
       "resposta": "5",
       "rotulo": "5"
-     },
-     {
-      "id": 16,
-      "resposta": "6",
-      "rotulo": "6"
-     },
-     {
-      "id": 17,
-      "resposta": "7",
-      "rotulo": "7"
-     },
-     {
-      "id": 18,
-      "resposta": "8",
-      "rotulo": "8"
-     },
-     {
-      "id": 19,
-      "resposta": "9",
-      "rotulo": "9"
-     },
-     {
-      "id": 20,
-      "resposta": "10",
-      "rotulo": "10"
      }
-    ]
+    ],
+    "baixa_ate": 4
    },
    {
     "id": 93,
@@ -2609,7 +2537,7 @@
     "id": 95,
     "ordem": 5,
     "tipo": "nota",
-    "texto": "De 1 a 10, que nota você dá para o serviço feito no seu carro?",
+    "texto": "De 1 a 5, que nota você dá para o serviço feito no seu carro?",
     "texto_syonet": "Que nota o(a) Sr.(a) atribui a sua satisfação com os serviços prestados?",
     "dica": "",
     "opcoes": [
@@ -2637,39 +2565,15 @@
       "id": 15,
       "resposta": "5",
       "rotulo": "5"
-     },
-     {
-      "id": 16,
-      "resposta": "6",
-      "rotulo": "6"
-     },
-     {
-      "id": 17,
-      "resposta": "7",
-      "rotulo": "7"
-     },
-     {
-      "id": 18,
-      "resposta": "8",
-      "rotulo": "8"
-     },
-     {
-      "id": 19,
-      "resposta": "9",
-      "rotulo": "9"
-     },
-     {
-      "id": 20,
-      "resposta": "10",
-      "rotulo": "10"
      }
-    ]
+    ],
+    "baixa_ate": 4
    },
    {
     "id": 96,
     "ordem": 6,
     "tipo": "nota",
-    "texto": "De 1 a 10, o quanto você recomendaria a Keiko a um amigo ou familiar?",
+    "texto": "De 1 a 5, o quanto você recomendaria a Keiko a um amigo ou familiar?",
     "texto_syonet": "Que nota o(a) Sr.(a) atribui para sua intenção de recomendar a Concessionária para algum familiar ou amigo?",
     "dica": "",
     "opcoes": [
@@ -2697,33 +2601,9 @@
       "id": 15,
       "resposta": "5",
       "rotulo": "5"
-     },
-     {
-      "id": 16,
-      "resposta": "6",
-      "rotulo": "6"
-     },
-     {
-      "id": 17,
-      "resposta": "7",
-      "rotulo": "7"
-     },
-     {
-      "id": 18,
-      "resposta": "8",
-      "rotulo": "8"
-     },
-     {
-      "id": 19,
-      "resposta": "9",
-      "rotulo": "9"
-     },
-     {
-      "id": 20,
-      "resposta": "10",
-      "rotulo": "10"
      }
-    ]
+    ],
+    "baixa_ate": 4
    },
    {
     "id": 98,
@@ -2762,7 +2642,7 @@
     "id": 81,
     "ordem": 1,
     "tipo": "nota",
-    "texto": "De 1 a 10, que nota você dá para a sua experiência de compra?",
+    "texto": "De 1 a 5, que nota você dá para a sua experiência de compra?",
     "texto_syonet": "Que nota o(a) Sr.(a) atribui para a satisfação geral com o processo de compra neste concessionária?",
     "dica": "",
     "opcoes": [
@@ -2790,39 +2670,15 @@
       "id": 15,
       "resposta": "5",
       "rotulo": "5"
-     },
-     {
-      "id": 16,
-      "resposta": "6",
-      "rotulo": "6"
-     },
-     {
-      "id": 17,
-      "resposta": "7",
-      "rotulo": "7"
-     },
-     {
-      "id": 18,
-      "resposta": "8",
-      "rotulo": "8"
-     },
-     {
-      "id": 19,
-      "resposta": "9",
-      "rotulo": "9"
-     },
-     {
-      "id": 20,
-      "resposta": "10",
-      "rotulo": "10"
      }
-    ]
+    ],
+    "baixa_ate": 4
    },
    {
     "id": 82,
     "ordem": 2,
     "tipo": "nota",
-    "texto": "De 1 a 10, que nota você dá para o atendimento do seu vendedor?",
+    "texto": "De 1 a 5, que nota você dá para o atendimento do seu vendedor?",
     "texto_syonet": "Que nota o(a) Sr.(a) atribui para o atendimento do(a) vendedor(a)?",
     "dica": "",
     "opcoes": [
@@ -2850,33 +2706,9 @@
       "id": 15,
       "resposta": "5",
       "rotulo": "5"
-     },
-     {
-      "id": 16,
-      "resposta": "6",
-      "rotulo": "6"
-     },
-     {
-      "id": 17,
-      "resposta": "7",
-      "rotulo": "7"
-     },
-     {
-      "id": 18,
-      "resposta": "8",
-      "rotulo": "8"
-     },
-     {
-      "id": 19,
-      "resposta": "9",
-      "rotulo": "9"
-     },
-     {
-      "id": 20,
-      "resposta": "10",
-      "rotulo": "10"
      }
-    ]
+    ],
+    "baixa_ate": 4
    },
    {
     "id": 83,
@@ -2970,7 +2802,7 @@
     "id": 86,
     "ordem": 7,
     "tipo": "nota",
-    "texto": "De 1 a 10, que nota você dá para a entrega do carro?",
+    "texto": "De 1 a 5, que nota você dá para a entrega do carro?",
     "texto_syonet": "Que nota o(a) Sr.(a) atribui a entrega do veículo?",
     "dica": "",
     "opcoes": [
@@ -2998,33 +2830,9 @@
       "id": 15,
       "resposta": "5",
       "rotulo": "5"
-     },
-     {
-      "id": 16,
-      "resposta": "6",
-      "rotulo": "6"
-     },
-     {
-      "id": 17,
-      "resposta": "7",
-      "rotulo": "7"
-     },
-     {
-      "id": 18,
-      "resposta": "8",
-      "rotulo": "8"
-     },
-     {
-      "id": 19,
-      "resposta": "9",
-      "rotulo": "9"
-     },
-     {
-      "id": 20,
-      "resposta": "10",
-      "rotulo": "10"
      }
-    ]
+    ],
+    "baixa_ate": 4
    },
    {
     "id": 88,
