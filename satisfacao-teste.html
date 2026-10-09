@@ -189,6 +189,8 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   };
   // marcas de CARRO: card diz "Carro", desenho de carro no rodape (proximas marcas de carro entram aqui)
   var CARRO = { mitsubishi: 1, nissan: 1 };
+  // genero do veiculo: moto e picape sao femininas ("a sua Classic", "a sua Frontier"); carro e masculino ("o seu Kicks")
+  function masculino(modelo) { return ehCarro && !/frontier|triton|l200|hilux|ranger|s10|amarok/i.test(modelo || ""); }
   // perguntas de recomendacao usam outra legenda na escala de nota
   var RECOMENDA = { 125: 1, 45: 1, 169: 1, 178: 1, 112: 1, 100: 1, 96: 1, 88: 1 };
   var VOLTAR_SVG = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>';
@@ -345,9 +347,10 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   // ------------------------------------------------------------ telas
   function telaInicio() {
     var c = D.contexto || {}, oficina = D.tipo === "oficina";
+    var masc = masculino(c.moto);
     var ola = "Oi" + (c.nome ? ", " + esc(c.nome) : "") + "!" + (oficina ? "" : (ehCarro ? " Parabéns pelo seu novo " : " Parabéns pela sua nova ") + esc(marca.nome) + ".");
-    var titulo = oficina ? (c.moto ? "Como foi o serviço " + (ehCarro ? "no seu " : "na sua ") + esc(c.moto) + "?" : "Como foi o atendimento na nossa oficina?")
-                         : (c.moto ? "Como foi a compra " + (ehCarro ? "do seu " : "da sua ") + esc(c.moto) + "?" : "Como foi a sua compra com a gente?");
+    var titulo = oficina ? (c.moto ? "Como foi o serviço " + (masc ? "no seu " : "na sua ") + esc(c.moto) + "?" : "Como foi o atendimento na nossa oficina?")
+                         : (c.moto ? "Como foi a compra " + (masc ? "do seu " : "da sua ") + esc(c.moto) + "?" : "Como foi a sua compra com a gente?");
     var linhas = [[oficina ? "Oficina" : "Loja", c.loja], [oficina ? "Serviço concluído em" : "Compra em", c.data], [ehCarro ? "Carro" : "Moto", c.moto]]
       .filter(function (l) { return l[1]; })
       .map(function (l) { return '<div class="linha"><span>' + l[0] + "</span><span>" + esc(l[1]) + "</span></div>"; }).join("");
@@ -608,7 +611,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       '<div class="circulo cheio">' + CHECK_SVG + "</div>" +
       '<section class="final centro"><h1 class="grande" style="margin-top:28px">Obrigado' + (c.nome ? ", " + esc(c.nome) : "") + "!</h1>" +
       "<p>Suas respostas já chegaram para a nossa equipe.</p>" +
-      (c.moto ? "<p>Boas estradas com " + (ehCarro ? "o seu " : "a sua ") + esc(c.moto) + ".</p>" : "<p>Boas estradas!</p>") + "</section>" +
+      (c.moto ? "<p>Boas estradas com " + (masculino(c.moto) ? "o seu " : "a sua ") + esc(c.moto) + ".</p>" : "<p>Boas estradas!</p>") + "</section>" +
       '<div class="cresce"></div><p class="dica centro">Pode fechar esta página.</p>' +
       '<div class="raion"><img src="' + RAION + '" alt="Grupo Raion"></div>');
   }
