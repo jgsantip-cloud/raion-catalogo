@@ -498,6 +498,9 @@ async function abrirLista(){
   S.clientes = j.clientes; render(); renderRoteiro();
   if (S.col && "recepcao" in j && !!S.col.recepcao !== !!j.recepcao){ S.col.recepcao = !!j.recepcao; ls.set("prospecta_sessao", {token:S.token, col:S.col, ev:S.ev, evento:EVENTO}); }
   $("abaCheckin").classList.toggle("oculto", !(S.col && (S.col.recepcao || S.col.admin)));
+  if ("loja_id" in j && S.col && (S.col.loja_id !== j.loja_id || S.col.loja !== j.loja)){   // carga do RH mudou a loja: atualiza sem pedir novo login
+    S.col.loja_id = j.loja_id; S.col.loja = j.loja; ls.set("prospecta_sessao", {token:S.token, col:S.col, ev:S.ev, evento:EVENTO}); cabecalho(); render();
+  }
   S.gerente = !!j.gerente; S.msgPadrao = j.msg_padrao || (S.ev && S.ev.msg_whatsapp) || ""; S.msgPropria = j.msg_propria || null; mostrarMinhaMsg();
   checarDivulga();
 }
