@@ -382,7 +382,7 @@ function fmtTentativas(lista){
   if (!lista || !lista.length) return "";
   const hoje = new Date(); const ontem = new Date(hoje); ontem.setDate(hoje.getDate() - 1);
   const dia = (d) => d.toDateString() === hoje.toDateString() ? "hoje" : d.toDateString() === ontem.toDateString() ? "ontem" : `${String(d.getDate()).padStart(2,"0")}/${String(d.getMonth()+1).padStart(2,"0")}`;
-  return lista.map(t => { const d = new Date(t.horario); return `${dia(d)} ${String(d.getHours()).padStart(2,"0")}:${String(d.getMinutes()).padStart(2,"0")} ${t.canal === "ligar" ? "ligação" : "WhatsApp"}`; }).join(" · ");
+  return lista.map(t => { const d = new Date(t.horario); return `${dia(d)} ${String(d.getHours()).padStart(2,"0")}:${String(d.getMinutes()).padStart(2,"0")} ${t.canal === "ligar" ? "ligação" : t.canal === "whatsapp" ? "WhatsApp" : "contato"}`; }).join(" · ");
 }
 let toastT; function toast(msg){ const t=$("toast"); t.textContent=msg; t.classList.add("on"); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove("on"),2600); }
 
@@ -488,11 +488,10 @@ function cardPendente(c){
   const sug = el.querySelector(".sugestao");
   if ((c.tentativas_nao_atendeu || 0) >= SUGERIR_SEM_SUCESSO){
     sug.classList.remove("oculto"); desf.classList.remove("oculto");
-    if (!S.toque[c.id_cliente]) { grid.classList.add("oculto"); rotulo.classList.add("oculto"); }
     sug.querySelector("span").textContent = `Já foram ${c.tentativas_nao_atendeu} tentativas sem atender. Pode continuar tentando, ou finalizar:`;
     sug.querySelector(".semsucesso").onclick = () => { if (confirm(`Finalizar ${c.nome} como "Sem sucesso no contato"? Ele sai da sua lista.`)) salvar(c, "sem_sucesso", el); };
   }
-  if (S.toque[c.id_cliente]) mostrarDesfechos();
+  mostrarDesfechos();   // João 12/10: "Como foi?" sempre visível; na volta do zap o celular recarrega a página e os botões sumiam
   function mostrarDesfechos(){
     desf.classList.remove("oculto"); grid.innerHTML = ""; grid.classList.remove("oculto"); rotulo.classList.remove("oculto");
     for (const [k,l] of DESF){ const b = document.createElement("button"); b.textContent = l; if (k === "interesse"){ b.className = "sim"; b.innerHTML = ICO.check16 + " " + l; }
@@ -566,7 +565,6 @@ async function salvar(c, d, el){
   if (d === "interesse" && j && j.convite) c.convite = j.convite;
   if (d === "nao_atendeu"){
     c.tentativas_nao_atendeu = (j && j.tentativas) || (c.tentativas_nao_atendeu||0)+1;
-    delete S.toque[c.id_cliente];   // próximo desfecho só depois de um novo contato
     toast(`Anotado: ${c.nome.split(" ")[0]} não atendeu (${c.tentativas_nao_atendeu}ª tentativa). Ele foi pro fim da lista.`);
   }
   if (d === "interesse") toast("Interesse anotado. Valeu!");
