@@ -426,6 +426,7 @@ $("btnEntrar").onclick = async () => {
   const b = $("btnEntrar"); b.disabled = true; b.textContent = "Entrando…";
   const j = await api({acao:"login", cpf:$("cpf").value, nascimento:nascISO}).catch(()=>({ok:false, erro:"rede"}));
   b.disabled = false; b.textContent = "Entrar";
+  if (!j.ok && j.erro === "evento-errado"){ irProEventoCerto(j); return; }
   if (!j.ok){
     $("erroLoginTxt").textContent = { "travado-15-min":"Muitas tentativas. Tente de novo em 15 minutos.", "evento-encerrado":"Este evento já encerrou.",
       "evento-nao-encontrado":"Link inválido. Peça o link certo ao seu gestor.", "rede":"Sem conexão. Tente de novo." }[j.erro] || "CPF ou nascimento não conferem.";
@@ -436,6 +437,13 @@ $("btnEntrar").onclick = async () => {
   await abrirLista(); atenderCheckinDaUrl();
 };
 
+// João 12/10 (Marcelo, Keiko CG no link da Explosão): loja de outro evento ativo -> avisa e leva pro link certo
+function irProEventoCerto(j){
+  alert(`Sua loja está no ${j.evento_certo_nome || "outro evento"}, não neste link.
+Vou te levar pro link certo. Entre de novo com CPF e nascimento.`);
+  ls.del("prospecta_sessao");
+  location.href = location.pathname + "?e=" + encodeURIComponent(j.evento_certo);
+}
 function sair(){ S = {token:null,col:null,ev:null,clientes:[],toque:{}}; ls.del("prospecta_sessao");
   ["tela-lista","tela-placar","tela-checkin","tela-divulga","rodape"].forEach(id => $(id).classList.add("oculto")); $("tela-login").classList.remove("oculto"); }
 
@@ -494,6 +502,7 @@ async function abrirLista(){
   cabecalho();
   await drenarFila();
   const j = await api({acao:"fatia"}).catch(()=>null);
+  if (j && j.erro === "evento-errado"){ irProEventoCerto(j); return; }
   if (!j || !j.ok){ toast("Não consegui buscar sua lista" + (j ? ": " + j.erro : "")); return; }
   S.clientes = j.clientes; render(); renderRoteiro();
   if (S.col && "recepcao" in j && !!S.col.recepcao !== !!j.recepcao){ S.col.recepcao = !!j.recepcao; ls.set("prospecta_sessao", {token:S.token, col:S.col, ev:S.ev, evento:EVENTO}); }
@@ -637,7 +646,7 @@ $("btnMais").onclick = async () => { const b = $("btnMais"); b.disabled = true; 
 // ---------- cadastrar cliente fora da lista (Larissa/Picmo, João 16/09) ----------
 $("btnCadastrar").onclick = () => { $("cadastroBox").classList.toggle("oculto"); $("cadErro").classList.add("oculto"); };
 $("cadTel").addEventListener("input", e => { e.target.value = e.target.value.replace(/\D/g,"").slice(0,11); });
-const CAD_ERRO = { "nome-invalido":"Escreve o nome do cliente.", "telefone-invalido":"Celular com DDD, 11 números.", "evento-encerrado":"Este evento já encerrou.", "muitas-tentativas":"Muitas tentativas. Espera 15 minutos." };
+const CAD_ERRO = { "nome-invalido":"Escreve o nome do cliente.", "telefone-invalido":"Celular com DDD, 11 números.", "evento-encerrado":"Este evento já encerrou.", "muitas-tentativas":"Muitas tentativas. Espera 15 minutos.", "evento-errado":"Sua loja é do outro evento. Saia e entre pelo link do seu evento." };
 $("btnCadSalvar").onclick = async () => {
   const b = $("btnCadSalvar"); b.disabled = true; $("cadErro").classList.add("oculto");
   const j = await api({acao:"cadastrar", nome:$("cadNome").value, telefone:$("cadTel").value, modelo:$("cadModelo").value || null, data_visita:$("cadData").value || null}).catch(()=>null);
