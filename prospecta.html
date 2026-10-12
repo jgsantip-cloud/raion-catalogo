@@ -210,6 +210,15 @@
     <div style="font-size:22px;font-weight:700;line-height:1.2" id="quem2"></div>
     <div class="ctx" id="ondeQuando2"></div>
   </div>
+  <div class="lista-card oculto" id="cardPainel" style="margin-top:16px;padding:14px 12px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px">
+      <h3 style="margin:0">Andamento por loja</h3>
+      <button id="btnPainel" style="background:none;border:0;color:var(--red);font:inherit;font-size:13px;font-weight:600;cursor:pointer;padding:4px">Atualizar</button>
+    </div>
+    <div id="painelQuando" style="font-size:12px;color:var(--dim);margin:2px 0 8px"></div>
+    <div id="painelCorpo"></div>
+    <div style="font-size:11px;color:var(--dim);margin-top:8px;line-height:1.4">Equipe = vendedores, supervisores e gerentes de vendas. Ligando = fez ao menos 1 contato. 1h = tentativas na última hora.</div>
+  </div>
   <div class="tiles" id="tiles" style="margin-top:16px"></div>
   <div class="lista-card" id="cardInteresses" style="margin-top:16px">
     <h3>Seus interesses</h3>
@@ -614,6 +623,11 @@ function cardFeito(c){
 }
 
 async function salvar(c, d, el){
+  if (c._salvando) return; c._salvando = true;   // dois toques rápidos no Salvar viravam 2 desfechos/2 leads (12/10)
+  el.querySelectorAll("button").forEach(b => b.disabled = true);
+  try { await salvarDeVez(c, d, el); } finally { c._salvando = false; el.querySelectorAll("button").forEach(b => b.disabled = false); }
+}
+async function salvarDeVez(c, d, el){
   const corpo = {acao:"desfecho", id_cliente:c.id_cliente, desfecho:d, toque_id:S.toque[c.id_cliente] || null,
                  modelo: el.querySelector(".modelo")?.value?.trim() || null, observacao: el.querySelector(".obs")?.value?.trim() || null,
                  data_visita: el.querySelector(".data")?.value || null};
@@ -688,8 +702,41 @@ async function abrirPlacar(){
   renderRk("cardRanking", "listaRanking", j.ranking && j.ranking.loja, false);
   renderRk("cardRankingGrupo", "listaRankingGrupo", j.ranking && j.ranking.grupo, true);
   $("cardTime").classList.toggle("oculto", !S.gerente);
+  $("cardPainel").classList.toggle("oculto", !(S.col && S.col.admin));
+  if (S.col && S.col.admin) carregarPainel();
   if (S.gerente) carregarTime(S.timeLoja);
 }
+// ---------- andamento por loja (admin; João 12/10: acompanhar e tirar print pros grupos) ----------
+async function carregarPainel(){
+  $("painelCorpo").innerHTML = '<div class="vazio">Carregando…</div>';
+  const j = await api({acao:"painel_lojas"}).catch(()=>null);
+  if (!j || !j.ok){ $("painelCorpo").innerHTML = `<div class="vazio">Não consegui carregar${j ? " (" + esc(j.erro) + ")" : ""}.</div>`; return; }
+  const d = new Date(j.gerado_em), dd = (n) => String(n).padStart(2, "0");
+  $("painelQuando").textContent = `Prospecta · ${dd(d.getDate())}/${dd(d.getMonth()+1)} às ${dd(d.getHours())}h${dd(d.getMinutes())}`;
+  const th = 'style="font-size:11px;color:var(--dim);font-weight:600;text-align:right;padding:4px 3px;white-space:nowrap"';
+  const td = (v, st) => `<td style="text-align:right;padding:6px 3px;font-variant-numeric:tabular-nums;${st || ""}">${v}</td>`;
+  $("painelCorpo").innerHTML = j.eventos.map(ev => {
+    const t = ev.lojas.reduce((a, l) => ({ eq: a.eq + l.equipe, lig: a.lig + l.ligando, tq: a.tq + l.tentativas, h: a.h + l.ult_hora, i: a.i + l.interesses, p: a.p + l.postaram }), {eq:0, lig:0, tq:0, h:0, i:0, p:0});
+    const linhas = ev.lojas.map(l => {
+      const parado = l.ligando === 0, cheio = l.ligando === l.equipe;
+      return `<tr style="border-top:1px solid #EEF0F3">
+        <td style="padding:6px 3px;font-weight:600;white-space:nowrap">${esc(l.loja)}</td>
+        ${td(`${l.ligando}/${l.equipe}`, parado ? "color:var(--red);font-weight:700" : cheio ? "color:var(--green);font-weight:700" : "")}
+        ${td(l.tentativas, parado ? "color:var(--dim)" : "")}
+        ${td(l.ult_hora || "–", l.ult_hora ? "" : "color:var(--dim)")}
+        ${td(l.interesses, l.interesses ? "color:var(--green);font-weight:700" : "color:var(--dim)")}
+        ${td(l.postaram, l.postaram ? "" : "color:var(--dim)")}</tr>`;
+    }).join("");
+    return `<div style="font-size:15px;font-weight:700;margin:10px 0 2px">${esc(ev.nome)}</div>
+      <table style="width:100%;border-collapse:collapse;font-size:14px">
+        <tr><th style="font-size:11px;color:var(--dim);font-weight:600;text-align:left;padding:4px 3px">Loja</th><th ${th}>Ligando</th><th ${th}>Tent.</th><th ${th}>1h</th><th ${th}>Interesses</th><th ${th}>Postaram</th></tr>
+        ${linhas}
+        <tr style="border-top:2px solid #D1D5DB;font-weight:700"><td style="padding:6px 3px">Total</td>${td(`${t.lig}/${t.eq}`)}${td(t.tq)}${td(t.h)}${td(t.i, "color:var(--green)")}${td(t.p)}</tr>
+      </table>`;
+  }).join("");
+}
+$("btnPainel").onclick = carregarPainel;
+
 // ---------- meu time (gerente; João 12/10) ----------
 function quandoFoi(iso){
   if (!iso) return ""; const d = new Date(iso), hoje = new Date(), ontem = new Date(); ontem.setDate(hoje.getDate() - 1);
