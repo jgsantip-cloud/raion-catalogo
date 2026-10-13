@@ -352,7 +352,7 @@
 
     <div class="passo"><div class="n">6</div><div>
       <h4>Acabou a lista? Peça mais</h4>
-      <p>Quando você tiver tentado todos ao menos uma vez (mesmo os que não atenderam), aparece o botão <span class="mini">Pedir mais</span> com novos clientes da sua loja.</p>
+      <p>Quando você tiver tentado todos ao menos uma vez (ligou ou mandou WhatsApp pelo app, mesmo sem resposta ainda), aparece o botão <span class="mini">Pedir mais</span> com novos clientes da sua loja.</p>
     </div></div>
 
     <div class="secao" style="margin-top:10px">Também dá pra</div>
@@ -534,8 +534,12 @@ function render(){
   if (!S.clientes.length){ box.innerHTML = '<div class="vazio">A fila da sua loja acabou. Fale com seu gestor.</div>'; }
   if (pend.length){ const h = document.createElement("div"); h.className = "secao"; h.textContent = "Pra ligar"; box.appendChild(h); pend.forEach(c => box.appendChild(cardPendente(c))); }
   if (feitos.length){ const h = document.createElement("div"); h.className = "secao"; h.textContent = "Feitos"; box.appendChild(h); feitos.forEach(c => box.appendChild(cardFeito(c))); }
-  // João 13/10: libera quando todos já tiveram ao menos 1 tentativa marcada (Não atendeu conta), não só quando fecha todos
-  const intocados = pend.filter(c => !c.desfecho).length;
+  atualizarRodape();
+}
+// João 13/10: libera quando todos já tiveram ao menos 1 tentativa (Ligar/WhatsApp pelo app ou resultado), não só quando fecha todos
+function atualizarRodape(){
+  const pend = S.clientes.filter(pendente);
+  const intocados = pend.filter(c => !c.desfecho && !(c.tentativas || []).length).length;
   const podeMais = S.clientes.length && intocados === 0 && S.ev.reposicao && !S.esgotado;
   $("fimLista").classList.toggle("oculto", !podeMais);
   $("rodapeTexto").textContent = podeMais ? (pend.length ? "Você já tentou todos. Pode pedir mais e seguir tentando os que não atenderam." : "Você fechou todos. Quer mais uns clientes?")
@@ -583,6 +587,7 @@ Ele sai da sua lista. Dá pra corrigir depois em Feitos.`)) return;
     S.toque[c.id_cliente] = j.toque_id;
     (c.tentativas ||= []).push({canal, horario: new Date().toISOString()});
     mostrarDesfechos();
+    atualizarRodape();
     if (canal === "ligar") location.href = "tel:+55" + j.telefone; else window.open(j.wa_url, "_blank", "noopener,noreferrer");
   });
   return el;
