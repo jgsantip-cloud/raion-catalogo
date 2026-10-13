@@ -352,7 +352,7 @@
 
     <div class="passo"><div class="n">6</div><div>
       <h4>Acabou a lista? Peça mais</h4>
-      <p>Quando você fechar todos, aparece o botão <span class="mini">Pedir mais</span> com novos clientes da sua loja.</p>
+      <p>Quando você tiver tentado todos ao menos uma vez (mesmo os que não atenderam), aparece o botão <span class="mini">Pedir mais</span> com novos clientes da sua loja.</p>
     </div></div>
 
     <div class="secao" style="margin-top:10px">Também dá pra</div>
@@ -534,9 +534,12 @@ function render(){
   if (!S.clientes.length){ box.innerHTML = '<div class="vazio">A fila da sua loja acabou. Fale com seu gestor.</div>'; }
   if (pend.length){ const h = document.createElement("div"); h.className = "secao"; h.textContent = "Pra ligar"; box.appendChild(h); pend.forEach(c => box.appendChild(cardPendente(c))); }
   if (feitos.length){ const h = document.createElement("div"); h.className = "secao"; h.textContent = "Feitos"; box.appendChild(h); feitos.forEach(c => box.appendChild(cardFeito(c))); }
-  const podeMais = S.clientes.length && pend.length === 0 && S.ev.reposicao && !S.esgotado;
+  // João 13/10: libera quando todos já tiveram ao menos 1 tentativa marcada (Não atendeu conta), não só quando fecha todos
+  const intocados = pend.filter(c => !c.desfecho).length;
+  const podeMais = S.clientes.length && intocados === 0 && S.ev.reposicao && !S.esgotado;
   $("fimLista").classList.toggle("oculto", !podeMais);
-  $("rodapeTexto").textContent = podeMais ? "Você fechou todos. Quer mais uns clientes?" : (S.clientes.length ? "Quando fechar todos, aparece o botão Pedir mais." : "");
+  $("rodapeTexto").textContent = podeMais ? (pend.length ? "Você já tentou todos. Pode pedir mais e seguir tentando os que não atenderam." : "Você fechou todos. Quer mais uns clientes?")
+    : (S.clientes.length ? `Faltam ${intocados} sem nenhuma tentativa. Tentou todos, aparece o botão Pedir mais.` : "");
 }
 
 function cardPendente(c){
