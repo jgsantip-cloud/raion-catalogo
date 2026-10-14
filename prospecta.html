@@ -672,6 +672,8 @@ $("btnMais").onclick = async () => { const b = $("btnMais"); b.disabled = true; 
   if (j && j.ok){
     const antes = S.clientes.length; S.clientes = j.clientes; S.toque = {}; render();
     if (S.clientes.length > antes) window.scrollTo(0,0);
+    else if (j.faltam_tentativa) toast(`Ainda tem ${j.faltam_tentativa} cliente(s) sem nenhuma tentativa. Tenta eles primeiro.`);
+    else if (j.esgotou === false) toast("Não veio cliente novo agora. Atualiza a página e tenta de novo.");
     else { S.esgotado = true; $("fimLista").classList.add("oculto"); $("rodapeTexto").textContent = "A base da sua loja acabou. Você fechou tudo que tinha."; toast("A base da sua loja acabou."); }
   } else toast("Não deu: " + (j ? j.erro : "sem conexão")); };
 
