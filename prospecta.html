@@ -524,6 +524,14 @@ async function abrirLista(){
 }
 $("btnAbordar").onclick = () => { const b = $("roteiroBox"); b.classList.toggle("oculto"); $("setaAbordar").style.transform = b.classList.contains("oculto") ? "" : "rotate(180deg)"; };
 
+// WhatsApp: a aba nasce no próprio toque (gesto do usuário) e recebe o link quando a API responde. Abrir só depois
+// do await é bloqueado em silêncio pelo Safari do iPhone e por navegadores embutidos. Sem aba (bloqueou mesmo), vai na própria página.
+function janelaZap(){ try { return window.open("", "_blank"); } catch (e) { return null; } }
+function abrirZap(w, url){
+  if (w && !w.closed){ try { w.opener = null; w.location.href = url; return; } catch (e) { /* cai pro fallback */ } }
+  location.href = url;
+}
+
 const pendente = (c) => !c.desfecho || c.desfecho.desfecho === "nao_atendeu";
 
 function render(){
@@ -581,14 +589,15 @@ Ele sai da sua lista. Dá pra corrigir depois em Feitos.`)) return;
   }
   el.querySelectorAll("[data-canal]").forEach(b => b.onclick = async () => {
     const canal = b.dataset.canal; b.disabled = true;
+    const w = canal === "whatsapp" ? janelaZap() : null;   // abre já no toque: depois do await o iPhone bloqueia (Rodrigo/Keiko PE 14/10)
     const j = await api({acao:"toque", id_cliente:c.id_cliente, canal}).catch(()=>null);
     b.disabled = false;
-    if (!j || !j.ok){ toast("Não consegui registrar o contato" + (j ? ": " + j.erro : "")); return; }
+    if (!j || !j.ok){ if (w) w.close(); toast("Não consegui registrar o contato" + (j ? ": " + j.erro : "")); return; }
     S.toque[c.id_cliente] = j.toque_id;
     (c.tentativas ||= []).push({canal, horario: new Date().toISOString()});
     mostrarDesfechos();
     atualizarRodape();
-    if (canal === "ligar") location.href = "tel:+55" + j.telefone; else window.open(j.wa_url, "_blank", "noopener,noreferrer");
+    if (canal === "ligar") location.href = "tel:+55" + j.telefone; else abrirZap(w, j.wa_url);
   });
   return el;
 }
@@ -616,8 +625,9 @@ function cardFeito(c){
       <button class="zapConvite${jaEnviou ? " enviado" : ""}">${jaEnviou ? ICO.zap.replace(/#fff/g, "#1E8E3E") : ICO.zap} ${!cv ? "Gerar convite" : jaEnviou ? "Enviar de novo" : "Enviar convite pelo WhatsApp"}</button>`;
     box.querySelector(".zapConvite").onclick = async () => {
       let v = cv;
-      if (!v || !v.wa_url){ const r = await api({acao:"convite", id_cliente:c.id_cliente}).catch(()=>null); if (!r || !r.ok){ toast("Não consegui gerar o convite"); return; } v = c.convite = r.convite; }
-      window.open(v.wa_url, "_blank", "noopener,noreferrer");
+      const w = (!v || !v.wa_url) ? janelaZap() : null;
+      if (!v || !v.wa_url){ const r = await api({acao:"convite", id_cliente:c.id_cliente}).catch(()=>null); if (!r || !r.ok){ if (w) w.close(); toast("Não consegui gerar o convite"); return; } v = c.convite = r.convite; }
+      if (w) abrirZap(w, v.wa_url); else window.open(v.wa_url, "_blank", "noopener,noreferrer");
       const m = ls.get("prospecta_conv_env") || {}; m[kEnv] = 1; ls.set("prospecta_conv_env", m); render();
     };
     el.style.flexWrap = "wrap"; el.appendChild(box);
