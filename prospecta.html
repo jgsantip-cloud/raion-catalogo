@@ -535,7 +535,9 @@ function abrirZap(w, url){
 const pendente = (c) => !c.desfecho || c.desfecho.desfecho === "nao_atendeu";
 
 function render(){
-  const pend = S.clientes.filter(pendente).sort((a, b) => (a.tentativas_nao_atendeu || 0) - (b.tentativas_nao_atendeu || 0)), feitos = S.clientes.filter(c => !pendente(c));
+  // sem nenhuma tentativa vem no topo (Rose/Mit Barra 15/10: 1 intocado perdido no meio de 33 travava o Pedir mais)
+  const intoc = (c) => !c.desfecho && !(c.tentativas || []).length ? 0 : 1;
+  const pend = S.clientes.filter(pendente).sort((a, b) => intoc(a) - intoc(b) || (a.tentativas_nao_atendeu || 0) - (b.tentativas_nao_atendeu || 0)), feitos = S.clientes.filter(c => !pendente(c));
   $("feitosN").textContent = feitos.length; $("totalN").textContent = S.clientes.length;
   $("barra").style.width = S.clientes.length ? Math.round(feitos.length / S.clientes.length * 100) + "%" : "0%";
   const box = $("cards"); box.innerHTML = "";
@@ -547,11 +549,12 @@ function render(){
 // João 13/10: libera quando todos já tiveram ao menos 1 tentativa (Ligar/WhatsApp pelo app ou resultado), não só quando fecha todos
 function atualizarRodape(){
   const pend = S.clientes.filter(pendente);
-  const intocados = pend.filter(c => !c.desfecho && !(c.tentativas || []).length).length;
+  const semTent = pend.filter(c => !c.desfecho && !(c.tentativas || []).length), intocados = semTent.length;
   const podeMais = S.clientes.length && intocados === 0 && S.ev.reposicao && !S.esgotado;
   $("fimLista").classList.toggle("oculto", !podeMais);
   $("rodapeTexto").textContent = podeMais ? (pend.length ? "Você já tentou todos. Pode pedir mais e seguir tentando os que não atenderam." : "Você fechou todos. Quer mais uns clientes?")
-    : (S.clientes.length ? `Faltam ${intocados} sem nenhuma tentativa. Tentou todos, aparece o botão Pedir mais.` : "");
+    : (S.clientes.length ? (intocados === 1 ? `Falta tentar ${semTent[0].nome} (está no topo da lista). Tentou todos, aparece o botão Pedir mais.`
+        : `Faltam ${intocados} sem nenhuma tentativa (estão no topo da lista). Tentou todos, aparece o botão Pedir mais.`) : "");
 }
 
 function cardPendente(c){
