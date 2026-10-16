@@ -52,11 +52,15 @@ a{color:var(--accent);font-weight:700;text-decoration:none} a:hover{text-decorat
 .mut{color:var(--mut);font-size:13.5px}
 .vazio{padding:28px 16px;text-align:center;color:var(--mut)}
 .aviso{background:var(--err-bg);color:var(--err);border-radius:12px;padding:10px 14px;margin-bottom:12px;font-size:15px;display:none}
-#login{max-width:380px;margin:9vh auto 0;background:var(--card);border:1.5px solid var(--line);border-left:8px solid var(--accent);border-radius:16px;padding:22px}
-#login h1{font-size:24px;margin-bottom:4px}
-#login label{display:block;font-size:14px;font-weight:700;margin:14px 0 4px}
-#login input{width:100%;font:inherit;padding:9px 12px;border:2px solid var(--line);border-radius:12px}
-#login button{width:100%;margin-top:18px}
+#login,.tela{max-width:380px;margin:9vh auto 0;background:var(--card);border:1.5px solid var(--line);border-left:8px solid var(--accent);border-radius:16px;padding:22px}
+.tela{display:none}
+#login h1,.tela h1{font-size:24px;margin-bottom:4px}
+#login label,.tela label{display:block;font-size:14px;font-weight:700;margin:14px 0 4px}
+#login input,.tela input{width:100%;font:inherit;padding:9px 12px;border:2px solid var(--line);border-radius:12px}
+.tela input[readonly]{background:#f3f5fa;color:var(--mut)}
+#login button,.tela button{width:100%;margin-top:18px}
+a.link{display:block;text-align:center;margin-top:14px;font-size:14.5px;font-weight:600}
+.aviso.ok{background:var(--teal-bg);color:var(--teal)}
 #painel{display:none}
 @media (max-width:640px){
   h1{font-size:24px}.kpi b{font-size:28px}
@@ -85,6 +89,30 @@ a{color:var(--accent);font-weight:700;text-decoration:none} a:hover{text-decorat
   <label for="se">Senha</label>
   <input id="se" type="password" autocomplete="current-password" required>
   <button class="pri" type="submit" id="btEntrar">Entrar</button>
+  <a class="link" href="#" id="lkPedir">Primeiro acesso ou esqueci a senha</a>
+</form>
+
+<form id="pedir" class="tela" autocomplete="on">
+  <h1>Criar ou trocar a senha</h1>
+  <div class="sub">Informe seu e-mail da empresa. Vamos mandar um link pra você criar a senha.</div>
+  <div class="aviso" id="avisoPedir"></div>
+  <label for="emP">E-mail</label>
+  <input id="emP" type="email" autocomplete="username" required>
+  <button class="pri" type="submit" id="btPedir">Enviar link</button>
+  <a class="link" href="#" data-volta>Voltar pro login</a>
+</form>
+
+<form id="definir" class="tela" autocomplete="on">
+  <h1>Criar senha</h1>
+  <div class="sub">É a mesma senha do Portal de Relatórios Raion.</div>
+  <div class="aviso" id="avisoDefinir"></div>
+  <label for="emD">E-mail</label>
+  <input id="emD" type="email" autocomplete="username" readonly>
+  <label for="s1">Nova senha <span class="mut">(mínimo 8 caracteres)</span></label>
+  <input id="s1" type="password" autocomplete="new-password" minlength="8" required>
+  <label for="s2">Repita a senha</label>
+  <input id="s2" type="password" autocomplete="new-password" minlength="8" required>
+  <button class="pri" type="submit" id="btDefinir">Salvar senha e entrar</button>
 </form>
 
 <div class="wrap" id="painel">
@@ -145,11 +173,53 @@ async function tokenValido(){
   return s.at;
 }
 
-function mostrarLogin(msg){
-  $("#painel").style.display = "none"; $("#login").style.display = "block";
-  const a = $("#avisoLogin"); a.textContent = msg || ""; a.style.display = msg ? "block" : "none";
+// uma tela por vez: login, pedir (primeiro acesso / esqueci), definir (veio do link do e-mail), painel
+function tela(id){ ["login", "pedir", "definir", "painel"].forEach(t => $("#" + t).style.display = t === id ? "block" : "none"); }
+function aviso(id, msg, ok){ const a = $(id); a.textContent = msg || ""; a.className = "aviso" + (ok ? " ok" : ""); a.style.display = msg ? "block" : "none"; }
+function mostrarLogin(msg){ tela("login"); aviso("#avisoLogin", msg); }
+function mostrarPainel(){ tela("painel"); }
+
+async function acao(corpo){
+  const r = await fetch(API, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(corpo)});
+  return {status:r.status, j:await r.json().catch(() => ({ok:false, erro:"resposta inválida"}))};
 }
-function mostrarPainel(){ $("#login").style.display = "none"; $("#painel").style.display = "block"; }
+const tirarCodigoDaUrl = () => { try { history.replaceState(null, "", location.pathname); } catch {} };
+
+$("#lkPedir").onclick = e => { e.preventDefault(); $("#emP").value = $("#em").value; tela("pedir"); aviso("#avisoPedir"); };
+document.querySelectorAll("[data-volta]").forEach(a => a.onclick = e => { e.preventDefault(); mostrarLogin(); });
+
+$("#pedir").addEventListener("submit", async e => {
+  e.preventDefault(); $("#btPedir").disabled = true;
+  try {
+    const {j} = await acao({acao:"pedir_link", email:$("#emP").value.trim()});
+    if (j.ok) aviso("#avisoPedir", "Se esse e-mail tiver acesso, chega nele em instantes um link pra criar a senha. Olhe também o lixo eletrônico. O link vale por 60 minutos.", true);
+    else aviso("#avisoPedir", "Não consegui mandar o link agora (" + (j.erro || "erro") + "). Tente de novo em instantes.");
+  } catch { aviso("#avisoPedir", "Sem conexão agora. Tente de novo em instantes."); }
+  finally { $("#btPedir").disabled = false; }
+});
+
+let CODIGO = "";
+async function abrirDefinir(c){
+  CODIGO = c;
+  const {j} = await acao({acao:"conferir", c}).catch(() => ({j:{ok:false}}));
+  if (!j.ok) { tirarCodigoDaUrl(); tela("pedir"); return aviso("#avisoPedir", "Esse link já foi usado ou venceu. Peça um novo abaixo."); }
+  $("#emD").value = j.email; tela("definir"); aviso("#avisoDefinir"); $("#s1").focus();
+}
+$("#definir").addEventListener("submit", async e => {
+  e.preventDefault();
+  if ($("#s1").value.length < 8) return aviso("#avisoDefinir", "A senha precisa ter pelo menos 8 caracteres.");
+  if ($("#s1").value !== $("#s2").value) return aviso("#avisoDefinir", "As duas senhas não estão iguais.");
+  $("#btDefinir").disabled = true;
+  try {
+    const {status, j} = await acao({acao:"definir", c:CODIGO, senha:$("#s1").value});
+    if (status === 410) { tirarCodigoDaUrl(); tela("pedir"); return aviso("#avisoPedir", "Esse link já foi usado ou venceu. Peça um novo abaixo."); }
+    if (!j.ok) return aviso("#avisoDefinir", j.erro || "Não consegui salvar a senha agora.");
+    $("#s1").value = $("#s2").value = ""; tirarCodigoDaUrl();
+    if (j.entrar) { gravarSessao({at:j.access_token, rt:j.refresh_token, exp:Date.now() + (j.expires_in || 3600) * 1000}); await carregar(); }
+    else { $("#em").value = $("#emD").value; mostrarLogin(); aviso("#avisoLogin", "Senha criada. Agora é só entrar.", true); }
+  } catch { aviso("#avisoDefinir", "Sem conexão agora. Tente de novo em instantes."); }
+  finally { $("#btDefinir").disabled = false; }
+});
 
 $("#login").addEventListener("submit", async e => {
   e.preventDefault(); $("#btEntrar").disabled = true;
@@ -251,7 +321,9 @@ document.addEventListener("click", e => {
 $("#busca").addEventListener("input", desenhar);
 
 setInterval(() => { if (document.visibilityState === "visible" && $("#painel").style.display === "block") carregar(); }, 180000);
-lerSessao() ? carregar() : mostrarLogin();
+const codigoUrl = new URLSearchParams(location.search).get("c");
+if (codigoUrl) abrirDefinir(codigoUrl);
+else lerSessao() ? carregar() : mostrarLogin();
 </script>
 </body>
 </html>
