@@ -73,6 +73,11 @@
       <label for="email" id="lb-email">E-mail</label>
       <input id="email" type="email" inputmode="email" autocomplete="email">
 
+      <div id="box-marca" class="hide">
+        <label class="req" for="marca">Marca</label>
+        <select id="marca"></select>
+      </div>
+
       <div id="box-loja" class="hide">
         <label class="req" for="loja">Loja</label>
         <select id="loja" required></select>
@@ -159,7 +164,13 @@ $("veiculo").addEventListener("change", function () {
 
 function pintaVendedores() {
   var loja = $("loja").value;
-  var lista = EV.vendedores.filter(function (v) { return !loja || !v.loja || v.loja === loja; });
+  // sem loja escolhida: com Marca na tela, só os vendedores das lojas daquela marca (nenhum antes da marca)
+  var marca = MARCAS.length > 1 ? $("marca").value : "";
+  var lista = EV.vendedores.filter(function (v) {
+    if (loja) return !v.loja || v.loja === loja;
+    if (MARCAS.length > 1) return !!marca && (EV.marcas || {})[v.loja] === marca;
+    return true;
+  });
   var html = '<option value="">Não informar</option>';
   lista.forEach(function (v) {
     html += '<option value="' + v.login + '">' + v.nome + '</option>';
@@ -195,11 +206,23 @@ function montaForm() {
   if (AUTO) textosDoCliente();
 
   var sel = $("loja");
+  // evento com lojas de mais de uma marca (Festival 16/10): Marca vem antes e filtra as lojas
+  MARCAS = [];
+  EV.lojas.forEach(function (l) {
+    var m = (EV.marcas || {})[l];
+    if (m && MARCAS.indexOf(m) < 0) MARCAS.push(m);
+  });
+  if (MARCAS.length > 1) {
+    $("box-marca").classList.remove("hide");
+    $("marca").required = true;
+    var hm = '<option value="">Selecione...</option>';
+    MARCAS.forEach(function (m) { hm += '<option value="' + m + '">' + (NOME_MARCA[m] || m) + '</option>'; });
+    $("marca").innerHTML = hm;
+    $("marca").addEventListener("change", function () { pintaLojas(); pintaVeiculos(); pintaVendedores(); });
+  }
   if (EV.lojas.length > 1) {
     $("box-loja").classList.remove("hide");
-    var html = '<option value="">Selecione...</option>';
-    EV.lojas.forEach(function (l) { html += '<option value="' + l + '">' + l + '</option>'; });
-    sel.innerHTML = html;
+    pintaLojas();
   } else {
     sel.innerHTML = '<option value="' + EV.lojas[0] + '" selected>' + EV.lojas[0] + '</option>';
     sel.required = false;
@@ -208,6 +231,27 @@ function montaForm() {
   pintaVeiculos();
   pintaVendedores();
   mostra("tela-form");
+}
+
+var MARCAS = [];
+var NOME_MARCA = { "ROYAL ENFIELD": "Royal Enfield", "SYM": "SYM", "CF MOTO": "CF Moto", "NISSAN": "Nissan",
+                   "MITSUBISHI": "Mitsubishi", "ZEEKR": "Zeekr" };
+
+// lojas do evento; com Marca na tela, só as da marca escolhida (marca com 1 loja já vem marcada)
+function pintaLojas() {
+  var sel = $("loja");
+  if (EV.lojas.length < 2) return;
+  var marca = MARCAS.length > 1 ? $("marca").value : "";
+  if (MARCAS.length > 1 && !marca) {
+    sel.innerHTML = '<option value="">Escolha a marca primeiro</option>';
+    sel.disabled = true;
+    return;
+  }
+  var lista = EV.lojas.filter(function (l) { return !marca || (EV.marcas || {})[l] === marca; });
+  var html = lista.length > 1 ? '<option value="">Selecione...</option>' : "";
+  lista.forEach(function (l) { html += '<option value="' + l + '">' + l + '</option>'; });
+  sel.innerHTML = html;
+  sel.disabled = false;
 }
 
 // ------------------------------------------------------------- carregar evento
@@ -277,6 +321,7 @@ $("f").addEventListener("submit", function (e) {
 $("novo").addEventListener("click", function () {
   $("f").reset();
   if (EV.lojas.length === 1) $("loja").value = EV.lojas[0];
+  pintaLojas();
   pintaVeiculos();
   pintaVendedores();
   mostra("tela-form");
