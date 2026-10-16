@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Festival Moto Brasil</title>
+<!--
+  Controle dos cadastros do Festival Moto Brasil 2026 (16-18/10, Riocentro).
+  Form da Dafra -> e-mail no Gmail do João -> Apps Script -> lead-evento -> Syonet (SYM Barra, Heitor).
+  Dados ao vivo da Edge Function festival-painel (app-raion), que exige o login do Portal.
+  Código-fonte e contexto: python_leads/integracao/festival_moto_brasil/.
+-->
+<style>
+:root{--bg:#eef1f7;--card:#fff;--ink:#15182a;--mut:#4f5568;--line:#cfd6e4;--accent:#1f3a8a;
+  --teal:#0b5b66;--teal-bg:#e1eff1;--err:#b3261e;--err-bg:#fdeaea;--amb:#7a4f00;--amb-bg:#fff2d6}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.5 "Segoe UI",system-ui,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:22px 16px 48px}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 20px;justify-content:space-between;margin-bottom:18px}
+h1{margin:0;font-size:28px;font-weight:800;letter-spacing:-.01em}
+.sub{color:var(--mut);font-size:15px}
+.acoes{display:flex;gap:8px;align-items:center;font-size:14px;color:var(--mut)}
+button{font:inherit;font-size:15px;font-weight:700;border-radius:12px;border:2px solid var(--line);background:#fff;color:var(--ink);padding:7px 14px;cursor:pointer}
+button.pri{background:var(--accent);border-color:var(--accent);color:#fff}
+button:disabled{opacity:.55;cursor:default}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:14px}
+.kpi{background:var(--card);border:1.5px solid var(--line);border-left:8px solid var(--accent);border-radius:14px;padding:12px 16px}
+.kpi b{display:block;font-size:34px;font-weight:800;line-height:1.1}
+.kpi span{font-size:14px;color:var(--mut)}
+.kpi.ok{border-left-color:var(--teal)} .kpi.err{border-left-color:var(--err)} .kpi.err b{color:var(--err)}
+.faixa{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{background:#fff;border:2px solid var(--line);border-radius:12px;padding:4px 12px;font-size:14.5px;cursor:pointer;user-select:none}
+.chip b{font-weight:800}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.busca{width:100%;max-width:360px;font:inherit;font-size:15px;padding:8px 12px;border:2px solid var(--line);border-radius:12px;background:#fff;margin-bottom:12px}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:14px;overflow:hidden}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th{background:#eaeefa;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;font-weight:800;text-align:left;padding:9px 12px;white-space:nowrap}
+td{padding:9px 12px;border-top:1px solid #e3e8f1;vertical-align:top}
+tr:nth-child(even) td{background:#f6f8fd}
+td.n{white-space:nowrap;font-variant-numeric:tabular-nums}
+td.nm{white-space:nowrap;font-weight:600}
+a{color:var(--accent);font-weight:700;text-decoration:none} a:hover{text-decoration:underline}
+.st{display:inline-block;border-radius:8px;padding:1px 8px;font-size:13px;font-weight:800;white-space:nowrap}
+.st.AGUARDANDO{background:var(--amb-bg);color:var(--amb)}
+.st.ANDAMENTO{background:#e6ebfb;color:var(--accent)}
+.st.CONCLUIDO{background:var(--teal-bg);color:var(--teal)}
+.st.CANCELADO{background:#eceef2;color:var(--mut)}
+.st.ERRO{background:var(--err-bg);color:var(--err)}
+.mut{color:var(--mut);font-size:13.5px}
+.vazio{padding:28px 16px;text-align:center;color:var(--mut)}
+.aviso{background:var(--err-bg);color:var(--err);border-radius:12px;padding:10px 14px;margin-bottom:12px;font-size:15px;display:none}
+#login{max-width:380px;margin:9vh auto 0;background:var(--card);border:1.5px solid var(--line);border-left:8px solid var(--accent);border-radius:16px;padding:22px}
+#login h1{font-size:24px;margin-bottom:4px}
+#login label{display:block;font-size:14px;font-weight:700;margin:14px 0 4px}
+#login input{width:100%;font:inherit;padding:9px 12px;border:2px solid var(--line);border-radius:12px}
+#login button{width:100%;margin-top:18px}
+#painel{display:none}
+@media (max-width:640px){
+  h1{font-size:24px}.kpi b{font-size:28px}
+  /* celular: cada cadastro vira um cartão (a tabela larga escondia status e evento à direita) */
+  thead{display:none}
+  table,tbody,tr,td{display:block;width:100%}
+  tr{padding:10px 14px;border-top:1px solid #e3e8f1} tr:first-child{border-top:0}
+  tr:nth-child(even) td,tr:nth-child(even){background:#f6f8fd}
+  td{border:0;padding:1px 0}
+  td.rec{font-size:13.5px;color:var(--mut)}
+  td.nm{font-size:16.5px;white-space:normal}
+  td.stc{margin:3px 0}
+  td[data-l]::before{content:attr(data-l) ": ";color:var(--mut);font-size:13px;font-weight:600}
+  td.vazio{padding:24px 0}
+}
+</style>
+</head>
+<body>
+
+<form id="login" autocomplete="on">
+  <h1>Festival Moto Brasil</h1>
+  <div class="sub">Entre com o login do Portal Raion.</div>
+  <div class="aviso" id="avisoLogin"></div>
+  <label for="em">E-mail</label>
+  <input id="em" type="email" autocomplete="username" required>
+  <label for="se">Senha</label>
+  <input id="se" type="password" autocomplete="current-password" required>
+  <button class="pri" type="submit" id="btEntrar">Entrar</button>
+</form>
+
+<div class="wrap" id="painel">
+  <header>
+    <div>
+      <h1>Festival Moto Brasil</h1>
+      <div class="sub">Riocentro · 16 a 18/10 · cadastros do form da Dafra que entram no Syonet (SYM Barra, Heitor)</div>
+    </div>
+    <div class="acoes">
+      <span id="hora"></span>
+      <button class="pri" id="btAtualizar">Atualizar</button>
+      <button id="btSair">Sair</button>
+    </div>
+  </header>
+
+  <div class="aviso" id="aviso"></div>
+  <div class="kpis" id="kpis"></div>
+  <div class="faixa" id="dias"></div>
+  <div class="faixa" id="status"></div>
+  <input class="busca" id="busca" type="search" placeholder="Buscar nome, telefone, e-mail ou evento">
+  <div class="card"><div class="tablewrap"><table>
+    <thead><tr><th>Recebido</th><th>Cliente</th><th>Status</th><th>Com quem</th><th>Evento</th><th>WhatsApp</th><th>E-mail</th></tr></thead>
+    <tbody id="linhas"></tbody>
+  </table></div></div>
+  <p class="mut">Status e responsável vêm ao vivo do Syonet. Os cadastros de teste não entram na lista.
+    Atualiza sozinho a cada 3 minutos com a aba aberta.</p>
+</div>
+
+<script>
+const SUPA = "https://winlvztcxczdgjqklxrv.supabase.co";
+const ANON = "sb_publishable_avlrsTa7Wm39iI6PqjKYKw_tsB4YFDK";   // publishable: pública por natureza
+const API = SUPA + "/functions/v1/festival-painel";
+const LINK_EV = id => "https://raion.syonet.com/portal/cic.do?modulo=CIC2#/evento/" + id + "/";
+const CHAVE_SESSAO = "festival_sessao";
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+let LEADS = [], filtroDia = "", filtroSt = "";
+
+// ---------------------------------------------------------------- sessão (login do Portal)
+function lerSessao(){ try { return JSON.parse(localStorage.getItem(CHAVE_SESSAO) || "null"); } catch { return null; } }
+function gravarSessao(s){ try { s ? localStorage.setItem(CHAVE_SESSAO, JSON.stringify(s)) : localStorage.removeItem(CHAVE_SESSAO); } catch {} }
+
+async function auth(caminho, corpo){
+  const r = await fetch(SUPA + "/auth/v1/" + caminho, {method:"POST",
+    headers:{apikey:ANON,"Content-Type":"application/json"}, body:JSON.stringify(corpo)});
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok || !j.access_token) throw new Error(j.error_description || j.msg || "Login recusado");
+  const s = {at:j.access_token, rt:j.refresh_token, exp:Date.now() + (j.expires_in || 3600) * 1000};
+  gravarSessao(s); return s;
+}
+async function tokenValido(){
+  let s = lerSessao();
+  if (!s) return null;
+  if (Date.now() > s.exp - 60000) {
+    try { s = await auth("token?grant_type=refresh_token", {refresh_token:s.rt}); } catch { gravarSessao(null); return null; }
+  }
+  return s.at;
+}
+
+function mostrarLogin(msg){
+  $("#painel").style.display = "none"; $("#login").style.display = "block";
+  const a = $("#avisoLogin"); a.textContent = msg || ""; a.style.display = msg ? "block" : "none";
+}
+function mostrarPainel(){ $("#login").style.display = "none"; $("#painel").style.display = "block"; }
+
+$("#login").addEventListener("submit", async e => {
+  e.preventDefault(); $("#btEntrar").disabled = true;
+  try { await auth("token?grant_type=password", {email:$("#em").value.trim(), password:$("#se").value}); $("#se").value = ""; await carregar(); }
+  catch (err) { mostrarLogin("E-mail ou senha não conferem."); }
+  finally { $("#btEntrar").disabled = false; }
+});
+$("#btSair").onclick = () => { gravarSessao(null); mostrarLogin(); };
+$("#btAtualizar").onclick = () => carregar();
+
+// ---------------------------------------------------------------- dados
+async function carregar(){
+  const at = await tokenValido();
+  if (!at) return mostrarLogin();
+  $("#btAtualizar").disabled = true; $("#btAtualizar").textContent = "Atualizando…";
+  try {
+    const r = await fetch(API, {headers:{Authorization:"Bearer " + at}});
+    const j = await r.json().catch(() => ({ok:false, erro:"resposta inválida"}));
+    if (r.status === 401) { gravarSessao(null); return mostrarLogin("Sessão expirou. Entre de novo."); }
+    if (r.status === 403) { gravarSessao(null); return mostrarLogin("Esse login (" + (j.email || "") + ") não tem acesso a esta página."); }
+    if (!j.ok) throw new Error(j.erro || "erro");
+    LEADS = j.leads; mostrarPainel(); $("#aviso").style.display = "none";
+    $("#hora").textContent = "atualizado às " + new Date(j.gerado_em).toLocaleTimeString("pt-BR", {hour:"2-digit", minute:"2-digit"});
+    desenhar();
+  } catch (err) {
+    mostrarPainel(); const a = $("#aviso"); a.textContent = "Não consegui atualizar agora (" + err.message + "). Tente de novo em instantes."; a.style.display = "block";
+  } finally { $("#btAtualizar").disabled = false; $("#btAtualizar").textContent = "Atualizar"; }
+}
+
+// ---------------------------------------------------------------- desenho
+const brt = iso => new Date(iso);
+const diaDe = l => brt(l.recebido).toLocaleDateString("pt-BR", {day:"2-digit", month:"2-digit", timeZone:"America/Sao_Paulo"});
+const hoje = () => new Date().toLocaleDateString("pt-BR", {day:"2-digit", month:"2-digit", timeZone:"America/Sao_Paulo"});
+function stDe(l){
+  if (!l.id_evento) return "ERRO";
+  const s = String(l.status || "?").toUpperCase();
+  if (s.includes("CANCEL")) return "CANCELADO";
+  if (s.includes("CONCLU")) return "CONCLUIDO";
+  if (s.includes("AGUARD")) return "AGUARDANDO";
+  return "ANDAMENTO";
+}
+const ROT = {AGUARDANDO:"Aguardando", ANDAMENTO:"Em andamento", CONCLUIDO:"Concluído", CANCELADO:"Cancelado", ERRO:"Fora do Syonet"};
+function fone(t){
+  const d = String(t || "").replace(/\D/g, "");
+  if (d.length === 11) return "(" + d.slice(0,2) + ") " + d.slice(2,7) + "-" + d.slice(7);
+  if (d.length === 10) return "(" + d.slice(0,2) + ") " + d.slice(2,6) + "-" + d.slice(6);
+  return d;
+}
+const MINUSC = new Set(["da","de","do","das","dos","e"]);
+const titulo = s => String(s || "").toLowerCase().split(/\s+/).filter(Boolean)
+  .map((p, i) => i && MINUSC.has(p) ? p : p.charAt(0).toUpperCase() + p.slice(1)).join(" ");
+
+function kpi(valor, rotulo, cls){ return '<div class="kpi ' + (cls || "") + '"><b>' + valor + '</b><span>' + rotulo + '</span></div>'; }
+
+function desenhar(){
+  const noSyonet = LEADS.filter(l => l.id_evento).length, fora = LEADS.length - noSyonet;
+  $("#kpis").innerHTML =
+    kpi(LEADS.length, "cadastros no total") +
+    kpi(LEADS.filter(l => diaDe(l) === hoje()).length, "hoje (" + hoje() + ")") +
+    kpi(noSyonet, "viraram evento no Syonet", "ok") +
+    kpi(fora, fora ? "NÃO entraram no Syonet" : "fora do Syonet", fora ? "err" : "");
+
+  const dias = ["16/10", "17/10", "18/10"];
+  LEADS.forEach(l => { if (!dias.includes(diaDe(l))) dias.push(diaDe(l)); });
+  $("#dias").innerHTML = chip("", "Todos os dias", LEADS.length, filtroDia, "dia") +
+    dias.map(d => chip(d, d, LEADS.filter(l => diaDe(l) === d).length, filtroDia, "dia")).join("");
+
+  const sts = ["AGUARDANDO", "ANDAMENTO", "CONCLUIDO", "CANCELADO", "ERRO"];
+  $("#status").innerHTML = chip("", "Todos os status", LEADS.length, filtroSt, "st") +
+    sts.map(s => ({s, n:LEADS.filter(l => stDe(l) === s).length})).filter(x => x.n)
+       .map(x => chip(x.s, ROT[x.s], x.n, filtroSt, "st")).join("");
+
+  const q = $("#busca").value.trim().toLowerCase(), qd = q.replace(/\D/g, "");
+  const vis = LEADS.filter(l =>
+    (!filtroDia || diaDe(l) === filtroDia) && (!filtroSt || stDe(l) === filtroSt) &&
+    (!q || (l.nome + " " + l.email + " " + (l.id_evento || "")).toLowerCase().includes(q) || (qd && String(l.telefone).includes(qd))));
+
+  $("#linhas").innerHTML = vis.length ? vis.map(l => {
+    const st = stDe(l), d = String(l.telefone || "").replace(/\D/g, "");
+    return "<tr>" +
+      '<td class="n rec">' + esc(diaDe(l)) + " " + brt(l.recebido).toLocaleTimeString("pt-BR", {hour:"2-digit", minute:"2-digit", timeZone:"America/Sao_Paulo"}) +
+        (l.cadastro_hora ? '<span class="mut"> · form ' + esc(l.cadastro_hora) + "</span>" : "") + "</td>" +
+      '<td class="nm">' + esc(titulo(l.nome)) + "</td>" +
+      '<td class="stc"><span class="st ' + st + '">' + ROT[st] + "</span>" + (st === "ERRO" ? '<div class="mut">' + esc(l.erro) + "</div>" : "") + "</td>" +
+      '<td data-l="Com">' + esc(titulo(l.com) || "–") + "</td>" +
+      '<td class="n" data-l="Evento">' + (l.id_evento ? '<a href="' + LINK_EV(l.id_evento) + '" target="_blank" rel="noopener">' + esc(l.id_evento) + "</a>" : "–") + "</td>" +
+      '<td class="n" data-l="Zap">' + (d ? '<a href="https://wa.me/55' + d + '" target="_blank" rel="noopener">' + esc(fone(d)) + "</a>" : "–") + "</td>" +
+      '<td data-l="E-mail">' + esc(l.email || "–") + "</td></tr>";
+  }).join("") : '<tr><td colspan="7" class="vazio">' + (LEADS.length ? "Nada com esse filtro." : "Nenhum cadastro do festival ainda.") + "</td></tr>";
+}
+function chip(valor, rotulo, n, atual, tipo){
+  return '<span class="chip' + (valor === atual ? " on" : "") + '" data-tipo="' + tipo + '" data-v="' + esc(valor) + '">' + esc(rotulo) + " <b>" + n + "</b></span>";
+}
+document.addEventListener("click", e => {
+  const c = e.target.closest(".chip"); if (!c) return;
+  if (c.dataset.tipo === "dia") filtroDia = c.dataset.v; else filtroSt = c.dataset.v;
+  desenhar();
+});
+$("#busca").addEventListener("input", desenhar);
+
+setInterval(() => { if (document.visibilityState === "visible" && $("#painel").style.display === "block") carregar(); }, 180000);
+lerSessao() ? carregar() : mostrarLogin();
+</script>
+</body>
+</html>
