@@ -4,50 +4,102 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#F3F1EC">
 <title>Captação de lead — Grupo Raion</title>
+<!--
+  Formulario de captacao em evento (Exapicor, Patio Petropolis, Festival Moto Brasil...): evento.html?e=<chave>.
+  Config de cada evento: tabela eventos_captacao (Supabase), servida pela Edge Function lead-evento
+  (fonte: python_leads/integracao/lead_evento/index.ts). Visual no molde do consorcio.raion.app.br (16/10/2026):
+  papel creme, Barlow + Figtree, Marca em cartoes com o logo oficial (marcas/*.png) e a cor da marca escolhida.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0f1115; --card:#171a21; --line:#272c37;
-    --txt:#e6e8ee; --dim:#98a0b3; --ac:#e11d2e; --ok:#22c55e;
+    --bg:#F3F1EC; --card:#FFFFFF; --ink:#17181B; --txt2:#3E424A; --mut:#5B5F68; --line:#D5D0C7; --line2:#E2DED6;
+    --ac:#17181B; --ac2:#B3261E; --ok:#1F7A45;
   }
   *{box-sizing:border-box}
   html,body{margin:0}
   body{
-    background:var(--bg); color:var(--txt);
-    font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-    padding:20px 16px calc(48px + env(safe-area-inset-bottom));
+    background:var(--bg); color:var(--ink);
+    font:16px/1.5 "Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+    padding:14px 16px calc(40px + env(safe-area-inset-bottom));
     -webkit-text-size-adjust:100%;
   }
-  .wrap{max-width:26rem;margin:0 auto}
-  header{margin:8px 0 20px}
-  .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);font-weight:700}
-  h1{font-size:24px;margin:4px 0 2px;line-height:1.2}
-  .sub{color:var(--dim);font-size:14px}
-  label{display:block;margin:14px 0 6px;font-size:14px;color:var(--dim)}
-  .req::after{content:" *";color:var(--ac)}
+  button,input,select{font:inherit;color:inherit}
+  .wrap{max-width:28rem;margin:0 auto}
+
+  /* cabeçalho: faixa listrada na cor da marca + chip com o logo */
+  .faixa{height:6px;border-radius:6px;background:var(--ac);position:relative;overflow:hidden;transition:background-color .35s}
+  .faixa::before{content:"";position:absolute;inset:0 -40px;opacity:.35;
+    background:repeating-linear-gradient(-55deg,var(--ac2) 0 10px,transparent 10px 24px);animation:listra 2.4s linear infinite}
+  .cab{display:flex;align-items:center;gap:12px;margin-top:14px}
+  .chip{flex-shrink:0;width:56px;height:56px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 0 0 1.5px var(--line2),0 3px 0 rgba(0,0,0,.08);transition:width .3s}
+  .chip.largo{width:96px;border-radius:28px}
+  .chip img{max-width:80%;max-height:74%;object-fit:contain;animation:pop .45s cubic-bezier(.3,1.5,.5,1)}
+  .kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ac);font-weight:700;transition:color .35s}
+  h1{margin:0;font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:700;font-size:30px;line-height:1.02}
+  .sub{margin:8px 0 2px;color:var(--txt2);font-size:15px}
+
+  label{display:block;margin:16px 0 6px;font-size:14px;font-weight:600;color:var(--txt2)}
+  .req::after{content:" *";color:var(--ac2)}
   input,select{
-    width:100%;padding:14px;border-radius:12px;border:1px solid var(--line);
-    background:var(--card);color:var(--txt);font-size:17px;appearance:none;
+    width:100%;height:54px;padding:0 14px;border-radius:14px;border:1.5px solid var(--line);
+    background:var(--card);font-size:17px;appearance:none;transition:border-color .2s,box-shadow .2s;
   }
-  input:focus,select:focus{outline:2px solid var(--ac);outline-offset:1px}
-  select:disabled{opacity:.5}
-  select{background-image:linear-gradient(45deg,transparent 50%,var(--dim) 50%),
-    linear-gradient(135deg,var(--dim) 50%,transparent 50%);
-    background-position:calc(100% - 20px) 22px,calc(100% - 14px) 22px;
-    background-size:6px 6px;background-repeat:no-repeat;padding-right:40px}
-  button{
-    width:100%;margin-top:24px;padding:16px;border:0;border-radius:12px;
-    background:var(--ac);color:#fff;font-size:17px;font-weight:700;cursor:pointer;
-  }
-  button[disabled]{opacity:.55}
-  .aviso{margin-top:14px;padding:12px;border-radius:10px;font-size:14px;display:none}
-  .aviso.erro{background:#2a1216;border:1px solid #5b1d25;color:#ffc9d0;display:block}
+  input:focus,select:focus{outline:none;border-color:var(--ac);box-shadow:0 0 0 4px color-mix(in srgb,var(--ac) 16%,transparent)}
+  select:disabled{opacity:.55}
+  select{background-image:linear-gradient(45deg,transparent 50%,var(--mut) 50%),
+    linear-gradient(135deg,var(--mut) 50%,transparent 50%);
+    background-position:calc(100% - 22px) 24px,calc(100% - 16px) 24px;
+    background-size:6px 6px;background-repeat:no-repeat;padding-right:42px}
+
+  /* marca em cartões com logo */
+  .marcas{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:10px}
+  .marcas button{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+    height:92px;padding:10px 8px;border:1.5px solid var(--line);border-radius:16px;background:var(--card);cursor:pointer;
+    font-size:13px;font-weight:700;color:var(--txt2);transition:border-color .2s,box-shadow .2s,transform .15s;
+    opacity:0;transform:translateY(10px);animation:sobe .45s cubic-bezier(.2,.8,.3,1) forwards}
+  .marcas button:nth-child(2){animation-delay:.06s}.marcas button:nth-child(3){animation-delay:.12s}
+  .marcas button:nth-child(4){animation-delay:.18s}.marcas button:nth-child(5){animation-delay:.24s}
+  .marcas button img{height:40px;max-width:84px;object-fit:contain}
+  .marcas button:active{transform:scale(.97)}
+  .marcas button.on{border:2px solid var(--cor);box-shadow:0 4px 0 var(--cor);color:var(--ink)}
+  .marcas button.on::after{content:"✓";position:absolute;top:-8px;right:-8px;width:22px;height:22px;border-radius:50%;
+    background:var(--cor);color:#fff;font-size:13px;line-height:22px;text-align:center;animation:pop .35s cubic-bezier(.3,1.6,.5,1)}
+  .sr{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+
+  .primario{width:100%;height:56px;margin-top:24px;border:0;border-radius:14px;background:var(--ac);color:#fff;
+    font-size:18px;font-weight:700;cursor:pointer;box-shadow:0 4px 0 color-mix(in srgb,var(--ac) 55%,#000);
+    transition:background-color .35s,transform .15s}
+  .primario:active{transform:translateY(3px);box-shadow:0 1px 0 color-mix(in srgb,var(--ac) 55%,#000)}
+  .primario[disabled]{opacity:.6}
+  .sec{width:100%;height:52px;margin-top:20px;border:1.5px solid var(--line);border-radius:14px;background:var(--card);
+    font-size:16px;font-weight:700;cursor:pointer}
+  .aviso{margin-top:14px;padding:12px 14px;border-radius:14px;font-size:15px;display:none}
+  .aviso.erro{background:#FBEDEC;border:1px solid #EBC6C2;color:#7A1A14;display:block}
+
   .centro{text-align:center;padding:40px 8px}
-  .mark{font-size:56px;line-height:1;color:var(--ok)}
-  .centro h2{margin:12px 0 4px;font-size:22px}
-  .centro p{color:var(--dim);margin:0 0 24px}
-  .id{font-size:13px;color:var(--dim);margin-top:20px}
+  .centro h2{margin:18px 0 4px;font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-size:36px;line-height:1.02}
+  .centro p{color:var(--txt2);margin:6px 0 0}
+  .circulo{width:88px;height:88px;margin:0 auto;border-radius:50%;background:var(--ac);display:flex;align-items:center;justify-content:center;
+    transform:scale(0);animation:estoura .55s cubic-bezier(.3,1.6,.5,1) forwards}
+  .circulo path{stroke-dasharray:24;stroke-dashoffset:24;animation:risca .45s .35s ease-out forwards}
+  .id{font-size:13px;color:var(--mut);margin-top:18px}
+  .raion{display:flex;justify-content:center;margin-top:28px}.raion img{width:108px;height:28px;object-fit:contain}
   .hide{display:none}
+
+  .entra{opacity:0;transform:translateY(12px);animation:sobe .5s cubic-bezier(.2,.8,.3,1) forwards}
+  @keyframes sobe{to{opacity:1;transform:none}}
+  @keyframes pop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
+  @keyframes listra{to{background-position:84px 0}}
+  @keyframes estoura{to{transform:scale(1)}}
+  @keyframes risca{to{stroke-dashoffset:0}}
+  @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}
+    .entra,.marcas button{opacity:1;transform:none}.circulo{transform:none}.circulo path{stroke-dashoffset:0}}
 </style>
 </head>
 <body>
@@ -56,13 +108,17 @@
   <div id="carregando" class="centro"><p>Carregando o evento...</p></div>
 
   <div id="tela-form" class="hide">
-    <header>
-      <div class="kicker">Grupo Raion</div>
-      <h1 id="titulo"></h1>
-      <div class="sub" id="subtitulo">Cadastro de cliente</div>
+    <div class="faixa"></div>
+    <header class="cab">
+      <div class="chip largo" id="chip"><img id="chip-img" src="logo-grupo-raion.png" alt="Grupo Raion"></div>
+      <div>
+        <div class="kicker" id="kicker">Grupo Raion</div>
+        <h1 id="titulo"></h1>
+      </div>
     </header>
+    <div class="sub" id="subtitulo">Cadastro de cliente</div>
 
-    <form id="f" autocomplete="on">
+    <form id="f" autocomplete="on" novalidate>
       <label class="req" for="nome" id="lb-nome">Nome do cliente</label>
       <input id="nome" required autocomplete="name" enterkeyhint="next">
 
@@ -74,8 +130,9 @@
       <input id="email" type="email" inputmode="email" autocomplete="email">
 
       <div id="box-marca" class="hide">
-        <label class="req" for="marca">Marca</label>
-        <select id="marca"></select>
+        <label class="req">Marca</label>
+        <div class="marcas" id="marcas-cards"></div>
+        <select id="marca" class="sr" tabindex="-1" aria-hidden="true"></select>
       </div>
 
       <div id="box-loja" class="hide">
@@ -92,17 +149,18 @@
         <select id="vendedor"></select>
       </div>
 
-      <button id="btn" type="submit">Enviar cadastro</button>
+      <button id="btn" class="primario" type="submit">Enviar cadastro</button>
       <div class="aviso" id="erro"></div>
     </form>
+    <div class="raion"><img src="logo-grupo-raion.png" alt="Grupo Raion"></div>
   </div>
 
   <div id="tela-ok" class="centro hide">
-    <div class="mark">&#10004;</div>
+    <div class="circulo"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></div>
     <h2 id="ok-titulo">Cadastro enviado</h2>
     <p id="ok-nome"></p>
-    <p id="ok-msg" class="hide" style="color:var(--dim)"></p>
-    <button id="novo" type="button">Cadastrar outro cliente</button>
+    <p id="ok-msg" class="hide"></p>
+    <button id="novo" class="primario" type="button">Cadastrar outro cliente</button>
     <div class="id" id="ok-id"></div>
   </div>
 
@@ -123,6 +181,16 @@ var $ = function (id) { return document.getElementById(id); };
 var CHAVE = new URLSearchParams(location.search).get("e") || "";
 var EV = null;
 
+// marca (como vem da funcao) -> nome, logo oficial e cores (as mesmas do consorcio/pesquisa)
+var MARCA_INFO = {
+  "ROYAL ENFIELD": { nome: "Royal Enfield", logo: "marcas/royal.png",      cor: "#B3261E", cor2: "#F2B517" },
+  "SYM":           { nome: "SYM",           logo: "marcas/sym.png",        cor: "#C4002B", cor2: "#FF5A6E", largo: true },
+  "CF MOTO":       { nome: "CF Moto",       logo: "marcas/cfmoto.png",     cor: "#1D2125", cor2: "#8A939C" },
+  "NISSAN":        { nome: "Nissan",        logo: "marcas/nissan.png",     cor: "#C3002F", cor2: "#8A939C" },
+  "MITSUBISHI":    { nome: "Mitsubishi",    logo: "marcas/mitsubishi.png", cor: "#E60012", cor2: "#8A939C" },
+  "ZEEKR":         { nome: "Zeekr",         logo: "zeekr-logo.svg",        cor: "#17181B", cor2: "#8A939C", largo: true }
+};
+
 function mostra(id) {
   ["carregando", "tela-form", "tela-ok", "tela-erro"].forEach(function (t) {
     $(t).classList.toggle("hide", t !== id);
@@ -133,6 +201,23 @@ function falhaFatal(titulo, msg) {
   $("erro-titulo").textContent = titulo;
   $("erro-msg").textContent = msg;
   mostra("tela-erro");
+}
+
+// cor + logo do cabeçalho: a marca escolhida (ou a única do evento); sem marca = Grupo Raion
+function aplicaMarca(m) {
+  var info = MARCA_INFO[m];
+  var raiz = document.documentElement.style;
+  raiz.setProperty("--ac", info ? info.cor : "#17181B");
+  raiz.setProperty("--ac2", info ? info.cor2 : "#B3261E");
+  document.querySelector('meta[name="theme-color"]').content = info ? info.cor : "#F3F1EC";
+  var img = $("chip-img"), novo = info ? info.logo : "logo-grupo-raion.png";
+  if (img.getAttribute("src") !== novo) {
+    var clone = img.cloneNode();                 // recria a <img> pra animação "pop" rodar de novo
+    clone.src = novo; clone.alt = info ? info.nome : "Grupo Raion";
+    img.parentNode.replaceChild(clone, img);
+  }
+  $("chip").classList.toggle("largo", !info || !!info.largo);
+  $("kicker").textContent = info ? info.nome : "Grupo Raion";
 }
 
 function pintaVeiculos() {
@@ -206,7 +291,7 @@ function montaForm() {
   if (AUTO) textosDoCliente();
 
   var sel = $("loja");
-  // evento com lojas de mais de uma marca (Festival 16/10): Marca vem antes e filtra as lojas
+  // evento com lojas de mais de uma marca (Festival 16/10): Marca vem antes, em cartões com logo, e filtra as lojas
   MARCAS = [];
   EV.lojas.forEach(function (l) {
     var m = (EV.marcas || {})[l];
@@ -214,11 +299,15 @@ function montaForm() {
   });
   if (MARCAS.length > 1) {
     $("box-marca").classList.remove("hide");
-    $("marca").required = true;
     var hm = '<option value="">Selecione...</option>';
-    MARCAS.forEach(function (m) { hm += '<option value="' + m + '">' + (NOME_MARCA[m] || m) + '</option>'; });
+    MARCAS.forEach(function (m) { hm += '<option value="' + m + '">' + ((MARCA_INFO[m] || {}).nome || m) + '</option>'; });
     $("marca").innerHTML = hm;
-    $("marca").addEventListener("change", function () { pintaLojas(); pintaVeiculos(); pintaVendedores(); });
+    pintaCartoes();
+    $("marca").addEventListener("change", function () {
+      pintaCartoes(); aplicaMarca($("marca").value); pintaLojas(); pintaVeiculos(); pintaVendedores();
+    });
+  } else if (MARCAS.length === 1) {
+    aplicaMarca(MARCAS[0]);                     // evento de uma marca só: já nasce com o logo e a cor dela
   }
   if (EV.lojas.length > 1) {
     $("box-loja").classList.remove("hide");
@@ -234,8 +323,21 @@ function montaForm() {
 }
 
 var MARCAS = [];
-var NOME_MARCA = { "ROYAL ENFIELD": "Royal Enfield", "SYM": "SYM", "CF MOTO": "CF Moto", "NISSAN": "Nissan",
-                   "MITSUBISHI": "Mitsubishi", "ZEEKR": "Zeekr" };
+
+function pintaCartoes() {
+  var atual = $("marca").value;
+  $("marcas-cards").innerHTML = MARCAS.map(function (m) {
+    var info = MARCA_INFO[m] || { nome: m, cor: "#17181B" };
+    return '<button type="button" data-marca="' + m + '" style="--cor:' + info.cor + '"' + (m === atual ? ' class="on" aria-pressed="true"' : ' aria-pressed="false"') + '>' +
+      (info.logo ? '<img src="' + info.logo + '" alt="">' : "") + '<span>' + info.nome + '</span></button>';
+  }).join("");
+}
+$("marcas-cards").addEventListener("click", function (e) {
+  var b = e.target.closest("button[data-marca]");
+  if (!b || b.dataset.marca === $("marca").value) return;
+  $("marca").value = b.dataset.marca;
+  $("marca").dispatchEvent(new Event("change"));
+});
 
 // lojas do evento; com Marca na tela, só as da marca escolhida (marca com 1 loja já vem marcada)
 function pintaLojas() {
@@ -280,10 +382,22 @@ if (!CHAVE) {
 
 // -------------------------------------------------------------------- envio
 
+function falta(msg, foco) {
+  var erro = $("erro");
+  erro.textContent = msg;
+  erro.className = "aviso erro";
+  if (foco) foco.focus();
+}
+
 $("f").addEventListener("submit", function (e) {
   e.preventDefault();
   var btn = $("btn"), erro = $("erro");
   erro.className = "aviso";
+  // conferência na tela (o form é novalidate): sem loja, a função cairia na 1ª loja do evento — nunca deixar passar
+  if (!$("nome").value.trim()) return falta("Preencha o nome.", $("nome"));
+  if (!$("telefone").value.replace(/\D/g, "")) return falta("Preencha o telefone.", $("telefone"));
+  if (MARCAS.length > 1 && !$("marca").value) return falta("Escolha a marca.");
+  if (EV.lojas.length > 1 && !$("loja").value) return falta("Escolha a loja.", $("loja"));
   btn.disabled = true;
   btn.textContent = "Enviando...";
 
@@ -305,6 +419,8 @@ $("f").addEventListener("submit", function (e) {
       if (!j.ok) throw new Error(j.erro || "não foi possível enviar");
       $("ok-nome").textContent = $("nome").value;
       $("ok-id").textContent = j.id_evento ? ("Syonet #" + j.id_evento) : "";
+      // recria o círculo pra animação do check rodar a cada envio
+      var c = document.querySelector("#tela-ok .circulo"); c.replaceWith(c.cloneNode(true));
       mostra("tela-ok");
       window.scrollTo(0, 0);
     })
@@ -321,9 +437,11 @@ $("f").addEventListener("submit", function (e) {
 $("novo").addEventListener("click", function () {
   $("f").reset();
   if (EV.lojas.length === 1) $("loja").value = EV.lojas[0];
+  if (MARCAS.length > 1) { pintaCartoes(); aplicaMarca(""); }
   pintaLojas();
   pintaVeiculos();
   pintaVendedores();
+  $("erro").className = "aviso";
   mostra("tela-form");
   $("nome").focus();
 });
