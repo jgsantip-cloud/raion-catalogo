@@ -990,8 +990,11 @@ $("abaDivulgar").onclick = abrirDivulga;
 
 // ---------- boot ----------
 (async () => {
-  // sem ?e= no link: a função devolve o único evento ativo, se houver só um
-  const j = await api({acao:"evento"}).catch(()=>({ok:false, erro:"rede"}));
+  // sem ?e= no link (é o caso do QR do convite, 16/10): usa o evento da sessão salva no celular; sem sessão, a função
+  // devolve o único evento ativo ou, com ?checkin=, o evento dono daquele código
+  const s0 = ls.get("prospecta_sessao");
+  if (!EVENTO && s0 && s0.evento && s0.token) EVENTO = s0.evento;
+  const j = await api({acao:"evento", ...(EVENTO ? {} : {codigo: CHECKIN_URL.slice(0,6)})}).catch(()=>({ok:false, erro:"rede"}));
   if (j.ok){ EVENTO = j.evento.chave; $("eventoNome").textContent = j.evento.nome + (j.evento.ativo ? "" : " (encerrado)"); }
   else { $("eventoNome").textContent = j.erro === "varios-eventos-ativos" ? "Peça o link do seu evento ao gestor" : j.erro === "rede" ? "Sem conexão" : "Link inválido"; $("btnEntrar").disabled = !EVENTO; }
   const s = ls.get("prospecta_sessao");
