@@ -185,10 +185,11 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     sym:   { nome: "SYM",           logo: "marcas/sym.png",   cor: "#C4002B", largo: true },
     cf:    { nome: "CF Moto",       logo: "marcas/cfmoto.png", cor: "#1D2125", largo: false },
     mitsubishi: { nome: "Mitsubishi", logo: "marcas/mitsubishi.png", cor: "#E60012", largo: false },
-    nissan: { nome: "Nissan", logo: "marcas/nissan.png", cor: "#C3002F", largo: false }
+    nissan: { nome: "Nissan", logo: "marcas/nissan.png", cor: "#C3002F", largo: false },
+    suzuki: { nome: "Suzuki", logo: "marcas/suzuki.png", cor: "#E30613", largo: false }
   };
   // marcas de CARRO: card diz "Carro", desenho de carro no rodape (proximas marcas de carro entram aqui)
-  var CARRO = { mitsubishi: 1, nissan: 1 };
+  var CARRO = { mitsubishi: 1, nissan: 1, suzuki: 1 };
   // genero do veiculo: moto e picape sao femininas ("a sua Classic", "a sua Frontier"); carro e masculino ("o seu Kicks")
   function masculino(modelo) { return ehCarro && !/frontier|triton|l200|hilux|ranger|s10|amarok/i.test(modelo || ""); }
   // perguntas de recomendacao usam outra legenda na escala de nota
@@ -241,6 +242,14 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       if (/frontier/.test(m)) return "frontier";
       if (/sentra/.test(m)) return "sentra";
       return "kicks_antigo";
+    }
+    if (mk === "suzuki") {
+      // provisorio (16/10, gerador de desenho fora): Jimny/Grand Vitara (quadrado, estepe atras) -> Pajero Full;
+      // Vitara/S-Cross (crossover) -> ASX. Quando os desenhos proprios sairem, trocam aqui.
+      if (/grand vitara/.test(m)) return ARTES.grand_vitara ? "grand_vitara" : "pajero_full";
+      if (/vitara/.test(m)) return ARTES.vitara ? "vitara" : "asx";
+      if (/s-?cross/.test(m)) return ARTES.s_cross ? "s_cross" : "asx";
+      return ARTES.jimny ? "jimny" : "pajero_full";
     }
     if (mk === "sym") return /\bnhx?\b|apache/.test(m) ? "classica" : "scooter";
     if (mk === "cf") return /cl-?c|bobber/.test(m) ? "classica" : "cf_aventureira";
