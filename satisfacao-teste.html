@@ -220,6 +220,11 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     kicks_novo: { corpo: "moto_kicks_novo_corpo.webp", roda: "roda_carro.webp", ar: "1517/698", rodas: [[7.65, 55.59, 20.04], [71.19, 56.16, 19.78]] },
     frontier: { corpo: "moto_frontier_corpo.webp", roda: "roda_carro.webp", ar: "1528/592", rodas: [[11.06, 51.01, 18.46], [73.89, 54.39, 17.28]] },
     kait: { corpo: "moto_kait_corpo.webp", roda: "roda_carro.webp", ar: "1519/675", rodas: [[9.08, 56.44, 18.96], [70.84, 56.44, 18.96]] },
+    // carro (Suzuki, 16/10)
+    jimny: { corpo: "moto_jimny_corpo.webp", roda: "roda_carro.webp", ar: "1495/804", rodas: [[11.37, 57.96, 22.21], [71.1, 59.45, 21.4]] },
+    vitara: { corpo: "moto_vitara_corpo.webp", roda: "roda_carro.webp", ar: "1520/696", rodas: [[8.42, 57.76, 18.95], [71.58, 57.76, 18.95]] },
+    grand_vitara: { corpo: "moto_grand_vitara_corpo.webp", roda: "roda_carro.webp", ar: "1521/705", rodas: [[12.36, 58.72, 18.67], [73.5, 60.0, 18.15]] },
+    s_cross: { corpo: "moto_s_cross_corpo.webp", roda: "roda_carro.webp", ar: "1528/660", rodas: [[8.51, 54.24, 19.11], [70.29, 56.06, 18.59]] },
     sentra: { corpo: "moto_sentra_corpo.webp", roda: "roda_carro.webp", ar: "1525/547", rodas: [[11.28, 52.29, 16.66], [72.0, 53.2, 16.39]] }
   };
   // marca: SYM -> scooter (NH/NHX sao motos de rua -> classica); CF -> cf_aventureira (Ibex/MT; CL-C cai na classica)
@@ -244,12 +249,10 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       return "kicks_antigo";
     }
     if (mk === "suzuki") {
-      // provisorio (16/10, gerador de desenho fora): Jimny/Grand Vitara (quadrado, estepe atras) -> Pajero Full;
-      // Vitara/S-Cross (crossover) -> ASX. Quando os desenhos proprios sairem, trocam aqui.
-      if (/grand vitara/.test(m)) return ARTES.grand_vitara ? "grand_vitara" : "pajero_full";
-      if (/vitara/.test(m)) return ARTES.vitara ? "vitara" : "asx";
-      if (/s-?cross/.test(m)) return ARTES.s_cross ? "s_cross" : "asx";
-      return ARTES.jimny ? "jimny" : "pajero_full";
+      if (/grand vitara/.test(m)) return "grand_vitara";
+      if (/vitara/.test(m)) return "vitara";
+      if (/s-?cross/.test(m)) return "s_cross";
+      return "jimny";
     }
     if (mk === "sym") return /\bnhx?\b|apache/.test(m) ? "classica" : "scooter";
     if (mk === "cf") return /cl-?c|bobber/.test(m) ? "classica" : "cf_aventureira";
