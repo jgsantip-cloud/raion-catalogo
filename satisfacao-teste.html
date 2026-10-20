@@ -26,6 +26,8 @@ button,textarea{font:inherit;color:inherit}
 .logo{display:block;object-fit:contain}
 .logo.g{width:54px;height:54px}.logo.g.largo{width:96px;object-position:left center}
 .logo.p{width:40px;height:40px}.logo.p.largo{width:64px;object-position:left center}
+/* Seminovos Diamante: logotipo horizontal (6:1) */
+.logo.g.xlargo{width:170px;height:44px;object-position:left center}.logo.p.xlargo{width:120px;height:32px;object-position:left center}
 .selo{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
 .contador{font-size:14px;font-weight:600;color:var(--mut)}
 .barra{margin-top:14px;height:4px;border-radius:4px;background:var(--line2)}
@@ -186,10 +188,12 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     cf:    { nome: "CF Moto",       logo: "marcas/cfmoto.png", cor: "#1D2125", largo: false },
     mitsubishi: { nome: "Mitsubishi", logo: "marcas/mitsubishi.png", cor: "#E60012", largo: false },
     nissan: { nome: "Nissan", logo: "marcas/nissan.png", cor: "#C3002F", largo: false },
-    suzuki: { nome: "Suzuki", logo: "marcas/suzuki.png", cor: "#E30613", largo: false }
+    suzuki: { nome: "Suzuki", logo: "marcas/suzuki.png", cor: "#E30613", largo: false },
+    // Seminovos Diamante (Joao 20/10): marca propria, cores do manual (#000, azul #1C4683, vermelho #E41323)
+    diamante: { nome: "Seminovos Diamante", logo: "marcas/diamante.svg", cor: "#1C4683", largo: "x" }
   };
   // marcas de CARRO: card diz "Carro", desenho de carro no rodape (proximas marcas de carro entram aqui)
-  var CARRO = { mitsubishi: 1, nissan: 1, suzuki: 1 };
+  var CARRO = { mitsubishi: 1, nissan: 1, suzuki: 1, diamante: 1 };
   // genero do veiculo: moto e picape sao femininas ("a sua Classic", "a sua Frontier"); carro e masculino ("o seu Kicks")
   function masculino(modelo) { return ehCarro && !/frontier|triton|l200|hilux|ranger|s10|amarok|strada|toro|saveiro|montana|oroch|maverick|rampage/i.test(modelo || ""); }
   // perguntas de recomendacao usam outra legenda na escala de nota
@@ -316,7 +320,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     });
   }
   function logo(tam) {
-    return '<img class="logo ' + tam + (marca.largo ? " largo" : "") + '" src="' + marca.logo + '" alt="' + esc(marca.nome) + '">';
+    return '<img class="logo ' + tam + (marca.largo === "x" ? " xlargo" : marca.largo ? " largo" : "") + '" src="' + marca.logo + '" alt="' + esc(marca.nome) + '">';
   }
   // mesma regua da Edge Function: qualquer nota ate nota_baixa_ate (alternativa 11..20 = nota 1..10) ou "Insatisfeito? Sim"
   // limite por pergunta: p.baixa_ate (ex.: Nissan 88, escala 1..5, so o 5 e positivo) ou a regra global nota_baixa_ate
@@ -781,7 +785,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       });
     }
     if (token === "demo") return iniciarDemo();
-    function iniciarDemo() { var qs = new URLSearchParams(location.search), mk = qs.get("marca") || "royal"; D = DEMO; D.marca = mk; if (qs.get("moto")) D.contexto.moto = qs.get("moto"); if (qs.get("seminovo")) { D.contexto.seminovo = true; delete D.contexto.proxima_revisao; } if (mk !== "royal" && MARCAS[mk]) D.contexto.loja = MARCAS[mk].nome + " Barra"; aplicarMarca(mk); montarMoto(qs.get("fam") || (D.contexto.seminovo ? familiaSeminovo(qs.get("moto") || D.contexto.moto) : familiaDe(qs.get("moto") || D.contexto.moto, mk))); atual = "inicio"; return render(); }
+    function iniciarDemo() { var qs = new URLSearchParams(location.search), mk = qs.get("marca") || "royal"; D = DEMO; D.marca = mk; if (qs.get("moto")) D.contexto.moto = qs.get("moto"); if (qs.get("seminovo") || mk === "diamante") { D.contexto.seminovo = true; delete D.contexto.proxima_revisao; } if (mk !== "royal" && MARCAS[mk]) D.contexto.loja = mk === "diamante" ? MARCAS[mk].nome : MARCAS[mk].nome + " Barra"; aplicarMarca(mk); montarMoto(qs.get("fam") || (D.contexto.seminovo ? familiaSeminovo(qs.get("moto") || D.contexto.moto) : familiaDe(qs.get("moto") || D.contexto.moto, mk))); atual = "inicio"; return render(); }
     if (!/^[A-Za-z0-9_-]{4,64}$/.test(token)) {
       return mostrar('<section class="final centro" style="margin:auto"><h1 class="grande" style="font-size:36px">Link incompleto</h1><p>Abra a pesquisa pelo botão da mensagem que você recebeu no WhatsApp.</p></section>');
     }
@@ -791,7 +795,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       }
       D = j;
       aplicarMarca(j.marca);
-      montarMoto((j.contexto || {}).seminovo ? familiaSeminovo(j.contexto.moto) : familiaDe((j.contexto || {}).moto, j.marca));
+      montarMoto((j.contexto || {}).seminovo || j.marca === "diamante" ? familiaSeminovo(j.contexto.moto) : familiaDe((j.contexto || {}).moto, j.marca));
       if (j.estado === "respondido") return telaSimples("Essa pesquisa já foi respondida", "Recebemos suas respostas" + quando(j.respondido_em) + ". Obrigado por responder!", true);
       if (j.estado === "encerrado") return telaSimples("Essa pesquisa foi encerrada", "Obrigado pelo seu tempo!", true);
       atual = "inicio";
