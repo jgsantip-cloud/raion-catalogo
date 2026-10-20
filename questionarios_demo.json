@@ -2914,5 +2914,722 @@
    "sim": []
   },
   "nota_baixa_ate": 8
+ },
+ {
+  "id_pesquisa": 19,
+  "nome": "Pesquisa Seminovos (Mitsubishi)",
+  "perguntas": [
+   {
+    "id": 141,
+    "ordem": 1,
+    "tipo": "nota",
+    "texto": "De 1 a 10, que nota você dá para o atendimento durante a sua compra?",
+    "texto_syonet": "Que nota atribui para sua satisfação geral com o atendimento prestado durante o processo de compra nesta concessionária?",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 11,
+      "resposta": "1",
+      "rotulo": "1"
+     },
+     {
+      "id": 12,
+      "resposta": "2",
+      "rotulo": "2"
+     },
+     {
+      "id": 13,
+      "resposta": "3",
+      "rotulo": "3"
+     },
+     {
+      "id": 14,
+      "resposta": "4",
+      "rotulo": "4"
+     },
+     {
+      "id": 15,
+      "resposta": "5",
+      "rotulo": "5"
+     },
+     {
+      "id": 16,
+      "resposta": "6",
+      "rotulo": "6"
+     },
+     {
+      "id": 17,
+      "resposta": "7",
+      "rotulo": "7"
+     },
+     {
+      "id": 18,
+      "resposta": "8",
+      "rotulo": "8"
+     },
+     {
+      "id": 19,
+      "resposta": "9",
+      "rotulo": "9"
+     },
+     {
+      "id": 20,
+      "resposta": "10",
+      "rotulo": "10"
+     }
+    ]
+   },
+   {
+    "id": 142,
+    "ordem": 2,
+    "tipo": "nota",
+    "texto": "De 1 a 10, o quanto você recomendaria a concessionária a um amigo?",
+    "texto_syonet": "Que nota atribui para sua intenção de recomendar a concessionária para um amigo?",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 11,
+      "resposta": "1",
+      "rotulo": "1"
+     },
+     {
+      "id": 12,
+      "resposta": "2",
+      "rotulo": "2"
+     },
+     {
+      "id": 13,
+      "resposta": "3",
+      "rotulo": "3"
+     },
+     {
+      "id": 14,
+      "resposta": "4",
+      "rotulo": "4"
+     },
+     {
+      "id": 15,
+      "resposta": "5",
+      "rotulo": "5"
+     },
+     {
+      "id": 16,
+      "resposta": "6",
+      "rotulo": "6"
+     },
+     {
+      "id": 17,
+      "resposta": "7",
+      "rotulo": "7"
+     },
+     {
+      "id": 18,
+      "resposta": "8",
+      "rotulo": "8"
+     },
+     {
+      "id": 19,
+      "resposta": "9",
+      "rotulo": "9"
+     },
+     {
+      "id": 20,
+      "resposta": "10",
+      "rotulo": "10"
+     }
+    ]
+   },
+   {
+    "id": 143,
+    "ordem": 3,
+    "tipo": "nota",
+    "texto": "De 1 a 10, que nota você dá para o atendimento do seu vendedor?",
+    "texto_syonet": "Que nota atribui para o atendimento do Vendedor?",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 11,
+      "resposta": "1",
+      "rotulo": "1"
+     },
+     {
+      "id": 12,
+      "resposta": "2",
+      "rotulo": "2"
+     },
+     {
+      "id": 13,
+      "resposta": "3",
+      "rotulo": "3"
+     },
+     {
+      "id": 14,
+      "resposta": "4",
+      "rotulo": "4"
+     },
+     {
+      "id": 15,
+      "resposta": "5",
+      "rotulo": "5"
+     },
+     {
+      "id": 16,
+      "resposta": "6",
+      "rotulo": "6"
+     },
+     {
+      "id": 17,
+      "resposta": "7",
+      "rotulo": "7"
+     },
+     {
+      "id": 18,
+      "resposta": "8",
+      "rotulo": "8"
+     },
+     {
+      "id": 19,
+      "resposta": "9",
+      "rotulo": "9"
+     },
+     {
+      "id": 20,
+      "resposta": "10",
+      "rotulo": "10"
+     }
+    ]
+   },
+   {
+    "id": 144,
+    "ordem": 4,
+    "tipo": "simnao",
+    "texto": "O vendedor te ofereceu um test drive?",
+    "texto_syonet": "O vendedor lhe ofereceu o test drive?",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 8,
+      "resposta": "SIM",
+      "rotulo": "Sim"
+     },
+     {
+      "id": 9,
+      "resposta": "NAO",
+      "rotulo": "Não"
+     }
+    ]
+   },
+   {
+    "id": 145,
+    "ordem": 5,
+    "tipo": "simnao",
+    "texto": "O gerente da loja participou da negociação?",
+    "texto_syonet": "Durante o processo de negociação, o Gerente da concessionária esteve presente?",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 8,
+      "resposta": "SIM",
+      "rotulo": "Sim"
+     },
+     {
+      "id": 9,
+      "resposta": "NAO",
+      "rotulo": "Não"
+     }
+    ]
+   },
+   {
+    "id": 146,
+    "ordem": 6,
+    "tipo": "simnao",
+    "texto": "Você deu um carro usado na troca?",
+    "texto_syonet": "Entregou veículo usado na troca?",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 8,
+      "resposta": "SIM",
+      "rotulo": "Sim"
+     },
+     {
+      "id": 9,
+      "resposta": "NAO",
+      "rotulo": "Não"
+     }
+    ]
+   },
+   {
+    "id": 147,
+    "ordem": 7,
+    "tipo": "simnao",
+    "texto": "Achou justo o valor da avaliação do seu usado?",
+    "texto_syonet": "A avaliação foi um preço justo?",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 8,
+      "resposta": "SIM",
+      "rotulo": "Sim"
+     },
+     {
+      "id": 9,
+      "resposta": "NAO",
+      "rotulo": "Não"
+     }
+    ],
+    "condicao": {
+     "pergunta": 146,
+     "alternativa": 8,
+     "senao": null
+    }
+   },
+   {
+    "id": 148,
+    "ordem": 8,
+    "tipo": "nota",
+    "texto": "De 1 a 10, que nota você dá para a entrega do carro?",
+    "texto_syonet": "Que nota atribui para a entrega do veículo ?",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 11,
+      "resposta": "1",
+      "rotulo": "1"
+     },
+     {
+      "id": 12,
+      "resposta": "2",
+      "rotulo": "2"
+     },
+     {
+      "id": 13,
+      "resposta": "3",
+      "rotulo": "3"
+     },
+     {
+      "id": 14,
+      "resposta": "4",
+      "rotulo": "4"
+     },
+     {
+      "id": 15,
+      "resposta": "5",
+      "rotulo": "5"
+     },
+     {
+      "id": 16,
+      "resposta": "6",
+      "rotulo": "6"
+     },
+     {
+      "id": 17,
+      "resposta": "7",
+      "rotulo": "7"
+     },
+     {
+      "id": 18,
+      "resposta": "8",
+      "rotulo": "8"
+     },
+     {
+      "id": 19,
+      "resposta": "9",
+      "rotulo": "9"
+     },
+     {
+      "id": 20,
+      "resposta": "10",
+      "rotulo": "10"
+     }
+    ]
+   },
+   {
+    "id": 149,
+    "ordem": 9,
+    "tipo": "simnao",
+    "texto": "O carro foi entregue na data combinada e em perfeitas condições?",
+    "texto_syonet": "Foi entregue na data combinada e em perfeitas condições?",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 8,
+      "resposta": "SIM",
+      "rotulo": "Sim"
+     },
+     {
+      "id": 9,
+      "resposta": "NAO",
+      "rotulo": "Não"
+     }
+    ]
+   },
+   {
+    "id": 150,
+    "ordem": 10,
+    "tipo": "simnao",
+    "texto": "Te explicaram como funciona o carro na entrega?",
+    "texto_syonet": "Recebeu informações sobre o funcionamento do veículo?",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 8,
+      "resposta": "SIM",
+      "rotulo": "Sim"
+     },
+     {
+      "id": 9,
+      "resposta": "NAO",
+      "rotulo": "Não"
+     }
+    ]
+   },
+   {
+    "id": 161,
+    "ordem": 11,
+    "tipo": "simnao",
+    "texto": "No geral, você ficou insatisfeito com alguma coisa?",
+    "texto_syonet": "Insatisfeito?",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 8,
+      "resposta": "SIM",
+      "rotulo": "Sim"
+     },
+     {
+      "id": 9,
+      "resposta": "NAO",
+      "rotulo": "Não"
+     }
+    ]
+   },
+   {
+    "id": -191,
+    "ordem": 11,
+    "tipo": "texto",
+    "texto": "Conta pra gente o que te deixou insatisfeito.",
+    "texto_syonet": "",
+    "dica": "Opcional, mas ajuda muito a gente a resolver.",
+    "opcoes": [],
+    "extra": true,
+    "condicao": {
+     "insatisfeito": true,
+     "senao": null
+    }
+   },
+   {
+    "id": -192,
+    "ordem": 11,
+    "tipo": "texto",
+    "texto": "Que bom! Tem algum elogio ou observação que queira deixar?",
+    "texto_syonet": "",
+    "dica": "Opcional. Se quiser, cite quem te atendeu.",
+    "opcoes": [],
+    "extra": true,
+    "condicao": {
+     "insatisfeito": false,
+     "senao": null
+    }
+   }
+  ],
+  "canal": {
+   "pergunta": 195,
+   "alternativa": 154,
+   "resposta": "WHATSAPP"
+  },
+  "insatisfacao": {
+   "nota": [
+    141,
+    142,
+    143,
+    148
+   ],
+   "sim": [
+    161
+   ]
+  },
+  "nota_baixa_ate": 8
+ },
+ {
+  "id_pesquisa": 20,
+  "nome": "Nissan Top Box - Seminovos",
+  "perguntas": [
+   {
+    "id": 152,
+    "ordem": 1,
+    "tipo": "nota",
+    "texto": "De 1 a 5, que nota você dá para a sua experiência de compra?",
+    "texto_syonet": "Que nota o(a) Sr.(a) atribui para a satisfação geral com o processo de compra neste concessionária?",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 11,
+      "resposta": "1",
+      "rotulo": "1"
+     },
+     {
+      "id": 12,
+      "resposta": "2",
+      "rotulo": "2"
+     },
+     {
+      "id": 13,
+      "resposta": "3",
+      "rotulo": "3"
+     },
+     {
+      "id": 14,
+      "resposta": "4",
+      "rotulo": "4"
+     },
+     {
+      "id": 15,
+      "resposta": "5",
+      "rotulo": "5"
+     }
+    ],
+    "baixa_ate": 4
+   },
+   {
+    "id": 153,
+    "ordem": 2,
+    "tipo": "nota",
+    "texto": "De 1 a 5, que nota você dá para o atendimento do seu vendedor?",
+    "texto_syonet": "Que nota o(a) Sr.(a) atribui para o atendimento do(a) vendedor(a)?",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 11,
+      "resposta": "1",
+      "rotulo": "1"
+     },
+     {
+      "id": 12,
+      "resposta": "2",
+      "rotulo": "2"
+     },
+     {
+      "id": 13,
+      "resposta": "3",
+      "rotulo": "3"
+     },
+     {
+      "id": 14,
+      "resposta": "4",
+      "rotulo": "4"
+     },
+     {
+      "id": 15,
+      "resposta": "5",
+      "rotulo": "5"
+     }
+    ],
+    "baixa_ate": 4
+   },
+   {
+    "id": 154,
+    "ordem": 3,
+    "tipo": "simnao",
+    "texto": "O vendedor te ofereceu um test drive?",
+    "texto_syonet": "O vendedor lhe ofereceu a oportunidade de dirigir um veículo Test Drive?",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 8,
+      "resposta": "SIM",
+      "rotulo": "Sim"
+     },
+     {
+      "id": 9,
+      "resposta": "NAO",
+      "rotulo": "Não"
+     }
+    ]
+   },
+   {
+    "id": 155,
+    "ordem": 4,
+    "tipo": "simnao",
+    "texto": "O gerente da loja participou da negociação?",
+    "texto_syonet": "Durante o processo de de negociação o Gerente da Concessionária estava presente?",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 8,
+      "resposta": "SIM",
+      "rotulo": "Sim"
+     },
+     {
+      "id": 9,
+      "resposta": "NAO",
+      "rotulo": "Não"
+     }
+    ]
+   },
+   {
+    "id": 156,
+    "ordem": 5,
+    "tipo": "simnao",
+    "texto": "Você deu um carro usado na troca?",
+    "texto_syonet": "O(A) Sr.(a) entregou veículo usado na troca?",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 33,
+      "resposta": "SIM",
+      "rotulo": "Sim"
+     },
+     {
+      "id": 9,
+      "resposta": "NAO",
+      "rotulo": "Não"
+     }
+    ]
+   },
+   {
+    "id": 157,
+    "ordem": 6,
+    "tipo": "simnao",
+    "texto": "Achou justo o valor da avaliação do seu usado?",
+    "texto_syonet": "A avaliação do seu veículo usado foi um preço justo?",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 8,
+      "resposta": "SIM",
+      "rotulo": "Sim"
+     },
+     {
+      "id": 9,
+      "resposta": "NAO",
+      "rotulo": "Não"
+     }
+    ],
+    "condicao": {
+     "pergunta": 156,
+     "alternativa": 33,
+     "senao": [
+      104,
+      "NAO SE APLICA"
+     ]
+    }
+   },
+   {
+    "id": 158,
+    "ordem": 7,
+    "tipo": "nota",
+    "texto": "De 1 a 5, que nota você dá para a entrega do carro?",
+    "texto_syonet": "Que nota o(a) Sr.(a) atribui a entrega do veículo?",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 11,
+      "resposta": "1",
+      "rotulo": "1"
+     },
+     {
+      "id": 12,
+      "resposta": "2",
+      "rotulo": "2"
+     },
+     {
+      "id": 13,
+      "resposta": "3",
+      "rotulo": "3"
+     },
+     {
+      "id": 14,
+      "resposta": "4",
+      "rotulo": "4"
+     },
+     {
+      "id": 15,
+      "resposta": "5",
+      "rotulo": "5"
+     }
+    ],
+    "baixa_ate": 4
+   },
+   {
+    "id": 159,
+    "ordem": 8,
+    "tipo": "nota",
+    "texto": "De 1 a 5, o quanto você recomendaria a Keiko a um amigo ou familiar?",
+    "texto_syonet": "Que nota o(a) Sr.(a) atribui para sua intenção de recomendar a concessionária para um familiar ou amigo?",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 11,
+      "resposta": "1",
+      "rotulo": "1"
+     },
+     {
+      "id": 12,
+      "resposta": "2",
+      "rotulo": "2"
+     },
+     {
+      "id": 13,
+      "resposta": "3",
+      "rotulo": "3"
+     },
+     {
+      "id": 14,
+      "resposta": "4",
+      "rotulo": "4"
+     },
+     {
+      "id": 15,
+      "resposta": "5",
+      "rotulo": "5"
+     }
+    ],
+    "baixa_ate": 4
+   },
+   {
+    "id": -201,
+    "ordem": 8,
+    "tipo": "texto",
+    "texto": "Conta pra gente o que te deixou insatisfeito.",
+    "texto_syonet": "",
+    "dica": "Opcional, mas ajuda muito a gente a resolver.",
+    "opcoes": [],
+    "extra": true,
+    "condicao": {
+     "insatisfeito": true,
+     "senao": null
+    }
+   },
+   {
+    "id": -202,
+    "ordem": 8,
+    "tipo": "texto",
+    "texto": "Que bom! Tem algum elogio ou observação que queira deixar?",
+    "texto_syonet": "",
+    "dica": "Opcional. Se quiser, cite quem te atendeu.",
+    "opcoes": [],
+    "extra": true,
+    "condicao": {
+     "insatisfeito": false,
+     "senao": null
+    }
+   }
+  ],
+  "canal": {
+   "pergunta": 183,
+   "alternativa": 158,
+   "resposta": "WHATSAPP"
+  },
+  "insatisfacao": {
+   "nota": [
+    152,
+    153,
+    158,
+    159
+   ],
+   "sim": []
+  },
+  "nota_baixa_ate": 8
  }
 ]

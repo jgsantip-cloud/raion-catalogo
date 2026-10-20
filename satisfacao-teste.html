@@ -191,7 +191,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   // marcas de CARRO: card diz "Carro", desenho de carro no rodape (proximas marcas de carro entram aqui)
   var CARRO = { mitsubishi: 1, nissan: 1, suzuki: 1 };
   // genero do veiculo: moto e picape sao femininas ("a sua Classic", "a sua Frontier"); carro e masculino ("o seu Kicks")
-  function masculino(modelo) { return ehCarro && !/frontier|triton|l200|hilux|ranger|s10|amarok/i.test(modelo || ""); }
+  function masculino(modelo) { return ehCarro && !/frontier|triton|l200|hilux|ranger|s10|amarok|strada|toro|saveiro|montana|oroch|maverick|rampage/i.test(modelo || ""); }
   // perguntas de recomendacao usam outra legenda na escala de nota
   var RECOMENDA = { 125: 1, 45: 1, 169: 1, 178: 1, 112: 1, 100: 1, 96: 1, 88: 1 };
   var VOLTAR_SVG = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>';
@@ -220,6 +220,9 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     kicks_novo: { corpo: "moto_kicks_novo_corpo.webp", roda: "roda_carro.webp", ar: "1517/698", rodas: [[7.65, 55.59, 20.04], [71.19, 56.16, 19.78]] },
     frontier: { corpo: "moto_frontier_corpo.webp", roda: "roda_carro.webp", ar: "1528/592", rodas: [[11.06, 51.01, 18.46], [73.89, 54.39, 17.28]] },
     kait: { corpo: "moto_kait_corpo.webp", roda: "roda_carro.webp", ar: "1519/675", rodas: [[9.08, 56.44, 18.96], [70.84, 56.44, 18.96]] },
+    // carro generico (seminovo de outra marca, 20/10)
+    suv: { corpo: "moto_suv_corpo.webp", roda: "roda_carro.webp", ar: "1506/680", rodas: [[9.89, 55.29, 19.39], [71.38, 56.18, 19.39]] },
+    picape: { corpo: "moto_picape_corpo.webp", roda: "roda_carro.webp", ar: "1529/685", rodas: [[13.15, 60.0, 17.53], [72.07, 60.44, 17.27]] },
     // carro (Suzuki, 16/10)
     jimny: { corpo: "moto_jimny_corpo.webp", roda: "roda_carro.webp", ar: "1495/804", rodas: [[11.37, 57.96, 22.21], [71.1, 59.45, 21.4]] },
     vitara: { corpo: "moto_vitara_corpo.webp", roda: "roda_carro.webp", ar: "1520/696", rodas: [[8.42, 57.76, 18.95], [71.58, 57.76, 18.95]] },
@@ -228,6 +231,13 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     sentra: { corpo: "moto_sentra_corpo.webp", roda: "roda_carro.webp", ar: "1525/547", rodas: [[11.28, 52.29, 16.66], [72.0, 53.2, 16.39]] }
   };
   // marca: SYM -> scooter (NH/NHX sao motos de rua -> classica); CF -> cf_aventureira (Ibex/MT; CL-C cai na classica)
+  // seminovo (20/10): o carro pode ser de qualquer marca -> procura o modelo em todas as marcas de carro da casa;
+  // se nao for de nenhuma, desenho generico (picape ou SUV)
+  function familiaSeminovo(moto) {
+    var m = String(moto || "").toLowerCase(), base = { mitsubishi: "eclipse_cross", nissan: "kicks_antigo", suzuki: "jimny" };
+    for (var mk in base) { var f = familiaDe(moto, mk); if (f !== base[mk] || new RegExp(base[mk].split("_")[0]).test(m)) return f; }
+    return /strada|toro|saveiro|montana|oroch|hilux|ranger|s10|amarok|maverick|rampage|frontier|triton|l200/.test(m) ? "picape" : "suv";
+  }
   function familiaDe(moto, mk) {
     var m = String(moto || "").toLowerCase();
     if (mk === "mitsubishi") {
@@ -360,7 +370,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   function telaInicio() {
     var c = D.contexto || {}, oficina = D.tipo === "oficina";
     var masc = masculino(c.moto);
-    var ola = "Oi" + (c.nome ? ", " + esc(c.nome) : "") + "!" + (oficina ? "" : (ehCarro ? " Parabéns pelo seu novo " : " Parabéns pela sua nova ") + esc(marca.nome) + ".");
+    var ola = "Oi" + (c.nome ? ", " + esc(c.nome) : "") + "!" + (oficina ? "" : c.seminovo ? " Parabéns pela compra do seu seminovo." : (ehCarro ? " Parabéns pelo seu novo " : " Parabéns pela sua nova ") + esc(marca.nome) + ".");
     var titulo = oficina ? (c.moto ? "Como foi o serviço " + (masc ? "no seu " : "na sua ") + esc(c.moto) + "?" : "Como foi o atendimento na nossa oficina?")
                          : (c.moto ? "Como foi a compra " + (masc ? "do seu " : "da sua ") + esc(c.moto) + "?" : "Como foi a sua compra com a gente?");
     var linhas = [[oficina ? "Oficina" : "Loja", c.loja], [oficina ? "Serviço concluído em" : "Compra em", c.data], [ehCarro ? "Carro" : "Moto", c.moto]]
@@ -765,12 +775,13 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       return fetch("questionarios_demo.json").then(function (r) { return r.json(); }).then(function (lst) {
         var q = lst.filter(function (x) { return x.id_pesquisa === qn; })[0];
         if (q) { DEMO.perguntas = q.perguntas; DEMO.insatisfacao = q.insatisfacao; DEMO.nota_baixa_ate = q.nota_baixa_ate;
-          DEMO.tipo = /vendas|ve[ií]culos/i.test(q.nome) ? "vendas" : "oficina"; }
+          DEMO.tipo = /vendas|ve[ií]culos|seminov/i.test(q.nome) ? "vendas" : "oficina";
+          if (/seminov/i.test(q.nome)) { DEMO.contexto.seminovo = true; delete DEMO.contexto.proxima_revisao; } }
         token = "demo"; iniciarDemo();
       });
     }
     if (token === "demo") return iniciarDemo();
-    function iniciarDemo() { var qs = new URLSearchParams(location.search), mk = qs.get("marca") || "royal"; D = DEMO; D.marca = mk; if (qs.get("moto")) D.contexto.moto = qs.get("moto"); if (mk !== "royal" && MARCAS[mk]) D.contexto.loja = MARCAS[mk].nome + " Barra"; aplicarMarca(mk); montarMoto(qs.get("fam") || familiaDe(qs.get("moto") || D.contexto.moto, mk)); atual = "inicio"; return render(); }
+    function iniciarDemo() { var qs = new URLSearchParams(location.search), mk = qs.get("marca") || "royal"; D = DEMO; D.marca = mk; if (qs.get("moto")) D.contexto.moto = qs.get("moto"); if (qs.get("seminovo")) { D.contexto.seminovo = true; delete D.contexto.proxima_revisao; } if (mk !== "royal" && MARCAS[mk]) D.contexto.loja = MARCAS[mk].nome + " Barra"; aplicarMarca(mk); montarMoto(qs.get("fam") || (D.contexto.seminovo ? familiaSeminovo(qs.get("moto") || D.contexto.moto) : familiaDe(qs.get("moto") || D.contexto.moto, mk))); atual = "inicio"; return render(); }
     if (!/^[A-Za-z0-9_-]{4,64}$/.test(token)) {
       return mostrar('<section class="final centro" style="margin:auto"><h1 class="grande" style="font-size:36px">Link incompleto</h1><p>Abra a pesquisa pelo botão da mensagem que você recebeu no WhatsApp.</p></section>');
     }
@@ -780,7 +791,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       }
       D = j;
       aplicarMarca(j.marca);
-      montarMoto(familiaDe((j.contexto || {}).moto, j.marca));
+      montarMoto((j.contexto || {}).seminovo ? familiaSeminovo(j.contexto.moto) : familiaDe((j.contexto || {}).moto, j.marca));
       if (j.estado === "respondido") return telaSimples("Essa pesquisa já foi respondida", "Recebemos suas respostas" + quando(j.respondido_em) + ". Obrigado por responder!", true);
       if (j.estado === "encerrado") return telaSimples("Essa pesquisa foi encerrada", "Obrigado pelo seu tempo!", true);
       atual = "inicio";
