@@ -772,7 +772,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   function iniciar() {
     if (token === "demo" && new URLSearchParams(location.search).get("q")) {   // ?t=demo&q=16: questionario real (copia local questionarios_demo.json)
       var qn = Number(new URLSearchParams(location.search).get("q"));
-      return fetch("questionarios_demo.json").then(function (r) { return r.json(); }).then(function (lst) {
+      return fetch("questionarios_demo.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (lst) {
         var q = lst.filter(function (x) { return x.id_pesquisa === qn; })[0];
         if (q) { DEMO.perguntas = q.perguntas; DEMO.insatisfacao = q.insatisfacao; DEMO.nota_baixa_ate = q.nota_baixa_ate;
           DEMO.tipo = /vendas|ve[ií]culos|seminov/i.test(q.nome) ? "vendas" : "oficina";
