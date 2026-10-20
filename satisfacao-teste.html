@@ -226,6 +226,8 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     kait: { corpo: "moto_kait_corpo.webp", roda: "roda_carro.webp", ar: "1519/675", rodas: [[9.08, 56.44, 18.96], [70.84, 56.44, 18.96]] },
     // carro generico (seminovo de outra marca, 20/10)
     suv: { corpo: "moto_suv_corpo.webp", roda: "roda_carro.webp", ar: "1506/680", rodas: [[9.89, 55.29, 19.39], [71.38, 56.18, 19.39]] },
+    hatch: { corpo: "moto_hatch_corpo.webp", roda: "roda_carro.webp", ar: "1517/697", rodas: [[5.67, 58.11, 18.85], [71.19, 58.68, 18.59]] },
+    sedan: { corpo: "moto_sedan_corpo.webp", roda: "roda_carro.webp", ar: "1521/570", rodas: [[12.16, 52.28, 17.49], [73.24, 53.86, 16.83]] },
     picape: { corpo: "moto_picape_corpo.webp", roda: "roda_carro.webp", ar: "1529/685", rodas: [[13.15, 60.0, 17.53], [72.07, 60.44, 17.27]] },
     // carro (Suzuki, 16/10)
     jimny: { corpo: "moto_jimny_corpo.webp", roda: "roda_carro.webp", ar: "1495/804", rodas: [[11.37, 57.96, 22.21], [71.1, 59.45, 21.4]] },
@@ -240,7 +242,11 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   function familiaSeminovo(moto) {
     var m = String(moto || "").toLowerCase(), base = { mitsubishi: "eclipse_cross", nissan: "kicks_antigo", suzuki: "jimny" };
     for (var mk in base) { var f = familiaDe(moto, mk); if (f !== base[mk] || new RegExp(base[mk].split("_")[0]).test(m)) return f; }
-    return /strada|toro|saveiro|montana|oroch|hilux|ranger|s10|amarok|maverick|rampage|frontier|triton|l200/.test(m) ? "picape" : "suv";
+    if (/strada|toro|saveiro|montana|oroch|hilux|ranger|s10|amarok|maverick|rampage|frontier|triton|l200/.test(m)) return "picape";
+    // carroceria pelo nome do modelo (o Syonet nao tem o tipo): seda antes de hatch por causa de "onix plus"/"hb20s"
+    if (/onix plus|hb20s|virtus|versa|sentra|civic|corolla(?! cross)|cruze|cronos|voyage|\bcity\b|jetta|logan|prisma|\bsedan\b|altima|accord|fluence|grand siena|siena/.test(m)) return ARTES.sedan ? "sedan" : "suv";
+    if (/onix|hb20|polo|\bgol\b|argo|mobi|kwid|\bup\b|fox|sandero|\bka\b|fiesta|etios|yaris|\b208\b|\bc3\b|march|swift|celta|palio|\buno\b|golf|i30|\bfit\b|stepway/.test(m)) return ARTES.hatch ? "hatch" : "suv";
+    return "suv";
   }
   function familiaDe(moto, mk) {
     var m = String(moto || "").toLowerCase();
@@ -785,7 +791,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       });
     }
     if (token === "demo") return iniciarDemo();
-    function iniciarDemo() { var qs = new URLSearchParams(location.search), mk = qs.get("marca") || "royal"; D = DEMO; D.marca = mk; if (qs.get("moto")) D.contexto.moto = qs.get("moto"); if (qs.get("seminovo") || mk === "diamante") { D.contexto.seminovo = true; delete D.contexto.proxima_revisao; } if (mk !== "royal" && MARCAS[mk]) D.contexto.loja = mk === "diamante" ? MARCAS[mk].nome : MARCAS[mk].nome + " Barra"; aplicarMarca(mk); montarMoto(qs.get("fam") || (D.contexto.seminovo ? familiaSeminovo(qs.get("moto") || D.contexto.moto) : familiaDe(qs.get("moto") || D.contexto.moto, mk))); atual = "inicio"; return render(); }
+    function iniciarDemo() { var qs = new URLSearchParams(location.search), mk = qs.get("marca") || "royal"; D = DEMO; D.marca = mk; if ((qs.get("modelo") || qs.get("moto"))) D.contexto.moto = (qs.get("modelo") || qs.get("moto")); if (qs.get("seminovo") || mk === "diamante") { D.contexto.seminovo = true; delete D.contexto.proxima_revisao; } if (mk !== "royal" && MARCAS[mk]) D.contexto.loja = mk === "diamante" ? MARCAS[mk].nome : MARCAS[mk].nome + " Barra"; aplicarMarca(mk); montarMoto(qs.get("fam") || (D.contexto.seminovo ? familiaSeminovo((qs.get("modelo") || qs.get("moto")) || D.contexto.moto) : familiaDe((qs.get("modelo") || qs.get("moto")) || D.contexto.moto, mk))); atual = "inicio"; return render(); }
     if (!/^[A-Za-z0-9_-]{4,64}$/.test(token)) {
       return mostrar('<section class="final centro" style="margin:auto"><h1 class="grande" style="font-size:36px">Link incompleto</h1><p>Abra a pesquisa pelo botão da mensagem que você recebeu no WhatsApp.</p></section>');
     }
