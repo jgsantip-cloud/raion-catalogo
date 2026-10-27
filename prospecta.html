@@ -112,6 +112,20 @@
   .mini.z{background:#25D366;color:#fff;border-color:#25D366} .mini.s{color:var(--green);border-color:var(--green)}
   .linkguia{background:none;border:0;color:var(--red);font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;text-decoration:underline;padding:12px;align-self:center}
   svg{flex-shrink:0}
+  /* aba Visitas (João 27/10): arte da visita agendada; fonte da Nissan só pra arte (mesma origem, senão o canvas não exporta) */
+  @font-face{font-family:"NissanBrand";font-weight:300;src:url(visitas/nissan-brand-light.woff2) format("woff2")}
+  @font-face{font-family:"NissanBrand";font-weight:400;src:url(visitas/nissan-brand-regular.woff2) format("woff2")}
+  @font-face{font-family:"NissanBrand";font-weight:700;src:url(visitas/nissan-brand-bold.woff2) format("woff2")}
+  .vis{padding:14px 16px;gap:12px;cursor:pointer}
+  .vis.aberta{border-color:var(--red);cursor:default}
+  .vis .vtopo{display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .vis .vhora{font-size:20px;font-weight:700;white-space:nowrap}
+  .vis .vsem{font-size:13px;color:var(--dim);white-space:nowrap}
+  .vis img.arte{width:100%;border-radius:12px;display:block;aspect-ratio:4/5;background:#111}
+  .vis label{margin:0 0 6px}
+  .vis input[type=date],.vis input[type=time]{min-width:0;max-width:100%;display:block;text-align:left}
+  .vis input::-webkit-date-and-time-value{text-align:left}
+  .btn-dark{background:#1A1A1A;color:#fff}
 </style>
 </head>
 <body>
@@ -299,12 +313,42 @@
     <div id="divDuvidas"></div>
   </div>
 </section>
+<!-- VISITAS (João 27/10): arte da visita agendada no Syonet pra mandar pro cliente -->
+<section class="tela com-rodape oculto" id="tela-visitas">
+  <img src="logo-prospecta.png" alt="Prospecta Raion" style="width:190px;height:auto;display:block;margin:0 auto 18px">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px">
+    <div style="display:flex;flex-direction:column;gap:2px;min-width:0">
+      <div style="font-size:22px;font-weight:700;line-height:1.2" id="quem4"></div>
+      <div class="ctx" id="ondeQuando4"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;flex-shrink:0">
+      <div style="font-size:30px;font-weight:700;line-height:1" id="visN">0</div>
+      <div style="font-size:12px;color:var(--dim)">visitas</div>
+    </div>
+  </div>
+  <div id="visLista" style="display:flex;flex-direction:column;gap:10px;margin-top:14px"></div>
+  <div class="card vis oculto" id="visAvulsa" style="margin-top:16px;cursor:default">
+    <div class="nome">Visita fora do Syonet</div>
+    <div><label for="avNome">Nome do cliente</label><input id="avNome" autocomplete="off" placeholder="primeiro nome"></div>
+    <div class="grid2">
+      <div><label for="avDia">Dia</label><input id="avDia" type="date"></div>
+      <div><label for="avHora">Horário (opcional)</label><input id="avHora" type="time" step="900"></div>
+    </div>
+    <div><label for="avTel">WhatsApp do cliente (opcional)</label><input id="avTel" type="tel" inputmode="numeric" placeholder="(24) 99999-9999" autocomplete="off"></div>
+    <img class="arte" id="avArte" alt="Arte da visita">
+    <div class="grid2"><button class="btn btn-dark" id="avSalvar">Salvar imagem</button><button class="btn btn-green" id="avZap">WhatsApp</button></div>
+  </div>
+  <button class="btn btn-sec" id="btnAvulsa" style="margin-top:16px">+ Arte de visita fora do Syonet</button>
+  <div class="centro" style="margin-top:10px" id="visRodape">Aparece aqui toda visita marcada no Syonet. Atualiza a cada 15 minutos.</div>
+</section>
+<canvas id="visCanvas" width="1080" height="1350" class="oculto"></canvas>
 <div class="rodape oculto" id="rodape">
   <div class="pilulas">
     <button id="abaLista" class="ativa">Lista</button>
     <button id="abaPlacar">Placar</button>
     <button id="abaCheckin" class="oculto">Check-in</button><!-- João 30/09: aba só pra recepção (colaboradores.recepcao) e admin; o resto faz check-in pelo QR do convite (?checkin=) -->
     <button id="abaDivulgar" class="oculto">Divulgar</button>
+    <button id="abaVisitas" class="oculto">Visitas</button>
   </div>
 </div>
 <div class="lb" id="lightbox"><div class="cx"><img id="lbImg" src="" alt=""><button id="lbFechar">Fechar</button></div></div>
@@ -454,7 +498,7 @@ Vou te levar pro link certo. Entre de novo com CPF e nascimento.`);
   location.href = location.pathname + "?e=" + encodeURIComponent(j.evento_certo);
 }
 function sair(){ S = {token:null,col:null,ev:null,clientes:[],toque:{}}; ls.del("prospecta_sessao");
-  ["tela-lista","tela-placar","tela-checkin","tela-divulga","rodape"].forEach(id => $(id).classList.add("oculto")); $("tela-login").classList.remove("oculto"); }
+  ["tela-lista","tela-placar","tela-checkin","tela-divulga","tela-visitas","rodape"].forEach(id => $(id).classList.add("oculto")); $("tela-login").classList.remove("oculto"); }
 
 // ---------- lista ----------
 function cabecalho(){
@@ -520,6 +564,7 @@ async function abrirLista(){
     S.col.loja_id = j.loja_id; S.col.loja = j.loja; ls.set("prospecta_sessao", {token:S.token, col:S.col, ev:S.ev, evento:EVENTO}); cabecalho(); render();
   }
   S.gerente = !!j.gerente; S.msgPadrao = j.msg_padrao || (S.ev && S.ev.msg_whatsapp) || ""; S.msgPropria = j.msg_propria || null; mostrarMinhaMsg();
+  $("abaVisitas").classList.toggle("oculto", !j.visitas);
   checarDivulga();
 }
 $("btnAbordar").onclick = () => { const b = $("roteiroBox"); b.classList.toggle("oculto"); $("setaAbordar").style.transform = b.classList.contains("oculto") ? "" : "rotate(180deg)"; };
@@ -786,9 +831,10 @@ async function carregarTime(loja){
 }
 $("btnSair").onclick = () => { if (confirm("Sair do Prospecta neste aparelho? Seus dados ficam salvos; é só entrar de novo com CPF e nascimento.")) { sair(); window.scrollTo(0,0); } };
 function mostrarTela(id){
-  for (const t of ["tela-lista","tela-placar","tela-checkin","tela-divulga"]) $(t).classList.toggle("oculto", t !== id);
+  for (const t of ["tela-lista","tela-placar","tela-checkin","tela-divulga","tela-visitas"]) $(t).classList.toggle("oculto", t !== id);
   $("abaLista").classList.toggle("ativa", id === "tela-lista"); $("abaPlacar").classList.toggle("ativa", id === "tela-placar");
   $("abaCheckin").classList.toggle("ativa", id === "tela-checkin"); $("abaDivulgar").classList.toggle("ativa", id === "tela-divulga");
+  $("abaVisitas").classList.toggle("ativa", id === "tela-visitas");
   window.scrollTo(0,0);
 }
 function abrirGuia(){
@@ -987,6 +1033,147 @@ async function renderDuvidas(){
   }
 }
 $("abaDivulgar").onclick = abrirDivulga;
+
+// ---------- visitas (João 27/10) ----------
+// Visitas agendadas no Syonet (robô do PC espelha a cada 15 min). Cada uma vira uma arte desenhada aqui no aparelho
+// (foto da fachada + nome, dia, hora e quem recebe) pra salvar e mandar no WhatsApp do cliente. Nada da arte sobe pra nuvem.
+const VIS_SEM = ["domingo","segunda","terça","quarta","quinta","sexta","sábado"];
+const VIS_MES = ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
+const visNome = (s) => String(s || "").trim().toLowerCase().replace(/(^|\s)\S/g, c => c.toUpperCase());
+const visData = (iso) => { const [y,m,d] = String(iso).split("-").map(Number); return new Date(y, m-1, d); };
+const visHojeISO = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`; };
+const visCurto = (iso) => { const d = visData(iso); return `${VIS_SEM[d.getDay()]}, ${String(d.getDate()).padStart(2,"0")}/${String(d.getMonth()+1).padStart(2,"0")}`; };
+const visLongo = (iso) => { const d = visData(iso); return `${VIS_SEM[d.getDay()]}, ${d.getDate()} de ${VIS_MES[d.getMonth()]}`; };
+const visHora = (h) => { if (!h) return ""; const [H,M] = h.split(":"); return M === "00" ? `${Number(H)}h` : `${Number(H)}h${M}`; };
+const visRel = (iso) => { const n = Math.round((visData(iso) - visData(visHojeISO())) / 864e5); return n === 0 ? "hoje" : n === 1 ? "amanhã" : ""; };
+// DDD + celular (10/11 dígitos) -> 55DDD...; já com 55 passa; resto = sem número (o WhatsApp pede o contato)
+const visZapNum = (t) => { const d = String(t || "").replace(/\D/g, ""); return d.length === 10 || d.length === 11 ? "55" + d : (d.length >= 12 && d.startsWith("55") ? d : ""); };
+const VIS = { dados:null, aberta:null, img:{}, pronto:null, avulsa:{ cliente:"", dia:"", hora:"", tel:"" } };
+
+function visCarregarArte(loja){
+  if (VIS.pronto) return VIS.pronto;
+  const img = (src) => new Promise((ok, falha) => { const i = new Image(); i.onload = () => ok(i); i.onerror = falha; i.src = src; });
+  VIS.pronto = Promise.all([img(loja.foto), img(loja.logo),
+    document.fonts.load('700 40px "NissanBrand"'), document.fonts.load('400 40px "NissanBrand"'), document.fonts.load('300 40px "NissanBrand"')])
+    .then(([foto, logo]) => { VIS.img = {foto, logo}; }).catch((e) => { VIS.pronto = null; throw e; });
+  return VIS.pronto;
+}
+
+// v = {cliente, dia, hora, dono}; loja = {rua, bairro}. Sem hora: some a linha e o selo vira "sua visita está reservada".
+function visDesenhar(v, loja){
+  const cv = $("visCanvas"), ctx = cv.getContext("2d"), W = 1080, H = 1350, M = 72, RED = "#C3002F";
+  const F = (peso, px) => `${peso} ${px}px "NissanBrand"`;
+  ctx.clearRect(0, 0, W, H); ctx.fillStyle = "#0f0f10"; ctx.fillRect(0, 0, W, H);
+  ctx.drawImage(VIS.img.foto, 0, 0, 1080, 760);
+  let g = ctx.createLinearGradient(0, 0, 0, 220); g.addColorStop(0, "rgba(0,0,0,.62)"); g.addColorStop(1, "rgba(0,0,0,0)");
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, 220);
+  g = ctx.createLinearGradient(0, 470, 0, 760); g.addColorStop(0, "rgba(15,15,16,0)"); g.addColorStop(1, "rgba(15,15,16,1)");
+  ctx.fillStyle = g; ctx.fillRect(0, 470, W, 290);
+  const lw = 300; ctx.drawImage(VIS.img.logo, M - 6, 48, lw, lw * VIS.img.logo.naturalHeight / VIS.img.logo.naturalWidth);
+  const h = visHora(v.hora), dy = h ? 0 : 68;
+  ctx.font = F(700, 30); ctx.letterSpacing = "3px";
+  const selo = h ? "SEU HORÁRIO ESTÁ RESERVADO" : "SUA VISITA ESTÁ RESERVADA";
+  const sw = ctx.measureText(selo).width + 48;
+  ctx.fillStyle = RED; ctx.fillRect(M, 700 + dy, sw, 62);
+  ctx.fillStyle = "#fff"; ctx.textBaseline = "middle"; ctx.fillText(selo, M + 24, 732 + dy); ctx.letterSpacing = "0px";
+  ctx.textBaseline = "alphabetic";
+  const nome = (visNome(v.cliente) || "Seu nome") + ",";
+  let t = 118; do { ctx.font = F(700, t); t -= 2; } while (ctx.measureText(nome).width > W - 2 * M && t > 30);
+  ctx.fillStyle = "#fff"; ctx.fillText(nome, M, 898 + dy);
+  ctx.font = F(300, 54); ctx.fillStyle = "#e4e4e7"; ctx.fillText(v.dia ? visLongo(v.dia) : "dia da visita", M, 982 + dy);
+  if (h) { ctx.font = F(700, 54); ctx.fillStyle = "#fff"; ctx.fillText("às " + h, M, 1050); }
+  ctx.font = F(400, 38); ctx.fillStyle = "#a1a1aa"; const qr = "Quem vai te receber: "; ctx.fillText(qr, M, 1120);
+  const qw = ctx.measureText(qr).width; ctx.font = F(700, 38); ctx.fillStyle = "#fff"; ctx.fillText(visNome(v.dono) || "nossa equipe", M + qw, 1120);
+  ctx.font = F(700, 34); ctx.fillStyle = "#ff4d6a"; ctx.fillText("E tem uma surpresa te esperando.", M, 1174);
+  ctx.fillStyle = "#2a2a2d"; ctx.fillRect(M, 1210, W - 2 * M, 2);
+  ctx.fillStyle = RED; ctx.beginPath(); ctx.arc(M + 16, 1258, 16, Math.PI, 0); ctx.lineTo(M + 16, 1292); ctx.closePath(); ctx.fill();
+  ctx.fillStyle = "#0f0f10"; ctx.beginPath(); ctx.arc(M + 16, 1258, 6, 0, 2 * Math.PI); ctx.fill();
+  ctx.font = F(700, 32); ctx.fillStyle = "#fff"; ctx.fillText(loja.rua, M + 50, 1266);
+  ctx.font = F(400, 28); ctx.fillStyle = "#a1a1aa"; ctx.fillText(loja.bairro, M + 50, 1304);
+  return cv.toDataURL("image/png");
+}
+
+function visMensagem(v){
+  const d = VIS.dados, rel = visRel(v.dia);
+  const quando = (rel ? rel + ", " : "") + visCurto(v.dia) + (v.hora ? ", às " + visHora(v.hora) : "");
+  return `Oi, ${visNome(v.cliente)}! Aqui é ${d.eu.artigo} ${d.eu.nome}, da ${d.loja.nome}.\n\n` +
+    `${v.hora ? "Seu horário está reservado" : "Sua visita está reservada"}: ${quando}. Preparamos uma surpresa pro seu atendimento.\n\n` +
+    `Confirma sua presença? É só responder CONFIRMADO.\n\nComo chegar: ${d.loja.maps}`;
+}
+
+// iPhone: folha de compartilhar ("Salvar imagem" vai pras Fotos); resto: download normal
+async function visSalvar(png, v){
+  const nome = `visita_${visNome(v.cliente).normalize("NFD").replace(/[^\w]/g, "") || "cliente"}_${v.dia || ""}.png`;
+  if (/iPhone|iPad|iPod/.test(navigator.userAgent) && navigator.canShare){
+    const file = new File([await (await fetch(png)).blob()], nome, {type: "image/png"});
+    if (navigator.canShare({files: [file]})) { try { await navigator.share({files: [file]}); } catch (e) { /* cancelou */ } return; }
+  }
+  const a = document.createElement("a"); a.href = png; a.download = nome; document.body.appendChild(a); a.click(); a.remove();
+}
+const visZap = (v) => abrirZap(`https://wa.me/${visZapNum(v.telefone)}?text=${encodeURIComponent(visMensagem(v))}`);
+
+function visRender(){
+  const d = VIS.dados, box = $("visLista"); box.innerHTML = "";
+  $("visN").textContent = d.visitas.length;
+  if (d.sem_usuario){ box.innerHTML = `<div class="vazio">Seu cadastro ainda não está ligado ao seu usuário do Syonet. Fale com o João.</div>`; return; }
+  if (!d.visitas.length){ box.innerHTML = `<div class="vazio">Nenhuma visita marcada pros próximos dias.<br>Marcou agora no Syonet? Aparece aqui em até 15 minutos.</div>`; return; }
+  let dia = "";
+  for (const v of d.visitas){
+    if (v.dia !== dia){ dia = v.dia; const s = document.createElement("div"); s.className = "secao"; const r = visRel(v.dia); s.textContent = (r ? r + " · " : "") + visCurto(v.dia); box.appendChild(s); }
+    const c = document.createElement("div"); c.className = "card vis" + (v === VIS.aberta ? " aberta" : "");
+    const dir = v.hora ? `<span class="vhora">${esc(visHora(v.hora))}</span>` : `<span class="vsem">sem hora</span>`;
+    const quem = d.gerente && v.dono ? `<div class="ctx">com ${esc(v.dono)}</div>` : "";
+    c.innerHTML = `<div class="vtopo"><div><div class="nome">${esc(visNome(v.cliente))}</div>${quem}</div>${dir}</div>`;
+    if (v === VIS.aberta){
+      if (v._semHora) c.insertAdjacentHTML("beforeend", `<div><label>Sabe o horário? (opcional)</label><input type="time" step="900" class="vh" value="${esc(v.hora || "")}"></div>`);
+      const png = visDesenhar(v, d.loja);
+      c.insertAdjacentHTML("beforeend", `<img class="arte" alt="Arte da visita"><div class="grid2"><button class="btn btn-dark vs">Salvar imagem</button><button class="btn btn-green vz">WhatsApp</button></div>`);
+      c.querySelector("img.arte").src = png;
+      c.querySelector(".vs").onclick = (e) => { e.stopPropagation(); visSalvar(png, v); };
+      c.querySelector(".vz").onclick = (e) => { e.stopPropagation(); visZap(v); };
+      const ih = c.querySelector(".vh");
+      if (ih) { ih.onclick = (e) => e.stopPropagation(); ih.onchange = () => { v.hora = ih.value || null; visRender(); }; }
+    }
+    c.onclick = () => { if (VIS.aberta !== v){ VIS.aberta = v; visRender(); } };
+    box.appendChild(c);
+  }
+}
+
+function visAvulsaRender(){
+  const a = VIS.avulsa, d = VIS.dados;
+  const v = { cliente: a.cliente, dia: a.dia, hora: a.hora || null, telefone: a.tel, dono: d.eu.nome };
+  const png = visDesenhar(v, d.loja); $("avArte").src = png;
+  const ok = !!(v.cliente.trim() && v.dia);
+  $("avSalvar").disabled = !ok; $("avZap").disabled = !ok;
+  $("avSalvar").onclick = () => visSalvar(png, v); $("avZap").onclick = () => visZap(v);
+}
+for (const [id, k] of [["avNome","cliente"],["avDia","dia"],["avHora","hora"],["avTel","tel"]])
+  $(id).addEventListener("input", () => { VIS.avulsa[k] = $(id).value; if (VIS.dados && VIS.img.foto) visAvulsaRender(); });
+$("btnAvulsa").onclick = () => {
+  const card = $("visAvulsa"); card.classList.toggle("oculto");
+  $("btnAvulsa").textContent = card.classList.contains("oculto") ? "+ Arte de visita fora do Syonet" : "Fechar arte avulsa";
+  if (!card.classList.contains("oculto")){
+    if (!$("avDia").value){ const d = new Date(); d.setDate(d.getDate() + 1); $("avDia").value = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`; VIS.avulsa.dia = $("avDia").value; }
+    visAvulsaRender();
+  }
+};
+
+async function abrirVisitas(){
+  mostrarTela("tela-visitas");
+  $("quem4").textContent = S.col.nome; $("ondeQuando4").textContent = S.col.loja || "";
+  $("visLista").innerHTML = `<div class="vazio">Carregando…</div>`;
+  const j = await api({acao:"visitas"}).catch(()=>null);
+  if (!j || !j.ok){ $("visLista").innerHTML = `<div class="vazio">Não consegui buscar as visitas${j ? " (" + esc(j.erro) + ")" : ""}.</div>`; return; }
+  try { await visCarregarArte(j.loja); } catch (e) { $("visLista").innerHTML = `<div class="vazio">Não carregou a arte. Puxe a tela pra atualizar.</div>`; return; }
+  const antes = VIS.aberta && VIS.aberta.id_evento;
+  for (const v of j.visitas) v._semHora = !v.hora;
+  VIS.dados = j;
+  VIS.aberta = j.visitas.find(v => v.id_evento === antes) || j.visitas[0] || null;
+  if (S.col.admin && String(S.col.loja_id) !== "15") $("ondeQuando4").textContent = j.loja.nome;   // admin de outra loja vê a do piloto
+  visRender();
+  if (!$("visAvulsa").classList.contains("oculto")) visAvulsaRender();
+}
+$("abaVisitas").onclick = abrirVisitas;
 
 // ---------- boot ----------
 (async () => {
