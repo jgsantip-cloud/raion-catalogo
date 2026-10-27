@@ -1102,8 +1102,9 @@ function visDesenhar(v, loja){
 function visMensagem(v){
   const d = VIS.dados, rel = visRel(v.dia);
   const quando = (rel ? rel + ", " : "") + visCurto(v.dia) + (v.hora ? ", às " + visHora(v.hora) : "");
-  // 1ª linha = o que aparece na notificação do cliente: o presente vem primeiro (Daiana 27/10)
-  return `${visNome(v.cliente)}, tem um presente pra você! 🎁\n\n` +
+  // 1ª linha = o que aparece na notificação do cliente: o presente vem primeiro (Daiana 27/10).
+  // Sem emoji no texto: o 🎁 chegou como "�" pelo wa.me (João, WhatsApp Web 27/10); na arte ele é desenhado e sai certo.
+  return `${visNome(v.cliente)}, tem um presente pra você!\n\n` +
     `Aqui é ${d.eu.artigo} ${d.eu.nome}, da ${d.loja.nome}. ${v.hora ? "Seu horário está reservado" : "Sua visita está reservada"}: ${quando}. ` +
     `Preparamos um mimo especial pra você retirar durante a visita.\n\n` +
     `Confirma sua presença? É só responder CONFIRMADO.\n\nComo chegar: ${d.loja.maps}`;
