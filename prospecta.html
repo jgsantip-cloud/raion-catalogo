@@ -1089,7 +1089,8 @@ function visDesenhar(v, loja){
   if (h) { ctx.font = F(700, 54); ctx.fillStyle = "#fff"; ctx.fillText("às " + h, M, 1050); }
   ctx.font = F(400, 38); ctx.fillStyle = "#a1a1aa"; const qr = "Quem vai te receber: "; ctx.fillText(qr, M, 1120);
   const qw = ctx.measureText(qr).width; ctx.font = F(700, 38); ctx.fillStyle = "#fff"; ctx.fillText(visNome(v.dono) || "nossa equipe", M + qw, 1120);
-  ctx.font = F(700, 34); ctx.fillStyle = "#ff4d6a"; ctx.fillText("E tem uma surpresa te esperando.", M, 1174);
+  // Daiana 27/10: "presente" chama mais que "surpresa" (a loja tem mimo pra todo agendado)
+  ctx.font = F(700, 34); ctx.fillStyle = "#ff4d6a"; ctx.fillText("🎁 Tem um presente pra você retirar na visita!", M, 1174);
   ctx.fillStyle = "#2a2a2d"; ctx.fillRect(M, 1210, W - 2 * M, 2);
   ctx.fillStyle = RED; ctx.beginPath(); ctx.arc(M + 16, 1258, 16, Math.PI, 0); ctx.lineTo(M + 16, 1292); ctx.closePath(); ctx.fill();
   ctx.fillStyle = "#0f0f10"; ctx.beginPath(); ctx.arc(M + 16, 1258, 6, 0, 2 * Math.PI); ctx.fill();
@@ -1101,8 +1102,10 @@ function visDesenhar(v, loja){
 function visMensagem(v){
   const d = VIS.dados, rel = visRel(v.dia);
   const quando = (rel ? rel + ", " : "") + visCurto(v.dia) + (v.hora ? ", às " + visHora(v.hora) : "");
-  return `Oi, ${visNome(v.cliente)}! Aqui é ${d.eu.artigo} ${d.eu.nome}, da ${d.loja.nome}.\n\n` +
-    `${v.hora ? "Seu horário está reservado" : "Sua visita está reservada"}: ${quando}. Preparamos uma surpresa pro seu atendimento.\n\n` +
+  // 1ª linha = o que aparece na notificação do cliente: o presente vem primeiro (Daiana 27/10)
+  return `${visNome(v.cliente)}, tem um presente pra você! 🎁\n\n` +
+    `Aqui é ${d.eu.artigo} ${d.eu.nome}, da ${d.loja.nome}. ${v.hora ? "Seu horário está reservado" : "Sua visita está reservada"}: ${quando}. ` +
+    `Preparamos um mimo especial pra você retirar durante a visita.\n\n` +
     `Confirma sua presença? É só responder CONFIRMADO.\n\nComo chegar: ${d.loja.maps}`;
 }
 
