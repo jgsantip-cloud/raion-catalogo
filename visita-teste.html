@@ -32,7 +32,10 @@ h1{font-size:22px;line-height:1.2;margin:0;font-weight:800}
 .campo{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
 .campo label{font-size:13.5px;color:var(--mut);font-weight:600}
 .campo input{font:inherit;padding:10px 12px;border:1px solid var(--bd);border-radius:10px;background:#fff;color:var(--tx);width:100%}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+/* iPhone: data/hora têm largura mínima própria e estouram a coluna */
+input[type=date],input[type=time]{-webkit-appearance:none;appearance:none;min-width:0;max-width:100%;min-height:46px;display:block;text-align:left}
+input::-webkit-date-and-time-value{text-align:left}
 .pede{background:var(--warnbg);border-radius:12px;padding:10px 12px;margin-bottom:12px}
 .pede p{margin:0 0 6px;font-size:15px;color:var(--warn);font-weight:600}
 #prev{width:100%;border-radius:12px;display:block;background:#111;aspect-ratio:4/5}
@@ -72,6 +75,7 @@ h1{font-size:22px;line-height:1.2;margin:0;font-weight:800}
         <div class="campo"><label for="mHora">Horário</label><input id="mHora" type="time" step="900"></div>
       </div>
       <div class="campo"><label for="mVend">Quem vai receber</label><input id="mVend" placeholder="seu primeiro nome"></div>
+      <div class="campo"><label for="mTel">WhatsApp do cliente (opcional)</label><input id="mTel" type="tel" inputmode="numeric" placeholder="(24) 99999-9999" autocomplete="off"></div>
     </div>
   </div>
 
@@ -181,6 +185,9 @@ function desenha(v) {
   return cv.toDataURL("image/png");
 }
 
+// DDD + celular (10 ou 11 dígitos) vira 55DDDNNNNNNNNN; já com 55 passa direto; qualquer outra coisa = sem número
+const zapNumero = t => { const d = (t || "").replace(/\D/g, ""); return d.length === 10 || d.length === 11 ? "55" + d : (d.length >= 12 && d.startsWith("55") ? d : ""); };
+
 function mensagem(v) {
   const nome = nomeBonito(v.cliente), vend = nomeBonito(v.vend);
   const rel = relativo(v.dia), quando = (rel ? rel + ", " : "") + diaCurto(v.dia) + (v.hora ? ", às " + horaTx(v.hora) : "");
@@ -202,7 +209,8 @@ function render() {
   bSalvar.setAttribute("aria-disabled", String(!pronto));
   bZap.setAttribute("aria-disabled", String(!pronto));
   const tx = mensagem(v); msgTx.textContent = tx;
-  bZap.href = "https://wa.me/?text=" + encodeURIComponent(tx);
+  // com número abre a conversa do cliente; sem número o WhatsApp pede pra escolher o contato
+  bZap.href = "https://wa.me/" + zapNumero(v.tel) + "?text=" + encodeURIComponent(tx);
   const nomeArq = "visita_" + (nomeBonito(v.cliente) || "cliente").normalize("NFD").replace(/[^\w]/g, "") + "_" + (v.dia || "") + ".png";
   bSalvar.download = nomeArq; bSalvar.href = pngAtual; bSalvar.dataset.nome = nomeArq;
 }
@@ -236,11 +244,11 @@ VISITAS.forEach(v => v._semHora = !v.hora);
 pHora.addEventListener("input", () => { if (atual) { atual.hora = pHora.value; render(); lista(); } });
 
 // arte avulsa
-const man = {cliente: "", dia: "", hora: "", vend: ""};
-const mN = document.getElementById("mNome"), mD = document.getElementById("mDia"), mH = document.getElementById("mHora"), mV = document.getElementById("mVend");
+const man = {cliente: "", dia: "", hora: "", vend: "", tel: ""};
+const mN = document.getElementById("mNome"), mD = document.getElementById("mDia"), mH = document.getElementById("mHora"), mV = document.getElementById("mVend"), mT = document.getElementById("mTel");
 mD.value = maisDias(HOJE, 1);
-[mN, mD, mH, mV].forEach(i => i.addEventListener("input", () => {
-  man.cliente = mN.value; man.dia = mD.value; man.hora = mH.value; man.vend = mV.value; atual = man; render();
+[mN, mD, mH, mV, mT].forEach(i => i.addEventListener("input", () => {
+  man.cliente = mN.value; man.dia = mD.value; man.hora = mH.value; man.vend = mV.value; man.tel = mT.value; atual = man; render();
 }));
 man.dia = mD.value;
 
