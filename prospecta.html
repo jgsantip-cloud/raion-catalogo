@@ -340,6 +340,7 @@
   </div>
   <button class="btn btn-sec" id="btnAvulsa" style="margin-top:16px">+ Arte de visita fora do Syonet</button>
   <div class="centro" style="margin-top:10px" id="visRodape">Aparece aqui toda visita marcada no Syonet. Atualiza a cada 15 minutos.</div>
+  <button id="btnSairVis" class="oculto" style="margin-top:16px;background:none;border:0;color:var(--dim);font-size:14px;font-family:inherit;cursor:pointer;text-decoration:underline;padding:12px;align-self:center">Sair deste aparelho</button>
 </section>
 <canvas id="visCanvas" width="1080" height="1350" class="oculto"></canvas>
 <div class="rodape oculto" id="rodape">
@@ -486,7 +487,8 @@ $("btnEntrar").onclick = async () => {
     $("erroLogin").classList.remove("oculto"); return;
   }
   S.token = j.token; S.col = j.colaborador; S.ev = j.evento;
-  ls.set("prospecta_sessao", {token:S.token, col:S.col, ev:S.ev, evento:EVENTO});
+  ls.set("prospecta_sessao", {token:S.token, col:S.col, ev:S.ev, evento:EVENTO, so_visitas:!!j.so_visitas});
+  if (j.so_visitas){ await abrirSoVisitas(); return; }
   await abrirLista(); atenderCheckinDaUrl();
 };
 
@@ -498,7 +500,8 @@ Vou te levar pro link certo. Entre de novo com CPF e nascimento.`);
   location.href = location.pathname + "?e=" + encodeURIComponent(j.evento_certo);
 }
 function sair(){ S = {token:null,col:null,ev:null,clientes:[],toque:{}}; ls.del("prospecta_sessao");
-  ["tela-lista","tela-placar","tela-checkin","tela-divulga","tela-visitas","rodape"].forEach(id => $(id).classList.add("oculto")); $("tela-login").classList.remove("oculto"); }
+  ["tela-lista","tela-placar","tela-checkin","tela-divulga","tela-visitas","rodape"].forEach(id => $(id).classList.add("oculto")); $("tela-login").classList.remove("oculto");
+  $("btnSairVis").classList.add("oculto"); $("tela-visitas").classList.add("com-rodape"); }
 
 // ---------- lista ----------
 function cabecalho(){
@@ -556,6 +559,8 @@ async function abrirLista(){
   await drenarFila();
   const j = await api({acao:"fatia"}).catch(()=>null);
   if (j && j.erro === "evento-errado"){ irProEventoCerto(j); return; }
+  // evento acabou com a sessão aberta: quem tem a aba Visitas segue nela (João 27/10)
+  if (j && j.erro === "evento-encerrado"){ const v = await api({acao:"visitas"}).catch(()=>null); if (v && v.ok){ await abrirSoVisitas(); return; } }
   if (!j || !j.ok){ toast("Não consegui buscar sua lista" + (j ? ": " + j.erro : "")); return; }
   S.clientes = j.clientes; render(); renderRoteiro();
   if (S.col && "recepcao" in j && !!S.col.recepcao !== !!j.recepcao){ S.col.recepcao = !!j.recepcao; ls.set("prospecta_sessao", {token:S.token, col:S.col, ev:S.ev, evento:EVENTO}); }
@@ -1174,6 +1179,14 @@ async function abrirVisitas(){
   if (!$("visAvulsa").classList.contains("oculto")) visAvulsaRender();
 }
 $("abaVisitas").onclick = abrirVisitas;
+// sem evento ativo (João 27/10): só a tela de Visitas, sem rodapé de abas; o "Sair" fica na própria tela
+async function abrirSoVisitas(){
+  S.soVisitas = true;
+  $("tela-login").classList.add("oculto"); $("rodape").classList.add("oculto");
+  $("tela-visitas").classList.remove("com-rodape"); $("btnSairVis").classList.remove("oculto");
+  await abrirVisitas();
+}
+$("btnSairVis").onclick = () => { if (confirm("Sair do Prospecta neste aparelho? É só entrar de novo com CPF e nascimento.")) { sair(); window.scrollTo(0,0); } };
 
 // ---------- boot ----------
 (async () => {
@@ -1183,9 +1196,13 @@ $("abaVisitas").onclick = abrirVisitas;
   if (!EVENTO && s0 && s0.evento && s0.token) EVENTO = s0.evento;
   const j = await api({acao:"evento", ...(EVENTO ? {} : {codigo: CHECKIN_URL.slice(0,6)})}).catch(()=>({ok:false, erro:"rede"}));
   if (j.ok){ EVENTO = j.evento.chave; $("eventoNome").textContent = j.evento.nome + (j.evento.ativo ? "" : " (encerrado)"); }
+  // sem evento ativo o login segue aberto: quem tem a aba Visitas entra nela; o resto recebe o erro do login (João 27/10)
+  else if (j.erro === "evento-nao-encontrado" && !EVENTO){ $("eventoNome").textContent = "Nenhum evento agora"; }
   else { $("eventoNome").textContent = j.erro === "varios-eventos-ativos" ? "Peça o link do seu evento ao gestor" : j.erro === "rede" ? "Sem conexão" : "Link inválido"; $("btnEntrar").disabled = !EVENTO; }
   const s = ls.get("prospecta_sessao");
-  if (s && s.evento === EVENTO && s.token){ S.token = s.token; S.col = s.col; S.ev = s.ev; await abrirLista(); atenderCheckinDaUrl(); }
+  if (s && s.evento === EVENTO && s.token){ S.token = s.token; S.col = s.col; S.ev = s.ev;
+    if (s.so_visitas){ await abrirSoVisitas(); return; }
+    await abrirLista(); atenderCheckinDaUrl(); }
 })();
 </script>
 </body>
