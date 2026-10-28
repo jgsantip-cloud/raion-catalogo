@@ -238,6 +238,10 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     vitara: { corpo: "moto_vitara_corpo.webp", roda: "roda_carro.webp", ar: "1520/696", rodas: [[8.42, 57.76, 18.95], [71.58, 57.76, 18.95]] },
     grand_vitara: { corpo: "moto_grand_vitara_corpo.webp", roda: "roda_carro.webp", ar: "1521/705", rodas: [[12.36, 58.72, 18.67], [73.5, 60.0, 18.15]] },
     s_cross: { corpo: "moto_s_cross_corpo.webp", roda: "roda_carro.webp", ar: "1528/660", rodas: [[8.51, 54.24, 19.11], [70.29, 56.06, 18.59]] },
+    // carro (Zeekr, 28/10): decalcados das fotos laterais oficiais; cada um com a roda dele
+    zeekr_x: { corpo: "moto_zeekr_x_corpo.webp", roda: "roda_zeekr_x.webp", ar: "1272/492", rodas: [[8.57, 49.59, 18.55], [71.86, 50.41, 18.71]] },
+    zeekr_001: { corpo: "moto_zeekr_001_corpo.webp", roda: "roda_zeekr_001.webp", ar: "1106/372", rodas: [[8.77, 47.58, 16.82], [72.51, 48.39, 16.82]] },
+    zeekr_7x: { corpo: "moto_zeekr_7x_corpo.webp", roda: "roda_zeekr_7x.webp", ar: "1510/574", rodas: [[10.07, 52.26, 17.75], [72.72, 51.57, 18.01]] },
     sentra: { corpo: "moto_sentra_corpo.webp", roda: "roda_carro.webp", ar: "1525/547", rodas: [[11.28, 52.29, 16.66], [72.0, 53.2, 16.39]] }
   };
   // marca: SYM -> scooter (NH/NHX sao motos de rua -> classica); CF -> cf_aventureira (Ibex/MT; CL-C cai na classica)
@@ -278,8 +282,8 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       if (/s-?cross/.test(m)) return "s_cross";
       return "jimny";
     }
-    // Zeekr (28/10): sem arte propria ainda; 001 e perua baixa (sedan), 7X e X sao SUV
-    if (mk === "zeekr") return /\b001\b/.test(m) && ARTES.sedan ? "sedan" : "suv";
+    // Zeekr (28/10): desenho de cada modelo decalcado da foto lateral oficial, com a roda do proprio modelo
+    if (mk === "zeekr") return /\b001\b/.test(m) ? "zeekr_001" : /\b7 ?x\b/.test(m) ? "zeekr_7x" : "zeekr_x";
     if (mk === "sym") return /\bnhx?\b|apache/.test(m) ? "classica" : "scooter";
     if (mk === "cf") return /cl-?c|bobber/.test(m) ? "classica" : "cf_aventureira";
     if (/himalayan|guerrilla|scram/.test(m) && ARTES.aventureira) return "aventureira";
