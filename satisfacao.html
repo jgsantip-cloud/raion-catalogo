@@ -192,10 +192,12 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     nissan: { nome: "Nissan", logo: "marcas/nissan.png", cor: "#C3002F", largo: false },
     suzuki: { nome: "Suzuki", logo: "marcas/suzuki.png", cor: "#E30613", largo: false },
     // Seminovos Diamante (Joao 20/10): marca propria, cores do manual (#000, azul #1C4683, vermelho #E41323)
-    diamante: { nome: "Seminovos Diamante", logo: "marcas/diamante.svg", cor: "#1C4683", largo: "x" }
+    diamante: { nome: "Seminovos Diamante", logo: "marcas/diamante.svg", cor: "#1C4683", largo: "x" },
+    // Zeekr (Joao 28/10): logo oficial (o mesmo da pesquisa.html), preto da marca
+    zeekr: { nome: "Zeekr", logo: "zeekr-logo.svg", cor: "#111111", largo: "x" }
   };
   // marcas de CARRO: card diz "Carro", desenho de carro no rodape (proximas marcas de carro entram aqui)
-  var CARRO = { mitsubishi: 1, nissan: 1, suzuki: 1, diamante: 1 };
+  var CARRO = { mitsubishi: 1, nissan: 1, suzuki: 1, diamante: 1, zeekr: 1 };
   // genero do veiculo: moto e picape sao femininas ("a sua Classic", "a sua Frontier"); carro e masculino ("o seu Kicks")
   function masculino(modelo) { return ehCarro && !/frontier|triton|l200|hilux|ranger|s10|amarok|strada|toro|saveiro|montana|oroch|maverick|rampage/i.test(modelo || ""); }
   // perguntas de recomendacao usam outra legenda na escala de nota
@@ -276,6 +278,8 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       if (/s-?cross/.test(m)) return "s_cross";
       return "jimny";
     }
+    // Zeekr (28/10): sem arte propria ainda; 001 e perua baixa (sedan), 7X e X sao SUV
+    if (mk === "zeekr") return /\b001\b/.test(m) && ARTES.sedan ? "sedan" : "suv";
     if (mk === "sym") return /\bnhx?\b|apache/.test(m) ? "classica" : "scooter";
     if (mk === "cf") return /cl-?c|bobber/.test(m) ? "classica" : "cf_aventureira";
     if (/himalayan|guerrilla|scram/.test(m) && ARTES.aventureira) return "aventureira";
@@ -291,6 +295,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     rodas = palco.querySelectorAll(".roda");
   }
   function fumaca(n) {
+    if (marca && marca.nome === "Zeekr") return;   // eletrico: sem escapamento
     var p = palco.querySelector(".piloto");
     for (var i = 0; i < n; i++) (function (i) {
       setTimeout(function () {
