@@ -329,6 +329,8 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
 
   var app = document.getElementById("app");
   var token = new URLSearchParams(location.search).get("t") || "";
+  // ?via=fila: a atendente respondeu pelo cliente no telefone (popup de pesquisa.raion.app.br, Joao 29/10)
+  var VIA = new URLSearchParams(location.search).get("via") === "fila" ? "fila" : undefined;
   var D = null, ehCarro = false, marca = MARCAS.royal, atual = "inicio", respostas = {}, ocupado = false, resultado = null, contato = null, erroEnvio = "";
 
   function esc(s) {
@@ -736,7 +738,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     ocupado = true;
     var botoes = app.querySelectorAll("button");
     for (var i = 0; i < botoes.length; i++) botoes[i].disabled = true;
-    (token === "demo" ? Promise.resolve({ status: 200, j: { ok: true, insatisfeito: false } }) : postar({ t: token, acao: "responder", respostas: enviadas })).then(function (r) {
+    (token === "demo" ? Promise.resolve({ status: 200, j: { ok: true, insatisfeito: false } }) : postar({ t: token, acao: "responder", respostas: enviadas, via: VIA })).then(function (r) {
       ocupado = false;
       if (r.j && r.j.ok) { resultado = r.j; atual = r.j.insatisfeito ? "baixa" : "fim"; return render(); }
       if (r.status === 409) return telaSimples("Essa pesquisa já foi respondida", "Obrigado por responder!", true);
