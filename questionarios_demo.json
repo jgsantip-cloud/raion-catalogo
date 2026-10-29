@@ -3905,11 +3905,46 @@
   "nome": "Pesquisa Veículos Zeekr (curta)",
   "perguntas": [
    {
-    "id": 99,
-    "ordem": 1,
+    "id": -153,
+    "tipo": "lista",
+    "texto": "Quem foi o vendedor que te atendeu?",
+    "texto_syonet": "",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 9011,
+      "resposta": "ANA.SANTOS",
+      "rotulo": "Ana"
+     },
+     {
+      "id": 9012,
+      "resposta": "LETICIA.O",
+      "rotulo": "Letícia"
+     },
+     {
+      "id": 9013,
+      "resposta": "WALLACE",
+      "rotulo": "Wallace"
+     },
+     {
+      "id": 9014,
+      "resposta": "WEVERTON",
+      "rotulo": "Weverton"
+     },
+     {
+      "id": 9003,
+      "resposta": "NAO LEMBRA",
+      "rotulo": "Não me lembro"
+     }
+    ],
+    "ordem": 1
+   },
+   {
+    "id": 101,
+    "ordem": 2,
     "tipo": "nota",
-    "texto": "De 1 a 10, que nota você dá para o atendimento durante a sua compra?",
-    "texto_syonet": "Que nota atribui para sua satisfação geral com o atendimento prestado durante o processo de compra nesta concessionária?",
+    "texto": "De 1 a 10, que nota você dá para o atendimento do vendedor?",
+    "texto_syonet": "Que nota atribui para o atendimento do Vendedor?",
     "dica": "",
     "opcoes": [
      {
@@ -3966,7 +4001,7 @@
    },
    {
     "id": 107,
-    "ordem": 2,
+    "ordem": 3,
     "tipo": "simnao",
     "texto": "O carro foi entregue na data combinada?",
     "texto_syonet": "Foi entregue na data combinada e em perfeitas condições?",
@@ -3986,7 +4021,7 @@
    },
    {
     "id": 100,
-    "ordem": 3,
+    "ordem": 4,
     "tipo": "nota",
     "texto": "De 1 a 10, o quanto você recomendaria a Zeekr a um amigo?",
     "texto_syonet": "Que nota atribui para sua intenção de recomendar a concessionária para um amigo?",
@@ -4046,7 +4081,7 @@
    },
    {
     "id": -151,
-    "ordem": 4,
+    "ordem": 5,
     "tipo": "texto",
     "texto": "Conta pra gente o que te deixou insatisfeito.",
     "texto_syonet": "",
@@ -4060,7 +4095,7 @@
    },
    {
     "id": -152,
-    "ordem": 4,
+    "ordem": 5,
     "tipo": "texto",
     "texto": "Que bom! Tem algum elogio ou observação que queira deixar?",
     "texto_syonet": "",
@@ -4080,7 +4115,7 @@
   },
   "insatisfacao": {
    "nota": [
-    99,
+    101,
     100
    ],
    "sim": []
