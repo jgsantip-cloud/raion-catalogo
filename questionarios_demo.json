@@ -3637,8 +3637,98 @@
   "nome": "Pesquisa Serviços Zeekr (curta)",
   "perguntas": [
    {
+    "id": -163,
+    "tipo": "lista",
+    "texto": "Quem foi o consultor que te atendeu?",
+    "texto_syonet": "",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 9001,
+      "resposta": "PEDRO.NERY",
+      "rotulo": "Pedro"
+     },
+     {
+      "id": 9002,
+      "resposta": "GABRIEL",
+      "rotulo": "Gabriel"
+     },
+     {
+      "id": 9003,
+      "resposta": "NAO LEMBRA",
+      "rotulo": "Não me lembro"
+     }
+    ],
+    "ordem": 1
+   },
+   {
+    "id": 113,
+    "ordem": 2,
+    "tipo": "nota",
+    "texto": "De 0 a 10, que nota você dá para o atendimento do consultor?",
+    "texto_syonet": "Que nota você atribui a sua satisfação com o atendimento do Supervisor de serviços ?",
+    "dica": "",
+    "opcoes": [
+     {
+      "id": 10,
+      "resposta": "0",
+      "rotulo": "0"
+     },
+     {
+      "id": 11,
+      "resposta": "1",
+      "rotulo": "1"
+     },
+     {
+      "id": 12,
+      "resposta": "2",
+      "rotulo": "2"
+     },
+     {
+      "id": 13,
+      "resposta": "3",
+      "rotulo": "3"
+     },
+     {
+      "id": 14,
+      "resposta": "4",
+      "rotulo": "4"
+     },
+     {
+      "id": 15,
+      "resposta": "5",
+      "rotulo": "5"
+     },
+     {
+      "id": 16,
+      "resposta": "6",
+      "rotulo": "6"
+     },
+     {
+      "id": 17,
+      "resposta": "7",
+      "rotulo": "7"
+     },
+     {
+      "id": 18,
+      "resposta": "8",
+      "rotulo": "8"
+     },
+     {
+      "id": 19,
+      "resposta": "9",
+      "rotulo": "9"
+     },
+     {
+      "id": 20,
+      "resposta": "10",
+      "rotulo": "10"
+     }
+    ]
+   },
+   {
     "id": 116,
-    "ordem": 1,
+    "ordem": 3,
     "tipo": "nota",
     "texto": "De 0 a 10, que nota você dá para o serviço feito no seu carro?",
     "texto_syonet": "Que nota você atribui a sua satisfação com os serviços realizados?",
@@ -3702,28 +3792,8 @@
     ]
    },
    {
-    "id": 117,
-    "ordem": 2,
-    "tipo": "simnao",
-    "texto": "O serviço ficou pronto e certo numa visita só?",
-    "texto_syonet": "Os serviços foram executados corretamente em uma única visita?",
-    "dica": "",
-    "opcoes": [
-     {
-      "id": 8,
-      "resposta": "SIM",
-      "rotulo": "Sim"
-     },
-     {
-      "id": 9,
-      "resposta": "NAO",
-      "rotulo": "Não"
-     }
-    ]
-   },
-   {
     "id": 112,
-    "ordem": 3,
+    "ordem": 4,
     "tipo": "nota",
     "texto": "De 0 a 10, o quanto você recomendaria a Zeekr a um amigo?",
     "texto_syonet": "Que nota você atribuiu para a intenção de recomendar a concessionária a um amigo?",
@@ -3788,7 +3858,7 @@
    },
    {
     "id": -161,
-    "ordem": 4,
+    "ordem": 5,
     "tipo": "texto",
     "texto": "Conta pra gente o que te deixou insatisfeito.",
     "texto_syonet": "",
@@ -3802,7 +3872,7 @@
    },
    {
     "id": -162,
-    "ordem": 4,
+    "ordem": 5,
     "tipo": "texto",
     "texto": "Que bom! Tem algum elogio ou observação que queira deixar?",
     "texto_syonet": "",
@@ -3822,6 +3892,7 @@
   },
   "insatisfacao": {
    "nota": [
+    113,
     116,
     112
    ],
@@ -3897,7 +3968,7 @@
     "id": 107,
     "ordem": 2,
     "tipo": "simnao",
-    "texto": "O carro foi entregue na data combinada e em perfeitas condições?",
+    "texto": "O carro foi entregue na data combinada?",
     "texto_syonet": "Foi entregue na data combinada e em perfeitas condições?",
     "dica": "",
     "opcoes": [
