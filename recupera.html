@@ -159,6 +159,8 @@
     <div style="display:flex;flex-direction:column;gap:8px"><select id="gVerComo" style="height:48px;font-size:15px"></select><button class="btn btn-sec" id="btnVerComo" style="height:48px">Abrir a fila dessa pessoa</button>
     <button class="btn" id="btnAgirComo" style="height:48px;background:var(--erro-bg);color:var(--erro-tx);border:1px solid #FDA4AF">Agir como essa pessoa (temporário)</button></div></div>
   <div class="lista-card oculto" id="gPorLojaBox" style="margin-top:16px"><h3>Por loja <small>no mês · na fila hoje</small></h3><div id="gPorLoja"></div></div>
+  <div class="lista-card" style="margin-top:16px"><h3>Agendados no mês <small id="gAgendN"></small></h3><div id="gAgend"></div></div>
+  <div class="lista-card" style="margin-top:16px"><h3>Quem usou o Recupera <small>no mês · último acesso</small></h3><div id="gUso"></div></div>
   <div class="lista-card" style="margin-top:16px"><h3>Na fila da loja <small id="gFilaN"></small></h3><div id="gFila"></div></div>
   <div class="lista-card" style="margin-top:16px"><h3>Sem chance no mês <small>volta pro motor</small></h3><div id="gSemChance"></div></div>
 </section>
@@ -480,14 +482,24 @@ async function abrirGerente(loja){
   };
   $("gPorLojaBox").classList.toggle("oculto", !j.por_loja);
   if (j.por_loja) $("gPorLoja").innerHTML = j.por_loja.filter(l => l.entraram || l.na_fila || l.agendou).map(l => `<div class="linha" style="cursor:pointer" data-loja="${l.id}">
-      <div style="display:flex;flex-direction:column"><span style="font-weight:600">${esc(l.nome)}</span><span style="font-size:13px;color:var(--dim)">${l.entraram} entraram · ${l.agendou} agendou · ${l.passou} passou</span></div>
+      <div style="display:flex;flex-direction:column"><span style="font-weight:600">${esc(l.nome)}</span><span style="font-size:13px;color:var(--dim)">${l.entraram} entraram · ${l.trabalhados ?? 0} trabalhados · ${l.agendou} agendou · ${l.passou} passou</span></div>
       <div style="display:flex;gap:6px"><span class="pill ok">${l.confirmados} conf.</span><span class="pill">${l.na_fila} na fila</span></div></div>`).join("") || '<div class="vazio">Nada no mês ainda.</div>';
   $("gPorLoja").querySelectorAll("[data-loja]").forEach(x => x.onclick = () => abrirGerente(+x.dataset.loja));
   $("gLoja").classList.toggle("oculto", j.lojas.length < 2);
   const r = j.resumo;
-  $("gTiles").innerHTML = [["entraram",r.entraram,""],["agendou",r.agendou,""],["compareceram",r.confirmados,"color:var(--green)"],["não vieram",r.nao_veio || 0,"color:var(--red)"],
+  $("gTiles").innerHTML = [["entraram",r.entraram,""],["trabalhados",r.trabalhados ?? 0,""],["agendou",r.agendou,""],["compareceram",r.confirmados,"color:var(--green)"],["não vieram",r.nao_veio || 0,"color:var(--red)"],
     ["recusou",r.recusou,""],["sem contato",r.sem_contato,""],["voltou sozinho",r.voltou_sozinho,""],["expirou",r.expirou,""],["na fila",j.cards.length,""]]
     .map(([l,v,st]) => `<div class="tile"><b style="${st}">${v}</b><span>${l}</span></div>`).join("");
+  const ag = j.agendados || [], SIT = {compareceu:['ok','compareceu'], nao_veio:['alerta','não veio'], aguardando:['','aguardando']};
+  $("gAgendN").textContent = ag.length ? String(ag.length) : "";
+  $("gAgend").innerHTML = ag.length ? ag.map(x => `<div class="linha"><div><a href="${esc(x.link_syonet)}" target="_blank" rel="noopener" style="color:var(--txt);font-weight:600">${esc(x.nome)}</a>
+      <div style="font-size:13px;color:var(--dim)">${esc([todas ? x.loja : "", x.modelo, x.data_agendada ? "para " + ddmm(x.data_agendada) : "", x.por ? "por " + x.por : ""].filter(Boolean).join(" · "))}</div></div>
+      <span class="pill ${SIT[x.situacao][0]}">${SIT[x.situacao][1]}</span></div>`).join("") : '<div class="vazio">Ninguém agendou no mês ainda.</div>';
+  const quando = (iso) => iso ? new Date(iso).toLocaleString("pt-BR", {day:"2-digit", month:"2-digit", hour:"2-digit", minute:"2-digit"}) : "nunca entrou";
+  const uso = j.uso || [];
+  $("gUso").innerHTML = uso.length ? uso.map(x => `<div class="linha"><div style="display:flex;flex-direction:column"><span style="font-weight:600">${esc(x.nome)}</span>
+      <span style="font-size:13px;color:var(--dim)">${esc([todas ? x.loja : "", "acesso: " + quando(x.ultimo_acesso)].filter(Boolean).join(" · "))}</span></div>
+      <span style="font-size:13px;text-align:right;flex:none">${x.trabalhados} trab. · ${x.agendou} agend. · ${x.compareceram} comp.</span></div>`).join("") : '<div class="vazio">Sem consultores.</div>';
   const agora = Date.now();
   const diasUteis = (iso) => { if (!iso) return 99; let d = new Date(iso), n = 0; while (d.getTime() < agora - 864e5){ d = new Date(d.getTime() + 864e5); if (d.getDay() % 6) n++; } return n; };
   const cards = j.cards.map(c => ({...c, parado: c.dono && diasUteis(c.ultima_atividade) >= 2}))
