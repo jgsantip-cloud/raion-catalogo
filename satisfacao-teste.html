@@ -546,10 +546,10 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   function presente() {
     var px = proximaRevisao();
     if (px === 3 || px === 5) return {
-      titulo: "50% de desconto na sua próxima revisão.",
+      titulo: "50% off na sua próxima revisão!",
       sub: "Na revisão de " + KM_REV[px] + ", em peças e mão de obra.",
       regra: "50% de desconto na próxima revisão do plano (peças e mão de obra)" };
-    return { titulo: "Sua próxima revisão por nossa conta.", sub: "Peças e mão de obra, do jeito que o plano manda.",
+    return { titulo: "Sua próxima revisão de graça!", sub: "Peças e mão de obra por nossa conta.",
       regra: "a próxima revisão do plano (peças e mão de obra)" };
   }
   function rolarDevagar(alvo, dur) {
@@ -589,17 +589,17 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
         '<video id="vBalanca" src="presentebalanca.mp4" muted playsinline loop preload="auto"></video>' +
         '<video id="vAbre" src="presenteabre.mp4" muted playsinline preload="auto"></video>' +
       "</div>" +
-      '<div class="pres-txt" id="presTxt"><h1 class="pres-h">' + (nome ? nome + ", a" : "A") + " gente separou um presente pra você.</h1>" +
+      '<div class="pres-txt" id="presTxt"><h1 class="pres-h">' + (nome ? nome + ", t" : "T") + "em um presente esperando por você! 🎁</h1>" +
         '<p class="pres-toque">Toque na caixa pra abrir</p></div>' +
       '<div class="pres-aberto" id="presAberto">' +
-        '<div class="cartao-pres"><p class="conv-selo">Seu presente</p><h2>' + presente().titulo + '</h2><p>' + presente().sub + '</p></div>' +
+        '<div class="cartao-pres"><p class="conv-selo">Olha o que você pode ganhar</p><h2>' + presente().titulo + '</h2><p>' + presente().sub + '</p></div>' +
         '<p class="como">Pra liberar é assim:</p>' +
         '<ol class="quadros">' +
-          '<li><img src="q1_convite.webp" alt=""><span><b>Você convida</b> até 3 amigos pelo WhatsApp.</span></li>' +
-          '<li><img src="q2_amigo.webp" alt=""><span><b>Um deles compra</b> uma ' + marca.nome + ' com a gente.</span></li>' +
-          '<li><img src="q3_revisao.webp" alt=""><span><b>Seu presente é liberado</b> e você agenda a revisão pelo WhatsApp.</span></li>' +
+          '<li><img src="q1_convite.webp" alt=""><span><b>Mande seu link</b> para até 3 amigos.</span></li>' +
+          '<li><img src="q2_amigo.webp" alt=""><span><b>Um amigo chama a loja pelo link</b> e sai de ' + marca.nome + '.</span></li>' +
+          '<li><img src="q3_revisao.webp" alt=""><span><b>Pronto, o presente é seu!</b> É só agendar a revisão pelo WhatsApp.</span></li>' +
         "</ol>" +
-        '<button type="button" class="primario" data-acao="resgatar">Resgatar meu presente</button>' +
+        '<button type="button" class="primario" data-acao="resgatar">Quero meu presente!</button>' +
         '<p class="dica centro" style="margin-top:10px">Vale pra amigo que nunca comprou moto numa ' + curta() + ' do Grupo Raion.</p>' +
       "</div>" +
       '<div class="cresce"></div><div class="raion"><img src="' + RAION + '" alt="Grupo Raion"></div>');
