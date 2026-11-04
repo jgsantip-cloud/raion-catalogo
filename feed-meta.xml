@@ -2,85 +2,6 @@
 <listings>
   <title>Seminovos Grupo Raion</title>
   <listing>
-    <vehicle_id>2853023</vehicle_id>
-    <title>Fiat FASTBACK 1.0 TURBO 200 HYBRID AUDACE CVT</title>
-    <description>Somos um grupo de 13 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos possuem Certificado de Km Real, Laudo Cautelar e possibilidade de até 3 anos de Garantia (Consulte Condições). 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Fiat%20FASTBACK%201.0%20TURBO%20200%20HYBRID%20AUDACE%20CVT%202025%20%28c%C3%B3d.%202853023%29.%20%5BCATALOGO-META-KEIKO-NOVA-IGUACU%5D</url>
-    <make>Fiat</make>
-    <model>FASTBACK</model>
-    <year>2025</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>29456</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>105890.00 BRL</price>
-    <exterior_color>Branco</exterior_color>
-    <fuel_type>HYBRID</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SUV</body_style>
-    <trim>1.0 TURBO 200 HYBRID AUDACE CVT</trim>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Nissan Keiko - Nova Iguaçu</dealer_name>
-    <image>
-      <url>https://raion.app.br/faixas/2853023.jpg?v=2fb9af48</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/LbBtQn1ZNilCFXLMVPMAMiHijKe4smbi.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/UGu91wsaVj5jZoXcxgIg1QHaK7jT434t.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/c4JEsUgDaWgzKcNBQ4hfxzeAFbXyQ4zW.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/JmU2YN2k5usPaJSYhlDrnhSZF8u9oFqV.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/WY1frABsqUVAlxGbFYCkzqeDLt5eYQ9n.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/0PAX90Yn8bO9G7k03GDHcO9cbTGYjGWT.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/r2vRtNJQJ1SImLyTvxOcL192KjbzQhlk.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/NPgWjlQWARxATLu6cBC80Laujn1y2cRD.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/j6Ym3CazmsYHDrealWsEa7qSlefBp9S4.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/6gMyft1ht6nnZ0jIAhfM4DRoFQs2HaA0.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/9HOKEeiRaO6SQZ9ulXcAc4Syknz1Schl.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/jI3w0Gzdh8cX3ka4iQBAGe4s9QJY9Zqo.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">GOVERNADOR ROBERTO SILVEIRA, 217</component>
-      <component name="city">Nova Iguaçu</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">26210-210</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>GOVERNADOR ROBERTO SILVEIRA, 217</street_address>
-    <city>Nova Iguaçu</city>
-    <region>RJ</region>
-    <postal_code>26210-210</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
     <vehicle_id>2874410</vehicle_id>
     <title>Mitsubishi ECLIPSE CROSS 1.5 MIVEC TURBO GASOLINA HPE CVT</title>
     <description>Somos um grupo de 13 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -582,91 +503,6 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
-    <vehicle_id>2872404</vehicle_id>
-    <title>Honda HR-V 1.8 16V FLEX EXL 4P AUTOMÁTICO</title>
-    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos possuem Vistoria Cautelar. 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Honda%20HR-V%201.8%2016V%20FLEX%20EXL%204P%20AUTOM%C3%81TICO%202021%20%28c%C3%B3d.%202872404%29.%20%5BCATALOGO-META-KEIKO-DUQUE-DE-CAXIAS%5D</url>
-    <make>Honda</make>
-    <model>HR-V</model>
-    <year>2021</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>58625</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>103890.00 BRL</price>
-    <exterior_color>Azul</exterior_color>
-    <fuel_type>FLEX</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SUV</body_style>
-    <trim>1.8 16V FLEX EXL 4P AUTOMÁTICO</trim>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Nissan Keiko - Duque de Caxias</dealer_name>
-    <image>
-      <url>https://raion.app.br/faixas/2872404.jpg?v=1a2cbfb3</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/Z5MVqNLqOVLWWJUfSiVRxKKmknPsgPiG.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/arufEcUylZl1mIWVXxelCS3vgC8m0bvO.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/uLcrOUx45TNw9zUmlJxDzBRoVvAMZ8T0.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/BSoPM12AChVHmbSoaqkoYSLsfNBu83Bh.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/ovsElwAFyyNqy92vBO8BJXG4K77f3NcF.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/cXOEERTSfyz4k1lyfLfDr488LXePD0jN.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/4A0KZS69FkP7QxOc15g8MBTLuiOqQKX3.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/N1ANZetQYbM3YbzBm5D6JzuZhxo6y1Rx.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/0GGxlWizDkfCUlV14ZE7LgDiHx9GMUep.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/yLbwbNaZLa1vXYdvHEmNi4MJ7V3nHdJd.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/G7qJssQxOVSReCfa7aD5gLy0xn7CRBBT.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/PFkGoGlzN8uMaamrejmdHn6JwskAPq9H.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/S7r4rNI8diWCk0hrfqyjzUT4xfOeWcQc.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/Z4zc1PaHxvOA7qy0IBygBYJPpGkQPNyn.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">WASHINGTON LUIZ, 1375</component>
-      <component name="city">Duque de Caxias</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">25085-008</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>WASHINGTON LUIZ, 1375</street_address>
-    <city>Duque de Caxias</city>
-    <region>RJ</region>
-    <postal_code>25085-008</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
     <vehicle_id>2872406</vehicle_id>
     <title>Mitsubishi ASX 2.0 MIVEC FLEX HPE CVT</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -1064,100 +900,6 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
-    <vehicle_id>2860016</vehicle_id>
-    <title>Nissan KICKS 1.6 16V FLEXSTART ADVANCE XTRONIC</title>
-    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos possuem Vistoria Cautelar. 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20KICKS%201.6%2016V%20FLEXSTART%20ADVANCE%20XTRONIC%202024%20%28c%C3%B3d.%202860016%29.%20%5BCATALOGO-META-KEIKO-CAMPO-GRANDE%5D</url>
-    <make>Nissan</make>
-    <model>KICKS</model>
-    <year>2024</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>36506</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>97890.00 BRL</price>
-    <exterior_color>Cinza</exterior_color>
-    <fuel_type>FLEX</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SUV</body_style>
-    <trim>1.6 16V FLEXSTART ADVANCE XTRONIC</trim>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Nissan Keiko - Campo Grande</dealer_name>
-    <image>
-      <url>https://raion.app.br/faixas/2860016.jpg?v=d8c9e9cc</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/GgSE4k9zIaxxMPKvHZCnvNtD2lkw4WLX.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/kpRu7QII0OPVIqiOqpqYNQJDIXTSLJHy.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/OvhHUUTY73KVUiE2YOuyWFeBevYXTaC2.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/g7XpcQ4Lh5QDiq00p7gaQkV5WdSFwfo6.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/1KCawGKQMSFOdIQ0A0A6ZhEfcQBLfcBt.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/k3WUvyZtwv1kxHue1dn5oN5kdKbkqhz7.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/CbCUGXa0B7eVYj4TuA5SuKGDcbrpmvZp.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/5hK5g3HrnJ47zM7PQ8q3JUfiGYGHeWmZ.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/IFXp7oyyFh7yZlaasCWpwgeKw1jILGJV.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/W9q7vKmQf73c9FlaOvRwEXybSTqCtzci.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/Z4HbDqEhZKjouJvwnSF6LXHnpclGORS2.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/L5NoA4ZoBGLp7JGdG5e1oakb5bO8hlGk.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/TleeMIX1HEXcC52b4Hqbg415VdfLC4f5.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/mVDFeXsBOzLLmWeDo2cnBv11o0AL7v2I.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/d9h6tTACKveaOi1aAuHus4anGvOESOUZ.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/VE2iXzEFETJcTa7hD1DtJq5pbwqvpBjn.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/HDG0t5bKoJTaDeNNaF1na03xhdll9Cns.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">ESTRADA DO MONTEIRO, 540</component>
-      <component name="city">Rio de Janeiro</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">23045-830</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>ESTRADA DO MONTEIRO, 540</street_address>
-    <city>Rio de Janeiro</city>
-    <region>RJ</region>
-    <postal_code>23045-830</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
     <vehicle_id>2873108</vehicle_id>
     <title>Mitsubishi ECLIPSE CROSS 1.5 MIVEC TURBO GASOLINA HPE CVT</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -1337,6 +1079,100 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     </image>
     <image>
       <url>https://s3.agsistema.net/6596/vehicles/2873114/photos/hEL3IzRs5LwOoFMW1fFOszXzHO9I32qe.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">ESTRADA DO MONTEIRO, 540</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">23045-830</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>ESTRADA DO MONTEIRO, 540</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>23045-830</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2874352</vehicle_id>
+    <title>Nissan KICKS 1.6 16V FLEXSTART ADVANCE XTRONIC</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20KICKS%201.6%2016V%20FLEXSTART%20ADVANCE%20XTRONIC%202024%20%28c%C3%B3d.%202874352%29.%20%5BCATALOGO-META-KEIKO-CAMPO-GRANDE%5D</url>
+    <make>Nissan</make>
+    <model>KICKS</model>
+    <year>2024</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>36506</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>102890.00 BRL</price>
+    <exterior_color>Cinza</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>1.6 16V FLEXSTART ADVANCE XTRONIC</trim>
+    <custom_label_0>DISPONIVEL</custom_label_0>
+    <dealer_name>Nissan Keiko - Campo Grande</dealer_name>
+    <image>
+      <url>https://raion.app.br/faixas/2874352.jpg?v=46fa560b</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874352/photos/u0uAGASziIUkKKS05dZ2Ufbu15wLL3o1.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874352/photos/bFnWcH0BtLrnPM7qXj2rdWcPPPF7idzW.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874352/photos/FMd88TEp9boySralqU4Av0zemTFMiXyS.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874352/photos/XMKvMpUVLSmjZWrMyxMLLb5ZU3LaxMf5.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874352/photos/8ZVgmkAw2XSKFcig511Z6PsMd9oxGdpP.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874352/photos/eDj2EdmoOgQMzVKAofCmzTTh4CkY8bsW.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874352/photos/8IV3OxqrjWDiYj7HT77utBFleBJb7zpf.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874352/photos/J9f6zbR7DmKYX31XfNkZY6xMEAxd7GSN.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874352/photos/bqVxWpnMX8JnOO555ssDbi3nNqAoFALz.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874352/photos/QochsR14ZjP7FDXgpS6SXbWse7kkl0tS.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874352/photos/1PkeLsRZ5XwD9vOhwyp4JMdhF85iwRnI.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874352/photos/f0PmhSyZ6n73ouLay9xcIfijHnFPVUAK.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874352/photos/nAEpe17tXmBM1N9XWFkYcqAo9PtrvZ3z.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874352/photos/9OUPE6V6pD0hULno3htweI0vWaaN0rLQ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874352/photos/C9I43sGIN5w7sUQqPx0i7R4fv791UIpI.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874352/photos/i6tuNRP1g4bno5J9exK3x7XQNJvN1Fsm.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874352/photos/xKi7iFzj3oQvcG3FhXYlCu61nyy3AALr.jpg</url>
     </image>
     <address format="simple">
       <component name="addr1">ESTRADA DO MONTEIRO, 540</component>
@@ -2267,7 +2103,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <year>2018</year>
     <mileage>
       <unit>KM</unit>
-      <value>79388</value>
+      <value>20500</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
     <price>94890.00 BRL</price>
@@ -2279,7 +2115,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
-      <url>https://raion.app.br/faixas/2858429.jpg?v=1e387f2f</url>
+      <url>https://raion.app.br/faixas/2858429.jpg?v=0091e8dd</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6625/vehicles/2858429/photos/Y7Qqqkb5CvIYf7KxAS6aanYViDggJh4c.jpg</url>
@@ -8184,6 +8020,85 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
+    <vehicle_id>2853023</vehicle_id>
+    <title>Fiat FASTBACK 1.0 TURBO 200 HYBRID AUDACE CVT</title>
+    <description>Somos um grupo de 13 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Certificado de Km Real, Laudo Cautelar e possibilidade de até 3 anos de Garantia (Consulte Condições). 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Fiat%20FASTBACK%201.0%20TURBO%20200%20HYBRID%20AUDACE%20CVT%202025%20%28c%C3%B3d.%202853023%29.%20%5BCATALOGO-META-KEIKO-NOVA-IGUACU%5D</url>
+    <make>Fiat</make>
+    <model>FASTBACK</model>
+    <year>2025</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>29456</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>105890.00 BRL</price>
+    <exterior_color>Branco</exterior_color>
+    <fuel_type>HYBRID</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>1.0 TURBO 200 HYBRID AUDACE CVT</trim>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Nissan Keiko - Nova Iguaçu</dealer_name>
+    <image>
+      <url>https://raion.app.br/faixas/2853023.jpg?v=2fb9af48</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/LbBtQn1ZNilCFXLMVPMAMiHijKe4smbi.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/UGu91wsaVj5jZoXcxgIg1QHaK7jT434t.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/c4JEsUgDaWgzKcNBQ4hfxzeAFbXyQ4zW.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/JmU2YN2k5usPaJSYhlDrnhSZF8u9oFqV.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/WY1frABsqUVAlxGbFYCkzqeDLt5eYQ9n.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/0PAX90Yn8bO9G7k03GDHcO9cbTGYjGWT.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/r2vRtNJQJ1SImLyTvxOcL192KjbzQhlk.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/NPgWjlQWARxATLu6cBC80Laujn1y2cRD.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/j6Ym3CazmsYHDrealWsEa7qSlefBp9S4.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/6gMyft1ht6nnZ0jIAhfM4DRoFQs2HaA0.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/9HOKEeiRaO6SQZ9ulXcAc4Syknz1Schl.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2853023/photos/jI3w0Gzdh8cX3ka4iQBAGe4s9QJY9Zqo.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">GOVERNADOR ROBERTO SILVEIRA, 217</component>
+      <component name="city">Nova Iguaçu</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">26210-210</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>GOVERNADOR ROBERTO SILVEIRA, 217</street_address>
+    <city>Nova Iguaçu</city>
+    <region>RJ</region>
+    <postal_code>26210-210</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
     <vehicle_id>2837071</vehicle_id>
     <title>Mitsubishi ECLIPSE CROSS 1.5 MIVEC TURBO GASOLINA HPE-S CVT</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -9749,6 +9664,185 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <city>Rio de Janeiro</city>
     <region>RJ</region>
     <postal_code>22640-101</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2872404</vehicle_id>
+    <title>Honda HR-V 1.8 16V FLEX EXL 4P AUTOMÁTICO</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Honda%20HR-V%201.8%2016V%20FLEX%20EXL%204P%20AUTOM%C3%81TICO%202021%20%28c%C3%B3d.%202872404%29.%20%5BCATALOGO-META-KEIKO-DUQUE-DE-CAXIAS%5D</url>
+    <make>Honda</make>
+    <model>HR-V</model>
+    <year>2021</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>58625</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>103890.00 BRL</price>
+    <exterior_color>Azul</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>1.8 16V FLEX EXL 4P AUTOMÁTICO</trim>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Nissan Keiko - Duque de Caxias</dealer_name>
+    <image>
+      <url>https://raion.app.br/faixas/2872404.jpg?v=1a2cbfb3</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/Z5MVqNLqOVLWWJUfSiVRxKKmknPsgPiG.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/arufEcUylZl1mIWVXxelCS3vgC8m0bvO.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/uLcrOUx45TNw9zUmlJxDzBRoVvAMZ8T0.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/BSoPM12AChVHmbSoaqkoYSLsfNBu83Bh.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/ovsElwAFyyNqy92vBO8BJXG4K77f3NcF.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/cXOEERTSfyz4k1lyfLfDr488LXePD0jN.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/4A0KZS69FkP7QxOc15g8MBTLuiOqQKX3.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/N1ANZetQYbM3YbzBm5D6JzuZhxo6y1Rx.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/0GGxlWizDkfCUlV14ZE7LgDiHx9GMUep.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/yLbwbNaZLa1vXYdvHEmNi4MJ7V3nHdJd.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/G7qJssQxOVSReCfa7aD5gLy0xn7CRBBT.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/PFkGoGlzN8uMaamrejmdHn6JwskAPq9H.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/S7r4rNI8diWCk0hrfqyjzUT4xfOeWcQc.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6595/vehicles/2872404/photos/Z4zc1PaHxvOA7qy0IBygBYJPpGkQPNyn.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">WASHINGTON LUIZ, 1375</component>
+      <component name="city">Duque de Caxias</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">25085-008</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>WASHINGTON LUIZ, 1375</street_address>
+    <city>Duque de Caxias</city>
+    <region>RJ</region>
+    <postal_code>25085-008</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2860016</vehicle_id>
+    <title>Nissan KICKS 1.6 16V FLEXSTART ADVANCE XTRONIC</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20KICKS%201.6%2016V%20FLEXSTART%20ADVANCE%20XTRONIC%202024%20%28c%C3%B3d.%202860016%29.%20%5BCATALOGO-META-KEIKO-CAMPO-GRANDE%5D</url>
+    <make>Nissan</make>
+    <model>KICKS</model>
+    <year>2024</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>36506</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>97890.00 BRL</price>
+    <exterior_color>Cinza</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>1.6 16V FLEXSTART ADVANCE XTRONIC</trim>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Nissan Keiko - Campo Grande</dealer_name>
+    <image>
+      <url>https://raion.app.br/faixas/2860016.jpg?v=d8c9e9cc</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/GgSE4k9zIaxxMPKvHZCnvNtD2lkw4WLX.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/kpRu7QII0OPVIqiOqpqYNQJDIXTSLJHy.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/OvhHUUTY73KVUiE2YOuyWFeBevYXTaC2.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/g7XpcQ4Lh5QDiq00p7gaQkV5WdSFwfo6.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/1KCawGKQMSFOdIQ0A0A6ZhEfcQBLfcBt.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/k3WUvyZtwv1kxHue1dn5oN5kdKbkqhz7.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/CbCUGXa0B7eVYj4TuA5SuKGDcbrpmvZp.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/5hK5g3HrnJ47zM7PQ8q3JUfiGYGHeWmZ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/IFXp7oyyFh7yZlaasCWpwgeKw1jILGJV.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/W9q7vKmQf73c9FlaOvRwEXybSTqCtzci.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/Z4HbDqEhZKjouJvwnSF6LXHnpclGORS2.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/L5NoA4ZoBGLp7JGdG5e1oakb5bO8hlGk.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/TleeMIX1HEXcC52b4Hqbg415VdfLC4f5.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/mVDFeXsBOzLLmWeDo2cnBv11o0AL7v2I.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/d9h6tTACKveaOi1aAuHus4anGvOESOUZ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/VE2iXzEFETJcTa7hD1DtJq5pbwqvpBjn.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2860016/photos/HDG0t5bKoJTaDeNNaF1na03xhdll9Cns.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">ESTRADA DO MONTEIRO, 540</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">23045-830</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>ESTRADA DO MONTEIRO, 540</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>23045-830</postal_code>
     <country>Brazil</country>
   </listing>
   <listing>
