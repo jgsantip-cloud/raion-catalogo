@@ -511,10 +511,13 @@ async function abrirGerente(loja){
   $("gLoja").classList.toggle("oculto", j.lojas.length < 2);
   const r = j.resumo;
   // Larissa 06/11: filtrando um consultor, mostra também o que está livre na fila da loja (sem dono), que ele pode pegar
+  // Larissa 06/11: no lugar de "sem contato", os que foram trabalhados e tiveram o contato remarcado para frente (retorno)
+  const hojeL = new Date(Date.now() - 3 * 3600000).toISOString().slice(0, 10);
+  const futuros = j.cards.filter(c => c.retorno_em && c.retorno_em > hojeL).length;
   let livres = null;
   if (S.gCons) { const g = await api({acao:"gerente", loja: S.gLoja || undefined, mes: S.gMes || undefined}).catch(()=>null); if (g && g.ok) livres = g.cards.filter(c => !c.dono).length; }
   $("gTiles").innerHTML = [["entraram",r.entraram,""],["trabalhados",r.trabalhados ?? 0,""],["agendou",r.agendou,""],["compareceram",r.confirmados,"color:var(--green)"],["não vieram",r.nao_veio || 0,"color:var(--red)"],
-    ["recusou",r.recusou,""],["sem contato",r.sem_contato,""],["voltou sozinho",r.voltou_sozinho,""],["expirou",r.expirou,""],[S.gCons ? "na fila dele" : "na fila",j.cards.length,""]]
+    ["recusou",r.recusou,""],["agendados para data futura",futuros,""],["voltou sozinho",r.voltou_sozinho,""],["expirou",r.expirou,""],[S.gCons ? "na fila dele" : "na fila",j.cards.length,""]]
     .concat(livres === null ? [] : [["livres na loja", livres, ""]])
     .map(([l,v,st]) => `<div class="tile"><b style="${st}">${v}</b><span>${l}</span></div>`).join("");
   const ag = j.agendados || [], SIT = {compareceu:['ok','compareceu'], nao_veio:['alerta','não veio'], aguardando:['','aguardando']};
