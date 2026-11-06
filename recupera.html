@@ -115,6 +115,7 @@
       <div style="font-size:12px;color:var(--dim)">pra fazer</div>
     </div>
   </div>
+  <select id="lojaTrab" class="oculto" style="margin-top:12px"></select>
   <div class="abas"><button id="abaMeus" class="ativa">Meus <span id="meusN"></span></button><button id="abaLoja">Da loja <span id="lojaN"></span></button></div>
   <div class="meses" id="meses"></div>
   <div class="ctx" id="explica" style="margin-top:10px;padding:0 2px"></div>
@@ -288,7 +289,21 @@ $("abaMeus").onclick = () => { S.aba = "meus"; render(); };
 $("abaLoja").onclick = () => { S.aba = "loja"; render(); };
 
 function render(){
-  const f = S.fila;
+  // Larissa 06/11: consultor cadastrado em duas lojas (Monique, Altino, Jackson) escolhe em qual vai trabalhar; a fila mostra só ela
+  const lojasC = (((S.ro && S.ro.colaborador) || S.col).lojas || []).filter(l => l.papel === "consultor");
+  const selLoja = $("lojaTrab");
+  if (lojasC.length > 1) {
+    let atual = S.lojaTrab != null ? S.lojaTrab : (S.ro ? null : ls.get("rec_loja_trab"));
+    if (!lojasC.some(l => l.id === atual)) atual = null;
+    S.lojaTrab = atual;
+    selLoja.innerHTML = (atual ? "" : `<option value="">Em qual loja você vai trabalhar?</option>`) +
+      lojasC.map(l => `<option value="${l.id}" ${l.id === atual ? "selected" : ""}>Trabalhando em: ${esc(l.nome)}</option>`).join("");
+    selLoja.classList.remove("oculto");
+    selLoja.onchange = () => { S.lojaTrab = +selLoja.value || null; if (!S.ro) ls.set("rec_loja_trab", S.lojaTrab); S.mes = {}; render(); };
+  } else { selLoja.classList.add("oculto"); S.lojaTrab = null; }
+  const escolher = lojasC.length > 1 && !S.lojaTrab;
+  const naLoja = (c) => !S.lojaTrab || c.loja_id === S.lojaTrab;
+  const f = escolher ? { ...S.fila, meus: [], loja: [] } : { ...S.fila, meus: S.fila.meus.filter(naLoja), loja: S.fila.loja.filter(naLoja) };
   $("meusN").textContent = f.meus.length ? `(${f.meus.length})` : ""; $("lojaN").textContent = f.loja.length ? `(${f.loja.length})` : "";
   $("pendN").textContent = f.meus.length;
   $("abaMeus").classList.toggle("ativa", S.aba === "meus"); $("abaLoja").classList.toggle("ativa", S.aba === "loja");
@@ -306,7 +321,7 @@ function render(){
   $("meses").querySelectorAll("button").forEach(b => b.onclick = () => { S.mes[S.aba] = b.dataset.mes; render(); });
   const lista = todos.filter(c => mesDe(c) === S.mes[S.aba]);
   const box = $("cards"); box.innerHTML = "";
-  if (!lista.length) box.innerHTML = `<div class="vazio">${S.aba === "meus" ? "Nada pendente com você agora. Dá uma olhada em Da loja." : "A fila da loja está vazia."}</div>`;
+  if (!lista.length) box.innerHTML = `<div class="vazio">${escolher ? "Escolha acima a loja em que você vai trabalhar." : S.aba === "meus" ? "Nada pendente com você agora. Dá uma olhada em Da loja." : "A fila da loja está vazia."}</div>`;
   lista.forEach(c => box.appendChild(S.aba === "loja" && !S.abertos[c.id] && !c.travado_por_mim ? cardFechado(c) : cardPendente(c)));
   $("feitosBox").classList.toggle("oculto", !f.feitos.length);
   const fb = $("feitos"); fb.innerHTML = ""; f.feitos.forEach(c => fb.appendChild(cardFeito(c)));
