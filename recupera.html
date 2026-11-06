@@ -154,6 +154,7 @@
   <img src="logo-recupera.png" alt="Recupera" style="width:180px;height:auto;display:block;margin:0 auto 18px">
   <div class="kicker" id="gKicker">Visão do gerente</div>
   <select id="gLoja" style="margin-top:8px"></select>
+  <div style="display:flex;gap:8px;margin-top:8px"><select id="gMes" style="flex:1"></select><select id="gCons" style="flex:1"></select></div>
   <div class="tiles" id="gTiles" style="margin-top:14px"></div>
   <div class="lista-card oculto" id="gVerComoBox" style="margin-top:16px;padding-bottom:14px"><h3>Ver como <small>só leitura, fica registrado</small></h3>
     <div style="display:flex;flex-direction:column;gap:8px"><select id="gVerComo" style="height:48px;font-size:15px"></select><button class="btn btn-sec" id="btnVerComo" style="height:48px">Abrir a fila dessa pessoa</button>
@@ -465,8 +466,15 @@ $("btnSair").onclick = () => { if (confirm("Sair do Recupera neste aparelho?")) 
 // ---------- gerente ----------
 async function abrirGerente(loja){
   mostrarTela("tela-gerente");
-  const j = await api({acao:"gerente", loja: loja || undefined}).catch(()=>null);
+  S.gLoja = loja || S.gLoja;
+  const j = await api({acao:"gerente", loja: S.gLoja || undefined, mes: S.gMes || undefined, consultor: S.gCons || undefined}).catch(()=>null);
   if (!j || !j.ok){ toast("Não consegui carregar" + (j ? ": " + j.erro : "")); return; }
+  // Larissa 06/11: escolher o mês e o consultor na Visão macro
+  const mesNome = (m) => { const [y, n] = m.split("-"); return ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"][+n - 1] + " de " + y; };
+  $("gMes").innerHTML = (j.meses || [j.mes]).map(m => `<option value="${m}" ${m === j.mes ? "selected" : ""}>${mesNome(m)}</option>`).join("");
+  if (S.gCons && !j.pessoas.some(p => p.hash === S.gCons)) { S.gCons = ""; }
+  $("gCons").innerHTML = `<option value="">Todos os consultores</option>` + j.pessoas.map(p => `<option value="${esc(p.hash)}" ${p.hash === S.gCons ? "selected" : ""}>${esc(p.nome)}</option>`).join("");
+  $("gCons").classList.toggle("oculto", !j.pessoas.length);
   $("gLoja").innerHTML = j.lojas.map(l => `<option value="${l.id}" ${String(l.id) === String(j.loja.id) ? "selected" : ""}>${esc(l.nome)}</option>`).join("");
   const todas = j.loja.id === "todas";
   $("gVerComoBox").classList.toggle("oculto", !S.col.diretor || !j.pessoas.length);
@@ -522,7 +530,9 @@ async function abrirGerente(loja){
   $("gSemChance").innerHTML = j.sem_chance.length ? j.sem_chance.map(x => `<div class="linha"><div><a href="${esc(x.link_syonet)}" target="_blank" rel="noopener" style="color:var(--txt);font-weight:600">${esc(x.nome)}</a>
       <div style="font-size:13px;color:var(--dim)">${esc([todas ? x.loja : "", x.modelo, x.por].filter(Boolean).join(" · "))}</div></div><span class="pill">${esc(x.motivo)}</span></div>`).join("") : '<div class="vazio">Nenhum no mês.</div>';
 }
-$("gLoja").onchange = () => { const v = $("gLoja").value; abrirGerente(v === "todas" ? "todas" : +v); };
+$("gLoja").onchange = () => { const v = $("gLoja").value; S.gCons = ""; abrirGerente(v === "todas" ? "todas" : +v); };
+$("gMes").onchange = () => { S.gMes = $("gMes").value; abrirGerente(); };
+$("gCons").onchange = () => { S.gCons = $("gCons").value; abrirGerente(); };
 
 $("pFila").onclick = abrirFila; $("pAgenda").onclick = abrirAgenda; $("pPlacar").onclick = abrirPlacar; $("pGerente").onclick = () => { if (S.ro) modoVerComo(null); abrirGerente(); };
 
