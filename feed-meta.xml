@@ -233,6 +233,82 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
+    <vehicle_id>2884575</vehicle_id>
+    <title>Chevrolet ONIX 1.0 TURBO FLEX LTZ MANUAL</title>
+    <description>Somos um grupo de 13 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Certificado de Km Real, Laudo Cautelar e possibilidade de até 3 anos de Garantia (Consulte Condições). 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Chevrolet%20ONIX%201.0%20TURBO%20FLEX%20LTZ%20MANUAL%202023%20%28c%C3%B3d.%202884575%29.%20%5BCATALOGO-META-KEIKO-NOVA-IGUACU%5D</url>
+    <make>Chevrolet</make>
+    <model>ONIX</model>
+    <year>2023</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>66220</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>69890.00 BRL</price>
+    <exterior_color>Branco</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>MANUAL</transmission>
+    <body_style>HATCHBACK</body_style>
+    <trim>1.0 TURBO FLEX LTZ MANUAL</trim>
+    <custom_label_0>DISPONIVEL</custom_label_0>
+    <dealer_name>Nissan Keiko - Nova Iguaçu</dealer_name>
+    <image>
+      <url>https://raion.app.br/faixas/2884575.jpg?v=bccd6c58</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2884575/photos/KP8DaA6mRvzEqLv6GrRfdlBiv6vwrBHN539W.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2884575/photos/MMpwg4zHzMoXaR25hm6Kki8OY7vrCLyL29we.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2884575/photos/ICKodzc0xFWEprHpiIvAiwzWEWsbDMKvXPSN.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2884575/photos/5iqeOBDtdytM4r64gskhb9zAtePApnZ4MpCS.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2884575/photos/kGVp4VzBMCerf0zt0WFTf1uQr6czf4AN35R7.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2884575/photos/AalrXnp1UFcvqqKRaSfzQyKpeEoVtCvj8T8N.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2884575/photos/Oljjw6UHAob8QsegQoTMOvLEv58424uX6tDz.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2884575/photos/eIUqsD5sJ0fwPuD3cbOOHYmdSJChEqrSzcUe.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2884575/photos/MSqjGMcO33sbm4ye2FOVcdjvbZcBedyjYop1.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2884575/photos/KSa3vgjySpz9jOHZLGBuMGHVvTRohdKsptMa.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6594/vehicles/2884575/photos/51gFyBQNP85VhiJdgLlpKWQRjNy9WL5C3C0d.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">GOVERNADOR ROBERTO SILVEIRA, 217</component>
+      <component name="city">Nova Iguaçu</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">26210-210</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>GOVERNADOR ROBERTO SILVEIRA, 217</street_address>
+    <city>Nova Iguaçu</city>
+    <region>RJ</region>
+    <postal_code>26210-210</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
     <vehicle_id>2782048</vehicle_id>
     <title>Nissan KICKS 1.0 TURBO FLEX PLATINUM DCT</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -3437,7 +3513,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <year>2020</year>
     <mileage>
       <unit>KM</unit>
-      <value>31004</value>
+      <value>5</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
     <price>116890.00 BRL</price>
@@ -3449,7 +3525,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Raion - Barra</dealer_name>
     <image>
-      <url>https://raion.app.br/faixas/2874414.jpg?v=bb30035e</url>
+      <url>https://raion.app.br/faixas/2874414.jpg?v=0144d095</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6698/vehicles/2874414/photos/1L2hpg5Y3QFkOcs91TwbZGOAW10zC4BM.jpg</url>
@@ -3613,73 +3689,6 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <city>Rio de Janeiro</city>
     <region>RJ</region>
     <postal_code>22640-101</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
-    <vehicle_id>2787164</vehicle_id>
-    <title>Mitsubishi OUTLANDER SPORT 2.0 MIVEC FLEX GLS AUTOMÁTICO</title>
-    <description>Somos um grupo de 14 concessionárias , Raion , que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos de altíssima procedência , possuem Vistoria Cautelar , revisados e com garantia. 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20OUTLANDER%20SPORT%202.0%20MIVEC%20FLEX%20GLS%20AUTOM%C3%81TICO%202022%20%28c%C3%B3d.%202787164%29.%20%5BCATALOGO-META-RAION-RECREIO%5D</url>
-    <make>Mitsubishi</make>
-    <model>OUTLANDER SPORT</model>
-    <year>2022</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>92111</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>97890.00 BRL</price>
-    <exterior_color>Prata</exterior_color>
-    <fuel_type>FLEX</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SUV</body_style>
-    <trim>2.0 MIVEC FLEX GLS AUTOMÁTICO</trim>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Taika Mitsubishi - Recreio</dealer_name>
-    <image>
-      <url>https://raion.app.br/faixas/2787164.jpg?v=dec31edb</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2787164/photos/mAxce7w0govbR5lsv0wlDBlrutqpIDqd.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2787164/photos/7IKc8kaVGtrWJxMFndEfCEOphZA1d1JE.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2787164/photos/xoYWzrODU30kslbVzrryV44VdoSNCpvl.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2787164/photos/4Sf9TTzJmIcuu7u0uVIbZC2VVCdm3pza.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2787164/photos/w7YETpzguhG3PpydoyPcA0R9dhR3IMmd.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2787164/photos/AME53SoAHjPikVNiV1LTYspmv3icFuUZ.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2787164/photos/JBdoyOJYOjtdCdzy7WD4A6xyNQCRhUmT.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2787164/photos/Iv2vusamNAo1ncQcaMLAtnhfWDno5F2F.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">Av. das Américas, 17400</component>
-      <component name="city">Rio de Janeiro</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">22790-704</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>Av. das Américas, 17400</street_address>
-    <city>Rio de Janeiro</city>
-    <region>RJ</region>
-    <postal_code>22790-704</postal_code>
     <country>Brazil</country>
   </listing>
   <listing>
@@ -4594,176 +4603,6 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
-    <vehicle_id>2782051</vehicle_id>
-    <title>Nissan KICKS 1.0 TURBO FLEX PLATINUM DCT</title>
-    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos possuem Vistoria Cautelar. 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20KICKS%201.0%20TURBO%20FLEX%20PLATINUM%20DCT%202026%20%28c%C3%B3d.%202782051%29.%20%5BCATALOGO-META-KEIKO-PETROPOLIS%5D</url>
-    <make>Nissan</make>
-    <model>KICKS</model>
-    <year>2026</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>1807</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>159890.00 BRL</price>
-    <exterior_color>Vermelho</exterior_color>
-    <fuel_type>FLEX</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SUV</body_style>
-    <trim>1.0 TURBO FLEX PLATINUM DCT</trim>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Nissan Keiko - Petrópolis</dealer_name>
-    <image>
-      <url>https://raion.app.br/faixas/2782051.jpg?v=6d9f189f</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/cFNEmhEs0A8p4DtcfMSRuUkcFYUGgvdO.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/I8PR7KBeZOqGmot8M0ApatD8afXQyFLG.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/sxoLSYXBcC1ptRfEku6e9UHLVt2z35HX.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/g29DiDYjehfnZgN0wHTqDBlKHEDGR7JX.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/MLfAIKjwdYrjvxohMPGQSXGrN8uEBXN4.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/GIC7d580X12xb9WYfs3EMsJhTbGGefZY.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/kJBwVTDfoWdoyZw9Eqs2Rk8DCwob8O58.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/DkkeUstjUQB3MGiAP2hOy5tYHKabHAkb.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/sKm7p3neGxWldYwlbC8WupiOIJFLmhPX.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/0MQXrWb1rDuZdmnyNL8lLEHZy1XJQIug.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/umrcP7k4Th1tj0kSDcrKliZAYAKx6xvA.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/5jTm6OUzSd3mp7pqQwjpyizyjG0d1Ywq.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/PgMSiaJDcZ9m8ybKreZfaRphoay65xxY.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/e1yOemaWuBctQMM51p7qbV2Tw73f9Sgr.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/n3bW28LKNcYWNZKGjYb6VnOa6keeK5VA.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/MYHFxtn8UAOyroaKko7W4IDiKfm9TZ3P.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/y6dDxEAjHx4muBS0RZHSE8lHINdLWBgR.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/A0nxDtbpcBN5onBBHcJn5kvwIX9QXP7R.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">DOUTOR PAULO HERVE, 1111</component>
-      <component name="city">Rio de Janeiro</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">25665-135</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>DOUTOR PAULO HERVE, 1111</street_address>
-    <city>Rio de Janeiro</city>
-    <region>RJ</region>
-    <postal_code>25665-135</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
-    <vehicle_id>2853027</vehicle_id>
-    <title>Ford ECOSPORT 1.5 TI-VCT FLEX SE AUTOMÁTICO</title>
-    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos possuem Vistoria Cautelar. 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Ford%20ECOSPORT%201.5%20TI-VCT%20FLEX%20SE%20AUTOM%C3%81TICO%202019%20%28c%C3%B3d.%202853027%29.%20%5BCATALOGO-META-KEIKO-PETROPOLIS%5D</url>
-    <make>Ford</make>
-    <model>ECOSPORT</model>
-    <year>2019</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>57104</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>64890.00 BRL</price>
-    <exterior_color>Branco</exterior_color>
-    <fuel_type>FLEX</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SUV</body_style>
-    <trim>1.5 TI-VCT FLEX SE AUTOMÁTICO</trim>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Nissan Keiko - Petrópolis</dealer_name>
-    <image>
-      <url>https://raion.app.br/faixas/2853027.jpg?v=76d8cc5f</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2853027/photos/gAjOk8y5YTF1780xtfqFkMSgUyuSegSz.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2853027/photos/WDMfdlVghV7GpBeSzazif1DrHJmIsCQ4.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2853027/photos/lWjhmAW8A3hSGr95FoSzMaElkd4UIygn.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2853027/photos/8IiC0N0MLfXbU0PVNcbqGaRiqmfGVRfN.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2853027/photos/MGgHbaqbmnpEILVoFF2nd8q8QixTkvHs.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2853027/photos/e7JOPBZ6ffbcM3je0n8gG1C0J17SbnaP.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2853027/photos/XRNTfhFSbWhlHK6GYVuEY371dezT98VA.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2853027/photos/kvG3hAkWRp4M8CEE4uZcqxUJWULpfsok.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2853027/photos/TWdr2XRhRXaXcC7ogJ8W8QSWhxG9IE7E.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6703/vehicles/2853027/photos/iq4jvztPXHMZbR4qICAQA1znm8d28BAd.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">DOUTOR PAULO HERVE, 1111</component>
-      <component name="city">Rio de Janeiro</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">25665-135</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>DOUTOR PAULO HERVE, 1111</street_address>
-    <city>Rio de Janeiro</city>
-    <region>RJ</region>
-    <postal_code>25665-135</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
     <vehicle_id>2874516</vehicle_id>
     <title>Hyundai CRETA 2.0 FLEX ULTIMATE AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -5156,6 +4995,103 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <city>Duque de Caxias</city>
     <region>RJ</region>
     <postal_code>25085-008</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2782051</vehicle_id>
+    <title>Nissan KICKS 1.0 TURBO FLEX PLATINUM DCT</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20KICKS%201.0%20TURBO%20FLEX%20PLATINUM%20DCT%202026%20%28c%C3%B3d.%202782051%29.%20%5BCATALOGO-META-KEIKO-PETROPOLIS%5D</url>
+    <make>Nissan</make>
+    <model>KICKS</model>
+    <year>2026</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>1807</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>159890.00 BRL</price>
+    <exterior_color>Vermelho</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>1.0 TURBO FLEX PLATINUM DCT</trim>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Nissan Keiko - Petrópolis</dealer_name>
+    <image>
+      <url>https://raion.app.br/faixas/2782051.jpg?v=6d9f189f</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/cFNEmhEs0A8p4DtcfMSRuUkcFYUGgvdO.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/I8PR7KBeZOqGmot8M0ApatD8afXQyFLG.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/sxoLSYXBcC1ptRfEku6e9UHLVt2z35HX.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/g29DiDYjehfnZgN0wHTqDBlKHEDGR7JX.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/MLfAIKjwdYrjvxohMPGQSXGrN8uEBXN4.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/GIC7d580X12xb9WYfs3EMsJhTbGGefZY.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/kJBwVTDfoWdoyZw9Eqs2Rk8DCwob8O58.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/DkkeUstjUQB3MGiAP2hOy5tYHKabHAkb.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/sKm7p3neGxWldYwlbC8WupiOIJFLmhPX.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/0MQXrWb1rDuZdmnyNL8lLEHZy1XJQIug.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/umrcP7k4Th1tj0kSDcrKliZAYAKx6xvA.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/5jTm6OUzSd3mp7pqQwjpyizyjG0d1Ywq.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/PgMSiaJDcZ9m8ybKreZfaRphoay65xxY.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/e1yOemaWuBctQMM51p7qbV2Tw73f9Sgr.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/n3bW28LKNcYWNZKGjYb6VnOa6keeK5VA.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/MYHFxtn8UAOyroaKko7W4IDiKfm9TZ3P.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/y6dDxEAjHx4muBS0RZHSE8lHINdLWBgR.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2782051/photos/A0nxDtbpcBN5onBBHcJn5kvwIX9QXP7R.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">DOUTOR PAULO HERVE, 1111</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">25665-135</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>DOUTOR PAULO HERVE, 1111</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>25665-135</postal_code>
     <country>Brazil</country>
   </listing>
   <listing>
@@ -6679,94 +6615,6 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <city>Rio de Janeiro</city>
     <region>RJ</region>
     <postal_code>25665-135</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
-    <vehicle_id>2833025</vehicle_id>
-    <title>Nissan SENTRA 2.0 16V GASOLINA ADVANCE XTRONIC</title>
-    <description>Somos um grupo de 13 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos possuem Certificado de Km Real, Laudo Cautelar e possibilidade de até 3 anos de Garantia (Consulte Condições). 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20SENTRA%202.0%2016V%20GASOLINA%20ADVANCE%20XTRONIC%202023%20%28c%C3%B3d.%202833025%29.%20%5BCATALOGO-META-KEIKO-NOVA-IGUACU%5D</url>
-    <make>Nissan</make>
-    <model>SENTRA</model>
-    <year>2023</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>36300</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>109890.00 BRL</price>
-    <exterior_color>Branco</exterior_color>
-    <fuel_type>GASOLINE</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SEDAN</body_style>
-    <trim>2.0 16V GASOLINA ADVANCE XTRONIC</trim>
-    <custom_label_0>VENDIDO</custom_label_0>
-    <dealer_name>Nissan Keiko - Nova Iguaçu</dealer_name>
-    <image>
-      <url>https://raion.app.br/faixas/2833025.jpg?v=bd358c9e</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/G3pxlWP8bA6timyVYtTL3N0Bg8UXRoJP.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/yE4wdKfA23H32ZTDwuZOLhH7s7kM6LaL.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/Ir1qgA1oH0t8KBjbf6JjdgqdwQkwkkXw.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/dZU98tkC49VtxneOahtjDYF4iv6LMIkq.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/GoWTTkT2R2cusjwy3asP8cChiLAsSgr0.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/hzXpg9iMblNqGUclNS3eGozegCsJpbxg.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/JgNNDOzN75fR3CJCpy52ZC6K4gze6Su4.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/sVlCV0xz1CaPRy01PilJRmsoEoP0DVG8.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/JRh7MTv7ExgnKqfmd3NrvIfq2UghMMXa.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/4VTDjJc8BBrOAycnkOibm78dW51tTNAE.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/qS0YBmrgNFNNJ0U1DHfBPZn9PoxVlf9q.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/O6aZqNTgwb5gQBBpCJasF4mO2nEuFmvj.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/6KEuNiTUufjCO7N03X3RwIRI2V3BsaKS.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/b8R3wOND0kCE3zcujwXsdLQUBUVrlq3s.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6594/vehicles/2833025/photos/lTB82ZkKdBcj6gRQyJsLBD90WRnKKsCK.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">GOVERNADOR ROBERTO SILVEIRA, 217</component>
-      <component name="city">Nova Iguaçu</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">26210-210</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>GOVERNADOR ROBERTO SILVEIRA, 217</street_address>
-    <city>Nova Iguaçu</city>
-    <region>RJ</region>
-    <postal_code>26210-210</postal_code>
     <country>Brazil</country>
   </listing>
   <listing>
@@ -9318,6 +9166,79 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
+    <vehicle_id>2853027</vehicle_id>
+    <title>Ford ECOSPORT 1.5 TI-VCT FLEX SE AUTOMÁTICO</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Ford%20ECOSPORT%201.5%20TI-VCT%20FLEX%20SE%20AUTOM%C3%81TICO%202019%20%28c%C3%B3d.%202853027%29.%20%5BCATALOGO-META-KEIKO-PETROPOLIS%5D</url>
+    <make>Ford</make>
+    <model>ECOSPORT</model>
+    <year>2019</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>57104</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>64890.00 BRL</price>
+    <exterior_color>Branco</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>1.5 TI-VCT FLEX SE AUTOMÁTICO</trim>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Nissan Keiko - Petrópolis</dealer_name>
+    <image>
+      <url>https://raion.app.br/faixas/2853027.jpg?v=76d8cc5f</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2853027/photos/gAjOk8y5YTF1780xtfqFkMSgUyuSegSz.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2853027/photos/WDMfdlVghV7GpBeSzazif1DrHJmIsCQ4.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2853027/photos/lWjhmAW8A3hSGr95FoSzMaElkd4UIygn.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2853027/photos/8IiC0N0MLfXbU0PVNcbqGaRiqmfGVRfN.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2853027/photos/MGgHbaqbmnpEILVoFF2nd8q8QixTkvHs.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2853027/photos/e7JOPBZ6ffbcM3je0n8gG1C0J17SbnaP.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2853027/photos/XRNTfhFSbWhlHK6GYVuEY371dezT98VA.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2853027/photos/kvG3hAkWRp4M8CEE4uZcqxUJWULpfsok.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2853027/photos/TWdr2XRhRXaXcC7ogJ8W8QSWhxG9IE7E.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6703/vehicles/2853027/photos/iq4jvztPXHMZbR4qICAQA1znm8d28BAd.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">DOUTOR PAULO HERVE, 1111</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">25665-135</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>DOUTOR PAULO HERVE, 1111</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>25665-135</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
     <vehicle_id>2872404</vehicle_id>
     <title>Honda HR-V 1.8 16V FLEX EXL 4P AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -9494,6 +9415,73 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <city>Rio de Janeiro</city>
     <region>RJ</region>
     <postal_code>23045-830</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2787164</vehicle_id>
+    <title>Mitsubishi OUTLANDER SPORT 2.0 MIVEC FLEX GLS AUTOMÁTICO</title>
+    <description>Somos um grupo de 14 concessionárias , Raion , que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos de altíssima procedência , possuem Vistoria Cautelar , revisados e com garantia. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20OUTLANDER%20SPORT%202.0%20MIVEC%20FLEX%20GLS%20AUTOM%C3%81TICO%202022%20%28c%C3%B3d.%202787164%29.%20%5BCATALOGO-META-RAION-RECREIO%5D</url>
+    <make>Mitsubishi</make>
+    <model>OUTLANDER SPORT</model>
+    <year>2022</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>92111</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>97890.00 BRL</price>
+    <exterior_color>Prata</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>2.0 MIVEC FLEX GLS AUTOMÁTICO</trim>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Taika Mitsubishi - Recreio</dealer_name>
+    <image>
+      <url>https://raion.app.br/faixas/2787164.jpg?v=dec31edb</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2787164/photos/mAxce7w0govbR5lsv0wlDBlrutqpIDqd.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2787164/photos/7IKc8kaVGtrWJxMFndEfCEOphZA1d1JE.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2787164/photos/xoYWzrODU30kslbVzrryV44VdoSNCpvl.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2787164/photos/4Sf9TTzJmIcuu7u0uVIbZC2VVCdm3pza.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2787164/photos/w7YETpzguhG3PpydoyPcA0R9dhR3IMmd.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2787164/photos/AME53SoAHjPikVNiV1LTYspmv3icFuUZ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2787164/photos/JBdoyOJYOjtdCdzy7WD4A6xyNQCRhUmT.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2787164/photos/Iv2vusamNAo1ncQcaMLAtnhfWDno5F2F.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">Av. das Américas, 17400</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">22790-704</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>Av. das Américas, 17400</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>22790-704</postal_code>
     <country>Brazil</country>
   </listing>
   <listing>
