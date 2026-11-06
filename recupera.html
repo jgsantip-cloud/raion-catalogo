@@ -514,11 +514,13 @@ async function abrirGerente(loja){
   // Larissa 06/11: no lugar de "sem contato", os que foram trabalhados e tiveram o contato remarcado para frente (retorno)
   const hojeL = new Date(Date.now() - 3 * 3600000).toISOString().slice(0, 10);
   const futuros = j.cards.filter(c => c.retorno_em && c.retorno_em > hojeL).length;
-  let livres = null;
-  if (S.gCons) { const g = await api({acao:"gerente", loja: S.gLoja || undefined, mes: S.gMes || undefined}).catch(()=>null); if (g && g.ok) livres = g.cards.filter(c => !c.dono).length; }
-  $("gTiles").innerHTML = [["entraram",r.entraram,""],["trabalhados",r.trabalhados ?? 0,""],["agendou",r.agendou,""],["compareceram",r.confirmados,"color:var(--green)"],["não vieram",r.nao_veio || 0,"color:var(--red)"],
-    ["recusou",r.recusou,""],["agendados para data futura",futuros,""],["voltou sozinho",r.voltou_sozinho,""],["expirou",r.expirou,""],[S.gCons ? "na fila dele" : "na fila",j.cards.length,""]]
-    .concat(livres === null ? [] : [["livres na loja", livres, ""]])
+  let livres = j.cards.filter(c => !c.dono).length;
+  if (S.gCons) { const g = await api({acao:"gerente", loja: S.gLoja || undefined, mes: S.gMes || undefined}).catch(()=>null); livres = g && g.ok ? g.cards.filter(c => !c.dono).length : null; }
+  // ordem pedida pela Larissa (06/11), de três em três
+  $("gTiles").innerHTML = [[S.gCons ? "na fila dele" : "na fila",j.cards.length,""],["livres na loja", livres ?? "—", ""],["trabalhados",r.trabalhados ?? 0,""],
+    ["agendou",r.agendou,""],["compareceram",r.confirmados,"color:var(--green)"],["não vieram",r.nao_veio || 0,"color:var(--red)"],
+    ["recusou",r.recusou,""],["agendados para data futura",futuros,""],["expirou",r.expirou,""],
+    ["entraram",r.entraram,""],["voltou sozinho",r.voltou_sozinho,""]]
     .map(([l,v,st]) => `<div class="tile"><b style="${st}">${v}</b><span>${l}</span></div>`).join("");
   const ag = j.agendados || [], SIT = {compareceu:['ok','compareceu'], nao_veio:['alerta','não veio'], aguardando:['','aguardando']};
   $("gAgendN").textContent = ag.length ? String(ag.length) : "";
