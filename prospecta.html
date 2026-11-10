@@ -483,10 +483,13 @@ $("btnEntrar").onclick = async () => {
   if (!j.ok && j.erro === "evento-errado"){ irProEventoCerto(j); return; }
   if (!j.ok){
     $("erroLoginTxt").textContent = { "travado-15-min":"Muitas tentativas. Tente de novo em 15 minutos.", "evento-encerrado":"Este evento já encerrou.",
-      "evento-nao-encontrado":"Link inválido. Peça o link certo ao seu gestor.", "rede":"Sem conexão. Tente de novo." }[j.erro] || "CPF ou nascimento não conferem.";
+      "evento-nao-encontrado":"Link inválido. Peça o link certo ao seu gestor.", "loja-fora-do-evento":"Sua loja não está neste evento.", "rede":"Sem conexão. Tente de novo." }[j.erro] || "CPF ou nascimento não conferem.";
     $("erroLogin").classList.remove("oculto"); return;
   }
   S.token = j.token; S.col = j.colaborador; S.ev = j.evento;
+  // link de grupo (?e=black, João 10/11): o login devolve o evento da loja; daqui pra frente a página fala com ele
+  if (S.ev && S.ev.chave && S.ev.chave !== EVENTO){ EVENTO = S.ev.chave;
+    try { history.replaceState(null, "", location.pathname + "?e=" + encodeURIComponent(EVENTO)); } catch (e) {} }
   ls.set("prospecta_sessao", {token:S.token, col:S.col, ev:S.ev, evento:EVENTO, so_visitas:!!j.so_visitas});
   if (j.so_visitas){ await abrirSoVisitas(); return; }
   await abrirLista(); atenderCheckinDaUrl();
@@ -1198,6 +1201,8 @@ $("btnSairVis").onclick = () => { if (confirm("Sair do Prospecta neste aparelho?
   // devolve o único evento ativo ou, com ?checkin=, o evento dono daquele código
   const s0 = ls.get("prospecta_sessao");
   if (!EVENTO && s0 && s0.evento && s0.token) EVENTO = s0.evento;
+  // link de grupo (?e=black) com sessão salva num evento do grupo (black-royal-nov26): abre direto nele
+  if (EVENTO && s0 && s0.token && s0.evento && s0.evento.startsWith(EVENTO + "-")) EVENTO = s0.evento;
   const j = await api({acao:"evento", ...(EVENTO ? {} : {codigo: CHECKIN_URL.slice(0,6)})}).catch(()=>({ok:false, erro:"rede"}));
   if (j.ok){ EVENTO = j.evento.chave; $("eventoNome").textContent = j.evento.nome + (j.evento.ativo ? "" : " (encerrado)"); }
   // sem evento ativo o login segue aberto: quem tem a aba Visitas entra nela; o resto recebe o erro do login (João 27/10)
