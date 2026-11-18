@@ -1,171 +1,109 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Estoque Seminovos Diamante</title>
+<title>Ferramentas · Grupo Raion</title>
+<meta name="description" content="As ferramentas do Grupo Raion num lugar só.">
+<meta name="robots" content="noindex">
 <style>
-  :root{ --azul:#1f3a8a; --bg:#eef1f7; --card:#fff; --linha:#e2e8f0; --cinza:#64748b; }
-  *{ box-sizing:border-box; }
-  body{ margin:0; font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:var(--bg); color:#1f2937; }
-  header{ background:linear-gradient(135deg,#1f3a8a,#2f4fb0); color:#fff; padding:20px 18px; }
-  header h1{ margin:0; font-size:20px; letter-spacing:.3px; }
-  header p{ margin:4px 0 0; font-size:13px; opacity:.9; }
-  .wrap{ max-width:1180px; margin:0 auto; padding:16px 14px 40px; }
-  .busca{ width:100%; padding:12px 14px; border:1px solid var(--linha); border-radius:12px; font-size:15px; margin:14px 0 6px; }
-  .filtros{ display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 4px; }
-  .chip{ border:1px solid #cdd8ef; background:#fff; color:var(--azul); font-weight:700; font-size:13px; padding:9px 14px; border-radius:22px; cursor:pointer; transition:.15s; }
-  .chip:hover{ background:#eaf0ff; }
-  .chip.on{ background:var(--azul); color:#fff; border-color:var(--azul); }
-  .cont{ font-size:12.5px; color:var(--cinza); margin-bottom:12px; margin-top:8px; }
-  .grade{ display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px; }
-  .card{ background:var(--card); border:1px solid var(--linha); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; }
-  .card .fotowrap{ position:relative; }
-  .card .foto{ width:100%; aspect-ratio:4/3; object-fit:cover; background:#dbe2f0; display:block; }
-  .tag-blind{ position:absolute; top:8px; left:8px; background:#0f172a; color:#fff; font-size:10.5px; font-weight:800; letter-spacing:.5px; padding:4px 9px; border-radius:20px; box-shadow:0 2px 6px rgba(0,0,0,.28); }
-  .card .body{ padding:11px 13px 13px; display:flex; flex-direction:column; gap:6px; }
-  .card .modelo{ font-weight:700; font-size:15px; line-height:1.25; }
-  .card .versao{ font-size:11px; color:var(--cinza); line-height:1.2; }
-  .card .specs{ font-size:12.5px; color:var(--cinza); }
-  .card .preco{ font-weight:800; font-size:18px; color:var(--azul); }
-  .card .precoantes{ font-size:12.5px; color:var(--cinza); text-decoration:line-through; margin-bottom:-4px; }
-  .tag-queda{ position:absolute; bottom:8px; left:8px; display:inline-flex; align-items:center; gap:5px; background:linear-gradient(160deg,#f97316,#c2410c); color:#fff; font-size:11px; font-weight:800; letter-spacing:.3px; padding:5px 11px; border-radius:20px; box-shadow:0 2px 7px rgba(0,0,0,.3); }
-  .tag-fipe{ position:absolute; top:8px; left:8px; display:inline-flex; align-items:center; gap:5px; background:linear-gradient(160deg,#22c55e,#15803d); color:#fff; font-size:11px; font-weight:800; letter-spacing:.3px; padding:5px 11px; border-radius:20px; box-shadow:0 2px 7px rgba(0,0,0,.3); }
-  .card .rodape{ display:flex; align-items:center; gap:10px; margin-top:4px; }
-  .card .qr{ width:66px; height:66px; border:1px solid var(--linha); border-radius:8px; }
-  .card .btn{ flex:1; text-align:center; text-decoration:none; background:var(--azul); color:#fff; font-weight:700; font-size:13.5px; padding:10px; border-radius:10px; }
-  .card .qrbox{ text-align:center; cursor:pointer; }
-  .card .qrlab{ font-size:10.5px; color:var(--azul); text-align:center; font-weight:700; }
-  .vazio{ color:var(--cinza); padding:30px; text-align:center; }
-  .modal{ display:none; position:fixed; inset:0; background:rgba(15,23,42,.72); z-index:50; align-items:center; justify-content:center; padding:20px; }
-  .modal.on{ display:flex; }
-  .modal .box{ background:#fff; border-radius:18px; padding:22px 22px 18px; text-align:center; max-width:92vw; }
-  .modal .box img{ width:min(78vw,360px); height:auto; display:block; }
-  .modal .box .p{ font-weight:800; color:var(--azul); font-size:20px; letter-spacing:1px; margin-top:10px; }
-  .modal .box .h{ font-size:12.5px; color:var(--cinza); margin-top:2px; }
-  .modal .fechar{ margin-top:14px; background:var(--azul); color:#fff; border:0; border-radius:10px; padding:11px 22px; font-weight:800; font-size:14px; cursor:pointer; }
-  @media (max-width:520px){ .grade{ grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:10px; } .card .qr{ width:54px; height:54px; } }
+  :root{--ink:#14161a;--sub:#5b6170;--line:#e6e8ec;--card:#fff;--bg:#f5f6f8;--red:#e41323}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--bg);
+       color:var(--ink);font-size:17px;line-height:1.4;-webkit-font-smoothing:antialiased}
+  header{background:#0b0c0e;color:#fff;padding:34px 20px 30px;text-align:center}
+  header img{height:46px;display:block;margin:0 auto 14px;filter:brightness(0) invert(1)}
+  header h1{font-size:23px;font-weight:700;letter-spacing:.01em}
+  header p{color:#a7acb6;font-size:15px;margin-top:6px}
+  main{max-width:980px;margin:0 auto;padding:22px 16px 40px}
+  h2{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);
+     margin:26px 4px 10px}
+  .grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+  a.f{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;
+      padding:16px 18px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}
+  a.f:hover{border-color:var(--red);transform:translateY(-1px)}
+  a.f b{display:block;font-size:17px;font-weight:700}
+  a.f span{display:block;color:var(--sub);font-size:14.5px;margin-top:3px}
+  a.f i{display:block;font-style:normal;color:#9aa0ab;font-size:12.5px;margin-top:8px}
+  a.f.destaque{background:#0b0c0e;border-color:#0b0c0e;color:#fff}
+  a.f.destaque span{color:#c7cbd3} a.f.destaque i{color:#8b909a}
+  a.f.destaque:hover{border-color:var(--red)}
+  footer{text-align:center;color:#9aa0ab;font-size:13px;padding:10px 16px 34px}
+  footer a{color:#9aa0ab}
 </style>
 </head>
 <body>
 <header>
-  <h1>&#128663; Estoque Seminovos Diamante</h1>
-  <p>Busque o carro, escaneie o QR e poste no seu Story &middot; Status</p>
+  <img src="logo-grupo-raion.png" alt="Grupo Raion">
+  <h1>Ferramentas do Grupo Raion</h1>
+  <p>Tudo o que a equipe usa, num lugar só.</p>
 </header>
-<div class="wrap">
-  <input class="busca" id="busca" placeholder="&#128269; Buscar por marca ou modelo...">
-  <div class="filtros" id="filtros">
-    <button class="chip on" data-modo="todos" onclick="setModo('todos')">Ver todos</button>
-    <button class="chip" data-modo="aleatorios" onclick="setModo('aleatorios')">&#127922; 5 aleat&oacute;rios</button>
-    <button class="chip" data-modo="recentes" onclick="setModo('recentes')">&#127381; Rec&eacute;m-chegados</button>
-    <button class="chip" data-modo="baixou" id="chipBaixou" style="display:none" onclick="setModo('baixou')">&#128184; Baixou de pre&ccedil;o</button>
+<main>
+
+  <h2>No dia a dia da loja</h2>
+  <div class="grade">
+    <a class="f destaque" href="https://catalogo.raion.app.br/">
+      <b>Catálogo do Vendedor</b>
+      <span>Estoque de seminovos com a arte pronta para mandar ao cliente</span>
+      <i>catalogo.raion.app.br</i></a>
+    <a class="f" href="https://leads.raion.app.br/">
+      <b>Leads</b><span>Os leads de cada vendedor, com a conversa do cliente</span>
+      <i>leads.raion.app.br</i></a>
+    <a class="f" href="https://agenda.raion.app.br/">
+      <b>Agenda</b><span>Agenda Raion</span><i>agenda.raion.app.br</i></a>
+    <a class="f" href="consulta">
+      <b>Consulta de veículo</b><span>A ficha do carro pelo código que chega no WhatsApp</span>
+      <i>raion.app.br/consulta</i></a>
   </div>
-  <div class="cont" id="cont"></div>
-  <div class="grade" id="grade"></div>
-  <div class="vazio" id="vazio" style="display:none">Nenhum carro encontrado.</div>
-</div>
-<div class="modal" id="modal" onclick="fecharQR(event)">
-  <div class="box">
-    <img id="modalimg" src="" alt="QR ampliado">
-    <div class="p" id="modalplaca"></div>
-    <div class="h" id="modaltit"></div>
-    <button class="fechar" onclick="fecharModal()">Fechar</button>
+
+  <h2>Atendimento</h2>
+  <div class="grade">
+    <a class="f" href="https://zap.raion.app.br/">
+      <b>Zap</b><span>O WhatsApp do Syonet</span><i>zap.raion.app.br</i></a>
+    <a class="f" href="https://bdc.raion.app.br/">
+      <b>BDC Motos</b><span>Central de atendimento de motos</span><i>bdc.raion.app.br</i></a>
+    <a class="f" href="https://pesquisa.raion.app.br/">
+      <b>Pesquisa</b><span>Pesquisa de satisfação sem depender do Syonet</span>
+      <i>pesquisa.raion.app.br</i></a>
+    <a class="f" href="https://ipsos.raion.app.br/">
+      <b>Ipsos</b><span>Clientes que não responderam à pesquisa</span><i>ipsos.raion.app.br</i></a>
+    <a class="f" href="https://comunicados.raion.app.br/">
+      <b>Comunicados</b><span>Avisos para a equipe</span><i>comunicados.raion.app.br</i></a>
   </div>
-</div>
-<script>
-let CARROS = [];
-function abrirQR(src, titulo){
-  document.getElementById('modalimg').src = src;
-  document.getElementById('modalplaca').textContent = titulo;
-  document.getElementById('modaltit').textContent = 'Escaneie para compartilhar';
-  document.getElementById('modal').classList.add('on');
-}
-function fecharModal(){ document.getElementById('modal').classList.remove('on'); }
-function fecharQR(e){ if(e.target.id === 'modal') fecharModal(); }
-const grade = document.getElementById('grade');
-const cont = document.getElementById('cont');
-const vazio = document.getElementById('vazio');
 
-function card(c){
-  return `<div class="card">
-    <div class="fotowrap">
-      <img class="foto" src="${c.capa}" loading="lazy" alt="${c.titulo}">
-      ${c.blindado ? '<span class="tag-blind">&#128737; BLINDADO</span>' : ''}
-      ${c.fipe_abaixo ? `<span class="tag-fipe">&#8595; ${c.fipe_abaixo}</span>` : ''}
-      ${c.queda_fmt ? `<span class="tag-queda">&#8595; ${c.queda_fmt}</span>` : ''}
-    </div>
-    <div class="body">
-      <div class="modelo">${c.titulo}</div>
-      ${c.versao ? `<div class="versao">${c.versao}</div>` : ''}
-      <div class="specs">${c.ano} &middot; ${c.km_fmt}</div>
-      ${c.preco_antes_fmt ? `<div class="precoantes">${c.preco_antes_fmt}</div>` : ''}
-      <div class="preco">${c.preco_fmt}</div>
-      <div class="rodape">
-        <div class="qrbox" onclick="abrirQR('${c.qr}','${c.titulo}')">
-          <img class="qr" src="${c.qr}" alt="QR">
-          <div class="qrlab">&#128269; ampliar</div>
-        </div>
-        <a class="btn" href="share.html?id=${c.id}">Compartilhar &rarr;</a>
-      </div>
-    </div>
-  </div>`;
-}
+  <h2>Campanhas</h2>
+  <div class="grade">
+    <a class="f" href="prospecta">
+      <b>Prospecta</b><span>Convidar clientes para o evento da loja pelo WhatsApp</span><i>raion.app.br/prospecta</i></a>
+    <a class="f" href="recupera">
+      <b>Recupera</b><span>Revisões de oficina que dá para trazer de volta</span><i>raion.app.br/recupera</i></a>
+    <a class="f" href="https://planner.raion.app.br/">
+      <b>Planner</b><span>Postagens de DFM e BAIC para aprovar</span><i>planner.raion.app.br</i></a>
+  </div>
 
-let MODO = 'todos';       // todos | aleatorios | recentes | baixou
-let EMBARALHADO = [];     // ordem aleatória fixa da sessão (modo "todos")
+  <h2>Gestão</h2>
+  <div class="grade">
+    <a class="f" href="https://portal.raion.app.br/">
+      <b>Relatórios</b><span>O portal de relatórios do grupo</span><i>portal.raion.app.br</i></a>
+    <a class="f" href="https://fluxo.raion.app.br/">
+      <b>Fluxo ao vivo</b><span>Movimento das lojas em tempo real nos eventos</span>
+      <i>fluxo.raion.app.br</i></a>
+    <a class="f" href="https://bancada.raion.app.br/">
+      <b>Bancada da Ride</b><span>Testes do assistente de oficina</span><i>bancada.raion.app.br</i></a>
+  </div>
 
-function embaralhar(arr){  // Fisher-Yates, devolve cópia
-  const a = arr.slice();
-  for(let i=a.length-1; i>0; i--){ const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
-  return a;
-}
+  <h2>Para o cliente</h2>
+  <div class="grade">
+    <a class="f" href="https://ride.raion.app.br/">
+      <b>Raion Ride</b><span>Agendamento de revisão de moto</span><i>ride.raion.app.br</i></a>
+    <a class="f" href="https://mitsubishi.raion.app.br/">
+      <b>Mitsubishi Barra e Recreio</b><span>Página das lojas Raion Mitsubishi</span>
+      <i>mitsubishi.raion.app.br</i></a>
+    <a class="f" href="https://consorcio.raion.app.br/">
+      <b>Consórcio de moto</b><span>Consórcio de moto do Grupo Raion</span><i>consorcio.raion.app.br</i></a>
+  </div>
 
-function baseLista(){
-  if(MODO === 'aleatorios') return embaralhar(CARROS).slice(0,5);
-  if(MODO === 'recentes')   return CARROS.slice().sort((a,b)=> (b.entrada||'').localeCompare(a.entrada||''));
-  if(MODO === 'baixou')     return CARROS.filter(c=>c.queda_fmt).sort((a,b)=> (b.baixou_em||'').localeCompare(a.baixou_em||''));
-  return EMBARALHADO;       // todos
-}
-
-function render(lista, rotuloHtml){
-  grade.innerHTML = lista.map(card).join('');
-  vazio.style.display = lista.length ? 'none' : 'block';
-  cont.innerHTML = rotuloHtml || `${lista.length} de ${CARROS.length} carros`;
-}
-
-function aplicar(){
-  const t = document.getElementById('busca').value.trim().toLowerCase();
-  if(t){
-    const r = CARROS.filter(c =>
-      c.titulo.toLowerCase().includes(t) ||
-      c.marca.toLowerCase().includes(t) ||
-      (c.versao||'').toLowerCase().includes(t));
-    render(r, `${r.length} de ${CARROS.length} carros`);
-    return;
-  }
-  const lista = baseLista();
-  const rot = MODO === 'aleatorios' ? `${lista.length} aleat&oacute;rios &middot; toque de novo pra trocar`
-            : MODO === 'recentes'   ? `${lista.length} carros &middot; rec&eacute;m-chegados primeiro`
-            : MODO === 'baixou'     ? `${lista.length} carros com pre&ccedil;o menor &middot; mais recentes primeiro`
-            : `${lista.length} carros`;
-  render(lista, rot);
-}
-
-function setModo(m){
-  MODO = m;
-  document.getElementById('busca').value = '';
-  document.querySelectorAll('#filtros .chip').forEach(b =>
-    b.classList.toggle('on', b.dataset.modo === m));
-  aplicar();
-}
-
-document.getElementById('busca').addEventListener('input', aplicar);
-fetch('estoque.json?v='+Date.now()).then(r=>r.json()).then(d=>{
-  CARROS = d.carros;
-  if(CARROS.some(c=>c.queda_fmt)) document.getElementById('chipBaixou').style.display = '';
-  EMBARALHADO = embaralhar(CARROS);   // padrão ao abrir = embaralhado
-  aplicar();
-});
-</script>
+</main>
+<footer>Grupo Raion · <a href="privacidade">Política de privacidade</a></footer>
 </body>
 </html>
