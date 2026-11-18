@@ -846,7 +846,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
       <value>39369</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>93145.00 BRL</price>
+    <price>93890.00 BRL</price>
     <exterior_color>Prata</exterior_color>
     <fuel_type>FLEX</fuel_type>
     <transmission>AUTOMATIC</transmission>
@@ -855,7 +855,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Nissan Keiko - Duque de Caxias</dealer_name>
     <image>
-      <url>https://raion.app.br/faixas/2896554.jpg?v=4f2fe0a3</url>
+      <url>https://raion.app.br/faixas/2896554.jpg?v=fe762e83</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6595/vehicles/2896554/photos/QVLHcCh1QtMviLT0lwNFidCKBbuGFbNC.jpg</url>
@@ -1074,100 +1074,6 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     </image>
     <image>
       <url>https://s3.agsistema.net/6596/vehicles/2782049/photos/WC1x77puJTUrovT1GXJZP6gWyPIoSHqj.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">ESTRADA DO MONTEIRO, 540</component>
-      <component name="city">Rio de Janeiro</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">23045-830</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>ESTRADA DO MONTEIRO, 540</street_address>
-    <city>Rio de Janeiro</city>
-    <region>RJ</region>
-    <postal_code>23045-830</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
-    <vehicle_id>2874413</vehicle_id>
-    <title>Nissan VERSA 1.6 16V FLEXSTART SL 4P XTRONIC</title>
-    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos possuem Vistoria Cautelar. 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20VERSA%201.6%2016V%20FLEXSTART%20SL%204P%20XTRONIC%202017%20%28c%C3%B3d.%202874413%29.%20%5BCATALOGO-META-KEIKO-CAMPO-GRANDE%5D</url>
-    <make>Nissan</make>
-    <model>VERSA</model>
-    <year>2017</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>75245</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>59890.00 BRL</price>
-    <exterior_color>Cinza</exterior_color>
-    <fuel_type>FLEX</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SEDAN</body_style>
-    <trim>1.6 16V FLEXSTART SL 4P XTRONIC</trim>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Nissan Keiko - Campo Grande</dealer_name>
-    <image>
-      <url>https://raion.app.br/faixas/2874413.jpg?v=f3e26919</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/A8IiqXkj2x7WD6jvsdwulqVV1U7CZUqT.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/sdIJzcXkVh0Qc9lUehneS8NuakEyPPLW.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/T1iBSDSzTcVVePxRcLBJr9jTJNxsMVpG.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/YX7Nsw33y1g3ecHPiAqxK4w5WExjEuUc.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/rfLCnrqzVCSqcd9MpWSR5ec7tqm1nAJ2.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/DtHKpO8MyU494C6tmewuQy7pdRm6lrX6.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/UXmghn8dX5neLTpqH3xTnHQ31yYgcPdZ.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/bq64ORLj9vLyF2Nrv2KV8AqRW9EFwtTn.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/DGcCj4vhxuN8LXETMEGmybsLvmmngISm.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/6LGbIYJ64mecUkHhbYmRntfIwq7hSt6Y.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/PbPQvC1yqO7RPbuAQBPtb9a6AAzNO2AV.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/z359WtOQFFZTixbAZKE4rM7qTTrsFCjT.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/ghnXyWcrhIsgvheVAhyO9ZI4R3SiV1qv.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/EyKcTjNAhnrS09LmFmpl5o6dV2A3XPAz.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/a2b1wUaQaFAR24M1XRRYif3XcMU0KiNj.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/JWpEOsL1aXTC3OGC5B6MyON9cgiioXzA.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/xrZtRHooQLE7kCIOU4AYv9Q4h3GOk6M7.jpg</url>
     </image>
     <address format="simple">
       <component name="addr1">ESTRADA DO MONTEIRO, 540</component>
@@ -1753,103 +1659,6 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
-    <vehicle_id>2759015</vehicle_id>
-    <title>Volkswagen TAOS 1.4 250 TSI TOTAL FLEX COMFORTLINE AUTOMÁTICO</title>
-    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos possuem Vistoria Cautelar. 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Volkswagen%20TAOS%201.4%20250%20TSI%20TOTAL%20FLEX%20COMFORTLINE%20AUTOM%C3%81TICO%202023%20%28c%C3%B3d.%202759015%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
-    <make>Volkswagen</make>
-    <model>TAOS</model>
-    <year>2023</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>53600</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>114890.00 BRL</price>
-    <exterior_color>Branco</exterior_color>
-    <fuel_type>FLEX</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SUV</body_style>
-    <trim>1.4 250 TSI TOTAL FLEX COMFORTLINE AUTOMÁTICO</trim>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
-    <image>
-      <url>https://raion.app.br/faixas/2759015.jpg?v=3d093134</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/PdXy5WupsSKcFxhbTKUSbYZE7AU3kksO.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/n90ZqvcgBpNkFXxbTGFEKvU0pRYRQPK8.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/erS0vQfvRum3UgXLMuzPTB6lmfU8f7Eg.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/1bFfgAmEvqXXwncYc3jim3rA1dkf1cMh.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/79S8PZCtt0ZbPs5VXk7AI2temPGTFPo8.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/XRaX45OGonUL7WbgHk5WxMazCiWjvdND.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/DBJK4fneh5Arws6mB8zRGpq9yFsr3gAi.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/k7taYUVNdn9KSS4QUFWs5OclAaQ4BbhA.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/Y8T1jpN4kJX4ZbJ8ByzDim2BUnMDoY02.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/KjJCujYhHyN1Fzg0I9tjHjo2GVL4LQW4.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/a2GoYvNqCAMJu8WtHJQ8JLfjmbe92CW6.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/m2H1kfd3jlponzkLn3CSsW5a1oHf8p7v.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/s6rjwPQeYMBn7bmgEBV4g1njKM4oEWaf.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/xGwKRN4GUyZlbTR2g6xt0vysMYUK5aR5.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/O6AphAC04ogE74c57fN4jHGu3TLfL5R1.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/yqQPwAnOSsYYgMQLGeZA8ukF26bK9tJz.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/3zOIihx6LSLMdepXpBvTy6mGbAOkoACE.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/xodYhDIF6BOPn7jI4s2HvswpIrJYkghx.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">FRANCISCO DA CRUZ NUNES, 4830</component>
-      <component name="city">Niterói</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">24350-310</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>FRANCISCO DA CRUZ NUNES, 4830</street_address>
-    <city>Niterói</city>
-    <region>RJ</region>
-    <postal_code>24350-310</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
     <vehicle_id>2794924</vehicle_id>
     <title>Mitsubishi ECLIPSE CROSS 1.5 MIVEC TURBO GASOLINA HPE-S S-AWC CVT</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -1935,6 +1744,109 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     </image>
     <image>
       <url>https://s3.agsistema.net/6625/vehicles/2794924/photos/WQQwidUjaCPa5Y2qD9TyhixidPuE3Q5n.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">FRANCISCO DA CRUZ NUNES, 4830</component>
+      <component name="city">Niterói</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">24350-310</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>FRANCISCO DA CRUZ NUNES, 4830</street_address>
+    <city>Niterói</city>
+    <region>RJ</region>
+    <postal_code>24350-310</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2805787</vehicle_id>
+    <title>Ford RANGER 2.2 BLACK 4X2 CD 16V DIESEL 4P AUTOMÁTICO</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Ford%20RANGER%202.2%20BLACK%204X2%20CD%2016V%20DIESEL%204P%20AUTOM%C3%81TICO%202023%20%28c%C3%B3d.%202805787%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <make>Ford</make>
+    <model>RANGER</model>
+    <year>2023</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>84548</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>139890.00 BRL</price>
+    <exterior_color>Preto</exterior_color>
+    <fuel_type>DIESEL</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>TRUCK</body_style>
+    <trim>2.2 BLACK 4X2 CD 16V DIESEL 4P AUTOMÁTICO</trim>
+    <custom_label_0>DISPONIVEL</custom_label_0>
+    <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
+    <image>
+      <url>https://raion.app.br/faixas/2805787.jpg?v=fd1794e3</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2805787/photos/AiPkHt5ftAyPYlRSLEZDbh31xvhbgnpc.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2805787/photos/ALLXcM9USlSlPg4dFLAlJEljXvV3Vaie.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2805787/photos/tVJcD0DBxiNcyOMcUR274jGXlid2scpl.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2805787/photos/Zp9S6U16kyhgMNGjm2FJCcEJPNfSQ8uX.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2805787/photos/DybKD9mSm9ZszDknvvgTPM9Vsd6mPk9r.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2805787/photos/Npkrj1cK7mScO6JIbAuqs8IStPDEcWaE.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2805787/photos/PkQwjVQx6FyikylihE8a2zQ15Wqy7QS7.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2805787/photos/bKABgfcCxe8Ci2CcDZLdj48fjRLVEjJu.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2805787/photos/0BC2bLlmfPRmQ92hFjdHP6uAeMdMjtZv.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2805787/photos/DadPSqz2n34VsSfEOVg2HdC35Snedgfg.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2805787/photos/9mGvYuZWT49FIr7GFDUnQhRcWNbXALCS.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2805787/photos/qyy5MZsG1sLAflqIxlaAh6R0kbw8zM0l.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2805787/photos/FpJ5WO76QAEMhNyyw25AEYsppMZtW8iD.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2805787/photos/WPrgQonJ4cL17SzzvJrUBoSrelttW3Xy.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2805787/photos/bUMsAFARzwVuOBzFsBwJFk37ZiXJDqow.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2805787/photos/mCfcOyCTuyLBOL7arRxYUsXSm8MZ6ayA.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2805787/photos/AbLgBJkiFtDzXHFRkyUvTqC3pwHetts7.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2805787/photos/sxouKaBznaA8k471TTXwYkaDUp0BWA4m.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2805787/photos/JnywPS8QTUSsCuAR9SPuw9RwlmvbYYtR.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2805787/photos/Meqs2XN2WiYq9ygr9mXeFDzfI2zpMP87.jpg</url>
     </image>
     <address format="simple">
       <component name="addr1">FRANCISCO DA CRUZ NUNES, 4830</component>
@@ -2344,8 +2256,8 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
-    <vehicle_id>2874863</vehicle_id>
-    <title>Mitsubishi ECLIPSE CROSS 1.5 MIVEC TURBO GASOLINA HPE-S CVT</title>
+    <vehicle_id>2866430</vehicle_id>
+    <title>Nissan FRONTIER 2.3 16V TURBO DIESEL XE CD 4X4 AUTOMÁTICO</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
 Contamos com uma equipe especializada para atendimento presencial e online. 
  
@@ -2353,79 +2265,76 @@ Todos os nossos veículos possuem Vistoria Cautelar.
  
 Venha escolher seu novo veículo! 
 Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20ECLIPSE%20CROSS%201.5%20MIVEC%20TURBO%20GASOLINA%20HPE-S%20CVT%202022%20%28c%C3%B3d.%202874863%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
-    <make>Mitsubishi</make>
-    <model>ECLIPSE CROSS</model>
-    <year>2022</year>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20FRONTIER%202.3%2016V%20TURBO%20DIESEL%20XE%20CD%204X4%20AUTOM%C3%81TICO%202021%20%28c%C3%B3d.%202866430%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <make>Nissan</make>
+    <model>FRONTIER</model>
+    <year>2021</year>
     <mileage>
       <unit>KM</unit>
-      <value>40615</value>
+      <value>63672</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
-    <price>115890.00 BRL</price>
-    <exterior_color>Cinza</exterior_color>
-    <fuel_type>GASOLINE</fuel_type>
+    <price>143890.00 BRL</price>
+    <exterior_color>Prata</exterior_color>
+    <fuel_type>DIESEL</fuel_type>
     <transmission>AUTOMATIC</transmission>
-    <body_style>SUV</body_style>
-    <trim>1.5 MIVEC TURBO GASOLINA HPE-S CVT</trim>
+    <body_style>TRUCK</body_style>
+    <trim>2.3 16V TURBO DIESEL XE CD 4X4 AUTOMÁTICO</trim>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
-      <url>https://raion.app.br/faixas/2874863.jpg?v=c0a1b6e1</url>
+      <url>https://raion.app.br/faixas/2866430.jpg?v=b1135071</url>
     </image>
     <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/RIaLJBi5lRQxwn3LLitYyIm7eSPasxjk.jpg</url>
+      <url>https://s3.agsistema.net/6625/vehicles/2866430/photos/onBoDPC8R9xxjW3Hx27PuKrjdrrY0IWJ.jpg</url>
     </image>
     <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/5tDjiVmvv3PvAY1PXNkXG9RK6beoJeMo.jpg</url>
+      <url>https://s3.agsistema.net/6625/vehicles/2866430/photos/CQWfmzBNKdlb8GKOyzdMR62hJP9bVUmH.jpg</url>
     </image>
     <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/HupBpPx4N9xiyOb1xgEksM94aQ153SXg.jpg</url>
+      <url>https://s3.agsistema.net/6625/vehicles/2866430/photos/J9aTxMhuJDo3TraP1yl8ak1PeTt6jHXN.jpg</url>
     </image>
     <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/0N9sSqP6llZqgvEoTLgLXXFCDGzRVDWI.jpg</url>
+      <url>https://s3.agsistema.net/6625/vehicles/2866430/photos/eHRaTpnHKl9dJrvyIBkqBGAit0i6S4ds.jpg</url>
     </image>
     <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/BQ0Q2BQSRMCzN4XiiHPaVygFXoxLbJY4.jpg</url>
+      <url>https://s3.agsistema.net/6625/vehicles/2866430/photos/9JMZzy6hjGr3coSH19ZJA7onTmd13Ptu.jpg</url>
     </image>
     <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/TrKv9zPjXM1RvlTUnVleCLQt3igIBRA4.jpg</url>
+      <url>https://s3.agsistema.net/6625/vehicles/2866430/photos/ALYLaFGYtoiCufJt62lgBYGpLYa6zDGl.jpg</url>
     </image>
     <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/QSGROhXmhh6v5ml88w9dOibVaqnB4nCe.jpg</url>
+      <url>https://s3.agsistema.net/6625/vehicles/2866430/photos/ibCsStj9HdgyY282oUSPz02lVuprDDRo.jpg</url>
     </image>
     <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/vIOdsLDGi9AWc8NGdC4yQFo9IpbNMObD.jpg</url>
+      <url>https://s3.agsistema.net/6625/vehicles/2866430/photos/fqvPkLgMhTfw4nrO32NFysiMmDHpEneO.jpg</url>
     </image>
     <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/8GPd2fINABeMvrVVtX0NBcN1iO1HtdFJ.jpg</url>
+      <url>https://s3.agsistema.net/6625/vehicles/2866430/photos/LvpY2JIZ6OQWJdS4bFdc8IsVq0KtX3oS.jpg</url>
     </image>
     <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/pouZkldwBcsNs7gTaM3OFRwbSIdlrODk.jpg</url>
+      <url>https://s3.agsistema.net/6625/vehicles/2866430/photos/U8E4gfsoSP1c65eGe7WopkZYWjgMWi59.jpg</url>
     </image>
     <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/8Bqlfo7fmqd6EOoMar62y2Vg0CF2cSj3.jpg</url>
+      <url>https://s3.agsistema.net/6625/vehicles/2866430/photos/im3ZZYfcGLzHAyCQ5XYmxS3JCdehF4xR.jpg</url>
     </image>
     <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/MH3TVDYQnNO2WEBEs27Qbz4WgXF3I2on.jpg</url>
+      <url>https://s3.agsistema.net/6625/vehicles/2866430/photos/YlT1XG01WEHLiZcd3oZNuMiP7Xixzh7X.jpg</url>
     </image>
     <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/WE8kZ1zOIURIv38Hze01112p4s7zjFKT.jpg</url>
+      <url>https://s3.agsistema.net/6625/vehicles/2866430/photos/TKfHp0FDNJ7AVEHuCklp22W1r2PVgVqm.jpg</url>
     </image>
     <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/6rDOP3xiEBaEMaZoqMOtKNrgYP8vOmOz.jpg</url>
+      <url>https://s3.agsistema.net/6625/vehicles/2866430/photos/4r1wEGiDDnhS4NLx9u90Ld4i3jBYW3C4.jpg</url>
     </image>
     <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/EnGPCKEW0fk9uSimFXlxQ8TY1qvE5nPL.jpg</url>
+      <url>https://s3.agsistema.net/6625/vehicles/2866430/photos/wqbpVszKGW0vDmOQwFdYILcDy1bbl5Ic.jpg</url>
     </image>
     <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/jPh9M4QT8DD3a9HagMpMIlQolYCbZnf9.jpg</url>
+      <url>https://s3.agsistema.net/6625/vehicles/2866430/photos/vUwshh1JcW1HIAWhjOTIl1FvkyE6jnUA.jpg</url>
     </image>
     <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/j3BqV8hvGKAF67l3AR3mfpFtCZWgwWS7.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/arGvHo6znmcbe1biHZL7pUt4n9M8mhd7.jpg</url>
+      <url>https://s3.agsistema.net/6625/vehicles/2866430/photos/6ENZFh7wCfooF7o5pbhWih6Me3a75feY.jpg</url>
     </image>
     <address format="simple">
       <component name="addr1">FRANCISCO DA CRUZ NUNES, 4830</component>
@@ -2456,7 +2365,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <year>2026</year>
     <mileage>
       <unit>KM</unit>
-      <value>35000</value>
+      <value>1</value>
     </mileage>
     <state_of_vehicle>USED</state_of_vehicle>
     <price>130890.00 BRL</price>
@@ -2468,7 +2377,7 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <custom_label_0>DISPONIVEL</custom_label_0>
     <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
     <image>
-      <url>https://raion.app.br/faixas/2876830.jpg?v=1c15e144</url>
+      <url>https://raion.app.br/faixas/2876830.jpg?v=e05b2cdd</url>
     </image>
     <image>
       <url>https://s3.agsistema.net/6625/vehicles/2876830/photos/u7Li0i1Q1AAjczjFPUsAYCwnLatLx2Qx.jpg</url>
@@ -2523,109 +2432,6 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     </image>
     <image>
       <url>https://s3.agsistema.net/6625/vehicles/2876830/photos/1HhSxIGgkmMICE20aqrYTPdEdYQMyVGW.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">FRANCISCO DA CRUZ NUNES, 4830</component>
-      <component name="city">Niterói</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">24350-310</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>FRANCISCO DA CRUZ NUNES, 4830</street_address>
-    <city>Niterói</city>
-    <region>RJ</region>
-    <postal_code>24350-310</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
-    <vehicle_id>2896109</vehicle_id>
-    <title>Ford RANGER 2.2 BLACK 4X2 CD 16V DIESEL 4P AUTOMÁTICO</title>
-    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos possuem Vistoria Cautelar. 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Ford%20RANGER%202.2%20BLACK%204X2%20CD%2016V%20DIESEL%204P%20AUTOM%C3%81TICO%202023%20%28c%C3%B3d.%202896109%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
-    <make>Ford</make>
-    <model>RANGER</model>
-    <year>2023</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>84548</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>139890.00 BRL</price>
-    <exterior_color>Preto</exterior_color>
-    <fuel_type>DIESEL</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>TRUCK</body_style>
-    <trim>2.2 BLACK 4X2 CD 16V DIESEL 4P AUTOMÁTICO</trim>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
-    <image>
-      <url>https://raion.app.br/faixas/2896109.jpg?v=4cbcd4f8</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/r3ASK1bsLzYDUBgPxtRmMRi2PJc0vGR8.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/65dovqYwSRNjAwyFzI8oLtUOTabNKZL8.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/nEPGgUxc5mYc7GaTAkXATMbMHExg94aH.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/NzH8nAzfOMpWkdnV2Ga9cIVE51sfXx4i.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/X72tWbfCsr469Cgd86kuXywcxYt9WNSK.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/j8q8WmxcbresWTae1qA5XPx6payYH2OF.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/o5xjWnvc64C4lgBSdsL3A3oZxItL6Kho.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/mccUDCIfsrEw0rmP8OyefnuKxjvc4uPS.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/RoVHHVM1JlKuXS1BPRTNEvNL9c6nL8ht.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/gV4bDOJxE103xapdtfcIkMrC7FBUHgQm.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/okT1nHVXMAHfJFtcMxyXhrv9zzQKwot7.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/lKuzHEE85BqHUu6w3lDfKfioo32a4oc9.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/oLJi7tfzAc7mF8G6lsuuKw3HIAl2qAiT.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/iWwfGNLs96AQwbs3qhDbVmIWRK9WP9eE.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/qRadM7znRRYgSFL2sy1y0mWFpy9BW4Ec.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/pEthkxUG2vA18bZOorhXAfbFYq0F9bRF.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/TpTgeVS3aoE0sLKrl2WJtFGJy3aPEabC.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/T4YXEftKgpTnI2i8XTeRorILeVfyyqfQ.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/zi8toD0YoEbkdLFHF1QMJUws7XfWiY4k.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/PdKZhyfNMKrYL6u012GBmYgVW4x7MosP.jpg</url>
     </image>
     <address format="simple">
       <component name="addr1">FRANCISCO DA CRUZ NUNES, 4830</component>
@@ -3506,91 +3312,6 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     </image>
     <image>
       <url>https://s3.agsistema.net/6699/vehicles/2848022/photos/CrU58wNa436jJOsRqOhwxAes7p7ZGs7o.jpg</url>
-    </image>
-    <address format="simple">
-      <component name="addr1">Av. das Américas, 17400</component>
-      <component name="city">Rio de Janeiro</component>
-      <component name="region">RJ</component>
-      <component name="postal_code">22790-704</component>
-      <component name="country">Brazil</component>
-    </address>
-    <street_address>Av. das Américas, 17400</street_address>
-    <city>Rio de Janeiro</city>
-    <region>RJ</region>
-    <postal_code>22790-704</postal_code>
-    <country>Brazil</country>
-  </listing>
-  <listing>
-    <vehicle_id>2861622</vehicle_id>
-    <title>Mitsubishi ECLIPSE CROSS 1.5 MIVEC TURBO GASOLINA HPE CVT</title>
-    <description>Somos um grupo de 14 concessionárias , Raion , que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
-Contamos com uma equipe especializada para atendimento presencial e online. 
- 
-Todos os nossos veículos de altíssima procedência , possuem Vistoria Cautelar , revisados e com garantia. 
- 
-Venha escolher seu novo veículo! 
-Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
-    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20ECLIPSE%20CROSS%201.5%20MIVEC%20TURBO%20GASOLINA%20HPE%20CVT%202024%20%28c%C3%B3d.%202861622%29.%20%5BCATALOGO-META-RAION-RECREIO%5D</url>
-    <make>Mitsubishi</make>
-    <model>ECLIPSE CROSS</model>
-    <year>2024</year>
-    <mileage>
-      <unit>KM</unit>
-      <value>60181</value>
-    </mileage>
-    <state_of_vehicle>USED</state_of_vehicle>
-    <price>124890.00 BRL</price>
-    <exterior_color>Cinza</exterior_color>
-    <fuel_type>GASOLINE</fuel_type>
-    <transmission>AUTOMATIC</transmission>
-    <body_style>SUV</body_style>
-    <trim>1.5 MIVEC TURBO GASOLINA HPE CVT</trim>
-    <custom_label_0>DISPONIVEL</custom_label_0>
-    <dealer_name>Taika Mitsubishi - Recreio</dealer_name>
-    <image>
-      <url>https://raion.app.br/faixas/2861622.jpg?v=bdd36185</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/ERCOtl5SEYyGLwB6FGCj6UkvfIuLApwB.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/1Xfbvf6IzP0kHQvRMyMj8Dpex2XkRefO.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/M7Ja1mgqn6Au6Mu5ky6ek2QCVtCnKXs4.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/z1v1vlMuU6rIb9cKOGLhUov6e3tVVF72.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/9dhCii1vepyXoeJelbet0TRXkW2TvZ7s.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/qtbAocUnB03g5wfzbhpunXjXtJnXO608.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/Sj3qlMrX1M6TDBegPSjjagiNgqAfb5mq.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/QK1DWmrHYiBWWhAwtfHXI1j4JV3lDmhQ.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/dVDhTkgeSTZfUqCEAqjGpILxhyRatM0O.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/PZA185Gt4N0hCniLW8W7LZJffdDqUWEH.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/wvx72Ym6jqWMpyuFdgoff0hIXsWUZdMI.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/IwQOjuyK9X8gb3DxizYPrH54Vmm05lGr.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/sn7jmf1aS27E6F1nw1pz9XUr5M3j2K6k.jpg</url>
-    </image>
-    <image>
-      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/6fmDaBw4JnVYXpbKfnwtD40fy2IJj1TQ.jpg</url>
     </image>
     <address format="simple">
       <component name="addr1">Av. das Américas, 17400</component>
@@ -4548,6 +4269,103 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <city>Barra Mansa</city>
     <region>RJ</region>
     <postal_code>27332-360</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2759015</vehicle_id>
+    <title>Volkswagen TAOS 1.4 250 TSI TOTAL FLEX COMFORTLINE AUTOMÁTICO</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Volkswagen%20TAOS%201.4%20250%20TSI%20TOTAL%20FLEX%20COMFORTLINE%20AUTOM%C3%81TICO%202023%20%28c%C3%B3d.%202759015%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <make>Volkswagen</make>
+    <model>TAOS</model>
+    <year>2023</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>53600</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>114890.00 BRL</price>
+    <exterior_color>Branco</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>1.4 250 TSI TOTAL FLEX COMFORTLINE AUTOMÁTICO</trim>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
+    <image>
+      <url>https://raion.app.br/faixas/2759015.jpg?v=3d093134</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/PdXy5WupsSKcFxhbTKUSbYZE7AU3kksO.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/n90ZqvcgBpNkFXxbTGFEKvU0pRYRQPK8.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/erS0vQfvRum3UgXLMuzPTB6lmfU8f7Eg.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/1bFfgAmEvqXXwncYc3jim3rA1dkf1cMh.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/79S8PZCtt0ZbPs5VXk7AI2temPGTFPo8.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/XRaX45OGonUL7WbgHk5WxMazCiWjvdND.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/DBJK4fneh5Arws6mB8zRGpq9yFsr3gAi.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/k7taYUVNdn9KSS4QUFWs5OclAaQ4BbhA.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/Y8T1jpN4kJX4ZbJ8ByzDim2BUnMDoY02.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/KjJCujYhHyN1Fzg0I9tjHjo2GVL4LQW4.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/a2GoYvNqCAMJu8WtHJQ8JLfjmbe92CW6.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/m2H1kfd3jlponzkLn3CSsW5a1oHf8p7v.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/s6rjwPQeYMBn7bmgEBV4g1njKM4oEWaf.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/xGwKRN4GUyZlbTR2g6xt0vysMYUK5aR5.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/O6AphAC04ogE74c57fN4jHGu3TLfL5R1.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/yqQPwAnOSsYYgMQLGeZA8ukF26bK9tJz.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/3zOIihx6LSLMdepXpBvTy6mGbAOkoACE.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2759015/photos/xodYhDIF6BOPn7jI4s2HvswpIrJYkghx.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">FRANCISCO DA CRUZ NUNES, 4830</component>
+      <component name="city">Niterói</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">24350-310</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>FRANCISCO DA CRUZ NUNES, 4830</street_address>
+    <city>Niterói</city>
+    <region>RJ</region>
+    <postal_code>24350-310</postal_code>
     <country>Brazil</country>
   </listing>
   <listing>
@@ -10817,6 +10635,185 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <country>Brazil</country>
   </listing>
   <listing>
+    <vehicle_id>2874413</vehicle_id>
+    <title>Nissan VERSA 1.6 16V FLEXSTART SL 4P XTRONIC</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552124218290?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Nissan%20VERSA%201.6%2016V%20FLEXSTART%20SL%204P%20XTRONIC%202017%20%28c%C3%B3d.%202874413%29.%20%5BCATALOGO-META-KEIKO-CAMPO-GRANDE%5D</url>
+    <make>Nissan</make>
+    <model>VERSA</model>
+    <year>2017</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>75245</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>59890.00 BRL</price>
+    <exterior_color>Cinza</exterior_color>
+    <fuel_type>FLEX</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SEDAN</body_style>
+    <trim>1.6 16V FLEXSTART SL 4P XTRONIC</trim>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Nissan Keiko - Campo Grande</dealer_name>
+    <image>
+      <url>https://raion.app.br/faixas/2874413.jpg?v=f3e26919</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/A8IiqXkj2x7WD6jvsdwulqVV1U7CZUqT.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/sdIJzcXkVh0Qc9lUehneS8NuakEyPPLW.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/T1iBSDSzTcVVePxRcLBJr9jTJNxsMVpG.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/YX7Nsw33y1g3ecHPiAqxK4w5WExjEuUc.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/rfLCnrqzVCSqcd9MpWSR5ec7tqm1nAJ2.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/DtHKpO8MyU494C6tmewuQy7pdRm6lrX6.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/UXmghn8dX5neLTpqH3xTnHQ31yYgcPdZ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/bq64ORLj9vLyF2Nrv2KV8AqRW9EFwtTn.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/DGcCj4vhxuN8LXETMEGmybsLvmmngISm.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/6LGbIYJ64mecUkHhbYmRntfIwq7hSt6Y.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/PbPQvC1yqO7RPbuAQBPtb9a6AAzNO2AV.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/z359WtOQFFZTixbAZKE4rM7qTTrsFCjT.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/ghnXyWcrhIsgvheVAhyO9ZI4R3SiV1qv.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/EyKcTjNAhnrS09LmFmpl5o6dV2A3XPAz.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/a2b1wUaQaFAR24M1XRRYif3XcMU0KiNj.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/JWpEOsL1aXTC3OGC5B6MyON9cgiioXzA.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6596/vehicles/2874413/photos/xrZtRHooQLE7kCIOU4AYv9Q4h3GOk6M7.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">ESTRADA DO MONTEIRO, 540</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">23045-830</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>ESTRADA DO MONTEIRO, 540</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>23045-830</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2861622</vehicle_id>
+    <title>Mitsubishi ECLIPSE CROSS 1.5 MIVEC TURBO GASOLINA HPE CVT</title>
+    <description>Somos um grupo de 14 concessionárias , Raion , que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos de altíssima procedência , possuem Vistoria Cautelar , revisados e com garantia. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20ECLIPSE%20CROSS%201.5%20MIVEC%20TURBO%20GASOLINA%20HPE%20CVT%202024%20%28c%C3%B3d.%202861622%29.%20%5BCATALOGO-META-RAION-RECREIO%5D</url>
+    <make>Mitsubishi</make>
+    <model>ECLIPSE CROSS</model>
+    <year>2024</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>60181</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>124890.00 BRL</price>
+    <exterior_color>Cinza</exterior_color>
+    <fuel_type>GASOLINE</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>1.5 MIVEC TURBO GASOLINA HPE CVT</trim>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Taika Mitsubishi - Recreio</dealer_name>
+    <image>
+      <url>https://raion.app.br/faixas/2861622.jpg?v=bdd36185</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/ERCOtl5SEYyGLwB6FGCj6UkvfIuLApwB.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/1Xfbvf6IzP0kHQvRMyMj8Dpex2XkRefO.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/M7Ja1mgqn6Au6Mu5ky6ek2QCVtCnKXs4.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/z1v1vlMuU6rIb9cKOGLhUov6e3tVVF72.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/9dhCii1vepyXoeJelbet0TRXkW2TvZ7s.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/qtbAocUnB03g5wfzbhpunXjXtJnXO608.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/Sj3qlMrX1M6TDBegPSjjagiNgqAfb5mq.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/QK1DWmrHYiBWWhAwtfHXI1j4JV3lDmhQ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/dVDhTkgeSTZfUqCEAqjGpILxhyRatM0O.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/PZA185Gt4N0hCniLW8W7LZJffdDqUWEH.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/wvx72Ym6jqWMpyuFdgoff0hIXsWUZdMI.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/IwQOjuyK9X8gb3DxizYPrH54Vmm05lGr.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/sn7jmf1aS27E6F1nw1pz9XUr5M3j2K6k.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6699/vehicles/2861622/photos/6fmDaBw4JnVYXpbKfnwtD40fy2IJj1TQ.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">Av. das Américas, 17400</component>
+      <component name="city">Rio de Janeiro</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">22790-704</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>Av. das Américas, 17400</street_address>
+    <city>Rio de Janeiro</city>
+    <region>RJ</region>
+    <postal_code>22790-704</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
     <vehicle_id>2893208</vehicle_id>
     <title>Nissan KICKS 1.6 16V FLEXSTART EXCLUSIVE XTRONIC</title>
     <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
@@ -11060,6 +11057,206 @@ Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
     <city>Rio de Janeiro</city>
     <region>RJ</region>
     <postal_code>22790-704</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2896109</vehicle_id>
+    <title>Ford RANGER 2.2 BLACK 4X2 CD 16V DIESEL 4P AUTOMÁTICO</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Ford%20RANGER%202.2%20BLACK%204X2%20CD%2016V%20DIESEL%204P%20AUTOM%C3%81TICO%202023%20%28c%C3%B3d.%202896109%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <make>Ford</make>
+    <model>RANGER</model>
+    <year>2023</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>84548</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>139890.00 BRL</price>
+    <exterior_color>Preto</exterior_color>
+    <fuel_type>DIESEL</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>TRUCK</body_style>
+    <trim>2.2 BLACK 4X2 CD 16V DIESEL 4P AUTOMÁTICO</trim>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
+    <image>
+      <url>https://raion.app.br/faixas/2896109.jpg?v=4cbcd4f8</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/r3ASK1bsLzYDUBgPxtRmMRi2PJc0vGR8.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/65dovqYwSRNjAwyFzI8oLtUOTabNKZL8.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/nEPGgUxc5mYc7GaTAkXATMbMHExg94aH.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/NzH8nAzfOMpWkdnV2Ga9cIVE51sfXx4i.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/X72tWbfCsr469Cgd86kuXywcxYt9WNSK.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/j8q8WmxcbresWTae1qA5XPx6payYH2OF.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/o5xjWnvc64C4lgBSdsL3A3oZxItL6Kho.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/mccUDCIfsrEw0rmP8OyefnuKxjvc4uPS.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/RoVHHVM1JlKuXS1BPRTNEvNL9c6nL8ht.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/gV4bDOJxE103xapdtfcIkMrC7FBUHgQm.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/okT1nHVXMAHfJFtcMxyXhrv9zzQKwot7.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/lKuzHEE85BqHUu6w3lDfKfioo32a4oc9.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/oLJi7tfzAc7mF8G6lsuuKw3HIAl2qAiT.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/iWwfGNLs96AQwbs3qhDbVmIWRK9WP9eE.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/qRadM7znRRYgSFL2sy1y0mWFpy9BW4Ec.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/pEthkxUG2vA18bZOorhXAfbFYq0F9bRF.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/TpTgeVS3aoE0sLKrl2WJtFGJy3aPEabC.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/T4YXEftKgpTnI2i8XTeRorILeVfyyqfQ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/zi8toD0YoEbkdLFHF1QMJUws7XfWiY4k.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2896109/photos/PdKZhyfNMKrYL6u012GBmYgVW4x7MosP.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">FRANCISCO DA CRUZ NUNES, 4830</component>
+      <component name="city">Niterói</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">24350-310</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>FRANCISCO DA CRUZ NUNES, 4830</street_address>
+    <city>Niterói</city>
+    <region>RJ</region>
+    <postal_code>24350-310</postal_code>
+    <country>Brazil</country>
+  </listing>
+  <listing>
+    <vehicle_id>2874863</vehicle_id>
+    <title>Mitsubishi ECLIPSE CROSS 1.5 MIVEC TURBO GASOLINA HPE-S CVT</title>
+    <description>Somos um grupo de 14 concessionárias que representam as marcas Mitsubishi, Nissan, Suzuki, Zeekr e Royal Enfield. Há 25 anos no mercado automotivo. 
+Contamos com uma equipe especializada para atendimento presencial e online. 
+ 
+Todos os nossos veículos possuem Vistoria Cautelar. 
+ 
+Venha escolher seu novo veículo! 
+Reservamo-nos o direito de corrigir qualquer erro de digitação.</description>
+    <url>https://wa.me/552135045060?text=Ol%C3%A1%21%20Tenho%20interesse%20neste%20ve%C3%ADculo%20que%20vi%20no%20an%C3%BAncio%3A%20Mitsubishi%20ECLIPSE%20CROSS%201.5%20MIVEC%20TURBO%20GASOLINA%20HPE-S%20CVT%202022%20%28c%C3%B3d.%202874863%29.%20%5BCATALOGO-META-NATSU-NITEROI%5D</url>
+    <make>Mitsubishi</make>
+    <model>ECLIPSE CROSS</model>
+    <year>2022</year>
+    <mileage>
+      <unit>KM</unit>
+      <value>40615</value>
+    </mileage>
+    <state_of_vehicle>USED</state_of_vehicle>
+    <price>115890.00 BRL</price>
+    <exterior_color>Cinza</exterior_color>
+    <fuel_type>GASOLINE</fuel_type>
+    <transmission>AUTOMATIC</transmission>
+    <body_style>SUV</body_style>
+    <trim>1.5 MIVEC TURBO GASOLINA HPE-S CVT</trim>
+    <custom_label_0>VENDIDO</custom_label_0>
+    <dealer_name>Mitsubishi Natsu - Niterói</dealer_name>
+    <image>
+      <url>https://raion.app.br/faixas/2874863.jpg?v=c0a1b6e1</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/RIaLJBi5lRQxwn3LLitYyIm7eSPasxjk.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/5tDjiVmvv3PvAY1PXNkXG9RK6beoJeMo.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/HupBpPx4N9xiyOb1xgEksM94aQ153SXg.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/0N9sSqP6llZqgvEoTLgLXXFCDGzRVDWI.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/BQ0Q2BQSRMCzN4XiiHPaVygFXoxLbJY4.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/TrKv9zPjXM1RvlTUnVleCLQt3igIBRA4.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/QSGROhXmhh6v5ml88w9dOibVaqnB4nCe.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/vIOdsLDGi9AWc8NGdC4yQFo9IpbNMObD.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/8GPd2fINABeMvrVVtX0NBcN1iO1HtdFJ.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/pouZkldwBcsNs7gTaM3OFRwbSIdlrODk.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/8Bqlfo7fmqd6EOoMar62y2Vg0CF2cSj3.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/MH3TVDYQnNO2WEBEs27Qbz4WgXF3I2on.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/WE8kZ1zOIURIv38Hze01112p4s7zjFKT.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/6rDOP3xiEBaEMaZoqMOtKNrgYP8vOmOz.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/EnGPCKEW0fk9uSimFXlxQ8TY1qvE5nPL.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/jPh9M4QT8DD3a9HagMpMIlQolYCbZnf9.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/j3BqV8hvGKAF67l3AR3mfpFtCZWgwWS7.jpg</url>
+    </image>
+    <image>
+      <url>https://s3.agsistema.net/6625/vehicles/2874863/photos/arGvHo6znmcbe1biHZL7pUt4n9M8mhd7.jpg</url>
+    </image>
+    <address format="simple">
+      <component name="addr1">FRANCISCO DA CRUZ NUNES, 4830</component>
+      <component name="city">Niterói</component>
+      <component name="region">RJ</component>
+      <component name="postal_code">24350-310</component>
+      <component name="country">Brazil</component>
+    </address>
+    <street_address>FRANCISCO DA CRUZ NUNES, 4830</street_address>
+    <city>Niterói</city>
+    <region>RJ</region>
+    <postal_code>24350-310</postal_code>
     <country>Brazil</country>
   </listing>
 </listings>
