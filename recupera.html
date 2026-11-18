@@ -516,12 +516,13 @@ async function abrirGerente(loja){
   const futuros = j.cards.filter(c => c.retorno_em && c.retorno_em > hojeL).length;
   let livres = j.cards.filter(c => !c.dono).length;
   if (S.gCons) { const g = await api({acao:"gerente", loja: S.gLoja || undefined, mes: S.gMes || undefined}).catch(()=>null); livres = g && g.ok ? g.cards.filter(c => !c.dono).length : null; }
-  // ordem pedida pela Larissa (06/11), de três em três
-  $("gTiles").innerHTML = [[S.gCons ? "na fila dele" : "na fila",j.cards.length,""],["livres na loja", livres ?? "—", ""],["trabalhados",r.trabalhados ?? 0,""],
-    ["agendou",r.agendou,""],["compareceram",r.confirmados,"color:var(--green)"],["não vieram",r.nao_veio || 0,"color:var(--red)"],
-    ["recusou",r.recusou,""],["agendados para data futura",futuros,""],["expirou",r.expirou,""],
-    ["entraram",r.entraram,""],["voltou sozinho",r.voltou_sozinho,""]]
-    .map(([l,v,st]) => `<div class="tile"><b style="${st}">${v}</b><span>${l}</span></div>`).join("");
+  // ordem pedida pela Larissa (16/11, pedido 229), de três em três; embaixo da fila, quantos trabalhados vieram dela
+  const sub = (n) => n == null ? "" : `<small style="display:block;font-size:12px;color:var(--dim);margin-top:4px">${n} trabalhado${n === 1 ? "" : "s"} daqui</small>`;
+  $("gTiles").innerHTML = [[S.gCons ? "na fila dele" : "na fila",j.cards.length,"",sub(r.trab_fila_dele)],["livres na loja", livres ?? "—", "",sub(r.trab_fila_loja)],["trabalhados",r.trabalhados ?? 0,""],
+    ["solicitaram contato futuro",futuros,""],["recusou",r.recusou,""],["agendou",r.agendou,""],
+    ["compareceram",r.confirmados,"color:var(--green)"],["não vieram",r.nao_veio || 0,"color:var(--red)"],["expirou",r.expirou,""],
+    ["voltou sozinho",r.voltou_sozinho,""]]
+    .map(([l,v,st,ex]) => `<div class="tile"><b style="${st}">${v}</b><span>${l}</span>${ex || ""}</div>`).join("");
   const ag = j.agendados || [], SIT = {compareceu:['ok','compareceu'], nao_veio:['alerta','não veio'], aguardando:['','aguardando']};
   $("gAgendN").textContent = ag.length ? String(ag.length) : "";
   $("gAgend").innerHTML = ag.length ? ag.map(x => `<div class="linha"><div><a href="${esc(x.link_syonet)}" target="_blank" rel="noopener" style="color:var(--txt);font-weight:600">${esc(x.nome)}</a>
