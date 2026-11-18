@@ -557,10 +557,10 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
   function presente() {
     var px = proximaRevisao();
     if (px === 3 || px === 5) return {
-      titulo: "50% de desconto na sua próxima revisão.",
+      titulo: "50% off na sua próxima revisão!",
       sub: "Na revisão de " + KM_REV[px] + ", em peças e mão de obra.",
       regra: "50% de desconto na próxima revisão do plano (peças e mão de obra)" };
-    return { titulo: "Sua próxima revisão por nossa conta.", sub: "Peças e mão de obra, do jeito que o plano manda.",
+    return { titulo: "Sua próxima revisão de graça!", sub: "Peças e mão de obra por nossa conta.",
       regra: "a próxima revisão do plano (peças e mão de obra)" };
   }
   function rolarDevagar(alvo, dur) {
@@ -600,17 +600,17 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
         '<video id="vBalanca" src="presentebalanca.mp4" muted playsinline loop preload="auto"></video>' +
         '<video id="vAbre" src="presenteabre.mp4" muted playsinline preload="auto"></video>' +
       "</div>" +
-      '<div class="pres-txt" id="presTxt"><h1 class="pres-h">' + (nome ? nome + ", a" : "A") + " gente separou um presente pra você.</h1>" +
+      '<div class="pres-txt" id="presTxt"><h1 class="pres-h">' + (nome ? nome + ", t" : "T") + "em um presente esperando por você! 🎁</h1>" +
         '<p class="pres-toque">Toque na caixa pra abrir</p></div>' +
       '<div class="pres-aberto" id="presAberto">' +
-        '<div class="cartao-pres"><p class="conv-selo">Seu presente</p><h2>' + presente().titulo + '</h2><p>' + presente().sub + '</p></div>' +
+        '<div class="cartao-pres"><p class="conv-selo">Olha o que você pode ganhar</p><h2>' + presente().titulo + '</h2><p>' + presente().sub + '</p></div>' +
         '<p class="como">Pra liberar é assim:</p>' +
         '<ol class="quadros">' +
-          '<li><img src="q1_convite.webp" alt=""><span><b>Você convida</b> até 3 amigos pelo WhatsApp.</span></li>' +
-          '<li><img src="q2_amigo.webp" alt=""><span><b>Um deles compra</b> uma ' + marca.nome + ' com a gente.</span></li>' +
-          '<li><img src="q3_revisao.webp" alt=""><span><b>Seu presente é liberado</b> e você agenda a revisão pelo WhatsApp.</span></li>' +
+          '<li><img src="q1_convite.webp" alt=""><span><b>Mande seu link</b> para até 3 amigos.</span></li>' +
+          '<li><img src="q2_amigo.webp" alt=""><span><b>Um amigo chama a loja pelo link</b> e sai de ' + marca.nome + '.</span></li>' +
+          '<li><img src="q3_revisao.webp" alt=""><span><b>Pronto, o presente é seu!</b> É só agendar a revisão pelo WhatsApp.</span></li>' +
         "</ol>" +
-        '<button type="button" class="primario" data-acao="resgatar">Resgatar meu presente</button>' +
+        '<button type="button" class="primario" data-acao="resgatar">Resgate aqui seu link</button>' +
         '<p class="dica centro" style="margin-top:10px">Vale pra amigo que nunca comprou moto numa ' + curta() + ' do Grupo Raion.</p>' +
       "</div>" +
       '<div class="cresce"></div><div class="raion"><img src="' + RAION + '" alt="Grupo Raion"></div>');
@@ -683,6 +683,35 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       '<div class="cresce"></div><div class="raion"><img src="' + RAION + '" alt="Grupo Raion"></div>');
   }
 
+  // ja respondida: quem ganhou o convite (Royal, tudo 9-10) volta pelo link do WhatsApp e acha o link de indicacao
+  // por 15 dias da resposta (Joao 18/11); a Edge Function so devolve codigo pra quem tem direito
+  var DIAS_LINK = 15;
+  function telaJaRespondida() {
+    if (!D.indicacao) return telaSimples("Essa pesquisa já foi respondida", "Recebemos suas respostas" + quando(D.respondido_em) + ". Obrigado por responder!", true);
+    mostrar('<header class="topo centro">' + logo("g") + "</header>" +
+      '<section class="final centro"><h1 class="grande" style="margin-top:28px;font-size:34px;line-height:1.04">Sua pesquisa já foi respondida</h1>' +
+      "<p>Obrigado! Seu link de indicação continua valendo até " + ateQuando() + ".</p></section>" +
+      blocoConvite() + '<div class="raion"><img src="' + RAION + '" alt="Grupo Raion"></div>');
+  }
+  function ateQuando() {
+    var d = new Date(new Date(D.respondido_em).getTime() + DIAS_LINK * 86400000), p = function (n) { return (n < 10 ? "0" : "") + n; };
+    return p(d.getDate()) + "/" + p(d.getMonth() + 1);
+  }
+  function jaRespondida(j) {
+    var dentro = j.respondido_em && Date.now() - new Date(j.respondido_em).getTime() < DIAS_LINK * 86400000;
+    atual = "ja";
+    if (!(INDICACAO && INDICA_MARCAS[marcaChave()] && dentro)) return render();
+    postar({ t: token, acao: "indicacao" }).then(function (r) {
+      if (r.j && r.j.ok) {
+        D.indicacao = r.j;
+        D.contexto = D.contexto || {};
+        if (r.j.loja) D.contexto.loja = r.j.loja;
+        if (r.j.proxima_revisao) D.contexto.proxima_revisao = r.j.proxima_revisao;
+      }
+      render();
+    }).catch(function () { render(); });
+  }
+
   function quando(iso) {
     if (!iso) return "";
     var d = new Date(iso);
@@ -697,6 +726,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     if (atual === "inicio") return telaInicio();
     if (atual === "fim") return telaObrigado();
     if (atual === "baixa") return telaNotaBaixa();
+    if (atual === "ja") return telaJaRespondida();
     var lista = visiveis();
     if (atual === "pronto") return telaPronto(lista.length);
     var idx = lista.findIndex(function (p) { return p.id === atual; });
@@ -815,7 +845,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       D = j;
       aplicarMarca(j.marca);
       montarMoto((j.contexto || {}).seminovo || j.marca === "diamante" ? familiaSeminovo(j.contexto.moto) : familiaDe((j.contexto || {}).moto, j.marca));
-      if (j.estado === "respondido") return telaSimples("Essa pesquisa já foi respondida", "Recebemos suas respostas" + quando(j.respondido_em) + ". Obrigado por responder!", true);
+      if (j.estado === "respondido") return jaRespondida(j);
       if (j.estado === "encerrado") return telaSimples("Essa pesquisa foi encerrada", "Obrigado pelo seu tempo!", true);
       atual = "inicio";
       render();
