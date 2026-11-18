@@ -192,10 +192,12 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     nissan: { nome: "Nissan", logo: "marcas/nissan.png", cor: "#C3002F", largo: false },
     suzuki: { nome: "Suzuki", logo: "marcas/suzuki.png", cor: "#E30613", largo: false },
     // Seminovos Diamante (Joao 20/10): marca propria, cores do manual (#000, azul #1C4683, vermelho #E41323)
-    diamante: { nome: "Seminovos Diamante", logo: "marcas/diamante.svg", cor: "#1C4683", largo: "x" }
+    diamante: { nome: "Seminovos Diamante", logo: "marcas/diamante.svg", cor: "#1C4683", largo: "x" },
+    // Zeekr (Joao 28/10): logo oficial (o mesmo da pesquisa.html), preto da marca
+    zeekr: { nome: "Zeekr", logo: "zeekr-logo.svg", cor: "#111111", largo: "x" }
   };
   // marcas de CARRO: card diz "Carro", desenho de carro no rodape (proximas marcas de carro entram aqui)
-  var CARRO = { mitsubishi: 1, nissan: 1, suzuki: 1, diamante: 1 };
+  var CARRO = { mitsubishi: 1, nissan: 1, suzuki: 1, diamante: 1, zeekr: 1 };
   // genero do veiculo: moto e picape sao femininas ("a sua Classic", "a sua Frontier"); carro e masculino ("o seu Kicks")
   function masculino(modelo) { return ehCarro && !/frontier|triton|l200|hilux|ranger|s10|amarok|strada|toro|saveiro|montana|oroch|maverick|rampage/i.test(modelo || ""); }
   // perguntas de recomendacao usam outra legenda na escala de nota
@@ -236,6 +238,10 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     vitara: { corpo: "moto_vitara_corpo.webp", roda: "roda_carro.webp", ar: "1520/696", rodas: [[8.42, 57.76, 18.95], [71.58, 57.76, 18.95]] },
     grand_vitara: { corpo: "moto_grand_vitara_corpo.webp", roda: "roda_carro.webp", ar: "1521/705", rodas: [[12.36, 58.72, 18.67], [73.5, 60.0, 18.15]] },
     s_cross: { corpo: "moto_s_cross_corpo.webp", roda: "roda_carro.webp", ar: "1528/660", rodas: [[8.51, 54.24, 19.11], [70.29, 56.06, 18.59]] },
+    // carro (Zeekr, 28/10): decalcados das fotos laterais oficiais; cada um com a roda dele
+    zeekr_x: { corpo: "moto_zeekr_x_corpo.webp", roda: "roda_zeekr_x.webp", ar: "1272/492", rodas: [[8.57, 49.59, 18.55], [71.86, 50.41, 18.71]] },
+    zeekr_001: { corpo: "moto_zeekr_001_corpo.webp", roda: "roda_zeekr_001.webp", ar: "1106/372", rodas: [[8.77, 47.58, 16.82], [72.51, 48.39, 16.82]] },
+    zeekr_7x: { corpo: "moto_zeekr_7x_corpo.webp", roda: "roda_zeekr_7x.webp", ar: "1510/574", rodas: [[10.07, 52.26, 17.75], [72.72, 51.57, 18.01]] },
     sentra: { corpo: "moto_sentra_corpo.webp", roda: "roda_carro.webp", ar: "1525/547", rodas: [[11.28, 52.29, 16.66], [72.0, 53.2, 16.39]] }
   };
   // marca: SYM -> scooter (NH/NHX sao motos de rua -> classica); CF -> cf_aventureira (Ibex/MT; CL-C cai na classica)
@@ -276,6 +282,8 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       if (/s-?cross/.test(m)) return "s_cross";
       return "jimny";
     }
+    // Zeekr (28/10): desenho de cada modelo decalcado da foto lateral oficial, com a roda do proprio modelo
+    if (mk === "zeekr") return /\b001\b/.test(m) ? "zeekr_001" : /\b7 ?x\b/.test(m) ? "zeekr_7x" : "zeekr_x";
     if (mk === "sym") return /\bnhx?\b|apache/.test(m) ? "classica" : "scooter";
     if (mk === "cf") return /cl-?c|bobber/.test(m) ? "classica" : "cf_aventureira";
     if (/himalayan|guerrilla|scram/.test(m) && ARTES.aventureira) return "aventureira";
@@ -291,6 +299,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     rodas = palco.querySelectorAll(".roda");
   }
   function fumaca(n) {
+    if (marca && marca.nome === "Zeekr") return;   // eletrico: sem escapamento
     var p = palco.querySelector(".piloto");
     for (var i = 0; i < n; i++) (function (i) {
       setTimeout(function () {
@@ -320,6 +329,8 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
 
   var app = document.getElementById("app");
   var token = new URLSearchParams(location.search).get("t") || "";
+  // ?via=fila: a atendente respondeu pelo cliente no telefone (popup de pesquisa.raion.app.br, Joao 29/10)
+  var VIA = new URLSearchParams(location.search).get("via") === "fila" ? "fila" : undefined;
   var D = null, ehCarro = false, marca = MARCAS.royal, atual = "inicio", respostas = {}, ocupado = false, resultado = null, contato = null, erroEnvio = "";
 
   function esc(s) {
@@ -672,6 +683,35 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       '<div class="cresce"></div><div class="raion"><img src="' + RAION + '" alt="Grupo Raion"></div>');
   }
 
+  // ja respondida: quem ganhou o convite (Royal, tudo 9-10) volta pelo link do WhatsApp e acha o link de indicacao
+  // por 15 dias da resposta (Joao 18/11); a Edge Function so devolve codigo pra quem tem direito
+  var DIAS_LINK = 15;
+  function telaJaRespondida() {
+    if (!D.indicacao) return telaSimples("Essa pesquisa já foi respondida", "Recebemos suas respostas" + quando(D.respondido_em) + ". Obrigado por responder!", true);
+    mostrar('<header class="topo centro">' + logo("g") + "</header>" +
+      '<section class="final centro"><h1 class="grande" style="margin-top:28px;font-size:34px;line-height:1.04">Sua pesquisa já foi respondida</h1>' +
+      "<p>Obrigado! Seu link de indicação continua valendo até " + ateQuando() + ".</p></section>" +
+      blocoConvite() + '<div class="raion"><img src="' + RAION + '" alt="Grupo Raion"></div>');
+  }
+  function ateQuando() {
+    var d = new Date(new Date(D.respondido_em).getTime() + DIAS_LINK * 86400000), p = function (n) { return (n < 10 ? "0" : "") + n; };
+    return p(d.getDate()) + "/" + p(d.getMonth() + 1);
+  }
+  function jaRespondida(j) {
+    var dentro = j.respondido_em && Date.now() - new Date(j.respondido_em).getTime() < DIAS_LINK * 86400000;
+    atual = "ja";
+    if (!(INDICACAO && INDICA_MARCAS[marcaChave()] && dentro)) return render();
+    postar({ t: token, acao: "indicacao" }).then(function (r) {
+      if (r.j && r.j.ok) {
+        D.indicacao = r.j;
+        D.contexto = D.contexto || {};
+        if (r.j.loja) D.contexto.loja = r.j.loja;
+        if (r.j.proxima_revisao) D.contexto.proxima_revisao = r.j.proxima_revisao;
+      }
+      render();
+    }).catch(function () { render(); });
+  }
+
   function quando(iso) {
     if (!iso) return "";
     var d = new Date(iso);
@@ -686,6 +726,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     if (atual === "inicio") return telaInicio();
     if (atual === "fim") return telaObrigado();
     if (atual === "baixa") return telaNotaBaixa();
+    if (atual === "ja") return telaJaRespondida();
     var lista = visiveis();
     if (atual === "pronto") return telaPronto(lista.length);
     var idx = lista.findIndex(function (p) { return p.id === atual; });
@@ -727,7 +768,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     ocupado = true;
     var botoes = app.querySelectorAll("button");
     for (var i = 0; i < botoes.length; i++) botoes[i].disabled = true;
-    (token === "demo" ? Promise.resolve({ status: 200, j: { ok: true, insatisfeito: false } }) : postar({ t: token, acao: "responder", respostas: enviadas })).then(function (r) {
+    (token === "demo" ? Promise.resolve({ status: 200, j: { ok: true, insatisfeito: false } }) : postar({ t: token, acao: "responder", respostas: enviadas, via: VIA })).then(function (r) {
       ocupado = false;
       if (r.j && r.j.ok) { resultado = r.j; atual = r.j.insatisfeito ? "baixa" : "fim"; return render(); }
       if (r.status === 409) return telaSimples("Essa pesquisa já foi respondida", "Obrigado por responder!", true);
@@ -804,7 +845,7 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
       D = j;
       aplicarMarca(j.marca);
       montarMoto((j.contexto || {}).seminovo || j.marca === "diamante" ? familiaSeminovo(j.contexto.moto) : familiaDe((j.contexto || {}).moto, j.marca));
-      if (j.estado === "respondido") return telaSimples("Essa pesquisa já foi respondida", "Recebemos suas respostas" + quando(j.respondido_em) + ". Obrigado por responder!", true);
+      if (j.estado === "respondido") return jaRespondida(j);
       if (j.estado === "encerrado") return telaSimples("Essa pesquisa foi encerrada", "Obrigado pelo seu tempo!", true);
       atual = "inicio";
       render();
