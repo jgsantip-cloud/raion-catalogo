@@ -518,7 +518,8 @@ async function abrirGerente(loja){
   if (S.gCons) { const g = await api({acao:"gerente", loja: S.gLoja || undefined, mes: S.gMes || undefined}).catch(()=>null); livres = g && g.ok ? g.cards.filter(c => !c.dono).length : null; }
   // ordem pedida pela Larissa (16/11, pedido 229), de três em três; embaixo da fila, quantos trabalhados vieram dela
   const sub = (n) => n == null ? "" : `<small style="display:block;font-size:12px;color:var(--dim);margin-top:4px">${n} trabalhado${n === 1 ? "" : "s"} daqui</small>`;
-  $("gTiles").innerHTML = [[S.gCons ? "na fila dele" : "na fila",j.cards.length,"",sub(r.trab_fila_dele)],["livres na loja", livres ?? "—", "",sub(r.trab_fila_loja)],["trabalhados",r.trabalhados ?? 0,""],
+  // "agora" em vermelho (Larissa, 19/11, pedido 260): a fila é só a de hoje; os trabalhados do mês ficam embaixo
+  $("gTiles").innerHTML = [[S.gCons ? 'na fila dele <span style="color:var(--red)">agora</span>' : "na fila",j.cards.length,"",sub(r.trab_fila_dele)],["livres na loja", livres ?? "—", "",sub(r.trab_fila_loja)],["trabalhados",r.trabalhados ?? 0,""],
     ["solicitaram contato futuro",futuros,""],["recusou",r.recusou,""],["agendou",r.agendou,""],
     ["compareceram",r.confirmados,"color:var(--green)"],["não vieram",r.nao_veio || 0,"color:var(--red)"],["expirou",r.expirou,""],
     ["voltou sozinho",r.voltou_sozinho,""]]
