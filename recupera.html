@@ -363,7 +363,7 @@ function cardPendente(c){
     const canal = b.dataset.canal; b.disabled = true;
     const j = await api({acao:"toque", card:c.id, canal}).catch(()=>null);
     b.disabled = false;
-    if (!j || !j.ok){ toast(j && j.erro === "sem-telefone" ? "Esse cliente está sem celular no Syonet. Marque como Sem chance > Telefone errado depois de conferir." : "Não consegui registrar o contato" + (j ? ": " + j.erro : "")); return; }
+    if (!j || !j.ok){ toast(j && j.erro === "sem-telefone" ? "Esse cliente está sem celular no Syonet. Marque como Recusou de novo e escreva \"telefone errado\" depois de conferir." : "Não consegui registrar o contato" + (j ? ": " + j.erro : "")); return; }
     S.toque[c.id] = true; (c.toques ||= []).push({canal, horario:new Date().toISOString()});
     mostrarDesfechos(el, c);
     if (canal === "ligar") location.href = "tel:+55" + j.telefone; else window.open(j.wa_url, "_blank", "noopener,noreferrer");
@@ -373,10 +373,9 @@ function cardPendente(c){
 function mostrarDesfechos(el, c){
   const desf = el.querySelector(".desf"), grid = desf.querySelector(".grid2"), extra = desf.querySelector(".extra");
   desf.classList.remove("oculto"); grid.innerHTML = "";
-  const opcoes = [["agendou","Agendou","sim"],["retorno","Pediu retorno",""],["nao_atendeu","Não atendeu",""],["recusou","Recusou de novo",""],["sem_chance","Sem chance",""]];
+  const opcoes = [["agendou","Agendou","sim"],["retorno","Pediu retorno",""],["nao_atendeu","Não atendeu",""],["recusou","Recusou de novo",""]];
   for (const [k, l, cls] of opcoes){
     const b = document.createElement("button"); b.textContent = l; if (cls) b.className = cls;
-    if (k === "sem_chance") b.style.gridColumn = "span 2";
     b.onclick = () => pedirDetalhe(k, l, c, extra);
     grid.appendChild(b);
   }
