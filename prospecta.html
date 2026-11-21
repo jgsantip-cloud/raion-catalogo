@@ -89,6 +89,10 @@
   .verarte{position:absolute;right:10px;top:10px;background:rgba(0,0,0,.55);color:#fff;font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px}
   .card-arte{position:relative}
   .arte-pe{display:flex;flex-direction:column;gap:12px;padding:14px 16px 16px}
+  /* João 21/11: seletor de formato no Divulga (Status abre primeiro; só aparece o escolhido) */
+  .fmt-seg{display:flex;gap:6px;background:#eef0f3;border-radius:999px;padding:4px;margin:4px 0 14px}
+  .fmt-seg button{flex:1;border:0;background:transparent;border-radius:999px;padding:11px 8px;font:inherit;font-size:16px;font-weight:700;color:#555;cursor:pointer}
+  .fmt-seg button.ativo{background:#e11d2e;color:#fff;box-shadow:0 2px 8px rgba(225,29,46,.3)}
   .legenda{font-size:14px;color:var(--txt);white-space:pre-line}
   .dias{display:flex;flex-wrap:wrap;gap:6px}
   .dia{width:34px;height:34px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;background:var(--cinza-bg);color:#4B5563}
@@ -281,6 +285,7 @@
     <div class="ctx" id="ondeQuando3"></div>
   </div>
   <div class="secao" style="margin-top:16px">Hoje pra postar</div>
+  <div class="fmt-seg oculto" id="fmtSeg"><button data-f="status">📱 Status / Story</button><button data-f="feed">🖼️ Feed</button></div>
   <div id="divConteudos" style="display:flex;flex-direction:column;gap:12px"></div>
 
   <div class="card" style="margin-top:16px">
@@ -911,9 +916,16 @@ async function abrirDivulga(){
   if (!S.div){ toast(DIV_ERRO["sem-campanha"]); return; }
   renderConteudos(); await renderMeta();
 }
+// formato da arte pelo nome do arquivo (…_status_9x16.jpg / …_feed_4x5.jpg); sem marca = aparece nos dois
+function fmtDaArte(c){ const u = String(c.url || ""); return /status_9x16/.test(u) ? "status" : /feed_4x5/.test(u) ? "feed" : ""; }
 function renderConteudos(){
   const box = $("divConteudos"); box.innerHTML = "";
-  const lista = (S.div && S.div.conteudos) || [];
+  const todas = (S.div && S.div.conteudos) || [];
+  const temFmt = todas.some(c => fmtDaArte(c));
+  $("fmtSeg").classList.toggle("oculto", !temFmt);
+  const fmt = ls.get("divulga_fmt") || "status";
+  document.querySelectorAll("#fmtSeg button").forEach(b => b.classList.toggle("ativo", b.dataset.f === fmt));
+  const lista = temFmt ? todas.filter(c => !fmtDaArte(c) || fmtDaArte(c) === fmt) : todas;
   if (!lista.length){ box.innerHTML = '<div class="vazio">As artes de hoje aparecem aqui.</div>'; return; }
   for (const c of lista){
     const el = document.createElement("div"); el.className = "card card-arte";
@@ -928,6 +940,7 @@ function renderConteudos(){
     box.appendChild(el);
   }
 }
+document.querySelectorAll("#fmtSeg button").forEach(b => b.onclick = () => { ls.set("divulga_fmt", b.dataset.f); renderConteudos(); window.scrollTo({top: $("fmtSeg").offsetTop - 80, behavior: "smooth"}); });
 async function compartilhar(c, b){
   // navigator.share so existe em HTTPS (ou localhost). Num link http:// o celular nao abre a folha nativa:
   // avisar em vez de cair calado no plano B.
