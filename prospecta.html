@@ -432,6 +432,9 @@
 <div class="toast" id="toast"></div>
 
 <script>
+// João 21/11/2026 (Black motos): Check-in e Visitas saem do menu TEMPORARIAMENTE, pra todo mundo (admin incluído).
+// Pra voltar: ABAS_PAUSADAS = false. O check-in pelo QR do convite (?checkin=) continua funcionando.
+const ABAS_PAUSADAS = true;
 const API = "https://winlvztcxczdgjqklxrv.supabase.co/functions/v1/prospecta";
 let EVENTO = new URLSearchParams(location.search).get("e") || "";
 const DESF = [["nao_atendeu","Não atendeu"],["sem_interesse","Sem interesse"],["numero_errado","Número errado"],["interesse","Tem interesse"]];
@@ -567,12 +570,12 @@ async function abrirLista(){
   if (!j || !j.ok){ toast("Não consegui buscar sua lista" + (j ? ": " + j.erro : "")); return; }
   S.clientes = j.clientes; render(); renderRoteiro();
   if (S.col && "recepcao" in j && !!S.col.recepcao !== !!j.recepcao){ S.col.recepcao = !!j.recepcao; ls.set("prospecta_sessao", {token:S.token, col:S.col, ev:S.ev, evento:EVENTO}); }
-  $("abaCheckin").classList.toggle("oculto", !(S.col && (S.col.recepcao || S.col.admin)));
+  $("abaCheckin").classList.toggle("oculto", ABAS_PAUSADAS || !(S.col && (S.col.recepcao || S.col.admin)));
   if ("loja_id" in j && S.col && (S.col.loja_id !== j.loja_id || S.col.loja !== j.loja)){   // carga do RH mudou a loja: atualiza sem pedir novo login
     S.col.loja_id = j.loja_id; S.col.loja = j.loja; ls.set("prospecta_sessao", {token:S.token, col:S.col, ev:S.ev, evento:EVENTO}); cabecalho(); render();
   }
   S.gerente = !!j.gerente; S.msgPadrao = j.msg_padrao || (S.ev && S.ev.msg_whatsapp) || ""; S.msgPropria = j.msg_propria || null; mostrarMinhaMsg();
-  $("abaVisitas").classList.toggle("oculto", !j.visitas);
+  $("abaVisitas").classList.toggle("oculto", ABAS_PAUSADAS || !j.visitas);
   checarDivulga();
 }
 $("btnAbordar").onclick = () => { const b = $("roteiroBox"); b.classList.toggle("oculto"); $("setaAbordar").style.transform = b.classList.contains("oculto") ? "" : "rotate(180deg)"; };
