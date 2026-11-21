@@ -958,7 +958,7 @@ async function compartilhar(c, b){
     const file = new File([blob], `divulga-${c.id}.${ext}`, {type: blob.type});
     if (navigator.canShare && navigator.canShare({files:[file]})){
       await navigator.share({files:[file]});
-      toast(copiou ? "Legenda copiada: é só colar no status/story." : "Pronto! Depois manda o print.");
+      toast(copiou ? "Pronto! Se for postar no status do WhatsApp ou no feed, a legenda já está copiada, é só colar. No story não precisa." : "Pronto! Depois manda o print.");
     } else {
       baixarArte(blob, file.name);
       toast("Seu navegador não compartilha direto. Baixei a arte: poste do rolo da câmera.");
