@@ -736,6 +736,28 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     if (t) t.addEventListener("input", function () { respostas[atual] = t.value; });
   }
 
+  // "Insatisfeito? Sim" com TODAS as notas altas costuma ser toque no automatico (Maycon 26/11 escreveu elogio na
+  // caixa de insatisfacao): pergunta uma vez antes de seguir. Quem confirma segue como insatisfeito, igual antes.
+  var confirmado = {};
+  function precisaConfirmar() {
+    var ins = D.insatisfacao || {};
+    if ((ins.sim || []).indexOf(atual) < 0 || respostas[atual] !== 8 || confirmado[atual]) return false;
+    var notas = D.perguntas.filter(function (p) { return p.tipo === "nota" && respostas[p.id] !== undefined; });
+    return notas.length > 0 && notas.every(function (p) { return respostas[p.id] - 10 > limiteDe(p); });
+  }
+  function idNao(id) {
+    var p = D.perguntas.filter(function (x) { return x.id === id; })[0] || {};
+    var o = (p.opcoes || []).filter(function (x) { return /^n/i.test(x.rotulo); })[0];
+    return o ? o.id : 9;
+  }
+  function telaConfirma() {
+    mostrar('<header class="topo centro">' + logo("g") + "</header>" +
+      '<h1 class="grande" style="margin-top:56px;font-size:36px;line-height:1.06">Só confirmando</h1>' +
+      '<p class="texto" style="font-size:17px;margin-top:16px">Você deu notas altas, mas marcou que ficou <b>insatisfeito</b> com alguma coisa. Foi isso mesmo?</p>' +
+      '<div class="contatos"><button type="button" data-acao="conf-sim">Sim, quero contar o que houve</button>' +
+      '<button type="button" data-acao="conf-nao">Não, me enganei</button></div>' +
+      '<div class="cresce"></div><div class="raion"><img src="' + RAION + '" alt="Grupo Raion"></div>');
+  }
   function avancar() {
     var lista = visiveis(), idx = lista.findIndex(function (p) { return p.id === atual; });
     atual = idx + 1 < lista.length ? lista[idx + 1].id : "pronto";
@@ -790,7 +812,9 @@ body.sem-palco .app{padding-bottom:calc(24px + env(safe-area-inset-bottom))!impo
     if (acao === "comecar") { atual = visiveis()[0].id; return render(); }
     if (acao === "compartilhar") return compartilhar();
     if (acao === "resgatar") { presenteEtapa = "convite"; return render(); }
-    if (acao === "proxima") { if (respostas[atual] !== undefined) avancar(); return; }
+    if (acao === "proxima") { if (respostas[atual] === undefined) return; if (precisaConfirmar()) return telaConfirma(); avancar(); return; }
+    if (acao === "conf-sim") { confirmado[atual] = true; return avancar(); }
+    if (acao === "conf-nao") { respostas[atual] = idNao(atual); return avancar(); }
     if (acao === "voltar") return voltar();
     if (acao === "enviar") return enviar(false);
     if (acao === "enviar-vazio") return enviar(true);
